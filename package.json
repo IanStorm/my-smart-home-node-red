@@ -1,0 +1,13 @@
+{
+  "name": "@ianstorm/my-node-red",
+  "version": "0.0.0",
+  "dependencies": {
+    "node-red-contrib-fritzapi": "0.2.9",
+    "node-red-dashboard": "2.19.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IanStorm/my-node-red.git"
+  },
+  "private": true
+}
