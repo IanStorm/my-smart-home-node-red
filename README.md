@@ -9,4 +9,4 @@
 2. Create a Docker instance:
 	* On Windows run `docker run -i -t -p 1880:1880 -v ${PWD}:/data my-smart-home-node-red`
 2. Open any browser and enter `http://localhost:1880`.
-2. Start coding, changes will be reflected in your local machine. (Performing a pretty-print simplifies the handling of the files in Git.)
+2. Start coding, changes will be reflected in your local machine.
