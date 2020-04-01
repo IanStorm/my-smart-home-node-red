@@ -1,5 +1,5 @@
 {
-  "name": "@ianstorm/my-node-red",
+  "name": "@ianstorm/my-smart-home-node-red",
   "version": "0.0.0",
   "dependencies": {
     "node-red": "1.0.4",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IanStorm/my-node-red.git"
+    "url": "https://github.com/IanStorm/my-smart-home-node-red.git"
   },
   "scripts": {
     "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS"
