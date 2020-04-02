@@ -7,6 +7,13 @@
         "info": ""
     },
     {
+        "id": "3966eecb.418ed2",
+        "type": "tab",
+        "label": "Steckdosen",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "1f1ed453.c0771c",
         "type": "fritz-api",
         "z": "",
