@@ -5,5 +5,13 @@
         "label": "Heizkörper",
         "disabled": false,
         "info": ""
+    },
+    {
+        "id": "1f1ed453.c0771c",
+        "type": "fritz-api",
+        "z": "",
+        "name": "FB7580--AWF3-3R",
+        "host": "http://fritz.box",
+        "strictSSL": true
     }
 ]
