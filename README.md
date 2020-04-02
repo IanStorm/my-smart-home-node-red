@@ -1,7 +1,7 @@
 # My Smart Home - Node-RED
 
 
-## How to use?
+## How to use? 👨‍💼 👩‍💼
 1. Install *Docker*
 2. Authenticate against GitHub Docker registry: Run `cat ./credentials/github-pwd.txt | docker login docker.pkg.github.com --password-stdin -u <USERNAME>`
 	* Recommendation: Use a Personal Access Token instead of our password
@@ -10,7 +10,7 @@
 	* `docker-env.list` is expected to contain `NODE_RED_CREDENTIAL_SECRET=your_secret_goes_here`
 
 
-## How to develop?
+## How to develop? 👨‍💻 👩‍💻
 1. Install *Docker*
 2. Clone this repository.
 2. `cd` inside the cloned folder.
