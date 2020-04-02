@@ -118,6 +118,27 @@
         "strictSSL": true
     },
     {
+        "id": "479486fd.22c61",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Heizkörper",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "412fbf62.1e1d9",
+        "type": "ui_group",
+        "z": "",
+        "name": "Schlafzimmer: Nachttische",
+        "tab": "479486fd.22c61",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
         "id": "40c17f7e.3d5e8",
         "type": "comment",
         "z": "3966eecb.418ed2",
@@ -159,7 +180,7 @@
         "y": 100,
         "wires": [
             [
-                "a98c0add.464e88"
+                "43a6c393.496924"
             ]
         ]
     },
@@ -174,37 +195,52 @@
         "y": 160,
         "wires": [
             [
-                "b18a1b77.1c0878"
+                "feaba1de.0c0db"
             ]
         ]
     },
     {
-        "id": "a98c0add.464e88",
-        "type": "debug",
+        "id": "43a6c393.496924",
+        "type": "ui_switch",
         "z": "3966eecb.418ed2",
-        "name": "state",
-        "active": true,
-        "tosidebar": true,
-        "console": true,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "x": 440,
+        "name": "",
+        "label": "An? / Aus?",
+        "tooltip": "",
+        "group": "412fbf62.1e1d9",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 450,
         "y": 100,
-        "wires": []
+        "wires": [
+            []
+        ]
     },
     {
-        "id": "b18a1b77.1c0878",
-        "type": "debug",
+        "id": "feaba1de.0c0db",
+        "type": "ui_text",
         "z": "3966eecb.418ed2",
-        "name": "power",
-        "active": true,
-        "tosidebar": true,
-        "console": true,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "x": 440,
+        "group": "412fbf62.1e1d9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Leistungsaufnahme",
+        "format": "{{msg.payload}}W",
+        "layout": "row-spread",
+        "x": 470,
         "y": 160,
         "wires": []
     }
