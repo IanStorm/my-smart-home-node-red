@@ -1,3 +1,7 @@
+# + project-specific
+credentials/
+
+
 # + Node-RED
 .config.json
 .config.json.backup
