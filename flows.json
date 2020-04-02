@@ -20,5 +20,96 @@
         "name": "FB7580--AWF3-3R",
         "host": "http://fritz.box",
         "strictSSL": true
+    },
+    {
+        "id": "40c17f7e.3d5e8",
+        "type": "comment",
+        "z": "3966eecb.418ed2",
+        "name": "Schlafzimmer: Nachttische",
+        "info": "",
+        "x": 130,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "cb33e033.a147a",
+        "type": "inject",
+        "z": "3966eecb.418ed2",
+        "name": "ain",
+        "topic": "087610268064",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "3846ef85.95a5d",
+                "5827767f.cf6a88"
+            ]
+        ]
+    },
+    {
+        "id": "3846ef85.95a5d",
+        "type": "fritz-outlet",
+        "z": "3966eecb.418ed2",
+        "connection": "1f1ed453.c0771c",
+        "name": "get state",
+        "action": "getSwitchState",
+        "x": 260,
+        "y": 100,
+        "wires": [
+            [
+                "a98c0add.464e88"
+            ]
+        ]
+    },
+    {
+        "id": "5827767f.cf6a88",
+        "type": "fritz-outlet",
+        "z": "3966eecb.418ed2",
+        "connection": "1f1ed453.c0771c",
+        "name": "get power",
+        "action": "getSwitchPower",
+        "x": 260,
+        "y": 160,
+        "wires": [
+            [
+                "b18a1b77.1c0878"
+            ]
+        ]
+    },
+    {
+        "id": "a98c0add.464e88",
+        "type": "debug",
+        "z": "3966eecb.418ed2",
+        "name": "state",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 440,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b18a1b77.1c0878",
+        "type": "debug",
+        "z": "3966eecb.418ed2",
+        "name": "power",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 440,
+        "y": 160,
+        "wires": []
     }
 ]
