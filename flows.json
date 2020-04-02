@@ -165,7 +165,8 @@
         "wires": [
             [
                 "3846ef85.95a5d",
-                "5827767f.cf6a88"
+                "5827767f.cf6a88",
+                "9909514c.165658"
             ]
         ]
     },
@@ -222,7 +223,7 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 450,
+        "x": 490,
         "y": 100,
         "wires": [
             []
@@ -240,8 +241,39 @@
         "label": "Leistungsaufnahme",
         "format": "{{msg.payload}}W",
         "layout": "row-spread",
-        "x": 470,
+        "x": 510,
         "y": 160,
+        "wires": []
+    },
+    {
+        "id": "9909514c.165658",
+        "type": "fritz-thermostat",
+        "z": "3966eecb.418ed2",
+        "connection": "1f1ed453.c0771c",
+        "name": "get temperature",
+        "action": "getTemperature",
+        "x": 280,
+        "y": 220,
+        "wires": [
+            [
+                "3dbe18cc.ea22d8"
+            ]
+        ]
+    },
+    {
+        "id": "3dbe18cc.ea22d8",
+        "type": "ui_text",
+        "z": "3966eecb.418ed2",
+        "group": "412fbf62.1e1d9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperatur",
+        "format": "{{msg.payload}}°C",
+        "layout": "row-spread",
+        "x": 490,
+        "y": 220,
         "wires": []
     }
 ]
