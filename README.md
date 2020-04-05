@@ -1,7 +1,10 @@
 # My Smart Home - Node-RED
 
+Smart Home project for personal use on the basis of Node-RED.
+Unifies the management of various device types like smart plugs, smart radiator controls, robotic vacuum cleaner, etc.
 
-🐳 Make sure you have installed *Docker*.
+
+**🐳 Make sure you have installed *Docker*.**
 
 
 ## How to use in "production"? 👨‍💼 👩‍💼
