@@ -1,6 +1,6 @@
 # My Smart Home - Node-RED
 
-Smart Home project for personal use on the basis of Node-RED.
+Smart Home project for personal use.
 Unifies the management of various device types like smart plugs, smart radiator controls, robotic vacuum cleaner, etc.
 
 
