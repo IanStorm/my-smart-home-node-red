@@ -36,7 +36,7 @@ jobs:
 
       - name: Docker buildx and push
         run: |
-          IMAGE_ID=DOCKERHUB_USERNAME/${{ github.repository }}
+          IMAGE_ID=${{ github.repository }}
 
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
