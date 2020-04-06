@@ -12,7 +12,7 @@ Unifies the management of various device types like smart plugs, smart radiator 
 2. Ensure `./credentials/docker-env.list` exists. See ["a word on docker-env.list"](#-a-word-on-docker-env.list-📝).
 2. Start a Docker instance:
 ```
-$	docker run -i -t --env-file ./credentials/docker-env.list -p 1880:1880 docker.pkg.github.com/ianstorm/my-smart-home-node-red/docker:latest
+$	docker run -i -t --env-file ./credentials/docker-env.list -p 1880:1880 ianstorm/my-smart-home-node-red:latest
 ```
 
 
@@ -38,16 +38,16 @@ $	docker run -i -t --env-file ./credentials/docker-env.list -p 1880:1880 -v ${PW
 
 
 ### How to get a pre-built Docker image? ☁️
-1. Create `./credentials/github-pwd.txt`, ensure it contains...
-	* ...a GitHub *Personal Access Token* (recommended) OR
-	* ...your GitHub *password*
-2. Authenticate against GitHub Docker registry:
+1. Create `./credentials/dockerhub-pwd.txt`, ensure it contains...
+	* ...a DockerHub *Access Token* (recommended) OR
+	* ...your DockerHub *password*
+2. Authenticate against (DockerHub) Docker registry:
 ```
-$	cat ./credentials/github-pwd.txt | docker login docker.pkg.github.com --password-stdin -u <USERNAME>
+$	cat ./credentials/dockerhub-pwd.txt | docker login --password-stdin -u <USERNAME>
 ```
 3. Get the latest Docker image:
 ```
-$	docker pull docker.pkg.github.com/ianstorm/my-smart-home-node-red/docker:latest
+$	docker pull ianstorm/my-smart-home-node-red:latest
 ```
 
 
