@@ -136,7 +136,7 @@
         "order": 1,
         "disp": true,
         "width": "6",
-        "collapse": false
+        "collapse": true
     },
     {
         "id": "40c17f7e.3d5e8",
@@ -186,7 +186,7 @@
         "label": "An? / Aus?",
         "tooltip": "",
         "group": "412fbf62.1e1d9",
-        "order": 0,
+        "order": 4,
         "width": "0",
         "height": "0",
         "passthru": true,
@@ -214,7 +214,7 @@
         "type": "ui_text",
         "z": "3966eecb.418ed2",
         "group": "412fbf62.1e1d9",
-        "order": 1,
+        "order": 2,
         "width": 0,
         "height": 0,
         "name": "Zeige Leistungsaufnahme",
@@ -245,7 +245,7 @@
         "type": "ui_text",
         "z": "3966eecb.418ed2",
         "group": "412fbf62.1e1d9",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
         "name": "Zeige Temperatur",
@@ -314,7 +314,8 @@
             [
                 "3846ef85.95a5d",
                 "5827767f.cf6a88",
-                "9909514c.165658"
+                "9909514c.165658",
+                "1a88269d.24e059"
             ]
         ]
     },
@@ -362,5 +363,49 @@
                 "4f4031dc.22c608"
             ]
         ]
+    },
+    {
+        "id": "1a88269d.24e059",
+        "type": "fritz-outlet",
+        "z": "3966eecb.418ed2",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Verbindungsstatus",
+        "action": "getSwitchPresence",
+        "x": 970,
+        "y": 220,
+        "wires": [
+            [
+                "c9ace826.7da078"
+            ]
+        ]
+    },
+    {
+        "id": "c9ace826.7da078",
+        "type": "ui_led",
+        "z": "3966eecb.418ed2",
+        "group": "412fbf62.1e1d9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Verbunden?",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#949494",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#0094ce",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "name": "Zeige Status-LED",
+        "x": 950,
+        "y": 280,
+        "wires": []
     }
 ]
