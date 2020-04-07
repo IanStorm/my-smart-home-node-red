@@ -9,6 +9,9 @@
     "node-red-contrib-ui-led": "0.3.1",
     "node-red-dashboard": "2.19.4"
   },
+  "devDependencies": {
+    "node-red-contrib-contextbrowser": "0.0.4"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/IanStorm/my-smart-home-node-red.git"

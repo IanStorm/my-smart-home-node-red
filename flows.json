@@ -1,5 +1,12 @@
 [
     {
+        "id": "624937ab.a0cd9",
+        "type": "tab",
+        "label": "Globale Variablen",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "5d6d9515.0c3bc4",
         "type": "tab",
         "label": "Heizkörper",
@@ -355,8 +362,8 @@
                 "t": "set",
                 "p": "ain",
                 "pt": "msg",
-                "to": "087610268064",
-                "tot": "str"
+                "to": "plugs.bedroom.nightstand.ain",
+                "tot": "global"
             }
         ],
         "action": "",
@@ -385,8 +392,8 @@
                 "t": "set",
                 "p": "ain",
                 "pt": "msg",
-                "to": "087610268064",
-                "tot": "str"
+                "to": "plugs.bedroom.nightstand.ain",
+                "tot": "global"
             }
         ],
         "action": "",
@@ -937,6 +944,50 @@
             [
                 "d9c24db1.8d944"
             ]
+        ]
+    {
+        "id": "c2806e47.d4ad8",
+        "type": "inject",
+        "z": "624937ab.a0cd9",
+        "name": "1-mal beim Start",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "c1d25134.72f6"
+            ]
+        ]
+    },
+    {
+        "id": "c1d25134.72f6",
+        "type": "change",
+        "z": "624937ab.a0cd9",
+        "name": "Mache AINs global verfügbar",
+        "rules": [
+            {
+                "t": "set",
+                "p": "plugs.bedroom.nightstand.ain",
+                "pt": "global",
+                "to": "087610268064",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 160,
+        "y": 160,
+        "wires": [
+            []
         ]
     }
 ]
