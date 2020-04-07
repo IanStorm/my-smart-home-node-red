@@ -251,7 +251,7 @@
         "connection": "1f1ed453.c0771c",
         "name": "Lese Leistung",
         "action": "getSwitchPower",
-        "x": 380,
+        "x": 420,
         "y": 220,
         "wires": [
             [
@@ -263,7 +263,7 @@
         "id": "43a6c393.496924",
         "type": "ui_switch",
         "z": "3966eecb.418ed2",
-        "name": "",
+        "name": "Interaktion Schaltzustand",
         "label": "An? / Aus?",
         "tooltip": "",
         "group": "412fbf62.1e1d9",
@@ -282,7 +282,7 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 110,
+        "x": 150,
         "y": 280,
         "wires": [
             [
@@ -302,7 +302,7 @@
         "label": "Leistungsaufnahme",
         "format": "{{msg.payload}}W",
         "layout": "row-spread",
-        "x": 410,
+        "x": 450,
         "y": 280,
         "wires": []
     },
@@ -313,7 +313,7 @@
         "connection": "1f1ed453.c0771c",
         "name": "Lese Temperatur",
         "action": "getTemperature",
-        "x": 690,
+        "x": 730,
         "y": 220,
         "wires": [
             [
@@ -333,7 +333,7 @@
         "label": "Temperatur",
         "format": "{{msg.payload}}°C",
         "layout": "row-spread",
-        "x": 690,
+        "x": 730,
         "y": 280,
         "wires": []
     },
@@ -374,7 +374,7 @@
         "id": "33b2abf3.bdb87c",
         "type": "change",
         "z": "3966eecb.418ed2",
-        "name": "",
+        "name": "Setze AIN",
         "rules": [
             {
                 "t": "set",
@@ -389,7 +389,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 120,
+        "x": 100,
         "y": 160,
         "wires": [
             [
@@ -404,7 +404,7 @@
         "id": "4f4031dc.22c608",
         "type": "change",
         "z": "3966eecb.418ed2",
-        "name": "",
+        "name": "Setze AIN",
         "rules": [
             {
                 "t": "set",
@@ -419,7 +419,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 120,
+        "x": 100,
         "y": 400,
         "wires": [
             [
@@ -452,7 +452,7 @@
         "connection": "1f1ed453.c0771c",
         "name": "Lese Verbindungsstatus",
         "action": "getSwitchPresence",
-        "x": 970,
+        "x": 1010,
         "y": 220,
         "wires": [
             [
@@ -485,7 +485,7 @@
         ],
         "allowColorForValueInMessage": false,
         "name": "Zeige Status-LED",
-        "x": 950,
+        "x": 990,
         "y": 280,
         "wires": []
     },
@@ -1262,6 +1262,190 @@
         "wires": [
             [
                 "7ae2abf5.6a76b4"
+            ]
+        ]
+    },
+    {
+        "id": "4d68a964.fcbac8",
+        "type": "comment",
+        "z": "3966eecb.418ed2",
+        "name": "Automatisch Schalten",
+        "info": "",
+        "x": 120,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "612249b3.e72c",
+        "type": "inject",
+        "z": "3966eecb.418ed2",
+        "name": "Mo., Di., Mi., Do., & So., 21 Uhr",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "00 21 * * 1,2,3,4,0",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 180,
+        "y": 640,
+        "wires": [
+            [
+                "c488fbf4.dc8658"
+            ]
+        ]
+    },
+    {
+        "id": "70f4fcaf.fe0f24",
+        "type": "change",
+        "z": "3966eecb.418ed2",
+        "name": "Setze AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ain",
+                "pt": "msg",
+                "to": "plugs.bedroom.nightstand.ain",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 700,
+        "wires": [
+            [
+                "a49e146c.4def3"
+            ]
+        ]
+    },
+    {
+        "id": "a49e146c.4def3",
+        "type": "fritz-outlet",
+        "z": "3966eecb.418ed2",
+        "connection": "1f1ed453.c0771c",
+        "name": "Setze Schaltzustand",
+        "action": "setSwitchState",
+        "x": 920,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4907f5ed.751d2c",
+        "type": "inject",
+        "z": "3966eecb.418ed2",
+        "name": "Fr. & Sa., 22 Uhr",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "00 22 * * 5,6",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 680,
+        "wires": [
+            [
+                "c488fbf4.dc8658"
+            ]
+        ]
+    },
+    {
+        "id": "73ece22e.f38dec",
+        "type": "inject",
+        "z": "3966eecb.418ed2",
+        "name": "Werktags, 07:30 Uhr",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "30 07 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 720,
+        "wires": [
+            [
+                "2f534037.de148"
+            ]
+        ]
+    },
+    {
+        "id": "c488fbf4.dc8658",
+        "type": "change",
+        "z": "3966eecb.418ed2",
+        "name": "Anschalten",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 660,
+        "wires": [
+            [
+                "70f4fcaf.fe0f24"
+            ]
+        ]
+    },
+    {
+        "id": "2f534037.de148",
+        "type": "change",
+        "z": "3966eecb.418ed2",
+        "name": "Ausschalten",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 740,
+        "wires": [
+            [
+                "70f4fcaf.fe0f24"
+            ]
+        ]
+    },
+    {
+        "id": "a642a6ae.112438",
+        "type": "inject",
+        "z": "3966eecb.418ed2",
+        "name": "Wochenende, 10 Uhr",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "00 12 * * 2,6,0",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 760,
+        "wires": [
+            [
+                "2f534037.de148"
             ]
         ]
     }
