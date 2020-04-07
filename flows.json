@@ -9,7 +9,7 @@
     {
         "id": "3966eecb.418ed2",
         "type": "tab",
-        "label": "Steckdosen",
+        "label": "Schlafzimmer: Nachttische",
         "disabled": false,
         "info": ""
     },
@@ -142,9 +142,9 @@
         "id": "40c17f7e.3d5e8",
         "type": "comment",
         "z": "3966eecb.418ed2",
-        "name": "Schlafzimmer: Nachttische",
+        "name": "GUI",
         "info": "",
-        "x": 130,
+        "x": 70,
         "y": 40,
         "wires": []
     },
@@ -273,7 +273,7 @@
         "id": "cb33e033.a147a",
         "type": "inject",
         "z": "3966eecb.418ed2",
-        "name": "",
+        "name": "Alle 2 Sekunden",
         "topic": "",
         "payload": "",
         "payloadType": "str",
@@ -281,7 +281,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 110,
+        "x": 130,
         "y": 100,
         "wires": [
             [
