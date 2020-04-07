@@ -1241,14 +1241,14 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$map(msg.payload, function($v) { $v.capacity })\t",
+                "to": "$map(payload, function($v) { $v.capacity })\t",
                 "tot": "jsonata"
             },
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$sum(msg.payload)",
+                "to": "$sum(payload)",
                 "tot": "jsonata"
             }
         ],
