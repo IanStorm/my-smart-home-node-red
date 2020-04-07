@@ -21,6 +21,13 @@
         "info": ""
     },
     {
+        "id": "8d01fa85.f01398",
+        "type": "tab",
+        "label": "System -> RAM",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "daddeffe.066c5",
         "type": "ui_base",
         "theme": {
@@ -175,6 +182,17 @@
         "order": 1,
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "cbefc1f5.641d68",
+        "type": "ui_group",
+        "z": "",
+        "name": "RAM",
+        "tab": "f02945fb.a0f3c",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
     },
     {
         "id": "40c17f7e.3d5e8",
@@ -514,7 +532,7 @@
         "useOldStyle": false,
         "outputs": 1,
         "x": 200,
-        "y": 400,
+        "y": 460,
         "wires": [
             []
         ]
@@ -542,7 +560,7 @@
         "seg1": "",
         "seg2": "",
         "x": 490,
-        "y": 280,
+        "y": 340,
         "wires": []
     },
     {
@@ -558,7 +576,7 @@
         "y": 160,
         "wires": [
             [
-                "e449894b.3f9b78"
+                "b3fa4c76.81fad8"
             ]
         ]
     },
@@ -583,7 +601,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 210,
-        "y": 280,
+        "y": 340,
         "wires": [
             [
                 "4628832d.d18fdc"
@@ -607,7 +625,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "payload.overall",
+                "to": "payload.cpu",
                 "tot": "msg"
             }
         ],
@@ -617,7 +635,7 @@
         "to": "",
         "reg": false,
         "x": 200,
-        "y": 340,
+        "y": 400,
         "wires": [
             [
                 "e184c83b.62583"
@@ -637,11 +655,287 @@
         "property": "payload",
         "name": "Runde",
         "x": 350,
-        "y": 220,
+        "y": 280,
         "wires": [
             [
                 "130e8cd2.352b03",
                 "a8f7f6b9.0d7018"
+            ]
+        ]
+    },
+    {
+        "id": "58e42166.1c529",
+        "type": "comment",
+        "z": "8d01fa85.f01398",
+        "name": "GUI",
+        "info": "",
+        "x": 70,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3bf420ed.161318",
+        "type": "inject",
+        "z": "8d01fa85.f01398",
+        "name": "Alle 2 Sekunden",
+        "topic": "timestamp",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "26723a4b.b600fe",
+                "45b1eec3.f46f08"
+            ]
+        ]
+    },
+    {
+        "id": "313f1927.db74e6",
+        "type": "ui_chart",
+        "z": "8d01fa85.f01398",
+        "name": "Zeige Ø-RAM-Auslastungshistorie",
+        "group": "cbefc1f5.641d68",
+        "order": 2,
+        "width": "6",
+        "height": "8",
+        "label": "Ø Auslastungshistorie (in %)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 200,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "219405f8.db5122",
+        "type": "ui_gauge",
+        "z": "8d01fa85.f01398",
+        "name": "Zeige Ø-RAM-Auslastung",
+        "group": "cbefc1f5.641d68",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Ø Auslastung",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 490,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "45b1eec3.f46f08",
+        "type": "join",
+        "z": "8d01fa85.f01398",
+        "name": "Führe zusammen",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 210,
+        "y": 400,
+        "wires": [
+            [
+                "65bac5e5.ddb4cc"
+            ]
+        ]
+    },
+    {
+        "id": "65bac5e5.ddb4cc",
+        "type": "change",
+        "z": "8d01fa85.f01398",
+        "name": "Formatiere für Graph",
+        "rules": [
+            {
+                "t": "set",
+                "p": "timestamp",
+                "pt": "msg",
+                "to": "payload.timestamp",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.memory",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 200,
+        "y": 460,
+        "wires": [
+            [
+                "313f1927.db74e6"
+            ]
+        ]
+    },
+    {
+        "id": "7addc0f4.6e24c",
+        "type": "range",
+        "z": "8d01fa85.f01398",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "0",
+        "maxout": "100",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "Runde",
+        "x": 350,
+        "y": 340,
+        "wires": [
+            [
+                "45b1eec3.f46f08",
+                "219405f8.db5122"
+            ]
+        ]
+    },
+    {
+        "id": "26723a4b.b600fe",
+        "type": "Memory",
+        "z": "8d01fa85.f01398",
+        "name": "Lese RAM-Daten",
+        "x": 390,
+        "y": 160,
+        "wires": [
+            [
+                "ff537a08.70113"
+            ]
+        ]
+    },
+    {
+        "id": "d9c24db1.8d944",
+        "type": "change",
+        "z": "8d01fa85.f01398",
+        "name": "Filtere auf Auslastung",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.memusage",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 280,
+        "wires": [
+            [
+                "7addc0f4.6e24c"
+            ]
+        ]
+    },
+    {
+        "id": "b3fa4c76.81fad8",
+        "type": "change",
+        "z": "f2cefa2e.a30a9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "cpu",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 220,
+        "wires": [
+            [
+                "e449894b.3f9b78"
+            ]
+        ]
+    },
+    {
+        "id": "ff537a08.70113",
+        "type": "change",
+        "z": "8d01fa85.f01398",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "memory",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 220,
+        "wires": [
+            [
+                "d9c24db1.8d944"
             ]
         ]
     }
