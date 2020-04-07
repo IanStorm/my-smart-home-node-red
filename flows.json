@@ -489,7 +489,7 @@
         "label": "Ø Auslastungshistorie (in %)",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm:ss",
+        "xformat": "dd HH:mm",
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
