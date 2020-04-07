@@ -9,7 +9,7 @@
     {
         "id": "3966eecb.418ed2",
         "type": "tab",
-        "label": "Schlafzimmer: Nachttische",
+        "label": "Steckdosen -> Schlafzimmer: Nachttische",
         "disabled": false,
         "info": ""
     },
@@ -122,8 +122,8 @@
         "type": "ui_tab",
         "z": "",
         "name": "Heizkörper",
-        "icon": "dashboard",
-        "order": 1,
+        "icon": "fa-thermometer-full",
+        "order": 2,
         "disabled": false,
         "hidden": false
     },
@@ -132,11 +132,21 @@
         "type": "ui_group",
         "z": "",
         "name": "Schlafzimmer: Nachttische",
-        "tab": "479486fd.22c61",
+        "tab": "90f89393.1b6928",
         "order": 1,
         "disp": true,
         "width": "6",
         "collapse": true
+    },
+    {
+        "id": "90f89393.1b6928",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Steckdosen",
+        "icon": "fa-plug",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "40c17f7e.3d5e8",
