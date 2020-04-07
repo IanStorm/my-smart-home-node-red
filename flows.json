@@ -35,6 +35,13 @@
         "info": ""
     },
     {
+        "id": "aaa51945.bd49a",
+        "type": "tab",
+        "label": "System -> Speicher",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "daddeffe.066c5",
         "type": "ui_base",
         "theme": {
@@ -197,6 +204,17 @@
         "name": "RAM",
         "tab": "f02945fb.a0f3c",
         "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "c8fe58ce.64afd",
+        "type": "ui_group",
+        "z": "",
+        "name": "Speicher",
+        "tab": "f02945fb.a0f3c",
+        "order": 3,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -520,9 +538,9 @@
         "dot": false,
         "ymin": "0",
         "ymax": "100",
-        "removeOlder": 1,
+        "removeOlder": "2",
         "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
+        "removeOlderUnit": "86400",
         "cutout": 0,
         "useOneColor": false,
         "colors": [
@@ -719,9 +737,9 @@
         "dot": false,
         "ymin": "0",
         "ymax": "100",
-        "removeOlder": 1,
+        "removeOlder": "2",
         "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
+        "removeOlderUnit": "86400",
         "cutout": 0,
         "useOneColor": false,
         "colors": [
@@ -945,6 +963,229 @@
                 "d9c24db1.8d944"
             ]
         ]
+    },
+    {
+        "id": "26fff409.a14fac",
+        "type": "comment",
+        "z": "aaa51945.bd49a",
+        "name": "GUI",
+        "info": "",
+        "x": 70,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "42f30dd8.515014",
+        "type": "inject",
+        "z": "aaa51945.bd49a",
+        "name": "Alle 10 Minuten",
+        "topic": "timestamp",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "7cafeacf.373b6c",
+                "fa43d090.8149f8"
+            ]
+        ]
+    },
+    {
+        "id": "d0c2a66.dfcded8",
+        "type": "ui_chart",
+        "z": "aaa51945.bd49a",
+        "name": "Zeige Speicher-Auslastungshistorie",
+        "group": "c8fe58ce.64afd",
+        "order": 2,
+        "width": "6",
+        "height": "8",
+        "label": "Auslastungshistorie (in %)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "2",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 200,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be8278db.aadba8",
+        "type": "ui_gauge",
+        "z": "aaa51945.bd49a",
+        "name": "Zeige Speicher-Auslastung",
+        "group": "c8fe58ce.64afd",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Auslastung",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 500,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "fa43d090.8149f8",
+        "type": "join",
+        "z": "aaa51945.bd49a",
+        "name": "Führe zusammen",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 210,
+        "y": 400,
+        "wires": [
+            [
+                "abb5b69f.ae8a08"
+            ]
+        ]
+    },
+    {
+        "id": "abb5b69f.ae8a08",
+        "type": "change",
+        "z": "aaa51945.bd49a",
+        "name": "Formatiere für Graph",
+        "rules": [
+            {
+                "t": "set",
+                "p": "timestamp",
+                "pt": "msg",
+                "to": "payload.timestamp",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.storage",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 200,
+        "y": 460,
+        "wires": [
+            [
+                "d0c2a66.dfcded8"
+            ]
+        ]
+    },
+    {
+        "id": "7ae2abf5.6a76b4",
+        "type": "range",
+        "z": "aaa51945.bd49a",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "0",
+        "maxout": "100",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "Runde",
+        "x": 350,
+        "y": 340,
+        "wires": [
+            [
+                "fa43d090.8149f8",
+                "be8278db.aadba8"
+            ]
+        ]
+    },
+    {
+        "id": "cad3d0b3.5751f8",
+        "type": "change",
+        "z": "aaa51945.bd49a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "storage",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 220,
+        "wires": [
+            [
+                "7464990a.fccae8"
+            ]
+        ]
+    },
+    {
+        "id": "7cafeacf.373b6c",
+        "type": "Drives",
+        "z": "aaa51945.bd49a",
+        "name": "Lese Speicher-Daten",
+        "x": 400,
+        "y": 160,
+        "wires": [
+            [
+                "cad3d0b3.5751f8"
+            ]
+        ]
+    },
     {
         "id": "c2806e47.d4ad8",
         "type": "inject",
@@ -988,6 +1229,40 @@
         "y": 160,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "7464990a.fccae8",
+        "type": "change",
+        "z": "aaa51945.bd49a",
+        "name": "Summiere Speicher-Auslastung",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$map(msg.payload, function($v) { $v.capacity })\t",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$sum(msg.payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 280,
+        "wires": [
+            [
+                "7ae2abf5.6a76b4"
+            ]
         ]
     }
 ]
