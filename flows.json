@@ -14,6 +14,13 @@
         "info": ""
     },
     {
+        "id": "f2cefa2e.a30a9",
+        "type": "tab",
+        "label": "System -> CPU",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "daddeffe.066c5",
         "type": "ui_base",
         "theme": {
@@ -137,6 +144,27 @@
         "disp": true,
         "width": "6",
         "collapse": true
+    },
+    {
+        "id": "f02945fb.a0f3c",
+        "type": "ui_tab",
+        "z": "",
+        "name": "System",
+        "icon": "fa-microchip",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "4314a159.01844",
+        "type": "ui_group",
+        "z": "",
+        "name": "CPU",
+        "tab": "f02945fb.a0f3c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
     },
     {
         "id": "90f89393.1b6928",
@@ -417,5 +445,204 @@
         "x": 950,
         "y": 280,
         "wires": []
+    },
+    {
+        "id": "11b84d1f.672783",
+        "type": "comment",
+        "z": "f2cefa2e.a30a9",
+        "name": "GUI",
+        "info": "",
+        "x": 70,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "7148cec5.95441",
+        "type": "inject",
+        "z": "f2cefa2e.a30a9",
+        "name": "Alle 2 Sekunden",
+        "topic": "timestamp",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "4c4c5952.878748",
+                "130e8cd2.352b03"
+            ]
+        ]
+    },
+    {
+        "id": "e184c83b.62583",
+        "type": "ui_chart",
+        "z": "f2cefa2e.a30a9",
+        "name": "Zeige Ø-CPU-Auslastungshistorie",
+        "group": "4314a159.01844",
+        "order": 2,
+        "width": "6",
+        "height": "8",
+        "label": "Ø Auslastungshistorie (in %)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 200,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a8f7f6b9.0d7018",
+        "type": "ui_gauge",
+        "z": "f2cefa2e.a30a9",
+        "name": "Zeige Ø-CPU-Auslastung",
+        "group": "4314a159.01844",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Ø Auslastung",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 490,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "4c4c5952.878748",
+        "type": "cpu",
+        "z": "f2cefa2e.a30a9",
+        "name": "Lese Ø-CPU-Auslastung",
+        "msgCore": false,
+        "msgOverall": true,
+        "msgArray": false,
+        "msgTemp": false,
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "e449894b.3f9b78"
+            ]
+        ]
+    },
+    {
+        "id": "130e8cd2.352b03",
+        "type": "join",
+        "z": "f2cefa2e.a30a9",
+        "name": "Führe zusammen",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 210,
+        "y": 280,
+        "wires": [
+            [
+                "4628832d.d18fdc"
+            ]
+        ]
+    },
+    {
+        "id": "4628832d.d18fdc",
+        "type": "change",
+        "z": "f2cefa2e.a30a9",
+        "name": "Formatiere für Graph",
+        "rules": [
+            {
+                "t": "set",
+                "p": "timestamp",
+                "pt": "msg",
+                "to": "payload.timestamp",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.overall",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 200,
+        "y": 340,
+        "wires": [
+            [
+                "e184c83b.62583"
+            ]
+        ]
+    },
+    {
+        "id": "e449894b.3f9b78",
+        "type": "range",
+        "z": "f2cefa2e.a30a9",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "0",
+        "maxout": "100",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "Runde",
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "130e8cd2.352b03",
+                "a8f7f6b9.0d7018"
+            ]
+        ]
     }
 ]
