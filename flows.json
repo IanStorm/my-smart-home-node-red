@@ -21,6 +21,13 @@
         "info": ""
     },
     {
+        "id": "cb9bca95.45947",
+        "type": "tab",
+        "label": "System -> Infos",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "f2cefa2e.a30a9",
         "type": "tab",
         "label": "System -> CPU",
@@ -182,7 +189,7 @@
         "z": "",
         "name": "CPU",
         "tab": "f02945fb.a0f3c",
-        "order": 1,
+        "order": 2,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -203,7 +210,7 @@
         "z": "",
         "name": "RAM",
         "tab": "f02945fb.a0f3c",
-        "order": 2,
+        "order": 3,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -214,7 +221,18 @@
         "z": "",
         "name": "Speicher",
         "tab": "f02945fb.a0f3c",
-        "order": 3,
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ce9bba2a.9d9588",
+        "type": "ui_group",
+        "z": "",
+        "name": "Infos",
+        "tab": "f02945fb.a0f3c",
+        "order": 1,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -1446,6 +1464,172 @@
         "wires": [
             [
                 "2f534037.de148"
+            ]
+        ]
+    },
+    {
+        "id": "5908b50d.087e94",
+        "type": "comment",
+        "z": "cb9bca95.45947",
+        "name": "GUI",
+        "info": "",
+        "x": 70,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "6b0a3d11.c37b74",
+        "type": "inject",
+        "z": "cb9bca95.45947",
+        "name": "1-mal beim Start",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "d3f996ee.4cf658",
+                "f83df6e6.865c08"
+            ]
+        ]
+    },
+    {
+        "id": "d3f996ee.4cf658",
+        "type": "exec",
+        "z": "cb9bca95.45947",
+        "command": "node -v",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "Lese Node.js-Version",
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "46bab668.97aaf"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "46bab668.97aaf",
+        "type": "ui_text",
+        "z": "cb9bca95.45947",
+        "group": "ce9bba2a.9d9588",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Zeige Node.js-Version",
+        "label": "Node.js:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 440,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "534580c6.34f47",
+        "type": "json",
+        "z": "cb9bca95.45947",
+        "name": "Konvertiere zu JSON",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 140,
+        "y": 220,
+        "wires": [
+            [
+                "438a7561.a93af4"
+            ]
+        ]
+    },
+    {
+        "id": "f8b0e1d9.5980c",
+        "type": "ui_table",
+        "z": "cb9bca95.45947",
+        "group": "ce9bba2a.9d9588",
+        "name": "Zeige Paket-Versionen",
+        "order": 2,
+        "width": "6",
+        "height": "8",
+        "columns": [
+            {
+                "field": "name",
+                "title": "Paket-Name",
+                "width": "70%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "version",
+                "title": "Version",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 140,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "f83df6e6.865c08",
+        "type": "file in",
+        "z": "cb9bca95.45947",
+        "name": "Lese Paket-Versionen",
+        "filename": "package.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "534580c6.34f47"
+            ]
+        ]
+    },
+    {
+        "id": "438a7561.a93af4",
+        "type": "change",
+        "z": "cb9bca95.45947",
+        "name": "Bereite Daten auf",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$each(payload.dependencies, function($v, $k) {\t    {\t        \"name\": $k,\t        \"version\": $v\t    }\t})\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "f8b0e1d9.5980c"
             ]
         ]
     }
