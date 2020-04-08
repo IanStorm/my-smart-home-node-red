@@ -1261,7 +1261,7 @@
         "name": "Automatisch Schalten",
         "info": "",
         "x": 120,
-        "y": 580,
+        "y": 600,
         "wires": []
     },
     {
@@ -1277,7 +1277,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 180,
-        "y": 640,
+        "y": 660,
         "wires": [
             [
                 "c488fbf4.dc8658"
@@ -1303,8 +1303,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 680,
-        "y": 700,
+        "x": 600,
+        "y": 720,
         "wires": [
             [
                 "a49e146c.4def3"
@@ -1318,8 +1318,8 @@
         "connection": "1f1ed453.c0771c",
         "name": "Setze Schaltzustand",
         "action": "setSwitchState",
-        "x": 920,
-        "y": 700,
+        "x": 800,
+        "y": 720,
         "wires": [
             []
         ]
@@ -1337,7 +1337,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 130,
-        "y": 680,
+        "y": 700,
         "wires": [
             [
                 "c488fbf4.dc8658"
@@ -1357,7 +1357,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 140,
-        "y": 720,
+        "y": 740,
         "wires": [
             [
                 "2f534037.de148"
@@ -1383,8 +1383,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 470,
-        "y": 660,
+        "x": 430,
+        "y": 680,
         "wires": [
             [
                 "70f4fcaf.fe0f24"
@@ -1410,8 +1410,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 470,
-        "y": 740,
+        "x": 430,
+        "y": 760,
         "wires": [
             [
                 "70f4fcaf.fe0f24"
@@ -1431,7 +1431,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 140,
-        "y": 760,
+        "y": 780,
         "wires": [
             [
                 "2f534037.de148"
