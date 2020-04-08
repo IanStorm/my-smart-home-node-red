@@ -128,15 +128,15 @@
         "site": {
             "name": "Smart Home :: HB-AWF3-3R",
             "hideToolbar": "false",
-            "allowSwipe": "true",
-            "lockMenu": "true",
+            "allowSwipe": "false",
+            "lockMenu": "false",
             "allowTempTheme": "true",
             "dateFormat": "YYYY-MM-DD",
             "sizes": {
-                "sx": 48,
+                "sx": 64,
                 "sy": 32,
-                "gx": 4,
-                "gy": 4,
+                "gx": 12,
+                "gy": 12,
                 "cx": 4,
                 "cy": 4,
                 "px": 0,
@@ -171,7 +171,7 @@
         "order": 1,
         "disp": true,
         "width": "6",
-        "collapse": true
+        "collapse": false
     },
     {
         "id": "f02945fb.a0f3c",
@@ -314,12 +314,12 @@
         "z": "3966eecb.418ed2",
         "group": "412fbf62.1e1d9",
         "order": 2,
-        "width": 0,
-        "height": 0,
+        "width": "2",
+        "height": "1",
         "name": "Zeige Leistungsaufnahme",
-        "label": "Leistungsaufnahme",
+        "label": "<i class=\"fa fa-bolt\"></i>",
         "format": "{{msg.payload}}W",
-        "layout": "row-spread",
+        "layout": "row-center",
         "x": 450,
         "y": 280,
         "wires": []
@@ -345,12 +345,12 @@
         "z": "3966eecb.418ed2",
         "group": "412fbf62.1e1d9",
         "order": 3,
-        "width": 0,
-        "height": 0,
+        "width": "2",
+        "height": "1",
         "name": "Zeige Temperatur",
-        "label": "Temperatur",
+        "label": "<i class=\"fa fa-thermometer-half\"></i>",
         "format": "{{msg.payload}}°C",
-        "layout": "row-spread",
+        "layout": "row-center",
         "x": 730,
         "y": 280,
         "wires": []
@@ -474,38 +474,9 @@
         "y": 220,
         "wires": [
             [
-                "c9ace826.7da078"
+                "60283bd7.2a56cc"
             ]
         ]
-    },
-    {
-        "id": "c9ace826.7da078",
-        "type": "ui_led",
-        "z": "3966eecb.418ed2",
-        "group": "412fbf62.1e1d9",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "Verbunden?",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#949494",
-                "value": "false",
-                "valueType": "bool"
-            },
-            {
-                "color": "#0094ce",
-                "value": "true",
-                "valueType": "bool"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "name": "Zeige Status-LED",
-        "x": 990,
-        "y": 280,
-        "wires": []
     },
     {
         "id": "11b84d1f.672783",
@@ -1631,6 +1602,25 @@
             [
                 "f8b0e1d9.5980c"
             ]
+        ]
+    },
+    {
+        "id": "60283bd7.2a56cc",
+        "type": "ui_template",
+        "z": "3966eecb.418ed2",
+        "group": "412fbf62.1e1d9",
+        "name": "Zeige Status",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"fa fa-link\" ng-class=\"icon\"></i>\n    <i ng-if=\"!msg.payload\" class=\"fa fa-chain-broken\" ng-class=\"icon\"></i>\n</div>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "templateScope": "local",
+        "x": 970,
+        "y": 280,
+        "wires": [
+            []
         ]
     }
 ]
