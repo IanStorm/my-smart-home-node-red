@@ -2,6 +2,7 @@ FROM nodered/node-red:1.0.4
 
 ENV TZ="Europe/Berlin"
 
+COPY ./contrib/ ./contrib/
 COPY .npmrc .
 # Copy package.json to the WORKDIR so npm builds all
 # of your added modules for Node-RED

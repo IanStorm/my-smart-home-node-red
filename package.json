@@ -6,6 +6,7 @@
     "node-red-contrib-cpu": "0.0.4",
     "node-red-contrib-fritzapi": "0.2.9",
     "node-red-contrib-os": "0.1.7",
+    "node-red-contrib-roomba980-fw2": "file:./contrib/node-red-contrib-roomba980-fw2",
     "node-red-dashboard": "2.19.4",
     "node-red-node-ui-table": "0.3.1"
   },

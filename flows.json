@@ -7,13 +7,6 @@
         "info": ""
     },
     {
-        "id": "311aacb9.34a24c",
-        "type": "tab",
-        "label": "world env.",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "55f0feba.93e878",
         "type": "tab",
         "label": "Steckdosen -> Arbeitszimmer: Christian's PC",
@@ -38,6 +31,20 @@
         "id": "a4694e56.1df578",
         "type": "tab",
         "label": "Steckdosen -> Wohnküche: Fernsehtisch",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "ef9247c6.cadc28",
+        "type": "tab",
+        "label": "Saugroboter",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "311aacb9.34a24c",
+        "type": "tab",
+        "label": "world env.",
         "disabled": false,
         "info": ""
     },
@@ -319,6 +326,13 @@
         "disp": true,
         "width": "6",
         "collapse": false
+    },
+    {
+        "id": "f438956c.669a58",
+        "type": "dorita980Config",
+        "z": "",
+        "ip": "192.168.178.115",
+        "name": "Roomba 966"
     },
     {
         "id": "40c17f7e.3d5e8",
@@ -2540,6 +2554,75 @@
             [
                 "4a18a891.b07298"
             ]
+        ]
+    },
+    {
+        "id": "271e6d2e.ff86c2",
+        "type": "comment",
+        "z": "ef9247c6.cadc28",
+        "name": "Automatisch Schalten",
+        "info": "",
+        "x": 120,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "a35f26f0.c061c8",
+        "type": "inject",
+        "z": "ef9247c6.cadc28",
+        "name": "Mo., Mi., & Fr., 10 Uhr",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "00 10 * * 1,3,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "545ada08.831764"
+            ]
+        ]
+    },
+    {
+        "id": "545ada08.831764",
+        "type": "change",
+        "z": "ef9247c6.cadc28",
+        "name": "Startbefehl",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "start",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 80,
+        "wires": [
+            [
+                "3ffc6d98.40fbb2"
+            ]
+        ]
+    },
+    {
+        "id": "3ffc6d98.40fbb2",
+        "type": "basic",
+        "z": "ef9247c6.cadc28",
+        "connection": "f438956c.669a58",
+        "name": "",
+        "x": 530,
+        "y": 80,
+        "wires": [
+            []
         ]
     }
 ]
