@@ -2,15 +2,15 @@
     {
         "id": "624937ab.a0cd9",
         "type": "tab",
-        "label": "Globale Variablen",
+        "label": "Global",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "5d6d9515.0c3bc4",
+        "id": "311aacb9.34a24c",
         "type": "tab",
-        "label": "Heizkörper",
-        "disabled": true,
+        "label": "world env.",
+        "disabled": false,
         "info": ""
     },
     {
@@ -28,30 +28,30 @@
         "info": ""
     },
     {
-        "id": "cb9bca95.45947",
-        "type": "tab",
-        "label": "System -> Infos",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "f2cefa2e.a30a9",
         "type": "tab",
-        "label": "System -> CPU",
+        "label": "machine env. -> CPU",
         "disabled": false,
         "info": ""
     },
     {
         "id": "8d01fa85.f01398",
         "type": "tab",
-        "label": "System -> RAM",
+        "label": "machine env. -> RAM",
         "disabled": false,
         "info": ""
     },
     {
         "id": "aaa51945.bd49a",
         "type": "tab",
-        "label": "System -> Speicher",
+        "label": "machine env. -> Speicher",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "cb9bca95.45947",
+        "type": "tab",
+        "label": "machine env. -> Infos",
         "disabled": false,
         "info": ""
     },
@@ -160,22 +160,12 @@
         "strictSSL": true
     },
     {
-        "id": "479486fd.22c61",
-        "type": "ui_tab",
-        "z": "",
-        "name": "Heizkörper",
-        "icon": "fa-thermometer-full",
-        "order": 2,
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "412fbf62.1e1d9",
         "type": "ui_group",
         "z": "",
         "name": "Schlafzimmer: Nachttische",
-        "tab": "90f89393.1b6928",
-        "order": 2,
+        "tab": "14feb2a9.8277c5",
+        "order": 3,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -186,7 +176,7 @@
         "z": "",
         "name": "System",
         "icon": "fa-microchip",
-        "order": 3,
+        "order": 4,
         "disabled": false,
         "hidden": false
     },
@@ -195,28 +185,18 @@
         "type": "ui_group",
         "z": "",
         "name": "CPU",
-        "tab": "f02945fb.a0f3c",
+        "tab": "cd4c16c9.b5a0a",
         "order": 2,
         "disp": true,
         "width": "6",
         "collapse": false
     },
     {
-        "id": "90f89393.1b6928",
-        "type": "ui_tab",
-        "z": "",
-        "name": "Steckdosen",
-        "icon": "fa-plug",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "cbefc1f5.641d68",
         "type": "ui_group",
         "z": "",
         "name": "RAM",
-        "tab": "f02945fb.a0f3c",
+        "tab": "cd4c16c9.b5a0a",
         "order": 3,
         "disp": true,
         "width": "6",
@@ -227,7 +207,7 @@
         "type": "ui_group",
         "z": "",
         "name": "Speicher",
-        "tab": "f02945fb.a0f3c",
+        "tab": "cd4c16c9.b5a0a",
         "order": 4,
         "disp": true,
         "width": "6",
@@ -249,11 +229,60 @@
         "type": "ui_group",
         "z": "",
         "name": "Arbeitszimmer: Christian's PC",
-        "tab": "90f89393.1b6928",
+        "tab": "14feb2a9.8277c5",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "14feb2a9.8277c5",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Überblick",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "22abfc75.b9b2e4",
+        "type": "ui_group",
+        "z": "",
+        "name": "Hallo!",
+        "tab": "14feb2a9.8277c5",
         "order": 1,
         "disp": true,
         "width": "6",
         "collapse": false
+    },
+    {
+        "id": "cd4c16c9.b5a0a",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Monitoring",
+        "icon": "fa-area-chart",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "877922bd.d9904",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "22abfc75.b9b2e4",
+        "order": 3,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "b5bc4bb.bd0b438",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "22abfc75.b9b2e4",
+        "order": 4,
+        "width": 2,
+        "height": 1
     },
     {
         "id": "40c17f7e.3d5e8",
@@ -300,12 +329,12 @@
         "type": "ui_switch",
         "z": "3966eecb.418ed2",
         "name": "Interaktion Schaltzustand",
-        "label": "An? / Aus?",
+        "label": "<i class=\"fa fa-plug\"></i> An? / Aus?",
         "tooltip": "",
         "group": "412fbf62.1e1d9",
         "order": 4,
-        "width": "0",
-        "height": "0",
+        "width": 0,
+        "height": 0,
         "passthru": true,
         "decouple": "false",
         "topic": "",
@@ -332,8 +361,8 @@
         "z": "3966eecb.418ed2",
         "group": "412fbf62.1e1d9",
         "order": 2,
-        "width": "2",
-        "height": "1",
+        "width": 2,
+        "height": 1,
         "name": "Zeige Leistungsaufnahme",
         "label": "<i class=\"fa fa-bolt\"></i>",
         "format": "{{msg.payload}}W",
@@ -363,8 +392,8 @@
         "z": "3966eecb.418ed2",
         "group": "412fbf62.1e1d9",
         "order": 3,
-        "width": "2",
-        "height": "1",
+        "width": 2,
+        "height": 1,
         "name": "Zeige Temperatur",
         "label": "<i class=\"fa fa-thermometer-half\"></i>",
         "format": "{{msg.payload}}°C",
@@ -1228,9 +1257,23 @@
             },
             {
                 "t": "set",
+                "p": "plugs.livingKitchenArea.tvStand.ain",
+                "pt": "global",
+                "to": "087610300838",
+                "tot": "str"
+            },
+            {
+                "t": "set",
                 "p": "plugs.workroom.christian.ain",
                 "pt": "global",
                 "to": "087610342740",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "plugs.workroom.sandra.ain",
+                "pt": "global",
+                "to": "087610465315",
                 "tot": "str"
             }
         ],
@@ -1239,8 +1282,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 160,
-        "y": 160,
+        "x": 380,
+        "y": 100,
         "wires": [
             []
         ]
@@ -1505,7 +1548,7 @@
         "timer": "",
         "oldrc": false,
         "name": "Lese Node.js-Version",
-        "x": 440,
+        "x": 380,
         "y": 160,
         "wires": [
             [
@@ -1527,8 +1570,8 @@
         "label": "Node.js:",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 440,
-        "y": 260,
+        "x": 620,
+        "y": 160,
         "wires": []
     },
     {
@@ -1539,8 +1582,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 140,
-        "y": 220,
+        "x": 620,
+        "y": 100,
         "wires": [
             [
                 "438a7561.a93af4"
@@ -1580,8 +1623,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 140,
-        "y": 340,
+        "x": 1080,
+        "y": 100,
         "wires": []
     },
     {
@@ -1594,8 +1637,8 @@
         "chunk": false,
         "sendError": false,
         "encoding": "utf8",
-        "x": 140,
-        "y": 160,
+        "x": 380,
+        "y": 100,
         "wires": [
             [
                 "534580c6.34f47"
@@ -1621,8 +1664,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 130,
-        "y": 280,
+        "x": 850,
+        "y": 100,
         "wires": [
             [
                 "f8b0e1d9.5980c"
@@ -1636,8 +1679,8 @@
         "group": "412fbf62.1e1d9",
         "name": "Zeige Status",
         "order": 1,
-        "width": "2",
-        "height": "1",
+        "width": 2,
+        "height": 1,
         "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"fa fa-link\" ng-class=\"icon\"></i>\n    <i ng-if=\"!msg.payload\" class=\"fa fa-chain-broken\" ng-class=\"icon\"></i>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
@@ -1693,10 +1736,10 @@
         "type": "ui_switch",
         "z": "55f0feba.93e878",
         "name": "Interaktion Schaltzustand",
-        "label": "An? / Aus?",
+        "label": "<i class=\"fa fa-plug\"></i> An? / Aus?",
         "tooltip": "",
         "group": "259c1fb2.ed8768",
-        "order": 4,
+        "order": 5,
         "width": "0",
         "height": "0",
         "passthru": true,
@@ -1725,8 +1768,8 @@
         "z": "55f0feba.93e878",
         "group": "259c1fb2.ed8768",
         "order": 2,
-        "width": "2",
-        "height": "1",
+        "width": 2,
+        "height": 1,
         "name": "Zeige Leistungsaufnahme",
         "label": "<i class=\"fa fa-bolt\"></i>",
         "format": "{{msg.payload}}W",
@@ -1756,8 +1799,8 @@
         "z": "55f0feba.93e878",
         "group": "259c1fb2.ed8768",
         "order": 3,
-        "width": "2",
-        "height": "1",
+        "width": 2,
+        "height": 1,
         "name": "Zeige Temperatur",
         "label": "<i class=\"fa fa-thermometer-half\"></i>",
         "format": "{{msg.payload}}°C",
@@ -1896,8 +1939,8 @@
         "group": "259c1fb2.ed8768",
         "name": "Zeige Status",
         "order": 1,
-        "width": "2",
-        "height": "1",
+        "width": 2,
+        "height": 1,
         "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"fa fa-link\" ng-class=\"icon\"></i>\n    <i ng-if=\"!msg.payload\" class=\"fa fa-chain-broken\" ng-class=\"icon\"></i>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
@@ -1907,5 +1950,141 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "f4614d41.21dad",
+        "type": "change",
+        "z": "311aacb9.34a24c",
+        "name": "Formatiere Uhrzeit",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$fromMillis(payload, '[h01]:[m01]:[s01]')\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 140,
+        "wires": [
+            [
+                "169a6858.ea146"
+            ]
+        ]
+    },
+    {
+        "id": "2122249c.3ea634",
+        "type": "comment",
+        "z": "311aacb9.34a24c",
+        "name": "GUI",
+        "info": "",
+        "x": 70,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "cd0b25c7.898b2",
+        "type": "inject",
+        "z": "311aacb9.34a24c",
+        "name": "Alle halbe Sekunde",
+        "topic": "datetime",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "f4614d41.21dad"
+            ]
+        ]
+    },
+    {
+        "id": "169a6858.ea146",
+        "type": "ui_text",
+        "z": "311aacb9.34a24c",
+        "group": "22abfc75.b9b2e4",
+        "order": 2,
+        "width": 2,
+        "height": 2,
+        "name": "Zeige Uhrzeit",
+        "label": "<i class=\"fa fa-clock-o\"></i>",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 570,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e824a13e.b27558",
+        "type": "change",
+        "z": "311aacb9.34a24c",
+        "name": "Formatiere Datum",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$fromMillis(payload, '[D01].[M01].[Y0001]')\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 100,
+        "wires": [
+            [
+                "8434d57a.d32188"
+            ]
+        ]
+    },
+    {
+        "id": "d5b3d67.c5c43a8",
+        "type": "inject",
+        "z": "311aacb9.34a24c",
+        "name": "Alle halbe Sekunde",
+        "topic": "datetime",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "e824a13e.b27558"
+            ]
+        ]
+    },
+    {
+        "id": "8434d57a.d32188",
+        "type": "ui_text",
+        "z": "311aacb9.34a24c",
+        "group": "22abfc75.b9b2e4",
+        "order": 1,
+        "width": 2,
+        "height": 2,
+        "name": "Zeige Datum",
+        "label": "<i class=\"fa fa-calendar\"></i>",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 570,
+        "y": 100,
+        "wires": []
     }
 ]
