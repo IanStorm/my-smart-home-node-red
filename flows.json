@@ -1961,7 +1961,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$fromMillis(payload, '[h01]:[m01]:[s01]')\t",
+                "to": "$fromMillis(payload, '[H01]:[m01]:[s01]', timezone)\t",
                 "tot": "jsonata"
             }
         ],
@@ -1970,7 +1970,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 590,
         "y": 160,
         "wires": [
             [
@@ -1993,7 +1993,7 @@
         "type": "inject",
         "z": "311aacb9.34a24c",
         "name": "Alle halbe Sekunde",
-        "topic": "datetime",
+        "topic": "time",
         "payload": "",
         "payloadType": "date",
         "repeat": "0.5",
@@ -2004,7 +2004,7 @@
         "y": 160,
         "wires": [
             [
-                "f4614d41.21dad"
+                "b5d81e85.8c588"
             ]
         ]
     },
@@ -2020,7 +2020,7 @@
         "label": "<i class=\"fa fa-clock-o\"></i>",
         "format": "{{msg.payload}}",
         "layout": "col-center",
-        "x": 570,
+        "x": 790,
         "y": 160,
         "wires": []
     },
@@ -2043,7 +2043,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 590,
         "y": 100,
         "wires": [
             [
@@ -2056,7 +2056,7 @@
         "type": "inject",
         "z": "311aacb9.34a24c",
         "name": "Alle halbe Sekunde",
-        "topic": "datetime",
+        "topic": "date",
         "payload": "",
         "payloadType": "date",
         "repeat": "0.5",
@@ -2083,8 +2083,24 @@
         "label": "<i class=\"fa fa-calendar\"></i>",
         "format": "{{msg.payload}}",
         "layout": "col-center",
-        "x": 570,
+        "x": 790,
         "y": 100,
         "wires": []
+    },
+    {
+        "id": "b5d81e85.8c588",
+        "type": "function",
+        "z": "311aacb9.34a24c",
+        "name": "Berechne Zeitzone",
+        "func": "// see https://usefulangle.com/post/30/javascript-get-date-time-with-offset-hours-minutes\nvar offsetInMin = new Date().getTimezoneOffset();\nvar hrsOffset = Math.abs(offsetInMin/60);\nvar minOffset = Math.abs(offsetInMin%60);\nvar hhOffset = (\"00\" + hrsOffset).slice(-2);\nvar mmOffset = (\"00\" + minOffset).slice(-2);\n\nvar offsetIso8601 = undefined;\nif (offsetInMin < 0)\n    offsetIso8601 = \"+\" + hhOffset + mmOffset;\nelse if (offsetInMin > 0)\n    offsetIso8601 = \"-\" + hhOffset + mmOffset;\nelse if (offsetInMin === 0)\n    offsetIso8601 = \"Z\";\n\nmsg.timezone = offsetIso8601;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 370,
+        "y": 160,
+        "wires": [
+            [
+                "f4614d41.21dad"
+            ]
+        ]
     }
 ]
