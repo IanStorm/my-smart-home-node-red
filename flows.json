@@ -774,7 +774,7 @@
         "name": "Automatisch Schalten",
         "info": "",
         "x": 140,
-        "y": 940,
+        "y": 880,
         "wires": []
     },
     {
@@ -790,7 +790,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 180,
-        "y": 1000,
+        "y": 940,
         "wires": [
             [
                 "2c0133f5.eace84"
@@ -810,7 +810,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 130,
-        "y": 1040,
+        "y": 980,
         "wires": [
             [
                 "1a5c772e.b60f99"
@@ -830,7 +830,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 140,
-        "y": 1080,
+        "y": 1040,
         "wires": [
             [
                 "1bdf9201.38227e"
@@ -850,7 +850,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 140,
-        "y": 1120,
+        "y": 1080,
         "wires": [
             [
                 "a49d133a.d34738"
@@ -1279,46 +1279,6 @@
         "x": 90,
         "y": 560,
         "wires": []
-    },
-    {
-        "id": "ed8dee41.e66038",
-        "type": "trigger",
-        "z": "a4694e56.1df578",
-        "op1": "",
-        "op2": "",
-        "op1type": "pay",
-        "op2type": "nul",
-        "duration": "5",
-        "extend": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "name": "5s Cooldown",
-        "x": 610,
-        "y": 840,
-        "wires": [
-            [
-                "afc35f12.1c3fd"
-            ]
-        ]
-    },
-    {
-        "id": "afc35f12.1c3fd",
-        "type": "rbe",
-        "z": "a4694e56.1df578",
-        "name": "Nur bei Änderung",
-        "func": "rbei",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "property": "payload",
-        "x": 630,
-        "y": 880,
-        "wires": [
-            [
-                "9ca3e613.6e6cb"
-            ]
-        ]
     },
     {
         "id": "3eda18f1.d83e6",
@@ -1976,7 +1936,7 @@
         "name": "Automatisch Schalten",
         "info": "",
         "x": 140,
-        "y": 940,
+        "y": 880,
         "wires": []
     },
     {
@@ -1992,7 +1952,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 100,
-        "y": 1000,
+        "y": 940,
         "wires": [
             [
                 "ab0c2540.1e09d8"
@@ -2615,7 +2575,7 @@
         "y": 800,
         "wires": [
             [
-                "ed8dee41.e66038"
+                "9ca3e613.6e6cb"
             ]
         ]
     },
@@ -2623,11 +2583,11 @@
         "id": "8a2cfb94.4b6a58",
         "type": "inject",
         "z": "a4694e56.1df578",
-        "name": "Alle 5s",
+        "name": "Alle 2s",
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "repeat": "5",
+        "repeat": "2",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -2725,7 +2685,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 820,
+        "x": 780,
         "y": 800,
         "wires": [
             []
@@ -2747,7 +2707,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 500,
-        "y": 1040,
+        "y": 980,
         "wires": [
             [
                 "72b84630.73fce"
@@ -2769,7 +2729,7 @@
         "bytopic": "all",
         "name": "30m Cooldown",
         "x": 500,
-        "y": 1000,
+        "y": 940,
         "wires": [
             [
                 "2ff3b34e.f6c52c"
@@ -2797,7 +2757,7 @@
         "repair": false,
         "outputs": 2,
         "x": 260,
-        "y": 1000,
+        "y": 940,
         "wires": [
             [
                 "b24ef9d4.92036"
@@ -2827,7 +2787,7 @@
         "to": "",
         "reg": false,
         "x": 270,
-        "y": 1060,
+        "y": 1000,
         "wires": [
             [
                 "b24ef9d4.92036",
@@ -2855,7 +2815,7 @@
         "to": "",
         "reg": false,
         "x": 730,
-        "y": 1000,
+        "y": 940,
         "wires": [
             []
         ]
@@ -2869,46 +2829,6 @@
         "x": 90,
         "y": 560,
         "wires": []
-    },
-    {
-        "id": "c81da780.52162",
-        "type": "trigger",
-        "z": "3966eecb.418ed2",
-        "op1": "",
-        "op2": "",
-        "op1type": "pay",
-        "op2type": "nul",
-        "duration": "5",
-        "extend": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "name": "5s Cooldown",
-        "x": 610,
-        "y": 840,
-        "wires": [
-            [
-                "f7840e76.dd693"
-            ]
-        ]
-    },
-    {
-        "id": "f7840e76.dd693",
-        "type": "rbe",
-        "z": "3966eecb.418ed2",
-        "name": "Nur bei Änderung",
-        "func": "rbei",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "property": "payload",
-        "x": 630,
-        "y": 880,
-        "wires": [
-            [
-                "4ce1d930.5a6b7"
-            ]
-        ]
     },
     {
         "id": "6f0349a1.89b6b",
@@ -3526,7 +3446,7 @@
         "y": 800,
         "wires": [
             [
-                "c81da780.52162"
+                "4ce1d930.5a6b7"
             ]
         ]
     },
@@ -3534,11 +3454,11 @@
         "id": "d780e3ce.6f10c8",
         "type": "inject",
         "z": "3966eecb.418ed2",
-        "name": "Alle 5s",
+        "name": "Alle 2s",
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "repeat": "5",
+        "repeat": "2",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -3636,7 +3556,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 820,
+        "x": 780,
         "y": 800,
         "wires": [
             []
@@ -3662,7 +3582,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 1000,
+        "y": 940,
         "wires": [
             []
         ]
@@ -3687,7 +3607,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 1040,
+        "y": 980,
         "wires": [
             []
         ]
@@ -3712,7 +3632,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 1080,
+        "y": 1040,
         "wires": [
             []
         ]
@@ -3737,7 +3657,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 1120,
+        "y": 1080,
         "wires": [
             []
         ]
