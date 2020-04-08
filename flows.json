@@ -2341,7 +2341,7 @@
         "y": 620,
         "wires": [
             [
-                "103d7478.d2d9dc"
+                "c37d640c.bf9a98"
             ]
         ]
     },
@@ -2354,7 +2354,7 @@
         "order": 1,
         "width": 2,
         "height": 1,
-        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"flow.plug.isConnected\" class=\"fa fa-link\" ng-class=\"icon\"></i>\n    <i ng-if=\"!flow.plug.isConnected\" class=\"fa fa-chain-broken\" ng-class=\"icon\"></i>\n</div>",
+        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"fa fa-link\" ng-class=\"icon\"></i>\n    <i ng-if=\"!msg.payload\" class=\"fa fa-chain-broken\" ng-class=\"icon\"></i>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
@@ -2380,7 +2380,7 @@
         "y": 680,
         "wires": [
             [
-                "1ab8b5fe.98cb7a"
+                "382f4987.abd35e"
             ]
         ]
     },
@@ -2394,7 +2394,7 @@
         "height": 1,
         "name": "Zeige Temperatur",
         "label": "<i class=\"fa fa-thermometer-half\"></i>",
-        "format": "{{flow.plug.temperature}}°C",
+        "format": "{{msg.payload}}°C",
         "layout": "row-center",
         "x": 510,
         "y": 680,
@@ -2416,7 +2416,7 @@
         "y": 740,
         "wires": [
             [
-                "e0ef11.5ab160f"
+                "fd43fd6f.cf744"
             ]
         ]
     },
@@ -2430,7 +2430,7 @@
         "height": 1,
         "name": "Zeige Leistungsaufnahme",
         "label": "<i class=\"fa fa-bolt\"></i>",
-        "format": "{{flow.plug.power}}W",
+        "format": "{{msg.payload}}W",
         "layout": "row-center",
         "x": 530,
         "y": 740,
@@ -3252,7 +3252,7 @@
         "y": 620,
         "wires": [
             [
-                "f54e3d9a.4511d8"
+                "bc4e1bab.a84e4"
             ]
         ]
     },
@@ -3265,7 +3265,7 @@
         "order": 1,
         "width": 2,
         "height": 1,
-        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"flow.plug.isConnected\" class=\"fa fa-link\" ng-class=\"icon\"></i>\n    <i ng-if=\"!flow.plug.isConnected\" class=\"fa fa-chain-broken\" ng-class=\"icon\"></i>\n</div>",
+        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"fa fa-link\" ng-class=\"icon\"></i>\n    <i ng-if=\"!msg.payload\" class=\"fa fa-chain-broken\" ng-class=\"icon\"></i>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
@@ -3291,7 +3291,7 @@
         "y": 680,
         "wires": [
             [
-                "da89e487.a2b788"
+                "f90dd493.7b72"
             ]
         ]
     },
@@ -3305,7 +3305,7 @@
         "height": 1,
         "name": "Zeige Temperatur",
         "label": "<i class=\"fa fa-thermometer-half\"></i>",
-        "format": "{{flow.plug.temperature}}°C",
+        "format": "{{msg.payload}}°C",
         "layout": "row-center",
         "x": 510,
         "y": 680,
@@ -3327,7 +3327,7 @@
         "y": 740,
         "wires": [
             [
-                "24705aa5.f0a986"
+                "8ca1ceb4.827cb"
             ]
         ]
     },
@@ -3341,7 +3341,7 @@
         "height": 1,
         "name": "Zeige Leistungsaufnahme",
         "label": "<i class=\"fa fa-bolt\"></i>",
-        "format": "{{flow.plug.power}}W",
+        "format": "{{msg.payload}}W",
         "layout": "row-center",
         "x": 530,
         "y": 740,
@@ -3740,6 +3740,168 @@
         "y": 1120,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "f90dd493.7b72",
+        "type": "change",
+        "z": "3966eecb.418ed2",
+        "name": "Hole Temperatur",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "plug.temperature",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 680,
+        "wires": [
+            [
+                "da89e487.a2b788"
+            ]
+        ]
+    },
+    {
+        "id": "8ca1ceb4.827cb",
+        "type": "change",
+        "z": "3966eecb.418ed2",
+        "name": "Hole Leistung",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "plug.power",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 740,
+        "wires": [
+            [
+                "24705aa5.f0a986"
+            ]
+        ]
+    },
+    {
+        "id": "bc4e1bab.a84e4",
+        "type": "change",
+        "z": "3966eecb.418ed2",
+        "name": "Hole Status",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "plug.isConnected",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 270,
+        "y": 620,
+        "wires": [
+            [
+                "f54e3d9a.4511d8"
+            ]
+        ]
+    },
+    {
+        "id": "c37d640c.bf9a98",
+        "type": "change",
+        "z": "a4694e56.1df578",
+        "name": "Hole Status",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "plug.isConnected",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 270,
+        "y": 620,
+        "wires": [
+            [
+                "103d7478.d2d9dc"
+            ]
+        ]
+    },
+    {
+        "id": "382f4987.abd35e",
+        "type": "change",
+        "z": "a4694e56.1df578",
+        "name": "Hole Temperatur",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "plug.temperature",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 680,
+        "wires": [
+            [
+                "1ab8b5fe.98cb7a"
+            ]
+        ]
+    },
+    {
+        "id": "fd43fd6f.cf744",
+        "type": "change",
+        "z": "a4694e56.1df578",
+        "name": "Hole Leistung",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "plug.power",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 740,
+        "wires": [
+            [
+                "e0ef11.5ab160f"
+            ]
         ]
     }
 ]
