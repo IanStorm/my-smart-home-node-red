@@ -301,8 +301,8 @@
         "connection": "1f1ed453.c0771c",
         "name": "Lese Schaltzustand",
         "action": "getSwitchState",
-        "x": 130,
-        "y": 220,
+        "x": 350,
+        "y": 140,
         "wires": [
             [
                 "43a6c393.496924"
@@ -316,8 +316,8 @@
         "connection": "1f1ed453.c0771c",
         "name": "Lese Leistung",
         "action": "getSwitchPower",
-        "x": 420,
-        "y": 220,
+        "x": 340,
+        "y": 200,
         "wires": [
             [
                 "feaba1de.0c0db"
@@ -347,8 +347,8 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 150,
-        "y": 280,
+        "x": 610,
+        "y": 140,
         "wires": [
             [
                 "d5b1b535.af6bd8"
@@ -367,8 +367,8 @@
         "label": "<i class=\"fa fa-bolt\"></i>",
         "format": "{{msg.payload}}W",
         "layout": "row-center",
-        "x": 450,
-        "y": 280,
+        "x": 610,
+        "y": 200,
         "wires": []
     },
     {
@@ -378,8 +378,8 @@
         "connection": "1f1ed453.c0771c",
         "name": "Lese Temperatur",
         "action": "getTemperature",
-        "x": 730,
-        "y": 220,
+        "x": 350,
+        "y": 260,
         "wires": [
             [
                 "3dbe18cc.ea22d8"
@@ -398,8 +398,8 @@
         "label": "<i class=\"fa fa-thermometer-half\"></i>",
         "format": "{{msg.payload}}°C",
         "layout": "row-center",
-        "x": 730,
-        "y": 280,
+        "x": 590,
+        "y": 260,
         "wires": []
     },
     {
@@ -409,8 +409,8 @@
         "connection": "1f1ed453.c0771c",
         "name": "Setze Schaltzustand",
         "action": "setSwitchState",
-        "x": 140,
-        "y": 460,
+        "x": 1140,
+        "y": 140,
         "wires": [
             []
         ]
@@ -454,8 +454,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 100,
-        "y": 160,
+        "x": 120,
+        "y": 220,
         "wires": [
             [
                 "3846ef85.95a5d",
@@ -484,8 +484,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 100,
-        "y": 400,
+        "x": 940,
+        "y": 140,
         "wires": [
             [
                 "feae0b0c.f53b3"
@@ -502,8 +502,8 @@
         "start": "",
         "inout": "out",
         "property": "payload",
-        "x": 90,
-        "y": 340,
+        "x": 790,
+        "y": 140,
         "wires": [
             [
                 "4f4031dc.22c608"
@@ -517,8 +517,8 @@
         "connection": "1f1ed453.c0771c",
         "name": "Lese Verbindungsstatus",
         "action": "getSwitchPresence",
-        "x": 1010,
-        "y": 220,
+        "x": 370,
+        "y": 320,
         "wires": [
             [
                 "60283bd7.2a56cc"
@@ -1329,7 +1329,7 @@
         "name": "Automatisch Schalten",
         "info": "",
         "x": 120,
-        "y": 600,
+        "y": 460,
         "wires": []
     },
     {
@@ -1345,7 +1345,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 180,
-        "y": 660,
+        "y": 520,
         "wires": [
             [
                 "c488fbf4.dc8658"
@@ -1372,7 +1372,7 @@
         "to": "",
         "reg": false,
         "x": 600,
-        "y": 720,
+        "y": 580,
         "wires": [
             [
                 "a49e146c.4def3"
@@ -1387,7 +1387,7 @@
         "name": "Setze Schaltzustand",
         "action": "setSwitchState",
         "x": 800,
-        "y": 720,
+        "y": 580,
         "wires": [
             []
         ]
@@ -1405,7 +1405,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 130,
-        "y": 700,
+        "y": 560,
         "wires": [
             [
                 "c488fbf4.dc8658"
@@ -1425,7 +1425,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 140,
-        "y": 740,
+        "y": 600,
         "wires": [
             [
                 "2f534037.de148"
@@ -1452,7 +1452,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 680,
+        "y": 540,
         "wires": [
             [
                 "70f4fcaf.fe0f24"
@@ -1479,7 +1479,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 760,
+        "y": 620,
         "wires": [
             [
                 "70f4fcaf.fe0f24"
@@ -1499,7 +1499,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 140,
-        "y": 780,
+        "y": 640,
         "wires": [
             [
                 "2f534037.de148"
@@ -1685,8 +1685,8 @@
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
-        "x": 970,
-        "y": 280,
+        "x": 570,
+        "y": 320,
         "wires": [
             []
         ]
@@ -1708,8 +1708,8 @@
         "connection": "1f1ed453.c0771c",
         "name": "Lese Schaltzustand",
         "action": "getSwitchState",
-        "x": 130,
-        "y": 220,
+        "x": 350,
+        "y": 140,
         "wires": [
             [
                 "f907c56.7cb1e38"
@@ -1723,8 +1723,8 @@
         "connection": "1f1ed453.c0771c",
         "name": "Lese Leistung",
         "action": "getSwitchPower",
-        "x": 420,
-        "y": 220,
+        "x": 340,
+        "y": 200,
         "wires": [
             [
                 "7695e665.49194"
@@ -1754,8 +1754,8 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 150,
-        "y": 280,
+        "x": 610,
+        "y": 140,
         "wires": [
             [
                 "b085538.b4932b"
@@ -1774,8 +1774,8 @@
         "label": "<i class=\"fa fa-bolt\"></i>",
         "format": "{{msg.payload}}W",
         "layout": "row-center",
-        "x": 450,
-        "y": 280,
+        "x": 610,
+        "y": 200,
         "wires": []
     },
     {
@@ -1785,8 +1785,8 @@
         "connection": "1f1ed453.c0771c",
         "name": "Lese Temperatur",
         "action": "getTemperature",
-        "x": 730,
-        "y": 220,
+        "x": 350,
+        "y": 260,
         "wires": [
             [
                 "ce608fef.71667"
@@ -1805,8 +1805,8 @@
         "label": "<i class=\"fa fa-thermometer-half\"></i>",
         "format": "{{msg.payload}}°C",
         "layout": "row-center",
-        "x": 730,
-        "y": 280,
+        "x": 590,
+        "y": 260,
         "wires": []
     },
     {
@@ -1816,8 +1816,8 @@
         "connection": "1f1ed453.c0771c",
         "name": "Setze Schaltzustand",
         "action": "setSwitchState",
-        "x": 140,
-        "y": 460,
+        "x": 1140,
+        "y": 140,
         "wires": [
             []
         ]
@@ -1861,8 +1861,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 100,
-        "y": 160,
+        "x": 120,
+        "y": 220,
         "wires": [
             [
                 "f4d90a23.66246",
@@ -1891,8 +1891,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 100,
-        "y": 400,
+        "x": 940,
+        "y": 140,
         "wires": [
             [
                 "93a0820c.234438"
@@ -1909,8 +1909,8 @@
         "start": "",
         "inout": "out",
         "property": "payload",
-        "x": 90,
-        "y": 340,
+        "x": 790,
+        "y": 140,
         "wires": [
             [
                 "62373b0b.2af61c"
@@ -1924,8 +1924,8 @@
         "connection": "1f1ed453.c0771c",
         "name": "Lese Verbindungsstatus",
         "action": "getSwitchPresence",
-        "x": 1010,
-        "y": 220,
+        "x": 370,
+        "y": 320,
         "wires": [
             [
                 "d30839f5.2c3028"
@@ -1945,8 +1945,8 @@
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
-        "x": 970,
-        "y": 280,
+        "x": 570,
+        "y": 320,
         "wires": [
             []
         ]
@@ -1971,7 +1971,7 @@
         "to": "",
         "reg": false,
         "x": 370,
-        "y": 140,
+        "y": 160,
         "wires": [
             [
                 "169a6858.ea146"
@@ -2001,7 +2001,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 140,
-        "y": 140,
+        "y": 160,
         "wires": [
             [
                 "f4614d41.21dad"
@@ -2021,7 +2021,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "x": 570,
-        "y": 140,
+        "y": 160,
         "wires": []
     },
     {
