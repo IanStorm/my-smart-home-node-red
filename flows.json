@@ -14,6 +14,13 @@
         "info": ""
     },
     {
+        "id": "55f0feba.93e878",
+        "type": "tab",
+        "label": "Steckdosen -> Arbeitszimmer: Christian's PC",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "3966eecb.418ed2",
         "type": "tab",
         "label": "Steckdosen -> Schlafzimmer: Nachttische",
@@ -168,7 +175,7 @@
         "z": "",
         "name": "Schlafzimmer: Nachttische",
         "tab": "90f89393.1b6928",
-        "order": 1,
+        "order": 2,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -232,6 +239,17 @@
         "z": "",
         "name": "Infos",
         "tab": "f02945fb.a0f3c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "259c1fb2.ed8768",
+        "type": "ui_group",
+        "z": "",
+        "name": "Arbeitszimmer: Christian's PC",
+        "tab": "90f89393.1b6928",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -1207,6 +1225,13 @@
                 "pt": "global",
                 "to": "087610268064",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "plugs.workroom.christian.ain",
+                "pt": "global",
+                "to": "087610342740",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -1609,6 +1634,266 @@
         "type": "ui_template",
         "z": "3966eecb.418ed2",
         "group": "412fbf62.1e1d9",
+        "name": "Zeige Status",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"fa fa-link\" ng-class=\"icon\"></i>\n    <i ng-if=\"!msg.payload\" class=\"fa fa-chain-broken\" ng-class=\"icon\"></i>\n</div>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "templateScope": "local",
+        "x": 970,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1056a178.8d55df",
+        "type": "comment",
+        "z": "55f0feba.93e878",
+        "name": "GUI",
+        "info": "",
+        "x": 70,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "f4d90a23.66246",
+        "type": "fritz-outlet",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Schaltzustand",
+        "action": "getSwitchState",
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "f907c56.7cb1e38"
+            ]
+        ]
+    },
+    {
+        "id": "14eb8d04.f38b53",
+        "type": "fritz-outlet",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Leistung",
+        "action": "getSwitchPower",
+        "x": 420,
+        "y": 220,
+        "wires": [
+            [
+                "7695e665.49194"
+            ]
+        ]
+    },
+    {
+        "id": "f907c56.7cb1e38",
+        "type": "ui_switch",
+        "z": "55f0feba.93e878",
+        "name": "Interaktion Schaltzustand",
+        "label": "An? / Aus?",
+        "tooltip": "",
+        "group": "259c1fb2.ed8768",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "b085538.b4932b"
+            ]
+        ]
+    },
+    {
+        "id": "7695e665.49194",
+        "type": "ui_text",
+        "z": "55f0feba.93e878",
+        "group": "259c1fb2.ed8768",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "name": "Zeige Leistungsaufnahme",
+        "label": "<i class=\"fa fa-bolt\"></i>",
+        "format": "{{msg.payload}}W",
+        "layout": "row-center",
+        "x": 450,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "1264a5d7.e8a7c2",
+        "type": "fritz-thermostat",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Temperatur",
+        "action": "getTemperature",
+        "x": 730,
+        "y": 220,
+        "wires": [
+            [
+                "ce608fef.71667"
+            ]
+        ]
+    },
+    {
+        "id": "ce608fef.71667",
+        "type": "ui_text",
+        "z": "55f0feba.93e878",
+        "group": "259c1fb2.ed8768",
+        "order": 3,
+        "width": "2",
+        "height": "1",
+        "name": "Zeige Temperatur",
+        "label": "<i class=\"fa fa-thermometer-half\"></i>",
+        "format": "{{msg.payload}}°C",
+        "layout": "row-center",
+        "x": 730,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "93a0820c.234438",
+        "type": "fritz-outlet",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Setze Schaltzustand",
+        "action": "setSwitchState",
+        "x": 140,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "987ea400.3d1a88",
+        "type": "inject",
+        "z": "55f0feba.93e878",
+        "name": "Alle 2 Sekunden",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "fafa093a.ae0338"
+            ]
+        ]
+    },
+    {
+        "id": "fafa093a.ae0338",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Setze AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ain",
+                "pt": "msg",
+                "to": "plugs.workroom.christian.ain",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 100,
+        "y": 160,
+        "wires": [
+            [
+                "f4d90a23.66246",
+                "14eb8d04.f38b53",
+                "1264a5d7.e8a7c2",
+                "252589fb.40dd9e"
+            ]
+        ]
+    },
+    {
+        "id": "62373b0b.2af61c",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Setze AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ain",
+                "pt": "msg",
+                "to": "plugs.workroom.christian.ain",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 100,
+        "y": 400,
+        "wires": [
+            [
+                "93a0820c.234438"
+            ]
+        ]
+    },
+    {
+        "id": "b085538.b4932b",
+        "type": "rbe",
+        "z": "55f0feba.93e878",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 90,
+        "y": 340,
+        "wires": [
+            [
+                "62373b0b.2af61c"
+            ]
+        ]
+    },
+    {
+        "id": "252589fb.40dd9e",
+        "type": "fritz-outlet",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Verbindungsstatus",
+        "action": "getSwitchPresence",
+        "x": 1010,
+        "y": 220,
+        "wires": [
+            [
+                "d30839f5.2c3028"
+            ]
+        ]
+    },
+    {
+        "id": "d30839f5.2c3028",
+        "type": "ui_template",
+        "z": "55f0feba.93e878",
+        "group": "259c1fb2.ed8768",
         "name": "Zeige Status",
         "order": 1,
         "width": "2",
