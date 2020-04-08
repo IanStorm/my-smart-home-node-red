@@ -551,51 +551,8 @@
         "y": 100,
         "wires": [
             [
-                "4c4c5952.878748",
-                "130e8cd2.352b03"
+                "4c4c5952.878748"
             ]
-        ]
-    },
-    {
-        "id": "e184c83b.62583",
-        "type": "ui_chart",
-        "z": "f2cefa2e.a30a9",
-        "name": "Zeige Ø-CPU-Auslastungshistorie",
-        "group": "4314a159.01844",
-        "order": 2,
-        "width": "6",
-        "height": "8",
-        "label": "Ø Auslastungshistorie (in %)",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "dd HH:mm",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "100",
-        "removeOlder": "2",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "86400",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "useOldStyle": false,
-        "outputs": 1,
-        "x": 200,
-        "y": 460,
-        "wires": [
-            []
         ]
     },
     {
@@ -620,8 +577,8 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 490,
-        "y": 340,
+        "x": 970,
+        "y": 100,
         "wires": []
     },
     {
@@ -633,73 +590,11 @@
         "msgOverall": true,
         "msgArray": false,
         "msgTemp": false,
-        "x": 410,
-        "y": 160,
+        "x": 370,
+        "y": 100,
         "wires": [
             [
                 "b3fa4c76.81fad8"
-            ]
-        ]
-    },
-    {
-        "id": "130e8cd2.352b03",
-        "type": "join",
-        "z": "f2cefa2e.a30a9",
-        "name": "Führe zusammen",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "2",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 210,
-        "y": 340,
-        "wires": [
-            [
-                "4628832d.d18fdc"
-            ]
-        ]
-    },
-    {
-        "id": "4628832d.d18fdc",
-        "type": "change",
-        "z": "f2cefa2e.a30a9",
-        "name": "Formatiere für Graph",
-        "rules": [
-            {
-                "t": "set",
-                "p": "timestamp",
-                "pt": "msg",
-                "to": "payload.timestamp",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.cpu",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 200,
-        "y": 400,
-        "wires": [
-            [
-                "e184c83b.62583"
             ]
         ]
     },
@@ -715,11 +610,10 @@
         "round": true,
         "property": "payload",
         "name": "Runde",
-        "x": 350,
-        "y": 280,
+        "x": 750,
+        "y": 100,
         "wires": [
             [
-                "130e8cd2.352b03",
                 "a8f7f6b9.0d7018"
             ]
         ]
@@ -750,51 +644,8 @@
         "y": 100,
         "wires": [
             [
-                "26723a4b.b600fe",
-                "45b1eec3.f46f08"
+                "26723a4b.b600fe"
             ]
-        ]
-    },
-    {
-        "id": "313f1927.db74e6",
-        "type": "ui_chart",
-        "z": "8d01fa85.f01398",
-        "name": "Zeige RAM-Auslastungshistorie",
-        "group": "cbefc1f5.641d68",
-        "order": 2,
-        "width": "6",
-        "height": "8",
-        "label": "Auslastungshistorie (in %)",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "dd HH:mm",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "100",
-        "removeOlder": "2",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "86400",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "useOldStyle": false,
-        "outputs": 1,
-        "x": 210,
-        "y": 520,
-        "wires": [
-            []
         ]
     },
     {
@@ -819,71 +670,9 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 490,
-        "y": 400,
+        "x": 1130,
+        "y": 100,
         "wires": []
-    },
-    {
-        "id": "45b1eec3.f46f08",
-        "type": "join",
-        "z": "8d01fa85.f01398",
-        "name": "Führe zusammen",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "2",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 210,
-        "y": 400,
-        "wires": [
-            [
-                "65bac5e5.ddb4cc"
-            ]
-        ]
-    },
-    {
-        "id": "65bac5e5.ddb4cc",
-        "type": "change",
-        "z": "8d01fa85.f01398",
-        "name": "Formatiere für Graph",
-        "rules": [
-            {
-                "t": "set",
-                "p": "timestamp",
-                "pt": "msg",
-                "to": "payload.timestamp",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.memory",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 200,
-        "y": 460,
-        "wires": [
-            [
-                "313f1927.db74e6"
-            ]
-        ]
     },
     {
         "id": "7addc0f4.6e24c",
@@ -897,11 +686,10 @@
         "round": true,
         "property": "payload",
         "name": "Runde",
-        "x": 350,
-        "y": 340,
+        "x": 930,
+        "y": 100,
         "wires": [
             [
-                "45b1eec3.f46f08",
                 "219405f8.db5122"
             ]
         ]
@@ -911,8 +699,8 @@
         "type": "Memory",
         "z": "8d01fa85.f01398",
         "name": "Lese RAM-Daten",
-        "x": 390,
-        "y": 160,
+        "x": 350,
+        "y": 100,
         "wires": [
             [
                 "ff537a08.70113"
@@ -938,8 +726,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
-        "y": 280,
+        "x": 760,
+        "y": 100,
         "wires": [
             [
                 "7addc0f4.6e24c"
@@ -965,8 +753,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 380,
-        "y": 220,
+        "x": 600,
+        "y": 100,
         "wires": [
             [
                 "e449894b.3f9b78"
@@ -992,8 +780,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 380,
-        "y": 220,
+        "x": 560,
+        "y": 100,
         "wires": [
             [
                 "d9c24db1.8d944"
@@ -1026,51 +814,8 @@
         "y": 100,
         "wires": [
             [
-                "7cafeacf.373b6c",
-                "fa43d090.8149f8"
+                "7cafeacf.373b6c"
             ]
-        ]
-    },
-    {
-        "id": "d0c2a66.dfcded8",
-        "type": "ui_chart",
-        "z": "aaa51945.bd49a",
-        "name": "Zeige Speicher-Belegungshistorie",
-        "group": "c8fe58ce.64afd",
-        "order": 2,
-        "width": "6",
-        "height": "8",
-        "label": "Belegungshistorie (in %)",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "dd HH:mm",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "100",
-        "removeOlder": "2",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "604800",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "useOldStyle": false,
-        "outputs": 1,
-        "x": 200,
-        "y": 520,
-        "wires": [
-            []
         ]
     },
     {
@@ -1095,71 +840,9 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 490,
-        "y": 400,
+        "x": 1210,
+        "y": 100,
         "wires": []
-    },
-    {
-        "id": "fa43d090.8149f8",
-        "type": "join",
-        "z": "aaa51945.bd49a",
-        "name": "Führe zusammen",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "2",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 210,
-        "y": 400,
-        "wires": [
-            [
-                "abb5b69f.ae8a08"
-            ]
-        ]
-    },
-    {
-        "id": "abb5b69f.ae8a08",
-        "type": "change",
-        "z": "aaa51945.bd49a",
-        "name": "Formatiere für Graph",
-        "rules": [
-            {
-                "t": "set",
-                "p": "timestamp",
-                "pt": "msg",
-                "to": "payload.timestamp",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.storage",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 200,
-        "y": 460,
-        "wires": [
-            [
-                "d0c2a66.dfcded8"
-            ]
-        ]
     },
     {
         "id": "7ae2abf5.6a76b4",
@@ -1173,11 +856,10 @@
         "round": true,
         "property": "payload",
         "name": "Runde",
-        "x": 350,
-        "y": 340,
+        "x": 1010,
+        "y": 100,
         "wires": [
             [
-                "fa43d090.8149f8",
                 "be8278db.aadba8"
             ]
         ]
@@ -1201,8 +883,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 380,
-        "y": 220,
+        "x": 580,
+        "y": 100,
         "wires": [
             [
                 "7464990a.fccae8"
@@ -1214,8 +896,8 @@
         "type": "Drives",
         "z": "aaa51945.bd49a",
         "name": "Lese Speicher-Daten",
-        "x": 400,
-        "y": 160,
+        "x": 360,
+        "y": 100,
         "wires": [
             [
                 "cad3d0b3.5751f8"
@@ -1314,8 +996,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 430,
-        "y": 280,
+        "x": 810,
+        "y": 100,
         "wires": [
             [
                 "7ae2abf5.6a76b4"
