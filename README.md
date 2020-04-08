@@ -17,14 +17,14 @@ $	docker run -i -t --env-file ./credentials/docker-env.list -p 1880:1880 ianstor
 
 
 ## How to develop, i.e. how to change the flows? 👨‍💻 👩‍💻
+
+Make sure you have installed *Visual Studio Code*.
+
 1. Clone this repository.
 2. `cd` inside the cloned folder.
 3. In `Dockerfile` set `RUN npm install` (instead of `RUN npm install --only=production`).
 4. In `settings.js` set `disableEditor: false` (instead of `true`).
-5. Build the Docker image:
-```
-$	docker build -t my-smart-home-node-red .
-```
+5. Build the Docker image: Run the vscode task `build`.
 6. Ensure `./credentials/docker-env.list` exists. See ["a word on docker-env.list"](#-a-word-on-docker-env.list-📝).
 7. Start a Docker instance:
 	* On Windows:
