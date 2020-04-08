@@ -939,23 +939,9 @@
             },
             {
                 "t": "set",
-                "p": "plugs.livingKitchenArea.tvStand.ain",
-                "pt": "global",
-                "to": "087610300838",
-                "tot": "str"
-            },
-            {
-                "t": "set",
                 "p": "plugs.workroom.christian.ain",
                 "pt": "global",
                 "to": "087610342740",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "plugs.workroom.sandra.ain",
-                "pt": "global",
-                "to": "087610465315",
                 "tot": "str"
             }
         ],
