@@ -338,10 +338,10 @@
         "name": "Lese Schaltzustand",
         "action": "getSwitchState",
         "x": 350,
-        "y": 140,
+        "y": 320,
         "wires": [
             [
-                "43a6c393.496924"
+                "bc8f111a.c229c"
             ]
         ]
     },
@@ -353,7 +353,7 @@
         "name": "Lese Leistung",
         "action": "getSwitchPower",
         "x": 340,
-        "y": 200,
+        "y": 260,
         "wires": [
             [
                 "feaba1de.0c0db"
@@ -373,7 +373,7 @@
         "height": 0,
         "passthru": true,
         "decouple": "false",
-        "topic": "",
+        "topic": "switch-plug",
         "style": "",
         "onvalue": "true",
         "onvalueType": "bool",
@@ -383,11 +383,11 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 610,
-        "y": 140,
+        "x": 710,
+        "y": 320,
         "wires": [
             [
-                "d5b1b535.af6bd8"
+                "1aa50b25.da92e5"
             ]
         ]
     },
@@ -403,8 +403,8 @@
         "label": "<i class=\"fa fa-bolt\"></i>",
         "format": "{{msg.payload}}W",
         "layout": "row-center",
-        "x": 610,
-        "y": 200,
+        "x": 710,
+        "y": 260,
         "wires": []
     },
     {
@@ -415,7 +415,7 @@
         "name": "Lese Temperatur",
         "action": "getTemperature",
         "x": 350,
-        "y": 260,
+        "y": 200,
         "wires": [
             [
                 "3dbe18cc.ea22d8"
@@ -434,8 +434,8 @@
         "label": "<i class=\"fa fa-thermometer-half\"></i>",
         "format": "{{msg.payload}}°C",
         "layout": "row-center",
-        "x": 590,
-        "y": 260,
+        "x": 690,
+        "y": 200,
         "wires": []
     },
     {
@@ -445,8 +445,8 @@
         "connection": "1f1ed453.c0771c",
         "name": "Setze Schaltzustand",
         "action": "setSwitchState",
-        "x": 1140,
-        "y": 140,
+        "x": 1160,
+        "y": 320,
         "wires": [
             []
         ]
@@ -455,15 +455,15 @@
         "id": "cb33e033.a147a",
         "type": "inject",
         "z": "3966eecb.418ed2",
-        "name": "Alle 2 Sekunden",
+        "name": "Alle 10s",
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "repeat": "2",
+        "repeat": "10",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 130,
+        "x": 100,
         "y": 100,
         "wires": [
             [
@@ -521,28 +521,10 @@
         "to": "",
         "reg": false,
         "x": 940,
-        "y": 140,
+        "y": 320,
         "wires": [
             [
                 "feae0b0c.f53b3"
-            ]
-        ]
-    },
-    {
-        "id": "d5b1b535.af6bd8",
-        "type": "rbe",
-        "z": "3966eecb.418ed2",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "property": "payload",
-        "x": 790,
-        "y": 140,
-        "wires": [
-            [
-                "4f4031dc.22c608"
             ]
         ]
     },
@@ -554,7 +536,7 @@
         "name": "Lese Verbindungsstatus",
         "action": "getSwitchPresence",
         "x": 370,
-        "y": 320,
+        "y": 140,
         "wires": [
             [
                 "60283bd7.2a56cc"
@@ -575,7 +557,7 @@
         "id": "7148cec5.95441",
         "type": "inject",
         "z": "f2cefa2e.a30a9",
-        "name": "Alle 2 Sekunden",
+        "name": "Alle 2s",
         "topic": "timestamp",
         "payload": "",
         "payloadType": "date",
@@ -583,7 +565,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 130,
+        "x": 100,
         "y": 100,
         "wires": [
             [
@@ -613,7 +595,7 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 970,
+        "x": 890,
         "y": 100,
         "wires": []
     },
@@ -626,7 +608,7 @@
         "msgOverall": true,
         "msgArray": false,
         "msgTemp": false,
-        "x": 370,
+        "x": 310,
         "y": 100,
         "wires": [
             [
@@ -646,7 +628,7 @@
         "round": true,
         "property": "payload",
         "name": "Runde",
-        "x": 750,
+        "x": 690,
         "y": 100,
         "wires": [
             [
@@ -668,7 +650,7 @@
         "id": "3bf420ed.161318",
         "type": "inject",
         "z": "8d01fa85.f01398",
-        "name": "Alle 2 Sekunden",
+        "name": "Alle 2s",
         "topic": "timestamp",
         "payload": "",
         "payloadType": "date",
@@ -676,7 +658,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 130,
+        "x": 100,
         "y": 100,
         "wires": [
             [
@@ -706,7 +688,7 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 1130,
+        "x": 1070,
         "y": 100,
         "wires": []
     },
@@ -722,7 +704,7 @@
         "round": true,
         "property": "payload",
         "name": "Runde",
-        "x": 930,
+        "x": 870,
         "y": 100,
         "wires": [
             [
@@ -735,7 +717,7 @@
         "type": "Memory",
         "z": "8d01fa85.f01398",
         "name": "Lese RAM-Daten",
-        "x": 350,
+        "x": 290,
         "y": 100,
         "wires": [
             [
@@ -762,7 +744,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
+        "x": 700,
         "y": 100,
         "wires": [
             [
@@ -789,7 +771,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 600,
+        "x": 540,
         "y": 100,
         "wires": [
             [
@@ -816,7 +798,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 560,
+        "x": 500,
         "y": 100,
         "wires": [
             [
@@ -838,7 +820,7 @@
         "id": "42f30dd8.515014",
         "type": "inject",
         "z": "aaa51945.bd49a",
-        "name": "Alle 10 Minuten",
+        "name": "Alle 10s",
         "topic": "timestamp",
         "payload": "",
         "payloadType": "date",
@@ -846,7 +828,7 @@
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
-        "x": 130,
+        "x": 100,
         "y": 100,
         "wires": [
             [
@@ -876,7 +858,7 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 850,
+        "x": 790,
         "y": 280,
         "wires": []
     },
@@ -892,7 +874,7 @@
         "round": true,
         "property": "payload",
         "name": "Skaliere & runde",
-        "x": 580,
+        "x": 520,
         "y": 280,
         "wires": [
             [
@@ -919,7 +901,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
+        "x": 520,
         "y": 100,
         "wires": [
             [
@@ -932,7 +914,7 @@
         "type": "Drives",
         "z": "aaa51945.bd49a",
         "name": "Lese Speicher-Daten",
-        "x": 360,
+        "x": 300,
         "y": 100,
         "wires": [
             [
@@ -1369,8 +1351,8 @@
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
-        "x": 570,
-        "y": 320,
+        "x": 670,
+        "y": 140,
         "wires": [
             []
         ]
@@ -1384,256 +1366,6 @@
         "x": 70,
         "y": 40,
         "wires": []
-    },
-    {
-        "id": "f4d90a23.66246",
-        "type": "fritz-outlet",
-        "z": "55f0feba.93e878",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Schaltzustand",
-        "action": "getSwitchState",
-        "x": 350,
-        "y": 140,
-        "wires": [
-            [
-                "f907c56.7cb1e38"
-            ]
-        ]
-    },
-    {
-        "id": "14eb8d04.f38b53",
-        "type": "fritz-outlet",
-        "z": "55f0feba.93e878",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Leistung",
-        "action": "getSwitchPower",
-        "x": 340,
-        "y": 200,
-        "wires": [
-            [
-                "7695e665.49194"
-            ]
-        ]
-    },
-    {
-        "id": "f907c56.7cb1e38",
-        "type": "ui_switch",
-        "z": "55f0feba.93e878",
-        "name": "Interaktion Schaltzustand",
-        "label": "<i class=\"fa fa-plug\"></i> An? / Aus?",
-        "tooltip": "",
-        "group": "259c1fb2.ed8768",
-        "order": 5,
-        "width": "0",
-        "height": "0",
-        "passthru": true,
-        "decouple": "false",
-        "topic": "",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "x": 610,
-        "y": 140,
-        "wires": [
-            [
-                "b085538.b4932b"
-            ]
-        ]
-    },
-    {
-        "id": "7695e665.49194",
-        "type": "ui_text",
-        "z": "55f0feba.93e878",
-        "group": "259c1fb2.ed8768",
-        "order": 2,
-        "width": 2,
-        "height": 1,
-        "name": "Zeige Leistungsaufnahme",
-        "label": "<i class=\"fa fa-bolt\"></i>",
-        "format": "{{msg.payload}}W",
-        "layout": "row-center",
-        "x": 610,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "1264a5d7.e8a7c2",
-        "type": "fritz-thermostat",
-        "z": "55f0feba.93e878",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Temperatur",
-        "action": "getTemperature",
-        "x": 350,
-        "y": 260,
-        "wires": [
-            [
-                "ce608fef.71667"
-            ]
-        ]
-    },
-    {
-        "id": "ce608fef.71667",
-        "type": "ui_text",
-        "z": "55f0feba.93e878",
-        "group": "259c1fb2.ed8768",
-        "order": 3,
-        "width": 2,
-        "height": 1,
-        "name": "Zeige Temperatur",
-        "label": "<i class=\"fa fa-thermometer-half\"></i>",
-        "format": "{{msg.payload}}°C",
-        "layout": "row-center",
-        "x": 590,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "93a0820c.234438",
-        "type": "fritz-outlet",
-        "z": "55f0feba.93e878",
-        "connection": "1f1ed453.c0771c",
-        "name": "Setze Schaltzustand",
-        "action": "setSwitchState",
-        "x": 1140,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "987ea400.3d1a88",
-        "type": "inject",
-        "z": "55f0feba.93e878",
-        "name": "Alle 2 Sekunden",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "2",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 130,
-        "y": 100,
-        "wires": [
-            [
-                "fafa093a.ae0338"
-            ]
-        ]
-    },
-    {
-        "id": "fafa093a.ae0338",
-        "type": "change",
-        "z": "55f0feba.93e878",
-        "name": "Setze AIN",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ain",
-                "pt": "msg",
-                "to": "plugs.workroom.christian.ain",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 120,
-        "y": 220,
-        "wires": [
-            [
-                "f4d90a23.66246",
-                "14eb8d04.f38b53",
-                "1264a5d7.e8a7c2",
-                "252589fb.40dd9e"
-            ]
-        ]
-    },
-    {
-        "id": "62373b0b.2af61c",
-        "type": "change",
-        "z": "55f0feba.93e878",
-        "name": "Setze AIN",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ain",
-                "pt": "msg",
-                "to": "plugs.workroom.christian.ain",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 940,
-        "y": 140,
-        "wires": [
-            [
-                "93a0820c.234438"
-            ]
-        ]
-    },
-    {
-        "id": "b085538.b4932b",
-        "type": "rbe",
-        "z": "55f0feba.93e878",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "property": "payload",
-        "x": 790,
-        "y": 140,
-        "wires": [
-            [
-                "62373b0b.2af61c"
-            ]
-        ]
-    },
-    {
-        "id": "252589fb.40dd9e",
-        "type": "fritz-outlet",
-        "z": "55f0feba.93e878",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Verbindungsstatus",
-        "action": "getSwitchPresence",
-        "x": 370,
-        "y": 320,
-        "wires": [
-            [
-                "d30839f5.2c3028"
-            ]
-        ]
-    },
-    {
-        "id": "d30839f5.2c3028",
-        "type": "ui_template",
-        "z": "55f0feba.93e878",
-        "group": "259c1fb2.ed8768",
-        "name": "Zeige Status",
-        "order": 1,
-        "width": 2,
-        "height": 1,
-        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"fa fa-link\" ng-class=\"icon\"></i>\n    <i ng-if=\"!msg.payload\" class=\"fa fa-chain-broken\" ng-class=\"icon\"></i>\n</div>",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "templateScope": "local",
-        "x": 570,
-        "y": 320,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "f4614d41.21dad",
@@ -1654,7 +1386,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 590,
+        "x": 510,
         "y": 160,
         "wires": [
             [
@@ -1676,7 +1408,7 @@
         "id": "cd0b25c7.898b2",
         "type": "inject",
         "z": "311aacb9.34a24c",
-        "name": "Alle halbe Sekunde",
+        "name": "Alle 0,5s",
         "topic": "time",
         "payload": "",
         "payloadType": "date",
@@ -1684,7 +1416,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 140,
+        "x": 100,
         "y": 160,
         "wires": [
             [
@@ -1704,7 +1436,7 @@
         "label": "<i class=\"fa fa-clock-o\"></i>",
         "format": "{{msg.payload}}",
         "layout": "col-center",
-        "x": 790,
+        "x": 710,
         "y": 160,
         "wires": []
     },
@@ -1727,7 +1459,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 590,
+        "x": 510,
         "y": 100,
         "wires": [
             [
@@ -1739,7 +1471,7 @@
         "id": "d5b3d67.c5c43a8",
         "type": "inject",
         "z": "311aacb9.34a24c",
-        "name": "Alle halbe Sekunde",
+        "name": "Alle 0,5s",
         "topic": "date",
         "payload": "",
         "payloadType": "date",
@@ -1747,7 +1479,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 140,
+        "x": 100,
         "y": 100,
         "wires": [
             [
@@ -1767,7 +1499,7 @@
         "label": "<i class=\"fa fa-calendar\"></i>",
         "format": "{{msg.payload}}",
         "layout": "col-center",
-        "x": 790,
+        "x": 710,
         "y": 100,
         "wires": []
     },
@@ -1779,7 +1511,7 @@
         "func": "// see https://usefulangle.com/post/30/javascript-get-date-time-with-offset-hours-minutes\nvar offsetInMin = new Date().getTimezoneOffset();\nvar hrsOffset = Math.abs(offsetInMin/60);\nvar minOffset = Math.abs(offsetInMin%60);\nvar hhOffset = (\"00\" + hrsOffset).slice(-2);\nvar mmOffset = (\"00\" + minOffset).slice(-2);\n\nvar offsetIso8601 = undefined;\nif (offsetInMin < 0)\n    offsetIso8601 = \"+\" + hhOffset + mmOffset;\nelse if (offsetInMin > 0)\n    offsetIso8601 = \"-\" + hhOffset + mmOffset;\nelse if (offsetInMin === 0)\n    offsetIso8601 = \"Z\";\n\nmsg.timezone = offsetIso8601;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 370,
+        "x": 290,
         "y": 160,
         "wires": [
             [
@@ -1807,7 +1539,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 580,
+        "x": 520,
         "y": 180,
         "wires": [
             [
@@ -1827,7 +1559,7 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 570,
+        "x": 510,
         "y": 140,
         "wires": [
             [
@@ -1854,7 +1586,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 590,
+        "x": 530,
         "y": 240,
         "wires": [
             [
@@ -1873,256 +1605,6 @@
         "wires": []
     },
     {
-        "id": "18225420.2d635c",
-        "type": "fritz-outlet",
-        "z": "3860d3b1.ccd2d4",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Schaltzustand",
-        "action": "getSwitchState",
-        "x": 350,
-        "y": 140,
-        "wires": [
-            [
-                "744e38ac.0600c"
-            ]
-        ]
-    },
-    {
-        "id": "5f3e33b1.1d8394",
-        "type": "fritz-outlet",
-        "z": "3860d3b1.ccd2d4",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Leistung",
-        "action": "getSwitchPower",
-        "x": 340,
-        "y": 200,
-        "wires": [
-            [
-                "eee4e596.18dd48"
-            ]
-        ]
-    },
-    {
-        "id": "744e38ac.0600c",
-        "type": "ui_switch",
-        "z": "3860d3b1.ccd2d4",
-        "name": "Interaktion Schaltzustand",
-        "label": "<i class=\"fa fa-plug\"></i> An? / Aus?",
-        "tooltip": "",
-        "group": "e7215ad9.54bc5",
-        "order": 4,
-        "width": "0",
-        "height": "0",
-        "passthru": true,
-        "decouple": "false",
-        "topic": "",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "x": 610,
-        "y": 140,
-        "wires": [
-            [
-                "a2168b97.c0b858"
-            ]
-        ]
-    },
-    {
-        "id": "eee4e596.18dd48",
-        "type": "ui_text",
-        "z": "3860d3b1.ccd2d4",
-        "group": "e7215ad9.54bc5",
-        "order": 2,
-        "width": 2,
-        "height": 1,
-        "name": "Zeige Leistungsaufnahme",
-        "label": "<i class=\"fa fa-bolt\"></i>",
-        "format": "{{msg.payload}}W",
-        "layout": "row-center",
-        "x": 610,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "e2fc0622.675868",
-        "type": "fritz-thermostat",
-        "z": "3860d3b1.ccd2d4",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Temperatur",
-        "action": "getTemperature",
-        "x": 350,
-        "y": 260,
-        "wires": [
-            [
-                "ea12d169.9e5148"
-            ]
-        ]
-    },
-    {
-        "id": "ea12d169.9e5148",
-        "type": "ui_text",
-        "z": "3860d3b1.ccd2d4",
-        "group": "e7215ad9.54bc5",
-        "order": 3,
-        "width": 2,
-        "height": 1,
-        "name": "Zeige Temperatur",
-        "label": "<i class=\"fa fa-thermometer-half\"></i>",
-        "format": "{{msg.payload}}°C",
-        "layout": "row-center",
-        "x": 590,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "371ce0ae.ea863",
-        "type": "fritz-outlet",
-        "z": "3860d3b1.ccd2d4",
-        "connection": "1f1ed453.c0771c",
-        "name": "Setze Schaltzustand",
-        "action": "setSwitchState",
-        "x": 1140,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "86be59ad.630ff8",
-        "type": "inject",
-        "z": "3860d3b1.ccd2d4",
-        "name": "Alle 2 Sekunden",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "2",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 130,
-        "y": 100,
-        "wires": [
-            [
-                "c5393ee.ed5274"
-            ]
-        ]
-    },
-    {
-        "id": "c5393ee.ed5274",
-        "type": "change",
-        "z": "3860d3b1.ccd2d4",
-        "name": "Setze AIN",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ain",
-                "pt": "msg",
-                "to": "plugs.workroom.sandra.ain",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 120,
-        "y": 220,
-        "wires": [
-            [
-                "18225420.2d635c",
-                "5f3e33b1.1d8394",
-                "e2fc0622.675868",
-                "f6fa427b.33b9e8"
-            ]
-        ]
-    },
-    {
-        "id": "b8165415.bd3fd",
-        "type": "change",
-        "z": "3860d3b1.ccd2d4",
-        "name": "Setze AIN",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ain",
-                "pt": "msg",
-                "to": "plugs.workroom.sandra.ain",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 940,
-        "y": 140,
-        "wires": [
-            [
-                "371ce0ae.ea863"
-            ]
-        ]
-    },
-    {
-        "id": "a2168b97.c0b858",
-        "type": "rbe",
-        "z": "3860d3b1.ccd2d4",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "property": "payload",
-        "x": 790,
-        "y": 140,
-        "wires": [
-            [
-                "b8165415.bd3fd"
-            ]
-        ]
-    },
-    {
-        "id": "f6fa427b.33b9e8",
-        "type": "fritz-outlet",
-        "z": "3860d3b1.ccd2d4",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Verbindungsstatus",
-        "action": "getSwitchPresence",
-        "x": 370,
-        "y": 320,
-        "wires": [
-            [
-                "98648351.ef75a"
-            ]
-        ]
-    },
-    {
-        "id": "98648351.ef75a",
-        "type": "ui_template",
-        "z": "3860d3b1.ccd2d4",
-        "group": "e7215ad9.54bc5",
-        "name": "Zeige Status",
-        "order": 1,
-        "width": 2,
-        "height": 1,
-        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"fa fa-link\" ng-class=\"icon\"></i>\n    <i ng-if=\"!msg.payload\" class=\"fa fa-chain-broken\" ng-class=\"icon\"></i>\n</div>",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "templateScope": "local",
-        "x": 570,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "e4cf9be4.bb8218",
         "type": "comment",
         "z": "a4694e56.1df578",
@@ -2133,49 +1615,107 @@
         "wires": []
     },
     {
-        "id": "ca8c2f63.abbf9",
+        "id": "1aa50b25.da92e5",
+        "type": "trigger",
+        "z": "3966eecb.418ed2",
+        "op1": "",
+        "op2": "",
+        "op1type": "pay",
+        "op2type": "nul",
+        "duration": "5",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "name": "5s Cooldown",
+        "x": 750,
+        "y": 360,
+        "wires": [
+            [
+                "f7a13f3b.4af8c8"
+            ]
+        ]
+    },
+    {
+        "id": "bc8f111a.c229c",
+        "type": "rbe",
+        "z": "3966eecb.418ed2",
+        "name": "Nur bei Änderung",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 470,
+        "y": 360,
+        "wires": [
+            [
+                "43a6c393.496924"
+            ]
+        ]
+    },
+    {
+        "id": "f7a13f3b.4af8c8",
+        "type": "rbe",
+        "z": "3966eecb.418ed2",
+        "name": "Nur bei Änderung",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 830,
+        "y": 400,
+        "wires": [
+            [
+                "4f4031dc.22c608"
+            ]
+        ]
+    },
+    {
+        "id": "116fadf6.1b8b72",
         "type": "fritz-outlet",
         "z": "a4694e56.1df578",
         "connection": "1f1ed453.c0771c",
         "name": "Lese Schaltzustand",
         "action": "getSwitchState",
         "x": 350,
-        "y": 140,
+        "y": 320,
         "wires": [
             [
-                "62c237d6.75f958"
+                "bef48f3b.a3e598"
             ]
         ]
     },
     {
-        "id": "ebc52e9a.63bcf",
+        "id": "17d860df.3298a7",
         "type": "fritz-outlet",
         "z": "a4694e56.1df578",
         "connection": "1f1ed453.c0771c",
         "name": "Lese Leistung",
         "action": "getSwitchPower",
         "x": 340,
-        "y": 200,
+        "y": 260,
         "wires": [
             [
-                "a807fa4c.78835"
+                "75915073.0b853"
             ]
         ]
     },
     {
-        "id": "62c237d6.75f958",
+        "id": "fdea2c98.01c328",
         "type": "ui_switch",
         "z": "a4694e56.1df578",
         "name": "Interaktion Schaltzustand",
         "label": "<i class=\"fa fa-plug\"></i> An? / Aus?",
         "tooltip": "",
         "group": "4587520c.baf024",
-        "order": 5,
-        "width": "0",
-        "height": "0",
+        "order": 4,
+        "width": 0,
+        "height": 0,
         "passthru": true,
         "decouple": "false",
-        "topic": "",
+        "topic": "switch-plug",
         "style": "",
         "onvalue": "true",
         "onvalueType": "bool",
@@ -2185,16 +1725,16 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 610,
-        "y": 140,
+        "x": 710,
+        "y": 320,
         "wires": [
             [
-                "d8e10283.42b93"
+                "ed8dee41.e66038"
             ]
         ]
     },
     {
-        "id": "a807fa4c.78835",
+        "id": "75915073.0b853",
         "type": "ui_text",
         "z": "a4694e56.1df578",
         "group": "4587520c.baf024",
@@ -2205,27 +1745,27 @@
         "label": "<i class=\"fa fa-bolt\"></i>",
         "format": "{{msg.payload}}W",
         "layout": "row-center",
-        "x": 610,
-        "y": 200,
+        "x": 710,
+        "y": 260,
         "wires": []
     },
     {
-        "id": "a80bf0af.af53a8",
+        "id": "36c21a45.6308c6",
         "type": "fritz-thermostat",
         "z": "a4694e56.1df578",
         "connection": "1f1ed453.c0771c",
         "name": "Lese Temperatur",
         "action": "getTemperature",
         "x": 350,
-        "y": 260,
+        "y": 200,
         "wires": [
             [
-                "1a9a4e52.71f1ba"
+                "e81a47a3.0c8c8"
             ]
         ]
     },
     {
-        "id": "1a9a4e52.71f1ba",
+        "id": "e81a47a3.0c8c8",
         "type": "ui_text",
         "z": "a4694e56.1df578",
         "group": "4587520c.baf024",
@@ -2236,45 +1776,45 @@
         "label": "<i class=\"fa fa-thermometer-half\"></i>",
         "format": "{{msg.payload}}°C",
         "layout": "row-center",
-        "x": 590,
-        "y": 260,
+        "x": 690,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "26acbbdc.a7b14c",
+        "id": "5e5722b2.624fac",
         "type": "fritz-outlet",
         "z": "a4694e56.1df578",
         "connection": "1f1ed453.c0771c",
         "name": "Setze Schaltzustand",
         "action": "setSwitchState",
-        "x": 1140,
-        "y": 140,
+        "x": 1160,
+        "y": 320,
         "wires": [
             []
         ]
     },
     {
-        "id": "73ca312d.d4dbd",
+        "id": "64c42e92.dc86c",
         "type": "inject",
         "z": "a4694e56.1df578",
-        "name": "Alle 2 Sekunden",
+        "name": "Alle 10s",
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "repeat": "2",
+        "repeat": "10",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 130,
+        "x": 100,
         "y": 100,
         "wires": [
             [
-                "3e67a819.3df288"
+                "627d5f46.8c0648"
             ]
         ]
     },
     {
-        "id": "3e67a819.3df288",
+        "id": "627d5f46.8c0648",
         "type": "change",
         "z": "a4694e56.1df578",
         "name": "Setze AIN",
@@ -2296,15 +1836,15 @@
         "y": 220,
         "wires": [
             [
-                "ca8c2f63.abbf9",
-                "ebc52e9a.63bcf",
-                "a80bf0af.af53a8",
-                "b76dbc7d.71057"
+                "116fadf6.1b8b72",
+                "17d860df.3298a7",
+                "36c21a45.6308c6",
+                "abced2ab.afd21"
             ]
         ]
     },
     {
-        "id": "2294f201.ee1be6",
+        "id": "b359942d.2c14d",
         "type": "change",
         "z": "a4694e56.1df578",
         "name": "Setze AIN",
@@ -2323,48 +1863,30 @@
         "to": "",
         "reg": false,
         "x": 940,
-        "y": 140,
+        "y": 320,
         "wires": [
             [
-                "26acbbdc.a7b14c"
+                "5e5722b2.624fac"
             ]
         ]
     },
     {
-        "id": "d8e10283.42b93",
-        "type": "rbe",
-        "z": "a4694e56.1df578",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "property": "payload",
-        "x": 790,
-        "y": 140,
-        "wires": [
-            [
-                "2294f201.ee1be6"
-            ]
-        ]
-    },
-    {
-        "id": "b76dbc7d.71057",
+        "id": "abced2ab.afd21",
         "type": "fritz-outlet",
         "z": "a4694e56.1df578",
         "connection": "1f1ed453.c0771c",
         "name": "Lese Verbindungsstatus",
         "action": "getSwitchPresence",
         "x": 370,
-        "y": 320,
+        "y": 140,
         "wires": [
             [
-                "2036ca7f.dce696"
+                "d0d5d8b6.5519a8"
             ]
         ]
     },
     {
-        "id": "2036ca7f.dce696",
+        "id": "d0d5d8b6.5519a8",
         "type": "ui_template",
         "z": "a4694e56.1df578",
         "group": "4587520c.baf024",
@@ -2376,10 +1898,648 @@
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
-        "x": 570,
+        "x": 670,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ed8dee41.e66038",
+        "type": "trigger",
+        "z": "a4694e56.1df578",
+        "op1": "",
+        "op2": "",
+        "op1type": "pay",
+        "op2type": "nul",
+        "duration": "5",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "name": "5s Cooldown",
+        "x": 750,
+        "y": 360,
+        "wires": [
+            [
+                "afc35f12.1c3fd"
+            ]
+        ]
+    },
+    {
+        "id": "bef48f3b.a3e598",
+        "type": "rbe",
+        "z": "a4694e56.1df578",
+        "name": "Nur bei Änderung",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 470,
+        "y": 360,
+        "wires": [
+            [
+                "fdea2c98.01c328"
+            ]
+        ]
+    },
+    {
+        "id": "afc35f12.1c3fd",
+        "type": "rbe",
+        "z": "a4694e56.1df578",
+        "name": "Nur bei Änderung",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 830,
+        "y": 400,
+        "wires": [
+            [
+                "b359942d.2c14d"
+            ]
+        ]
+    },
+    {
+        "id": "3eda18f1.d83e6",
+        "type": "fritz-outlet",
+        "z": "3860d3b1.ccd2d4",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Schaltzustand",
+        "action": "getSwitchState",
+        "x": 350,
+        "y": 320,
+        "wires": [
+            [
+                "237651ea.0db8de"
+            ]
+        ]
+    },
+    {
+        "id": "3ad0a5ad.63c1ca",
+        "type": "fritz-outlet",
+        "z": "3860d3b1.ccd2d4",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Leistung",
+        "action": "getSwitchPower",
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "5ddd521f.a48464"
+            ]
+        ]
+    },
+    {
+        "id": "737d1bbd.5abe3c",
+        "type": "ui_switch",
+        "z": "3860d3b1.ccd2d4",
+        "name": "Interaktion Schaltzustand",
+        "label": "<i class=\"fa fa-plug\"></i> An? / Aus?",
+        "tooltip": "",
+        "group": "e7215ad9.54bc5",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "switch-plug",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 710,
+        "y": 320,
+        "wires": [
+            [
+                "fe2b65b2.f297d8"
+            ]
+        ]
+    },
+    {
+        "id": "5ddd521f.a48464",
+        "type": "ui_text",
+        "z": "3860d3b1.ccd2d4",
+        "group": "e7215ad9.54bc5",
+        "order": 2,
+        "width": 2,
+        "height": 1,
+        "name": "Zeige Leistungsaufnahme",
+        "label": "<i class=\"fa fa-bolt\"></i>",
+        "format": "{{msg.payload}}W",
+        "layout": "row-center",
+        "x": 710,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d0789e6b.af059",
+        "type": "fritz-thermostat",
+        "z": "3860d3b1.ccd2d4",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Temperatur",
+        "action": "getTemperature",
+        "x": 350,
+        "y": 200,
+        "wires": [
+            [
+                "bfd57593.8c6e2"
+            ]
+        ]
+    },
+    {
+        "id": "bfd57593.8c6e2",
+        "type": "ui_text",
+        "z": "3860d3b1.ccd2d4",
+        "group": "e7215ad9.54bc5",
+        "order": 3,
+        "width": 2,
+        "height": 1,
+        "name": "Zeige Temperatur",
+        "label": "<i class=\"fa fa-thermometer-half\"></i>",
+        "format": "{{msg.payload}}°C",
+        "layout": "row-center",
+        "x": 690,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "37b30376.6ff1ac",
+        "type": "fritz-outlet",
+        "z": "3860d3b1.ccd2d4",
+        "connection": "1f1ed453.c0771c",
+        "name": "Setze Schaltzustand",
+        "action": "setSwitchState",
+        "x": 1160,
         "y": 320,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "4c6cfb65.4d0d54",
+        "type": "inject",
+        "z": "3860d3b1.ccd2d4",
+        "name": "Alle 10s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 100,
+        "wires": [
+            [
+                "ce57d3c4.60d1e8"
+            ]
+        ]
+    },
+    {
+        "id": "ce57d3c4.60d1e8",
+        "type": "change",
+        "z": "3860d3b1.ccd2d4",
+        "name": "Setze AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ain",
+                "pt": "msg",
+                "to": "plugs.workroom.sandra.ain",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 120,
+        "y": 220,
+        "wires": [
+            [
+                "3eda18f1.d83e6",
+                "3ad0a5ad.63c1ca",
+                "d0789e6b.af059",
+                "81ce4a55.d85448"
+            ]
+        ]
+    },
+    {
+        "id": "31d893bc.af5a2c",
+        "type": "change",
+        "z": "3860d3b1.ccd2d4",
+        "name": "Setze AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ain",
+                "pt": "msg",
+                "to": "plugs.workroom.sandra.ain",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 320,
+        "wires": [
+            [
+                "37b30376.6ff1ac"
+            ]
+        ]
+    },
+    {
+        "id": "81ce4a55.d85448",
+        "type": "fritz-outlet",
+        "z": "3860d3b1.ccd2d4",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Verbindungsstatus",
+        "action": "getSwitchPresence",
+        "x": 370,
+        "y": 140,
+        "wires": [
+            [
+                "2a3be566.bc1b5a"
+            ]
+        ]
+    },
+    {
+        "id": "2a3be566.bc1b5a",
+        "type": "ui_template",
+        "z": "3860d3b1.ccd2d4",
+        "group": "e7215ad9.54bc5",
+        "name": "Zeige Status",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"fa fa-link\" ng-class=\"icon\"></i>\n    <i ng-if=\"!msg.payload\" class=\"fa fa-chain-broken\" ng-class=\"icon\"></i>\n</div>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "templateScope": "local",
+        "x": 670,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fe2b65b2.f297d8",
+        "type": "trigger",
+        "z": "3860d3b1.ccd2d4",
+        "op1": "",
+        "op2": "",
+        "op1type": "pay",
+        "op2type": "nul",
+        "duration": "5",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "name": "5s Cooldown",
+        "x": 750,
+        "y": 360,
+        "wires": [
+            [
+                "ba59be0.2a8114"
+            ]
+        ]
+    },
+    {
+        "id": "237651ea.0db8de",
+        "type": "rbe",
+        "z": "3860d3b1.ccd2d4",
+        "name": "Nur bei Änderung",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 470,
+        "y": 360,
+        "wires": [
+            [
+                "737d1bbd.5abe3c"
+            ]
+        ]
+    },
+    {
+        "id": "ba59be0.2a8114",
+        "type": "rbe",
+        "z": "3860d3b1.ccd2d4",
+        "name": "Nur bei Änderung",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 830,
+        "y": 400,
+        "wires": [
+            [
+                "31d893bc.af5a2c"
+            ]
+        ]
+    },
+    {
+        "id": "34d59498.36aca4",
+        "type": "fritz-outlet",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Schaltzustand",
+        "action": "getSwitchState",
+        "x": 350,
+        "y": 320,
+        "wires": [
+            [
+                "68133292.d8483c"
+            ]
+        ]
+    },
+    {
+        "id": "53eca66e.afd3b8",
+        "type": "fritz-outlet",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Leistung",
+        "action": "getSwitchPower",
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "20b4a438.006e74"
+            ]
+        ]
+    },
+    {
+        "id": "dc35071d.d50d68",
+        "type": "ui_switch",
+        "z": "55f0feba.93e878",
+        "name": "Interaktion Schaltzustand",
+        "label": "<i class=\"fa fa-plug\"></i> An? / Aus?",
+        "tooltip": "",
+        "group": "259c1fb2.ed8768",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "switch-plug",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 710,
+        "y": 320,
+        "wires": [
+            [
+                "bb17c644.f09ef"
+            ]
+        ]
+    },
+    {
+        "id": "20b4a438.006e74",
+        "type": "ui_text",
+        "z": "55f0feba.93e878",
+        "group": "259c1fb2.ed8768",
+        "order": 2,
+        "width": 2,
+        "height": 1,
+        "name": "Zeige Leistungsaufnahme",
+        "label": "<i class=\"fa fa-bolt\"></i>",
+        "format": "{{msg.payload}}W",
+        "layout": "row-center",
+        "x": 710,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "b4df91a0.9de54",
+        "type": "fritz-thermostat",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Temperatur",
+        "action": "getTemperature",
+        "x": 350,
+        "y": 200,
+        "wires": [
+            [
+                "70d50f3e.5dc97"
+            ]
+        ]
+    },
+    {
+        "id": "70d50f3e.5dc97",
+        "type": "ui_text",
+        "z": "55f0feba.93e878",
+        "group": "259c1fb2.ed8768",
+        "order": 3,
+        "width": 2,
+        "height": 1,
+        "name": "Zeige Temperatur",
+        "label": "<i class=\"fa fa-thermometer-half\"></i>",
+        "format": "{{msg.payload}}°C",
+        "layout": "row-center",
+        "x": 690,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ca3d3a3e.5179a",
+        "type": "fritz-outlet",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Setze Schaltzustand",
+        "action": "setSwitchState",
+        "x": 1160,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fbc16d92.100bb",
+        "type": "inject",
+        "z": "55f0feba.93e878",
+        "name": "Alle 10s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 100,
+        "wires": [
+            [
+                "1001968d.9f48e1"
+            ]
+        ]
+    },
+    {
+        "id": "1001968d.9f48e1",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Setze AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ain",
+                "pt": "msg",
+                "to": "plugs.workroom.christian.ain",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 120,
+        "y": 220,
+        "wires": [
+            [
+                "34d59498.36aca4",
+                "53eca66e.afd3b8",
+                "b4df91a0.9de54",
+                "72e775b6.eb5b44"
+            ]
+        ]
+    },
+    {
+        "id": "4a18a891.b07298",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Setze AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ain",
+                "pt": "msg",
+                "to": "plugs.workroom.christian.ain",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 320,
+        "wires": [
+            [
+                "ca3d3a3e.5179a"
+            ]
+        ]
+    },
+    {
+        "id": "72e775b6.eb5b44",
+        "type": "fritz-outlet",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Verbindungsstatus",
+        "action": "getSwitchPresence",
+        "x": 370,
+        "y": 140,
+        "wires": [
+            [
+                "d40d0104.58182"
+            ]
+        ]
+    },
+    {
+        "id": "d40d0104.58182",
+        "type": "ui_template",
+        "z": "55f0feba.93e878",
+        "group": "259c1fb2.ed8768",
+        "name": "Zeige Status",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"fa fa-link\" ng-class=\"icon\"></i>\n    <i ng-if=\"!msg.payload\" class=\"fa fa-chain-broken\" ng-class=\"icon\"></i>\n</div>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "templateScope": "local",
+        "x": 670,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bb17c644.f09ef",
+        "type": "trigger",
+        "z": "55f0feba.93e878",
+        "op1": "",
+        "op2": "",
+        "op1type": "pay",
+        "op2type": "nul",
+        "duration": "5",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "name": "5s Cooldown",
+        "x": 750,
+        "y": 360,
+        "wires": [
+            [
+                "cb026c92.cd34d"
+            ]
+        ]
+    },
+    {
+        "id": "68133292.d8483c",
+        "type": "rbe",
+        "z": "55f0feba.93e878",
+        "name": "Nur bei Änderung",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 470,
+        "y": 360,
+        "wires": [
+            [
+                "dc35071d.d50d68"
+            ]
+        ]
+    },
+    {
+        "id": "cb026c92.cd34d",
+        "type": "rbe",
+        "z": "55f0feba.93e878",
+        "name": "Nur bei Änderung",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 830,
+        "y": 400,
+        "wires": [
+            [
+                "4a18a891.b07298"
+            ]
         ]
     }
 ]
