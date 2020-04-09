@@ -9,7 +9,7 @@
     {
         "id": "55f0feba.93e878",
         "type": "tab",
-        "label": "Steckdosen -> Arbeitszimmer: Christian's PC",
+        "label": "Steckdose PC Christian",
         "disabled": false,
         "info": ""
     },
@@ -752,13 +752,6 @@
         "rules": [
             {
                 "t": "set",
-                "p": "plugs.workroom.christian.ain",
-                "pt": "global",
-                "to": "087610342740",
-                "tot": "str"
-            },
-            {
-                "t": "set",
                 "p": "plugs.workroom.sandra.ain",
                 "pt": "global",
                 "to": "087610465315",
@@ -1031,16 +1024,6 @@
                 "f8b0e1d9.5980c"
             ]
         ]
-    },
-    {
-        "id": "1056a178.8d55df",
-        "type": "comment",
-        "z": "55f0feba.93e878",
-        "name": "GUI",
-        "info": "",
-        "x": 70,
-        "y": 40,
-        "wires": []
     },
     {
         "id": "f4614d41.21dad",
@@ -1576,296 +1559,6 @@
         "wires": [
             [
                 "31d893bc.af5a2c"
-            ]
-        ]
-    },
-    {
-        "id": "34d59498.36aca4",
-        "type": "fritz-outlet",
-        "z": "55f0feba.93e878",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Schaltzustand",
-        "action": "getSwitchState",
-        "x": 350,
-        "y": 320,
-        "wires": [
-            [
-                "68133292.d8483c"
-            ]
-        ]
-    },
-    {
-        "id": "53eca66e.afd3b8",
-        "type": "fritz-outlet",
-        "z": "55f0feba.93e878",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Leistung",
-        "action": "getSwitchPower",
-        "x": 340,
-        "y": 260,
-        "wires": [
-            [
-                "20b4a438.006e74"
-            ]
-        ]
-    },
-    {
-        "id": "dc35071d.d50d68",
-        "type": "ui_switch",
-        "z": "55f0feba.93e878",
-        "name": "Interaktion Schaltzustand",
-        "label": "<i class=\"fa fa-plug\"></i> An? / Aus?",
-        "tooltip": "",
-        "group": "259c1fb2.ed8768",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "switch-plug",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "x": 710,
-        "y": 320,
-        "wires": [
-            [
-                "bb17c644.f09ef"
-            ]
-        ]
-    },
-    {
-        "id": "20b4a438.006e74",
-        "type": "ui_text",
-        "z": "55f0feba.93e878",
-        "group": "259c1fb2.ed8768",
-        "order": 2,
-        "width": 2,
-        "height": 1,
-        "name": "Zeige Leistungsaufnahme",
-        "label": "<i class=\"fa fa-bolt\"></i>",
-        "format": "{{msg.payload}}W",
-        "layout": "row-center",
-        "x": 710,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "b4df91a0.9de54",
-        "type": "fritz-thermostat",
-        "z": "55f0feba.93e878",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Temperatur",
-        "action": "getTemperature",
-        "x": 350,
-        "y": 200,
-        "wires": [
-            [
-                "70d50f3e.5dc97"
-            ]
-        ]
-    },
-    {
-        "id": "70d50f3e.5dc97",
-        "type": "ui_text",
-        "z": "55f0feba.93e878",
-        "group": "259c1fb2.ed8768",
-        "order": 3,
-        "width": 2,
-        "height": 1,
-        "name": "Zeige Temperatur",
-        "label": "<i class=\"fa fa-thermometer-half\"></i>",
-        "format": "{{msg.payload}}°C",
-        "layout": "row-center",
-        "x": 690,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "ca3d3a3e.5179a",
-        "type": "fritz-outlet",
-        "z": "55f0feba.93e878",
-        "connection": "1f1ed453.c0771c",
-        "name": "Setze Schaltzustand",
-        "action": "setSwitchState",
-        "x": 1160,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "fbc16d92.100bb",
-        "type": "inject",
-        "z": "55f0feba.93e878",
-        "name": "Alle 10s",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "10",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 100,
-        "y": 100,
-        "wires": [
-            [
-                "1001968d.9f48e1"
-            ]
-        ]
-    },
-    {
-        "id": "1001968d.9f48e1",
-        "type": "change",
-        "z": "55f0feba.93e878",
-        "name": "Setze AIN",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ain",
-                "pt": "msg",
-                "to": "plugs.workroom.christian.ain",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 120,
-        "y": 220,
-        "wires": [
-            [
-                "34d59498.36aca4",
-                "53eca66e.afd3b8",
-                "b4df91a0.9de54",
-                "72e775b6.eb5b44"
-            ]
-        ]
-    },
-    {
-        "id": "4a18a891.b07298",
-        "type": "change",
-        "z": "55f0feba.93e878",
-        "name": "Setze AIN",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ain",
-                "pt": "msg",
-                "to": "plugs.workroom.christian.ain",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 940,
-        "y": 320,
-        "wires": [
-            [
-                "ca3d3a3e.5179a"
-            ]
-        ]
-    },
-    {
-        "id": "72e775b6.eb5b44",
-        "type": "fritz-outlet",
-        "z": "55f0feba.93e878",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Verbindungsstatus",
-        "action": "getSwitchPresence",
-        "x": 370,
-        "y": 140,
-        "wires": [
-            [
-                "d40d0104.58182"
-            ]
-        ]
-    },
-    {
-        "id": "d40d0104.58182",
-        "type": "ui_template",
-        "z": "55f0feba.93e878",
-        "group": "259c1fb2.ed8768",
-        "name": "Zeige Status",
-        "order": 1,
-        "width": 2,
-        "height": 1,
-        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"fa fa-link\" ng-class=\"icon\"></i>\n    <i ng-if=\"!msg.payload\" class=\"fa fa-chain-broken\" ng-class=\"icon\"></i>\n</div>",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "templateScope": "local",
-        "x": 670,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "bb17c644.f09ef",
-        "type": "trigger",
-        "z": "55f0feba.93e878",
-        "op1": "",
-        "op2": "",
-        "op1type": "pay",
-        "op2type": "nul",
-        "duration": "5",
-        "extend": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "name": "5s Cooldown",
-        "x": 750,
-        "y": 360,
-        "wires": [
-            [
-                "cb026c92.cd34d"
-            ]
-        ]
-    },
-    {
-        "id": "68133292.d8483c",
-        "type": "rbe",
-        "z": "55f0feba.93e878",
-        "name": "Nur bei Änderung",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "property": "payload",
-        "x": 470,
-        "y": 360,
-        "wires": [
-            [
-                "dc35071d.d50d68"
-            ]
-        ]
-    },
-    {
-        "id": "cb026c92.cd34d",
-        "type": "rbe",
-        "z": "55f0feba.93e878",
-        "name": "Nur bei Änderung",
-        "func": "rbei",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "property": "payload",
-        "x": 830,
-        "y": 400,
-        "wires": [
-            [
-                "4a18a891.b07298"
             ]
         ]
     },
@@ -4004,6 +3697,829 @@
         "y": 340,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "2915d29c.975256",
+        "type": "comment",
+        "z": "55f0feba.93e878",
+        "name": "GUI",
+        "info": "",
+        "x": 90,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "7caa40.2c3625c",
+        "type": "comment",
+        "z": "55f0feba.93e878",
+        "name": "Daten",
+        "info": "",
+        "x": 90,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "8c4dd96e.7e526",
+        "type": "comment",
+        "z": "55f0feba.93e878",
+        "name": "Steckdosen -> Arbeitszimmer: Christian's PC",
+        "info": "",
+        "x": 190,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "2b0bf99b.5e8c1e",
+        "type": "inject",
+        "z": "55f0feba.93e878",
+        "name": "Alle 10s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 240,
+        "wires": [
+            [
+                "48f7e261.c543f4"
+            ]
+        ]
+    },
+    {
+        "id": "48f7e261.c543f4",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Hole AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ain",
+                "pt": "msg",
+                "to": "plug.ain",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 240,
+        "wires": [
+            [
+                "6251df25.84fdc"
+            ]
+        ]
+    },
+    {
+        "id": "6251df25.84fdc",
+        "type": "fritz-outlet",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Verbindungsstatus",
+        "action": "getSwitchPresence",
+        "x": 490,
+        "y": 240,
+        "wires": [
+            [
+                "a8d86cb1.f3ade"
+            ]
+        ]
+    },
+    {
+        "id": "a8d86cb1.f3ade",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Merke Verbindungsstatus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "plug.isConnected",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e4f261a5.44963",
+        "type": "inject",
+        "z": "55f0feba.93e878",
+        "name": "Beim Start",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 180,
+        "wires": [
+            [
+                "a42e1241.4e6ea8"
+            ]
+        ]
+    },
+    {
+        "id": "a42e1241.4e6ea8",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Merke AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "plug.ain",
+                "pt": "flow",
+                "to": "087610342740",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f9cb388.34242c",
+        "type": "inject",
+        "z": "55f0feba.93e878",
+        "name": "Alle 10s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 300,
+        "wires": [
+            [
+                "ae71cc1c.89a6c"
+            ]
+        ]
+    },
+    {
+        "id": "ae71cc1c.89a6c",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Hole AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ain",
+                "pt": "msg",
+                "to": "plug.ain",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 300,
+        "wires": [
+            [
+                "2a7e6b1.3ce2e94"
+            ]
+        ]
+    },
+    {
+        "id": "2a7e6b1.3ce2e94",
+        "type": "fritz-outlet",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Leistung",
+        "action": "getSwitchPower",
+        "x": 460,
+        "y": 300,
+        "wires": [
+            [
+                "481646e8.894368"
+            ]
+        ]
+    },
+    {
+        "id": "481646e8.894368",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Merke Leistung",
+        "rules": [
+            {
+                "t": "set",
+                "p": "plug.power",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5e7a62a9.ae6024",
+        "type": "inject",
+        "z": "55f0feba.93e878",
+        "name": "Alle 10s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 360,
+        "wires": [
+            [
+                "a4754617.ad792"
+            ]
+        ]
+    },
+    {
+        "id": "a4754617.ad792",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Hole AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ain",
+                "pt": "msg",
+                "to": "plug.ain",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 360,
+        "wires": [
+            [
+                "a8c22fbf.da3ca8"
+            ]
+        ]
+    },
+    {
+        "id": "a8c22fbf.da3ca8",
+        "type": "fritz-thermostat",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Temperatur",
+        "action": "getTemperature",
+        "x": 470,
+        "y": 360,
+        "wires": [
+            [
+                "178acbb6.48da1c"
+            ]
+        ]
+    },
+    {
+        "id": "178acbb6.48da1c",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Merke Temperatur",
+        "rules": [
+            {
+                "t": "set",
+                "p": "plug.temperature",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4fa81187.d94428",
+        "type": "inject",
+        "z": "55f0feba.93e878",
+        "name": "Alle 15s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "15",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 620,
+        "wires": [
+            [
+                "93dd41f6.bb91c8"
+            ]
+        ]
+    },
+    {
+        "id": "7cf6678b.f923f8",
+        "type": "ui_template",
+        "z": "55f0feba.93e878",
+        "group": "259c1fb2.ed8768",
+        "name": "Zeige Status",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"fa fa-link\" ng-class=\"icon\"></i>\n    <i ng-if=\"!msg.payload\" class=\"fa fa-chain-broken\" ng-class=\"icon\"></i>\n</div>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "templateScope": "local",
+        "x": 490,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "714a27e8.5b7678",
+        "type": "inject",
+        "z": "55f0feba.93e878",
+        "name": "Alle 15s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "15",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 680,
+        "wires": [
+            [
+                "10c5c36e.f5073d"
+            ]
+        ]
+    },
+    {
+        "id": "aff74662.9b58f8",
+        "type": "ui_text",
+        "z": "55f0feba.93e878",
+        "group": "259c1fb2.ed8768",
+        "order": 3,
+        "width": 2,
+        "height": 1,
+        "name": "Zeige Temperatur",
+        "label": "<i class=\"fa fa-thermometer-half\"></i>",
+        "format": "{{msg.payload}}°C",
+        "layout": "row-center",
+        "x": 510,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "ada36245.08aff8",
+        "type": "inject",
+        "z": "55f0feba.93e878",
+        "name": "Alle 15s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "15",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 740,
+        "wires": [
+            [
+                "83f6722c.e71d8"
+            ]
+        ]
+    },
+    {
+        "id": "310b4f73.d157b8",
+        "type": "ui_text",
+        "z": "55f0feba.93e878",
+        "group": "259c1fb2.ed8768",
+        "order": 2,
+        "width": 2,
+        "height": 1,
+        "name": "Zeige Leistungsaufnahme",
+        "label": "<i class=\"fa fa-bolt\"></i>",
+        "format": "{{msg.payload}}W",
+        "layout": "row-center",
+        "x": 530,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "a131fa7f.c761f",
+        "type": "inject",
+        "z": "55f0feba.93e878",
+        "name": "Alle 15s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "15",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 800,
+        "wires": [
+            [
+                "58d9bcbf.e7652c"
+            ]
+        ]
+    },
+    {
+        "id": "bb70ec3e.b6b94",
+        "type": "rbe",
+        "z": "55f0feba.93e878",
+        "name": "Nur bei Änderung",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 490,
+        "y": 480,
+        "wires": [
+            [
+                "e1bd9c5a.70c6b8"
+            ]
+        ]
+    },
+    {
+        "id": "58d9bcbf.e7652c",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Hole Schaltzustand",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "plug.isSwitchedOn",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 800,
+        "wires": [
+            [
+                "f0155bed.6e2c6"
+            ]
+        ]
+    },
+    {
+        "id": "be9f5336.653bb",
+        "type": "inject",
+        "z": "55f0feba.93e878",
+        "name": "Alle 10s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 420,
+        "wires": [
+            [
+                "859f4fa5.96f58"
+            ]
+        ]
+    },
+    {
+        "id": "859f4fa5.96f58",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Hole AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ain",
+                "pt": "msg",
+                "to": "plug.ain",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 420,
+        "wires": [
+            [
+                "192c40d2.14ca97"
+            ]
+        ]
+    },
+    {
+        "id": "192c40d2.14ca97",
+        "type": "fritz-outlet",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Schaltzustand",
+        "action": "getSwitchState",
+        "x": 470,
+        "y": 420,
+        "wires": [
+            [
+                "851b3293.6e7cb"
+            ]
+        ]
+    },
+    {
+        "id": "851b3293.6e7cb",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Merke Schaltzustand",
+        "rules": [
+            {
+                "t": "set",
+                "p": "plug.isSwitchedOn",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0155bed.6e2c6",
+        "type": "ui_switch",
+        "z": "55f0feba.93e878",
+        "name": "Interaktion Schaltzustand",
+        "label": "<i class=\"fa fa-plug\"></i> An? / Aus?",
+        "tooltip": "",
+        "group": "259c1fb2.ed8768",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "switch-plug",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 530,
+        "y": 800,
+        "wires": [
+            [
+                "9c482a47.c6c6a8"
+            ]
+        ]
+    },
+    {
+        "id": "bcba2e97.6decd",
+        "type": "inject",
+        "z": "55f0feba.93e878",
+        "name": "Alle 2s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 480,
+        "wires": [
+            [
+                "d18f257d.8ee2f8"
+            ]
+        ]
+    },
+    {
+        "id": "d18f257d.8ee2f8",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Hole Schaltzustand",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "plug.isSwitchedOn",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 480,
+        "wires": [
+            [
+                "bb70ec3e.b6b94"
+            ]
+        ]
+    },
+    {
+        "id": "e1bd9c5a.70c6b8",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Hole AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ain",
+                "pt": "msg",
+                "to": "plug.ain",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 480,
+        "wires": [
+            [
+                "4d72ad88.bd53a4"
+            ]
+        ]
+    },
+    {
+        "id": "4d72ad88.bd53a4",
+        "type": "fritz-outlet",
+        "z": "55f0feba.93e878",
+        "connection": "1f1ed453.c0771c",
+        "name": "Setze Schaltzustand",
+        "action": "setSwitchState",
+        "x": 860,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9c482a47.c6c6a8",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Setze Schaltzustand",
+        "rules": [
+            {
+                "t": "set",
+                "p": "plug.isSwitchedOn",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "93dd41f6.bb91c8",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Hole Status",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "plug.isConnected",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 270,
+        "y": 620,
+        "wires": [
+            [
+                "7cf6678b.f923f8"
+            ]
+        ]
+    },
+    {
+        "id": "10c5c36e.f5073d",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Hole Temperatur",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "plug.temperature",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 680,
+        "wires": [
+            [
+                "aff74662.9b58f8"
+            ]
+        ]
+    },
+    {
+        "id": "83f6722c.e71d8",
+        "type": "change",
+        "z": "55f0feba.93e878",
+        "name": "Hole Leistung",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "plug.power",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 740,
+        "wires": [
+            [
+                "310b4f73.d157b8"
+            ]
         ]
     }
 ]
