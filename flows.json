@@ -3983,7 +3983,7 @@
         "label": "Zustand:",
         "format": "",
         "layout": "row-spread",
-        "x": 580,
+        "x": 480,
         "y": 300,
         "wires": []
     },
@@ -4000,7 +4000,7 @@
         "storeOutMessages": true,
         "fwdInMessages": true,
         "templateScope": "local",
-        "x": 560,
+        "x": 460,
         "y": 340,
         "wires": [
             []
