@@ -282,7 +282,7 @@
         "type": "ui_tab",
         "z": "",
         "name": "Monitoring",
-        "icon": "fa-area-chart",
+        "icon": "fa-heartbeat",
         "order": 3,
         "disabled": false,
         "hidden": false
