@@ -4992,5 +4992,164 @@
                 "d14d8fe1.77ab48"
             ]
         ]
+    },
+    {
+        "id": "1b73ffe2.fcfe68",
+        "type": "comment",
+        "z": "3860d3b1.ccd2d4",
+        "name": "Automatisch Schalten",
+        "info": "",
+        "x": 140,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "db312218.5d3a28",
+        "type": "inject",
+        "z": "3860d3b1.ccd2d4",
+        "name": "Alle 1m",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 940,
+        "wires": [
+            [
+                "e5f10450.66626"
+            ]
+        ]
+    },
+    {
+        "id": "8f1cd3a9.785fa",
+        "type": "delay",
+        "z": "3860d3b1.ccd2d4",
+        "name": "30m Bedenkzeit",
+        "pauseType": "delay",
+        "timeout": "30",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 500,
+        "y": 980,
+        "wires": [
+            [
+                "b497d6bb.d3974"
+            ]
+        ]
+    },
+    {
+        "id": "c94acc47.4661c8",
+        "type": "trigger",
+        "z": "3860d3b1.ccd2d4",
+        "op1": "",
+        "op2": "",
+        "op1type": "pay",
+        "op2type": "nul",
+        "duration": "30",
+        "extend": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "name": "30m Cooldown",
+        "x": 500,
+        "y": 940,
+        "wires": [
+            [
+                "8f1cd3a9.785fa"
+            ]
+        ]
+    },
+    {
+        "id": "e5f10450.66626",
+        "type": "switch",
+        "z": "3860d3b1.ccd2d4",
+        "name": "< 3W ?",
+        "property": "plug.power",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "3",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 260,
+        "y": 940,
+        "wires": [
+            [
+                "c94acc47.4661c8"
+            ],
+            [
+                "41e016cd.cbea58"
+            ]
+        ]
+    },
+    {
+        "id": "41e016cd.cbea58",
+        "type": "change",
+        "z": "3860d3b1.ccd2d4",
+        "name": "Setze zurück",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "any value",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 270,
+        "y": 1000,
+        "wires": [
+            [
+                "c94acc47.4661c8",
+                "8f1cd3a9.785fa"
+            ]
+        ]
+    },
+    {
+        "id": "b497d6bb.d3974",
+        "type": "change",
+        "z": "3860d3b1.ccd2d4",
+        "name": "Schalte aus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "plug.isSwitchedOn",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 940,
+        "wires": [
+            []
+        ]
     }
 ]
