@@ -335,6 +335,15 @@
         "name": "Roomba 966"
     },
     {
+        "id": "e76cc3b6.096b9",
+        "type": "ui_group",
+        "z": "",
+        "name": "Saugroboter",
+        "tab": "14feb2a9.8277c5",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false
     },
     {
         "id": "11b84d1f.672783",
@@ -1866,8 +1875,8 @@
         "z": "ef9247c6.cadc28",
         "name": "Automatisch Schalten",
         "info": "",
-        "x": 120,
-        "y": 40,
+        "x": 140,
+        "y": 400,
         "wires": []
     },
     {
@@ -1883,7 +1892,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 150,
-        "y": 100,
+        "y": 460,
         "wires": [
             [
                 "545ada08.831764"
@@ -1910,7 +1919,7 @@
         "to": "",
         "reg": false,
         "x": 370,
-        "y": 100,
+        "y": 460,
         "wires": [
             [
                 "3ffc6d98.40fbb2"
@@ -1924,7 +1933,7 @@
         "connection": "f438956c.669a58",
         "name": "",
         "x": 530,
-        "y": 100,
+        "y": 460,
         "wires": [
             []
         ]
@@ -3822,6 +3831,179 @@
             [
                 "e0ef11.5ab160f"
             ]
+        ]
+    },
+    {
+        "id": "b0ecc46f.5d45a8",
+        "type": "comment",
+        "z": "ef9247c6.cadc28",
+        "name": "Saugroboter",
+        "info": "",
+        "x": 90,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "735a40f.e5c28c",
+        "type": "comment",
+        "z": "ef9247c6.cadc28",
+        "name": "GUI",
+        "info": "",
+        "x": 90,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "86f19070.867f28",
+        "type": "get",
+        "z": "ef9247c6.cadc28",
+        "connection": "f438956c.669a58",
+        "method": "getMission",
+        "name": "Lese Missionsinfos",
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "d8790c6e.9747c8"
+            ]
+        ]
+    },
+    {
+        "id": "494cb36a.a8573c",
+        "type": "inject",
+        "z": "ef9247c6.cadc28",
+        "name": "Alle 30s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "a332c723.19fcf"
+            ]
+        ]
+    },
+    {
+        "id": "48650c74.dc33cc",
+        "type": "comment",
+        "z": "ef9247c6.cadc28",
+        "name": "Daten",
+        "info": "",
+        "x": 90,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "5b1279f6.cd4d28",
+        "type": "inject",
+        "z": "ef9247c6.cadc28",
+        "name": "Alle 15s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "15",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 180,
+        "wires": [
+            [
+                "86f19070.867f28"
+            ]
+        ]
+    },
+    {
+        "id": "d8790c6e.9747c8",
+        "type": "change",
+        "z": "ef9247c6.cadc28",
+        "name": "Merke Zustand",
+        "rules": [
+            {
+                "t": "set",
+                "p": "vacuum.state",
+                "pt": "flow",
+                "to": "payload.cleanMissionStatus.phase",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a332c723.19fcf",
+        "type": "change",
+        "z": "ef9247c6.cadc28",
+        "name": "Hole Zustand",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "vacuum.state",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 270,
+        "y": 320,
+        "wires": [
+            [
+                "ca060a04.db6ac8",
+                "1ab837c3.871e78"
+            ]
+        ]
+    },
+    {
+        "id": "ca060a04.db6ac8",
+        "type": "ui_text",
+        "z": "ef9247c6.cadc28",
+        "group": "e76cc3b6.096b9",
+        "order": 2,
+        "width": "1",
+        "height": "1",
+        "name": "Zeige Zustandslabel",
+        "label": "Zustand:",
+        "format": "",
+        "layout": "row-spread",
+        "x": 580,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "1ab837c3.871e78",
+        "type": "ui_template",
+        "z": "ef9247c6.cadc28",
+        "group": "e76cc3b6.096b9",
+        "name": "Zeige Zustand",
+        "order": 3,
+        "width": "1",
+        "height": "1",
+        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload==='charge'\" class=\"fa fa-bolt\" ng-class=\"icon\"></i>\n    <i ng-if=\"msg.payload==='clean'\" class=\"fa fa-shower\" ng-class=\"icon\"></i>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 560,
+        "y": 340,
+        "wires": [
+            []
         ]
     }
 ]
