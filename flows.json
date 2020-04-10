@@ -1293,7 +1293,6 @@
         "id": "cae88192.bda8",
         "type": "inject",
         "z": "a4694e56.1df578",
-        "d": true,
         "name": "Alle 1m",
         "topic": "",
         "payload": "",
@@ -1637,26 +1636,6 @@
         ]
     },
     {
-        "id": "c9a834d4.13b4b",
-        "type": "inject",
-        "z": "a4694e56.1df578",
-        "name": "Alle 15s",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "15",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 100,
-        "y": 620,
-        "wires": [
-            [
-                "c37d640c.bf9a98"
-            ]
-        ]
-    },
-    {
         "id": "103d7478.d2d9dc",
         "type": "ui_template",
         "z": "a4694e56.1df578",
@@ -1669,30 +1648,10 @@
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
-        "x": 490,
+        "x": 610,
         "y": 620,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "bf37dde1.a82a2",
-        "type": "inject",
-        "z": "a4694e56.1df578",
-        "name": "Alle 15s",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "15",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 100,
-        "y": 680,
-        "wires": [
-            [
-                "382f4987.abd35e"
-            ]
         ]
     },
     {
@@ -1707,29 +1666,9 @@
         "label": "<i class=\"fa fa-thermometer-half\"></i>",
         "format": "{{msg.payload}}°C",
         "layout": "row-center",
-        "x": 510,
+        "x": 630,
         "y": 680,
         "wires": []
-    },
-    {
-        "id": "d9cb4dbc.cce23",
-        "type": "inject",
-        "z": "a4694e56.1df578",
-        "name": "Alle 15s",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "15",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 100,
-        "y": 740,
-        "wires": [
-            [
-                "fd43fd6f.cf744"
-            ]
-        ]
     },
     {
         "id": "e0ef11.5ab160f",
@@ -1743,29 +1682,9 @@
         "label": "<i class=\"fa fa-bolt\"></i>",
         "format": "{{msg.payload}}W",
         "layout": "row-center",
-        "x": 530,
+        "x": 650,
         "y": 740,
         "wires": []
-    },
-    {
-        "id": "b0527f2d.cc4d",
-        "type": "inject",
-        "z": "a4694e56.1df578",
-        "name": "Alle 15s",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "15",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 100,
-        "y": 800,
-        "wires": [
-            [
-                "364fea2.71ba816"
-            ]
-        ]
     },
     {
         "id": "796e901b.7a6d88",
@@ -1777,7 +1696,7 @@
         "start": "",
         "inout": "out",
         "property": "payload",
-        "x": 490,
+        "x": 550,
         "y": 480,
         "wires": [
             [
@@ -1804,7 +1723,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 290,
+        "x": 410,
         "y": 800,
         "wires": [
             [
@@ -1922,31 +1841,11 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 530,
+        "x": 650,
         "y": 800,
         "wires": [
             [
                 "9ca3e613.6e6cb"
-            ]
-        ]
-    },
-    {
-        "id": "8a2cfb94.4b6a58",
-        "type": "inject",
-        "z": "a4694e56.1df578",
-        "name": "Alle 2s",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "2",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 100,
-        "y": 480,
-        "wires": [
-            [
-                "5787e85f.e541a"
             ]
         ]
     },
@@ -1969,7 +1868,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 290,
+        "x": 350,
         "y": 480,
         "wires": [
             [
@@ -1996,7 +1895,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
+        "x": 720,
         "y": 480,
         "wires": [
             [
@@ -2011,7 +1910,7 @@
         "connection": "1f1ed453.c0771c",
         "name": "Setze Schaltzustand",
         "action": "setSwitchState",
-        "x": 860,
+        "x": 920,
         "y": 480,
         "wires": [
             []
@@ -2036,7 +1935,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 780,
+        "x": 900,
         "y": 800,
         "wires": [
             []
@@ -3113,7 +3012,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 270,
+        "x": 390,
         "y": 620,
         "wires": [
             [
@@ -3140,7 +3039,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 280,
+        "x": 400,
         "y": 680,
         "wires": [
             [
@@ -3167,7 +3066,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 280,
+        "x": 400,
         "y": 740,
         "wires": [
             [
@@ -5312,6 +5211,92 @@
         "y": 940,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "adc2983f.3fdae",
+        "type": "complete",
+        "z": "a4694e56.1df578",
+        "name": "Warte auf Status",
+        "scope": [
+            "232544c8.88cf44"
+        ],
+        "uncaught": false,
+        "x": 120,
+        "y": 620,
+        "wires": [
+            [
+                "c37d640c.bf9a98"
+            ]
+        ]
+    },
+    {
+        "id": "cc5aca2e.1df0a8",
+        "type": "complete",
+        "z": "a4694e56.1df578",
+        "name": "Warte auf Temperatur",
+        "scope": [
+            "41eb43ce.929264"
+        ],
+        "uncaught": false,
+        "x": 140,
+        "y": 680,
+        "wires": [
+            [
+                "382f4987.abd35e"
+            ]
+        ]
+    },
+    {
+        "id": "a72139ae.9b0fd",
+        "type": "complete",
+        "z": "a4694e56.1df578",
+        "name": "Warte auf Leistung",
+        "scope": [
+            "dbd68895.25155"
+        ],
+        "uncaught": false,
+        "x": 130,
+        "y": 740,
+        "wires": [
+            [
+                "fd43fd6f.cf744"
+            ]
+        ]
+    },
+    {
+        "id": "a4a7c60f.c314f",
+        "type": "complete",
+        "z": "a4694e56.1df578",
+        "name": "Warte auf Schaltzustand",
+        "scope": [
+            "f0435fb9.74a5f8"
+        ],
+        "uncaught": false,
+        "x": 150,
+        "y": 800,
+        "wires": [
+            [
+                "364fea2.71ba816"
+            ]
+        ]
+    },
+    {
+        "id": "93eabfe1.431ab",
+        "type": "complete",
+        "z": "a4694e56.1df578",
+        "name": "Warte auf Schaltung",
+        "scope": [
+            "9ca3e613.6e6cb",
+            "72b84630.73fce"
+        ],
+        "uncaught": false,
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "5787e85f.e541a"
+            ]
         ]
     }
 ]
