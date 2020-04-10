@@ -3207,26 +3207,10 @@
         "y": 320,
         "wires": [
             [
-                "ca060a04.db6ac8",
-                "1ab837c3.871e78"
+                "1ab837c3.871e78",
+                "7b9f7ee.926ba8"
             ]
         ]
-    },
-    {
-        "id": "ca060a04.db6ac8",
-        "type": "ui_text",
-        "z": "ef9247c6.cadc28",
-        "group": "e76cc3b6.096b9",
-        "order": 2,
-        "width": "1",
-        "height": "1",
-        "name": "Zeige Zustandslabel",
-        "label": "Zustand:",
-        "format": "",
-        "layout": "row-spread",
-        "x": 480,
-        "y": 300,
-        "wires": []
     },
     {
         "id": "1ab837c3.871e78",
@@ -3235,14 +3219,14 @@
         "group": "e76cc3b6.096b9",
         "name": "Zeige Zustand",
         "order": 3,
-        "width": "1",
+        "width": "3",
         "height": "1",
-        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload==='charge'\" class=\"fa fa-bolt\" ng-class=\"icon\"></i>\n    <i ng-if=\"msg.payload==='clean'\" class=\"fa fa-shower\" ng-class=\"icon\"></i>\n</div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
+        "format": "<div layout=\"row\" layout-align=\"space-between\">\n    <p>Zustand:</p>\n\n    <i ng-if=\"msg.payload==='charge'\" class=\"fa fa-bolt\" ng-class=\"icon\"></i>\n    <font ng-if=\"msg.payload===undefined\" color=\"red\">Unbekannt</font>\n    <p ng-if=\"msg.payload!=='charge'\" ng-html-bind=\"msg.payload\"></p>\n</div>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
         "templateScope": "local",
         "x": 460,
-        "y": 340,
+        "y": 320,
         "wires": [
             []
         ]
@@ -5212,6 +5196,21 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "7b9f7ee.926ba8",
+        "type": "debug",
+        "z": "ef9247c6.cadc28",
+        "name": "Robi post-get-state",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 480,
+        "y": 360,
+        "wires": []
     },
     {
         "id": "adc2983f.3fdae",
