@@ -6,8 +6,9 @@
 Smart Home project for **private purposes**.
 Unifies the management of various device types like smart plugs, smart radiator controls, robotic vacuum cleaner, etc.
 
-
 **🐳 Make sure you have installed *Docker*.**
+
+See how to put this repo in action at [IanStorm/my-smart-home-ras-pi](https://github.com/IanStorm/my-smart-home-ras-pi).
 
 
 ## How to use in "production"? 👨‍💼 👩‍💼
