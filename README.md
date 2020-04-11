@@ -1,5 +1,8 @@
 # My Smart Home - Node-RED
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/ianstorm/my-smart-home-node-red)](https://hub.docker.com/r/ianstorm/my-smart-home-node-red)
+[![Docker Stars](https://img.shields.io/docker/stars/ianstorm/my-smart-home-node-red)](https://hub.docker.com/r/ianstorm/my-smart-home-node-red)
+
 Smart Home project for **private purposes**.
 Unifies the management of various device types like smart plugs, smart radiator controls, robotic vacuum cleaner, etc.
 
@@ -38,14 +41,8 @@ $	docker run -i -t --env-file ./credentials/docker-env.list -p 1880:1880 -v ${PW
 
 
 ### How to get a pre-built Docker image? ☁️
-1. Create `./credentials/dockerhub-pwd.txt`, ensure it contains...
-	* ...a DockerHub *Access Token* (recommended) OR
-	* ...your DockerHub *password*
-2. Authenticate against (DockerHub) Docker registry:
-```
-$	cat ./credentials/dockerhub-pwd.txt | docker login --password-stdin -u <USERNAME>
-```
-3. Get the latest Docker image:
+
+Get the latest Docker image from Docker Hub:
 ```
 $	docker pull ianstorm/my-smart-home-node-red:latest
 ```
