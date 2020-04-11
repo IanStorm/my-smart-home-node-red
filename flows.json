@@ -3910,7 +3910,8 @@
                 "d534eedf.0dcd98"
             ],
             [
-                "aeedd82a.e5cda8"
+                "aeedd82a.e5cda8",
+                "2d751082.106a08"
             ]
         ],
         "outputLabels": [
@@ -3975,7 +3976,7 @@
         "phonebook": "1",
         "ccode": "DE",
         "x": 380,
-        "y": 340,
+        "y": 380,
         "wires": [
             [
                 "8c8cf452.ca6cb8"
@@ -3989,7 +3990,7 @@
         "name": "GUI",
         "info": "",
         "x": 90,
-        "y": 420,
+        "y": 460,
         "wires": []
     },
     {
@@ -4005,7 +4006,7 @@
         ],
         "uncaught": false,
         "x": 120,
-        "y": 480,
+        "y": 520,
         "wires": [
             [
                 "aba10102.c4b038"
@@ -4082,7 +4083,7 @@
         "to": "",
         "reg": false,
         "x": 310,
-        "y": 480,
+        "y": 520,
         "wires": [
             [
                 "276b0b6a.b65784"
@@ -4095,14 +4096,14 @@
         "z": "c8fe4e83.6f1b68",
         "group": "22abfc75.b9b2e4",
         "order": 4,
-        "width": 0,
-        "height": 0,
+        "width": "3",
+        "height": "1",
         "name": "Zeige Anrufer",
-        "label": "<i class=\"fa fa-phone\"></i>",
+        "label": "<i class=\"fa fa-sign-in\"></i> <i class=\"fa fa-phone\"></i>",
         "format": "{{msg.payload}}",
-        "layout": "row-left",
+        "layout": "row-spread",
         "x": 500,
-        "y": 480,
+        "y": 520,
         "wires": []
     },
     {
@@ -4140,7 +4141,7 @@
         ],
         "uncaught": false,
         "x": 150,
-        "y": 340,
+        "y": 380,
         "wires": [
             [
                 "e4e21cb4.a5db6"
@@ -4168,7 +4169,7 @@
         "repair": false,
         "outputs": 2,
         "x": 590,
-        "y": 340,
+        "y": 380,
         "wires": [
             [
                 "9b6c930f.4f839"
@@ -4200,7 +4201,7 @@
         "to": "",
         "reg": false,
         "x": 820,
-        "y": 340,
+        "y": 380,
         "wires": [
             []
         ]
@@ -4975,6 +4976,21 @@
         "name": "",
         "x": 570,
         "y": 420,
+        "wires": []
+    },
+    {
+        "id": "2d751082.106a08",
+        "type": "debug",
+        "z": "c8fe4e83.6f1b68",
+        "name": "Teflon not-inbound",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 490,
+        "y": 320,
         "wires": []
     }
 ]
