@@ -1,0 +1,5 @@
+// name: Zeige Status
+<div style="align-self: center;">
+    <i ng-if="msg.payload" class="material-icons">sync</i>
+    <i ng-if="!msg.payload" class="material-icons">sync_disabled</i>
+</div>
