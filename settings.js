@@ -4,7 +4,7 @@ module.exports = {
 	flowFilePretty: true,
 	logging: {
 		console: {
-			level: "warn",
+			level: "info",
 			metrics: false,
 			audit: false,
 		},
