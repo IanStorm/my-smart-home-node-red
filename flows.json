@@ -1,5 +1,19 @@
 [
     {
+        "id": "311aacb9.34a24c",
+        "type": "tab",
+        "label": "world env.",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c8fe4e83.6f1b68",
+        "type": "tab",
+        "label": "Telefon",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "55f0feba.93e878",
         "type": "tab",
         "label": "Steckdose PC Christian",
@@ -28,23 +42,9 @@
         "info": ""
     },
     {
-        "id": "c8fe4e83.6f1b68",
-        "type": "tab",
-        "label": "Telefon",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "ef9247c6.cadc28",
         "type": "tab",
         "label": "Saugroboter",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "311aacb9.34a24c",
-        "type": "tab",
-        "label": "world env.",
         "disabled": false,
         "info": ""
     },
@@ -493,7 +493,7 @@
         "ssl": false
     },
     {
-        "id": "71337633.fdfe3",
+        "id": "fd4afcb4.8c2b4",
         "type": "ui_spacer",
         "name": "spacer",
         "group": "22abfc75.b9b2e4",
@@ -502,21 +502,12 @@
         "height": 1
     },
     {
-        "id": "b5f83798.826408",
+        "id": "fb2e26d2.60bdf8",
         "type": "ui_spacer",
         "name": "spacer",
         "group": "e76cc3b6.096b9",
         "order": 2,
         "width": 3,
-        "height": 1
-    },
-    {
-        "id": "163781e5.e64c66",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "d2343449.31626",
-        "order": 2,
-        "width": 4,
         "height": 1
     },
     {
@@ -905,7 +896,7 @@
         "name": "Automatisch Schalten",
         "info": "",
         "x": 140,
-        "y": 820,
+        "y": 880,
         "wires": []
     },
     {
@@ -921,7 +912,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 180,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "2c0133f5.eace84"
@@ -941,7 +932,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 130,
-        "y": 920,
+        "y": 980,
         "wires": [
             [
                 "1a5c772e.b60f99"
@@ -961,7 +952,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 140,
-        "y": 980,
+        "y": 1040,
         "wires": [
             [
                 "1bdf9201.38227e"
@@ -981,7 +972,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 140,
-        "y": 1020,
+        "y": 1080,
         "wires": [
             [
                 "a49d133a.d34738"
@@ -1467,7 +1458,7 @@
         "name": "Automatisch Schalten",
         "info": "",
         "x": 140,
-        "y": 820,
+        "y": 880,
         "wires": []
     },
     {
@@ -1483,7 +1474,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 100,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "e9291d53.2605b"
@@ -1683,7 +1674,7 @@
         "z": "a4694e56.1df578",
         "group": "4587520c.baf024",
         "name": "Zeige Status",
-        "order": 1,
+        "order": 3,
         "width": 2,
         "height": 1,
         "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
@@ -1701,13 +1692,13 @@
         "type": "ui_text",
         "z": "a4694e56.1df578",
         "group": "4587520c.baf024",
-        "order": 3,
+        "order": 2,
         "width": 2,
         "height": 1,
         "name": "Zeige Temperatur",
         "label": "<i class=\"material-icons\">ac_unit</i>",
         "format": "{{msg.payload}}°C",
-        "layout": "row-center",
+        "layout": "row-left",
         "x": 610,
         "y": 620,
         "wires": []
@@ -1717,13 +1708,13 @@
         "type": "ui_text",
         "z": "a4694e56.1df578",
         "group": "4587520c.baf024",
-        "order": 2,
+        "order": 4,
         "width": 2,
         "height": 1,
         "name": "Zeige Leistungsaufnahme",
         "label": "<i class=\"material-icons\">flash_on</i>",
         "format": "{{msg.payload}}W",
-        "layout": "row-center",
+        "layout": "row-left",
         "x": 630,
         "y": 680,
         "wires": []
@@ -1785,12 +1776,12 @@
         "type": "ui_switch",
         "z": "a4694e56.1df578",
         "name": "Interaktion Schaltzustand",
-        "label": "<i class=\"material-icons\">power</i> An? / Aus?",
+        "label": "<i class=\"material-icons\">power_settings_new</i>",
         "tooltip": "",
         "group": "4587520c.baf024",
-        "order": 4,
-        "width": 0,
-        "height": 0,
+        "order": 5,
+        "width": 2,
+        "height": 1,
         "passthru": true,
         "decouple": "false",
         "topic": "",
@@ -1890,7 +1881,7 @@
         "to": "",
         "reg": false,
         "x": 670,
-        "y": 880,
+        "y": 940,
         "wires": [
             []
         ]
@@ -2098,7 +2089,7 @@
         "z": "3966eecb.418ed2",
         "group": "412fbf62.1e1d9",
         "name": "Zeige Status",
-        "order": 1,
+        "order": 3,
         "width": 2,
         "height": 1,
         "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
@@ -2116,13 +2107,13 @@
         "type": "ui_text",
         "z": "3966eecb.418ed2",
         "group": "412fbf62.1e1d9",
-        "order": 3,
+        "order": 2,
         "width": 2,
         "height": 1,
         "name": "Zeige Temperatur",
         "label": "<i class=\"material-icons\">ac_unit</i>",
         "format": "{{msg.payload}}°C",
-        "layout": "row-center",
+        "layout": "row-left",
         "x": 610,
         "y": 620,
         "wires": []
@@ -2132,13 +2123,13 @@
         "type": "ui_text",
         "z": "3966eecb.418ed2",
         "group": "412fbf62.1e1d9",
-        "order": 2,
+        "order": 4,
         "width": 2,
         "height": 1,
         "name": "Zeige Leistungsaufnahme",
         "label": "<i class=\"material-icons\">flash_on</i>",
         "format": "{{msg.payload}}W",
-        "layout": "row-center",
+        "layout": "row-left",
         "x": 630,
         "y": 680,
         "wires": []
@@ -2200,12 +2191,12 @@
         "type": "ui_switch",
         "z": "3966eecb.418ed2",
         "name": "Interaktion Schaltzustand",
-        "label": "<i class=\"material-icons\">power</i> An? / Aus?",
+        "label": "<i class=\"material-icons\">power_settings_new</i>",
         "tooltip": "",
         "group": "412fbf62.1e1d9",
-        "order": 4,
-        "width": 0,
-        "height": 0,
+        "order": 5,
+        "width": 2,
+        "height": 1,
         "passthru": true,
         "decouple": "false",
         "topic": "",
@@ -2305,7 +2296,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 880,
+        "y": 940,
         "wires": [
             []
         ]
@@ -2330,7 +2321,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 920,
+        "y": 980,
         "wires": [
             []
         ]
@@ -2355,7 +2346,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 980,
+        "y": 1040,
         "wires": [
             []
         ]
@@ -2380,7 +2371,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 1020,
+        "y": 1080,
         "wires": [
             []
         ]
@@ -2907,7 +2898,7 @@
         "z": "55f0feba.93e878",
         "group": "259c1fb2.ed8768",
         "name": "Zeige Status",
-        "order": 1,
+        "order": 3,
         "width": 2,
         "height": 1,
         "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
@@ -2925,13 +2916,13 @@
         "type": "ui_text",
         "z": "55f0feba.93e878",
         "group": "259c1fb2.ed8768",
-        "order": 3,
+        "order": 2,
         "width": 2,
         "height": 1,
         "name": "Zeige Temperatur",
         "label": "<i class=\"material-icons\">ac_unit</i>",
         "format": "{{msg.payload}}°C",
-        "layout": "row-center",
+        "layout": "row-left",
         "x": 610,
         "y": 620,
         "wires": []
@@ -2941,13 +2932,13 @@
         "type": "ui_text",
         "z": "55f0feba.93e878",
         "group": "259c1fb2.ed8768",
-        "order": 2,
+        "order": 4,
         "width": 2,
         "height": 1,
         "name": "Zeige Leistungsaufnahme",
         "label": "<i class=\"material-icons\">flash_on</i>",
         "format": "{{msg.payload}}W",
-        "layout": "row-center",
+        "layout": "row-left",
         "x": 630,
         "y": 680,
         "wires": []
@@ -3009,12 +3000,12 @@
         "type": "ui_switch",
         "z": "55f0feba.93e878",
         "name": "Interaktion Schaltzustand",
-        "label": "<i class=\"material-icons\">power</i> An? / Aus?",
+        "label": "<i class=\"material-icons\">power_settings_new</i>",
         "tooltip": "",
         "group": "259c1fb2.ed8768",
-        "order": 4,
-        "width": 0,
-        "height": 0,
+        "order": 5,
+        "width": 2,
+        "height": 1,
         "passthru": true,
         "decouple": "false",
         "topic": "",
@@ -3378,7 +3369,7 @@
         "z": "3860d3b1.ccd2d4",
         "group": "e7215ad9.54bc5",
         "name": "Zeige Status",
-        "order": 1,
+        "order": 3,
         "width": 2,
         "height": 1,
         "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
@@ -3396,13 +3387,13 @@
         "type": "ui_text",
         "z": "3860d3b1.ccd2d4",
         "group": "e7215ad9.54bc5",
-        "order": 3,
+        "order": 2,
         "width": 2,
         "height": 1,
         "name": "Zeige Temperatur",
         "label": "<i class=\"material-icons\">ac_unit</i>",
         "format": "{{msg.payload}}°C",
-        "layout": "row-center",
+        "layout": "row-left",
         "x": 610,
         "y": 620,
         "wires": []
@@ -3412,13 +3403,13 @@
         "type": "ui_text",
         "z": "3860d3b1.ccd2d4",
         "group": "e7215ad9.54bc5",
-        "order": 2,
+        "order": 4,
         "width": 2,
         "height": 1,
         "name": "Zeige Leistungsaufnahme",
         "label": "<i class=\"material-icons\">flash_on</i>",
         "format": "{{msg.payload}}W",
-        "layout": "row-center",
+        "layout": "row-left",
         "x": 630,
         "y": 680,
         "wires": []
@@ -3480,12 +3471,12 @@
         "type": "ui_switch",
         "z": "3860d3b1.ccd2d4",
         "name": "Interaktion Schaltzustand",
-        "label": "<i class=\"material-icons\">power</i> An? / Aus?",
+        "label": "<i class=\"material-icons\">power_settings_new</i>",
         "tooltip": "",
         "group": "e7215ad9.54bc5",
-        "order": 4,
-        "width": 0,
-        "height": 0,
+        "order": 5,
+        "width": 2,
+        "height": 1,
         "passthru": true,
         "decouple": "false",
         "topic": "",
@@ -3653,7 +3644,7 @@
         "name": "Automatisch Schalten",
         "info": "",
         "x": 140,
-        "y": 820,
+        "y": 880,
         "wires": []
     },
     {
@@ -3669,7 +3660,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 100,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "4664d507.2d258c"
@@ -3696,7 +3687,7 @@
         "to": "",
         "reg": false,
         "x": 670,
-        "y": 880,
+        "y": 940,
         "wires": [
             []
         ]
@@ -3708,7 +3699,7 @@
         "name": "Automatisch Schalten",
         "info": "",
         "x": 140,
-        "y": 820,
+        "y": 880,
         "wires": []
     },
     {
@@ -3724,7 +3715,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 100,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "caf45eee.373d6"
@@ -3751,7 +3742,7 @@
         "to": "",
         "reg": false,
         "x": 670,
-        "y": 880,
+        "y": 940,
         "wires": [
             []
         ]
@@ -4670,7 +4661,7 @@
             }
         ],
         "x": 480,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "72b84630.73fce"
@@ -4697,7 +4688,7 @@
         "to": "",
         "reg": false,
         "x": 280,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "4f6d4c27.70e3f4"
@@ -4882,7 +4873,7 @@
         "to": "",
         "reg": false,
         "x": 280,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "163461ad.04bed6"
@@ -4902,7 +4893,7 @@
             }
         ],
         "x": 480,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "b497d6bb.d3974"
@@ -4944,7 +4935,7 @@
             }
         ],
         "x": 480,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "f2974c8b.095f48"
@@ -4971,7 +4962,7 @@
         "to": "",
         "reg": false,
         "x": 280,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "53bfc925.2b5a38"
@@ -4994,12 +4985,168 @@
         "name": "Teflon not-inbound",
         "active": true,
         "tosidebar": true,
-        "console": false,
+        "console": true,
         "tostatus": false,
         "complete": "true",
         "targetType": "full",
-        "x": 490,
+        "x": 500,
         "y": 320,
         "wires": []
+    },
+    {
+        "id": "463117d9.2a1b5",
+        "type": "ui_template",
+        "z": "a4694e56.1df578",
+        "group": "4587520c.baf024",
+        "name": "Zeige Steckdosen-Icon",
+        "order": 1,
+        "width": 2,
+        "height": 2,
+        "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons md-100\" style=\"font-size: inherit;\">\n        power\n    </i>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 620,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7e69c59a.a6baa4",
+        "type": "inject",
+        "z": "a4694e56.1df578",
+        "name": "Beim Start",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 800,
+        "wires": [
+            [
+                "463117d9.2a1b5"
+            ]
+        ]
+    },
+    {
+        "id": "7d0d946e.2fb75c",
+        "type": "ui_template",
+        "z": "3966eecb.418ed2",
+        "group": "412fbf62.1e1d9",
+        "name": "Zeige Steckdosen-Icon",
+        "order": 1,
+        "width": 2,
+        "height": 2,
+        "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons md-100\" style=\"font-size: inherit;\">\n        power\n    </i>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 620,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b3cad28f.58f8d",
+        "type": "inject",
+        "z": "3966eecb.418ed2",
+        "name": "Beim Start",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 800,
+        "wires": [
+            [
+                "7d0d946e.2fb75c"
+            ]
+        ]
+    },
+    {
+        "id": "1d98cf03.98ebc9",
+        "type": "ui_template",
+        "z": "3860d3b1.ccd2d4",
+        "group": "e7215ad9.54bc5",
+        "name": "Zeige Steckdosen-Icon",
+        "order": 1,
+        "width": 2,
+        "height": 2,
+        "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons md-100\" style=\"font-size: inherit;\">\n        power\n    </i>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 620,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b56c754c.2b9d38",
+        "type": "inject",
+        "z": "3860d3b1.ccd2d4",
+        "name": "Beim Start",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 800,
+        "wires": [
+            [
+                "1d98cf03.98ebc9"
+            ]
+        ]
+    },
+    {
+        "id": "1b13e3d1.9c3cb4",
+        "type": "ui_template",
+        "z": "55f0feba.93e878",
+        "group": "259c1fb2.ed8768",
+        "name": "Zeige Steckdosen-Icon",
+        "order": 1,
+        "width": 2,
+        "height": 2,
+        "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons md-100\" style=\"font-size: inherit;\">\n        power\n    </i>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 620,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d103082d.b66888",
+        "type": "inject",
+        "z": "55f0feba.93e878",
+        "name": "Beim Start",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 800,
+        "wires": [
+            [
+                "1b13e3d1.9c3cb4"
+            ]
+        ]
     }
 ]
