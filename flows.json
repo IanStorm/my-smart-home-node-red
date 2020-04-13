@@ -1389,7 +1389,7 @@
         "name": "Automatisch Schalten",
         "info": "",
         "x": 140,
-        "y": 400,
+        "y": 440,
         "wires": []
     },
     {
@@ -1405,7 +1405,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 150,
-        "y": 460,
+        "y": 500,
         "wires": [
             [
                 "545ada08.831764"
@@ -1432,7 +1432,7 @@
         "to": "",
         "reg": false,
         "x": 370,
-        "y": 460,
+        "y": 500,
         "wires": [
             [
                 "3ffc6d98.40fbb2"
@@ -1446,7 +1446,7 @@
         "connection": "f438956c.669a58",
         "name": "",
         "x": 530,
-        "y": 460,
+        "y": 500,
         "wires": [
             []
         ]
@@ -2671,8 +2671,7 @@
         "y": 320,
         "wires": [
             [
-                "1ab837c3.871e78",
-                "7b9f7ee.926ba8"
+                "1ab837c3.871e78"
             ]
         ]
     },
@@ -2685,7 +2684,7 @@
         "order": 1,
         "width": 3,
         "height": 1,
-        "format": "<div layout=\"row\" layout-align=\"space-between\">\n    <p>Zustand:</p>\n\n    <i ng-if=\"msg.payload==='charge'\" class=\"fa fa-bolt\" ng-class=\"icon\"></i>\n    <font ng-if=\"msg.payload===undefined\" color=\"red\">Unbekannt</font>\n    <p ng-if=\"msg.payload!=='charge'\" ng-html-bind=\"msg.payload\"></p>\n</div>\n",
+        "format": "<div layout=\"row\" layout-align=\"space-between\">\n    <p>Zustand:</p>\n\n    <i ng-if=\"msg.payload==='charge'\" class=\"material-icons\">battery_charging_full</i>\n    <i ng-if=\"msg.payload==='run'\" class=\"material-icons\">local_laundry_service</i>\n    <font ng-if=\"msg.payload===undefined\" color=\"red\">Unbekannt</font>\n</div>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
@@ -3751,7 +3750,7 @@
         "id": "7b9f7ee.926ba8",
         "type": "debug",
         "z": "ef9247c6.cadc28",
-        "name": "Robi post-get-state",
+        "name": "Robi",
         "active": true,
         "tosidebar": true,
         "console": true,
@@ -5146,6 +5145,41 @@
         "wires": [
             [
                 "1b13e3d1.9c3cb4"
+            ]
+        ]
+    },
+    {
+        "id": "e7fcded8.ee6c68",
+        "type": "inject",
+        "z": "ef9247c6.cadc28",
+        "name": "Alle 10m",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "600",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 360,
+        "wires": [
+            [
+                "2ed19cf6.28c85c"
+            ]
+        ]
+    },
+    {
+        "id": "2ed19cf6.28c85c",
+        "type": "get",
+        "z": "ef9247c6.cadc28",
+        "connection": "f438956c.669a58",
+        "method": "getMission",
+        "name": "Lese Missionsinfos",
+        "x": 290,
+        "y": 360,
+        "wires": [
+            [
+                "7b9f7ee.926ba8"
             ]
         ]
     }
