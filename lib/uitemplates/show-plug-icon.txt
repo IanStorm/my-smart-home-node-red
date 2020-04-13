@@ -1,6 +1,6 @@
 // name: Zeige Steckdosen-Icon
 <div style="align-self: center; font-size: 40px;">
-    <i class="material-icons md-100" style="font-size: inherit;">
+    <i class="material-icons" style="font-size: inherit;">
         power
     </i>
 </div>
