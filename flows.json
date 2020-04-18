@@ -49,23 +49,9 @@
         "info": ""
     },
     {
-        "id": "f2cefa2e.a30a9",
+        "id": "a4312565.3cb62",
         "type": "tab",
-        "label": "machine env. -> CPU",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "8d01fa85.f01398",
-        "type": "tab",
-        "label": "machine env. -> RAM",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "aaa51945.bd49a",
-        "type": "tab",
-        "label": "machine env. -> Speicher",
+        "label": "_machine env.",
         "disabled": false,
         "info": ""
     },
@@ -592,385 +578,6 @@
         "height": 1
     },
     {
-        "id": "11b84d1f.672783",
-        "type": "comment",
-        "z": "f2cefa2e.a30a9",
-        "name": "GUI",
-        "info": "",
-        "x": 70,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "7148cec5.95441",
-        "type": "inject",
-        "z": "f2cefa2e.a30a9",
-        "name": "Alle 2s",
-        "topic": "timestamp",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "2",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 100,
-        "y": 100,
-        "wires": [
-            [
-                "4c4c5952.878748"
-            ]
-        ]
-    },
-    {
-        "id": "a8f7f6b9.0d7018",
-        "type": "ui_gauge",
-        "z": "f2cefa2e.a30a9",
-        "name": "Zeige Ø-CPU-Auslastung",
-        "group": "4314a159.01844",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "gtype": "donut",
-        "title": "Ø Auslastung",
-        "label": "%",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 890,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "4c4c5952.878748",
-        "type": "cpu",
-        "z": "f2cefa2e.a30a9",
-        "name": "Lese Ø-CPU-Auslastung",
-        "msgCore": false,
-        "msgOverall": true,
-        "msgArray": false,
-        "msgTemp": false,
-        "x": 310,
-        "y": 100,
-        "wires": [
-            [
-                "b3fa4c76.81fad8"
-            ]
-        ]
-    },
-    {
-        "id": "e449894b.3f9b78",
-        "type": "range",
-        "z": "f2cefa2e.a30a9",
-        "minin": "0",
-        "maxin": "100",
-        "minout": "0",
-        "maxout": "100",
-        "action": "scale",
-        "round": true,
-        "property": "payload",
-        "name": "Runde",
-        "x": 690,
-        "y": 100,
-        "wires": [
-            [
-                "a8f7f6b9.0d7018"
-            ]
-        ]
-    },
-    {
-        "id": "58e42166.1c529",
-        "type": "comment",
-        "z": "8d01fa85.f01398",
-        "name": "GUI",
-        "info": "",
-        "x": 70,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "3bf420ed.161318",
-        "type": "inject",
-        "z": "8d01fa85.f01398",
-        "name": "Alle 2s",
-        "topic": "timestamp",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "2",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 100,
-        "y": 100,
-        "wires": [
-            [
-                "26723a4b.b600fe"
-            ]
-        ]
-    },
-    {
-        "id": "219405f8.db5122",
-        "type": "ui_gauge",
-        "z": "8d01fa85.f01398",
-        "name": "Zeige RAM-Auslastung",
-        "group": "cbefc1f5.641d68",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "gtype": "donut",
-        "title": "Auslastung",
-        "label": "%",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 1070,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "7addc0f4.6e24c",
-        "type": "range",
-        "z": "8d01fa85.f01398",
-        "minin": "0",
-        "maxin": "100",
-        "minout": "0",
-        "maxout": "100",
-        "action": "scale",
-        "round": true,
-        "property": "payload",
-        "name": "Runde",
-        "x": 870,
-        "y": 100,
-        "wires": [
-            [
-                "219405f8.db5122"
-            ]
-        ]
-    },
-    {
-        "id": "26723a4b.b600fe",
-        "type": "Memory",
-        "z": "8d01fa85.f01398",
-        "name": "Lese RAM-Daten",
-        "x": 290,
-        "y": 100,
-        "wires": [
-            [
-                "ff537a08.70113"
-            ]
-        ]
-    },
-    {
-        "id": "d9c24db1.8d944",
-        "type": "change",
-        "z": "8d01fa85.f01398",
-        "name": "Filtere auf Auslastung",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.memusage",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 700,
-        "y": 100,
-        "wires": [
-            [
-                "7addc0f4.6e24c"
-            ]
-        ]
-    },
-    {
-        "id": "b3fa4c76.81fad8",
-        "type": "change",
-        "z": "f2cefa2e.a30a9",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "cpu",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 540,
-        "y": 100,
-        "wires": [
-            [
-                "e449894b.3f9b78"
-            ]
-        ]
-    },
-    {
-        "id": "ff537a08.70113",
-        "type": "change",
-        "z": "8d01fa85.f01398",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "memory",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 500,
-        "y": 100,
-        "wires": [
-            [
-                "d9c24db1.8d944"
-            ]
-        ]
-    },
-    {
-        "id": "26fff409.a14fac",
-        "type": "comment",
-        "z": "aaa51945.bd49a",
-        "name": "GUI",
-        "info": "",
-        "x": 70,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "42f30dd8.515014",
-        "type": "inject",
-        "z": "aaa51945.bd49a",
-        "name": "Alle 10s",
-        "topic": "timestamp",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "600",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "x": 100,
-        "y": 100,
-        "wires": [
-            [
-                "7cafeacf.373b6c"
-            ]
-        ]
-    },
-    {
-        "id": "be8278db.aadba8",
-        "type": "ui_gauge",
-        "z": "aaa51945.bd49a",
-        "name": "Zeige Speicher-Belegung",
-        "group": "c8fe58ce.64afd",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "gtype": "donut",
-        "title": "Belegung",
-        "label": "%",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 790,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "7ae2abf5.6a76b4",
-        "type": "range",
-        "z": "aaa51945.bd49a",
-        "minin": "0",
-        "maxin": "1",
-        "minout": "0",
-        "maxout": "100",
-        "action": "scale",
-        "round": true,
-        "property": "payload",
-        "name": "Skaliere & runde",
-        "x": 520,
-        "y": 280,
-        "wires": [
-            [
-                "be8278db.aadba8"
-            ]
-        ]
-    },
-    {
-        "id": "cad3d0b3.5751f8",
-        "type": "change",
-        "z": "aaa51945.bd49a",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "storage",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 520,
-        "y": 100,
-        "wires": [
-            [
-                "dae1b1ef.fa07"
-            ]
-        ]
-    },
-    {
-        "id": "7cafeacf.373b6c",
-        "type": "Drives",
-        "z": "aaa51945.bd49a",
-        "name": "Lese Speicher-Daten",
-        "x": 300,
-        "y": 100,
-        "wires": [
-            [
-                "cad3d0b3.5751f8"
-            ]
-        ]
-    },
-    {
         "id": "4d68a964.fcbac8",
         "type": "comment",
         "z": "3966eecb.418ed2",
@@ -1375,81 +982,6 @@
         "wires": [
             [
                 "f4614d41.21dad"
-            ]
-        ]
-    },
-    {
-        "id": "af1639e7.95b8b",
-        "type": "switch",
-        "z": "aaa51945.bd49a",
-        "name": "Filtere auf root",
-        "property": "payload.mount",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "/",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 520,
-        "y": 180,
-        "wires": [
-            [
-                "d35bba29.5bdf38"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "dae1b1ef.fa07",
-        "type": "split",
-        "z": "aaa51945.bd49a",
-        "name": "Teile Array",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 510,
-        "y": 140,
-        "wires": [
-            [
-                "af1639e7.95b8b"
-            ]
-        ]
-    },
-    {
-        "id": "d35bba29.5bdf38",
-        "type": "change",
-        "z": "aaa51945.bd49a",
-        "name": "Setze Auslastung",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.capacity",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 530,
-        "y": 240,
-        "wires": [
-            [
-                "7ae2abf5.6a76b4"
             ]
         ]
     },
@@ -6053,6 +5585,667 @@
         "wires": [
             [
                 "272f3af8.f28336"
+            ]
+        ]
+    },
+    {
+        "id": "787a81b.5c5ac",
+        "type": "comment",
+        "z": "a4312565.3cb62",
+        "name": "machine environment",
+        "info": "",
+        "x": 120,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "d5485192.07f258",
+        "type": "comment",
+        "z": "a4312565.3cb62",
+        "name": "Daten",
+        "info": "",
+        "x": 90,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "753a067e.81a9b",
+        "type": "inject",
+        "z": "a4312565.3cb62",
+        "name": "Alle 2s",
+        "topic": "timestamp",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 180,
+        "wires": [
+            [
+                "c65a51a4.84886"
+            ]
+        ]
+    },
+    {
+        "id": "a6b1328c.85a29",
+        "type": "ui_gauge",
+        "z": "a4312565.3cb62",
+        "name": "Zeige Ø-CPU-Auslastung",
+        "group": "4314a159.01844",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Ø Auslastung",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 690,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "c65a51a4.84886",
+        "type": "cpu",
+        "z": "a4312565.3cb62",
+        "name": "Lese Ø-CPU-Auslastung",
+        "msgCore": false,
+        "msgOverall": true,
+        "msgArray": false,
+        "msgTemp": false,
+        "x": 310,
+        "y": 180,
+        "wires": [
+            [
+                "5de566f.be1e918"
+            ]
+        ]
+    },
+    {
+        "id": "5c2daf88.887d48",
+        "type": "range",
+        "z": "a4312565.3cb62",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "0",
+        "maxout": "100",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "Runde",
+        "x": 690,
+        "y": 180,
+        "wires": [
+            [
+                "6ec1acac.9cf32c"
+            ]
+        ]
+    },
+    {
+        "id": "5de566f.be1e918",
+        "type": "change",
+        "z": "a4312565.3cb62",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "cpu",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 180,
+        "wires": [
+            [
+                "5c2daf88.887d48"
+            ]
+        ]
+    },
+    {
+        "id": "6ec1acac.9cf32c",
+        "type": "change",
+        "z": "a4312565.3cb62",
+        "name": "Merke Ø-CPU-Auslastung",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cpu.avgUsage",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1110,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1f555a1b.320ebe",
+        "type": "comment",
+        "z": "a4312565.3cb62",
+        "name": "GUI",
+        "info": "",
+        "x": 90,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "ed148582.ad1e28",
+        "type": "complete",
+        "z": "a4312565.3cb62",
+        "name": "Warte auf Ø-CPU-Auslastung",
+        "scope": [
+            "6ec1acac.9cf32c"
+        ],
+        "uncaught": false,
+        "x": 160,
+        "y": 500,
+        "wires": [
+            [
+                "81e2de73.923ee"
+            ]
+        ]
+    },
+    {
+        "id": "81e2de73.923ee",
+        "type": "change",
+        "z": "a4312565.3cb62",
+        "name": "Hole Ø-CPU-Auslastung",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "cpu.avgUsage",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 500,
+        "wires": [
+            [
+                "a6b1328c.85a29"
+            ]
+        ]
+    },
+    {
+        "id": "8c28ee31.e0dab",
+        "type": "inject",
+        "z": "a4312565.3cb62",
+        "name": "Alle 2s",
+        "topic": "timestamp",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 240,
+        "wires": [
+            [
+                "271f333.aa3d44c"
+            ]
+        ]
+    },
+    {
+        "id": "2548149f.28cff4",
+        "type": "ui_gauge",
+        "z": "a4312565.3cb62",
+        "name": "Zeige RAM-Auslastung",
+        "group": "cbefc1f5.641d68",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Auslastung",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 690,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "776f0447.536864",
+        "type": "range",
+        "z": "a4312565.3cb62",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "0",
+        "maxout": "100",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "Runde",
+        "x": 910,
+        "y": 240,
+        "wires": [
+            [
+                "ff9cb48c.eae4f"
+            ]
+        ]
+    },
+    {
+        "id": "271f333.aa3d44c",
+        "type": "Memory",
+        "z": "a4312565.3cb62",
+        "name": "Lese RAM-Daten",
+        "x": 290,
+        "y": 240,
+        "wires": [
+            [
+                "fd6a8aec.52b7f"
+            ]
+        ]
+    },
+    {
+        "id": "6a291332.015f94",
+        "type": "change",
+        "z": "a4312565.3cb62",
+        "name": "Filtere auf Auslastung",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.memusage",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 240,
+        "wires": [
+            [
+                "776f0447.536864"
+            ]
+        ]
+    },
+    {
+        "id": "fd6a8aec.52b7f",
+        "type": "change",
+        "z": "a4312565.3cb62",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "memory",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 240,
+        "wires": [
+            [
+                "6a291332.015f94"
+            ]
+        ]
+    },
+    {
+        "id": "ff9cb48c.eae4f",
+        "type": "change",
+        "z": "a4312565.3cb62",
+        "name": "Merke RAM-Auslastung",
+        "rules": [
+            {
+                "t": "set",
+                "p": "memory.usage",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1110,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c3f4872e.45d7c8",
+        "type": "complete",
+        "z": "a4312565.3cb62",
+        "name": "Warte auf RAM-Auslastung",
+        "scope": [
+            "ff9cb48c.eae4f"
+        ],
+        "uncaught": false,
+        "x": 150,
+        "y": 560,
+        "wires": [
+            [
+                "45bcfabb.b9b69c"
+            ]
+        ]
+    },
+    {
+        "id": "45bcfabb.b9b69c",
+        "type": "change",
+        "z": "a4312565.3cb62",
+        "name": "Hole RAM-Auslastung",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "memory.usage",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 560,
+        "wires": [
+            [
+                "2548149f.28cff4"
+            ]
+        ]
+    },
+    {
+        "id": "fb1ab974.f67eb8",
+        "type": "inject",
+        "z": "a4312565.3cb62",
+        "name": "Alle 10s",
+        "topic": "timestamp",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 300,
+        "wires": [
+            [
+                "9baa0519.4711a8"
+            ]
+        ]
+    },
+    {
+        "id": "be74a22f.2a8718",
+        "type": "ui_gauge",
+        "z": "a4312565.3cb62",
+        "name": "Zeige Speicher-Belegung",
+        "group": "c8fe58ce.64afd",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Belegung",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 690,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "87d678f6.3dd7d8",
+        "type": "range",
+        "z": "a4312565.3cb62",
+        "minin": "0",
+        "maxin": "1",
+        "minout": "0",
+        "maxout": "100",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "Skaliere & runde",
+        "x": 740,
+        "y": 360,
+        "wires": [
+            [
+                "2a1a83db.517fec"
+            ]
+        ]
+    },
+    {
+        "id": "a1eec125.4d1848",
+        "type": "change",
+        "z": "a4312565.3cb62",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "storage",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 300,
+        "wires": [
+            [
+                "8769a6c7.8d82e"
+            ]
+        ]
+    },
+    {
+        "id": "9baa0519.4711a8",
+        "type": "Drives",
+        "z": "a4312565.3cb62",
+        "name": "Lese Speicher-Daten",
+        "x": 300,
+        "y": 300,
+        "wires": [
+            [
+                "a1eec125.4d1848"
+            ]
+        ]
+    },
+    {
+        "id": "ad84a3b9.feeaa",
+        "type": "switch",
+        "z": "a4312565.3cb62",
+        "name": "Filtere auf root",
+        "property": "payload.mount",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 880,
+        "y": 300,
+        "wires": [
+            [
+                "2dd5016e.501ade"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8769a6c7.8d82e",
+        "type": "split",
+        "z": "a4312565.3cb62",
+        "name": "Teile Array",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 710,
+        "y": 300,
+        "wires": [
+            [
+                "ad84a3b9.feeaa"
+            ]
+        ]
+    },
+    {
+        "id": "2dd5016e.501ade",
+        "type": "change",
+        "z": "a4312565.3cb62",
+        "name": "Setze Auslastung",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.capacity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 360,
+        "wires": [
+            [
+                "87d678f6.3dd7d8"
+            ]
+        ]
+    },
+    {
+        "id": "2a1a83db.517fec",
+        "type": "change",
+        "z": "a4312565.3cb62",
+        "name": "Merke Speicher-Belegung",
+        "rules": [
+            {
+                "t": "set",
+                "p": "disk.capacity",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1110,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67486ceb.7e1eb4",
+        "type": "complete",
+        "z": "a4312565.3cb62",
+        "name": "Warte auf Speicher-Belegung",
+        "scope": [
+            "2a1a83db.517fec"
+        ],
+        "uncaught": false,
+        "x": 160,
+        "y": 620,
+        "wires": [
+            [
+                "251e1465.6d8f1c"
+            ]
+        ]
+    },
+    {
+        "id": "251e1465.6d8f1c",
+        "type": "change",
+        "z": "a4312565.3cb62",
+        "name": "Hole Speicher-Belegung",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "disk.capacity",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 620,
+        "wires": [
+            [
+                "be74a22f.2a8718"
             ]
         ]
     }
