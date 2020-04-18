@@ -5600,7 +5600,7 @@
         "type": "wake on lan",
         "z": "55f0feba.93e878",
         "mac": "",
-        "host": "",
+        "host": "192.168.178.255",
         "udpport": "9",
         "name": "Wecke PC auf",
         "x": 760,
@@ -5752,13 +5752,6 @@
         "rules": [
             {
                 "t": "set",
-                "p": "pc.ipAddress",
-                "pt": "flow",
-                "to": "192.168.178.12",
-                "tot": "str"
-            },
-            {
-                "t": "set",
                 "p": "pc.macAddress",
                 "pt": "flow",
                 "to": "18:31:BF:CC:4D:87",
@@ -5782,13 +5775,6 @@
         "z": "55f0feba.93e878",
         "name": "Hole WOL-Daten",
         "rules": [
-            {
-                "t": "set",
-                "p": "host",
-                "pt": "msg",
-                "to": "pc.ipAddress",
-                "tot": "flow"
-            },
             {
                 "t": "set",
                 "p": "mac",
@@ -5836,13 +5822,6 @@
         "z": "3860d3b1.ccd2d4",
         "name": "Merke WOL-Daten",
         "rules": [
-            {
-                "t": "set",
-                "p": "pc.ipAddress",
-                "pt": "flow",
-                "to": "192.168.178.26",
-                "tot": "str"
-            },
             {
                 "t": "set",
                 "p": "pc.macAddress",
@@ -5913,7 +5892,7 @@
         "type": "wake on lan",
         "z": "3860d3b1.ccd2d4",
         "mac": "",
-        "host": "",
+        "host": "192.168.178.255",
         "udpport": "7",
         "name": "Wecke PC auf",
         "x": 760,
@@ -5926,13 +5905,6 @@
         "z": "3860d3b1.ccd2d4",
         "name": "Hole WOL-Daten",
         "rules": [
-            {
-                "t": "set",
-                "p": "host",
-                "pt": "msg",
-                "to": "pc.ipAddress",
-                "tot": "flow"
-            },
             {
                 "t": "set",
                 "p": "mac",
@@ -5980,13 +5952,6 @@
         "z": "a4694e56.1df578",
         "name": "Merke WOL-Daten",
         "rules": [
-            {
-                "t": "set",
-                "p": "pc.ipAddress",
-                "pt": "flow",
-                "to": "192.168.178.15",
-                "tot": "str"
-            },
             {
                 "t": "set",
                 "p": "pc.macAddress",
@@ -6057,7 +6022,7 @@
         "type": "wake on lan",
         "z": "a4694e56.1df578",
         "mac": "",
-        "host": "",
+        "host": "192.168.178.255",
         "udpport": "9",
         "name": "Wecke PC auf",
         "x": 760,
@@ -6070,13 +6035,6 @@
         "z": "a4694e56.1df578",
         "name": "Hole WOL-Daten",
         "rules": [
-            {
-                "t": "set",
-                "p": "host",
-                "pt": "msg",
-                "to": "pc.ipAddress",
-                "tot": "flow"
-            },
             {
                 "t": "set",
                 "p": "mac",
