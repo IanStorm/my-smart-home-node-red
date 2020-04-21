@@ -5,6 +5,11 @@ module.exports = {
 	},
 	credentialSecret: process.env.NODE_RED_CREDENTIAL_SECRET,
 	disableEditor: true,
+	editorTheme: {
+		projects: {
+			enabled: false,
+		},
+	},
 	flowFilePretty: true,
 	logging: {
 		console: {
