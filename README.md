@@ -16,7 +16,7 @@ See how to put this repo in action at [IanStorm/my-smart-home-ras-pi](https://gi
 2. Ensure `./credentials/docker-env.list` exists. See ["a word on docker-env.list"](#-a-word-on-docker-env.list-📝).
 2. Start a Docker instance:
 ```
-$	docker run -i -t --env-file ./credentials/docker-env.list -p 1880:1880 ianstorm/my-smart-home-node-red:latest
+$	docker run --rm -i -t --network host -p 1880:1880 --env-file ./credentials/docker-env.list ianstorm/my-smart-home-node-red:latest
 ```
 
 
@@ -32,7 +32,7 @@ Make sure you have installed *Visual Studio Code*.
 6. Start a Docker instance:
 	* On Windows:
 ```
-$	docker run -i -t --env-file ./credentials/docker-env.list -p 1880:1880 -v ${PWD}:/data my-smart-home-node-red
+$	docker run --rm -i -t -p 1880:1880 -v ${PWD}:/data --env-file ./credentials/docker-env.list my-smart-home-node-red
 ```
 7. Open any browser and enter `http://localhost:1880`.
 8. Start coding, changes will be reflected in your local machine.
