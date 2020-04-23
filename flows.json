@@ -51,7 +51,7 @@
     {
         "id": "a4312565.3cb62",
         "type": "tab",
-        "label": "_machine env.",
+        "label": "machine env.",
         "disabled": false,
         "info": ""
     },
@@ -5653,7 +5653,7 @@
         "seg1": "",
         "seg2": "",
         "x": 690,
-        "y": 500,
+        "y": 540,
         "wires": []
     },
     {
@@ -5669,7 +5669,7 @@
         "y": 180,
         "wires": [
             [
-                "5de566f.be1e918"
+                "5c2daf88.887d48"
             ]
         ]
     },
@@ -5685,38 +5685,11 @@
         "round": true,
         "property": "payload",
         "name": "Runde",
-        "x": 690,
+        "x": 510,
         "y": 180,
         "wires": [
             [
                 "6ec1acac.9cf32c"
-            ]
-        ]
-    },
-    {
-        "id": "5de566f.be1e918",
-        "type": "change",
-        "z": "a4312565.3cb62",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "cpu",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 540,
-        "y": 180,
-        "wires": [
-            [
-                "5c2daf88.887d48"
             ]
         ]
     },
@@ -5739,7 +5712,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1110,
+        "x": 970,
         "y": 180,
         "wires": [
             []
@@ -5752,7 +5725,7 @@
         "name": "GUI",
         "info": "",
         "x": 90,
-        "y": 440,
+        "y": 480,
         "wires": []
     },
     {
@@ -5765,7 +5738,7 @@
         ],
         "uncaught": false,
         "x": 160,
-        "y": 500,
+        "y": 540,
         "wires": [
             [
                 "81e2de73.923ee"
@@ -5792,7 +5765,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 500,
+        "y": 540,
         "wires": [
             [
                 "a6b1328c.85a29"
@@ -5812,7 +5785,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 100,
-        "y": 240,
+        "y": 280,
         "wires": [
             [
                 "271f333.aa3d44c"
@@ -5842,7 +5815,7 @@
         "seg1": "",
         "seg2": "",
         "x": 690,
-        "y": 560,
+        "y": 640,
         "wires": []
     },
     {
@@ -5857,8 +5830,8 @@
         "round": true,
         "property": "payload",
         "name": "Runde",
-        "x": 910,
-        "y": 240,
+        "x": 750,
+        "y": 280,
         "wires": [
             [
                 "ff9cb48c.eae4f"
@@ -5871,10 +5844,10 @@
         "z": "a4312565.3cb62",
         "name": "Lese RAM-Daten",
         "x": 290,
-        "y": 240,
+        "y": 280,
         "wires": [
             [
-                "fd6a8aec.52b7f"
+                "6a291332.015f94"
             ]
         ]
     },
@@ -5897,38 +5870,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 740,
-        "y": 240,
+        "x": 560,
+        "y": 280,
         "wires": [
             [
                 "776f0447.536864"
-            ]
-        ]
-    },
-    {
-        "id": "fd6a8aec.52b7f",
-        "type": "change",
-        "z": "a4312565.3cb62",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "memory",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 540,
-        "y": 240,
-        "wires": [
-            [
-                "6a291332.015f94"
             ]
         ]
     },
@@ -5951,8 +5897,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1110,
-        "y": 240,
+        "x": 970,
+        "y": 280,
         "wires": [
             []
         ]
@@ -5967,7 +5913,7 @@
         ],
         "uncaught": false,
         "x": 150,
-        "y": 560,
+        "y": 640,
         "wires": [
             [
                 "45bcfabb.b9b69c"
@@ -5994,7 +5940,7 @@
         "to": "",
         "reg": false,
         "x": 420,
-        "y": 560,
+        "y": 640,
         "wires": [
             [
                 "2548149f.28cff4"
@@ -6014,7 +5960,7 @@
         "once": true,
         "onceDelay": 0.1,
         "x": 100,
-        "y": 300,
+        "y": 340,
         "wires": [
             [
                 "9baa0519.4711a8"
@@ -6044,7 +5990,7 @@
         "seg1": "",
         "seg2": "",
         "x": 690,
-        "y": 620,
+        "y": 700,
         "wires": []
     },
     {
@@ -6060,37 +6006,10 @@
         "property": "payload",
         "name": "Skaliere & runde",
         "x": 740,
-        "y": 360,
+        "y": 400,
         "wires": [
             [
                 "2a1a83db.517fec"
-            ]
-        ]
-    },
-    {
-        "id": "a1eec125.4d1848",
-        "type": "change",
-        "z": "a4312565.3cb62",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "storage",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 540,
-        "y": 300,
-        "wires": [
-            [
-                "8769a6c7.8d82e"
             ]
         ]
     },
@@ -6100,10 +6019,10 @@
         "z": "a4312565.3cb62",
         "name": "Lese Speicher-Daten",
         "x": 300,
-        "y": 300,
+        "y": 340,
         "wires": [
             [
-                "a1eec125.4d1848"
+                "8769a6c7.8d82e"
             ]
         ]
     },
@@ -6127,8 +6046,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 880,
-        "y": 300,
+        "x": 720,
+        "y": 340,
         "wires": [
             [
                 "2dd5016e.501ade"
@@ -6147,8 +6066,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 710,
-        "y": 300,
+        "x": 530,
+        "y": 340,
         "wires": [
             [
                 "ad84a3b9.feeaa"
@@ -6175,7 +6094,7 @@
         "to": "",
         "reg": false,
         "x": 530,
-        "y": 360,
+        "y": 400,
         "wires": [
             [
                 "87d678f6.3dd7d8"
@@ -6201,8 +6120,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1110,
-        "y": 340,
+        "x": 970,
+        "y": 360,
         "wires": [
             []
         ]
@@ -6217,7 +6136,7 @@
         ],
         "uncaught": false,
         "x": 160,
-        "y": 620,
+        "y": 700,
         "wires": [
             [
                 "251e1465.6d8f1c"
@@ -6244,11 +6163,143 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 620,
+        "y": 700,
         "wires": [
             [
                 "be74a22f.2a8718"
             ]
         ]
+    },
+    {
+        "id": "8ea53846.a26cf8",
+        "type": "inject",
+        "z": "a4312565.3cb62",
+        "name": "Alle 2s",
+        "topic": "timestamp",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 220,
+        "wires": [
+            [
+                "a58ad93d.90e028"
+            ]
+        ]
+    },
+    {
+        "id": "a58ad93d.90e028",
+        "type": "cpu",
+        "z": "a4312565.3cb62",
+        "name": "Lese CPU-Temperatur",
+        "msgCore": false,
+        "msgOverall": false,
+        "msgArray": false,
+        "msgTemp": true,
+        "x": 300,
+        "y": 220,
+        "wires": [
+            [
+                "d0ac71f6.a71d48"
+            ]
+        ]
+    },
+    {
+        "id": "d0ac71f6.a71d48",
+        "type": "change",
+        "z": "a4312565.3cb62",
+        "name": "Merke CPU-Temperatur",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cpu.temperature",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f657933.b0c3fe",
+        "type": "complete",
+        "z": "a4312565.3cb62",
+        "name": "Warte auf CPU-Temperatur",
+        "scope": [
+            "d0ac71f6.a71d48"
+        ],
+        "uncaught": false,
+        "x": 150,
+        "y": 580,
+        "wires": [
+            [
+                "39037f73.9e4778"
+            ]
+        ]
+    },
+    {
+        "id": "39037f73.9e4778",
+        "type": "change",
+        "z": "a4312565.3cb62",
+        "name": "Hole CPU-Temperatur",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "cpu.temperature",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 580,
+        "wires": [
+            [
+                "9bdd9072.76a78"
+            ]
+        ]
+    },
+    {
+        "id": "9bdd9072.76a78",
+        "type": "ui_gauge",
+        "z": "a4312565.3cb62",
+        "name": "Zeige CPU-Temperatur",
+        "group": "4314a159.01844",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatur",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "20",
+        "max": "95",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 690,
+        "y": 580,
+        "wires": []
     }
 ]
