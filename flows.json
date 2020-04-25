@@ -3370,7 +3370,7 @@
         "tostatus": false,
         "complete": "true",
         "targetType": "full",
-        "x": 480,
+        "x": 720,
         "y": 360,
         "wires": []
     },
@@ -4736,7 +4736,7 @@
         "y": 360,
         "wires": [
             [
-                "7b9f7ee.926ba8"
+                "b633b3d2.b0b4c8"
             ]
         ]
     },
@@ -6319,6 +6319,41 @@
         "wires": [
             [
                 "d0ac71f6.a71d48"
+            ]
+        ]
+    },
+    {
+        "id": "b633b3d2.b0b4c8",
+        "type": "switch",
+        "z": "ef9247c6.cadc28",
+        "name": "Ist Zustand bekannt?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "charge",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "run",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 520,
+        "y": 360,
+        "wires": [
+            [],
+            [],
+            [
+                "7b9f7ee.926ba8"
             ]
         ]
     }
