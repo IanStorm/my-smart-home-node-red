@@ -6203,7 +6203,7 @@
         "y": 220,
         "wires": [
             [
-                "d0ac71f6.a71d48"
+                "32e694c8.c05224"
             ]
         ]
     },
@@ -6301,5 +6301,25 @@
         "x": 690,
         "y": 580,
         "wires": []
+    },
+    {
+        "id": "32e694c8.c05224",
+        "type": "range",
+        "z": "a4312565.3cb62",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "0",
+        "maxout": "100",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "Runde",
+        "x": 510,
+        "y": 220,
+        "wires": [
+            [
+                "d0ac71f6.a71d48"
+            ]
+        ]
     }
 ]
