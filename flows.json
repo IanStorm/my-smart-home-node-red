@@ -45,35 +45,35 @@
         "id": "204b682.0bac818",
         "type": "tab",
         "label": "Hzg. Wohnküche",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
         "id": "2fa25221.a3d226",
         "type": "tab",
         "label": "Hzg. Bad",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
         "id": "19e3f193.b36206",
         "type": "tab",
         "label": "Hzg. AZ",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
         "id": "d680bc9d.eb82c8",
         "type": "tab",
         "label": "Hzg. SZ",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
         "id": "ddfd2b7c.2cd1f",
         "type": "tab",
         "label": "Hzg. F1",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
