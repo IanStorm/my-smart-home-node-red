@@ -2549,7 +2549,7 @@
         "id": "fb1ab974.f67eb8",
         "type": "inject",
         "z": "a4312565.3cb62",
-        "name": "Alle 10s",
+        "name": "Alle 10m",
         "topic": "timestamp",
         "payload": "",
         "payloadType": "date",
