@@ -1421,7 +1421,7 @@
         "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
-        "resendOnRefresh": false,
+        "resendOnRefresh": true,
         "templateScope": "local",
         "x": 590,
         "y": 640,
