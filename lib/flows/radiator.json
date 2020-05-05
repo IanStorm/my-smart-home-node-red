@@ -1,63 +1,89 @@
 [
     {
-        "id": "204b682.0bac818",
-        "type": "tab",
-        "label": "Hzg. -TODO-",
-        "disabled": false,
-        "info": ""
+        "id": "f81865c3.29dd28",
+        "type": "subflow",
+        "name": "Heizthermostat-Logik",
+        "info": "",
+        "category": "",
+        "in": [],
+        "out": [
+            {
+                "x": 1180,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "d78ce3d3.e90dc8",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1180,
+                "y": 220,
+                "wires": [
+                    {
+                        "id": "139b88a.0df6c77",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1180,
+                "y": 320,
+                "wires": [
+                    {
+                        "id": "3f28addd.dc07ca",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "ain",
+                "type": "str",
+                "value": "-TODO: AIN-",
+                "ui": {
+                    "label": {
+                        "en-US": "AIN"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            }
+        ],
+        "color": "#DDAA99",
+        "icon": "font-awesome/fa-thermometer-2"
     },
     {
-        "id": "6aca8eb2.af8148",
-        "type": "comment",
-        "z": "204b682.0bac818",
-        "name": "Heizkörper -> -TODO-",
-        "info": "",
-        "x": 120,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "8297d2f.d41963",
-        "type": "comment",
-        "z": "204b682.0bac818",
-        "name": "Daten",
-        "info": "",
-        "x": 90,
+        "id": "d78ce3d3.e90dc8",
+        "type": "fritz-outlet",
+        "z": "f81865c3.29dd28",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Verbindungsstatus",
+        "action": "getSwitchPresence",
+        "x": 1010,
         "y": 120,
-        "wires": []
-    },
-    {
-        "id": "33e0a09b.a8cb8",
-        "type": "inject",
-        "z": "204b682.0bac818",
-        "name": "Beim Start",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "x": 110,
-        "y": 180,
         "wires": [
-            [
-                "84230be5.c63018"
-            ]
+            []
         ]
     },
     {
-        "id": "84230be5.c63018",
+        "id": "ee46cc7a.feb92",
         "type": "change",
-        "z": "204b682.0bac818",
-        "name": "Merke AIN",
+        "z": "f81865c3.29dd28",
+        "name": "Hole AIN",
         "rules": [
             {
                 "t": "set",
-                "p": "radiator.ain",
-                "pt": "flow",
-                "to": "-TODO-",
-                "tot": "str"
+                "p": "ain",
+                "pt": "msg",
+                "to": "ain",
+                "tot": "env"
             }
         ],
         "action": "",
@@ -65,16 +91,434 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
-        "y": 180,
+        "x": 800,
+        "y": 220,
+        "wires": [
+            [
+                "139b88a.0df6c77"
+            ]
+        ]
+    },
+    {
+        "id": "139b88a.0df6c77",
+        "type": "fritz-thermostat",
+        "z": "f81865c3.29dd28",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Ist-Temperatur",
+        "action": "getTemperature",
+        "x": 1000,
+        "y": 220,
         "wires": [
             []
         ]
     },
     {
-        "id": "9be81a93.bed158",
+        "id": "995ff50f.c5d21",
+        "type": "change",
+        "z": "f81865c3.29dd28",
+        "name": "Hole AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ain",
+                "pt": "msg",
+                "to": "ain",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 320,
+        "wires": [
+            [
+                "3f28addd.dc07ca"
+            ]
+        ]
+    },
+    {
+        "id": "3f28addd.dc07ca",
+        "type": "fritz-thermostat",
+        "z": "f81865c3.29dd28",
+        "connection": "1f1ed453.c0771c",
+        "name": "Lese Soll-Temperatur",
+        "action": "getTempTarget",
+        "x": 1000,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f5dc5575.4f6178",
+        "type": "status",
+        "z": "f81865c3.29dd28",
+        "name": "Status-Update",
+        "scope": [
+            "d78ce3d3.e90dc8"
+        ],
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "40e5a86e.eebc7"
+            ]
+        ]
+    },
+    {
+        "id": "40e5a86e.eebc7",
+        "type": "switch",
+        "z": "f81865c3.29dd28",
+        "name": "Ist verbunden?",
+        "property": "status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "connected",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 280,
+        "y": 100,
+        "wires": [
+            [
+                "fc6d490.9cfd938"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "fc6d490.9cfd938",
+        "type": "join",
+        "z": "f81865c3.29dd28",
+        "name": "merge",
+        "mode": "custom",
+        "build": "merged",
+        "property": "",
+        "propertyType": "full",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 450,
+        "y": 120,
+        "wires": [
+            [
+                "96381441.40d598"
+            ]
+        ]
+    },
+    {
+        "id": "96381441.40d598",
+        "type": "switch",
+        "z": "f81865c3.29dd28",
+        "name": "Hat Status?",
+        "property": "msg",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "status",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 610,
+        "y": 100,
+        "wires": [
+            [
+                "50f22997.69fcc8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "50f22997.69fcc8",
+        "type": "switch",
+        "z": "f81865c3.29dd28",
+        "name": "Wurde injected?",
+        "property": "msg",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "injected",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 620,
+        "y": 140,
+        "wires": [
+            [
+                "c682b989.e3b6c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "da88b984.2b3468",
+        "type": "change",
+        "z": "f81865c3.29dd28",
+        "name": "Markiere",
+        "rules": [
+            {
+                "t": "set",
+                "p": "injected",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 260,
+        "y": 140,
+        "wires": [
+            [
+                "fc6d490.9cfd938"
+            ]
+        ]
+    },
+    {
+        "id": "3ed533f3.cf378c",
         "type": "inject",
-        "z": "204b682.0bac818",
+        "z": "f81865c3.29dd28",
+        "name": "Alle 9s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "9",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 140,
+        "wires": [
+            [
+                "da88b984.2b3468"
+            ]
+        ]
+    },
+    {
+        "id": "c682b989.e3b6c",
+        "type": "change",
+        "z": "f81865c3.29dd28",
+        "name": "Hole AIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ain",
+                "pt": "msg",
+                "to": "ain",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 120,
+        "wires": [
+            [
+                "d78ce3d3.e90dc8"
+            ]
+        ]
+    },
+    {
+        "id": "e2912d4c.c055c",
+        "type": "status",
+        "z": "f81865c3.29dd28",
+        "name": "Status-Update",
+        "scope": [
+            "139b88a.0df6c77"
+        ],
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "b95a4113.3b38e"
+            ]
+        ]
+    },
+    {
+        "id": "b95a4113.3b38e",
+        "type": "switch",
+        "z": "f81865c3.29dd28",
+        "name": "Ist verbunden?",
+        "property": "status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "connected",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 280,
+        "y": 200,
+        "wires": [
+            [
+                "441d4129.02b228"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "441d4129.02b228",
+        "type": "join",
+        "z": "f81865c3.29dd28",
+        "name": "merge",
+        "mode": "custom",
+        "build": "merged",
+        "property": "",
+        "propertyType": "full",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 450,
+        "y": 220,
+        "wires": [
+            [
+                "3a95269.00a435a"
+            ]
+        ]
+    },
+    {
+        "id": "3a95269.00a435a",
+        "type": "switch",
+        "z": "f81865c3.29dd28",
+        "name": "Hat Status?",
+        "property": "msg",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "status",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 610,
+        "y": 200,
+        "wires": [
+            [
+                "3351d6b3.884642"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3351d6b3.884642",
+        "type": "switch",
+        "z": "f81865c3.29dd28",
+        "name": "Wurde injected?",
+        "property": "msg",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "injected",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 620,
+        "y": 240,
+        "wires": [
+            [
+                "ee46cc7a.feb92"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "24ece8ef.6570a8",
+        "type": "change",
+        "z": "f81865c3.29dd28",
+        "name": "Markiere",
+        "rules": [
+            {
+                "t": "set",
+                "p": "injected",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 260,
+        "y": 240,
+        "wires": [
+            [
+                "441d4129.02b228"
+            ]
+        ]
+    },
+    {
+        "id": "5a0ec468.280954",
+        "type": "inject",
+        "z": "f81865c3.29dd28",
         "name": "Alle 9s",
         "topic": "",
         "payload": "",
@@ -87,22 +531,153 @@
         "y": 240,
         "wires": [
             [
-                "e9057b96.44b7c"
+                "24ece8ef.6570a8"
             ]
         ]
     },
     {
-        "id": "e9057b96.44b7c",
+        "id": "462c63f.dfbd79c",
+        "type": "status",
+        "z": "f81865c3.29dd28",
+        "name": "Status-Update",
+        "scope": [
+            "3f28addd.dc07ca"
+        ],
+        "x": 110,
+        "y": 300,
+        "wires": [
+            [
+                "98cf3eed.ba8c88"
+            ]
+        ]
+    },
+    {
+        "id": "98cf3eed.ba8c88",
+        "type": "switch",
+        "z": "f81865c3.29dd28",
+        "name": "Ist verbunden?",
+        "property": "status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "connected",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 280,
+        "y": 300,
+        "wires": [
+            [
+                "b1a3b2e5.64766"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b1a3b2e5.64766",
+        "type": "join",
+        "z": "f81865c3.29dd28",
+        "name": "merge",
+        "mode": "custom",
+        "build": "merged",
+        "property": "",
+        "propertyType": "full",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 450,
+        "y": 320,
+        "wires": [
+            [
+                "4c7af85b.9591"
+            ]
+        ]
+    },
+    {
+        "id": "4c7af85b.9591",
+        "type": "switch",
+        "z": "f81865c3.29dd28",
+        "name": "Hat Status?",
+        "property": "msg",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "status",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 610,
+        "y": 300,
+        "wires": [
+            [
+                "aac49817.6063b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "aac49817.6063b",
+        "type": "switch",
+        "z": "f81865c3.29dd28",
+        "name": "Wurde injected?",
+        "property": "msg",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "injected",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 620,
+        "y": 340,
+        "wires": [
+            [
+                "995ff50f.c5d21"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "72afd209.613f74",
         "type": "change",
-        "z": "204b682.0bac818",
-        "name": "Hole AIN",
+        "z": "f81865c3.29dd28",
+        "name": "Markiere",
         "rules": [
             {
                 "t": "set",
-                "p": "ain",
+                "p": "injected",
                 "pt": "msg",
-                "to": "radiator.ain",
-                "tot": "flow"
+                "to": "true",
+                "tot": "bool"
             }
         ],
         "action": "",
@@ -111,32 +686,72 @@
         "to": "",
         "reg": false,
         "x": 260,
-        "y": 240,
+        "y": 340,
         "wires": [
             [
-                "f2dc5a3a.014e88"
+                "b1a3b2e5.64766"
             ]
         ]
     },
     {
-        "id": "f2dc5a3a.014e88",
-        "type": "fritz-outlet",
-        "z": "204b682.0bac818",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Verbindungsstatus",
-        "action": "getSwitchPresence",
-        "x": 470,
-        "y": 240,
+        "id": "de2628aa.10a58",
+        "type": "inject",
+        "z": "f81865c3.29dd28",
+        "name": "Alle 9s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "9",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 340,
         "wires": [
             [
-                "5772edce.9296e4"
+                "72afd209.613f74"
             ]
         ]
     },
     {
-        "id": "5772edce.9296e4",
+        "id": "1f1ed453.c0771c",
+        "type": "fritz-api",
+        "z": "",
+        "name": "fritzapi (FRITZ!Box 7580)",
+        "host": "http://fritz.box",
+        "strictSSL": true
+    },
+    {
+        "id": "c6075ab3.4abae8",
+        "type": "tab",
+        "label": "Hzg. -TODO-",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d71b0fe3.7589f8",
+        "type": "comment",
+        "z": "c6075ab3.4abae8",
+        "name": "Heizkörper -> -TODO-",
+        "info": "",
+        "x": 120,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "6736376f.0c035",
+        "type": "comment",
+        "z": "c6075ab3.4abae8",
+        "name": "Daten",
+        "info": "",
+        "x": 90,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "8d2d2b04.4f76b",
         "type": "change",
-        "z": "204b682.0bac818",
+        "z": "c6075ab3.4abae8",
         "name": "Merke Verbindungsstatus",
         "rules": [
             {
@@ -152,140 +767,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 730,
-        "y": 240,
+        "x": 390,
+        "y": 140,
         "wires": [
             []
         ]
     },
     {
-        "id": "89fdd636.cfd458",
-        "type": "inject",
-        "z": "204b682.0bac818",
-        "name": "Alle 9s",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "9",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 100,
-        "y": 300,
-        "wires": [
-            [
-                "1de9bac0.d64bcd"
-            ]
-        ]
-    },
-    {
-        "id": "1de9bac0.d64bcd",
+        "id": "1444236a.f99e2d",
         "type": "change",
-        "z": "204b682.0bac818",
-        "name": "Hole AIN",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ain",
-                "pt": "msg",
-                "to": "radiator.ain",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 260,
-        "y": 300,
-        "wires": [
-            [
-                "af17f75a.3ff6f"
-            ]
-        ]
-    },
-    {
-        "id": "af17f75a.3ff6f",
-        "type": "fritz-thermostat",
-        "z": "204b682.0bac818",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Ist-Temperatur",
-        "action": "getTemperature",
-        "x": 460,
-        "y": 300,
-        "wires": [
-            [
-                "dab551eb.9a8298"
-            ]
-        ]
-    },
-    {
-        "id": "b203a030.d9183",
-        "type": "inject",
-        "z": "204b682.0bac818",
-        "name": "Alle 9s",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "9",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 100,
-        "y": 360,
-        "wires": [
-            [
-                "ad972f2a.1a057"
-            ]
-        ]
-    },
-    {
-        "id": "ad972f2a.1a057",
-        "type": "change",
-        "z": "204b682.0bac818",
-        "name": "Hole AIN",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ain",
-                "pt": "msg",
-                "to": "radiator.ain",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 260,
-        "y": 360,
-        "wires": [
-            [
-                "6257b116.fac848"
-            ]
-        ]
-    },
-    {
-        "id": "6257b116.fac848",
-        "type": "fritz-thermostat",
-        "z": "204b682.0bac818",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Soll-Temperatur",
-        "action": "getTempTarget",
-        "x": 460,
-        "y": 360,
-        "wires": [
-            [
-                "f3485139.12fe4"
-            ]
-        ]
-    },
-    {
-        "id": "dab551eb.9a8298",
-        "type": "change",
-        "z": "204b682.0bac818",
+        "z": "c6075ab3.4abae8",
         "name": "Merke Ist-Temperatur",
         "rules": [
             {
@@ -301,16 +792,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 720,
-        "y": 300,
+        "x": 380,
+        "y": 180,
         "wires": [
             []
         ]
     },
     {
-        "id": "f3485139.12fe4",
+        "id": "2c4cc46c.348fd4",
         "type": "change",
-        "z": "204b682.0bac818",
+        "z": "c6075ab3.4abae8",
         "name": "Merke Soll-Temperatur",
         "rules": [
             {
@@ -326,77 +817,77 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 720,
-        "y": 360,
+        "x": 380,
+        "y": 220,
         "wires": [
             []
         ]
     },
     {
-        "id": "6f800db7.3c6aa4",
+        "id": "7cc7e488.4d6944",
         "type": "comment",
-        "z": "204b682.0bac818",
+        "z": "c6075ab3.4abae8",
         "name": "GUI",
         "info": "",
         "x": 90,
-        "y": 440,
+        "y": 300,
         "wires": []
     },
     {
-        "id": "6e6bd1f1.cebdb",
+        "id": "14feed68.d15613",
         "type": "complete",
-        "z": "204b682.0bac818",
+        "z": "c6075ab3.4abae8",
         "name": "Warte auf Status",
         "scope": [
-            "5772edce.9296e4"
+            "8d2d2b04.4f76b"
         ],
         "uncaught": false,
         "x": 120,
-        "y": 560,
+        "y": 420,
         "wires": [
             [
-                "17258703.efb6f9"
+                "a605892f.da391"
             ]
         ]
     },
     {
-        "id": "237fc67b.c43e82",
+        "id": "dc170b0a.94c7e",
         "type": "complete",
-        "z": "204b682.0bac818",
+        "z": "c6075ab3.4abae8",
         "name": "Warte auf Ist-Temperatur",
         "scope": [
-            "dab551eb.9a8298"
+            "1444236a.f99e2d"
         ],
         "uncaught": false,
         "x": 150,
-        "y": 620,
+        "y": 480,
         "wires": [
             [
-                "e76551bf.df50c8"
+                "f422fc89.df6d08"
             ]
         ]
     },
     {
-        "id": "afa379e7.bdc3b",
+        "id": "c71d8f2.9747c7",
         "type": "complete",
-        "z": "204b682.0bac818",
+        "z": "c6075ab3.4abae8",
         "name": "Warte auf Soll-Temperatur",
         "scope": [
-            "f3485139.12fe4"
+            "2c4cc46c.348fd4"
         ],
         "uncaught": false,
         "x": 150,
-        "y": 680,
+        "y": 540,
         "wires": [
             [
-                "e0e06444.f6785"
+                "199ad847.ed82b8"
             ]
         ]
     },
     {
-        "id": "17258703.efb6f9",
+        "id": "a605892f.da391",
         "type": "change",
-        "z": "204b682.0bac818",
+        "z": "c6075ab3.4abae8",
         "name": "Hole Status",
         "rules": [
             {
@@ -413,18 +904,18 @@
         "to": "",
         "reg": false,
         "x": 370,
-        "y": 560,
+        "y": 420,
         "wires": [
             [
-                "7d21891a.e831c8"
+                "1229e394.a0f9ac"
             ]
         ]
     },
     {
-        "id": "7d21891a.e831c8",
+        "id": "1229e394.a0f9ac",
         "type": "ui_template",
-        "z": "204b682.0bac818",
-        "group": "2fe0f099.995658",
+        "z": "c6075ab3.4abae8",
+        "group": "22abfc75.b9b2e4",
         "name": "Zeige Status",
         "order": 3,
         "width": 2,
@@ -432,17 +923,18 @@
         "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
+        "resendOnRefresh": true,
         "templateScope": "local",
         "x": 610,
-        "y": 560,
+        "y": 420,
         "wires": [
             []
         ]
     },
     {
-        "id": "e76551bf.df50c8",
+        "id": "f422fc89.df6d08",
         "type": "change",
-        "z": "204b682.0bac818",
+        "z": "c6075ab3.4abae8",
         "name": "Hole Ist-Temperatur",
         "rules": [
             {
@@ -459,17 +951,17 @@
         "to": "",
         "reg": false,
         "x": 390,
-        "y": 620,
+        "y": 480,
         "wires": [
             [
-                "b732aa4d.720e08"
+                "6941f0f4.d3509"
             ]
         ]
     },
     {
-        "id": "e0e06444.f6785",
+        "id": "199ad847.ed82b8",
         "type": "change",
-        "z": "204b682.0bac818",
+        "z": "c6075ab3.4abae8",
         "name": "Hole Soll-Temperatur",
         "rules": [
             {
@@ -486,18 +978,18 @@
         "to": "",
         "reg": false,
         "x": 400,
-        "y": 680,
+        "y": 540,
         "wires": [
             [
-                "3f2cc615.5c961a"
+                "319305e8.a3a392"
             ]
         ]
     },
     {
-        "id": "b732aa4d.720e08",
+        "id": "6941f0f4.d3509",
         "type": "ui_text",
-        "z": "204b682.0bac818",
-        "group": "2fe0f099.995658",
+        "z": "c6075ab3.4abae8",
+        "group": "22abfc75.b9b2e4",
         "order": 2,
         "width": 2,
         "height": 1,
@@ -506,17 +998,17 @@
         "format": "{{msg.payload}}°C",
         "layout": "row-left",
         "x": 640,
-        "y": 620,
+        "y": 480,
         "wires": []
     },
     {
-        "id": "3f2cc615.5c961a",
+        "id": "319305e8.a3a392",
         "type": "ui_slider",
-        "z": "204b682.0bac818",
+        "z": "c6075ab3.4abae8",
         "name": "Zeige Soll-Temperatur",
         "label": "",
         "tooltip": "",
-        "group": "2fe0f099.995658",
+        "group": "22abfc75.b9b2e4",
         "order": 4,
         "width": 4,
         "height": 2,
@@ -527,15 +1019,15 @@
         "max": "28",
         "step": "0.5",
         "x": 640,
-        "y": 680,
+        "y": 540,
         "wires": [
             []
         ]
     },
     {
-        "id": "2648679.e41b218",
+        "id": "2d443e10.a8436a",
         "type": "inject",
-        "z": "204b682.0bac818",
+        "z": "c6075ab3.4abae8",
         "name": "Beim Start",
         "topic": "",
         "payload": "",
@@ -545,18 +1037,18 @@
         "once": true,
         "onceDelay": 0.1,
         "x": 110,
-        "y": 500,
+        "y": 360,
         "wires": [
             [
-                "7c898b74.c2b81c"
+                "e5cb0212.b6e8c8"
             ]
         ]
     },
     {
-        "id": "7c898b74.c2b81c",
+        "id": "e5cb0212.b6e8c8",
         "type": "ui_template",
-        "z": "204b682.0bac818",
-        "group": "2fe0f099.995658",
+        "z": "c6075ab3.4abae8",
+        "group": "22abfc75.b9b2e4",
         "name": "Zeige Heizungsicon",
         "order": 1,
         "width": 2,
@@ -567,26 +1059,38 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "x": 630,
-        "y": 500,
+        "y": 360,
         "wires": [
             []
         ]
     },
     {
-        "id": "1f1ed453.c0771c",
-        "type": "fritz-api",
-        "z": "",
-        "name": "fritzapi (FRITZ!Box 7580)",
-        "host": "http://fritz.box",
-        "strictSSL": true
+        "id": "8a786fc.2bf979",
+        "type": "subflow:f81865c3.29dd28",
+        "z": "c6075ab3.4abae8",
+        "name": "-TODO-",
+        "env": [],
+        "x": 90,
+        "y": 180,
+        "wires": [
+            [
+                "8d2d2b04.4f76b"
+            ],
+            [
+                "1444236a.f99e2d"
+            ],
+            [
+                "2c4cc46c.348fd4"
+            ]
+        ]
     },
     {
-        "id": "2fe0f099.995658",
+        "id": "22abfc75.b9b2e4",
         "type": "ui_group",
         "z": "",
-        "name": "-TODO-: Heizkörper",
+        "name": "Hallo!",
         "tab": "14feb2a9.8277c5",
-        "order": 7,
+        "order": 1,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -595,8 +1099,8 @@
         "id": "14feb2a9.8277c5",
         "type": "ui_tab",
         "z": "",
-        "name": "Überblick",
-        "icon": "dashboard",
+        "name": "Favoriten",
+        "icon": "fa-star",
         "order": 1,
         "disabled": false,
         "hidden": false
