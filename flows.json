@@ -2446,7 +2446,7 @@
         "y": 280,
         "wires": [
             [
-                "271f333.aa3d44c"
+                "3f37ca6e.6e0ca6"
             ]
         ]
     },
@@ -2475,66 +2475,6 @@
         "x": 690,
         "y": 640,
         "wires": []
-    },
-    {
-        "id": "776f0447.536864",
-        "type": "range",
-        "z": "a4312565.3cb62",
-        "minin": "0",
-        "maxin": "100",
-        "minout": "0",
-        "maxout": "100",
-        "action": "scale",
-        "round": true,
-        "property": "payload",
-        "name": "Runde",
-        "x": 750,
-        "y": 280,
-        "wires": [
-            [
-                "ff9cb48c.eae4f"
-            ]
-        ]
-    },
-    {
-        "id": "271f333.aa3d44c",
-        "type": "Memory",
-        "z": "a4312565.3cb62",
-        "name": "Lese RAM-Daten",
-        "x": 290,
-        "y": 280,
-        "wires": [
-            [
-                "6a291332.015f94"
-            ]
-        ]
-    },
-    {
-        "id": "6a291332.015f94",
-        "type": "change",
-        "z": "a4312565.3cb62",
-        "name": "Filtere auf Auslastung",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.memusage",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 560,
-        "y": 280,
-        "wires": [
-            [
-                "776f0447.536864"
-            ]
-        ]
     },
     {
         "id": "ff9cb48c.eae4f",
@@ -10096,6 +10036,54 @@
             ],
             [
                 "a00cfefd.ad6e7"
+            ]
+        ]
+    },
+    {
+        "id": "3f37ca6e.6e0ca6",
+        "type": "memory",
+        "z": "a4312565.3cb62",
+        "name": "Lese RAM-Auslastung",
+        "relativeValues": true,
+        "unitType": "mb",
+        "totalMemory": false,
+        "usedMemory": false,
+        "freeMemory": false,
+        "availableMemory": false,
+        "activeMemory": true,
+        "buffersMemory": false,
+        "cachedMemory": false,
+        "slabMemory": false,
+        "buffcacheMemory": false,
+        "freeAvailableMemory": false,
+        "swapTotalMemory": false,
+        "swapUsedMemory": false,
+        "swapFreeMemory": false,
+        "x": 300,
+        "y": 280,
+        "wires": [
+            [
+                "c842419.7da424"
+            ]
+        ]
+    },
+    {
+        "id": "c842419.7da424",
+        "type": "range",
+        "z": "a4312565.3cb62",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "0",
+        "maxout": "100",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "Runde",
+        "x": 510,
+        "y": 280,
+        "wires": [
+            [
+                "ff9cb48c.eae4f"
             ]
         ]
     }
