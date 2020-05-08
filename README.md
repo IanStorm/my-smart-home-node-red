@@ -1,5 +1,7 @@
 # My Smart Home - Node-RED
 
+[![dependencies Status](https://david-dm.org/ianstorm/my-smart-home-node-red/status.svg)](https://david-dm.org/ianstorm/my-smart-home-node-red)
+[![devDependencies Status](https://david-dm.org/ianstorm/my-smart-home-node-red/dev-status.svg)](https://david-dm.org/ianstorm/my-smart-home-node-red?type=dev)
 [![Docker Pulls](https://img.shields.io/docker/pulls/ianstorm/my-smart-home-node-red)](https://hub.docker.com/r/ianstorm/my-smart-home-node-red)
 [![Docker Stars](https://img.shields.io/docker/stars/ianstorm/my-smart-home-node-red)](https://hub.docker.com/r/ianstorm/my-smart-home-node-red)
 
