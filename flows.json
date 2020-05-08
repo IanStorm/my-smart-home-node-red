@@ -49,10 +49,10 @@
         "info": ""
     },
     {
-        "id": "2fa25221.a3d226",
+        "id": "a7755eb4.60b0d8",
         "type": "tab",
         "label": "Hzg. Bad",
-        "disabled": true,
+        "disabled": false,
         "info": ""
     },
     {
@@ -3013,573 +3013,6 @@
             [
                 "7b9f7ee.926ba8"
             ]
-        ]
-    },
-    {
-        "id": "b0d67ccd.8d322",
-        "type": "comment",
-        "z": "2fa25221.a3d226",
-        "name": "Heizkörper -> Badezimmer",
-        "info": "",
-        "x": 130,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "cf12594a.257408",
-        "type": "comment",
-        "z": "2fa25221.a3d226",
-        "name": "Daten",
-        "info": "",
-        "x": 90,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "75d06041.5971e8",
-        "type": "inject",
-        "z": "2fa25221.a3d226",
-        "name": "Beim Start",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "x": 110,
-        "y": 180,
-        "wires": [
-            [
-                "123c86d9.e05689"
-            ]
-        ]
-    },
-    {
-        "id": "123c86d9.e05689",
-        "type": "change",
-        "z": "2fa25221.a3d226",
-        "name": "Merke AIN",
-        "rules": [
-            {
-                "t": "set",
-                "p": "radiator.ain",
-                "pt": "flow",
-                "to": "109710421016",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 690,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7d8163e6.1425d4",
-        "type": "inject",
-        "z": "2fa25221.a3d226",
-        "name": "Alle 9s",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "9",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 100,
-        "y": 240,
-        "wires": [
-            [
-                "d7608eed.fd2408"
-            ]
-        ]
-    },
-    {
-        "id": "d7608eed.fd2408",
-        "type": "change",
-        "z": "2fa25221.a3d226",
-        "name": "Hole AIN",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ain",
-                "pt": "msg",
-                "to": "radiator.ain",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 260,
-        "y": 240,
-        "wires": [
-            [
-                "8800fa33.168d08"
-            ]
-        ]
-    },
-    {
-        "id": "8800fa33.168d08",
-        "type": "fritz-outlet",
-        "z": "2fa25221.a3d226",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Verbindungsstatus",
-        "action": "getSwitchPresence",
-        "x": 470,
-        "y": 240,
-        "wires": [
-            [
-                "702a2a81.3073dc"
-            ]
-        ]
-    },
-    {
-        "id": "702a2a81.3073dc",
-        "type": "change",
-        "z": "2fa25221.a3d226",
-        "name": "Merke Verbindungsstatus",
-        "rules": [
-            {
-                "t": "set",
-                "p": "radiator.isConnected",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f24b7a79.2fb67",
-        "type": "inject",
-        "z": "2fa25221.a3d226",
-        "name": "Alle 9s",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "9",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 100,
-        "y": 300,
-        "wires": [
-            [
-                "c1ae13a9.7ae8f"
-            ]
-        ]
-    },
-    {
-        "id": "c1ae13a9.7ae8f",
-        "type": "change",
-        "z": "2fa25221.a3d226",
-        "name": "Hole AIN",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ain",
-                "pt": "msg",
-                "to": "radiator.ain",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 260,
-        "y": 300,
-        "wires": [
-            [
-                "140f5196.e1d05e"
-            ]
-        ]
-    },
-    {
-        "id": "140f5196.e1d05e",
-        "type": "fritz-thermostat",
-        "z": "2fa25221.a3d226",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Ist-Temperatur",
-        "action": "getTemperature",
-        "x": 460,
-        "y": 300,
-        "wires": [
-            [
-                "9983840.be326"
-            ]
-        ]
-    },
-    {
-        "id": "1743fc4c.43147c",
-        "type": "inject",
-        "z": "2fa25221.a3d226",
-        "name": "Alle 9s",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "9",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 100,
-        "y": 360,
-        "wires": [
-            [
-                "b8021b31.a6c"
-            ]
-        ]
-    },
-    {
-        "id": "b8021b31.a6c",
-        "type": "change",
-        "z": "2fa25221.a3d226",
-        "name": "Hole AIN",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ain",
-                "pt": "msg",
-                "to": "radiator.ain",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 260,
-        "y": 360,
-        "wires": [
-            [
-                "696e0ad2.43ca4c"
-            ]
-        ]
-    },
-    {
-        "id": "696e0ad2.43ca4c",
-        "type": "fritz-thermostat",
-        "z": "2fa25221.a3d226",
-        "connection": "1f1ed453.c0771c",
-        "name": "Lese Soll-Temperatur",
-        "action": "getTempTarget",
-        "x": 460,
-        "y": 360,
-        "wires": [
-            [
-                "81da5fe.e024f2"
-            ]
-        ]
-    },
-    {
-        "id": "9983840.be326",
-        "type": "change",
-        "z": "2fa25221.a3d226",
-        "name": "Merke Ist-Temperatur",
-        "rules": [
-            {
-                "t": "set",
-                "p": "radiator.currentTemperature",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 720,
-        "y": 300,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "81da5fe.e024f2",
-        "type": "change",
-        "z": "2fa25221.a3d226",
-        "name": "Merke Soll-Temperatur",
-        "rules": [
-            {
-                "t": "set",
-                "p": "radiator.targetTemperature",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 720,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1ea5f0e4.c87c6f",
-        "type": "comment",
-        "z": "2fa25221.a3d226",
-        "name": "GUI",
-        "info": "",
-        "x": 90,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "15470fc2.7d755",
-        "type": "complete",
-        "z": "2fa25221.a3d226",
-        "name": "Warte auf Status",
-        "scope": [
-            "702a2a81.3073dc"
-        ],
-        "uncaught": false,
-        "x": 120,
-        "y": 560,
-        "wires": [
-            [
-                "fa755301.000fa8"
-            ]
-        ]
-    },
-    {
-        "id": "64b261cc.cdd4e",
-        "type": "complete",
-        "z": "2fa25221.a3d226",
-        "name": "Warte auf Ist-Temperatur",
-        "scope": [
-            "9983840.be326"
-        ],
-        "uncaught": false,
-        "x": 150,
-        "y": 620,
-        "wires": [
-            [
-                "f010b2bc.55cf4"
-            ]
-        ]
-    },
-    {
-        "id": "2c79f6bd.17d33a",
-        "type": "complete",
-        "z": "2fa25221.a3d226",
-        "name": "Warte auf Soll-Temperatur",
-        "scope": [
-            "81da5fe.e024f2"
-        ],
-        "uncaught": false,
-        "x": 150,
-        "y": 680,
-        "wires": [
-            [
-                "3f253608.5964ba"
-            ]
-        ]
-    },
-    {
-        "id": "fa755301.000fa8",
-        "type": "change",
-        "z": "2fa25221.a3d226",
-        "name": "Hole Status",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "radiator.isConnected",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 370,
-        "y": 560,
-        "wires": [
-            [
-                "6cfcd587.fbf4d4"
-            ]
-        ]
-    },
-    {
-        "id": "6cfcd587.fbf4d4",
-        "type": "ui_template",
-        "z": "2fa25221.a3d226",
-        "group": "9298819a.21ca98",
-        "name": "Zeige Status",
-        "order": 3,
-        "width": 2,
-        "height": 1,
-        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "x": 610,
-        "y": 560,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f010b2bc.55cf4",
-        "type": "change",
-        "z": "2fa25221.a3d226",
-        "name": "Hole Ist-Temperatur",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "radiator.currentTemperature",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 390,
-        "y": 620,
-        "wires": [
-            [
-                "ef7e8639.497fe"
-            ]
-        ]
-    },
-    {
-        "id": "3f253608.5964ba",
-        "type": "change",
-        "z": "2fa25221.a3d226",
-        "name": "Hole Soll-Temperatur",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "radiator.targetTemperature",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 400,
-        "y": 680,
-        "wires": [
-            [
-                "c95d331c.f9191"
-            ]
-        ]
-    },
-    {
-        "id": "ef7e8639.497fe",
-        "type": "ui_text",
-        "z": "2fa25221.a3d226",
-        "group": "9298819a.21ca98",
-        "order": 2,
-        "width": 2,
-        "height": 1,
-        "name": "Zeige Ist-Temperatur",
-        "label": "<i class=\"material-icons\">ac_unit</i>",
-        "format": "{{msg.payload}}°C",
-        "layout": "row-left",
-        "x": 640,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "c95d331c.f9191",
-        "type": "ui_slider",
-        "z": "2fa25221.a3d226",
-        "name": "Zeige Soll-Temperatur",
-        "label": "",
-        "tooltip": "",
-        "group": "9298819a.21ca98",
-        "order": 4,
-        "width": 4,
-        "height": 2,
-        "passthru": true,
-        "outs": "end",
-        "topic": "",
-        "min": "8",
-        "max": "28",
-        "step": "0.5",
-        "x": 640,
-        "y": 680,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b5ccde73.ad2f28",
-        "type": "inject",
-        "z": "2fa25221.a3d226",
-        "name": "Beim Start",
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "x": 110,
-        "y": 500,
-        "wires": [
-            [
-                "7d706651.071c7"
-            ]
-        ]
-    },
-    {
-        "id": "7d706651.071c7",
-        "type": "ui_template",
-        "z": "2fa25221.a3d226",
-        "group": "9298819a.21ca98",
-        "name": "Zeige Heizungsicon",
-        "order": 1,
-        "width": 2,
-        "height": 3,
-        "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        whatshot\n    </i>\n</div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "x": 630,
-        "y": 500,
-        "wires": [
-            []
         ]
     },
     {
@@ -10301,6 +9734,368 @@
         "wires": [
             [
                 "72afd209.613f74"
+            ]
+        ]
+    },
+    {
+        "id": "d4fc9af5.5ac88",
+        "type": "comment",
+        "z": "a7755eb4.60b0d8",
+        "name": "Heizkörper -> Badezimmer",
+        "info": "",
+        "x": 130,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "a8485655.08cf7",
+        "type": "comment",
+        "z": "a7755eb4.60b0d8",
+        "name": "Daten",
+        "info": "",
+        "x": 90,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a84aaa49.c8141",
+        "type": "change",
+        "z": "a7755eb4.60b0d8",
+        "name": "Merke Verbindungsstatus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "radiator.isConnected",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "23c13061.f5f928",
+        "type": "change",
+        "z": "a7755eb4.60b0d8",
+        "name": "Merke Ist-Temperatur",
+        "rules": [
+            {
+                "t": "set",
+                "p": "radiator.currentTemperature",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a00cfefd.ad6e7",
+        "type": "change",
+        "z": "a7755eb4.60b0d8",
+        "name": "Merke Soll-Temperatur",
+        "rules": [
+            {
+                "t": "set",
+                "p": "radiator.targetTemperature",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8e0e4d49.ca7a98",
+        "type": "comment",
+        "z": "a7755eb4.60b0d8",
+        "name": "GUI",
+        "info": "",
+        "x": 90,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "6c11fd71.44a364",
+        "type": "complete",
+        "z": "a7755eb4.60b0d8",
+        "name": "Warte auf Status",
+        "scope": [
+            "a84aaa49.c8141"
+        ],
+        "uncaught": false,
+        "x": 120,
+        "y": 420,
+        "wires": [
+            [
+                "422c6c60.35303c"
+            ]
+        ]
+    },
+    {
+        "id": "41ecbdb6.0e67a4",
+        "type": "complete",
+        "z": "a7755eb4.60b0d8",
+        "name": "Warte auf Ist-Temperatur",
+        "scope": [
+            "23c13061.f5f928"
+        ],
+        "uncaught": false,
+        "x": 150,
+        "y": 480,
+        "wires": [
+            [
+                "623c8a83.afe1b4"
+            ]
+        ]
+    },
+    {
+        "id": "a099fc58.40de68",
+        "type": "complete",
+        "z": "a7755eb4.60b0d8",
+        "name": "Warte auf Soll-Temperatur",
+        "scope": [
+            "a00cfefd.ad6e7"
+        ],
+        "uncaught": false,
+        "x": 150,
+        "y": 540,
+        "wires": [
+            [
+                "207bbd57.209572"
+            ]
+        ]
+    },
+    {
+        "id": "422c6c60.35303c",
+        "type": "change",
+        "z": "a7755eb4.60b0d8",
+        "name": "Hole Status",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "radiator.isConnected",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 420,
+        "wires": [
+            [
+                "f4e1a61d.cdfe48"
+            ]
+        ]
+    },
+    {
+        "id": "f4e1a61d.cdfe48",
+        "type": "ui_template",
+        "z": "a7755eb4.60b0d8",
+        "group": "9298819a.21ca98",
+        "name": "Zeige Status",
+        "order": 3,
+        "width": 2,
+        "height": 1,
+        "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 610,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "623c8a83.afe1b4",
+        "type": "change",
+        "z": "a7755eb4.60b0d8",
+        "name": "Hole Ist-Temperatur",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "radiator.currentTemperature",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 480,
+        "wires": [
+            [
+                "fbfd5975.d1dca8"
+            ]
+        ]
+    },
+    {
+        "id": "207bbd57.209572",
+        "type": "change",
+        "z": "a7755eb4.60b0d8",
+        "name": "Hole Soll-Temperatur",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "radiator.targetTemperature",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 540,
+        "wires": [
+            [
+                "3340c294.f0f20e"
+            ]
+        ]
+    },
+    {
+        "id": "fbfd5975.d1dca8",
+        "type": "ui_text",
+        "z": "a7755eb4.60b0d8",
+        "group": "9298819a.21ca98",
+        "order": 2,
+        "width": 2,
+        "height": 1,
+        "name": "Zeige Ist-Temperatur",
+        "label": "<i class=\"material-icons\">ac_unit</i>",
+        "format": "{{msg.payload}}°C",
+        "layout": "row-left",
+        "x": 640,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "3340c294.f0f20e",
+        "type": "ui_slider",
+        "z": "a7755eb4.60b0d8",
+        "name": "Zeige Soll-Temperatur",
+        "label": "",
+        "tooltip": "",
+        "group": "9298819a.21ca98",
+        "order": 4,
+        "width": 4,
+        "height": 2,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "min": "8",
+        "max": "28",
+        "step": "0.5",
+        "x": 640,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f06012b6.00b72",
+        "type": "inject",
+        "z": "a7755eb4.60b0d8",
+        "name": "Beim Start",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 360,
+        "wires": [
+            [
+                "51bce1bd.3a45f8"
+            ]
+        ]
+    },
+    {
+        "id": "51bce1bd.3a45f8",
+        "type": "ui_template",
+        "z": "a7755eb4.60b0d8",
+        "group": "9298819a.21ca98",
+        "name": "Zeige Heizungsicon",
+        "order": 1,
+        "width": 2,
+        "height": 3,
+        "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        whatshot\n    </i>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 630,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "15419eda.1b2449",
+        "type": "subflow:f81865c3.29dd28",
+        "z": "a7755eb4.60b0d8",
+        "name": "",
+        "env": [
+            {
+                "name": "ain",
+                "value": "109710421016",
+                "type": "str"
+            }
+        ],
+        "x": 140,
+        "y": 180,
+        "wires": [
+            [
+                "a84aaa49.c8141"
+            ],
+            [
+                "23c13061.f5f928"
+            ],
+            [
+                "a00cfefd.ad6e7"
             ]
         ]
     }
