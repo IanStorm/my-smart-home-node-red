@@ -187,15 +187,18 @@
         "id": "93de0e1e.72cac8",
         "type": "subflow",
         "name": "Warte auf Standby-Überschreitung",
-        "info": "# Steckdose: Warte auf Standby-Dauer-Überschreitung\n\n\n### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        msg.power\n        <span class=\"property-type\">number</span>\n    </dt>\n    <dd>\n        Aktuelle Leistung\n    </dd>\n    <dt>\n        threshold\n        <span class=\"property-type\">number</span>\n    </dt>\n    <dd>\n        Leistungsschwelle\n    </dd>\n</dl>\n",
+        "info": "# Steckdose: Warte auf Standby-Dauer-Überschreitung\n\n\n### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        msg.power\n        <span class=\"property-type\">number</span>\n    </dt>\n    <dd>\n        Aktuelle Leistung\n    </dd>\n    <dt>\n        msg.isSwitchedOn\n        <span class=\"property-type\">boolean</span>\n    </dt>\n    <dd>\n        Aktueller Schaltzustand\n    </dd>\n    <dt>\n        threshold\n        <span class=\"property-type\">number</span>\n    </dt>\n    <dd>\n        Leistungsschwelle\n    </dd>\n</dl>\n",
         "category": "",
         "in": [
             {
                 "x": 60,
-                "y": 60,
+                "y": 80,
                 "wires": [
                     {
                         "id": "35352233.f7b4e6"
+                    },
+                    {
+                        "id": "fada851.83fedf8"
                     }
                 ]
             }
@@ -5408,7 +5411,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
+        "x": 670,
         "y": 440,
         "wires": [
             []
@@ -5541,7 +5544,7 @@
                 "type": "num"
             }
         ],
-        "x": 480,
+        "x": 460,
         "y": 440,
         "wires": [
             [
@@ -5553,13 +5556,20 @@
         "id": "27dad421.c62bac",
         "type": "change",
         "z": "a2aa0d7f.13abb",
-        "name": "Hole Leistung",
+        "name": "Hole Daten",
         "rules": [
             {
                 "t": "set",
                 "p": "power",
                 "pt": "msg",
                 "to": "plug.power",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "isSwitchedOn",
+                "pt": "msg",
+                "to": "plug.isSwitchedOn",
                 "tot": "flow"
             }
         ],
@@ -5568,7 +5578,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 280,
+        "x": 270,
         "y": 440,
         "wires": [
             [
@@ -6208,7 +6218,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
+        "x": 670,
         "y": 440,
         "wires": [
             []
@@ -6312,7 +6322,7 @@
                 "type": "num"
             }
         ],
-        "x": 490,
+        "x": 470,
         "y": 440,
         "wires": [
             [
@@ -6324,13 +6334,20 @@
         "id": "d559c6d6.34ad88",
         "type": "change",
         "z": "19f0cc46.99b404",
-        "name": "Hole Leistung",
+        "name": "Hole Daten",
         "rules": [
             {
                 "t": "set",
                 "p": "power",
                 "pt": "msg",
                 "to": "plug.power",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "isSwitchedOn",
+                "pt": "msg",
+                "to": "plug.isSwitchedOn",
                 "tot": "flow"
             }
         ],
@@ -6339,7 +6356,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 280,
+        "x": 270,
         "y": 440,
         "wires": [
             [
@@ -7008,7 +7025,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
+        "x": 670,
         "y": 440,
         "wires": [
             []
@@ -7112,7 +7129,7 @@
                 "type": "num"
             }
         ],
-        "x": 480,
+        "x": 460,
         "y": 440,
         "wires": [
             [
@@ -7124,13 +7141,20 @@
         "id": "fedc0045.13caa8",
         "type": "change",
         "z": "18052606.db735a",
-        "name": "Hole Leistung",
+        "name": "Hole Daten",
         "rules": [
             {
                 "t": "set",
                 "p": "power",
                 "pt": "msg",
                 "to": "plug.power",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "isSwitchedOn",
+                "pt": "msg",
+                "to": "plug.isSwitchedOn",
                 "tot": "flow"
             }
         ],
@@ -7139,7 +7163,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 280,
+        "x": 270,
         "y": 440,
         "wires": [
             [
@@ -10443,5 +10467,28 @@
         "x": 570,
         "y": 720,
         "wires": []
+    },
+    {
+        "id": "fada851.83fedf8",
+        "type": "switch",
+        "z": "93de0e1e.72cac8",
+        "name": "Ist angeschaltet?",
+        "property": "isSwitchedOn",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 210,
+        "y": 100,
+        "wires": [
+            [
+                "56177727.e8e06"
+            ]
+        ]
     }
 ]
