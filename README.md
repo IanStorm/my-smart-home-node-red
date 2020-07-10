@@ -1,5 +1,6 @@
 # My Smart Home - Node-RED
 
+[![GitHub Actions](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FIanStorm%2Fmy-smart-home-node-red%2Fbadge&style=flat&label=build&logo=none)](https://actions-badge.atrox.dev/IanStorm/my-smart-home-node-red/goto)
 [![dependencies Status](https://david-dm.org/ianstorm/my-smart-home-node-red/status.svg)](https://david-dm.org/ianstorm/my-smart-home-node-red)
 [![devDependencies Status](https://david-dm.org/ianstorm/my-smart-home-node-red/dev-status.svg)](https://david-dm.org/ianstorm/my-smart-home-node-red?type=dev)
 [![Docker Pulls](https://img.shields.io/docker/pulls/ianstorm/my-smart-home-node-red)](https://hub.docker.com/r/ianstorm/my-smart-home-node-red)
