@@ -449,7 +449,7 @@
         "z": "",
         "name": "System",
         "icon": "fa-microchip",
-        "order": 5,
+        "order": 6,
         "disabled": false,
         "hidden": false
     },
@@ -535,7 +535,7 @@
         "z": "",
         "name": "Monitoring",
         "icon": "fa-heartbeat",
-        "order": 4,
+        "order": 5,
         "disabled": false,
         "hidden": false
     },
@@ -573,7 +573,7 @@
         "type": "ui_group",
         "z": "",
         "name": "Saugroboter",
-        "tab": "14feb2a9.8277c5",
+        "tab": "841fce51.f02b3",
         "order": 6,
         "disp": true,
         "width": "6",
@@ -754,15 +754,6 @@
         "height": 1
     },
     {
-        "id": "3b8f1d2a.385c82",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "e76cc3b6.096b9",
-        "order": 2,
-        "width": 3,
-        "height": 1
-    },
-    {
         "id": "2f3f5aef.3d20ee",
         "type": "ui_group",
         "z": "",
@@ -790,6 +781,24 @@
         "order": 7,
         "width": "6",
         "height": 1
+    },
+    {
+        "id": "841fce51.f02b3",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Hygiene",
+        "icon": "fa-shower",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f6dfc0c2.2a4de",
+        "type": "fritz-api",
+        "z": "",
+        "name": "example",
+        "host": "http://fritz.box",
+        "strictSSL": true
     },
     {
         "id": "5908b50d.087e94",
@@ -1116,7 +1125,7 @@
         "name": "Automatisch Schalten",
         "info": "",
         "x": 140,
-        "y": 800,
+        "y": 720,
         "wires": []
     },
     {
@@ -1132,7 +1141,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 130,
-        "y": 860,
+        "y": 780,
         "wires": [
             [
                 "545ada08.831764"
@@ -1159,7 +1168,7 @@
         "to": "",
         "reg": false,
         "x": 330,
-        "y": 860,
+        "y": 780,
         "wires": [
             [
                 "3ffc6d98.40fbb2"
@@ -1173,7 +1182,7 @@
         "connection": "f438956c.669a58",
         "name": "",
         "x": 490,
-        "y": 860,
+        "y": 780,
         "wires": [
             []
         ]
@@ -1195,7 +1204,7 @@
         "name": "GUI",
         "info": "",
         "x": 90,
-        "y": 260,
+        "y": 380,
         "wires": []
     },
     {
@@ -1210,26 +1219,6 @@
         "wires": [
             [
                 "d8790c6e.9747c8"
-            ]
-        ]
-    },
-    {
-        "id": "494cb36a.a8573c",
-        "type": "inject",
-        "z": "ef9247c6.cadc28",
-        "name": "Alle 30s",
-        "repeat": "30",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "x": 100,
-        "y": 320,
-        "wires": [
-            [
-                "a332c723.19fcf"
             ]
         ]
     },
@@ -1307,31 +1296,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 270,
-        "y": 320,
+        "x": 390,
+        "y": 440,
         "wires": [
             [
-                "1ab837c3.871e78"
+                "e5a0cbf2.4dbfd8"
             ]
-        ]
-    },
-    {
-        "id": "1ab837c3.871e78",
-        "type": "ui_template",
-        "z": "ef9247c6.cadc28",
-        "group": "e76cc3b6.096b9",
-        "name": "Zeige Zustand",
-        "order": 1,
-        "width": 3,
-        "height": 1,
-        "format": "<div layout=\"row\" layout-align=\"space-between\">\n    <p>Zustand:</p>\n\n    <i ng-if=\"msg.payload==='charge'\" class=\"material-icons\">battery_charging_full</i>\n    <i ng-if=\"msg.payload==='run'\" class=\"material-icons\">local_laundry_service</i>\n    <font ng-if=\"msg.payload===undefined\" color=\"red\">Unbekannt</font>\n</div>\n",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "templateScope": "local",
-        "x": 460,
-        "y": 320,
-        "wires": [
-            []
         ]
     },
     {
@@ -1348,7 +1318,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 720,
-        "y": 360,
+        "y": 860,
         "wires": []
     },
     {
@@ -1937,7 +1907,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 100,
-        "y": 360,
+        "y": 860,
         "wires": [
             [
                 "2ed19cf6.28c85c"
@@ -1952,7 +1922,7 @@
         "method": "getMission",
         "name": "Lese Missionsinfos",
         "x": 290,
-        "y": 360,
+        "y": 860,
         "wires": [
             [
                 "b633b3d2.b0b4c8"
@@ -2998,7 +2968,7 @@
         "repair": false,
         "outputs": 3,
         "x": 520,
-        "y": 360,
+        "y": 860,
         "wires": [
             [],
             [],
@@ -9989,7 +9959,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 100,
-        "y": 400,
+        "y": 900,
         "wires": [
             [
                 "6cd2e695.a0f5e"
@@ -10004,7 +9974,7 @@
         "method": "getTime",
         "name": "Lese Zeit-Infos",
         "x": 280,
-        "y": 400,
+        "y": 900,
         "wires": [
             [
                 "52291646.5ce7f"
@@ -10019,7 +9989,7 @@
         "method": "getBbrun",
         "name": "Lese \"Bbrun\"-Infos",
         "x": 290,
-        "y": 440,
+        "y": 940,
         "wires": [
             [
                 "3bc768ad.cdb42"
@@ -10034,7 +10004,7 @@
         "method": "getLangs",
         "name": "Lese Sprachen-Infos",
         "x": 300,
-        "y": 480,
+        "y": 980,
         "wires": [
             [
                 "3fd8c3c2.1de9e4"
@@ -10049,7 +10019,7 @@
         "method": "getSys",
         "name": "Lese System-Infos",
         "x": 290,
-        "y": 520,
+        "y": 1020,
         "wires": [
             [
                 "c26b5f44.8746d8"
@@ -10064,7 +10034,7 @@
         "method": "getWirelessLastStatus",
         "name": "Lese Letzte-WLAN-Infos",
         "x": 310,
-        "y": 560,
+        "y": 1060,
         "wires": [
             [
                 "a4f21df3.ff6e4"
@@ -10079,7 +10049,7 @@
         "method": "getWeek",
         "name": "Lese Wochen-Infos",
         "x": 290,
-        "y": 600,
+        "y": 1100,
         "wires": [
             [
                 "7e9ffb03.6ee634"
@@ -10094,7 +10064,7 @@
         "method": "getPreferences",
         "name": "Lese Einstellungsinfos",
         "x": 300,
-        "y": 640,
+        "y": 1140,
         "wires": [
             [
                 "13d76e24.1654a2"
@@ -10109,7 +10079,7 @@
         "method": "getMission",
         "name": "Lese Missionsinfos",
         "x": 290,
-        "y": 680,
+        "y": 1180,
         "wires": [
             [
                 "fb7030c6.43f3c"
@@ -10124,7 +10094,7 @@
         "method": "getWirelessStatus",
         "name": "Lese WLAN-Infos",
         "x": 290,
-        "y": 720,
+        "y": 1220,
         "wires": [
             [
                 "d3e25257.22d318"
@@ -10145,7 +10115,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 590,
-        "y": 560,
+        "y": 1060,
         "wires": []
     },
     {
@@ -10162,7 +10132,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 570,
-        "y": 520,
+        "y": 1020,
         "wires": []
     },
     {
@@ -10187,7 +10157,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 100,
-        "y": 440,
+        "y": 940,
         "wires": [
             [
                 "169fa16e.700b27"
@@ -10216,7 +10186,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 100,
-        "y": 480,
+        "y": 980,
         "wires": [
             [
                 "d78b0fee.feafc"
@@ -10245,7 +10215,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 100,
-        "y": 520,
+        "y": 1020,
         "wires": [
             [
                 "5015b2af.42833c"
@@ -10274,7 +10244,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 100,
-        "y": 560,
+        "y": 1060,
         "wires": [
             [
                 "b414a8ae.1b19d"
@@ -10303,7 +10273,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 100,
-        "y": 600,
+        "y": 1100,
         "wires": [
             [
                 "ea5cdf27.429138"
@@ -10332,7 +10302,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 100,
-        "y": 640,
+        "y": 1140,
         "wires": [
             [
                 "9f57f0b7.0e0d68"
@@ -10361,7 +10331,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 100,
-        "y": 680,
+        "y": 1180,
         "wires": [
             [
                 "c05a6891.13f7b"
@@ -10390,7 +10360,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 100,
-        "y": 720,
+        "y": 1220,
         "wires": [
             [
                 "f6e0a95c.5e288"
@@ -10411,7 +10381,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 580,
-        "y": 480,
+        "y": 980,
         "wires": []
     },
     {
@@ -10428,7 +10398,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 570,
-        "y": 440,
+        "y": 940,
         "wires": []
     },
     {
@@ -10445,7 +10415,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 560,
-        "y": 400,
+        "y": 900,
         "wires": []
     },
     {
@@ -10462,7 +10432,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 570,
-        "y": 600,
+        "y": 1100,
         "wires": []
     },
     {
@@ -10479,7 +10449,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 580,
-        "y": 640,
+        "y": 1140,
         "wires": []
     },
     {
@@ -10496,7 +10466,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 570,
-        "y": 680,
+        "y": 1180,
         "wires": []
     },
     {
@@ -10513,7 +10483,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 570,
-        "y": 720,
+        "y": 1220,
         "wires": []
     },
     {
@@ -11533,6 +11503,482 @@
         "wires": [
             [
                 "b341fea3.148268"
+            ]
+        ]
+    },
+    {
+        "id": "dc736450.6aad88",
+        "type": "inject",
+        "z": "ef9247c6.cadc28",
+        "name": "Alle 15s",
+        "repeat": "15",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 100,
+        "y": 300,
+        "wires": [
+            [
+                "6b5b9d4f.9b1a94"
+            ]
+        ]
+    },
+    {
+        "id": "6b5b9d4f.9b1a94",
+        "type": "get",
+        "z": "ef9247c6.cadc28",
+        "connection": "f438956c.669a58",
+        "method": "getMission",
+        "name": "Lese Missionsinfos",
+        "x": 290,
+        "y": 300,
+        "wires": [
+            [
+                "ba96084e.5182f8"
+            ]
+        ]
+    },
+    {
+        "id": "ba96084e.5182f8",
+        "type": "change",
+        "z": "ef9247c6.cadc28",
+        "name": "Merke Batterie-%",
+        "rules": [
+            {
+                "t": "set",
+                "p": "vacuum.batteryPercentage",
+                "pt": "flow",
+                "to": "payload.batPct",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b9d52c6e.119a6",
+        "type": "change",
+        "z": "ef9247c6.cadc28",
+        "name": "Hole Batterie-%",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "vacuum.batteryPercentage",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 640,
+        "wires": [
+            [
+                "1a790fd6.9727f"
+            ]
+        ]
+    },
+    {
+        "id": "1a790fd6.9727f",
+        "type": "ui_text",
+        "z": "ef9247c6.cadc28",
+        "group": "e76cc3b6.096b9",
+        "order": 3,
+        "width": 2,
+        "height": 1,
+        "name": "Zeige Batterie-%",
+        "label": "<i class=\"material-icons\">battery_unknown</i>",
+        "format": "{{msg.payload}}%",
+        "layout": "row-center",
+        "x": 1050,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "a7fd3791.d9bb3",
+        "type": "inject",
+        "z": "ef9247c6.cadc28",
+        "name": "Alle 15s",
+        "repeat": "15",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 100,
+        "y": 240,
+        "wires": [
+            [
+                "83e76e99.6ad918"
+            ]
+        ]
+    },
+    {
+        "id": "83e76e99.6ad918",
+        "type": "get",
+        "z": "ef9247c6.cadc28",
+        "connection": "f438956c.669a58",
+        "method": "getMission",
+        "name": "Lese Missionsinfos",
+        "x": 290,
+        "y": 240,
+        "wires": [
+            [
+                "15cdfb2b.5431b5"
+            ]
+        ]
+    },
+    {
+        "id": "15cdfb2b.5431b5",
+        "type": "change",
+        "z": "ef9247c6.cadc28",
+        "name": "Merke Behälter-Füllstand",
+        "rules": [
+            {
+                "t": "set",
+                "p": "vacuum.isBinFull",
+                "pt": "flow",
+                "to": "payload.bin.full",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2acf08ca.71e5a",
+        "type": "change",
+        "z": "ef9247c6.cadc28",
+        "name": "Hole Behälter-Füllstand",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "vacuum.isBinFull",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 560,
+        "wires": [
+            [
+                "e96d8d2c.ff80b8"
+            ]
+        ]
+    },
+    {
+        "id": "d99cc27e.8c823",
+        "type": "ui_text",
+        "z": "ef9247c6.cadc28",
+        "group": "e76cc3b6.096b9",
+        "order": 2,
+        "width": 2,
+        "height": 1,
+        "name": "Zeige Behälter-Füllstand",
+        "label": "<i class=\"material-icons\">delete</i>",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 1070,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "e5a0cbf2.4dbfd8",
+        "type": "switch",
+        "z": "ef9247c6.cadc28",
+        "name": "switch",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "charge",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "run",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 630,
+        "y": 440,
+        "wires": [
+            [
+                "19a7cc04.7b3fbc"
+            ],
+            [
+                "f4d89f9.0d57c6"
+            ],
+            [
+                "3ec36234.7ffb9e"
+            ]
+        ]
+    },
+    {
+        "id": "a8c3ca2e.522968",
+        "type": "complete",
+        "z": "ef9247c6.cadc28",
+        "name": "Warte auf Zustand",
+        "scope": [
+            "d8790c6e.9747c8"
+        ],
+        "uncaught": false,
+        "x": 130,
+        "y": 440,
+        "wires": [
+            [
+                "a332c723.19fcf"
+            ]
+        ]
+    },
+    {
+        "id": "53dc9a4f.ebaa64",
+        "type": "complete",
+        "z": "ef9247c6.cadc28",
+        "name": "Warte auf Behälter-Füllstand",
+        "scope": [
+            "15cdfb2b.5431b5"
+        ],
+        "uncaught": false,
+        "x": 160,
+        "y": 560,
+        "wires": [
+            [
+                "2acf08ca.71e5a"
+            ]
+        ]
+    },
+    {
+        "id": "90863f37.7b4af8",
+        "type": "complete",
+        "z": "ef9247c6.cadc28",
+        "name": "Warte auf Batterie-%",
+        "scope": [
+            "ba96084e.5182f8"
+        ],
+        "uncaught": false,
+        "x": 130,
+        "y": 640,
+        "wires": [
+            [
+                "b9d52c6e.119a6"
+            ]
+        ]
+    },
+    {
+        "id": "19a7cc04.7b3fbc",
+        "type": "change",
+        "z": "ef9247c6.cadc28",
+        "name": "Setze Lade-Icon",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "battery_charging_full",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 400,
+        "wires": [
+            [
+                "8d5dcde3.e22098"
+            ]
+        ]
+    },
+    {
+        "id": "f4d89f9.0d57c6",
+        "type": "change",
+        "z": "ef9247c6.cadc28",
+        "name": "Setze Säubern-Icon",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "local_laundry_service",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 440,
+        "wires": [
+            [
+                "8d5dcde3.e22098"
+            ]
+        ]
+    },
+    {
+        "id": "3ec36234.7ffb9e",
+        "type": "change",
+        "z": "ef9247c6.cadc28",
+        "name": "Setze Unbekannt-Icon",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "help",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 480,
+        "wires": [
+            [
+                "8d5dcde3.e22098"
+            ]
+        ]
+    },
+    {
+        "id": "8d5dcde3.e22098",
+        "type": "ui_text",
+        "z": "ef9247c6.cadc28",
+        "group": "e76cc3b6.096b9",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "name": "Zeige Zustand",
+        "label": "",
+        "format": "<i class=\"material-icons\">{{msg.payload}}</i>",
+        "layout": "row-center",
+        "x": 1040,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "e96d8d2c.ff80b8",
+        "type": "switch",
+        "z": "ef9247c6.cadc28",
+        "name": "switch",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 630,
+        "y": 560,
+        "wires": [
+            [
+                "e9e383ed.04dba"
+            ],
+            [
+                "f606586.1259b28"
+            ]
+        ]
+    },
+    {
+        "id": "e9e383ed.04dba",
+        "type": "change",
+        "z": "ef9247c6.cadc28",
+        "name": "Setze \"Voll\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Voll",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 540,
+        "wires": [
+            [
+                "d99cc27e.8c823"
+            ]
+        ]
+    },
+    {
+        "id": "f606586.1259b28",
+        "type": "change",
+        "z": "ef9247c6.cadc28",
+        "name": "Setze \"Nicht voll\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Nicht voll",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 580,
+        "wires": [
+            [
+                "d99cc27e.8c823"
             ]
         ]
     }
