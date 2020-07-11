@@ -677,7 +677,7 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "e7215ad9.54bc5",
-        "order": 6,
+        "order": 7,
         "width": 1,
         "height": 1
     },
@@ -686,7 +686,7 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "e7215ad9.54bc5",
-        "order": 8,
+        "order": 9,
         "width": 1,
         "height": 1
     },
@@ -695,7 +695,7 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "e7215ad9.54bc5",
-        "order": 10,
+        "order": 11,
         "width": 4,
         "height": 1
     },
@@ -704,7 +704,7 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "259c1fb2.ed8768",
-        "order": 6,
+        "order": 7,
         "width": 1,
         "height": 1
     },
@@ -713,7 +713,7 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "259c1fb2.ed8768",
-        "order": 8,
+        "order": 9,
         "width": 1,
         "height": 1
     },
@@ -722,7 +722,7 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "259c1fb2.ed8768",
-        "order": 10,
+        "order": 11,
         "width": 4,
         "height": 1
     },
@@ -731,7 +731,7 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "4587520c.baf024",
-        "order": 6,
+        "order": 7,
         "width": 1,
         "height": 1
     },
@@ -740,7 +740,7 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "4587520c.baf024",
-        "order": 8,
+        "order": 9,
         "width": 1,
         "height": 1
     },
@@ -749,7 +749,7 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "4587520c.baf024",
-        "order": 10,
+        "order": 11,
         "width": 4,
         "height": 1
     },
@@ -775,6 +775,15 @@
     },
     {
         "id": "ee3e9631.28ce3",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "22abfc75.b9b2e4",
+        "order": 8,
+        "width": "6",
+        "height": 1
+    },
+    {
+        "id": "e391ae86.ccd0a8",
         "type": "ui_spacer",
         "name": "spacer",
         "group": "22abfc75.b9b2e4",
@@ -5666,7 +5675,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 110,
-        "y": 940,
+        "y": 1000,
         "wires": [
             [
                 "63ed80aa.8be488"
@@ -5679,7 +5688,7 @@
         "z": "a2aa0d7f.13abb",
         "name": "Interaktion WOL",
         "group": "e7215ad9.54bc5",
-        "order": 7,
+        "order": 8,
         "width": 2,
         "height": 1,
         "passthru": false,
@@ -5692,7 +5701,7 @@
         "payloadType": "str",
         "topic": "",
         "x": 300,
-        "y": 940,
+        "y": 1000,
         "wires": [
             [
                 "b833ecfe.97c898"
@@ -5708,7 +5717,7 @@
         "udpport": "9",
         "name": "Wecke PC auf",
         "x": 760,
-        "y": 940,
+        "y": 1000,
         "wires": []
     },
     {
@@ -5724,7 +5733,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 110,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "9b0c2ac9.3b4a7"
@@ -5737,7 +5746,7 @@
         "z": "a2aa0d7f.13abb",
         "group": "e7215ad9.54bc5",
         "name": "Zeige Computer-Icon",
-        "order": 9,
+        "order": 10,
         "width": 2,
         "height": 2,
         "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        devices\n    </i>\n</div>",
@@ -5746,7 +5755,7 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "x": 320,
-        "y": 880,
+        "y": 940,
         "wires": [
             []
         ]
@@ -5816,7 +5825,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 940,
+        "y": 1000,
         "wires": [
             [
                 "1937504e.5ad448"
@@ -6444,7 +6453,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 110,
-        "y": 940,
+        "y": 1000,
         "wires": [
             [
                 "65aa0341.734854"
@@ -6457,7 +6466,7 @@
         "z": "19f0cc46.99b404",
         "name": "Interaktion WOL",
         "group": "259c1fb2.ed8768",
-        "order": 7,
+        "order": 8,
         "width": 2,
         "height": 1,
         "passthru": false,
@@ -6470,7 +6479,7 @@
         "payloadType": "str",
         "topic": "",
         "x": 300,
-        "y": 940,
+        "y": 1000,
         "wires": [
             [
                 "9a770835.1bc008"
@@ -6486,7 +6495,7 @@
         "udpport": "9",
         "name": "Wecke PC auf",
         "x": 760,
-        "y": 940,
+        "y": 1000,
         "wires": []
     },
     {
@@ -6494,6 +6503,18 @@
         "type": "inject",
         "z": "19f0cc46.99b404",
         "name": "Beim Start",
+        "props": [
+            {
+                "p": "payload",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "v": "",
+                "vt": "string"
+            }
+        ],
         "repeat": "",
         "crontab": "",
         "once": true,
@@ -6502,7 +6523,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 110,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "ad7bf6af.7d13a8"
@@ -6515,7 +6536,7 @@
         "z": "19f0cc46.99b404",
         "group": "259c1fb2.ed8768",
         "name": "Zeige Computer-Icon",
-        "order": 9,
+        "order": 10,
         "width": 2,
         "height": 2,
         "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        devices\n    </i>\n</div>",
@@ -6524,7 +6545,7 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "x": 320,
-        "y": 880,
+        "y": 940,
         "wires": [
             []
         ]
@@ -6594,7 +6615,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 940,
+        "y": 1000,
         "wires": [
             [
                 "d8fffee7.1ec13"
@@ -7251,7 +7272,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 110,
-        "y": 940,
+        "y": 1000,
         "wires": [
             [
                 "7d733ad3.176674"
@@ -7264,7 +7285,7 @@
         "z": "18052606.db735a",
         "name": "Interaktion WOL",
         "group": "4587520c.baf024",
-        "order": 7,
+        "order": 8,
         "width": 2,
         "height": 1,
         "passthru": false,
@@ -7277,7 +7298,7 @@
         "payloadType": "str",
         "topic": "",
         "x": 300,
-        "y": 940,
+        "y": 1000,
         "wires": [
             [
                 "d0a0a4ee.347c98"
@@ -7293,7 +7314,7 @@
         "udpport": "9",
         "name": "Wecke PC auf",
         "x": 760,
-        "y": 940,
+        "y": 1000,
         "wires": []
     },
     {
@@ -7309,7 +7330,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 110,
-        "y": 880,
+        "y": 940,
         "wires": [
             [
                 "e36a342c.1dd968"
@@ -7322,7 +7343,7 @@
         "z": "18052606.db735a",
         "group": "4587520c.baf024",
         "name": "Zeige Computer-Icon",
-        "order": 9,
+        "order": 10,
         "width": 2,
         "height": 2,
         "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        devices\n    </i>\n</div>",
@@ -7331,7 +7352,7 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "x": 320,
-        "y": 880,
+        "y": 940,
         "wires": [
             []
         ]
@@ -7401,7 +7422,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 940,
+        "y": 1000,
         "wires": [
             [
                 "f791228a.7f1988"
@@ -11152,6 +11173,366 @@
         "wires": [
             [
                 "22c7900b.0b7d9"
+            ]
+        ]
+    },
+    {
+        "id": "fabb582b.4dd338",
+        "type": "inject",
+        "z": "19f0cc46.99b404",
+        "name": "Beim Start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 880,
+        "wires": [
+            [
+                "14e9f737.de81a9"
+            ]
+        ]
+    },
+    {
+        "id": "e089d720.9ef14",
+        "type": "ui_text",
+        "z": "19f0cc46.99b404",
+        "group": "259c1fb2.ed8768",
+        "order": 6,
+        "width": "6",
+        "height": "1",
+        "name": "Zeige Automatisierungsinfo",
+        "label": "<i class=\"material-icons\">info</i>",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 640,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "68ac107c.ed761",
+        "type": "inject",
+        "z": "a2aa0d7f.13abb",
+        "name": "Beim Start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 880,
+        "wires": [
+            [
+                "80f740f5.651b38"
+            ]
+        ]
+    },
+    {
+        "id": "c752fd9f.fdcee",
+        "type": "ui_text",
+        "z": "a2aa0d7f.13abb",
+        "group": "e7215ad9.54bc5",
+        "order": 6,
+        "width": "6",
+        "height": "1",
+        "name": "Zeige Automatisierungsinfo",
+        "label": "<i class=\"material-icons\">info</i>",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 640,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "14e9f737.de81a9",
+        "type": "change",
+        "z": "19f0cc46.99b404",
+        "name": "Setze Nachricht",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Schaltet sich automatisch ab.",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 880,
+        "wires": [
+            [
+                "e089d720.9ef14"
+            ]
+        ]
+    },
+    {
+        "id": "80f740f5.651b38",
+        "type": "change",
+        "z": "a2aa0d7f.13abb",
+        "name": "Setze Nachricht",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Schaltet sich automatisch ab.",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 880,
+        "wires": [
+            [
+                "c752fd9f.fdcee"
+            ]
+        ]
+    },
+    {
+        "id": "274c1d34.a37cf2",
+        "type": "inject",
+        "z": "9a03c26f.2caa38",
+        "name": "Beim Start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 960,
+        "wires": [
+            [
+                "ebe25b94.4ebbc"
+            ]
+        ]
+    },
+    {
+        "id": "6e116585.d9a1a4",
+        "type": "ui_text",
+        "z": "9a03c26f.2caa38",
+        "group": "412fbf62.1e1d9",
+        "order": 6,
+        "width": "6",
+        "height": "1",
+        "name": "Zeige Automatisierungsinfo",
+        "label": "<i class=\"material-icons\">info</i>",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 640,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "ebe25b94.4ebbc",
+        "type": "change",
+        "z": "9a03c26f.2caa38",
+        "name": "Setze Nachricht",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Schaltet vollautomatisch gemäß Zeitplan.",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 960,
+        "wires": [
+            [
+                "6e116585.d9a1a4"
+            ]
+        ]
+    },
+    {
+        "id": "f402c242.d9951",
+        "type": "inject",
+        "z": "18052606.db735a",
+        "name": "Beim Start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 880,
+        "wires": [
+            [
+                "b3d6cff0.2d6a9"
+            ]
+        ]
+    },
+    {
+        "id": "c4fc0727.de0c28",
+        "type": "ui_text",
+        "z": "18052606.db735a",
+        "group": "4587520c.baf024",
+        "order": 6,
+        "width": "6",
+        "height": "1",
+        "name": "Zeige Automatisierungsinfo",
+        "label": "<i class=\"material-icons\">info</i>",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 640,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "b3d6cff0.2d6a9",
+        "type": "change",
+        "z": "18052606.db735a",
+        "name": "Setze Nachricht",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Schaltet sich automatisch ab.",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 880,
+        "wires": [
+            [
+                "c4fc0727.de0c28"
+            ]
+        ]
+    },
+    {
+        "id": "c5f9927a.a60288",
+        "type": "inject",
+        "z": "fe976b5a.539a18",
+        "name": "Beim Start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 820,
+        "wires": [
+            [
+                "a9570228.08b57"
+            ]
+        ]
+    },
+    {
+        "id": "b341fea3.148268",
+        "type": "ui_text",
+        "z": "fe976b5a.539a18",
+        "group": "2f3f5aef.3d20ee",
+        "order": 6,
+        "width": "6",
+        "height": "1",
+        "name": "Zeige Automatisierungsinfo",
+        "label": "<i class=\"material-icons\">info</i>",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 640,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "a9570228.08b57",
+        "type": "change",
+        "z": "fe976b5a.539a18",
+        "name": "Setze Nachricht",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Schaltet sich automatisch ab.",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 820,
+        "wires": [
+            [
+                "b341fea3.148268"
             ]
         ]
     }
