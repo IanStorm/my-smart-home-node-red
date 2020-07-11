@@ -166,12 +166,12 @@
         "id": "fada851.83fedf8",
         "type": "switch",
         "z": "93de0e1e.72cac8",
-        "name": "Ist angeschaltet?",
+        "name": "Ist ausgeschaltet?",
         "property": "isSwitchedOn",
         "propertyType": "msg",
         "rules": [
             {
-                "t": "true"
+                "t": "false"
             }
         ],
         "checkall": "true",
