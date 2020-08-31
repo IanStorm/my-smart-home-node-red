@@ -664,96 +664,6 @@
         "hidden": false
     },
     {
-        "id": "564b4112.95baf",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "22abfc75.b9b2e4",
-        "order": 5,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "9e7e033e.0d5898",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "e7215ad9.54bc5",
-        "order": 7,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "f5f7b995.884fc8",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "e7215ad9.54bc5",
-        "order": 9,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "b8d27c1e.64b598",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "e7215ad9.54bc5",
-        "order": 11,
-        "width": 4,
-        "height": 1
-    },
-    {
-        "id": "68b092a2.bcbf8c",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "259c1fb2.ed8768",
-        "order": 7,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "c28e4e86.95165",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "259c1fb2.ed8768",
-        "order": 9,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "880589fe.5b7398",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "259c1fb2.ed8768",
-        "order": 11,
-        "width": 4,
-        "height": 1
-    },
-    {
-        "id": "8296e0bc.583608",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "4587520c.baf024",
-        "order": 7,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "fb00174b.76d1c",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "4587520c.baf024",
-        "order": 9,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "131daa72.001bd6",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "4587520c.baf024",
-        "order": 11,
-        "width": 4,
-        "height": 1
-    },
-    {
         "id": "2f3f5aef.3d20ee",
         "type": "ui_group",
         "z": "",
@@ -763,24 +673,6 @@
         "disp": true,
         "width": "6",
         "collapse": false
-    },
-    {
-        "id": "ee3e9631.28ce3",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "22abfc75.b9b2e4",
-        "order": 8,
-        "width": "6",
-        "height": 1
-    },
-    {
-        "id": "e391ae86.ccd0a8",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "22abfc75.b9b2e4",
-        "order": 7,
-        "width": "6",
-        "height": 1
     },
     {
         "id": "841fce51.f02b3",
@@ -799,6 +691,114 @@
         "name": "example",
         "host": "http://fritz.box",
         "strictSSL": true
+    },
+    {
+        "id": "59ba44c1.7a3114",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "22abfc75.b9b2e4",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "6440e95f.65b5",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "22abfc75.b9b2e4",
+        "order": 9,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "ab1212a7.5b3858",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "e7215ad9.54bc5",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f59609b4.4d7008",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "e7215ad9.54bc5",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d5cbbb34.75f828",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "e7215ad9.54bc5",
+        "order": 11,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "38d85e65.1fe2ea",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "259c1fb2.ed8768",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b9a3879b.eedcc",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "259c1fb2.ed8768",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "af2bc783.b7938",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "259c1fb2.ed8768",
+        "order": 11,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "b3dd8d4.47d19f",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "4587520c.baf024",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9bc09c3d.751",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "4587520c.baf024",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "55b54d77.088f5c",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "4587520c.baf024",
+        "order": 11,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "dc1b63a3.863228",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "22abfc75.b9b2e4",
+        "order": 10,
+        "width": "6",
+        "height": 1
     },
     {
         "id": "5908b50d.087e94",
@@ -985,8 +985,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 510,
-        "y": 160,
+        "x": 590,
+        "y": 400,
         "wires": [
             [
                 "169a6858.ea146"
@@ -999,8 +999,8 @@
         "z": "311aacb9.34a24c",
         "name": "GUI",
         "info": "",
-        "x": 70,
-        "y": 40,
+        "x": 90,
+        "y": 280,
         "wires": []
     },
     {
@@ -1016,7 +1016,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 100,
-        "y": 160,
+        "y": 400,
         "wires": [
             [
                 "b5d81e85.8c588"
@@ -1035,8 +1035,8 @@
         "label": "<i class=\"material-icons\">access_time</i>",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 710,
-        "y": 160,
+        "x": 790,
+        "y": 400,
         "wires": []
     },
     {
@@ -1058,8 +1058,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 510,
-        "y": 100,
+        "x": 590,
+        "y": 340,
         "wires": [
             [
                 "8434d57a.d32188"
@@ -1079,7 +1079,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 100,
-        "y": 100,
+        "y": 340,
         "wires": [
             [
                 "e824a13e.b27558"
@@ -1098,8 +1098,8 @@
         "label": "<i class=\"material-icons\">today</i>",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 710,
-        "y": 100,
+        "x": 790,
+        "y": 340,
         "wires": []
     },
     {
@@ -1110,8 +1110,8 @@
         "func": "// see https://usefulangle.com/post/30/javascript-get-date-time-with-offset-hours-minutes\nvar offsetInMin = new Date().getTimezoneOffset();\nvar hrsOffset = Math.abs(offsetInMin/60);\nvar minOffset = Math.abs(offsetInMin%60);\nvar hhOffset = (\"00\" + hrsOffset).slice(-2);\nvar mmOffset = (\"00\" + minOffset).slice(-2);\n\nvar offsetIso8601 = undefined;\nif (offsetInMin < 0)\n    offsetIso8601 = \"+\" + hhOffset + mmOffset;\nelse if (offsetInMin > 0)\n    offsetIso8601 = \"-\" + hhOffset + mmOffset;\nelse if (offsetInMin === 0)\n    offsetIso8601 = \"Z\";\n\nmsg.timezone = offsetIso8601;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 290,
-        "y": 160,
+        "x": 370,
+        "y": 400,
         "wires": [
             [
                 "f4614d41.21dad"
@@ -10047,8 +10047,8 @@
         "z": "19f0cc46.99b404",
         "group": "259c1fb2.ed8768",
         "order": 6,
-        "width": "6",
-        "height": "1",
+        "width": 6,
+        "height": 1,
         "name": "Zeige Automatisierungsinfo",
         "label": "<i class=\"material-icons\">info</i>",
         "format": "{{msg.payload}}",
@@ -10092,8 +10092,8 @@
         "z": "a2aa0d7f.13abb",
         "group": "e7215ad9.54bc5",
         "order": 6,
-        "width": "6",
-        "height": "1",
+        "width": 6,
+        "height": 1,
         "name": "Zeige Automatisierungsinfo",
         "label": "<i class=\"material-icons\">info</i>",
         "format": "{{msg.payload}}",
@@ -10263,8 +10263,8 @@
         "z": "18052606.db735a",
         "group": "4587520c.baf024",
         "order": 6,
-        "width": "6",
-        "height": "1",
+        "width": 6,
+        "height": 1,
         "name": "Zeige Automatisierungsinfo",
         "label": "<i class=\"material-icons\">info</i>",
         "format": "{{msg.payload}}",
@@ -11569,6 +11569,218 @@
             ],
             [
                 "a6aa62e7.a67cf8"
+            ]
+        ]
+    },
+    {
+        "id": "7765d8b5.58db38",
+        "type": "openweathermap in",
+        "z": "311aacb9.34a24c",
+        "name": "Warte auf OpenWeatherMap",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "Bremen",
+        "country": "Germany",
+        "language": "en",
+        "x": 160,
+        "y": 180,
+        "wires": [
+            [
+                "81e3c007.4481b8",
+                "72908a29.0d5bd4"
+            ]
+        ]
+    },
+    {
+        "id": "2117869e.9ae2c2",
+        "type": "comment",
+        "z": "311aacb9.34a24c",
+        "name": "Daten",
+        "info": "",
+        "x": 90,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "1ceb045.777147c",
+        "type": "comment",
+        "z": "311aacb9.34a24c",
+        "name": "world environment",
+        "info": "",
+        "x": 110,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "a6a8e65d.21ae38",
+        "type": "change",
+        "z": "311aacb9.34a24c",
+        "name": "Merke akt. Temp.",
+        "rules": [
+            {
+                "t": "set",
+                "p": "weather.current_temp",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3405d8e3.6ab08",
+        "type": "ui_text",
+        "z": "311aacb9.34a24c",
+        "group": "22abfc75.b9b2e4",
+        "order": 7,
+        "width": "2",
+        "height": 1,
+        "name": "Zeige Wetter-Daten",
+        "label": "<i class=\"wi wi-owm-{{msg.payload.key}}\"></i>",
+        "format": "{{msg.payload.value}}°C",
+        "layout": "row-spread",
+        "x": 810,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "81e3c007.4481b8",
+        "type": "change",
+        "z": "311aacb9.34a24c",
+        "name": "Merke Wetter-Icon",
+        "rules": [
+            {
+                "t": "set",
+                "p": "weather.icon",
+                "pt": "flow",
+                "to": "payload.icon",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "24db8dfe.80490a",
+        "type": "change",
+        "z": "311aacb9.34a24c",
+        "name": "Hole Wetter-Daten",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.key",
+                "pt": "msg",
+                "to": "weather.icon",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "payload.value",
+                "pt": "msg",
+                "to": "weather.current_temp",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 460,
+        "wires": [
+            [
+                "3405d8e3.6ab08"
+            ]
+        ]
+    },
+    {
+        "id": "90daccc4.d1e6f8",
+        "type": "complete",
+        "z": "311aacb9.34a24c",
+        "name": "Warte auf Wetter-Daten",
+        "scope": [
+            "81e3c007.4481b8",
+            "a6a8e65d.21ae38"
+        ],
+        "uncaught": false,
+        "x": 140,
+        "y": 460,
+        "wires": [
+            [
+                "24db8dfe.80490a"
+            ]
+        ]
+    },
+    {
+        "id": "604ed99e.3a8a9",
+        "type": "range",
+        "z": "311aacb9.34a24c",
+        "minin": "-100",
+        "maxin": "100",
+        "minout": "-100",
+        "maxout": "100",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "Formatiere akt. Temp.",
+        "x": 640,
+        "y": 160,
+        "wires": [
+            [
+                "a6a8e65d.21ae38"
+            ]
+        ]
+    },
+    {
+        "id": "72908a29.0d5bd4",
+        "type": "change",
+        "z": "311aacb9.34a24c",
+        "name": "Lese akt. Temp.",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.tempc",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 160,
+        "wires": [
+            [
+                "604ed99e.3a8a9"
             ]
         ]
     }
