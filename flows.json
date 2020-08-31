@@ -685,14 +685,6 @@
         "hidden": false
     },
     {
-        "id": "f6dfc0c2.2a4de",
-        "type": "fritz-api",
-        "z": "",
-        "name": "example",
-        "host": "http://fritz.box",
-        "strictSSL": true
-    },
-    {
         "id": "59ba44c1.7a3114",
         "type": "ui_spacer",
         "name": "spacer",
