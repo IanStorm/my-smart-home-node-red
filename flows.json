@@ -105,13 +105,6 @@
         "info": ""
     },
     {
-        "id": "cb9bca95.45947",
-        "type": "tab",
-        "label": "machine env. -> Infos",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "dd43bdd9.895da8",
         "type": "subflow",
         "name": "Steckdosen-Logik",
@@ -822,172 +815,6 @@
         "disp": true,
         "width": "6",
         "collapse": false
-    },
-    {
-        "id": "5908b50d.087e94",
-        "type": "comment",
-        "z": "cb9bca95.45947",
-        "name": "GUI",
-        "info": "",
-        "x": 70,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "6b0a3d11.c37b74",
-        "type": "inject",
-        "z": "cb9bca95.45947",
-        "name": "1-mal beim Start",
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 130,
-        "y": 100,
-        "wires": [
-            [
-                "d3f996ee.4cf658",
-                "f83df6e6.865c08"
-            ]
-        ]
-    },
-    {
-        "id": "d3f996ee.4cf658",
-        "type": "exec",
-        "z": "cb9bca95.45947",
-        "command": "node -v",
-        "addpay": false,
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "oldrc": false,
-        "name": "Lese Node.js-Version",
-        "x": 380,
-        "y": 160,
-        "wires": [
-            [
-                "46bab668.97aaf"
-            ],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "46bab668.97aaf",
-        "type": "ui_text",
-        "z": "cb9bca95.45947",
-        "group": "ce9bba2a.9d9588",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "Zeige Node.js-Version",
-        "label": "Node.js:",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 620,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "534580c6.34f47",
-        "type": "json",
-        "z": "cb9bca95.45947",
-        "name": "Konvertiere zu JSON",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 620,
-        "y": 100,
-        "wires": [
-            [
-                "438a7561.a93af4"
-            ]
-        ]
-    },
-    {
-        "id": "f8b0e1d9.5980c",
-        "type": "ui_table",
-        "z": "cb9bca95.45947",
-        "group": "ce9bba2a.9d9588",
-        "name": "Zeige Paket-Versionen",
-        "order": 2,
-        "width": "6",
-        "height": "8",
-        "columns": [
-            {
-                "field": "name",
-                "title": "Paket-Name",
-                "width": "70%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "version",
-                "title": "Version",
-                "width": "30%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
-        "outputs": 0,
-        "cts": false,
-        "x": 1080,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "f83df6e6.865c08",
-        "type": "file in",
-        "z": "cb9bca95.45947",
-        "name": "Lese Paket-Versionen",
-        "filename": "package.json",
-        "format": "utf8",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "utf8",
-        "x": 380,
-        "y": 100,
-        "wires": [
-            [
-                "534580c6.34f47"
-            ]
-        ]
-    },
-    {
-        "id": "438a7561.a93af4",
-        "type": "change",
-        "z": "cb9bca95.45947",
-        "name": "Bereite Daten auf",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$each(payload.dependencies, function($v, $k) {\t    {\t        \"name\": $k,\t        \"version\": $v\t    }\t})\t",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 850,
-        "y": 100,
-        "wires": [
-            [
-                "f8b0e1d9.5980c"
-            ]
-        ]
     },
     {
         "id": "f4614d41.21dad",
@@ -11835,7 +11662,7 @@
         "server": "dd3cc3c3.66f0c8",
         "topic": null,
         "x": 160,
-        "y": 180,
+        "y": 300,
         "wires": [
             [
                 "dd3f41ae.c61528"
@@ -11860,7 +11687,7 @@
         "repair": false,
         "outputs": 1,
         "x": 440,
-        "y": 180,
+        "y": 300,
         "wires": [
             [
                 "3fbdd68c.1daefa",
@@ -11888,7 +11715,7 @@
         "to": "",
         "reg": false,
         "x": 740,
-        "y": 180,
+        "y": 300,
         "wires": [
             []
         ]
@@ -11913,7 +11740,7 @@
         "to": "",
         "reg": false,
         "x": 730,
-        "y": 240,
+        "y": 360,
         "wires": [
             []
         ]
@@ -11925,7 +11752,7 @@
         "name": "GUI",
         "info": "",
         "x": 90,
-        "y": 320,
+        "y": 460,
         "wires": []
     },
     {
@@ -11948,7 +11775,7 @@
         "to": "",
         "reg": false,
         "x": 490,
-        "y": 380,
+        "y": 640,
         "wires": [
             [
                 "b39ed99b.b67588"
@@ -11965,7 +11792,7 @@
         ],
         "uncaught": false,
         "x": 180,
-        "y": 380,
+        "y": 640,
         "wires": [
             [
                 "71ea7657.f782c8"
@@ -11982,7 +11809,7 @@
         ],
         "uncaught": false,
         "x": 170,
-        "y": 440,
+        "y": 700,
         "wires": [
             [
                 "9437f325.0f27"
@@ -12009,7 +11836,7 @@
         "to": "",
         "reg": false,
         "x": 480,
-        "y": 440,
+        "y": 700,
         "wires": [
             [
                 "2e5bf7c.fea4208"
@@ -12029,7 +11856,7 @@
         "format": "v{{msg.payload}}",
         "layout": "row-spread",
         "x": 800,
-        "y": 380,
+        "y": 640,
         "wires": []
     },
     {
@@ -12045,7 +11872,293 @@
         "format": "v{{msg.payload}}",
         "layout": "row-spread",
         "x": 780,
-        "y": 440,
+        "y": 700,
         "wires": []
+    },
+    {
+        "id": "16ada7db.091798",
+        "type": "inject",
+        "z": "ffb49bdd.d4ea8",
+        "name": "1-mal beim Start",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "7d4d3e60.b32e18"
+            ]
+        ]
+    },
+    {
+        "id": "b6ceae1c.68cd3",
+        "type": "inject",
+        "z": "ffb49bdd.d4ea8",
+        "name": "1-mal beim Start",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "1babb4c5.a9fa43"
+            ]
+        ]
+    },
+    {
+        "id": "1babb4c5.a9fa43",
+        "type": "exec",
+        "z": "ffb49bdd.d4ea8",
+        "command": "node -v",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "Lese Node.js-Version",
+        "x": 360,
+        "y": 180,
+        "wires": [
+            [
+                "1ef49784.e4a75"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "db92f390.68acc8",
+        "type": "ui_text",
+        "z": "ffb49bdd.d4ea8",
+        "group": "ce9bba2a.9d9588",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Zeige Node.js-Version",
+        "label": "Node.js:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 760,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "21afc3f8.6073ec",
+        "type": "json",
+        "z": "ffb49bdd.d4ea8",
+        "name": "Konvertiere zu JSON",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 600,
+        "y": 240,
+        "wires": [
+            [
+                "1b64fdb7.e0d78a"
+            ]
+        ]
+    },
+    {
+        "id": "7d4d3e60.b32e18",
+        "type": "file in",
+        "z": "ffb49bdd.d4ea8",
+        "name": "Lese Paket-Versionen",
+        "filename": "package.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "21afc3f8.6073ec"
+            ]
+        ]
+    },
+    {
+        "id": "aa24cde1.7fcae",
+        "type": "ui_table",
+        "z": "ffb49bdd.d4ea8",
+        "group": "ce9bba2a.9d9588",
+        "name": "Zeige Paket-Versionen",
+        "order": 2,
+        "width": "6",
+        "height": "12",
+        "columns": [
+            {
+                "field": "name",
+                "title": "Paket-Name",
+                "width": "70%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "version",
+                "title": "Version",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 760,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "1ef49784.e4a75",
+        "type": "change",
+        "z": "ffb49bdd.d4ea8",
+        "name": "Merke Node.js-Version",
+        "rules": [
+            {
+                "t": "set",
+                "p": "nodejs.version",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1b64fdb7.e0d78a",
+        "type": "change",
+        "z": "ffb49bdd.d4ea8",
+        "name": "Merke Paket-Versionen",
+        "rules": [
+            {
+                "t": "set",
+                "p": "packageJson",
+                "pt": "flow",
+                "to": "$each(payload.dependencies, function($v, $k) {\t    {\t        \"name\": $k,\t        \"version\": $v\t    }\t})\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cd0636ca.826e9",
+        "type": "complete",
+        "z": "ffb49bdd.d4ea8",
+        "name": "Warte auf Node.js-Version",
+        "scope": [
+            "1ef49784.e4a75"
+        ],
+        "uncaught": false,
+        "x": 150,
+        "y": 520,
+        "wires": [
+            [
+                "65d4c26e.dc875c"
+            ]
+        ]
+    },
+    {
+        "id": "2bf1dbbb.ff5724",
+        "type": "complete",
+        "z": "ffb49bdd.d4ea8",
+        "name": "Warte auf Paket-Versionen",
+        "scope": [
+            "1b64fdb7.e0d78a"
+        ],
+        "uncaught": false,
+        "x": 150,
+        "y": 580,
+        "wires": [
+            [
+                "325bb2c7.0e5516"
+            ]
+        ]
+    },
+    {
+        "id": "65d4c26e.dc875c",
+        "type": "change",
+        "z": "ffb49bdd.d4ea8",
+        "name": "Hole Node.js-Version",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "nodejs.version",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 520,
+        "wires": [
+            [
+                "db92f390.68acc8"
+            ]
+        ]
+    },
+    {
+        "id": "325bb2c7.0e5516",
+        "type": "change",
+        "z": "ffb49bdd.d4ea8",
+        "name": "Hole Paket-Versionen",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "packageJson",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 580,
+        "wires": [
+            [
+                "aa24cde1.7fcae"
+            ]
+        ]
     }
 ]
