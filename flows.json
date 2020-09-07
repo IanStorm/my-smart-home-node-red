@@ -93,7 +93,7 @@
     {
         "id": "6f97fcb2.a1b9b4",
         "type": "tab",
-        "label": "KS -TODO-",
+        "label": "KS Wohnküche kl.",
         "disabled": false,
         "info": ""
     },
@@ -837,7 +837,7 @@
         "id": "aa64946a.b8cef",
         "type": "ui_group",
         "z": "",
-        "name": "-TODO-",
+        "name": "Wohnküche, kl. Balkontür",
         "tab": "abb1b2ae.11d618",
         "order": 1,
         "disp": true,
@@ -12193,9 +12193,9 @@
         "id": "dd171166.c3478",
         "type": "comment",
         "z": "6f97fcb2.a1b9b4",
-        "name": "Kontakt-Sensor -> -TODO-",
+        "name": "Kontakt-Sensor -> Wohnküche -> kleine Balkontür",
         "info": "",
-        "x": 130,
+        "x": 210,
         "y": 40,
         "wires": []
     },
@@ -12208,26 +12208,6 @@
         "x": 90,
         "y": 120,
         "wires": []
-    },
-    {
-        "id": "25d4894d.c8a516",
-        "type": "zigbee2mqtt-in",
-        "z": "6f97fcb2.a1b9b4",
-        "name": "Warte auf Sensor-Daten",
-        "server": "dd3cc3c3.66f0c8",
-        "friendly_name": "0x00158d00045ce46a",
-        "device_id": "0x00158d00045ce46a",
-        "state": "0",
-        "outputAtStartup": true,
-        "x": 140,
-        "y": 180,
-        "wires": [
-            [
-                "9ed0fd50.6d83f",
-                "22ce0eb1.1f3462",
-                "2f723795.00e928"
-            ]
-        ]
     },
     {
         "id": "9ed0fd50.6d83f",
@@ -12301,7 +12281,9 @@
         "x": 360,
         "y": 300,
         "wires": [
-            []
+            [
+                "5fd892f7.d7fc5c"
+            ]
         ]
     },
     {
@@ -12493,5 +12475,35 @@
         "x": 540,
         "y": 560,
         "wires": []
+    },
+    {
+        "id": "5fd892f7.d7fc5c",
+        "type": "link out",
+        "z": "6f97fcb2.a1b9b4",
+        "name": "Teile Zustand",
+        "links": [],
+        "x": 515,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a29c5c33.23cba",
+        "type": "zigbee2mqtt-in",
+        "z": "6f97fcb2.a1b9b4",
+        "name": "Warte auf Sensor-Daten",
+        "server": "dd3cc3c3.66f0c8",
+        "friendly_name": "0x00158d00045ce46a",
+        "device_id": "0x00158d00045ce46a",
+        "state": "0",
+        "outputAtStartup": true,
+        "x": 140,
+        "y": 180,
+        "wires": [
+            [
+                "9ed0fd50.6d83f",
+                "22ce0eb1.1f3462",
+                "2f723795.00e928"
+            ]
+        ]
     }
 ]
