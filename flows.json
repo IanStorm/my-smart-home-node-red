@@ -13568,7 +13568,7 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 470,
+        "x": 490,
         "y": 180,
         "wires": [
             [
@@ -13594,7 +13594,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 460,
+        "x": 480,
         "y": 220,
         "wires": [
             [
@@ -13621,7 +13621,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 450,
+        "x": 470,
         "y": 260,
         "wires": [
             [
@@ -13649,7 +13649,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 450,
+        "x": 470,
         "y": 300,
         "wires": [
             [
@@ -13663,8 +13663,8 @@
         "z": "be8a6639.d3183",
         "name": "Teile Heizung-Hauptschalter-Zustand",
         "links": [],
-        "x": 675,
-        "y": 420,
+        "x": 695,
+        "y": 520,
         "wires": []
     },
     {
@@ -13686,7 +13686,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 420,
+        "x": 440,
         "y": 340,
         "wires": [
             [
@@ -13713,7 +13713,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 380,
+        "x": 400,
         "y": 380,
         "wires": [
             [
@@ -13740,12 +13740,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 450,
+        "x": 470,
         "y": 420,
         "wires": [
-            [
-                "ae8dfb0d.ed6b38"
-            ]
+            []
         ]
     },
     {
@@ -13755,7 +13753,7 @@
         "name": "GUI",
         "info": "",
         "x": 90,
-        "y": 500,
+        "y": 600,
         "wires": []
     },
     {
@@ -13768,7 +13766,7 @@
         ],
         "uncaught": false,
         "x": 130,
-        "y": 560,
+        "y": 660,
         "wires": [
             [
                 "4299bed5.28f2d8"
@@ -13795,7 +13793,7 @@
         "to": "",
         "reg": false,
         "x": 380,
-        "y": 560,
+        "y": 660,
         "wires": [
             [
                 "7ee7f66d.c32d08"
@@ -13815,7 +13813,100 @@
         "format": "{{msg.payload ? 'An' : 'Aus'}}",
         "layout": "row-spread",
         "x": 660,
-        "y": 560,
+        "y": 660,
         "wires": []
+    },
+    {
+        "id": "58a41c45.e34d04",
+        "type": "complete",
+        "z": "be8a6639.d3183",
+        "name": "Warte auf Hauptschalter-Zustand",
+        "scope": [
+            "6ea9951a.442e4c"
+        ],
+        "uncaught": false,
+        "x": 170,
+        "y": 480,
+        "wires": [
+            [
+                "ed88f4b6.8f5f2"
+            ]
+        ]
+    },
+    {
+        "id": "29256d13.123e82",
+        "type": "change",
+        "z": "be8a6639.d3183",
+        "name": "Hole Hauptschalter-Zustand",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "radiator.mainSwitch",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "radiator/mainSwitch",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 520,
+        "wires": [
+            [
+                "ae8dfb0d.ed6b38"
+            ]
+        ]
+    },
+    {
+        "id": "ed88f4b6.8f5f2",
+        "type": "change",
+        "z": "be8a6639.d3183",
+        "name": "Bereinige Nachricht",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "data",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "location",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "title",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 480,
+        "wires": [
+            [
+                "29256d13.123e82"
+            ]
+        ]
     }
 ]
