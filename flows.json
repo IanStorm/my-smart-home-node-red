@@ -13725,7 +13725,7 @@
         "id": "6ea9951a.442e4c",
         "type": "change",
         "z": "be8a6639.d3183",
-        "name": "Merke Hzg.-Hauptschalter-Zustand",
+        "name": "Merke Hauptschalter-Zustand",
         "rules": [
             {
                 "t": "set",
@@ -13740,7 +13740,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
+        "x": 450,
         "y": 420,
         "wires": [
             [
@@ -13779,7 +13779,7 @@
         "id": "4299bed5.28f2d8",
         "type": "change",
         "z": "be8a6639.d3183",
-        "name": "Hole Hzg.-Hauptschalter-Zustand",
+        "name": "Hole Hauptschalter-Zustand",
         "rules": [
             {
                 "t": "set",
@@ -13794,7 +13794,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
+        "x": 380,
         "y": 560,
         "wires": [
             [
