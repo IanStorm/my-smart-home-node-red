@@ -6211,7 +6211,7 @@
         "name": "GUI",
         "info": "",
         "x": 90,
-        "y": 600,
+        "y": 560,
         "wires": []
     },
     {
@@ -6324,7 +6324,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "x": 590,
-        "y": 720,
+        "y": 680,
         "wires": [
             []
         ]
@@ -6342,7 +6342,7 @@
         "format": "{{msg.payload}}°C",
         "layout": "row-left",
         "x": 610,
-        "y": 780,
+        "y": 740,
         "wires": []
     },
     {
@@ -6358,7 +6358,7 @@
         "format": "{{msg.payload}}W",
         "layout": "row-left",
         "x": 630,
-        "y": 840,
+        "y": 800,
         "wires": []
     },
     {
@@ -6381,7 +6381,7 @@
         "to": "",
         "reg": false,
         "x": 390,
-        "y": 900,
+        "y": 860,
         "wires": [
             [
                 "2a63b7fa.355d6"
@@ -6437,7 +6437,7 @@
         "officon": "",
         "offcolor": "",
         "x": 630,
-        "y": 900,
+        "y": 860,
         "wires": [
             [
                 "59f4097.b82daf8"
@@ -6491,7 +6491,7 @@
         "to": "",
         "reg": false,
         "x": 850,
-        "y": 900,
+        "y": 860,
         "wires": [
             []
         ]
@@ -6516,7 +6516,7 @@
         "to": "",
         "reg": false,
         "x": 370,
-        "y": 720,
+        "y": 680,
         "wires": [
             [
                 "98a1bccc.ac5458"
@@ -6543,7 +6543,7 @@
         "to": "",
         "reg": false,
         "x": 380,
-        "y": 780,
+        "y": 740,
         "wires": [
             [
                 "c55c6425.94487"
@@ -6570,7 +6570,7 @@
         "to": "",
         "reg": false,
         "x": 380,
-        "y": 840,
+        "y": 800,
         "wires": [
             [
                 "994ddb02.8574a8"
@@ -6618,7 +6618,7 @@
         ],
         "uncaught": false,
         "x": 120,
-        "y": 720,
+        "y": 680,
         "wires": [
             [
                 "cdd6bb7c.7bc698"
@@ -6635,7 +6635,7 @@
         ],
         "uncaught": false,
         "x": 140,
-        "y": 780,
+        "y": 740,
         "wires": [
             [
                 "fcee4422.71b9a"
@@ -6652,7 +6652,7 @@
         ],
         "uncaught": false,
         "x": 130,
-        "y": 840,
+        "y": 800,
         "wires": [
             [
                 "73b1df3c.4e55f"
@@ -6669,7 +6669,7 @@
         ],
         "uncaught": false,
         "x": 150,
-        "y": 900,
+        "y": 860,
         "wires": [
             [
                 "ecd4fe7b.025c4"
@@ -6691,7 +6691,7 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "x": 620,
-        "y": 660,
+        "y": 620,
         "wires": [
             []
         ]
@@ -6709,7 +6709,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 110,
-        "y": 660,
+        "y": 620,
         "wires": [
             [
                 "18fdba9b.55e285"
@@ -6720,15 +6720,24 @@
         "id": "ec1ea3ce.b619b8",
         "type": "inject",
         "z": "9a03c26f.2caa38",
-        "name": "Mo., Di., Mi., Do., & So., 21 Uhr",
+        "name": "Täglich, 21 Uhr",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
         "repeat": "",
-        "crontab": "00 21 * * 1,2,3,4,0",
+        "crontab": "00 21 * * *",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
+        "x": 130,
         "y": 380,
         "wires": [
             [
@@ -6737,30 +6746,22 @@
         ]
     },
     {
-        "id": "fbaca877.628fa",
-        "type": "inject",
-        "z": "9a03c26f.2caa38",
-        "name": "Fr. & Sa., 22 Uhr",
-        "repeat": "",
-        "crontab": "00 22 * * 5,6",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "x": 130,
-        "y": 420,
-        "wires": [
-            [
-                "8f68120c.2a8928"
-            ]
-        ]
-    },
-    {
         "id": "1726d8fc.f80a17",
         "type": "inject",
         "z": "9a03c26f.2caa38",
         "name": "Werktags, 07:30 Uhr",
+        "props": [
+            {
+                "p": "payload",
+                "v": "",
+                "vt": "date"
+            },
+            {
+                "p": "topic",
+                "v": "",
+                "vt": "string"
+            }
+        ],
         "repeat": "",
         "crontab": "30 07 * * 1,2,3,4,5",
         "once": false,
@@ -6769,7 +6770,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 140,
-        "y": 480,
+        "y": 440,
         "wires": [
             [
                 "feacd98d.6662b"
@@ -6789,7 +6790,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 140,
-        "y": 520,
+        "y": 480,
         "wires": [
             [
                 "646b8f1c.1d1e88"
@@ -6815,33 +6816,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 430,
+        "x": 350,
         "y": 380,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8f68120c.2a8928",
-        "type": "change",
-        "z": "9a03c26f.2caa38",
-        "name": "Schalte an",
-        "rules": [
-            {
-                "t": "set",
-                "p": "plug.isSwitchedOn",
-                "pt": "flow",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 430,
-        "y": 420,
         "wires": [
             []
         ]
@@ -6865,8 +6841,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 430,
-        "y": 480,
+        "x": 350,
+        "y": 440,
         "wires": [
             []
         ]
@@ -6890,8 +6866,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 430,
-        "y": 520,
+        "x": 350,
+        "y": 480,
         "wires": [
             []
         ]
@@ -10117,7 +10093,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 110,
-        "y": 960,
+        "y": 920,
         "wires": [
             [
                 "ebe25b94.4ebbc"
@@ -10137,7 +10113,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-center",
         "x": 640,
-        "y": 960,
+        "y": 920,
         "wires": []
     },
     {
@@ -10160,7 +10136,7 @@
         "to": "",
         "reg": false,
         "x": 380,
-        "y": 960,
+        "y": 920,
         "wires": [
             [
                 "6e116585.d9a1a4"
