@@ -312,7 +312,7 @@
         "in": [],
         "out": [
             {
-                "x": 1180,
+                "x": 1160,
                 "y": 120,
                 "wires": [
                     {
@@ -322,7 +322,7 @@
                 ]
             },
             {
-                "x": 1180,
+                "x": 1160,
                 "y": 220,
                 "wires": [
                     {
@@ -332,7 +332,7 @@
                 ]
             },
             {
-                "x": 1180,
+                "x": 1160,
                 "y": 320,
                 "wires": [
                     {
@@ -6954,7 +6954,7 @@
         "id": "8d2d2b04.4f76b",
         "type": "change",
         "z": "c6075ab3.4abae8",
-        "name": "Merke Verbindungsstatus",
+        "name": "Merke \"Ist verbunden?\"",
         "rules": [
             {
                 "t": "set",
@@ -7039,12 +7039,12 @@
         "id": "14feed68.d15613",
         "type": "complete",
         "z": "c6075ab3.4abae8",
-        "name": "Warte auf Status",
+        "name": "Warte auf \"Ist verbunden?\"",
         "scope": [
             "8d2d2b04.4f76b"
         ],
         "uncaught": false,
-        "x": 120,
+        "x": 150,
         "y": 420,
         "wires": [
             [
@@ -7090,7 +7090,7 @@
         "id": "a605892f.da391",
         "type": "change",
         "z": "c6075ab3.4abae8",
-        "name": "Hole Status",
+        "name": "Hole \"Ist verbunden?\"",
         "rules": [
             {
                 "t": "set",
@@ -7105,7 +7105,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 400,
         "y": 420,
         "wires": [
             [
@@ -7118,7 +7118,7 @@
         "type": "ui_template",
         "z": "c6075ab3.4abae8",
         "group": "2fe0f099.995658",
-        "name": "Zeige Status",
+        "name": "Zeige \"Ist verbunden?\"",
         "order": 3,
         "width": 2,
         "height": 1,
@@ -7127,7 +7127,7 @@
         "fwdInMessages": false,
         "resendOnRefresh": true,
         "templateScope": "local",
-        "x": 610,
+        "x": 640,
         "y": 420,
         "wires": [
             []
@@ -7271,9 +7271,9 @@
         "type": "fritz-outlet",
         "z": "f81865c3.29dd28",
         "connection": "1f1ed453.c0771c",
-        "name": "Lese Verbindungsstatus",
+        "name": "Lese \"Ist verbunden?\"",
         "action": "getSwitchPresence",
-        "x": 1010,
+        "x": 1000,
         "y": 120,
         "wires": [
             []
@@ -7970,7 +7970,7 @@
         "id": "a84aaa49.c8141",
         "type": "change",
         "z": "a7755eb4.60b0d8",
-        "name": "Merke Verbindungsstatus",
+        "name": "Merke \"Ist verbunden?\"",
         "rules": [
             {
                 "t": "set",
@@ -8055,12 +8055,12 @@
         "id": "6c11fd71.44a364",
         "type": "complete",
         "z": "a7755eb4.60b0d8",
-        "name": "Warte auf Status",
+        "name": "Warte auf \"Ist verbunden?\"",
         "scope": [
             "a84aaa49.c8141"
         ],
         "uncaught": false,
-        "x": 120,
+        "x": 150,
         "y": 420,
         "wires": [
             [
@@ -8106,7 +8106,7 @@
         "id": "422c6c60.35303c",
         "type": "change",
         "z": "a7755eb4.60b0d8",
-        "name": "Hole Status",
+        "name": "Hole \"Ist verbunden?\"",
         "rules": [
             {
                 "t": "set",
@@ -8121,7 +8121,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 400,
         "y": 420,
         "wires": [
             [
@@ -8134,7 +8134,7 @@
         "type": "ui_template",
         "z": "a7755eb4.60b0d8",
         "group": "9298819a.21ca98",
-        "name": "Zeige Status",
+        "name": "Zeige \"Ist verbunden?\"",
         "order": 3,
         "width": 2,
         "height": 1,
@@ -8143,7 +8143,7 @@
         "fwdInMessages": false,
         "resendOnRefresh": true,
         "templateScope": "local",
-        "x": 610,
+        "x": 640,
         "y": 420,
         "wires": [
             []
@@ -8380,7 +8380,7 @@
         "id": "80ea0fb5.a548c8",
         "type": "change",
         "z": "750f0705.13d438",
-        "name": "Merke Verbindungsstatus",
+        "name": "Merke \"Ist verbunden?\"",
         "rules": [
             {
                 "t": "set",
@@ -8465,12 +8465,12 @@
         "id": "e74ac8b2.79a94",
         "type": "complete",
         "z": "750f0705.13d438",
-        "name": "Warte auf Status",
+        "name": "Warte auf \"Ist verbunden?\"",
         "scope": [
             "80ea0fb5.a548c8"
         ],
         "uncaught": false,
-        "x": 120,
+        "x": 150,
         "y": 420,
         "wires": [
             [
@@ -8516,7 +8516,7 @@
         "id": "746cde0a.ead7f8",
         "type": "change",
         "z": "750f0705.13d438",
-        "name": "Hole Status",
+        "name": "Hole \"Ist verbunden?\"",
         "rules": [
             {
                 "t": "set",
@@ -8531,7 +8531,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 400,
         "y": 420,
         "wires": [
             [
@@ -8544,7 +8544,7 @@
         "type": "ui_template",
         "z": "750f0705.13d438",
         "group": "cd94108d.1e556",
-        "name": "Zeige Status",
+        "name": "Zeige \"Ist verbunden?\"",
         "order": 3,
         "width": 2,
         "height": 1,
@@ -8553,7 +8553,7 @@
         "fwdInMessages": false,
         "resendOnRefresh": true,
         "templateScope": "local",
-        "x": 610,
+        "x": 640,
         "y": 420,
         "wires": [
             []
@@ -10787,7 +10787,7 @@
         "id": "e60df61b.811308",
         "type": "change",
         "z": "ecee5153.6f2368",
-        "name": "Merke Verbindungsstatus",
+        "name": "Merke \"Ist verbunden?\"",
         "rules": [
             {
                 "t": "set",
@@ -10872,12 +10872,12 @@
         "id": "d31401fb.ac686",
         "type": "complete",
         "z": "ecee5153.6f2368",
-        "name": "Warte auf Status",
+        "name": "Warte auf \"Ist verbunden?\"",
         "scope": [
             "e60df61b.811308"
         ],
         "uncaught": false,
-        "x": 120,
+        "x": 150,
         "y": 420,
         "wires": [
             [
@@ -10923,7 +10923,7 @@
         "id": "eb56fd04.c0a088",
         "type": "change",
         "z": "ecee5153.6f2368",
-        "name": "Hole Status",
+        "name": "Hole \"Ist verbunden?\"",
         "rules": [
             {
                 "t": "set",
@@ -10938,7 +10938,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 400,
         "y": 420,
         "wires": [
             [
@@ -10951,7 +10951,7 @@
         "type": "ui_template",
         "z": "ecee5153.6f2368",
         "group": "7b8abfe6.0e9dd8",
-        "name": "Zeige Status",
+        "name": "Zeige \"Ist verbunden?\"",
         "order": 3,
         "width": 2,
         "height": 1,
@@ -10960,7 +10960,7 @@
         "fwdInMessages": false,
         "resendOnRefresh": true,
         "templateScope": "local",
-        "x": 610,
+        "x": 640,
         "y": 420,
         "wires": [
             []
@@ -11149,7 +11149,7 @@
         "id": "142f68b1.13a587",
         "type": "change",
         "z": "d3be81f2.b4ce68",
-        "name": "Merke Verbindungsstatus",
+        "name": "Merke \"Ist verbunden?\"",
         "rules": [
             {
                 "t": "set",
@@ -11234,12 +11234,12 @@
         "id": "5114d1f4.164ba8",
         "type": "complete",
         "z": "d3be81f2.b4ce68",
-        "name": "Warte auf Status",
+        "name": "Warte auf \"Ist verbunden?\"",
         "scope": [
             "142f68b1.13a587"
         ],
         "uncaught": false,
-        "x": 120,
+        "x": 150,
         "y": 420,
         "wires": [
             [
@@ -11285,7 +11285,7 @@
         "id": "cc72d17b.d8ffa8",
         "type": "change",
         "z": "d3be81f2.b4ce68",
-        "name": "Hole Status",
+        "name": "Hole \"Ist verbunden?\"",
         "rules": [
             {
                 "t": "set",
@@ -11300,7 +11300,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 400,
         "y": 420,
         "wires": [
             [
@@ -11313,7 +11313,7 @@
         "type": "ui_template",
         "z": "d3be81f2.b4ce68",
         "group": "964aeb18.79a868",
-        "name": "Zeige Status",
+        "name": "Zeige \"Ist verbunden?\"",
         "order": 3,
         "width": 2,
         "height": 1,
@@ -11322,7 +11322,7 @@
         "fwdInMessages": false,
         "resendOnRefresh": true,
         "templateScope": "local",
-        "x": 610,
+        "x": 640,
         "y": 420,
         "wires": [
             []
