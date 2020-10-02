@@ -12657,7 +12657,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 410,
         "y": 180,
         "wires": [
             []
@@ -12682,7 +12682,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
+        "x": 390,
         "y": 240,
         "wires": [
             []
@@ -12692,7 +12692,7 @@
         "id": "a3764159.0812b8",
         "type": "change",
         "z": "969b20e8.461548",
-        "name": "Merke Zustand",
+        "name": "Merke \"Ist geschlossen?\"",
         "rules": [
             {
                 "t": "set",
@@ -12707,7 +12707,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
+        "x": 430,
         "y": 300,
         "wires": [
             []
@@ -12761,12 +12761,12 @@
         "id": "c514ba92.863d2",
         "type": "complete",
         "z": "969b20e8.461548",
-        "name": "Warte auf Zustand",
+        "name": "Warte auf \"Ist geschlossen?\"",
         "scope": [
             "a3764159.0812b8"
         ],
         "uncaught": false,
-        "x": 130,
+        "x": 160,
         "y": 660,
         "wires": [
             [
@@ -12793,7 +12793,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
+        "x": 400,
         "y": 540,
         "wires": [
             [
@@ -12805,7 +12805,7 @@
         "id": "911d60f1.ca5938",
         "type": "change",
         "z": "969b20e8.461548",
-        "name": "Hole Zustand",
+        "name": "Hole \"Ist geschlossen?\"",
         "rules": [
             {
                 "t": "set",
@@ -12820,7 +12820,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 330,
+        "x": 430,
         "y": 660,
         "wires": [
             [
@@ -12847,7 +12847,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
+        "x": 380,
         "y": 600,
         "wires": [
             [
@@ -12867,7 +12867,7 @@
         "label": "<i class=\"material-icons\">battery_unknown</i>",
         "format": "{{msg.payload}}%",
         "layout": "row-center",
-        "x": 550,
+        "x": 670,
         "y": 540,
         "wires": []
     },
@@ -12883,7 +12883,7 @@
         "label": "<i class=\"material-icons\">sync</i>",
         "format": "{{msg.payload}}",
         "layout": "row-center",
-        "x": 520,
+        "x": 640,
         "y": 600,
         "wires": []
     },
@@ -12895,11 +12895,11 @@
         "order": 1,
         "width": 2,
         "height": 1,
-        "name": "Zeige Zustand",
+        "name": "Zeige \"Ist geschlossen?\"",
         "label": "<i class=\"material-icons\">{{msg.payload ? 'compare_arrows' : 'swap_horiz'}}</i>",
         "format": "{{msg.payload ? 'Geschlossen' : 'Geöffnet'}}",
         "layout": "row-center",
-        "x": 540,
+        "x": 690,
         "y": 660,
         "wires": []
     },
@@ -12907,9 +12907,9 @@
         "id": "903b9330.0275",
         "type": "link out",
         "z": "969b20e8.461548",
-        "name": "Teile Zustand",
+        "name": "Teile \"Ist geschlossen?\"",
         "links": [],
-        "x": 515,
+        "x": 595,
         "y": 400,
         "wires": []
     },
@@ -12970,7 +12970,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 410,
         "y": 360,
         "wires": [
             [
@@ -12982,12 +12982,12 @@
         "id": "866796ac.6feda8",
         "type": "complete",
         "z": "969b20e8.461548",
-        "name": "Warte auf Zustand",
+        "name": "Warte auf \"Ist geschlossen?\"",
         "scope": [
             "a3764159.0812b8"
         ],
         "uncaught": false,
-        "x": 130,
+        "x": 160,
         "y": 360,
         "wires": [
             [
@@ -12999,7 +12999,7 @@
         "id": "6e0e3dbd.43d764",
         "type": "change",
         "z": "969b20e8.461548",
-        "name": "Hole Zustand",
+        "name": "Hole \"Ist geschlossen?\"",
         "rules": [
             {
                 "t": "set",
@@ -13021,7 +13021,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
+        "x": 430,
         "y": 400,
         "wires": [
             [
@@ -13068,7 +13068,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 410,
         "y": 180,
         "wires": [
             []
@@ -13093,7 +13093,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
+        "x": 390,
         "y": 240,
         "wires": [
             []
@@ -13103,7 +13103,7 @@
         "id": "dd2d9d3a.6e3078",
         "type": "change",
         "z": "a08151f9.16ea7",
-        "name": "Merke Zustand",
+        "name": "Merke \"Ist geschlossen?\"",
         "rules": [
             {
                 "t": "set",
@@ -13118,7 +13118,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
+        "x": 430,
         "y": 300,
         "wires": [
             []
@@ -13172,12 +13172,12 @@
         "id": "17d18a44.44fee6",
         "type": "complete",
         "z": "a08151f9.16ea7",
-        "name": "Warte auf Zustand",
+        "name": "Warte auf \"Ist geschlossen?\"",
         "scope": [
             "dd2d9d3a.6e3078"
         ],
         "uncaught": false,
-        "x": 130,
+        "x": 160,
         "y": 660,
         "wires": [
             [
@@ -13204,7 +13204,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
+        "x": 400,
         "y": 540,
         "wires": [
             [
@@ -13216,7 +13216,7 @@
         "id": "c355882b.624418",
         "type": "change",
         "z": "a08151f9.16ea7",
-        "name": "Hole Zustand",
+        "name": "Hole \"Ist geschlossen?\"",
         "rules": [
             {
                 "t": "set",
@@ -13231,7 +13231,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 330,
+        "x": 430,
         "y": 660,
         "wires": [
             [
@@ -13258,7 +13258,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
+        "x": 380,
         "y": 600,
         "wires": [
             [
@@ -13278,7 +13278,7 @@
         "label": "<i class=\"material-icons\">battery_unknown</i>",
         "format": "{{msg.payload}}%",
         "layout": "row-center",
-        "x": 550,
+        "x": 670,
         "y": 540,
         "wires": []
     },
@@ -13294,7 +13294,7 @@
         "label": "<i class=\"material-icons\">sync</i>",
         "format": "{{msg.payload}}",
         "layout": "row-center",
-        "x": 520,
+        "x": 640,
         "y": 600,
         "wires": []
     },
@@ -13306,11 +13306,11 @@
         "order": 1,
         "width": 2,
         "height": 1,
-        "name": "Zeige Zustand",
+        "name": "Zeige \"Ist geschlossen?\"",
         "label": "<i class=\"material-icons\">{{msg.payload ? 'compare_arrows' : 'swap_horiz'}}</i>",
         "format": "{{msg.payload ? 'Geschlossen' : 'Geöffnet'}}",
         "layout": "row-center",
-        "x": 540,
+        "x": 690,
         "y": 660,
         "wires": []
     },
@@ -13318,9 +13318,9 @@
         "id": "bce06698.58666",
         "type": "link out",
         "z": "a08151f9.16ea7",
-        "name": "Teile Zustand",
+        "name": "Teile \"Ist geschlossen?\"",
         "links": [],
-        "x": 515,
+        "x": 595,
         "y": 400,
         "wires": []
     },
@@ -13381,7 +13381,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 410,
         "y": 360,
         "wires": [
             [
@@ -13393,12 +13393,12 @@
         "id": "a893f38d.c34228",
         "type": "complete",
         "z": "a08151f9.16ea7",
-        "name": "Warte auf Zustand",
+        "name": "Warte auf \"Ist geschlossen?\"",
         "scope": [
             "dd2d9d3a.6e3078"
         ],
         "uncaught": false,
-        "x": 130,
+        "x": 160,
         "y": 360,
         "wires": [
             [
@@ -13410,7 +13410,7 @@
         "id": "b17db9c9.80b6c8",
         "type": "change",
         "z": "a08151f9.16ea7",
-        "name": "Hole Zustand",
+        "name": "Hole \"Ist geschlossen?\"",
         "rules": [
             {
                 "t": "set",
@@ -13432,7 +13432,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
+        "x": 430,
         "y": 400,
         "wires": [
             [
@@ -13479,7 +13479,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 410,
         "y": 180,
         "wires": [
             []
@@ -13504,7 +13504,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
+        "x": 390,
         "y": 240,
         "wires": [
             []
@@ -13514,7 +13514,7 @@
         "id": "a6c1bb70.e0b088",
         "type": "change",
         "z": "a6cde706.122f08",
-        "name": "Merke Zustand",
+        "name": "Merke \"Ist geschlossen?\"",
         "rules": [
             {
                 "t": "set",
@@ -13529,7 +13529,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
+        "x": 430,
         "y": 300,
         "wires": [
             []
@@ -13583,12 +13583,12 @@
         "id": "e88e4d04.066418",
         "type": "complete",
         "z": "a6cde706.122f08",
-        "name": "Warte auf Zustand",
+        "name": "Warte auf \"Ist geschlossen?\"",
         "scope": [
             "a6c1bb70.e0b088"
         ],
         "uncaught": false,
-        "x": 130,
+        "x": 160,
         "y": 660,
         "wires": [
             [
@@ -13615,7 +13615,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
+        "x": 400,
         "y": 540,
         "wires": [
             [
@@ -13627,7 +13627,7 @@
         "id": "ed63a6ee.d6f2c8",
         "type": "change",
         "z": "a6cde706.122f08",
-        "name": "Hole Zustand",
+        "name": "Hole \"Ist geschlossen?\"",
         "rules": [
             {
                 "t": "set",
@@ -13642,7 +13642,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 330,
+        "x": 430,
         "y": 660,
         "wires": [
             [
@@ -13669,7 +13669,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
+        "x": 380,
         "y": 600,
         "wires": [
             [
@@ -13689,7 +13689,7 @@
         "label": "<i class=\"material-icons\">battery_unknown</i>",
         "format": "{{msg.payload}}%",
         "layout": "row-center",
-        "x": 550,
+        "x": 670,
         "y": 540,
         "wires": []
     },
@@ -13705,7 +13705,7 @@
         "label": "<i class=\"material-icons\">sync</i>",
         "format": "{{msg.payload}}",
         "layout": "row-center",
-        "x": 520,
+        "x": 640,
         "y": 600,
         "wires": []
     },
@@ -13717,11 +13717,11 @@
         "order": 1,
         "width": 2,
         "height": 1,
-        "name": "Zeige Zustand",
+        "name": "Zeige \"Ist geschlossen?\"",
         "label": "<i class=\"material-icons\">{{msg.payload ? 'compare_arrows' : 'swap_horiz'}}</i>",
         "format": "{{msg.payload ? 'Geschlossen' : 'Geöffnet'}}",
         "layout": "row-center",
-        "x": 540,
+        "x": 690,
         "y": 660,
         "wires": []
     },
@@ -13729,9 +13729,9 @@
         "id": "2f16b6fc.b3acca",
         "type": "link out",
         "z": "a6cde706.122f08",
-        "name": "Teile Zustand",
+        "name": "Teile \"Ist geschlossen?\"",
         "links": [],
-        "x": 515,
+        "x": 595,
         "y": 400,
         "wires": []
     },
@@ -13792,7 +13792,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 410,
         "y": 360,
         "wires": [
             [
@@ -13804,12 +13804,12 @@
         "id": "8d13efcf.b4f1b8",
         "type": "complete",
         "z": "a6cde706.122f08",
-        "name": "Warte auf Zustand",
+        "name": "Warte auf \"Ist geschlossen?\"",
         "scope": [
             "a6c1bb70.e0b088"
         ],
         "uncaught": false,
-        "x": 130,
+        "x": 160,
         "y": 360,
         "wires": [
             [
@@ -13821,7 +13821,7 @@
         "id": "dfcaf2dd.a0ae98",
         "type": "change",
         "z": "a6cde706.122f08",
-        "name": "Hole Zustand",
+        "name": "Hole \"Ist geschlossen?\"",
         "rules": [
             {
                 "t": "set",
@@ -13843,7 +13843,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
+        "x": 430,
         "y": 400,
         "wires": [
             [
@@ -13890,7 +13890,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 410,
         "y": 180,
         "wires": [
             []
@@ -13915,7 +13915,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
+        "x": 390,
         "y": 240,
         "wires": [
             []
@@ -13925,7 +13925,7 @@
         "id": "f045bfea.f259f8",
         "type": "change",
         "z": "d4a646cb.d8d6f",
-        "name": "Merke Zustand",
+        "name": "Merke \"Ist geschlossen?\"",
         "rules": [
             {
                 "t": "set",
@@ -13940,7 +13940,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
+        "x": 430,
         "y": 300,
         "wires": [
             []
@@ -13994,12 +13994,12 @@
         "id": "339eabbe.397d7c",
         "type": "complete",
         "z": "d4a646cb.d8d6f",
-        "name": "Warte auf Zustand",
+        "name": "Warte auf \"Ist geschlossen?\"",
         "scope": [
             "f045bfea.f259f8"
         ],
         "uncaught": false,
-        "x": 130,
+        "x": 160,
         "y": 660,
         "wires": [
             [
@@ -14026,7 +14026,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
+        "x": 400,
         "y": 540,
         "wires": [
             [
@@ -14038,7 +14038,7 @@
         "id": "a77ab786.62822",
         "type": "change",
         "z": "d4a646cb.d8d6f",
-        "name": "Hole Zustand",
+        "name": "Hole \"Ist geschlossen?\"",
         "rules": [
             {
                 "t": "set",
@@ -14053,7 +14053,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 330,
+        "x": 430,
         "y": 660,
         "wires": [
             [
@@ -14080,7 +14080,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
+        "x": 380,
         "y": 600,
         "wires": [
             [
@@ -14100,7 +14100,7 @@
         "label": "<i class=\"material-icons\">battery_unknown</i>",
         "format": "{{msg.payload}}%",
         "layout": "row-center",
-        "x": 550,
+        "x": 670,
         "y": 540,
         "wires": []
     },
@@ -14116,7 +14116,7 @@
         "label": "<i class=\"material-icons\">sync</i>",
         "format": "{{msg.payload}}",
         "layout": "row-center",
-        "x": 520,
+        "x": 640,
         "y": 600,
         "wires": []
     },
@@ -14128,11 +14128,11 @@
         "order": 1,
         "width": 2,
         "height": 1,
-        "name": "Zeige Zustand",
+        "name": "Zeige \"Ist geschlossen?\"",
         "label": "<i class=\"material-icons\">{{msg.payload ? 'compare_arrows' : 'swap_horiz'}}</i>",
         "format": "{{msg.payload ? 'Geschlossen' : 'Geöffnet'}}",
         "layout": "row-center",
-        "x": 540,
+        "x": 690,
         "y": 660,
         "wires": []
     },
@@ -14140,9 +14140,9 @@
         "id": "c3ac0285.66ce2",
         "type": "link out",
         "z": "d4a646cb.d8d6f",
-        "name": "Teile Zustand",
+        "name": "Teile \"Ist geschlossen?\"",
         "links": [],
-        "x": 515,
+        "x": 595,
         "y": 400,
         "wires": []
     },
@@ -14203,7 +14203,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
+        "x": 410,
         "y": 360,
         "wires": [
             [
@@ -14215,12 +14215,12 @@
         "id": "efe9b40.59b265",
         "type": "complete",
         "z": "d4a646cb.d8d6f",
-        "name": "Warte auf Zustand",
+        "name": "Warte auf \"Ist geschlossen?\"",
         "scope": [
             "f045bfea.f259f8"
         ],
         "uncaught": false,
-        "x": 130,
+        "x": 160,
         "y": 360,
         "wires": [
             [
@@ -14232,7 +14232,7 @@
         "id": "8fb090a3.f4e51",
         "type": "change",
         "z": "d4a646cb.d8d6f",
-        "name": "Hole Zustand",
+        "name": "Hole \"Ist geschlossen?\"",
         "rules": [
             {
                 "t": "set",
@@ -14254,7 +14254,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
+        "x": 430,
         "y": 400,
         "wires": [
             [
