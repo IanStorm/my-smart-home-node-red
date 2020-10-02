@@ -12909,9 +12909,10 @@
         "z": "969b20e8.461548",
         "name": "Teile \"Ist geschlossen?\"",
         "links": [],
-        "x": 595,
+        "x": 690,
         "y": 400,
-        "wires": []
+        "wires": [],
+        "l": true
     },
     {
         "id": "bb77f93f.a8b99",
@@ -13320,9 +13321,10 @@
         "z": "a08151f9.16ea7",
         "name": "Teile \"Ist geschlossen?\"",
         "links": [],
-        "x": 595,
+        "x": 690,
         "y": 400,
-        "wires": []
+        "wires": [],
+        "l": true
     },
     {
         "id": "c1b4fee2.706768",
@@ -13731,9 +13733,10 @@
         "z": "a6cde706.122f08",
         "name": "Teile \"Ist geschlossen?\"",
         "links": [],
-        "x": 595,
+        "x": 690,
         "y": 400,
-        "wires": []
+        "wires": [],
+        "l": true
     },
     {
         "id": "6eae8a79.53dc54",
@@ -14142,9 +14145,10 @@
         "z": "d4a646cb.d8d6f",
         "name": "Teile \"Ist geschlossen?\"",
         "links": [],
-        "x": 595,
+        "x": 690,
         "y": 400,
-        "wires": []
+        "wires": [],
+        "l": true
     },
     {
         "id": "4936b8d0.22c058",
