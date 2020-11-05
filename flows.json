@@ -953,8 +953,7 @@
         "y": 220,
         "wires": [
             [
-                "c2f16c5f.b1c8d8",
-                "1269caf7.c4a03d"
+                "c2f16c5f.b1c8d8"
             ]
         ]
     },
@@ -1264,23 +1263,6 @@
                 "29256d13.123e82"
             ]
         ]
-    },
-    {
-        "id": "1269caf7.c4a03d",
-        "type": "debug",
-        "z": "be8a6639.d3183",
-        "name": "Logge 21-Uhr-Vorhersagen",
-        "active": true,
-        "tosidebar": false,
-        "console": true,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 810,
-        "y": 220,
-        "wires": []
     },
     {
         "id": "5c1e7e68.c489d8",
