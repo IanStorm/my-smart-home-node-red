@@ -462,7 +462,6 @@
     {
         "id": "1f1ed453.c0771c",
         "type": "fritz-api",
-        "z": "",
         "name": "fritzapi (FRITZ!Box 7580)",
         "host": "http://fritz.box",
         "strictSSL": true
@@ -470,7 +469,6 @@
     {
         "id": "412fbf62.1e1d9",
         "type": "ui_group",
-        "z": "",
         "name": "Schlafzimmer: Nachttische",
         "tab": "43f2ca82.e2925c",
         "order": 1,
@@ -481,7 +479,6 @@
     {
         "id": "f02945fb.a0f3c",
         "type": "ui_tab",
-        "z": "",
         "name": "System",
         "icon": "fa-microchip",
         "order": 7,
@@ -491,7 +488,6 @@
     {
         "id": "4314a159.01844",
         "type": "ui_group",
-        "z": "",
         "name": "CPU",
         "tab": "cd4c16c9.b5a0a",
         "order": 2,
@@ -502,7 +498,6 @@
     {
         "id": "cbefc1f5.641d68",
         "type": "ui_group",
-        "z": "",
         "name": "RAM",
         "tab": "cd4c16c9.b5a0a",
         "order": 3,
@@ -513,7 +508,6 @@
     {
         "id": "c8fe58ce.64afd",
         "type": "ui_group",
-        "z": "",
         "name": "Speicher",
         "tab": "cd4c16c9.b5a0a",
         "order": 4,
@@ -524,7 +518,6 @@
     {
         "id": "ce9bba2a.9d9588",
         "type": "ui_group",
-        "z": "",
         "name": "Node-RED",
         "tab": "f02945fb.a0f3c",
         "order": 1,
@@ -535,7 +528,6 @@
     {
         "id": "259c1fb2.ed8768",
         "type": "ui_group",
-        "z": "",
         "name": "Arbeitszimmer: Christian's PC",
         "tab": "14feb2a9.8277c5",
         "order": 3,
@@ -546,7 +538,6 @@
     {
         "id": "14feb2a9.8277c5",
         "type": "ui_tab",
-        "z": "",
         "name": "Favoriten",
         "icon": "fa-star",
         "order": 1,
@@ -556,7 +547,6 @@
     {
         "id": "22abfc75.b9b2e4",
         "type": "ui_group",
-        "z": "",
         "name": "Hallo!",
         "tab": "14feb2a9.8277c5",
         "order": 1,
@@ -567,7 +557,6 @@
     {
         "id": "cd4c16c9.b5a0a",
         "type": "ui_tab",
-        "z": "",
         "name": "Monitoring",
         "icon": "fa-heartbeat",
         "order": 6,
@@ -577,7 +566,6 @@
     {
         "id": "e7215ad9.54bc5",
         "type": "ui_group",
-        "z": "",
         "name": "Arbeitszimmer: Sandra's PC",
         "tab": "14feb2a9.8277c5",
         "order": 2,
@@ -588,7 +576,6 @@
     {
         "id": "4587520c.baf024",
         "type": "ui_group",
-        "z": "",
         "name": "Wohnküche: Fernsehtisch",
         "tab": "14feb2a9.8277c5",
         "order": 4,
@@ -599,14 +586,12 @@
     {
         "id": "f438956c.669a58",
         "type": "dorita980Config",
-        "z": "",
         "ip": "192.168.178.115",
         "name": "Roomba 966"
     },
     {
         "id": "e76cc3b6.096b9",
         "type": "ui_group",
-        "z": "",
         "name": "Saugroboter",
         "tab": "841fce51.f02b3",
         "order": 6,
@@ -617,7 +602,6 @@
     {
         "id": "d54c9b6e.0cffc",
         "type": "fritzbox-config",
-        "z": "",
         "name": "fritz (FRITZ!Box 7580)",
         "host": "192.168.178.1",
         "port": "49000",
@@ -626,7 +610,6 @@
     {
         "id": "2fe0f099.995658",
         "type": "ui_group",
-        "z": "",
         "name": "Wohnküche: Heizkörper",
         "tab": "d1bd741a.9ca2e",
         "order": 7,
@@ -637,7 +620,6 @@
     {
         "id": "9298819a.21ca98",
         "type": "ui_group",
-        "z": "",
         "name": "Badezimmer: Heizkörper",
         "tab": "d1bd741a.9ca2e",
         "order": 8,
@@ -648,7 +630,6 @@
     {
         "id": "cd94108d.1e556",
         "type": "ui_group",
-        "z": "",
         "name": "Arbeitszimmer: Heizkörper",
         "tab": "d1bd741a.9ca2e",
         "order": 9,
@@ -659,7 +640,6 @@
     {
         "id": "7b8abfe6.0e9dd8",
         "type": "ui_group",
-        "z": "",
         "name": "Schlafzimmer: Heizkörper",
         "tab": "d1bd741a.9ca2e",
         "order": 10,
@@ -670,7 +650,6 @@
     {
         "id": "964aeb18.79a868",
         "type": "ui_group",
-        "z": "",
         "name": "Flur 1: Heizkörper",
         "tab": "d1bd741a.9ca2e",
         "order": 11,
@@ -681,7 +660,6 @@
     {
         "id": "d1bd741a.9ca2e",
         "type": "ui_tab",
-        "z": "",
         "name": "Heizung",
         "icon": "fa-thermometer-half",
         "order": 3,
@@ -691,7 +669,6 @@
     {
         "id": "43f2ca82.e2925c",
         "type": "ui_tab",
-        "z": "",
         "name": "Steckdosen",
         "icon": "fa-plug",
         "order": 2,
@@ -701,7 +678,6 @@
     {
         "id": "2f3f5aef.3d20ee",
         "type": "ui_group",
-        "z": "",
         "name": "Balkon",
         "tab": "43f2ca82.e2925c",
         "order": 2,
@@ -712,7 +688,6 @@
     {
         "id": "841fce51.f02b3",
         "type": "ui_tab",
-        "z": "",
         "name": "Hygiene",
         "icon": "fa-shower",
         "order": 4,
@@ -830,7 +805,6 @@
     {
         "id": "dd3cc3c3.66f0c8",
         "type": "zigbee2mqtt-server",
-        "z": "",
         "name": "MQTT",
         "host": "my-smart-home-mqtt",
         "mqtt_port": "1883",
@@ -843,7 +817,6 @@
     {
         "id": "e403dc85.401788",
         "type": "ui_group",
-        "z": "",
         "name": "Zigbee",
         "tab": "f02945fb.a0f3c",
         "order": 2,
@@ -854,7 +827,6 @@
     {
         "id": "abb1b2ae.11d618",
         "type": "ui_tab",
-        "z": "",
         "name": "Sensoren",
         "icon": "router",
         "order": 5,
@@ -864,7 +836,6 @@
     {
         "id": "aa64946a.b8cef",
         "type": "ui_group",
-        "z": "",
         "name": "Wohnküche, kl. Balkontür",
         "tab": "abb1b2ae.11d618",
         "order": 1,
@@ -875,7 +846,6 @@
     {
         "id": "6aa4fe54.7c82f8",
         "type": "ui_group",
-        "z": "",
         "name": "Wohnküche, gr. Balkontür",
         "tab": "abb1b2ae.11d618",
         "order": 2,
@@ -886,7 +856,6 @@
     {
         "id": "d2e8a811.44b478",
         "type": "ui_group",
-        "z": "",
         "name": "Arbeitszimmer, Balkontür",
         "tab": "abb1b2ae.11d618",
         "order": 3,
@@ -897,7 +866,6 @@
     {
         "id": "b823bcaf.ffdfe8",
         "type": "ui_group",
-        "z": "",
         "name": "Schlafzimmer, re. Fenster",
         "tab": "abb1b2ae.11d618",
         "order": 4,
