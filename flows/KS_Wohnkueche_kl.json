@@ -1,25 +1,25 @@
 [
   {
-    "id": "d4a646cb.d8d6f",
+    "id": "969b20e8.461548",
     "type": "tab",
-    "label": "KS SZ re.",
+    "label": "KS_Wohnkueche_kl",
     "disabled": false,
     "info": ""
   },
   {
-    "id": "4f3d6e6c.a2ede8",
+    "id": "36b2b46a.008b34",
     "type": "comment",
-    "z": "d4a646cb.d8d6f",
-    "name": "Kontakt-Sensor -> Schlafzimmer -> rechtes Fenster",
+    "z": "969b20e8.461548",
+    "name": "Kontakt-Sensor -> Wohnküche -> kleine Balkontür",
     "info": "",
     "x": 210,
     "y": 40,
     "wires": []
   },
   {
-    "id": "d8dc66aa.10c128",
+    "id": "2a3598b1.aa0b5",
     "type": "comment",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Daten",
     "info": "",
     "x": 90,
@@ -27,9 +27,9 @@
     "wires": []
   },
   {
-    "id": "a7b2bdb8.dbc208",
+    "id": "671d5cd0.bcf754",
     "type": "change",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Merke Batterie-%",
     "rules": [
       {
@@ -52,9 +52,9 @@
     ]
   },
   {
-    "id": "71efde3d.705de",
+    "id": "95497a0e.166f6",
     "type": "change",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Merke LQI",
     "rules": [
       {
@@ -77,9 +77,9 @@
     ]
   },
   {
-    "id": "f045bfea.f259f8",
+    "id": "a3764159.0812b8",
     "type": "change",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Merke \"Ist geschlossen?\"",
     "rules": [
       {
@@ -102,9 +102,9 @@
     ]
   },
   {
-    "id": "5ed1d85a.80bc08",
+    "id": "13cbe8b1.8b538f",
     "type": "comment",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "GUI",
     "info": "",
     "x": 90,
@@ -112,60 +112,60 @@
     "wires": []
   },
   {
-    "id": "35531896.4b3bd8",
+    "id": "d6b3904.200207",
     "type": "complete",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Warte auf Batterie-%",
     "scope": [
-      "a7b2bdb8.dbc208"
+      "671d5cd0.bcf754"
     ],
     "uncaught": false,
     "x": 130,
     "y": 540,
     "wires": [
       [
-        "bb2242dc.347a4"
+        "9be93356.da5a9"
       ]
     ]
   },
   {
-    "id": "25df599e.7f33f6",
+    "id": "51531092.d2d608",
     "type": "complete",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Warte auf LQI",
     "scope": [
-      "71efde3d.705de"
+      "95497a0e.166f6"
     ],
     "uncaught": false,
     "x": 110,
     "y": 600,
     "wires": [
       [
-        "702a5237.fcfa1c"
+        "a91c2141.d95a1"
       ]
     ]
   },
   {
-    "id": "339eabbe.397d7c",
+    "id": "c514ba92.863d2",
     "type": "complete",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Warte auf \"Ist geschlossen?\"",
     "scope": [
-      "f045bfea.f259f8"
+      "a3764159.0812b8"
     ],
     "uncaught": false,
     "x": 160,
     "y": 660,
     "wires": [
       [
-        "a77ab786.62822"
+        "911d60f1.ca5938"
       ]
     ]
   },
   {
-    "id": "bb2242dc.347a4",
+    "id": "9be93356.da5a9",
     "type": "change",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Hole Batterie-%",
     "rules": [
       {
@@ -185,14 +185,14 @@
     "y": 540,
     "wires": [
       [
-        "86fb6f43.3acb6"
+        "908d8877.118a28"
       ]
     ]
   },
   {
-    "id": "a77ab786.62822",
+    "id": "911d60f1.ca5938",
     "type": "change",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Hole \"Ist geschlossen?\"",
     "rules": [
       {
@@ -212,14 +212,14 @@
     "y": 660,
     "wires": [
       [
-        "b686b475.ff688"
+        "2d6e5d50.28f152"
       ]
     ]
   },
   {
-    "id": "702a5237.fcfa1c",
+    "id": "a91c2141.d95a1",
     "type": "change",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Hole LQI",
     "rules": [
       {
@@ -239,15 +239,15 @@
     "y": 600,
     "wires": [
       [
-        "fb6be7ce.ba2038"
+        "49f5b677.85178"
       ]
     ]
   },
   {
-    "id": "86fb6f43.3acb6",
+    "id": "908d8877.118a28",
     "type": "ui_text",
-    "z": "d4a646cb.d8d6f",
-    "group": "b823bcaf.ffdfe8",
+    "z": "969b20e8.461548",
+    "group": "aa64946a.b8cef",
     "order": 3,
     "width": 2,
     "height": 1,
@@ -260,10 +260,10 @@
     "wires": []
   },
   {
-    "id": "fb6be7ce.ba2038",
+    "id": "49f5b677.85178",
     "type": "ui_text",
-    "z": "d4a646cb.d8d6f",
-    "group": "b823bcaf.ffdfe8",
+    "z": "969b20e8.461548",
+    "group": "aa64946a.b8cef",
     "order": 2,
     "width": 2,
     "height": 1,
@@ -276,10 +276,10 @@
     "wires": []
   },
   {
-    "id": "b686b475.ff688",
+    "id": "2d6e5d50.28f152",
     "type": "ui_text",
-    "z": "d4a646cb.d8d6f",
-    "group": "b823bcaf.ffdfe8",
+    "z": "969b20e8.461548",
+    "group": "aa64946a.b8cef",
     "order": 1,
     "width": 2,
     "height": 1,
@@ -292,9 +292,9 @@
     "wires": []
   },
   {
-    "id": "c3ac0285.66ce2",
+    "id": "903b9330.0275",
     "type": "link out",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Teile \"Ist geschlossen?\"",
     "links": [],
     "x": 690,
@@ -303,29 +303,29 @@
     "l": true
   },
   {
-    "id": "4936b8d0.22c058",
+    "id": "bb77f93f.a8b99",
     "type": "zigbee2mqtt-in",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Warte auf Sensor-Daten",
     "server": "dd3cc3c3.66f0c8",
-    "friendly_name": "contact/bedroom/windows/right",
-    "device_id": "0x00158d00045cc568",
+    "friendly_name": "contact/living-kitchenArea/balconyDoors/small",
+    "device_id": "0x00158d00045ce46a",
     "state": "0",
     "outputAtStartup": true,
     "x": 140,
     "y": 180,
     "wires": [
       [
-        "a7b2bdb8.dbc208",
-        "71efde3d.705de",
-        "f045bfea.f259f8"
+        "671d5cd0.bcf754",
+        "95497a0e.166f6",
+        "a3764159.0812b8"
       ]
     ]
   },
   {
-    "id": "bf6f1181.11e1d8",
+    "id": "23e8a3cc.75b75c",
     "type": "change",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Bereinige Nachricht",
     "rules": [
       {
@@ -363,31 +363,31 @@
     "y": 360,
     "wires": [
       [
-        "8fb090a3.f4e51"
+        "6e0e3dbd.43d764"
       ]
     ]
   },
   {
-    "id": "efe9b40.59b265",
+    "id": "866796ac.6feda8",
     "type": "complete",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Warte auf \"Ist geschlossen?\"",
     "scope": [
-      "f045bfea.f259f8"
+      "a3764159.0812b8"
     ],
     "uncaught": false,
     "x": 160,
     "y": 360,
     "wires": [
       [
-        "bf6f1181.11e1d8"
+        "23e8a3cc.75b75c"
       ]
     ]
   },
   {
-    "id": "8fb090a3.f4e51",
+    "id": "6e0e3dbd.43d764",
     "type": "change",
-    "z": "d4a646cb.d8d6f",
+    "z": "969b20e8.461548",
     "name": "Hole \"Ist geschlossen?\"",
     "rules": [
       {
@@ -414,7 +414,7 @@
     "y": 400,
     "wires": [
       [
-        "c3ac0285.66ce2"
+        "903b9330.0275"
       ]
     ]
   }

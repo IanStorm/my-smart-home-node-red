@@ -1,25 +1,25 @@
 [
   {
-    "id": "750f0705.13d438",
+    "id": "c6075ab3.4abae8",
     "type": "tab",
-    "label": "Hzg. AZ",
+    "label": "Hzg_Wohnkueche",
     "disabled": false,
     "info": ""
   },
   {
-    "id": "5c1e7e68.c489d8",
+    "id": "d71b0fe3.7589f8",
     "type": "comment",
-    "z": "750f0705.13d438",
-    "name": "Heizkörper -> Arbeitszimmer",
+    "z": "c6075ab3.4abae8",
+    "name": "Heizkörper -> Wohnküche",
     "info": "",
-    "x": 140,
+    "x": 130,
     "y": 40,
     "wires": []
   },
   {
-    "id": "a6c16df.0028e1",
+    "id": "6736376f.0c035",
     "type": "comment",
-    "z": "750f0705.13d438",
+    "z": "c6075ab3.4abae8",
     "name": "Daten",
     "info": "",
     "x": 90,
@@ -27,9 +27,9 @@
     "wires": []
   },
   {
-    "id": "80ea0fb5.a548c8",
+    "id": "8d2d2b04.4f76b",
     "type": "change",
-    "z": "750f0705.13d438",
+    "z": "c6075ab3.4abae8",
     "name": "Merke \"Ist verbunden?\"",
     "rules": [
       {
@@ -52,9 +52,9 @@
     ]
   },
   {
-    "id": "112a178d.564a8",
+    "id": "1444236a.f99e2d",
     "type": "change",
-    "z": "750f0705.13d438",
+    "z": "c6075ab3.4abae8",
     "name": "Merke Ist-Temperatur",
     "rules": [
       {
@@ -77,9 +77,9 @@
     ]
   },
   {
-    "id": "b51fe763.f9d49",
+    "id": "2c4cc46c.348fd4",
     "type": "change",
-    "z": "750f0705.13d438",
+    "z": "c6075ab3.4abae8",
     "name": "Merke Soll-Temperatur",
     "rules": [
       {
@@ -102,9 +102,9 @@
     ]
   },
   {
-    "id": "6ee9581b.02019",
+    "id": "7cc7e488.4d6944",
     "type": "comment",
-    "z": "750f0705.13d438",
+    "z": "c6075ab3.4abae8",
     "name": "GUI",
     "info": "",
     "x": 90,
@@ -112,60 +112,60 @@
     "wires": []
   },
   {
-    "id": "e74ac8b2.79a94",
+    "id": "14feed68.d15613",
     "type": "complete",
-    "z": "750f0705.13d438",
+    "z": "c6075ab3.4abae8",
     "name": "Warte auf \"Ist verbunden?\"",
     "scope": [
-      "80ea0fb5.a548c8"
+      "8d2d2b04.4f76b"
     ],
     "uncaught": false,
     "x": 150,
     "y": 420,
     "wires": [
       [
-        "746cde0a.ead7f8"
+        "a605892f.da391"
       ]
     ]
   },
   {
-    "id": "79bd5985.e6d3c8",
+    "id": "dc170b0a.94c7e",
     "type": "complete",
-    "z": "750f0705.13d438",
+    "z": "c6075ab3.4abae8",
     "name": "Warte auf Ist-Temperatur",
     "scope": [
-      "112a178d.564a8"
+      "1444236a.f99e2d"
     ],
     "uncaught": false,
     "x": 150,
     "y": 480,
     "wires": [
       [
-        "a46765d9.9cf9c8"
+        "f422fc89.df6d08"
       ]
     ]
   },
   {
-    "id": "3c7a0c4b.eb232c",
+    "id": "c71d8f2.9747c7",
     "type": "complete",
-    "z": "750f0705.13d438",
+    "z": "c6075ab3.4abae8",
     "name": "Warte auf Soll-Temperatur",
     "scope": [
-      "b51fe763.f9d49"
+      "2c4cc46c.348fd4"
     ],
     "uncaught": false,
     "x": 150,
     "y": 540,
     "wires": [
       [
-        "2aca3bf3.3fee2c"
+        "199ad847.ed82b8"
       ]
     ]
   },
   {
-    "id": "746cde0a.ead7f8",
+    "id": "a605892f.da391",
     "type": "change",
-    "z": "750f0705.13d438",
+    "z": "c6075ab3.4abae8",
     "name": "Hole \"Ist verbunden?\"",
     "rules": [
       {
@@ -185,15 +185,15 @@
     "y": 420,
     "wires": [
       [
-        "1f1accaa.3aabe3"
+        "1229e394.a0f9ac"
       ]
     ]
   },
   {
-    "id": "1f1accaa.3aabe3",
+    "id": "1229e394.a0f9ac",
     "type": "ui_template",
-    "z": "750f0705.13d438",
-    "group": "cd94108d.1e556",
+    "z": "c6075ab3.4abae8",
+    "group": "2fe0f099.995658",
     "name": "Zeige \"Ist verbunden?\"",
     "order": 3,
     "width": 2,
@@ -210,9 +210,9 @@
     ]
   },
   {
-    "id": "a46765d9.9cf9c8",
+    "id": "f422fc89.df6d08",
     "type": "change",
-    "z": "750f0705.13d438",
+    "z": "c6075ab3.4abae8",
     "name": "Hole Ist-Temperatur",
     "rules": [
       {
@@ -232,14 +232,14 @@
     "y": 480,
     "wires": [
       [
-        "b8b05a47.fff86"
+        "6941f0f4.d3509"
       ]
     ]
   },
   {
-    "id": "2aca3bf3.3fee2c",
+    "id": "199ad847.ed82b8",
     "type": "change",
-    "z": "750f0705.13d438",
+    "z": "c6075ab3.4abae8",
     "name": "Hole Soll-Temperatur",
     "rules": [
       {
@@ -259,15 +259,15 @@
     "y": 540,
     "wires": [
       [
-        "90fe56a5.193b8"
+        "319305e8.a3a392"
       ]
     ]
   },
   {
-    "id": "b8b05a47.fff86",
+    "id": "6941f0f4.d3509",
     "type": "ui_text",
-    "z": "750f0705.13d438",
-    "group": "cd94108d.1e556",
+    "z": "c6075ab3.4abae8",
+    "group": "2fe0f099.995658",
     "order": 2,
     "width": 2,
     "height": 1,
@@ -280,13 +280,13 @@
     "wires": []
   },
   {
-    "id": "90fe56a5.193b8",
+    "id": "319305e8.a3a392",
     "type": "ui_slider",
-    "z": "750f0705.13d438",
+    "z": "c6075ab3.4abae8",
     "name": "Zeige Soll-Temperatur",
     "label": "",
     "tooltip": "",
-    "group": "cd94108d.1e556",
+    "group": "2fe0f099.995658",
     "order": 4,
     "width": 4,
     "height": 2,
@@ -303,9 +303,9 @@
     ]
   },
   {
-    "id": "b30a89bc.7e666",
+    "id": "2d443e10.a8436a",
     "type": "inject",
-    "z": "750f0705.13d438",
+    "z": "c6075ab3.4abae8",
     "name": "Beim Start",
     "repeat": "",
     "crontab": "",
@@ -318,15 +318,15 @@
     "y": 360,
     "wires": [
       [
-        "73d3a176.b41ce8"
+        "e5cb0212.b6e8c8"
       ]
     ]
   },
   {
-    "id": "73d3a176.b41ce8",
+    "id": "e5cb0212.b6e8c8",
     "type": "ui_template",
-    "z": "750f0705.13d438",
-    "group": "cd94108d.1e556",
+    "z": "c6075ab3.4abae8",
+    "group": "2fe0f099.995658",
     "name": "Zeige Heizungsicon",
     "order": 1,
     "width": 2,
@@ -343,14 +343,14 @@
     ]
   },
   {
-    "id": "2bec0d55.929e92",
+    "id": "8a786fc.2bf979",
     "type": "subflow:f81865c3.29dd28",
-    "z": "750f0705.13d438",
+    "z": "c6075ab3.4abae8",
     "name": "",
     "env": [
       {
         "name": "ain",
-        "value": "109710426496",
+        "value": "092951003504",
         "type": "str"
       }
     ],
@@ -358,13 +358,13 @@
     "y": 180,
     "wires": [
       [
-        "80ea0fb5.a548c8"
+        "8d2d2b04.4f76b"
       ],
       [
-        "112a178d.564a8"
+        "1444236a.f99e2d"
       ],
       [
-        "b51fe763.f9d49"
+        "2c4cc46c.348fd4"
       ]
     ]
   }
