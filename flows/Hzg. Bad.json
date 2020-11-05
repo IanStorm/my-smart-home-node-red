@@ -1,0 +1,371 @@
+[
+  {
+    "id": "a7755eb4.60b0d8",
+    "type": "tab",
+    "label": "Hzg. Bad",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "d4fc9af5.5ac88",
+    "type": "comment",
+    "z": "a7755eb4.60b0d8",
+    "name": "Heizkörper -> Badezimmer",
+    "info": "",
+    "x": 130,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "a8485655.08cf7",
+    "type": "comment",
+    "z": "a7755eb4.60b0d8",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "a84aaa49.c8141",
+    "type": "change",
+    "z": "a7755eb4.60b0d8",
+    "name": "Merke \"Ist verbunden?\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "radiator.isConnected",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 390,
+    "y": 140,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "23c13061.f5f928",
+    "type": "change",
+    "z": "a7755eb4.60b0d8",
+    "name": "Merke Ist-Temperatur",
+    "rules": [
+      {
+        "t": "set",
+        "p": "radiator.currentTemperature",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 380,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "a00cfefd.ad6e7",
+    "type": "change",
+    "z": "a7755eb4.60b0d8",
+    "name": "Merke Soll-Temperatur",
+    "rules": [
+      {
+        "t": "set",
+        "p": "radiator.targetTemperature",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 380,
+    "y": 220,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "8e0e4d49.ca7a98",
+    "type": "comment",
+    "z": "a7755eb4.60b0d8",
+    "name": "GUI",
+    "info": "",
+    "x": 90,
+    "y": 300,
+    "wires": []
+  },
+  {
+    "id": "6c11fd71.44a364",
+    "type": "complete",
+    "z": "a7755eb4.60b0d8",
+    "name": "Warte auf \"Ist verbunden?\"",
+    "scope": [
+      "a84aaa49.c8141"
+    ],
+    "uncaught": false,
+    "x": 150,
+    "y": 420,
+    "wires": [
+      [
+        "422c6c60.35303c"
+      ]
+    ]
+  },
+  {
+    "id": "41ecbdb6.0e67a4",
+    "type": "complete",
+    "z": "a7755eb4.60b0d8",
+    "name": "Warte auf Ist-Temperatur",
+    "scope": [
+      "23c13061.f5f928"
+    ],
+    "uncaught": false,
+    "x": 150,
+    "y": 480,
+    "wires": [
+      [
+        "623c8a83.afe1b4"
+      ]
+    ]
+  },
+  {
+    "id": "a099fc58.40de68",
+    "type": "complete",
+    "z": "a7755eb4.60b0d8",
+    "name": "Warte auf Soll-Temperatur",
+    "scope": [
+      "a00cfefd.ad6e7"
+    ],
+    "uncaught": false,
+    "x": 150,
+    "y": 540,
+    "wires": [
+      [
+        "207bbd57.209572"
+      ]
+    ]
+  },
+  {
+    "id": "422c6c60.35303c",
+    "type": "change",
+    "z": "a7755eb4.60b0d8",
+    "name": "Hole \"Ist verbunden?\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "radiator.isConnected",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 400,
+    "y": 420,
+    "wires": [
+      [
+        "f4e1a61d.cdfe48"
+      ]
+    ]
+  },
+  {
+    "id": "f4e1a61d.cdfe48",
+    "type": "ui_template",
+    "z": "a7755eb4.60b0d8",
+    "group": "9298819a.21ca98",
+    "name": "Zeige \"Ist verbunden?\"",
+    "order": 3,
+    "width": 2,
+    "height": 1,
+    "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
+    "storeOutMessages": false,
+    "fwdInMessages": false,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "x": 640,
+    "y": 420,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "623c8a83.afe1b4",
+    "type": "change",
+    "z": "a7755eb4.60b0d8",
+    "name": "Hole Ist-Temperatur",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "radiator.currentTemperature",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 390,
+    "y": 480,
+    "wires": [
+      [
+        "fbfd5975.d1dca8"
+      ]
+    ]
+  },
+  {
+    "id": "207bbd57.209572",
+    "type": "change",
+    "z": "a7755eb4.60b0d8",
+    "name": "Hole Soll-Temperatur",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "radiator.targetTemperature",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 400,
+    "y": 540,
+    "wires": [
+      [
+        "3340c294.f0f20e"
+      ]
+    ]
+  },
+  {
+    "id": "fbfd5975.d1dca8",
+    "type": "ui_text",
+    "z": "a7755eb4.60b0d8",
+    "group": "9298819a.21ca98",
+    "order": 2,
+    "width": 2,
+    "height": 1,
+    "name": "Zeige Ist-Temperatur",
+    "label": "<i class=\"material-icons\">ac_unit</i>",
+    "format": "{{msg.payload}}°C",
+    "layout": "row-left",
+    "x": 640,
+    "y": 480,
+    "wires": []
+  },
+  {
+    "id": "3340c294.f0f20e",
+    "type": "ui_slider",
+    "z": "a7755eb4.60b0d8",
+    "name": "Zeige Soll-Temperatur",
+    "label": "",
+    "tooltip": "",
+    "group": "9298819a.21ca98",
+    "order": 4,
+    "width": 4,
+    "height": 2,
+    "passthru": true,
+    "outs": "end",
+    "topic": "",
+    "min": "8",
+    "max": "28",
+    "step": "0.5",
+    "x": 640,
+    "y": 540,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f06012b6.00b72",
+    "type": "inject",
+    "z": "a7755eb4.60b0d8",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 360,
+    "wires": [
+      [
+        "51bce1bd.3a45f8"
+      ]
+    ]
+  },
+  {
+    "id": "51bce1bd.3a45f8",
+    "type": "ui_template",
+    "z": "a7755eb4.60b0d8",
+    "group": "9298819a.21ca98",
+    "name": "Zeige Heizungsicon",
+    "order": 1,
+    "width": 2,
+    "height": 3,
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        whatshot\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "x": 630,
+    "y": 360,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "15419eda.1b2449",
+    "type": "subflow:f81865c3.29dd28",
+    "z": "a7755eb4.60b0d8",
+    "name": "",
+    "env": [
+      {
+        "name": "ain",
+        "value": "109710421016",
+        "type": "str"
+      }
+    ],
+    "x": 140,
+    "y": 180,
+    "wires": [
+      [
+        "a84aaa49.c8141"
+      ],
+      [
+        "23c13061.f5f928"
+      ],
+      [
+        "a00cfefd.ad6e7"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,188 @@
+[
+  {
+    "id": "93de0e1e.72cac8",
+    "type": "subflow",
+    "name": "Warte auf Standby-Überschreitung",
+    "info": "# Steckdose: Warte auf Standby-Dauer-Überschreitung\n\n\n### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        msg.power\n        <span class=\"property-type\">number</span>\n    </dt>\n    <dd>\n        Aktuelle Leistung\n    </dd>\n    <dt>\n        msg.isSwitchedOn\n        <span class=\"property-type\">boolean</span>\n    </dt>\n    <dd>\n        Aktueller Schaltzustand\n    </dd>\n    <dt>\n        threshold\n        <span class=\"property-type\">number</span>\n    </dt>\n    <dd>\n        Leistungsschwelle\n    </dd>\n</dl>\n",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 80,
+        "wires": [
+          {
+            "id": "35352233.f7b4e6"
+          },
+          {
+            "id": "fada851.83fedf8"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 1000,
+        "y": 60,
+        "wires": [
+          {
+            "id": "2845d6b7.f3151a",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [
+      {
+        "name": "threshold",
+        "type": "num",
+        "value": "1",
+        "ui": {
+          "label": {
+            "en-US": "Leistungsschwelle"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "num"
+            ]
+          }
+        }
+      }
+    ],
+    "color": "#DDAA99",
+    "inputLabels": [
+      "Leistung"
+    ],
+    "icon": "node-red-contrib-fritzapi/power.png"
+  },
+  {
+    "id": "2845d6b7.f3151a",
+    "type": "delay",
+    "z": "93de0e1e.72cac8",
+    "name": "30m Bedenkzeit",
+    "pauseType": "delay",
+    "timeout": "30",
+    "timeoutUnits": "minutes",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "x": 860,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "62aae94.46b3198",
+    "type": "trigger",
+    "z": "93de0e1e.72cac8",
+    "name": "30m Cooldown",
+    "op1": "",
+    "op2": "",
+    "op1type": "pay",
+    "op2type": "nul",
+    "duration": "30",
+    "extend": false,
+    "units": "min",
+    "reset": "",
+    "bytopic": "all",
+    "outputs": 1,
+    "x": 660,
+    "y": 40,
+    "wires": [
+      [
+        "2845d6b7.f3151a"
+      ]
+    ]
+  },
+  {
+    "id": "35352233.f7b4e6",
+    "type": "switch",
+    "z": "93de0e1e.72cac8",
+    "name": "Ist unter Leistungsschwelle?",
+    "property": "power",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "lt",
+        "v": "threshold",
+        "vt": "env"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 240,
+    "y": 60,
+    "wires": [
+      [
+        "62aae94.46b3198"
+      ],
+      [
+        "56177727.e8e06"
+      ]
+    ],
+    "outputLabels": [
+      "Ja",
+      "Nein"
+    ]
+  },
+  {
+    "id": "56177727.e8e06",
+    "type": "change",
+    "z": "93de0e1e.72cac8",
+    "name": "Setze zurück",
+    "rules": [
+      {
+        "t": "set",
+        "p": "reset",
+        "pt": "msg",
+        "to": "any value",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 470,
+    "y": 80,
+    "wires": [
+      [
+        "62aae94.46b3198",
+        "2845d6b7.f3151a"
+      ]
+    ]
+  },
+  {
+    "id": "fada851.83fedf8",
+    "type": "switch",
+    "z": "93de0e1e.72cac8",
+    "name": "Ist ausgeschaltet?",
+    "property": "isSwitchedOn",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "false"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 210,
+    "y": 100,
+    "wires": [
+      [
+        "56177727.e8e06"
+      ]
+    ]
+  }
+]

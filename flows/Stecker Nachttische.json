@@ -1,0 +1,778 @@
+[
+  {
+    "id": "9a03c26f.2caa38",
+    "type": "tab",
+    "label": "Stecker Nachttische",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "dfacafee.f83758",
+    "type": "comment",
+    "z": "9a03c26f.2caa38",
+    "name": "GUI",
+    "info": "",
+    "x": 90,
+    "y": 560,
+    "wires": []
+  },
+  {
+    "id": "8a69211a.4202f8",
+    "type": "comment",
+    "z": "9a03c26f.2caa38",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "a1ff76c6.48c52",
+    "type": "comment",
+    "z": "9a03c26f.2caa38",
+    "name": "Steckdosen -> Schlafzimmer: Nachttische",
+    "info": "",
+    "x": 180,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "cd85f588.5aaef",
+    "type": "change",
+    "z": "9a03c26f.2caa38",
+    "name": "Merke Verbindungsstatus",
+    "rules": [
+      {
+        "t": "set",
+        "p": "plug.isConnected",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 810,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "514478ad.f22e2",
+    "type": "change",
+    "z": "9a03c26f.2caa38",
+    "name": "Merke Leistung",
+    "rules": [
+      {
+        "t": "set",
+        "p": "plug.power",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 780,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3f35289d.aee308",
+    "type": "change",
+    "z": "9a03c26f.2caa38",
+    "name": "Merke Temperatur",
+    "rules": [
+      {
+        "t": "set",
+        "p": "plug.temperature",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 790,
+    "y": 200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "98a1bccc.ac5458",
+    "type": "ui_template",
+    "z": "9a03c26f.2caa38",
+    "group": "412fbf62.1e1d9",
+    "name": "Zeige Status",
+    "order": 3,
+    "width": 2,
+    "height": 1,
+    "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
+    "storeOutMessages": false,
+    "fwdInMessages": false,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "x": 590,
+    "y": 680,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c55c6425.94487",
+    "type": "ui_text",
+    "z": "9a03c26f.2caa38",
+    "group": "412fbf62.1e1d9",
+    "order": 2,
+    "width": 2,
+    "height": 1,
+    "name": "Zeige Temperatur",
+    "label": "<i class=\"material-icons\">ac_unit</i>",
+    "format": "{{msg.payload}}°C",
+    "layout": "row-left",
+    "x": 610,
+    "y": 740,
+    "wires": []
+  },
+  {
+    "id": "994ddb02.8574a8",
+    "type": "ui_text",
+    "z": "9a03c26f.2caa38",
+    "group": "412fbf62.1e1d9",
+    "order": 4,
+    "width": 2,
+    "height": 1,
+    "name": "Zeige Leistungsaufnahme",
+    "label": "<i class=\"material-icons\">flash_on</i>",
+    "format": "{{msg.payload}}W",
+    "layout": "row-left",
+    "x": 630,
+    "y": 800,
+    "wires": []
+  },
+  {
+    "id": "ecd4fe7b.025c4",
+    "type": "change",
+    "z": "9a03c26f.2caa38",
+    "name": "Hole Schaltzustand",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "plug.isSwitchedOn",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 390,
+    "y": 860,
+    "wires": [
+      [
+        "2a63b7fa.355d6"
+      ]
+    ]
+  },
+  {
+    "id": "d4f63c98.6bdbe",
+    "type": "change",
+    "z": "9a03c26f.2caa38",
+    "name": "Merke Schaltzustand",
+    "rules": [
+      {
+        "t": "set",
+        "p": "plug.isSwitchedOn",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 800,
+    "y": 240,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "2a63b7fa.355d6",
+    "type": "ui_switch",
+    "z": "9a03c26f.2caa38",
+    "name": "Interaktion Schaltzustand",
+    "label": "<i class=\"material-icons\">power_settings_new</i>",
+    "tooltip": "",
+    "group": "412fbf62.1e1d9",
+    "order": 5,
+    "width": 2,
+    "height": 1,
+    "passthru": true,
+    "decouple": "false",
+    "topic": "",
+    "style": "",
+    "onvalue": "true",
+    "onvalueType": "bool",
+    "onicon": "",
+    "oncolor": "",
+    "offvalue": "false",
+    "offvalueType": "bool",
+    "officon": "",
+    "offcolor": "",
+    "x": 630,
+    "y": 860,
+    "wires": [
+      [
+        "59f4097.b82daf8"
+      ]
+    ]
+  },
+  {
+    "id": "e84e6b2.c625c98",
+    "type": "change",
+    "z": "9a03c26f.2caa38",
+    "name": "Hole Schaltzustand",
+    "rules": [
+      {
+        "t": "set",
+        "p": "isSwitchedOn",
+        "pt": "msg",
+        "to": "plug.isSwitchedOn",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 350,
+    "y": 180,
+    "wires": [
+      [
+        "cd8a589c.1f915"
+      ]
+    ]
+  },
+  {
+    "id": "59f4097.b82daf8",
+    "type": "change",
+    "z": "9a03c26f.2caa38",
+    "name": "Schalte um",
+    "rules": [
+      {
+        "t": "set",
+        "p": "plug.isSwitchedOn",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 850,
+    "y": 860,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "cdd6bb7c.7bc698",
+    "type": "change",
+    "z": "9a03c26f.2caa38",
+    "name": "Hole Status",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "plug.isConnected",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 370,
+    "y": 680,
+    "wires": [
+      [
+        "98a1bccc.ac5458"
+      ]
+    ]
+  },
+  {
+    "id": "fcee4422.71b9a",
+    "type": "change",
+    "z": "9a03c26f.2caa38",
+    "name": "Hole Temperatur",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "plug.temperature",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 380,
+    "y": 740,
+    "wires": [
+      [
+        "c55c6425.94487"
+      ]
+    ]
+  },
+  {
+    "id": "73b1df3c.4e55f",
+    "type": "change",
+    "z": "9a03c26f.2caa38",
+    "name": "Hole Leistung",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "plug.power",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 380,
+    "y": 800,
+    "wires": [
+      [
+        "994ddb02.8574a8"
+      ]
+    ]
+  },
+  {
+    "id": "64bd3f8e.fef888",
+    "type": "comment",
+    "z": "9a03c26f.2caa38",
+    "name": "Automatisch Schalten",
+    "info": "",
+    "x": 140,
+    "y": 320,
+    "wires": []
+  },
+  {
+    "id": "e437ba2e.e928b8",
+    "type": "complete",
+    "z": "9a03c26f.2caa38",
+    "name": "Warte auf Schaltung",
+    "scope": [
+      "59f4097.b82daf8",
+      "4b00c74e.2c639",
+      "8f68120c.2a8928",
+      "feacd98d.6662b",
+      "646b8f1c.1d1e88"
+    ],
+    "uncaught": false,
+    "x": 130,
+    "y": 180,
+    "wires": [
+      [
+        "e84e6b2.c625c98"
+      ]
+    ]
+  },
+  {
+    "id": "95866a62.6aabb",
+    "type": "complete",
+    "z": "9a03c26f.2caa38",
+    "name": "Warte auf Status",
+    "scope": [
+      "cd85f588.5aaef"
+    ],
+    "uncaught": false,
+    "x": 120,
+    "y": 680,
+    "wires": [
+      [
+        "cdd6bb7c.7bc698"
+      ]
+    ]
+  },
+  {
+    "id": "c9305fa5.04433",
+    "type": "complete",
+    "z": "9a03c26f.2caa38",
+    "name": "Warte auf Temperatur",
+    "scope": [
+      "3f35289d.aee308"
+    ],
+    "uncaught": false,
+    "x": 140,
+    "y": 740,
+    "wires": [
+      [
+        "fcee4422.71b9a"
+      ]
+    ]
+  },
+  {
+    "id": "6f11fe9c.dcc948",
+    "type": "complete",
+    "z": "9a03c26f.2caa38",
+    "name": "Warte auf Leistung",
+    "scope": [
+      "514478ad.f22e2"
+    ],
+    "uncaught": false,
+    "x": 130,
+    "y": 800,
+    "wires": [
+      [
+        "73b1df3c.4e55f"
+      ]
+    ]
+  },
+  {
+    "id": "77bb8f5f.b6f5f8",
+    "type": "complete",
+    "z": "9a03c26f.2caa38",
+    "name": "Warte auf Schaltzustand",
+    "scope": [
+      "d4f63c98.6bdbe"
+    ],
+    "uncaught": false,
+    "x": 150,
+    "y": 860,
+    "wires": [
+      [
+        "ecd4fe7b.025c4"
+      ]
+    ]
+  },
+  {
+    "id": "18fdba9b.55e285",
+    "type": "ui_template",
+    "z": "9a03c26f.2caa38",
+    "group": "412fbf62.1e1d9",
+    "name": "Zeige Steckdosen-Icon",
+    "order": 1,
+    "width": 2,
+    "height": 2,
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        power\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "x": 620,
+    "y": 620,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "b3e8e45f.0f312",
+    "type": "inject",
+    "z": "9a03c26f.2caa38",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 620,
+    "wires": [
+      [
+        "18fdba9b.55e285"
+      ]
+    ]
+  },
+  {
+    "id": "ec1ea3ce.b619b8",
+    "type": "inject",
+    "z": "9a03c26f.2caa38",
+    "name": "Täglich, 21 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 21 * * *",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 130,
+    "y": 380,
+    "wires": [
+      [
+        "4b00c74e.2c639"
+      ]
+    ]
+  },
+  {
+    "id": "1726d8fc.f80a17",
+    "type": "inject",
+    "z": "9a03c26f.2caa38",
+    "name": "Werktags, 07:30 Uhr",
+    "props": [
+      {
+        "p": "payload",
+        "v": "",
+        "vt": "date"
+      },
+      {
+        "p": "topic",
+        "v": "",
+        "vt": "string"
+      }
+    ],
+    "repeat": "",
+    "crontab": "30 07 * * 1,2,3,4,5",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 140,
+    "y": 440,
+    "wires": [
+      [
+        "feacd98d.6662b"
+      ]
+    ]
+  },
+  {
+    "id": "e117b888.d74c2",
+    "type": "inject",
+    "z": "9a03c26f.2caa38",
+    "name": "Wochenende, 10 Uhr",
+    "repeat": "",
+    "crontab": "00 12 * * 2,6,0",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 140,
+    "y": 480,
+    "wires": [
+      [
+        "646b8f1c.1d1e88"
+      ]
+    ]
+  },
+  {
+    "id": "4b00c74e.2c639",
+    "type": "change",
+    "z": "9a03c26f.2caa38",
+    "name": "Schalte an",
+    "rules": [
+      {
+        "t": "set",
+        "p": "plug.isSwitchedOn",
+        "pt": "flow",
+        "to": "true",
+        "tot": "bool"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 350,
+    "y": 380,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "feacd98d.6662b",
+    "type": "change",
+    "z": "9a03c26f.2caa38",
+    "name": "Schalte aus",
+    "rules": [
+      {
+        "t": "set",
+        "p": "plug.isSwitchedOn",
+        "pt": "flow",
+        "to": "false",
+        "tot": "bool"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 350,
+    "y": 440,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "646b8f1c.1d1e88",
+    "type": "change",
+    "z": "9a03c26f.2caa38",
+    "name": "Schalte aus",
+    "rules": [
+      {
+        "t": "set",
+        "p": "plug.isSwitchedOn",
+        "pt": "flow",
+        "to": "false",
+        "tot": "bool"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 350,
+    "y": 480,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "cd8a589c.1f915",
+    "type": "subflow:dd43bdd9.895da8",
+    "z": "9a03c26f.2caa38",
+    "name": "",
+    "env": [
+      {
+        "name": "ain",
+        "value": "087610268064",
+        "type": "str"
+      }
+    ],
+    "x": 570,
+    "y": 180,
+    "wires": [
+      [
+        "cd85f588.5aaef"
+      ],
+      [
+        "514478ad.f22e2"
+      ],
+      [
+        "3f35289d.aee308"
+      ],
+      [
+        "d4f63c98.6bdbe"
+      ]
+    ]
+  },
+  {
+    "id": "274c1d34.a37cf2",
+    "type": "inject",
+    "z": "9a03c26f.2caa38",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 920,
+    "wires": [
+      [
+        "ebe25b94.4ebbc"
+      ]
+    ]
+  },
+  {
+    "id": "6e116585.d9a1a4",
+    "type": "ui_text",
+    "z": "9a03c26f.2caa38",
+    "group": "412fbf62.1e1d9",
+    "order": 6,
+    "width": "6",
+    "height": "1",
+    "name": "Zeige Automatisierungsinfo",
+    "label": "<i class=\"material-icons\">info</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-center",
+    "x": 640,
+    "y": 920,
+    "wires": []
+  },
+  {
+    "id": "ebe25b94.4ebbc",
+    "type": "change",
+    "z": "9a03c26f.2caa38",
+    "name": "Setze Nachricht",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "Schaltet vollautomatisch gemäß Zeitplan.",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 380,
+    "y": 920,
+    "wires": [
+      [
+        "6e116585.d9a1a4"
+      ]
+    ]
+  }
+]

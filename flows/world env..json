@@ -1,0 +1,365 @@
+[
+  {
+    "id": "311aacb9.34a24c",
+    "type": "tab",
+    "label": "world env.",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "2122249c.3ea634",
+    "type": "comment",
+    "z": "311aacb9.34a24c",
+    "name": "GUI",
+    "info": "",
+    "x": 90,
+    "y": 280,
+    "wires": []
+  },
+  {
+    "id": "cd0b25c7.898b2",
+    "type": "inject",
+    "z": "311aacb9.34a24c",
+    "name": "Alle 0,5s",
+    "repeat": "0.5",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "time",
+    "payload": "",
+    "payloadType": "date",
+    "x": 100,
+    "y": 400,
+    "wires": [
+      [
+        "4bcf86db.2c0d48"
+      ]
+    ]
+  },
+  {
+    "id": "169a6858.ea146",
+    "type": "ui_text",
+    "z": "311aacb9.34a24c",
+    "group": "22abfc75.b9b2e4",
+    "order": 3,
+    "width": 2,
+    "height": 1,
+    "name": "Zeige Uhrzeit",
+    "label": "<i class=\"material-icons\">access_time</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-spread",
+    "x": 570,
+    "y": 400,
+    "wires": []
+  },
+  {
+    "id": "d5b3d67.c5c43a8",
+    "type": "inject",
+    "z": "311aacb9.34a24c",
+    "name": "Alle 0,5s",
+    "props": [
+      {
+        "p": "payload",
+        "v": "",
+        "vt": "date"
+      },
+      {
+        "p": "topic",
+        "v": "date",
+        "vt": "string"
+      }
+    ],
+    "repeat": "0.5",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "date",
+    "payload": "",
+    "payloadType": "date",
+    "x": 100,
+    "y": 340,
+    "wires": [
+      [
+        "7e3c009f.89b93"
+      ]
+    ]
+  },
+  {
+    "id": "8434d57a.d32188",
+    "type": "ui_text",
+    "z": "311aacb9.34a24c",
+    "group": "22abfc75.b9b2e4",
+    "order": 1,
+    "width": 2,
+    "height": 1,
+    "name": "Zeige Datum",
+    "label": "<i class=\"material-icons\">today</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-spread",
+    "x": 570,
+    "y": 340,
+    "wires": []
+  },
+  {
+    "id": "7765d8b5.58db38",
+    "type": "openweathermap in",
+    "z": "311aacb9.34a24c",
+    "name": "Warte auf OpenWeatherMap",
+    "wtype": "current",
+    "lon": "",
+    "lat": "",
+    "city": "Bremen",
+    "country": "Germany",
+    "language": "en",
+    "x": 160,
+    "y": 180,
+    "wires": [
+      [
+        "81e3c007.4481b8",
+        "72908a29.0d5bd4"
+      ]
+    ]
+  },
+  {
+    "id": "2117869e.9ae2c2",
+    "type": "comment",
+    "z": "311aacb9.34a24c",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "1ceb045.777147c",
+    "type": "comment",
+    "z": "311aacb9.34a24c",
+    "name": "world environment",
+    "info": "",
+    "x": 110,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "a6a8e65d.21ae38",
+    "type": "change",
+    "z": "311aacb9.34a24c",
+    "name": "Merke akt. Temp.",
+    "rules": [
+      {
+        "t": "set",
+        "p": "weather.current_temp",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 870,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3405d8e3.6ab08",
+    "type": "ui_text",
+    "z": "311aacb9.34a24c",
+    "group": "22abfc75.b9b2e4",
+    "order": 7,
+    "width": "2",
+    "height": 1,
+    "name": "Zeige Wetter-Daten",
+    "label": "<i class=\"wi wi-owm-{{msg.payload.key}}\"></i>",
+    "format": "{{msg.payload.value}}°C",
+    "layout": "row-spread",
+    "x": 590,
+    "y": 460,
+    "wires": []
+  },
+  {
+    "id": "81e3c007.4481b8",
+    "type": "change",
+    "z": "311aacb9.34a24c",
+    "name": "Merke Wetter-Icon",
+    "rules": [
+      {
+        "t": "set",
+        "p": "weather.icon",
+        "pt": "flow",
+        "to": "payload.icon",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 410,
+    "y": 200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "24db8dfe.80490a",
+    "type": "change",
+    "z": "311aacb9.34a24c",
+    "name": "Hole Wetter-Daten",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "{}",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "payload.key",
+        "pt": "msg",
+        "to": "weather.icon",
+        "tot": "flow"
+      },
+      {
+        "t": "set",
+        "p": "payload.value",
+        "pt": "msg",
+        "to": "weather.current_temp",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 370,
+    "y": 460,
+    "wires": [
+      [
+        "3405d8e3.6ab08"
+      ]
+    ]
+  },
+  {
+    "id": "90daccc4.d1e6f8",
+    "type": "complete",
+    "z": "311aacb9.34a24c",
+    "name": "Warte auf Wetter-Daten",
+    "scope": [
+      "81e3c007.4481b8",
+      "a6a8e65d.21ae38"
+    ],
+    "uncaught": false,
+    "x": 140,
+    "y": 460,
+    "wires": [
+      [
+        "24db8dfe.80490a"
+      ]
+    ]
+  },
+  {
+    "id": "604ed99e.3a8a9",
+    "type": "range",
+    "z": "311aacb9.34a24c",
+    "minin": "-100",
+    "maxin": "100",
+    "minout": "-100",
+    "maxout": "100",
+    "action": "scale",
+    "round": true,
+    "property": "payload",
+    "name": "Formatiere akt. Temp.",
+    "x": 640,
+    "y": 160,
+    "wires": [
+      [
+        "a6a8e65d.21ae38"
+      ]
+    ]
+  },
+  {
+    "id": "72908a29.0d5bd4",
+    "type": "change",
+    "z": "311aacb9.34a24c",
+    "name": "Lese akt. Temp.",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload.tempc",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 400,
+    "y": 160,
+    "wires": [
+      [
+        "604ed99e.3a8a9"
+      ]
+    ]
+  },
+  {
+    "id": "7e3c009f.89b93",
+    "type": "moment",
+    "z": "311aacb9.34a24c",
+    "name": "Formatiere Datum",
+    "topic": "",
+    "input": "payload",
+    "inputType": "msg",
+    "inTz": "ETC/UTC",
+    "adjAmount": 0,
+    "adjType": "days",
+    "adjDir": "add",
+    "format": "DD.MM.yyyy",
+    "locale": "de-DE",
+    "output": "payload",
+    "outputType": "msg",
+    "outTz": "Europe/Berlin",
+    "x": 370,
+    "y": 340,
+    "wires": [
+      [
+        "8434d57a.d32188"
+      ]
+    ]
+  },
+  {
+    "id": "4bcf86db.2c0d48",
+    "type": "moment",
+    "z": "311aacb9.34a24c",
+    "name": "Formatiere Uhrzeit",
+    "topic": "",
+    "input": "payload",
+    "inputType": "msg",
+    "inTz": "ETC/UTC",
+    "adjAmount": 0,
+    "adjType": "days",
+    "adjDir": "add",
+    "format": "HH:mm:ss",
+    "locale": "de-DE",
+    "output": "payload",
+    "outputType": "msg",
+    "outTz": "Europe/Berlin",
+    "x": 370,
+    "y": 400,
+    "wires": [
+      [
+        "169a6858.ea146"
+      ]
+    ]
+  }
+]

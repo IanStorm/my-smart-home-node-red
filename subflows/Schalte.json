@@ -1,0 +1,112 @@
+[
+  {
+    "id": "273bf058.181fb8",
+    "type": "subflow",
+    "name": "Schalte",
+    "info": "# Steckdose: Schalte\n\n\n### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        msg.ain\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        AIN\n    </dd>\n    <dt>\n        msg.isSwitchedOn\n        <span class=\"property-type\">boolean</span>\n    </dt>\n    <dd>\n        Gewünschter Schaltzustand\n    </dd>\n</dl>\n",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 40,
+        "wires": [
+          {
+            "id": "7beeeabb.480ee4"
+          }
+        ]
+      }
+    ],
+    "out": [],
+    "env": [],
+    "color": "#DDAA99",
+    "icon": "node-red-contrib-fritzapi/power.png"
+  },
+  {
+    "id": "7beeeabb.480ee4",
+    "type": "rbe",
+    "z": "273bf058.181fb8",
+    "name": "Nur bei Änderung",
+    "func": "rbei",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "property": "payload",
+    "x": 210,
+    "y": 40,
+    "wires": [
+      [
+        "9f2a32dc.d514c"
+      ]
+    ]
+  },
+  {
+    "id": "9f2a32dc.d514c",
+    "type": "trigger",
+    "z": "273bf058.181fb8",
+    "name": "11s Cooldown",
+    "op1": "",
+    "op2": "",
+    "op1type": "pay",
+    "op2type": "nul",
+    "duration": "11",
+    "extend": false,
+    "units": "s",
+    "reset": "",
+    "bytopic": "all",
+    "outputs": 1,
+    "x": 420,
+    "y": 40,
+    "wires": [
+      [
+        "591169c3.a3f13"
+      ]
+    ]
+  },
+  {
+    "id": "54a6b719.2b5df",
+    "type": "fritz-outlet",
+    "z": "273bf058.181fb8",
+    "connection": "1f1ed453.c0771c",
+    "name": "Schalte",
+    "action": "setSwitchState",
+    "x": 840,
+    "y": 40,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "591169c3.a3f13",
+    "type": "change",
+    "z": "273bf058.181fb8",
+    "name": "Bereite Schaltung vor",
+    "rules": [
+      {
+        "t": "set",
+        "p": "ain",
+        "pt": "msg",
+        "to": "ain",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "isSwitchedOn",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 640,
+    "y": 40,
+    "wires": [
+      [
+        "54a6b719.2b5df"
+      ]
+    ]
+  }
+]

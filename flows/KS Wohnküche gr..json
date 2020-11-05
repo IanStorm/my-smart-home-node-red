@@ -1,0 +1,421 @@
+[
+  {
+    "id": "a08151f9.16ea7",
+    "type": "tab",
+    "label": "KS Wohnküche gr.",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "634c5ca5.6aa344",
+    "type": "comment",
+    "z": "a08151f9.16ea7",
+    "name": "Kontakt-Sensor -> Wohnküche -> große Balkontür",
+    "info": "",
+    "x": 210,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "c0585d90.e92b7",
+    "type": "comment",
+    "z": "a08151f9.16ea7",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "881b67db.cf9a",
+    "type": "change",
+    "z": "a08151f9.16ea7",
+    "name": "Merke Batterie-%",
+    "rules": [
+      {
+        "t": "set",
+        "p": "contact.batteryPercentage",
+        "pt": "flow",
+        "to": "payload.battery",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 410,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "e9dca57.06c0e58",
+    "type": "change",
+    "z": "a08151f9.16ea7",
+    "name": "Merke LQI",
+    "rules": [
+      {
+        "t": "set",
+        "p": "contact.lqi",
+        "pt": "flow",
+        "to": "payload.linkquality",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 390,
+    "y": 240,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "dd2d9d3a.6e3078",
+    "type": "change",
+    "z": "a08151f9.16ea7",
+    "name": "Merke \"Ist geschlossen?\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "contact.isClosed",
+        "pt": "flow",
+        "to": "payload.contact",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 430,
+    "y": 300,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "e98c07fc.e5714",
+    "type": "comment",
+    "z": "a08151f9.16ea7",
+    "name": "GUI",
+    "info": "",
+    "x": 90,
+    "y": 480,
+    "wires": []
+  },
+  {
+    "id": "acf7f1fc.299038",
+    "type": "complete",
+    "z": "a08151f9.16ea7",
+    "name": "Warte auf Batterie-%",
+    "scope": [
+      "881b67db.cf9a"
+    ],
+    "uncaught": false,
+    "x": 130,
+    "y": 540,
+    "wires": [
+      [
+        "b014b6.bee3db48"
+      ]
+    ]
+  },
+  {
+    "id": "c59a1d42.434278",
+    "type": "complete",
+    "z": "a08151f9.16ea7",
+    "name": "Warte auf LQI",
+    "scope": [
+      "e9dca57.06c0e58"
+    ],
+    "uncaught": false,
+    "x": 110,
+    "y": 600,
+    "wires": [
+      [
+        "de501284.592ad8"
+      ]
+    ]
+  },
+  {
+    "id": "17d18a44.44fee6",
+    "type": "complete",
+    "z": "a08151f9.16ea7",
+    "name": "Warte auf \"Ist geschlossen?\"",
+    "scope": [
+      "dd2d9d3a.6e3078"
+    ],
+    "uncaught": false,
+    "x": 160,
+    "y": 660,
+    "wires": [
+      [
+        "c355882b.624418"
+      ]
+    ]
+  },
+  {
+    "id": "b014b6.bee3db48",
+    "type": "change",
+    "z": "a08151f9.16ea7",
+    "name": "Hole Batterie-%",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "contact.batteryPercentage",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 400,
+    "y": 540,
+    "wires": [
+      [
+        "483af76d.ffe5"
+      ]
+    ]
+  },
+  {
+    "id": "c355882b.624418",
+    "type": "change",
+    "z": "a08151f9.16ea7",
+    "name": "Hole \"Ist geschlossen?\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "contact.isClosed",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 430,
+    "y": 660,
+    "wires": [
+      [
+        "99dd36bb.26847"
+      ]
+    ]
+  },
+  {
+    "id": "de501284.592ad8",
+    "type": "change",
+    "z": "a08151f9.16ea7",
+    "name": "Hole LQI",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "contact.lqi",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 380,
+    "y": 600,
+    "wires": [
+      [
+        "a8c96446.2e9bb"
+      ]
+    ]
+  },
+  {
+    "id": "483af76d.ffe5",
+    "type": "ui_text",
+    "z": "a08151f9.16ea7",
+    "group": "6aa4fe54.7c82f8",
+    "order": 3,
+    "width": 2,
+    "height": 1,
+    "name": "Zeige Batterie-%",
+    "label": "<i class=\"material-icons\">battery_unknown</i>",
+    "format": "{{msg.payload}}%",
+    "layout": "row-center",
+    "x": 670,
+    "y": 540,
+    "wires": []
+  },
+  {
+    "id": "a8c96446.2e9bb",
+    "type": "ui_text",
+    "z": "a08151f9.16ea7",
+    "group": "6aa4fe54.7c82f8",
+    "order": 2,
+    "width": 2,
+    "height": 1,
+    "name": "Zeige LQI",
+    "label": "<i class=\"material-icons\">sync</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-center",
+    "x": 640,
+    "y": 600,
+    "wires": []
+  },
+  {
+    "id": "99dd36bb.26847",
+    "type": "ui_text",
+    "z": "a08151f9.16ea7",
+    "group": "6aa4fe54.7c82f8",
+    "order": 1,
+    "width": 2,
+    "height": 1,
+    "name": "Zeige \"Ist geschlossen?\"",
+    "label": "<i class=\"material-icons\">{{msg.payload ? 'compare_arrows' : 'swap_horiz'}}</i>",
+    "format": "{{msg.payload ? 'Geschlossen' : 'Geöffnet'}}",
+    "layout": "row-center",
+    "x": 690,
+    "y": 660,
+    "wires": []
+  },
+  {
+    "id": "bce06698.58666",
+    "type": "link out",
+    "z": "a08151f9.16ea7",
+    "name": "Teile \"Ist geschlossen?\"",
+    "links": [],
+    "x": 690,
+    "y": 400,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "c1b4fee2.706768",
+    "type": "zigbee2mqtt-in",
+    "z": "a08151f9.16ea7",
+    "name": "Warte auf Sensor-Daten",
+    "server": "dd3cc3c3.66f0c8",
+    "friendly_name": "contact/living-kitchenArea/balconyDoors/large",
+    "device_id": "0x00158d00045cbbc2",
+    "state": "0",
+    "outputAtStartup": true,
+    "x": 140,
+    "y": 180,
+    "wires": [
+      [
+        "881b67db.cf9a",
+        "e9dca57.06c0e58",
+        "dd2d9d3a.6e3078"
+      ]
+    ]
+  },
+  {
+    "id": "39953685.9a17d2",
+    "type": "change",
+    "z": "a08151f9.16ea7",
+    "name": "Bereinige Nachricht",
+    "rules": [
+      {
+        "t": "delete",
+        "p": "device",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "format",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "group",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "homekit",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "payload_raw",
+        "pt": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 410,
+    "y": 360,
+    "wires": [
+      [
+        "b17db9c9.80b6c8"
+      ]
+    ]
+  },
+  {
+    "id": "a893f38d.c34228",
+    "type": "complete",
+    "z": "a08151f9.16ea7",
+    "name": "Warte auf \"Ist geschlossen?\"",
+    "scope": [
+      "dd2d9d3a.6e3078"
+    ],
+    "uncaught": false,
+    "x": 160,
+    "y": 360,
+    "wires": [
+      [
+        "39953685.9a17d2"
+      ]
+    ]
+  },
+  {
+    "id": "b17db9c9.80b6c8",
+    "type": "change",
+    "z": "a08151f9.16ea7",
+    "name": "Hole \"Ist geschlossen?\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "contact.isClosed",
+        "tot": "flow"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "contact/isClosed",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 430,
+    "y": 400,
+    "wires": [
+      [
+        "bce06698.58666"
+      ]
+    ]
+  }
+]

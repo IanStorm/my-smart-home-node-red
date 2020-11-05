@@ -18,6 +18,7 @@
     "node-red-node-wol": "0.1.0"
   },
   "devDependencies": {
+    "node-red-contrib-flow-manager": "0.7.1"
   },
   "repository": {
     "type": "git",

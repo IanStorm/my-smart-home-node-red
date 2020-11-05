@@ -1,0 +1,667 @@
+[
+  {
+    "id": "c8fe4e83.6f1b68",
+    "type": "tab",
+    "label": "Telefon",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "3782b836.122b7",
+    "type": "fritzbox-callmonitor",
+    "z": "c8fe4e83.6f1b68",
+    "device": "d54c9b6e.0cffc",
+    "name": "Bei Anruf",
+    "topic": "",
+    "x": 100,
+    "y": 260,
+    "wires": [
+      [
+        "be665aec.635b"
+      ]
+    ]
+  },
+  {
+    "id": "df998393.6cb198",
+    "type": "comment",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Telefon",
+    "info": "",
+    "x": 70,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "d91d071c.20ab9",
+    "type": "comment",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "be665aec.635b",
+    "type": "switch",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Ist eingehend?",
+    "property": "payload.type",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "INBOUND",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 280,
+    "y": 260,
+    "wires": [
+      [
+        "d534eedf.0dcd98"
+      ],
+      [
+        "aeedd82a.e5cda8"
+      ]
+    ],
+    "outputLabels": [
+      "Ja",
+      "Nein"
+    ]
+  },
+  {
+    "id": "5950629b.2eb3d4",
+    "type": "inject",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Bei Flow-Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 120,
+    "y": 180,
+    "wires": [
+      [
+        "6ce3f180.ac1c68"
+      ]
+    ]
+  },
+  {
+    "id": "6ce3f180.ac1c68",
+    "type": "change",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Setze Standard-Anruf-Info",
+    "rules": [
+      {
+        "t": "set",
+        "p": "call.default",
+        "pt": "flow",
+        "to": "-",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 350,
+    "y": 180,
+    "wires": [
+      [
+        "36f9e9c.ef01816"
+      ]
+    ]
+  },
+  {
+    "id": "e4e21cb4.a5db6",
+    "type": "fritzbox-contact",
+    "z": "c8fe4e83.6f1b68",
+    "device": "d54c9b6e.0cffc",
+    "name": "Schlage nach",
+    "topic": "",
+    "phonebook": "1",
+    "ccode": "DE",
+    "x": 420,
+    "y": 320,
+    "wires": [
+      [
+        "8c8cf452.ca6cb8"
+      ]
+    ]
+  },
+  {
+    "id": "f56a8f84.54d828",
+    "type": "comment",
+    "z": "c8fe4e83.6f1b68",
+    "name": "GUI",
+    "info": "",
+    "x": 90,
+    "y": 540,
+    "wires": []
+  },
+  {
+    "id": "36f9e9c.ef01816",
+    "type": "change",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Initialisiere Anruf-Info",
+    "rules": [
+      {
+        "t": "set",
+        "p": "call.inbound",
+        "pt": "flow",
+        "to": "call.default",
+        "tot": "flow"
+      },
+      {
+        "t": "set",
+        "p": "call.outbound",
+        "pt": "flow",
+        "to": "call.default",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 600,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "d534eedf.0dcd98",
+    "type": "change",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Merke Anrufer-Nummer",
+    "rules": [
+      {
+        "t": "set",
+        "p": "call.inbound",
+        "pt": "flow",
+        "to": "payload.caller",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 510,
+    "y": 240,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "276b0b6a.b65784",
+    "type": "ui_text",
+    "z": "c8fe4e83.6f1b68",
+    "group": "22abfc75.b9b2e4",
+    "order": 4,
+    "width": 4,
+    "height": 1,
+    "name": "Zeige Anrufer",
+    "label": "<i class=\"material-icons\">call_received</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-spread",
+    "x": 580,
+    "y": 660,
+    "wires": []
+  },
+  {
+    "id": "aeedd82a.e5cda8",
+    "type": "change",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Setze Anrufer zurück",
+    "rules": [
+      {
+        "t": "set",
+        "p": "call.inbound",
+        "pt": "flow",
+        "to": "call.default",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 500,
+    "y": 280,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "e21b6ceb.6281e8",
+    "type": "complete",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Warte auf Anrufer-Nummer",
+    "scope": [
+      "d534eedf.0dcd98"
+    ],
+    "uncaught": false,
+    "x": 150,
+    "y": 320,
+    "wires": [
+      [
+        "e4e21cb4.a5db6"
+      ]
+    ]
+  },
+  {
+    "id": "8c8cf452.ca6cb8",
+    "type": "switch",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Anrufer gefunden?",
+    "property": "payload.caller_contacts.length",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "neq",
+        "v": "0",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 630,
+    "y": 320,
+    "wires": [
+      [
+        "9b6c930f.4f839"
+      ],
+      []
+    ],
+    "outputLabels": [
+      "Ja",
+      "Nein"
+    ]
+  },
+  {
+    "id": "9b6c930f.4f839",
+    "type": "change",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Merke Anrufer-Name",
+    "rules": [
+      {
+        "t": "set",
+        "p": "call.inbound",
+        "pt": "flow",
+        "to": "payload.caller_contacts[0].person.realName",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 900,
+    "y": 320,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "cc448c4.4f477f",
+    "type": "fritzbox-callmonitor",
+    "z": "c8fe4e83.6f1b68",
+    "device": "d54c9b6e.0cffc",
+    "name": "Bei Anruf",
+    "topic": "",
+    "x": 100,
+    "y": 400,
+    "wires": [
+      [
+        "6eb97447.06e99c"
+      ]
+    ]
+  },
+  {
+    "id": "6eb97447.06e99c",
+    "type": "switch",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Ist ausgehend?",
+    "property": "payload.type",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "OUTBOUND",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 280,
+    "y": 400,
+    "wires": [
+      [
+        "64c12f8f.019e98"
+      ],
+      [
+        "eea7e7b2.67a138"
+      ]
+    ],
+    "outputLabels": [
+      "Ja",
+      "Nein"
+    ]
+  },
+  {
+    "id": "64c12f8f.019e98",
+    "type": "change",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Merke Angerufenen-Nummer",
+    "rules": [
+      {
+        "t": "set",
+        "p": "call.outbound",
+        "pt": "flow",
+        "to": "payload.callee",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 520,
+    "y": 380,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "eea7e7b2.67a138",
+    "type": "change",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Setze Angerufenen zurück",
+    "rules": [
+      {
+        "t": "set",
+        "p": "call.outbound",
+        "pt": "flow",
+        "to": "call.default",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 520,
+    "y": 420,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "e2bac70e.41323",
+    "type": "fritzbox-contact",
+    "z": "c8fe4e83.6f1b68",
+    "device": "d54c9b6e.0cffc",
+    "name": "Schlage nach",
+    "topic": "",
+    "phonebook": "1",
+    "ccode": "DE",
+    "x": 420,
+    "y": 460,
+    "wires": [
+      [
+        "4ddde829.b3e3a8"
+      ]
+    ]
+  },
+  {
+    "id": "96d6daf5.a549",
+    "type": "complete",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Warte auf Angerufenen-Nummer",
+    "scope": [
+      "64c12f8f.019e98"
+    ],
+    "uncaught": false,
+    "x": 170,
+    "y": 460,
+    "wires": [
+      [
+        "e2bac70e.41323"
+      ]
+    ]
+  },
+  {
+    "id": "4ddde829.b3e3a8",
+    "type": "switch",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Angerufenen gefunden?",
+    "property": "payload.callee_contacts.length",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "neq",
+        "v": "0",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 650,
+    "y": 460,
+    "wires": [
+      [
+        "36013fe4.3390f"
+      ],
+      []
+    ],
+    "outputLabels": [
+      "Ja",
+      "Nein"
+    ]
+  },
+  {
+    "id": "36013fe4.3390f",
+    "type": "change",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Merke Angerufenen-Name",
+    "rules": [
+      {
+        "t": "set",
+        "p": "call.outbound",
+        "pt": "flow",
+        "to": "payload.callee_contacts[0].person.realName",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 920,
+    "y": 460,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "75afbecb.d2eae8",
+    "type": "inject",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Bei Flow-Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 120,
+    "y": 600,
+    "wires": [
+      [
+        "d0d24b9f.a8e2a"
+      ]
+    ]
+  },
+  {
+    "id": "d0d24b9f.a8e2a",
+    "type": "ui_template",
+    "z": "c8fe4e83.6f1b68",
+    "group": "22abfc75.b9b2e4",
+    "name": "Zeige Anruf-Icon",
+    "order": 2,
+    "width": 4,
+    "height": 1,
+    "format": "<div style=\"align-self: center;\">\n    <i class=\"material-icons\">call</i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "templateScope": "local",
+    "x": 580,
+    "y": 600,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "a1b81328.e9c4b",
+    "type": "complete",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Warte auf Anrufer",
+    "scope": [
+      "36f9e9c.ef01816",
+      "d534eedf.0dcd98",
+      "aeedd82a.e5cda8",
+      "9b6c930f.4f839"
+    ],
+    "uncaught": false,
+    "x": 120,
+    "y": 660,
+    "wires": [
+      [
+        "1f08b2eb.7e200d"
+      ]
+    ]
+  },
+  {
+    "id": "4e106d06.99eee4",
+    "type": "complete",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Warte auf Angerufenen",
+    "scope": [
+      "36f9e9c.ef01816",
+      "64c12f8f.019e98",
+      "eea7e7b2.67a138",
+      "36013fe4.3390f"
+    ],
+    "uncaught": false,
+    "x": 140,
+    "y": 720,
+    "wires": [
+      [
+        "b989ab9e.5125b8"
+      ]
+    ]
+  },
+  {
+    "id": "1f08b2eb.7e200d",
+    "type": "change",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Hole Anrufer",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "call.inbound",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 350,
+    "y": 660,
+    "wires": [
+      [
+        "276b0b6a.b65784"
+      ]
+    ]
+  },
+  {
+    "id": "b989ab9e.5125b8",
+    "type": "change",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Hole Angerufenen",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "call.outbound",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 370,
+    "y": 720,
+    "wires": [
+      [
+        "c9bd0d5d.4b8648"
+      ]
+    ]
+  },
+  {
+    "id": "c9bd0d5d.4b8648",
+    "type": "ui_text",
+    "z": "c8fe4e83.6f1b68",
+    "group": "22abfc75.b9b2e4",
+    "order": 6,
+    "width": 4,
+    "height": 1,
+    "name": "Zeige Angerufenen",
+    "label": "<i class=\"material-icons\">call_made</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-spread",
+    "x": 590,
+    "y": 720,
+    "wires": []
+  }
+]

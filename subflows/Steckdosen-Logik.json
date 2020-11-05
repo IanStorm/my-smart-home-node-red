@@ -1,0 +1,1024 @@
+[
+  {
+    "id": "dd43bdd9.895da8",
+    "type": "subflow",
+    "name": "Steckdosen-Logik",
+    "info": "# Steckdose: Hole Daten\n\nHole relevante Daten von DECT-basierten smarten Steckdosen.\n\n\n### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        msg.ain\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        AIN\n    </dd>\n</dl>\n",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 500,
+        "wires": [
+          {
+            "id": "1ecc29dc.a0fa56"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 1180,
+        "y": 120,
+        "wires": [
+          {
+            "id": "bdfbdaaa.2dbad8",
+            "port": 0
+          }
+        ]
+      },
+      {
+        "x": 1180,
+        "y": 220,
+        "wires": [
+          {
+            "id": "194c5857.7c52c",
+            "port": 0
+          }
+        ]
+      },
+      {
+        "x": 1180,
+        "y": 320,
+        "wires": [
+          {
+            "id": "da56fa85.616c",
+            "port": 0
+          }
+        ]
+      },
+      {
+        "x": 1180,
+        "y": 420,
+        "wires": [
+          {
+            "id": "3ff68f8f.bc3f18",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [
+      {
+        "name": "ain",
+        "type": "str",
+        "value": "-TODO: AIN-",
+        "ui": {
+          "label": {
+            "en-US": "AIN"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      }
+    ],
+    "color": "#DDAA99",
+    "outputLabels": [
+      "Verbindungsstatus",
+      "Leistung",
+      "Temperatur",
+      "Schaltzustand"
+    ],
+    "icon": "node-red-contrib-fritzapi/power.png"
+  },
+  {
+    "id": "bdfbdaaa.2dbad8",
+    "type": "fritz-outlet",
+    "z": "dd43bdd9.895da8",
+    "connection": "1f1ed453.c0771c",
+    "name": "Lese Verbindungsstatus",
+    "action": "getSwitchPresence",
+    "x": 1010,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "194c5857.7c52c",
+    "type": "fritz-outlet",
+    "z": "dd43bdd9.895da8",
+    "connection": "1f1ed453.c0771c",
+    "name": "Lese Leistung",
+    "action": "getSwitchPower",
+    "x": 980,
+    "y": 220,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "da56fa85.616c",
+    "type": "fritz-thermostat",
+    "z": "dd43bdd9.895da8",
+    "connection": "1f1ed453.c0771c",
+    "name": "Lese Temperatur",
+    "action": "getTemperature",
+    "x": 990,
+    "y": 320,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3ff68f8f.bc3f18",
+    "type": "fritz-outlet",
+    "z": "dd43bdd9.895da8",
+    "connection": "1f1ed453.c0771c",
+    "name": "Lese Schaltzustand",
+    "action": "getSwitchState",
+    "x": 990,
+    "y": 420,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "a39e9c2c.88f5d8",
+    "type": "change",
+    "z": "dd43bdd9.895da8",
+    "name": "Hole AIN",
+    "rules": [
+      {
+        "t": "set",
+        "p": "ain",
+        "pt": "msg",
+        "to": "ain",
+        "tot": "env"
+      },
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 800,
+    "y": 120,
+    "wires": [
+      [
+        "bdfbdaaa.2dbad8"
+      ]
+    ]
+  },
+  {
+    "id": "38747e5c.ff88d2",
+    "type": "status",
+    "z": "dd43bdd9.895da8",
+    "name": "Status-Update",
+    "scope": [
+      "bdfbdaaa.2dbad8"
+    ],
+    "x": 110,
+    "y": 100,
+    "wires": [
+      [
+        "4a10cb8b.c3d084"
+      ]
+    ]
+  },
+  {
+    "id": "98473716.6521c",
+    "type": "inject",
+    "z": "dd43bdd9.895da8",
+    "name": "Alle 9s",
+    "repeat": "9",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 100,
+    "y": 140,
+    "wires": [
+      [
+        "e8b9f57d.3a7348"
+      ]
+    ]
+  },
+  {
+    "id": "4a10cb8b.c3d084",
+    "type": "switch",
+    "z": "dd43bdd9.895da8",
+    "name": "Ist verbunden?",
+    "property": "status.text",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "connected",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 280,
+    "y": 100,
+    "wires": [
+      [
+        "83d91e40.7eb368"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "83d91e40.7eb368",
+    "type": "join",
+    "z": "dd43bdd9.895da8",
+    "name": "merge",
+    "mode": "custom",
+    "build": "merged",
+    "property": "",
+    "propertyType": "full",
+    "key": "topic",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "accumulate": true,
+    "timeout": "",
+    "count": "2",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "",
+    "reduceFixup": "",
+    "x": 450,
+    "y": 120,
+    "wires": [
+      [
+        "a44654df.7305e"
+      ]
+    ]
+  },
+  {
+    "id": "a44654df.7305e",
+    "type": "switch",
+    "z": "dd43bdd9.895da8",
+    "name": "Hat Status?",
+    "property": "msg",
+    "propertyType": "jsonata",
+    "rules": [
+      {
+        "t": "hask",
+        "v": "status",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 610,
+    "y": 100,
+    "wires": [
+      [
+        "e9ece031.e69c2"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "e9ece031.e69c2",
+    "type": "switch",
+    "z": "dd43bdd9.895da8",
+    "name": "Wurde injected?",
+    "property": "msg",
+    "propertyType": "jsonata",
+    "rules": [
+      {
+        "t": "hask",
+        "v": "injected",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 620,
+    "y": 140,
+    "wires": [
+      [
+        "a39e9c2c.88f5d8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "5a61edc2.1e7964",
+    "type": "change",
+    "z": "dd43bdd9.895da8",
+    "name": "Hole AIN",
+    "rules": [
+      {
+        "t": "set",
+        "p": "ain",
+        "pt": "msg",
+        "to": "ain",
+        "tot": "env"
+      },
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 800,
+    "y": 220,
+    "wires": [
+      [
+        "194c5857.7c52c"
+      ]
+    ]
+  },
+  {
+    "id": "8e0e8870.47c2b8",
+    "type": "status",
+    "z": "dd43bdd9.895da8",
+    "name": "Status-Update",
+    "scope": [
+      "194c5857.7c52c"
+    ],
+    "x": 110,
+    "y": 200,
+    "wires": [
+      [
+        "2d04fd6e.91e7b2"
+      ]
+    ]
+  },
+  {
+    "id": "448524ef.ccd204",
+    "type": "inject",
+    "z": "dd43bdd9.895da8",
+    "name": "Alle 13s",
+    "repeat": "13",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 100,
+    "y": 240,
+    "wires": [
+      [
+        "8ca81b7d.844be"
+      ]
+    ]
+  },
+  {
+    "id": "2d04fd6e.91e7b2",
+    "type": "switch",
+    "z": "dd43bdd9.895da8",
+    "name": "Ist verbunden?",
+    "property": "status.text",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "connected",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 280,
+    "y": 200,
+    "wires": [
+      [
+        "53a5ac5c.d3944c"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "53a5ac5c.d3944c",
+    "type": "join",
+    "z": "dd43bdd9.895da8",
+    "name": "merge",
+    "mode": "custom",
+    "build": "merged",
+    "property": "",
+    "propertyType": "full",
+    "key": "topic",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "accumulate": true,
+    "timeout": "",
+    "count": "2",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "",
+    "reduceFixup": "",
+    "x": 450,
+    "y": 220,
+    "wires": [
+      [
+        "bb81ff9.4d4cc8"
+      ]
+    ]
+  },
+  {
+    "id": "bb81ff9.4d4cc8",
+    "type": "switch",
+    "z": "dd43bdd9.895da8",
+    "name": "Hat Status?",
+    "property": "msg",
+    "propertyType": "jsonata",
+    "rules": [
+      {
+        "t": "hask",
+        "v": "status",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 610,
+    "y": 200,
+    "wires": [
+      [
+        "a0b06b76.87b038"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "a0b06b76.87b038",
+    "type": "switch",
+    "z": "dd43bdd9.895da8",
+    "name": "Wurde injected?",
+    "property": "msg",
+    "propertyType": "jsonata",
+    "rules": [
+      {
+        "t": "hask",
+        "v": "injected",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 620,
+    "y": 240,
+    "wires": [
+      [
+        "5a61edc2.1e7964"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "c852ee82.02cff",
+    "type": "change",
+    "z": "dd43bdd9.895da8",
+    "name": "Hole AIN",
+    "rules": [
+      {
+        "t": "set",
+        "p": "ain",
+        "pt": "msg",
+        "to": "ain",
+        "tot": "env"
+      },
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 800,
+    "y": 320,
+    "wires": [
+      [
+        "da56fa85.616c"
+      ]
+    ]
+  },
+  {
+    "id": "b6c1ea0d.39f6d8",
+    "type": "status",
+    "z": "dd43bdd9.895da8",
+    "name": "Status-Update",
+    "scope": [
+      "da56fa85.616c"
+    ],
+    "x": 110,
+    "y": 300,
+    "wires": [
+      [
+        "526535d4.8381cc"
+      ]
+    ]
+  },
+  {
+    "id": "2e9aeae2.0dee76",
+    "type": "inject",
+    "z": "dd43bdd9.895da8",
+    "name": "Alle 13s",
+    "repeat": "13",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 100,
+    "y": 340,
+    "wires": [
+      [
+        "6ec3fef4.6cd94"
+      ]
+    ]
+  },
+  {
+    "id": "526535d4.8381cc",
+    "type": "switch",
+    "z": "dd43bdd9.895da8",
+    "name": "Ist verbunden?",
+    "property": "status.text",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "connected",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 280,
+    "y": 300,
+    "wires": [
+      [
+        "9393e568.1b3ac"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "9393e568.1b3ac",
+    "type": "join",
+    "z": "dd43bdd9.895da8",
+    "name": "merge",
+    "mode": "custom",
+    "build": "merged",
+    "property": "",
+    "propertyType": "full",
+    "key": "topic",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "accumulate": true,
+    "timeout": "",
+    "count": "2",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "",
+    "reduceFixup": "",
+    "x": 450,
+    "y": 320,
+    "wires": [
+      [
+        "1dae0912.edc5bf"
+      ]
+    ]
+  },
+  {
+    "id": "1dae0912.edc5bf",
+    "type": "switch",
+    "z": "dd43bdd9.895da8",
+    "name": "Hat Status?",
+    "property": "msg",
+    "propertyType": "jsonata",
+    "rules": [
+      {
+        "t": "hask",
+        "v": "status",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 610,
+    "y": 300,
+    "wires": [
+      [
+        "1b41a86e.a99f18"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "1b41a86e.a99f18",
+    "type": "switch",
+    "z": "dd43bdd9.895da8",
+    "name": "Wurde injected?",
+    "property": "msg",
+    "propertyType": "jsonata",
+    "rules": [
+      {
+        "t": "hask",
+        "v": "injected",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 620,
+    "y": 340,
+    "wires": [
+      [
+        "c852ee82.02cff"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "6895b03d.65855",
+    "type": "change",
+    "z": "dd43bdd9.895da8",
+    "name": "Hole AIN",
+    "rules": [
+      {
+        "t": "set",
+        "p": "ain",
+        "pt": "msg",
+        "to": "ain",
+        "tot": "env"
+      },
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 800,
+    "y": 420,
+    "wires": [
+      [
+        "3ff68f8f.bc3f18"
+      ]
+    ]
+  },
+  {
+    "id": "671a489.9404b38",
+    "type": "status",
+    "z": "dd43bdd9.895da8",
+    "name": "Status-Update",
+    "scope": [
+      "3ff68f8f.bc3f18"
+    ],
+    "x": 110,
+    "y": 400,
+    "wires": [
+      [
+        "6b8a0065.4c3b78"
+      ]
+    ]
+  },
+  {
+    "id": "3c3a0bf3.12a894",
+    "type": "inject",
+    "z": "dd43bdd9.895da8",
+    "name": "Alle 9s",
+    "repeat": "9",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 100,
+    "y": 440,
+    "wires": [
+      [
+        "20dfa7a7.8f8858"
+      ]
+    ]
+  },
+  {
+    "id": "6b8a0065.4c3b78",
+    "type": "switch",
+    "z": "dd43bdd9.895da8",
+    "name": "Ist verbunden?",
+    "property": "status.text",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "connected",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 280,
+    "y": 400,
+    "wires": [
+      [
+        "194b82ad.07c895"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "194b82ad.07c895",
+    "type": "join",
+    "z": "dd43bdd9.895da8",
+    "name": "merge",
+    "mode": "custom",
+    "build": "merged",
+    "property": "",
+    "propertyType": "full",
+    "key": "topic",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "accumulate": true,
+    "timeout": "",
+    "count": "2",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "",
+    "reduceFixup": "",
+    "x": 450,
+    "y": 420,
+    "wires": [
+      [
+        "faed554e.b46c18"
+      ]
+    ]
+  },
+  {
+    "id": "faed554e.b46c18",
+    "type": "switch",
+    "z": "dd43bdd9.895da8",
+    "name": "Hat Status?",
+    "property": "msg",
+    "propertyType": "jsonata",
+    "rules": [
+      {
+        "t": "hask",
+        "v": "status",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 610,
+    "y": 400,
+    "wires": [
+      [
+        "7806b0b7.c4f75"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "7806b0b7.c4f75",
+    "type": "switch",
+    "z": "dd43bdd9.895da8",
+    "name": "Wurde injected?",
+    "property": "msg",
+    "propertyType": "jsonata",
+    "rules": [
+      {
+        "t": "hask",
+        "v": "injected",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 620,
+    "y": 440,
+    "wires": [
+      [
+        "6895b03d.65855"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "e8b9f57d.3a7348",
+    "type": "change",
+    "z": "dd43bdd9.895da8",
+    "name": "Markiere",
+    "rules": [
+      {
+        "t": "set",
+        "p": "injected",
+        "pt": "msg",
+        "to": "true",
+        "tot": "bool"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 260,
+    "y": 140,
+    "wires": [
+      [
+        "83d91e40.7eb368"
+      ]
+    ]
+  },
+  {
+    "id": "8ca81b7d.844be",
+    "type": "change",
+    "z": "dd43bdd9.895da8",
+    "name": "Markiere",
+    "rules": [
+      {
+        "t": "set",
+        "p": "injected",
+        "pt": "msg",
+        "to": "true",
+        "tot": "bool"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 260,
+    "y": 240,
+    "wires": [
+      [
+        "53a5ac5c.d3944c"
+      ]
+    ]
+  },
+  {
+    "id": "6ec3fef4.6cd94",
+    "type": "change",
+    "z": "dd43bdd9.895da8",
+    "name": "Markiere",
+    "rules": [
+      {
+        "t": "set",
+        "p": "injected",
+        "pt": "msg",
+        "to": "true",
+        "tot": "bool"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 260,
+    "y": 340,
+    "wires": [
+      [
+        "9393e568.1b3ac"
+      ]
+    ]
+  },
+  {
+    "id": "20dfa7a7.8f8858",
+    "type": "change",
+    "z": "dd43bdd9.895da8",
+    "name": "Markiere",
+    "rules": [
+      {
+        "t": "set",
+        "p": "injected",
+        "pt": "msg",
+        "to": "true",
+        "tot": "bool"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 260,
+    "y": 440,
+    "wires": [
+      [
+        "194b82ad.07c895"
+      ]
+    ]
+  },
+  {
+    "id": "1ecc29dc.a0fa56",
+    "type": "change",
+    "z": "dd43bdd9.895da8",
+    "name": "Hole AIN",
+    "rules": [
+      {
+        "t": "set",
+        "p": "ain",
+        "pt": "msg",
+        "to": "ain",
+        "tot": "env"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 180,
+    "y": 500,
+    "wires": [
+      [
+        "8ff9f284.25ac3"
+      ]
+    ]
+  },
+  {
+    "id": "8ff9f284.25ac3",
+    "type": "subflow:273bf058.181fb8",
+    "z": "dd43bdd9.895da8",
+    "name": "",
+    "x": 340,
+    "y": 500,
+    "wires": []
+  }
+]

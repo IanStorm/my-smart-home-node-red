@@ -1,0 +1,888 @@
+[
+  {
+    "id": "18052606.db735a",
+    "type": "tab",
+    "label": "Stecker TV",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "27f64cec.c1e724",
+    "type": "comment",
+    "z": "18052606.db735a",
+    "name": "GUI",
+    "info": "",
+    "x": 90,
+    "y": 520,
+    "wires": []
+  },
+  {
+    "id": "76cb1cae.99cf6c",
+    "type": "comment",
+    "z": "18052606.db735a",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "85f819f.41c8968",
+    "type": "comment",
+    "z": "18052606.db735a",
+    "name": "Steckdosen -> Wohnzimmer: Fernsehtisch",
+    "info": "",
+    "x": 180,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "483f523b.ef278c",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Merke Verbindungsstatus",
+    "rules": [
+      {
+        "t": "set",
+        "p": "plug.isConnected",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 810,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f1e7bc22.a7938",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Merke Leistung",
+    "rules": [
+      {
+        "t": "set",
+        "p": "plug.power",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 780,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "87fe0c7a.b2edc8",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Merke Temperatur",
+    "rules": [
+      {
+        "t": "set",
+        "p": "plug.temperature",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 790,
+    "y": 200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "b1daa17f.31fe38",
+    "type": "ui_template",
+    "z": "18052606.db735a",
+    "group": "4587520c.baf024",
+    "name": "Zeige Status",
+    "order": 3,
+    "width": 2,
+    "height": 1,
+    "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
+    "storeOutMessages": false,
+    "fwdInMessages": false,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "x": 590,
+    "y": 640,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "6b4270ba.08e5e",
+    "type": "ui_text",
+    "z": "18052606.db735a",
+    "group": "4587520c.baf024",
+    "order": 2,
+    "width": 2,
+    "height": 1,
+    "name": "Zeige Temperatur",
+    "label": "<i class=\"material-icons\">ac_unit</i>",
+    "format": "{{msg.payload}}°C",
+    "layout": "row-left",
+    "x": 610,
+    "y": 700,
+    "wires": []
+  },
+  {
+    "id": "77180c84.87b1ec",
+    "type": "ui_text",
+    "z": "18052606.db735a",
+    "group": "4587520c.baf024",
+    "order": 4,
+    "width": 2,
+    "height": 1,
+    "name": "Zeige Leistungsaufnahme",
+    "label": "<i class=\"material-icons\">flash_on</i>",
+    "format": "{{msg.payload}}W",
+    "layout": "row-left",
+    "x": 630,
+    "y": 760,
+    "wires": []
+  },
+  {
+    "id": "702dc53a.a5c81c",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Hole Schaltzustand",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "plug.isSwitchedOn",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 390,
+    "y": 820,
+    "wires": [
+      [
+        "bb09173e.81d8a8"
+      ]
+    ]
+  },
+  {
+    "id": "390b7432.f70fac",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Merke Schaltzustand",
+    "rules": [
+      {
+        "t": "set",
+        "p": "plug.isSwitchedOn",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 800,
+    "y": 240,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "bb09173e.81d8a8",
+    "type": "ui_switch",
+    "z": "18052606.db735a",
+    "name": "Interaktion Schaltzustand",
+    "label": "<i class=\"material-icons\">power_settings_new</i>",
+    "tooltip": "",
+    "group": "4587520c.baf024",
+    "order": 5,
+    "width": 2,
+    "height": 1,
+    "passthru": true,
+    "decouple": "false",
+    "topic": "",
+    "style": "",
+    "onvalue": "true",
+    "onvalueType": "bool",
+    "onicon": "",
+    "oncolor": "",
+    "offvalue": "false",
+    "offvalueType": "bool",
+    "officon": "",
+    "offcolor": "",
+    "x": 630,
+    "y": 820,
+    "wires": [
+      [
+        "cbc1061b.5e1868"
+      ]
+    ]
+  },
+  {
+    "id": "e9a10cd1.1a0628",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Hole Schaltzustand",
+    "rules": [
+      {
+        "t": "set",
+        "p": "isSwitchedOn",
+        "pt": "msg",
+        "to": "plug.isSwitchedOn",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 350,
+    "y": 180,
+    "wires": [
+      [
+        "b3946a74.9faf3"
+      ]
+    ]
+  },
+  {
+    "id": "cbc1061b.5e1868",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Schalte um",
+    "rules": [
+      {
+        "t": "set",
+        "p": "plug.isSwitchedOn",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 850,
+    "y": 820,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "96de5cf1.5bfdc",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Hole Status",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "plug.isConnected",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 370,
+    "y": 640,
+    "wires": [
+      [
+        "b1daa17f.31fe38"
+      ]
+    ]
+  },
+  {
+    "id": "db854014.a0df98",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Hole Temperatur",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "plug.temperature",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 380,
+    "y": 700,
+    "wires": [
+      [
+        "6b4270ba.08e5e"
+      ]
+    ]
+  },
+  {
+    "id": "c118b1a0.88cbc",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Hole Leistung",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "plug.power",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 380,
+    "y": 760,
+    "wires": [
+      [
+        "77180c84.87b1ec"
+      ]
+    ]
+  },
+  {
+    "id": "571d1a2e.860f14",
+    "type": "comment",
+    "z": "18052606.db735a",
+    "name": "Automatisch Schalten",
+    "info": "",
+    "x": 140,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "85d7f811.397698",
+    "type": "inject",
+    "z": "18052606.db735a",
+    "name": "Alle 1m",
+    "repeat": "60",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 100,
+    "y": 440,
+    "wires": [
+      [
+        "fedc0045.13caa8"
+      ]
+    ]
+  },
+  {
+    "id": "54c71f9.a5ed2e",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Schalte aus",
+    "rules": [
+      {
+        "t": "set",
+        "p": "plug.isSwitchedOn",
+        "pt": "flow",
+        "to": "false",
+        "tot": "bool"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 670,
+    "y": 440,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "869c177d.68801",
+    "type": "complete",
+    "z": "18052606.db735a",
+    "name": "Warte auf Schaltung",
+    "scope": [
+      "cbc1061b.5e1868",
+      "54c71f9.a5ed2e"
+    ],
+    "uncaught": false,
+    "x": 130,
+    "y": 180,
+    "wires": [
+      [
+        "e9a10cd1.1a0628"
+      ]
+    ]
+  },
+  {
+    "id": "73d12b8e.d873cc",
+    "type": "complete",
+    "z": "18052606.db735a",
+    "name": "Warte auf Status",
+    "scope": [
+      "483f523b.ef278c"
+    ],
+    "uncaught": false,
+    "x": 120,
+    "y": 640,
+    "wires": [
+      [
+        "96de5cf1.5bfdc"
+      ]
+    ]
+  },
+  {
+    "id": "2d270fc6.790d88",
+    "type": "complete",
+    "z": "18052606.db735a",
+    "name": "Warte auf Temperatur",
+    "scope": [
+      "87fe0c7a.b2edc8"
+    ],
+    "uncaught": false,
+    "x": 140,
+    "y": 700,
+    "wires": [
+      [
+        "db854014.a0df98"
+      ]
+    ]
+  },
+  {
+    "id": "709b4c5b.c07e7c",
+    "type": "complete",
+    "z": "18052606.db735a",
+    "name": "Warte auf Leistung",
+    "scope": [
+      "f1e7bc22.a7938"
+    ],
+    "uncaught": false,
+    "x": 130,
+    "y": 760,
+    "wires": [
+      [
+        "c118b1a0.88cbc"
+      ]
+    ]
+  },
+  {
+    "id": "617effaa.d69238",
+    "type": "complete",
+    "z": "18052606.db735a",
+    "name": "Warte auf Schaltzustand",
+    "scope": [
+      "390b7432.f70fac"
+    ],
+    "uncaught": false,
+    "x": 150,
+    "y": 820,
+    "wires": [
+      [
+        "702dc53a.a5c81c"
+      ]
+    ]
+  },
+  {
+    "id": "c879dd18.e59df",
+    "type": "subflow:93de0e1e.72cac8",
+    "z": "18052606.db735a",
+    "name": "Warte auf < 7W",
+    "env": [
+      {
+        "name": "threshold",
+        "value": "7",
+        "type": "num"
+      }
+    ],
+    "x": 460,
+    "y": 440,
+    "wires": [
+      [
+        "54c71f9.a5ed2e"
+      ]
+    ]
+  },
+  {
+    "id": "fedc0045.13caa8",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Hole Daten",
+    "rules": [
+      {
+        "t": "set",
+        "p": "power",
+        "pt": "msg",
+        "to": "plug.power",
+        "tot": "flow"
+      },
+      {
+        "t": "set",
+        "p": "isSwitchedOn",
+        "pt": "msg",
+        "to": "plug.isSwitchedOn",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 270,
+    "y": 440,
+    "wires": [
+      [
+        "c879dd18.e59df"
+      ]
+    ]
+  },
+  {
+    "id": "abd8095d.092d6",
+    "type": "ui_template",
+    "z": "18052606.db735a",
+    "group": "4587520c.baf024",
+    "name": "Zeige Steckdosen-Icon",
+    "order": 1,
+    "width": 2,
+    "height": 2,
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        power\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "x": 620,
+    "y": 580,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "333171b4.13304e",
+    "type": "inject",
+    "z": "18052606.db735a",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 580,
+    "wires": [
+      [
+        "abd8095d.092d6"
+      ]
+    ]
+  },
+  {
+    "id": "74c42e28.36c558",
+    "type": "inject",
+    "z": "18052606.db735a",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 1000,
+    "wires": [
+      [
+        "7d733ad3.176674"
+      ]
+    ]
+  },
+  {
+    "id": "7d733ad3.176674",
+    "type": "ui_button",
+    "z": "18052606.db735a",
+    "name": "Interaktion WOL",
+    "group": "4587520c.baf024",
+    "order": 8,
+    "width": 2,
+    "height": 1,
+    "passthru": false,
+    "label": "PC aufwecken",
+    "tooltip": "",
+    "color": "",
+    "bgcolor": "",
+    "icon": "",
+    "payload": "",
+    "payloadType": "str",
+    "topic": "",
+    "x": 300,
+    "y": 1000,
+    "wires": [
+      [
+        "d0a0a4ee.347c98"
+      ]
+    ]
+  },
+  {
+    "id": "f791228a.7f1988",
+    "type": "wake on lan",
+    "z": "18052606.db735a",
+    "mac": "",
+    "host": "192.168.178.255",
+    "udpport": "9",
+    "name": "Wecke PC auf",
+    "x": 760,
+    "y": 1000,
+    "wires": []
+  },
+  {
+    "id": "20371f64.0228d",
+    "type": "inject",
+    "z": "18052606.db735a",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 940,
+    "wires": [
+      [
+        "e36a342c.1dd968"
+      ]
+    ]
+  },
+  {
+    "id": "e36a342c.1dd968",
+    "type": "ui_template",
+    "z": "18052606.db735a",
+    "group": "4587520c.baf024",
+    "name": "Zeige Computer-Icon",
+    "order": 10,
+    "width": 2,
+    "height": 2,
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        devices\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "x": 320,
+    "y": 940,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "55ebf0c5.47ceb8",
+    "type": "inject",
+    "z": "18052606.db735a",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 300,
+    "wires": [
+      [
+        "8688c079.e7dd68"
+      ]
+    ]
+  },
+  {
+    "id": "8688c079.e7dd68",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Merke WOL-Daten",
+    "rules": [
+      {
+        "t": "set",
+        "p": "pc.macAddress",
+        "pt": "flow",
+        "to": "B4:2E:99:30:84:61",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 630,
+    "y": 300,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "d0a0a4ee.347c98",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Hole WOL-Daten",
+    "rules": [
+      {
+        "t": "set",
+        "p": "mac",
+        "pt": "msg",
+        "to": "pc.macAddress",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 550,
+    "y": 1000,
+    "wires": [
+      [
+        "f791228a.7f1988"
+      ]
+    ]
+  },
+  {
+    "id": "b3946a74.9faf3",
+    "type": "subflow:dd43bdd9.895da8",
+    "z": "18052606.db735a",
+    "name": "",
+    "env": [
+      {
+        "name": "ain",
+        "value": "087610300838",
+        "type": "str"
+      }
+    ],
+    "x": 570,
+    "y": 180,
+    "wires": [
+      [
+        "483f523b.ef278c"
+      ],
+      [
+        "f1e7bc22.a7938"
+      ],
+      [
+        "87fe0c7a.b2edc8"
+      ],
+      [
+        "390b7432.f70fac"
+      ]
+    ]
+  },
+  {
+    "id": "f402c242.d9951",
+    "type": "inject",
+    "z": "18052606.db735a",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 880,
+    "wires": [
+      [
+        "b3d6cff0.2d6a9"
+      ]
+    ]
+  },
+  {
+    "id": "c4fc0727.de0c28",
+    "type": "ui_text",
+    "z": "18052606.db735a",
+    "group": "4587520c.baf024",
+    "order": 6,
+    "width": 6,
+    "height": 1,
+    "name": "Zeige Automatisierungsinfo",
+    "label": "<i class=\"material-icons\">info</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-center",
+    "x": 640,
+    "y": 880,
+    "wires": []
+  },
+  {
+    "id": "b3d6cff0.2d6a9",
+    "type": "change",
+    "z": "18052606.db735a",
+    "name": "Setze Nachricht",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "Schaltet sich automatisch ab.",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 380,
+    "y": 880,
+    "wires": [
+      [
+        "c4fc0727.de0c28"
+      ]
+    ]
+  }
+]

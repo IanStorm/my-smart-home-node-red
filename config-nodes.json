@@ -1,0 +1,512 @@
+[
+  {
+    "id": "daddeffe.066c5",
+    "type": "ui_base",
+    "theme": {
+      "name": "theme-light",
+      "lightTheme": {
+        "default": "#0094CE",
+        "baseColor": "#0094CE",
+        "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+        "edited": true,
+        "reset": false
+      },
+      "darkTheme": {
+        "default": "#097479",
+        "baseColor": "#097479",
+        "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+        "edited": false
+      },
+      "customTheme": {
+        "name": "Untitled Theme 1",
+        "default": "#4B7930",
+        "baseColor": "#4B7930",
+        "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+      },
+      "themeState": {
+        "base-color": {
+          "default": "#0094CE",
+          "value": "#0094CE",
+          "edited": false
+        },
+        "page-titlebar-backgroundColor": {
+          "value": "#0094CE",
+          "edited": false
+        },
+        "page-backgroundColor": {
+          "value": "#fafafa",
+          "edited": false
+        },
+        "page-sidebar-backgroundColor": {
+          "value": "#ffffff",
+          "edited": false
+        },
+        "group-textColor": {
+          "value": "#1bbfff",
+          "edited": false
+        },
+        "group-borderColor": {
+          "value": "#ffffff",
+          "edited": false
+        },
+        "group-backgroundColor": {
+          "value": "#ffffff",
+          "edited": false
+        },
+        "widget-textColor": {
+          "value": "#111111",
+          "edited": false
+        },
+        "widget-backgroundColor": {
+          "value": "#0094ce",
+          "edited": false
+        },
+        "widget-borderColor": {
+          "value": "#ffffff",
+          "edited": false
+        },
+        "base-font": {
+          "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+        }
+      },
+      "angularTheme": {
+        "primary": "indigo",
+        "accents": "blue",
+        "warn": "red",
+        "background": "grey"
+      }
+    },
+    "site": {
+      "name": "Smart Home",
+      "hideToolbar": "false",
+      "allowSwipe": "false",
+      "lockMenu": "false",
+      "allowTempTheme": "true",
+      "dateFormat": "YYYY-MM-DD",
+      "sizes": {
+        "sx": 64,
+        "sy": 32,
+        "gx": 12,
+        "gy": 12,
+        "cx": 4,
+        "cy": 4,
+        "px": 0,
+        "py": 0
+      }
+    }
+  },
+  {
+    "id": "1f1ed453.c0771c",
+    "type": "fritz-api",
+    "name": "fritzapi (FRITZ!Box 7580)",
+    "host": "http://fritz.box",
+    "strictSSL": true
+  },
+  {
+    "id": "412fbf62.1e1d9",
+    "type": "ui_group",
+    "name": "Schlafzimmer: Nachttische",
+    "tab": "43f2ca82.e2925c",
+    "order": 1,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "f02945fb.a0f3c",
+    "type": "ui_tab",
+    "name": "System",
+    "icon": "fa-microchip",
+    "order": 7,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "4314a159.01844",
+    "type": "ui_group",
+    "name": "CPU",
+    "tab": "cd4c16c9.b5a0a",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "cbefc1f5.641d68",
+    "type": "ui_group",
+    "name": "RAM",
+    "tab": "cd4c16c9.b5a0a",
+    "order": 3,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "c8fe58ce.64afd",
+    "type": "ui_group",
+    "name": "Speicher",
+    "tab": "cd4c16c9.b5a0a",
+    "order": 4,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "ce9bba2a.9d9588",
+    "type": "ui_group",
+    "name": "Node-RED",
+    "tab": "f02945fb.a0f3c",
+    "order": 1,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "259c1fb2.ed8768",
+    "type": "ui_group",
+    "name": "Arbeitszimmer: Christian's PC",
+    "tab": "14feb2a9.8277c5",
+    "order": 3,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "14feb2a9.8277c5",
+    "type": "ui_tab",
+    "name": "Favoriten",
+    "icon": "fa-star",
+    "order": 1,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "22abfc75.b9b2e4",
+    "type": "ui_group",
+    "name": "Hallo!",
+    "tab": "14feb2a9.8277c5",
+    "order": 1,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "cd4c16c9.b5a0a",
+    "type": "ui_tab",
+    "name": "Monitoring",
+    "icon": "fa-heartbeat",
+    "order": 6,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "e7215ad9.54bc5",
+    "type": "ui_group",
+    "name": "Arbeitszimmer: Sandra's PC",
+    "tab": "14feb2a9.8277c5",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "4587520c.baf024",
+    "type": "ui_group",
+    "name": "Wohnküche: Fernsehtisch",
+    "tab": "14feb2a9.8277c5",
+    "order": 4,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "f438956c.669a58",
+    "type": "dorita980Config",
+    "ip": "192.168.178.115",
+    "name": "Roomba 966"
+  },
+  {
+    "id": "e76cc3b6.096b9",
+    "type": "ui_group",
+    "name": "Saugroboter",
+    "tab": "841fce51.f02b3",
+    "order": 6,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "d54c9b6e.0cffc",
+    "type": "fritzbox-config",
+    "name": "fritz (FRITZ!Box 7580)",
+    "host": "192.168.178.1",
+    "port": "49000",
+    "ssl": false
+  },
+  {
+    "id": "2fe0f099.995658",
+    "type": "ui_group",
+    "name": "Wohnküche: Heizkörper",
+    "tab": "d1bd741a.9ca2e",
+    "order": 7,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "9298819a.21ca98",
+    "type": "ui_group",
+    "name": "Badezimmer: Heizkörper",
+    "tab": "d1bd741a.9ca2e",
+    "order": 8,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "cd94108d.1e556",
+    "type": "ui_group",
+    "name": "Arbeitszimmer: Heizkörper",
+    "tab": "d1bd741a.9ca2e",
+    "order": 9,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "7b8abfe6.0e9dd8",
+    "type": "ui_group",
+    "name": "Schlafzimmer: Heizkörper",
+    "tab": "d1bd741a.9ca2e",
+    "order": 10,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "964aeb18.79a868",
+    "type": "ui_group",
+    "name": "Flur 1: Heizkörper",
+    "tab": "d1bd741a.9ca2e",
+    "order": 11,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "d1bd741a.9ca2e",
+    "type": "ui_tab",
+    "name": "Heizung",
+    "icon": "fa-thermometer-half",
+    "order": 3,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "43f2ca82.e2925c",
+    "type": "ui_tab",
+    "name": "Steckdosen",
+    "icon": "fa-plug",
+    "order": 2,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "2f3f5aef.3d20ee",
+    "type": "ui_group",
+    "name": "Balkon",
+    "tab": "43f2ca82.e2925c",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "841fce51.f02b3",
+    "type": "ui_tab",
+    "name": "Hygiene",
+    "icon": "fa-shower",
+    "order": 4,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "59ba44c1.7a3114",
+    "type": "ui_spacer",
+    "name": "spacer",
+    "group": "22abfc75.b9b2e4",
+    "order": 5,
+    "width": 2,
+    "height": 1
+  },
+  {
+    "id": "6440e95f.65b5",
+    "type": "ui_spacer",
+    "name": "spacer",
+    "group": "22abfc75.b9b2e4",
+    "order": 9,
+    "width": 4,
+    "height": 1
+  },
+  {
+    "id": "ab1212a7.5b3858",
+    "type": "ui_spacer",
+    "name": "spacer",
+    "group": "e7215ad9.54bc5",
+    "order": 7,
+    "width": 1,
+    "height": 1
+  },
+  {
+    "id": "f59609b4.4d7008",
+    "type": "ui_spacer",
+    "name": "spacer",
+    "group": "e7215ad9.54bc5",
+    "order": 9,
+    "width": 1,
+    "height": 1
+  },
+  {
+    "id": "d5cbbb34.75f828",
+    "type": "ui_spacer",
+    "name": "spacer",
+    "group": "e7215ad9.54bc5",
+    "order": 11,
+    "width": 4,
+    "height": 1
+  },
+  {
+    "id": "38d85e65.1fe2ea",
+    "type": "ui_spacer",
+    "name": "spacer",
+    "group": "259c1fb2.ed8768",
+    "order": 7,
+    "width": 1,
+    "height": 1
+  },
+  {
+    "id": "b9a3879b.eedcc",
+    "type": "ui_spacer",
+    "name": "spacer",
+    "group": "259c1fb2.ed8768",
+    "order": 9,
+    "width": 1,
+    "height": 1
+  },
+  {
+    "id": "af2bc783.b7938",
+    "type": "ui_spacer",
+    "name": "spacer",
+    "group": "259c1fb2.ed8768",
+    "order": 11,
+    "width": 4,
+    "height": 1
+  },
+  {
+    "id": "b3dd8d4.47d19f",
+    "type": "ui_spacer",
+    "name": "spacer",
+    "group": "4587520c.baf024",
+    "order": 7,
+    "width": 1,
+    "height": 1
+  },
+  {
+    "id": "9bc09c3d.751",
+    "type": "ui_spacer",
+    "name": "spacer",
+    "group": "4587520c.baf024",
+    "order": 9,
+    "width": 1,
+    "height": 1
+  },
+  {
+    "id": "55b54d77.088f5c",
+    "type": "ui_spacer",
+    "name": "spacer",
+    "group": "4587520c.baf024",
+    "order": 11,
+    "width": 4,
+    "height": 1
+  },
+  {
+    "id": "dc1b63a3.863228",
+    "type": "ui_spacer",
+    "name": "spacer",
+    "group": "22abfc75.b9b2e4",
+    "order": 10,
+    "width": "6",
+    "height": 1
+  },
+  {
+    "id": "dd3cc3c3.66f0c8",
+    "type": "zigbee2mqtt-server",
+    "name": "MQTT",
+    "host": "my-smart-home-mqtt",
+    "mqtt_port": "1883",
+    "mqtt_username": "",
+    "mqtt_password": "",
+    "tls": "",
+    "usetls": false,
+    "base_topic": "zigbee2mqtt"
+  },
+  {
+    "id": "e403dc85.401788",
+    "type": "ui_group",
+    "name": "Zigbee",
+    "tab": "f02945fb.a0f3c",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "abb1b2ae.11d618",
+    "type": "ui_tab",
+    "name": "Sensoren",
+    "icon": "router",
+    "order": 5,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "aa64946a.b8cef",
+    "type": "ui_group",
+    "name": "Wohnküche, kl. Balkontür",
+    "tab": "abb1b2ae.11d618",
+    "order": 1,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "6aa4fe54.7c82f8",
+    "type": "ui_group",
+    "name": "Wohnküche, gr. Balkontür",
+    "tab": "abb1b2ae.11d618",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "d2e8a811.44b478",
+    "type": "ui_group",
+    "name": "Arbeitszimmer, Balkontür",
+    "tab": "abb1b2ae.11d618",
+    "order": 3,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "b823bcaf.ffdfe8",
+    "type": "ui_group",
+    "name": "Schlafzimmer, re. Fenster",
+    "tab": "abb1b2ae.11d618",
+    "order": 4,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  }
+]
