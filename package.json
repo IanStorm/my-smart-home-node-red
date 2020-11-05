@@ -7,6 +7,7 @@
     "node-red-contrib-fritz": "1.4.4",
     "node-red-contrib-fritzapi": "0.2.13",
     "node-red-contrib-linux-memory": "0.8.1",
+    "node-red-contrib-moment": "4.0.0",
     "node-red-contrib-os": "0.1.7",
     "node-red-contrib-roomba980-fw2": "file:./contrib/node-red-contrib-roomba980-fw2",
     "node-red-contrib-sunevents": "2.0.3",

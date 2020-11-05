@@ -874,33 +874,6 @@
         "collapse": false
     },
     {
-        "id": "f4614d41.21dad",
-        "type": "change",
-        "z": "311aacb9.34a24c",
-        "name": "Formatiere Uhrzeit",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$fromMillis(payload, '[H01]:[m01]:[s01]', timezone)\t",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 590,
-        "y": 400,
-        "wires": [
-            [
-                "169a6858.ea146"
-            ]
-        ]
-    },
-    {
         "id": "2122249c.3ea634",
         "type": "comment",
         "z": "311aacb9.34a24c",
@@ -926,7 +899,7 @@
         "y": 400,
         "wires": [
             [
-                "b5d81e85.8c588"
+                "4bcf86db.2c0d48"
             ]
         ]
     },
@@ -942,36 +915,9 @@
         "label": "<i class=\"material-icons\">access_time</i>",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 790,
+        "x": 570,
         "y": 400,
         "wires": []
-    },
-    {
-        "id": "e824a13e.b27558",
-        "type": "change",
-        "z": "311aacb9.34a24c",
-        "name": "Formatiere Datum",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$fromMillis(payload, '[D01].[M01].[Y0001]')\t",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 590,
-        "y": 340,
-        "wires": [
-            [
-                "8434d57a.d32188"
-            ]
-        ]
     },
     {
         "id": "d5b3d67.c5c43a8",
@@ -1001,7 +947,7 @@
         "y": 340,
         "wires": [
             [
-                "e824a13e.b27558"
+                "7e3c009f.89b93"
             ]
         ]
     },
@@ -1017,25 +963,9 @@
         "label": "<i class=\"material-icons\">today</i>",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 790,
+        "x": 570,
         "y": 340,
         "wires": []
-    },
-    {
-        "id": "b5d81e85.8c588",
-        "type": "function",
-        "z": "311aacb9.34a24c",
-        "name": "Berechne Zeitzone",
-        "func": "// see https://usefulangle.com/post/30/javascript-get-date-time-with-offset-hours-minutes\nvar offsetInMin = new Date().getTimezoneOffset();\nvar hrsOffset = Math.abs(offsetInMin/60);\nvar minOffset = Math.abs(offsetInMin%60);\nvar hhOffset = (\"00\" + hrsOffset).slice(-2);\nvar mmOffset = (\"00\" + minOffset).slice(-2);\n\nvar offsetIso8601 = undefined;\nif (offsetInMin < 0)\n    offsetIso8601 = \"+\" + hhOffset + mmOffset;\nelse if (offsetInMin > 0)\n    offsetIso8601 = \"-\" + hhOffset + mmOffset;\nelse if (offsetInMin === 0)\n    offsetIso8601 = \"Z\";\n\nmsg.timezone = offsetIso8601;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 370,
-        "y": 400,
-        "wires": [
-            [
-                "f4614d41.21dad"
-            ]
-        ]
     },
     {
         "id": "271e6d2e.ff86c2",
@@ -11571,7 +11501,7 @@
         "label": "<i class=\"wi wi-owm-{{msg.payload.key}}\"></i>",
         "format": "{{msg.payload.value}}°C",
         "layout": "row-spread",
-        "x": 810,
+        "x": 590,
         "y": 460,
         "wires": []
     },
@@ -14412,6 +14342,56 @@
                 "2e0081fa.7533ce"
             ],
             []
+        ]
+    },
+    {
+        "id": "7e3c009f.89b93",
+        "type": "moment",
+        "z": "311aacb9.34a24c",
+        "name": "Formatiere Datum",
+        "topic": "",
+        "input": "payload",
+        "inputType": "msg",
+        "inTz": "ETC/UTC",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "DD.MM.yyyy",
+        "locale": "de-DE",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "Europe/Berlin",
+        "x": 370,
+        "y": 340,
+        "wires": [
+            [
+                "8434d57a.d32188"
+            ]
+        ]
+    },
+    {
+        "id": "4bcf86db.2c0d48",
+        "type": "moment",
+        "z": "311aacb9.34a24c",
+        "name": "Formatiere Uhrzeit",
+        "topic": "",
+        "input": "payload",
+        "inputType": "msg",
+        "inTz": "ETC/UTC",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "de-DE",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "Europe/Berlin",
+        "x": 370,
+        "y": 400,
+        "wires": [
+            [
+                "169a6858.ea146"
+            ]
         ]
     }
 ]
