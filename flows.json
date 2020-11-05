@@ -8066,7 +8066,8 @@
         "y": 380,
         "wires": [
             [
-                "188ae7c4.5452a8"
+                "188ae7c4.5452a8",
+                "a11bfd6.a037c"
             ]
         ]
     },
@@ -8123,6 +8124,23 @@
             ],
             []
         ]
+    },
+    {
+        "id": "a11bfd6.a037c",
+        "type": "debug",
+        "z": "fe976b5a.539a18",
+        "name": "Logge Sonnenstände",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 410,
+        "y": 340,
+        "wires": []
     },
     {
         "id": "dfacafee.f83758",
