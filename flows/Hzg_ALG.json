@@ -150,10 +150,13 @@
     "type": "link out",
     "z": "be8a6639.d3183",
     "name": "Teile Heizung-Hauptschalter-Zustand",
-    "links": [],
-    "x": 695,
+    "links": [
+      "ea9b1bb3.5ea688"
+    ],
+    "x": 830,
     "y": 520,
-    "wires": []
+    "wires": [],
+    "l": true
   },
   {
     "id": "2282350e.97f30a",
