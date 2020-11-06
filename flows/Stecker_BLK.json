@@ -852,7 +852,9 @@
       [
         "2e0081fa.7533ce"
       ],
-      []
+      [
+        "3c20b054.cd47f"
+      ]
     ]
   },
   {
@@ -870,6 +872,23 @@
     "statusType": "auto",
     "x": 410,
     "y": 340,
+    "wires": []
+  },
+  {
+    "id": "3c20b054.cd47f",
+    "type": "debug",
+    "z": "fe976b5a.539a18",
+    "name": "sun event discarded",
+    "active": true,
+    "tosidebar": false,
+    "console": true,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 620,
+    "y": 400,
     "wires": []
   }
 ]
