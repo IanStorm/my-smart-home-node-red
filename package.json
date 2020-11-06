@@ -4,6 +4,7 @@
   "dependencies": {
     "node-red": "1.2.2",
     "node-red-contrib-cpu": "0.0.4",
+    "node-red-contrib-flow-manager": "0.7.1",
     "node-red-contrib-fritz": "1.4.4",
     "node-red-contrib-fritzapi": "0.2.13",
     "node-red-contrib-linux-memory": "0.8.1",
@@ -18,7 +19,6 @@
     "node-red-node-wol": "0.1.0"
   },
   "devDependencies": {
-    "node-red-contrib-flow-manager": "0.7.1"
   },
   "repository": {
     "type": "git",

@@ -29,7 +29,7 @@ Make sure you have installed *Visual Studio Code*.
 
 1. Clone this repository.
 2. `cd` inside the cloned folder.
-2. In `Dockerfile` remove `--only=production` from the _npm install_ line.
+2. In `flow-manager-cfg.json` adapt `filter` to only load desired flows. (Mind: Make sure to include all flows containing credentials.)
 2. In `settings.js` set `disableEditor: false` (instead of `true`).
 2. Build the Docker image: Run the vscode task `build`.
 2. Ensure `./credentials/docker-env.list` exists. See ["a word on docker-env.list"](#-a-word-on-docker-env.list-📝).

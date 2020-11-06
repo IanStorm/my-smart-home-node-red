@@ -1,0 +1,13 @@
+*
+
+!contrib/*
+!envnodes/*
+!flows/*
+!subflows/*
+!.npmrc
+!config-nodes.json
+!flow-manager-cfg.json
+!flow-manager-nodes-order.json
+!flows_cred.json
+!package.json
+!settings.js
