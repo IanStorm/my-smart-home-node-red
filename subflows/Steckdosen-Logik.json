@@ -192,6 +192,15 @@
     "type": "inject",
     "z": "dd43bdd9.895da8",
     "name": "Alle 9s",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
     "repeat": "9",
     "crontab": "",
     "once": false,

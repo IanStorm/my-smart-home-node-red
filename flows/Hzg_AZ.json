@@ -33,7 +33,7 @@
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 1040,
+    "y": 800,
     "wires": []
   },
   {
@@ -46,7 +46,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 1160,
+    "y": 920,
     "wires": [
       [
         "1f1accaa.3aabe3"
@@ -63,7 +63,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 1220,
+    "y": 980,
     "wires": [
       [
         "b8b05a47.fff86"
@@ -80,7 +80,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 1280,
+    "y": 1040,
     "wires": [
       [
         "90fe56a5.193b8"
@@ -102,7 +102,7 @@
     "resendOnRefresh": true,
     "templateScope": "local",
     "x": 400,
-    "y": 1160,
+    "y": 920,
     "wires": [
       []
     ]
@@ -120,7 +120,7 @@
     "format": "{{msg.payload}}°C",
     "layout": "row-left",
     "x": 400,
-    "y": 1220,
+    "y": 980,
     "wires": []
   },
   {
@@ -141,7 +141,7 @@
     "max": "28",
     "step": "0.5",
     "x": 400,
-    "y": 1280,
+    "y": 1040,
     "wires": [
       [
         "d53df6ae.7d8718"
@@ -161,7 +161,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 1100,
+    "y": 860,
     "wires": [
       [
         "73d3a176.b41ce8"
@@ -183,7 +183,7 @@
     "resendOnRefresh": false,
     "templateScope": "local",
     "x": 390,
-    "y": 1100,
+    "y": 860,
     "wires": [
       []
     ]
@@ -456,7 +456,7 @@
     ],
     "uncaught": false,
     "x": 160,
-    "y": 820,
+    "y": 580,
     "wires": [
       [
         "a3d751d5.c43ee"
@@ -472,7 +472,7 @@
       "ae8dfb0d.ed6b38"
     ],
     "x": 190,
-    "y": 860,
+    "y": 620,
     "wires": [
       [
         "a3d751d5.c43ee"
@@ -489,7 +489,7 @@
       "2f16b6fc.b3acca"
     ],
     "x": 180,
-    "y": 900,
+    "y": 660,
     "wires": [
       [
         "a3d751d5.c43ee"
@@ -524,501 +524,9 @@
     "to": "",
     "reg": false,
     "x": 650,
-    "y": 1280,
+    "y": 1040,
     "wires": [
       []
-    ]
-  },
-  {
-    "id": "e238add7.32e0d8",
-    "type": "inject",
-    "z": "750f0705.13d438",
-    "name": "Beim Start",
-    "repeat": "",
-    "crontab": "",
-    "once": true,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "str",
-    "x": 110,
-    "y": 460,
-    "wires": [
-      [
-        "984f6602.83c2d8"
-      ]
-    ]
-  },
-  {
-    "id": "984f6602.83c2d8",
-    "type": "change",
-    "z": "750f0705.13d438",
-    "name": "Merke AIN",
-    "rules": [
-      {
-        "t": "set",
-        "p": "radiator.ain",
-        "pt": "flow",
-        "to": "109710426496",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 290,
-    "y": 460,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "a7ce3c4f.c51608",
-    "type": "inject",
-    "z": "750f0705.13d438",
-    "name": "Alle 9s",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "9",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "inject",
-    "payload": "",
-    "payloadType": "str",
-    "x": 100,
-    "y": 520,
-    "wires": [
-      [
-        "5fee8365.5a3bec"
-      ]
-    ]
-  },
-  {
-    "id": "13b1e46b.b8da94",
-    "type": "change",
-    "z": "750f0705.13d438",
-    "name": "Hole Daten",
-    "rules": [
-      {
-        "t": "set",
-        "p": "ain",
-        "pt": "msg",
-        "to": "radiator.ain",
-        "tot": "flow"
-      },
-      {
-        "t": "set",
-        "p": "topic",
-        "pt": "msg",
-        "to": "study/radiator/isConnected",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 610,
-    "y": 520,
-    "wires": [
-      [
-        "3eca642.74a341c"
-      ]
-    ]
-  },
-  {
-    "id": "3eca642.74a341c",
-    "type": "fritz-outlet",
-    "z": "750f0705.13d438",
-    "connection": "1f1ed453.c0771c",
-    "name": "Lese \"Ist verbunden?\"",
-    "action": "getSwitchPresence",
-    "x": 800,
-    "y": 520,
-    "wires": [
-      [
-        "855e9230.48c008"
-      ]
-    ]
-  },
-  {
-    "id": "9038b1d7.3c17f8",
-    "type": "fritz-thermostat",
-    "z": "750f0705.13d438",
-    "connection": "1f1ed453.c0771c",
-    "name": "Lese Ist-Temperatur",
-    "action": "getTemperature",
-    "x": 800,
-    "y": 620,
-    "wires": [
-      [
-        "b767063c.eb68b8"
-      ]
-    ]
-  },
-  {
-    "id": "abdc0607.08dc5",
-    "type": "fritz-thermostat",
-    "z": "750f0705.13d438",
-    "connection": "1f1ed453.c0771c",
-    "name": "Lese Soll-Temperatur",
-    "action": "getTempTarget",
-    "x": 800,
-    "y": 720,
-    "wires": [
-      [
-        "ad8c4a0e.b16908"
-      ]
-    ]
-  },
-  {
-    "id": "b1b1a22f.de56c",
-    "type": "status",
-    "z": "750f0705.13d438",
-    "name": "Warte auf Status",
-    "scope": [
-      "3eca642.74a341c"
-    ],
-    "x": 120,
-    "y": 560,
-    "wires": [
-      [
-        "9d09495e.6caba"
-      ]
-    ]
-  },
-  {
-    "id": "9d09495e.6caba",
-    "type": "change",
-    "z": "750f0705.13d438",
-    "name": "Markiere",
-    "rules": [
-      {
-        "t": "set",
-        "p": "topic",
-        "pt": "msg",
-        "to": "status",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 280,
-    "y": 540,
-    "wires": [
-      [
-        "a993d6b0.77c378"
-      ]
-    ]
-  },
-  {
-    "id": "6f4fd980.ca3638",
-    "type": "inject",
-    "z": "750f0705.13d438",
-    "name": "Alle 9s",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "9",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "inject",
-    "payload": "",
-    "payloadType": "str",
-    "x": 100,
-    "y": 620,
-    "wires": [
-      [
-        "fb2422b0.416ec8"
-      ]
-    ]
-  },
-  {
-    "id": "1545ab83.b6260c",
-    "type": "status",
-    "z": "750f0705.13d438",
-    "name": "Warte auf Status",
-    "scope": [
-      "3eca642.74a341c"
-    ],
-    "x": 120,
-    "y": 660,
-    "wires": [
-      [
-        "64d438a8.f11ef8"
-      ]
-    ]
-  },
-  {
-    "id": "64d438a8.f11ef8",
-    "type": "change",
-    "z": "750f0705.13d438",
-    "name": "Markiere",
-    "rules": [
-      {
-        "t": "set",
-        "p": "topic",
-        "pt": "msg",
-        "to": "status",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 280,
-    "y": 640,
-    "wires": [
-      [
-        "e5f45b09.04f698"
-      ]
-    ]
-  },
-  {
-    "id": "b624d657.179338",
-    "type": "change",
-    "z": "750f0705.13d438",
-    "name": "Hole Daten",
-    "rules": [
-      {
-        "t": "set",
-        "p": "ain",
-        "pt": "msg",
-        "to": "radiator.ain",
-        "tot": "flow"
-      },
-      {
-        "t": "set",
-        "p": "topic",
-        "pt": "msg",
-        "to": "study/radiator/currentTemperature",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 610,
-    "y": 620,
-    "wires": [
-      [
-        "9038b1d7.3c17f8"
-      ]
-    ]
-  },
-  {
-    "id": "37155b8f.8396bc",
-    "type": "inject",
-    "z": "750f0705.13d438",
-    "name": "Alle 9s",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "9",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "inject",
-    "payload": "",
-    "payloadType": "str",
-    "x": 100,
-    "y": 720,
-    "wires": [
-      [
-        "6b90e612.29fa18"
-      ]
-    ]
-  },
-  {
-    "id": "a6eeb925.b68ca",
-    "type": "status",
-    "z": "750f0705.13d438",
-    "name": "Warte auf Status",
-    "scope": [
-      "3eca642.74a341c"
-    ],
-    "x": 120,
-    "y": 760,
-    "wires": [
-      [
-        "3892c807.f7458"
-      ]
-    ]
-  },
-  {
-    "id": "3892c807.f7458",
-    "type": "change",
-    "z": "750f0705.13d438",
-    "name": "Markiere",
-    "rules": [
-      {
-        "t": "set",
-        "p": "topic",
-        "pt": "msg",
-        "to": "status",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 280,
-    "y": 740,
-    "wires": [
-      [
-        "a445bae0.bc2be"
-      ]
-    ]
-  },
-  {
-    "id": "e727eac4.e66f48",
-    "type": "change",
-    "z": "750f0705.13d438",
-    "name": "Hole Daten",
-    "rules": [
-      {
-        "t": "set",
-        "p": "ain",
-        "pt": "msg",
-        "to": "radiator.ain",
-        "tot": "flow"
-      },
-      {
-        "t": "set",
-        "p": "topic",
-        "pt": "msg",
-        "to": "study/radiator/targetTemperature",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 610,
-    "y": 720,
-    "wires": [
-      [
-        "abdc0607.08dc5"
-      ]
-    ]
-  },
-  {
-    "id": "5fee8365.5a3bec",
-    "type": "join",
-    "z": "750f0705.13d438",
-    "name": "merge",
-    "mode": "custom",
-    "build": "object",
-    "property": "payload",
-    "propertyType": "msg",
-    "key": "topic",
-    "joiner": "\\n",
-    "joinerType": "str",
-    "accumulate": true,
-    "timeout": "",
-    "count": "2",
-    "reduceRight": false,
-    "reduceExp": "",
-    "reduceInit": "",
-    "reduceInitType": "",
-    "reduceFixup": "",
-    "x": 470,
-    "y": 520,
-    "wires": [
-      [
-        "13b1e46b.b8da94"
-      ]
-    ]
-  },
-  {
-    "id": "fb2422b0.416ec8",
-    "type": "join",
-    "z": "750f0705.13d438",
-    "name": "merge",
-    "mode": "custom",
-    "build": "object",
-    "property": "payload",
-    "propertyType": "msg",
-    "key": "topic",
-    "joiner": "\\n",
-    "joinerType": "str",
-    "accumulate": true,
-    "timeout": "",
-    "count": "2",
-    "reduceRight": false,
-    "reduceExp": "",
-    "reduceInit": "",
-    "reduceInitType": "",
-    "reduceFixup": "",
-    "x": 470,
-    "y": 620,
-    "wires": [
-      [
-        "b624d657.179338"
-      ]
-    ]
-  },
-  {
-    "id": "6b90e612.29fa18",
-    "type": "join",
-    "z": "750f0705.13d438",
-    "name": "merge",
-    "mode": "custom",
-    "build": "object",
-    "property": "payload",
-    "propertyType": "msg",
-    "key": "topic",
-    "joiner": "\\n",
-    "joinerType": "str",
-    "accumulate": true,
-    "timeout": "",
-    "count": "2",
-    "reduceRight": false,
-    "reduceExp": "",
-    "reduceInit": "",
-    "reduceInitType": "",
-    "reduceFixup": "",
-    "x": 470,
-    "y": 720,
-    "wires": [
-      [
-        "e727eac4.e66f48"
-      ]
     ]
   },
   {
@@ -1042,7 +550,7 @@
     "reduceInitType": "",
     "reduceFixup": "",
     "x": 450,
-    "y": 860,
+    "y": 620,
     "wires": [
       [
         "ee845e4d.aa71b"
@@ -1068,7 +576,7 @@
     "repair": false,
     "outputs": 2,
     "x": 600,
-    "y": 860,
+    "y": 620,
     "wires": [
       [
         "6ca51d8c.7fb86c"
@@ -1097,7 +605,7 @@
     "repair": false,
     "outputs": 2,
     "x": 780,
-    "y": 840,
+    "y": 600,
     "wires": [
       [
         "e333ee2a.0cbc9"
@@ -1127,7 +635,7 @@
     "to": "",
     "reg": false,
     "x": 1010,
-    "y": 880,
+    "y": 640,
     "wires": [
       []
     ]
@@ -1143,7 +651,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 960,
+    "y": 720,
     "wires": [
       [
         "8d8415e9.e5121"
@@ -1160,8 +668,8 @@
         "t": "set",
         "p": "ain",
         "pt": "msg",
-        "to": "radiator.ain",
-        "tot": "flow"
+        "to": "109710426496",
+        "tot": "str"
       },
       {
         "t": "set",
@@ -1184,7 +692,7 @@
     "to": "",
     "reg": false,
     "x": 370,
-    "y": 960,
+    "y": 720,
     "wires": [
       [
         "ea404df4.305a5"
@@ -1199,7 +707,7 @@
     "name": "Regle Soll-Temperatur",
     "action": "setTempTarget",
     "x": 580,
-    "y": 960,
+    "y": 720,
     "wires": [
       []
     ]
@@ -1224,95 +732,8 @@
     "to": "",
     "reg": false,
     "x": 1020,
-    "y": 820,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "a993d6b0.77c378",
-    "type": "switch",
-    "z": "750f0705.13d438",
-    "name": "Ist verbunden?",
-    "property": "status.text",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "connected",
-        "vt": "str"
-      },
-      {
-        "t": "else"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 320,
     "y": 580,
     "wires": [
-      [
-        "5fee8365.5a3bec"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "e5f45b09.04f698",
-    "type": "switch",
-    "z": "750f0705.13d438",
-    "name": "Ist verbunden?",
-    "property": "status.text",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "connected",
-        "vt": "str"
-      },
-      {
-        "t": "else"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 320,
-    "y": 680,
-    "wires": [
-      [
-        "fb2422b0.416ec8"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "a445bae0.bc2be",
-    "type": "switch",
-    "z": "750f0705.13d438",
-    "name": "Ist verbunden?",
-    "property": "status.text",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "connected",
-        "vt": "str"
-      },
-      {
-        "t": "else"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 320,
-    "y": 780,
-    "wires": [
-      [
-        "6b90e612.29fa18"
-      ],
       []
     ]
   },
@@ -1322,8 +743,8 @@
     "z": "750f0705.13d438",
     "name": "Teile \"Ist verbunden?\"",
     "links": [],
-    "x": 1160,
-    "y": 520,
+    "x": 440,
+    "y": 440,
     "wires": [],
     "l": true
   },
@@ -1333,100 +754,10 @@
     "z": "750f0705.13d438",
     "name": "Teile Ist-Temperatur",
     "links": [],
-    "x": 1150,
-    "y": 620,
+    "x": 430,
+    "y": 480,
     "wires": [],
     "l": true
-  },
-  {
-    "id": "855e9230.48c008",
-    "type": "change",
-    "z": "750f0705.13d438",
-    "name": "Bereinige",
-    "rules": [
-      {
-        "t": "delete",
-        "p": "ain",
-        "pt": "msg"
-      },
-      {
-        "t": "delete",
-        "p": "status",
-        "pt": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 980,
-    "y": 520,
-    "wires": [
-      [
-        "6ee04ba2.15d37c"
-      ]
-    ]
-  },
-  {
-    "id": "b767063c.eb68b8",
-    "type": "change",
-    "z": "750f0705.13d438",
-    "name": "Bereinige",
-    "rules": [
-      {
-        "t": "delete",
-        "p": "ain",
-        "pt": "msg"
-      },
-      {
-        "t": "delete",
-        "p": "status",
-        "pt": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 980,
-    "y": 620,
-    "wires": [
-      [
-        "61c78d3d.472da4"
-      ]
-    ]
-  },
-  {
-    "id": "ad8c4a0e.b16908",
-    "type": "change",
-    "z": "750f0705.13d438",
-    "name": "Bereinige",
-    "rules": [
-      {
-        "t": "delete",
-        "p": "ain",
-        "pt": "msg"
-      },
-      {
-        "t": "delete",
-        "p": "status",
-        "pt": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 980,
-    "y": 720,
-    "wires": [
-      [
-        "2903c3ad.ebb914"
-      ]
-    ]
   },
   {
     "id": "2903c3ad.ebb914",
@@ -1434,9 +765,40 @@
     "z": "750f0705.13d438",
     "name": "Teile Soll-Temperatur",
     "links": [],
-    "x": 1160,
-    "y": 720,
+    "x": 440,
+    "y": 520,
     "wires": [],
     "l": true
+  },
+  {
+    "id": "3409c9be.09d6ae",
+    "type": "subflow:2757b690.6da392",
+    "z": "750f0705.13d438",
+    "name": "Warte auf Fritz-Thermostat-Daten",
+    "env": [
+      {
+        "name": "ain",
+        "value": "109710426496",
+        "type": "str"
+      },
+      {
+        "name": "topicPrefix",
+        "value": "study",
+        "type": "str"
+      }
+    ],
+    "x": 170,
+    "y": 480,
+    "wires": [
+      [
+        "6ee04ba2.15d37c"
+      ],
+      [
+        "61c78d3d.472da4"
+      ],
+      [
+        "2903c3ad.ebb914"
+      ]
+    ]
   }
 ]
