@@ -401,7 +401,7 @@
         "t": "set",
         "p": "topic",
         "pt": "msg",
-        "to": "contact/isClosed",
+        "to": "contacts/WK-S/isClosed",
         "tot": "str"
       }
     ],
