@@ -5,10 +5,18 @@
 			"label": "build",
 			"type": "shell",
 			"command": "docker build -t my-smart-home-node-red .",
+			"problemMatcher": [],
 			"group": {
 				"kind": "build",
 				"isDefault": true
 			}
+		},
+		{
+			"label": "run (dev)",
+			"type": "shell",
+			"command": "docker run --rm -i -t -p 1880:1880 -v ${PWD}:/data --env-file ./credentials/docker-env.list my-smart-home-node-red",
+			"problemMatcher": [],
+			"dependsOn": [ "build" ]
 		}
 	]
 }

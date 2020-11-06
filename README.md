@@ -29,17 +29,13 @@ Make sure you have installed *Visual Studio Code*.
 
 1. Clone this repository.
 2. `cd` inside the cloned folder.
-3. In `Dockerfile` remove `--only=production` from the _npm install_ line.
-4. In `settings.js` set `disableEditor: false` (instead of `true`).
-5. Build the Docker image: Run the vscode task `build`.
-6. Ensure `./credentials/docker-env.list` exists. See ["a word on docker-env.list"](#-a-word-on-docker-env.list-📝).
-7. Start a Docker instance:
-	* On Windows:
-```
-$	docker run --rm -i -t -p 1880:1880 -v ${PWD}:/data --env-file ./credentials/docker-env.list my-smart-home-node-red
-```
-8. Open any browser and enter `http://localhost:1880`.
-9. Start coding, changes will be reflected in your local machine.
+2. In `Dockerfile` remove `--only=production` from the _npm install_ line.
+2. In `settings.js` set `disableEditor: false` (instead of `true`).
+2. Build the Docker image: Run the vscode task `build`.
+2. Ensure `./credentials/docker-env.list` exists. See ["a word on docker-env.list"](#-a-word-on-docker-env.list-📝).
+2. Start a Docker instance: Run the vscode task `run (dev)`.
+2. Open any browser and enter `http://localhost:1880`.
+2. Start coding, changes will be reflected in your local machine.
 
 
 ## Appendix
