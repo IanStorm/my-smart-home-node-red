@@ -403,7 +403,7 @@
         "t": "set",
         "p": "topic",
         "pt": "msg",
-        "to": "contacts/study/isClosed",
+        "to": "study/balconyDoor/isClosed",
         "tot": "str"
       }
     ],

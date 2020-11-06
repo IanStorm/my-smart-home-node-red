@@ -401,7 +401,7 @@
         "t": "set",
         "p": "topic",
         "pt": "msg",
-        "to": "contacts/WK-L/isClosed",
+        "to": "living-kitchenArea/balconyDoors/large/isClosed",
         "tot": "str"
       }
     ],

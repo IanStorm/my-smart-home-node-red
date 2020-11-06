@@ -331,7 +331,7 @@
         "t": "set",
         "p": "topic",
         "pt": "msg",
-        "to": "radiators/study/desiredTemperature",
+        "to": "study/radiator/desiredTemperature",
         "tot": "str"
       }
     ],
@@ -363,7 +363,7 @@
         "t": "set",
         "p": "topic",
         "pt": "msg",
-        "to": "radiators/study/desiredTemperature",
+        "to": "study/radiator/desiredTemperature",
         "tot": "str"
       }
     ],
@@ -395,7 +395,7 @@
         "t": "set",
         "p": "topic",
         "pt": "msg",
-        "to": "radiators/study/desiredTemperature",
+        "to": "study/radiator/desiredTemperature",
         "tot": "str"
       }
     ],
@@ -427,7 +427,7 @@
         "t": "set",
         "p": "topic",
         "pt": "msg",
-        "to": "radiators/study/desiredTemperature",
+        "to": "study/radiator/desiredTemperature",
         "tot": "str"
       }
     ],
@@ -514,7 +514,7 @@
         "t": "set",
         "p": "topic",
         "pt": "msg",
-        "to": "radiators/study/desiredTemperature",
+        "to": "study/radiator/desiredTemperature",
         "tot": "str"
       }
     ],
@@ -620,7 +620,7 @@
         "t": "set",
         "p": "topic",
         "pt": "msg",
-        "to": "radiators/study/isConnected",
+        "to": "study/radiator/isConnected",
         "tot": "str"
       }
     ],
@@ -808,7 +808,7 @@
         "t": "set",
         "p": "topic",
         "pt": "msg",
-        "to": "radiators/study/currentTemperature",
+        "to": "study/radiator/currentTemperature",
         "tot": "str"
       }
     ],
@@ -914,7 +914,7 @@
         "t": "set",
         "p": "topic",
         "pt": "msg",
-        "to": "radiators/study/targetTemperature",
+        "to": "study/radiator/targetTemperature",
         "tot": "str"
       }
     ],
@@ -1077,7 +1077,7 @@
     "type": "switch",
     "z": "750f0705.13d438",
     "name": "Ist Fenster geschlossen?",
-    "property": "payload[\"contacts/study/isClosed\"]",
+    "property": "payload[\"study/balconyDoor/isClosed\"]",
     "propertyType": "msg",
     "rules": [
       {
@@ -1208,7 +1208,7 @@
         "t": "set",
         "p": "payload",
         "pt": "msg",
-        "to": "payload[\"radiators/study/desiredTemperature\"]",
+        "to": "payload[\"study/radiator/desiredTemperature\"]",
         "tot": "msg"
       }
     ],
