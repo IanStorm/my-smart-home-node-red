@@ -10,6 +10,3 @@ RUN npm install --only=production
 
 # ⬇ Copy stuff see .dockerignore (for simplicity some stuff is copied twice)
 COPY ./ /data/
-
-# Start the container normally
-CMD ["npm", "start"]
