@@ -453,8 +453,8 @@
     "scope": [
       "c919cbb9.c0ebb8",
       "22c7900b.0b7d9",
-      "2e0081fa.7533ce",
-      "788cb59.b3f274c"
+      "788cb59.b3f274c",
+      "2e0081fa.7533ce"
     ],
     "uncaught": false,
     "x": 130,
@@ -796,8 +796,7 @@
     "y": 380,
     "wires": [
       [
-        "188ae7c4.5452a8",
-        "a11bfd6.a037c"
+        "188ae7c4.5452a8"
       ]
     ]
   },
@@ -852,43 +851,7 @@
       [
         "2e0081fa.7533ce"
       ],
-      [
-        "3c20b054.cd47f"
-      ]
+      []
     ]
-  },
-  {
-    "id": "a11bfd6.a037c",
-    "type": "debug",
-    "z": "fe976b5a.539a18",
-    "name": "Logge Sonnenstände",
-    "active": true,
-    "tosidebar": false,
-    "console": true,
-    "tostatus": false,
-    "complete": "true",
-    "targetType": "full",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 410,
-    "y": 340,
-    "wires": []
-  },
-  {
-    "id": "3c20b054.cd47f",
-    "type": "debug",
-    "z": "fe976b5a.539a18",
-    "name": "sun event discarded",
-    "active": true,
-    "tosidebar": false,
-    "console": true,
-    "tostatus": false,
-    "complete": "true",
-    "targetType": "full",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 620,
-    "y": 400,
-    "wires": []
   }
 ]
