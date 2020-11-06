@@ -42,7 +42,7 @@
     "z": "750f0705.13d438",
     "name": "Warte auf \"Ist verbunden?\"",
     "scope": [
-      "3eca642.74a341c"
+      "6ee04ba2.15d37c"
     ],
     "uncaught": false,
     "x": 150,
@@ -59,7 +59,7 @@
     "z": "750f0705.13d438",
     "name": "Warte auf Ist-Temperatur",
     "scope": [
-      "9038b1d7.3c17f8"
+      "61c78d3d.472da4"
     ],
     "uncaught": false,
     "x": 150,
@@ -76,7 +76,7 @@
     "z": "750f0705.13d438",
     "name": "Warte auf Soll-Temperatur",
     "scope": [
-      "abdc0607.08dc5"
+      "2903c3ad.ebb914"
     ],
     "uncaught": false,
     "x": 150,
@@ -467,11 +467,11 @@
     "id": "ea9b1bb3.5ea688",
     "type": "link in",
     "z": "750f0705.13d438",
-    "name": "Hole \"Ist Heizung eingeschaltet?\"",
+    "name": "Warte auf \"Ist Heizung eingeschaltet?\"",
     "links": [
       "ae8dfb0d.ed6b38"
     ],
-    "x": 170,
+    "x": 190,
     "y": 860,
     "wires": [
       [
@@ -484,11 +484,11 @@
     "id": "df46be69.47718",
     "type": "link in",
     "z": "750f0705.13d438",
-    "name": "Hole \"Ist Fenster geschlossen?\"",
+    "name": "Warte auf \"Ist Fenster geschlossen?\"",
     "links": [
       "2f16b6fc.b3acca"
     ],
-    "x": 170,
+    "x": 180,
     "y": 900,
     "wires": [
       [
@@ -629,8 +629,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 730,
-    "y": 540,
+    "x": 610,
+    "y": 520,
     "wires": [
       [
         "3eca642.74a341c"
@@ -644,10 +644,12 @@
     "connection": "1f1ed453.c0771c",
     "name": "Lese \"Ist verbunden?\"",
     "action": "getSwitchPresence",
-    "x": 920,
-    "y": 540,
+    "x": 800,
+    "y": 520,
     "wires": [
-      []
+      [
+        "855e9230.48c008"
+      ]
     ]
   },
   {
@@ -657,10 +659,12 @@
     "connection": "1f1ed453.c0771c",
     "name": "Lese Ist-Temperatur",
     "action": "getTemperature",
-    "x": 920,
-    "y": 640,
+    "x": 800,
+    "y": 620,
     "wires": [
-      []
+      [
+        "b767063c.eb68b8"
+      ]
     ]
   },
   {
@@ -670,10 +674,12 @@
     "connection": "1f1ed453.c0771c",
     "name": "Lese Soll-Temperatur",
     "action": "getTempTarget",
-    "x": 920,
-    "y": 740,
+    "x": 800,
+    "y": 720,
     "wires": [
-      []
+      [
+        "ad8c4a0e.b16908"
+      ]
     ]
   },
   {
@@ -712,7 +718,7 @@
     "to": "",
     "reg": false,
     "x": 280,
-    "y": 560,
+    "y": 540,
     "wires": [
       [
         "a993d6b0.77c378"
@@ -784,7 +790,7 @@
     "to": "",
     "reg": false,
     "x": 280,
-    "y": 660,
+    "y": 640,
     "wires": [
       [
         "e5f45b09.04f698"
@@ -817,8 +823,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 730,
-    "y": 640,
+    "x": 610,
+    "y": 620,
     "wires": [
       [
         "9038b1d7.3c17f8"
@@ -890,7 +896,7 @@
     "to": "",
     "reg": false,
     "x": 280,
-    "y": 760,
+    "y": 740,
     "wires": [
       [
         "a445bae0.bc2be"
@@ -923,8 +929,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 730,
-    "y": 740,
+    "x": 610,
+    "y": 720,
     "wires": [
       [
         "abdc0607.08dc5"
@@ -951,8 +957,8 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 590,
-    "y": 540,
+    "x": 470,
+    "y": 520,
     "wires": [
       [
         "13b1e46b.b8da94"
@@ -979,8 +985,8 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 590,
-    "y": 640,
+    "x": 470,
+    "y": 620,
     "wires": [
       [
         "b624d657.179338"
@@ -1007,8 +1013,8 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 590,
-    "y": 740,
+    "x": 470,
+    "y": 720,
     "wires": [
       [
         "e727eac4.e66f48"
@@ -1035,7 +1041,7 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 390,
+    "x": 450,
     "y": 860,
     "wires": [
       [
@@ -1047,7 +1053,7 @@
     "id": "ee845e4d.aa71b",
     "type": "switch",
     "z": "750f0705.13d438",
-    "name": "Ist Heizung eingeschaltet?",
+    "name": "Ist Heizung an?",
     "property": "payload[\"radiator/mainSwitch\"]",
     "propertyType": "msg",
     "rules": [
@@ -1061,7 +1067,7 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 580,
+    "x": 600,
     "y": 860,
     "wires": [
       [
@@ -1076,7 +1082,7 @@
     "id": "6ca51d8c.7fb86c",
     "type": "switch",
     "z": "750f0705.13d438",
-    "name": "Ist Fenster geschlossen?",
+    "name": "Ist Fenster zu?",
     "property": "payload[\"study/balconyDoor/isClosed\"]",
     "propertyType": "msg",
     "rules": [
@@ -1090,7 +1096,7 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 830,
+    "x": 780,
     "y": 840,
     "wires": [
       [
@@ -1120,7 +1126,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1090,
+    "x": 1010,
     "y": 880,
     "wires": [
       []
@@ -1217,7 +1223,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1100,
+    "x": 1020,
     "y": 820,
     "wires": [
       []
@@ -1243,8 +1249,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 440,
-    "y": 560,
+    "x": 320,
+    "y": 580,
     "wires": [
       [
         "5fee8365.5a3bec"
@@ -1272,8 +1278,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 440,
-    "y": 660,
+    "x": 320,
+    "y": 680,
     "wires": [
       [
         "fb2422b0.416ec8"
@@ -1301,13 +1307,136 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 440,
-    "y": 760,
+    "x": 320,
+    "y": 780,
     "wires": [
       [
         "6b90e612.29fa18"
       ],
       []
     ]
+  },
+  {
+    "id": "6ee04ba2.15d37c",
+    "type": "link out",
+    "z": "750f0705.13d438",
+    "name": "Teile \"Ist verbunden?\"",
+    "links": [],
+    "x": 1160,
+    "y": 520,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "61c78d3d.472da4",
+    "type": "link out",
+    "z": "750f0705.13d438",
+    "name": "Teile Ist-Temperatur",
+    "links": [],
+    "x": 1150,
+    "y": 620,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "855e9230.48c008",
+    "type": "change",
+    "z": "750f0705.13d438",
+    "name": "Bereinige",
+    "rules": [
+      {
+        "t": "delete",
+        "p": "ain",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "status",
+        "pt": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 980,
+    "y": 520,
+    "wires": [
+      [
+        "6ee04ba2.15d37c"
+      ]
+    ]
+  },
+  {
+    "id": "b767063c.eb68b8",
+    "type": "change",
+    "z": "750f0705.13d438",
+    "name": "Bereinige",
+    "rules": [
+      {
+        "t": "delete",
+        "p": "ain",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "status",
+        "pt": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 980,
+    "y": 620,
+    "wires": [
+      [
+        "61c78d3d.472da4"
+      ]
+    ]
+  },
+  {
+    "id": "ad8c4a0e.b16908",
+    "type": "change",
+    "z": "750f0705.13d438",
+    "name": "Bereinige",
+    "rules": [
+      {
+        "t": "delete",
+        "p": "ain",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "status",
+        "pt": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 980,
+    "y": 720,
+    "wires": [
+      [
+        "2903c3ad.ebb914"
+      ]
+    ]
+  },
+  {
+    "id": "2903c3ad.ebb914",
+    "type": "link out",
+    "z": "750f0705.13d438",
+    "name": "Teile Soll-Temperatur",
+    "links": [],
+    "x": 1160,
+    "y": 720,
+    "wires": [],
+    "l": true
   }
 ]
