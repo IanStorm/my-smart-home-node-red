@@ -1,0 +1,177 @@
+[
+  {
+    "id": "165c0739.3fd931",
+    "type": "subflow",
+    "name": "Warte_auf_Sonnenstand_fuer_HB",
+    "info": "### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        sunEvent\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Sun event\n    </dd>\n</dl>\n",
+    "category": "",
+    "in": [],
+    "out": [
+      {
+        "x": 780,
+        "y": 120,
+        "wires": [
+          {
+            "id": "8ce375c3.559408",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [
+      {
+        "name": "sunEvent",
+        "type": "str",
+        "value": "-TODO: sun event-",
+        "ui": {
+          "icon": "font-awesome/fa-clock-o",
+          "label": {
+            "de": "Sonnenstand",
+            "en-US": "sun event"
+          },
+          "type": "select",
+          "opts": {
+            "opts": [
+              {
+                "l": {
+                  "en-US": "sunset start",
+                  "de": "sunset start"
+                },
+                "v": "sunsetStart"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "color": "#DDAA99",
+    "icon": "font-awesome/fa-sun-o"
+  },
+  {
+    "id": "c4758374.328cd8",
+    "type": "comment",
+    "z": "165c0739.3fd931",
+    "name": "Warte auf Sonnenstand für HB",
+    "info": "",
+    "x": 140,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "6d8c246d.3c3f1c",
+    "type": "sun events",
+    "z": "165c0739.3fd931",
+    "testmode": false,
+    "verbose": false,
+    "topic": "",
+    "name": "Warte auf Sonnenstände",
+    "x": 150,
+    "y": 120,
+    "wires": [
+      [
+        "f82fd5c4.c39ab8",
+        "5fcae5f9.fe5a44"
+      ]
+    ]
+  },
+  {
+    "id": "f82fd5c4.c39ab8",
+    "type": "switch",
+    "z": "165c0739.3fd931",
+    "name": "Ist gewünschter Sonnenstand?",
+    "property": "payload",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "sunEvent",
+        "vt": "env"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 430,
+    "y": 120,
+    "wires": [
+      [
+        "8ce375c3.559408"
+      ],
+      [
+        "c6db0233.e836"
+      ]
+    ]
+  },
+  {
+    "id": "8ce375c3.559408",
+    "type": "change",
+    "z": "165c0739.3fd931",
+    "name": "Bereinige",
+    "rules": [
+      {
+        "t": "delete",
+        "p": "datetime",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "payload",
+        "pt": "msg"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 660,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "5fcae5f9.fe5a44",
+    "type": "debug",
+    "z": "165c0739.3fd931",
+    "name": "Logge Sonnenstand",
+    "active": true,
+    "tosidebar": true,
+    "console": true,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 400,
+    "y": 160,
+    "wires": []
+  },
+  {
+    "id": "c6db0233.e836",
+    "type": "debug",
+    "z": "165c0739.3fd931",
+    "name": "Logge Sonnenstand verworfen",
+    "active": true,
+    "tosidebar": true,
+    "console": true,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 740,
+    "y": 160,
+    "wires": []
+  }
+]
