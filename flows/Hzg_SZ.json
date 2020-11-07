@@ -7,7 +7,7 @@
     "info": ""
   },
   {
-    "id": "3bd84c24.385644",
+    "id": "ba4c0b77.fd47a",
     "type": "comment",
     "z": "ecee5153.6f2368",
     "name": "Heizkörper -> Schlafzimmer",
@@ -17,7 +17,7 @@
     "wires": []
   },
   {
-    "id": "f872976.d63f868",
+    "id": "aaaeb868.3945b",
     "type": "comment",
     "z": "ecee5153.6f2368",
     "name": "Daten",
@@ -27,170 +27,68 @@
     "wires": []
   },
   {
-    "id": "e60df61b.811308",
-    "type": "change",
-    "z": "ecee5153.6f2368",
-    "name": "Merke \"Ist verbunden?\"",
-    "rules": [
-      {
-        "t": "set",
-        "p": "radiator.isConnected",
-        "pt": "flow",
-        "to": "payload",
-        "tot": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 390,
-    "y": 140,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "8f733bf5.8dc4d",
-    "type": "change",
-    "z": "ecee5153.6f2368",
-    "name": "Merke Ist-Temperatur",
-    "rules": [
-      {
-        "t": "set",
-        "p": "radiator.currentTemperature",
-        "pt": "flow",
-        "to": "payload",
-        "tot": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 380,
-    "y": 180,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "b6e71bc8.36ad7",
-    "type": "change",
-    "z": "ecee5153.6f2368",
-    "name": "Merke Soll-Temperatur",
-    "rules": [
-      {
-        "t": "set",
-        "p": "radiator.targetTemperature",
-        "pt": "flow",
-        "to": "payload",
-        "tot": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 380,
-    "y": 220,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "25940a0a.bd8766",
+    "id": "accfdfc1.ff2ff",
     "type": "comment",
     "z": "ecee5153.6f2368",
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 300,
+    "y": 520,
     "wires": []
   },
   {
-    "id": "d31401fb.ac686",
+    "id": "35570931.76039e",
     "type": "complete",
     "z": "ecee5153.6f2368",
     "name": "Warte auf \"Ist verbunden?\"",
     "scope": [
-      "e60df61b.811308"
+      "cc22b036.984bd"
     ],
     "uncaught": false,
     "x": 150,
-    "y": 420,
+    "y": 640,
     "wires": [
       [
-        "eb56fd04.c0a088"
+        "577b5271.e38e54"
       ]
     ]
   },
   {
-    "id": "b3cfb87b.f7a9b8",
+    "id": "6bb926dd.582ec8",
     "type": "complete",
     "z": "ecee5153.6f2368",
     "name": "Warte auf Ist-Temperatur",
     "scope": [
-      "8f733bf5.8dc4d"
+      "88cf38f7.8e6a"
     ],
     "uncaught": false,
     "x": 150,
-    "y": 480,
+    "y": 700,
     "wires": [
       [
-        "2c4c041e.8aedac"
+        "a81dabaa.a85338"
       ]
     ]
   },
   {
-    "id": "e073d30f.95f43",
+    "id": "53501838.7035b",
     "type": "complete",
     "z": "ecee5153.6f2368",
     "name": "Warte auf Soll-Temperatur",
     "scope": [
-      "b6e71bc8.36ad7"
+      "d7b9c738.c9fa7"
     ],
     "uncaught": false,
     "x": 150,
-    "y": 540,
+    "y": 760,
     "wires": [
       [
-        "8351bb96.3f361"
+        "87b798c3.500528"
       ]
     ]
   },
   {
-    "id": "eb56fd04.c0a088",
-    "type": "change",
-    "z": "ecee5153.6f2368",
-    "name": "Hole \"Ist verbunden?\"",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "radiator.isConnected",
-        "tot": "flow"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 400,
-    "y": 420,
-    "wires": [
-      [
-        "92d8058c.21eeb"
-      ]
-    ]
-  },
-  {
-    "id": "92d8058c.21eeb",
+    "id": "577b5271.e38e54",
     "type": "ui_template",
     "z": "ecee5153.6f2368",
     "group": "7b8abfe6.0e9dd8",
@@ -203,68 +101,14 @@
     "fwdInMessages": false,
     "resendOnRefresh": true,
     "templateScope": "local",
-    "x": 640,
-    "y": 420,
+    "x": 400,
+    "y": 640,
     "wires": [
       []
     ]
   },
   {
-    "id": "2c4c041e.8aedac",
-    "type": "change",
-    "z": "ecee5153.6f2368",
-    "name": "Hole Ist-Temperatur",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "radiator.currentTemperature",
-        "tot": "flow"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 390,
-    "y": 480,
-    "wires": [
-      [
-        "4586c8c8.45a9b8"
-      ]
-    ]
-  },
-  {
-    "id": "8351bb96.3f361",
-    "type": "change",
-    "z": "ecee5153.6f2368",
-    "name": "Hole Soll-Temperatur",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "radiator.targetTemperature",
-        "tot": "flow"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 400,
-    "y": 540,
-    "wires": [
-      [
-        "8f9c1d9c.0ef0b8"
-      ]
-    ]
-  },
-  {
-    "id": "4586c8c8.45a9b8",
+    "id": "a81dabaa.a85338",
     "type": "ui_text",
     "z": "ecee5153.6f2368",
     "group": "7b8abfe6.0e9dd8",
@@ -275,12 +119,12 @@
     "label": "<i class=\"material-icons\">ac_unit</i>",
     "format": "{{msg.payload}}°C",
     "layout": "row-left",
-    "x": 640,
-    "y": 480,
+    "x": 400,
+    "y": 700,
     "wires": []
   },
   {
-    "id": "8f9c1d9c.0ef0b8",
+    "id": "87b798c3.500528",
     "type": "ui_slider",
     "z": "ecee5153.6f2368",
     "name": "Zeige Soll-Temperatur",
@@ -290,20 +134,22 @@
     "order": 4,
     "width": 4,
     "height": 2,
-    "passthru": true,
+    "passthru": false,
     "outs": "end",
     "topic": "",
     "min": "8",
     "max": "28",
     "step": "0.5",
-    "x": 640,
-    "y": 540,
+    "x": 400,
+    "y": 760,
     "wires": [
-      []
+      [
+        "d20a9dc5.e2e3d8"
+      ]
     ]
   },
   {
-    "id": "e669d998.8e6d7",
+    "id": "2ccbe24a.29d6b6",
     "type": "inject",
     "z": "ecee5153.6f2368",
     "name": "Beim Start",
@@ -315,15 +161,15 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 360,
+    "y": 580,
     "wires": [
       [
-        "b91a4f89.0eb848"
+        "5df501f.d1a2c8"
       ]
     ]
   },
   {
-    "id": "b91a4f89.0eb848",
+    "id": "5df501f.d1a2c8",
     "type": "ui_template",
     "z": "ecee5153.6f2368",
     "group": "7b8abfe6.0e9dd8",
@@ -336,17 +182,449 @@
     "fwdInMessages": true,
     "resendOnRefresh": false,
     "templateScope": "local",
-    "x": 630,
+    "x": 390,
+    "y": 580,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "9cfc0c56.e03b6",
+    "type": "comment",
+    "z": "ecee5153.6f2368",
+    "name": "Automatisch Schalten",
+    "info": "",
+    "x": 140,
+    "y": 840,
+    "wires": []
+  },
+  {
+    "id": "c8605b28.b9c0b8",
+    "type": "inject",
+    "z": "ecee5153.6f2368",
+    "name": "Werktags, 04:30 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "30 04 * * 1,2,3,4,5",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 140,
+    "y": 900,
+    "wires": [
+      [
+        "d98b1423.c395f"
+      ]
+    ]
+  },
+  {
+    "id": "108d6033.b4365",
+    "type": "inject",
+    "z": "ecee5153.6f2368",
+    "name": "Wochenende, 07:00 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 07 * * 6,0",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 150,
+    "y": 980,
+    "wires": [
+      [
+        "d98b1423.c395f"
+      ]
+    ]
+  },
+  {
+    "id": "d98b1423.c395f",
+    "type": "change",
+    "z": "ecee5153.6f2368",
+    "name": "Setze Wunschtemperatur auf 19,5°C",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "19.5",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "bedroom/radiator/desiredTemperature",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 450,
+    "y": 960,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f9b8ffbc.8ebb",
+    "type": "change",
+    "z": "ecee5153.6f2368",
+    "name": "Setze Wunschtemperatur auf 17°C",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "17",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "bedroom/radiator/desiredTemperature",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 440,
+    "y": 1140,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "7c6c52b1.bb4404",
+    "type": "complete",
+    "z": "ecee5153.6f2368",
+    "name": "Warte auf Wunsch-Temperatur",
+    "scope": [
+      "d98b1423.c395f",
+      "f9b8ffbc.8ebb",
+      "9a076e88.c5ff4",
+      "d20a9dc5.e2e3d8"
+    ],
+    "uncaught": false,
+    "x": 160,
+    "y": 300,
+    "wires": [
+      [
+        "13a8fecb.c24ec1"
+      ]
+    ]
+  },
+  {
+    "id": "934f99dc.9dffb",
+    "type": "link in",
+    "z": "ecee5153.6f2368",
+    "name": "Warte auf \"Ist Heizung eingeschaltet?\"",
+    "links": [
+      "ae8dfb0d.ed6b38"
+    ],
+    "x": 190,
+    "y": 340,
+    "wires": [
+      [
+        "13a8fecb.c24ec1"
+      ]
+    ],
+    "l": true
+  },
+  {
+    "id": "70342958.a0c09",
+    "type": "link in",
+    "z": "ecee5153.6f2368",
+    "d": true,
+    "name": "Warte auf \"Ist Fenster geschlossen?\"",
+    "links": [],
+    "x": 180,
+    "y": 380,
+    "wires": [
+      [
+        "13a8fecb.c24ec1"
+      ]
+    ],
+    "l": true
+  },
+  {
+    "id": "d20a9dc5.e2e3d8",
+    "type": "change",
+    "z": "ecee5153.6f2368",
+    "name": "Setze Wunschtemperatur",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "bedroom/radiator/desiredTemperature",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 650,
+    "y": 760,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "13a8fecb.c24ec1",
+    "type": "join",
+    "z": "ecee5153.6f2368",
+    "name": "merge",
+    "mode": "custom",
+    "build": "object",
+    "property": "payload",
+    "propertyType": "msg",
+    "key": "topic",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "accumulate": true,
+    "timeout": "",
+    "count": "2",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "",
+    "reduceFixup": "",
+    "x": 450,
+    "y": 340,
+    "wires": [
+      [
+        "a725e689.cfa3c"
+      ]
+    ]
+  },
+  {
+    "id": "a725e689.cfa3c",
+    "type": "switch",
+    "z": "ecee5153.6f2368",
+    "name": "Ist Heizung an?",
+    "property": "payload[\"radiator/mainSwitch\"]",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "true"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 600,
+    "y": 340,
+    "wires": [
+      [
+        "cecdbd18.8b9f4"
+      ],
+      [
+        "1a6f3b2.38ce6c5"
+      ]
+    ]
+  },
+  {
+    "id": "6ea64bc3.f27eac",
+    "type": "switch",
+    "z": "ecee5153.6f2368",
+    "d": true,
+    "name": "Ist Fenster zu?",
+    "property": "payload[\"bedroom/balconyDoor/isClosed\"]",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "true"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 780,
+    "y": 320,
+    "wires": [
+      [],
+      []
+    ]
+  },
+  {
+    "id": "1a6f3b2.38ce6c5",
+    "type": "change",
+    "z": "ecee5153.6f2368",
+    "name": "Setze Ziel-Temperatur auf \"aus\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "false",
+        "tot": "bool"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1010,
     "y": 360,
     "wires": [
       []
     ]
   },
   {
-    "id": "973c2212.99a92",
-    "type": "subflow:f81865c3.29dd28",
+    "id": "b7ca2f71.13cd08",
+    "type": "complete",
     "z": "ecee5153.6f2368",
-    "name": "",
+    "name": "Warte auf Ziel-Temperatur",
+    "scope": [
+      "1a6f3b2.38ce6c5",
+      "cecdbd18.8b9f4"
+    ],
+    "uncaught": false,
+    "x": 150,
+    "y": 440,
+    "wires": [
+      [
+        "cb54205f.b1e5f8"
+      ]
+    ]
+  },
+  {
+    "id": "cecdbd18.8b9f4",
+    "type": "change",
+    "z": "ecee5153.6f2368",
+    "name": "Setze Ziel- auf Wunsch-Temperatur",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload[\"bedroom/radiator/desiredTemperature\"]",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1020,
+    "y": 300,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "cc22b036.984bd",
+    "type": "link out",
+    "z": "ecee5153.6f2368",
+    "name": "Teile \"Ist verbunden?\"",
+    "links": [],
+    "x": 440,
+    "y": 160,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "88cf38f7.8e6a",
+    "type": "link out",
+    "z": "ecee5153.6f2368",
+    "name": "Teile Ist-Temperatur",
+    "links": [],
+    "x": 430,
+    "y": 200,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "d7b9c738.c9fa7",
+    "type": "link out",
+    "z": "ecee5153.6f2368",
+    "name": "Teile Soll-Temperatur",
+    "links": [],
+    "x": 440,
+    "y": 240,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "c74049d4.0856e",
+    "type": "subflow:2757b690.6da392",
+    "z": "ecee5153.6f2368",
+    "name": "Warte auf Fritz-Thermostat-Daten",
+    "env": [
+      {
+        "name": "ain",
+        "value": "117950400584",
+        "type": "str"
+      },
+      {
+        "name": "topicPrefix",
+        "value": "bedroom",
+        "type": "str"
+      }
+    ],
+    "x": 170,
+    "y": 200,
+    "wires": [
+      [
+        "cc22b036.984bd"
+      ],
+      [
+        "88cf38f7.8e6a"
+      ],
+      [
+        "d7b9c738.c9fa7"
+      ]
+    ]
+  },
+  {
+    "id": "cb54205f.b1e5f8",
+    "type": "subflow:2b4929ba.ee20e6",
+    "z": "ecee5153.6f2368",
+    "name": "Regle",
     "env": [
       {
         "name": "ain",
@@ -354,17 +632,181 @@
         "type": "str"
       }
     ],
+    "x": 350,
+    "y": 440,
+    "wires": []
+  },
+  {
+    "id": "48ab0947.81f79",
+    "type": "inject",
+    "z": "ecee5153.6f2368",
+    "name": "Werktags, 06:15 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "15 06 * * 1,2,3,4,5",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
     "x": 140,
-    "y": 180,
+    "y": 1080,
     "wires": [
       [
-        "e60df61b.811308"
-      ],
+        "f9b8ffbc.8ebb"
+      ]
+    ]
+  },
+  {
+    "id": "2ee5196a.deee46",
+    "type": "inject",
+    "z": "ecee5153.6f2368",
+    "name": "Werktags, 23:00 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "15 06 * * 1,2,3,4,5",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 140,
+    "y": 1120,
+    "wires": [
       [
-        "8f733bf5.8dc4d"
-      ],
+        "f9b8ffbc.8ebb"
+      ]
+    ]
+  },
+  {
+    "id": "864e908a.0cae3",
+    "type": "inject",
+    "z": "ecee5153.6f2368",
+    "name": "Wochenende, 23:30 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "30 23 * * 6,0",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 150,
+    "y": 1200,
+    "wires": [
       [
-        "b6e71bc8.36ad7"
+        "f9b8ffbc.8ebb"
+      ]
+    ]
+  },
+  {
+    "id": "9ef93ae.b1f88c8",
+    "type": "inject",
+    "z": "ecee5153.6f2368",
+    "name": "Wochenende, 11:00 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 11 * * 6,0",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 150,
+    "y": 1160,
+    "wires": [
+      [
+        "f9b8ffbc.8ebb"
+      ]
+    ]
+  },
+  {
+    "id": "b78f0a81.c98e3",
+    "type": "inject",
+    "z": "ecee5153.6f2368",
+    "name": "So.-Do., 20:00 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 20 * * 1,2,3,4,0",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 140,
+    "y": 940,
+    "wires": [
+      [
+        "d98b1423.c395f"
+      ]
+    ]
+  },
+  {
+    "id": "dff98fc3.674d28",
+    "type": "inject",
+    "z": "ecee5153.6f2368",
+    "name": "Fr.-Sa., 21:00 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 21 * * 5,6",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 130,
+    "y": 1020,
+    "wires": [
+      [
+        "d98b1423.c395f"
       ]
     ]
   }
