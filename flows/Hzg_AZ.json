@@ -23,7 +23,7 @@
     "name": "Daten",
     "info": "",
     "x": 90,
-    "y": 400,
+    "y": 120,
     "wires": []
   },
   {
@@ -33,7 +33,7 @@
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 800,
+    "y": 520,
     "wires": []
   },
   {
@@ -46,7 +46,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 920,
+    "y": 640,
     "wires": [
       [
         "1f1accaa.3aabe3"
@@ -63,7 +63,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 980,
+    "y": 700,
     "wires": [
       [
         "b8b05a47.fff86"
@@ -80,7 +80,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 1040,
+    "y": 760,
     "wires": [
       [
         "90fe56a5.193b8"
@@ -102,7 +102,7 @@
     "resendOnRefresh": true,
     "templateScope": "local",
     "x": 400,
-    "y": 920,
+    "y": 640,
     "wires": [
       []
     ]
@@ -120,7 +120,7 @@
     "format": "{{msg.payload}}°C",
     "layout": "row-left",
     "x": 400,
-    "y": 980,
+    "y": 700,
     "wires": []
   },
   {
@@ -141,7 +141,7 @@
     "max": "28",
     "step": "0.5",
     "x": 400,
-    "y": 1040,
+    "y": 760,
     "wires": [
       [
         "d53df6ae.7d8718"
@@ -161,7 +161,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 860,
+    "y": 580,
     "wires": [
       [
         "73d3a176.b41ce8"
@@ -183,7 +183,7 @@
     "resendOnRefresh": false,
     "templateScope": "local",
     "x": 390,
-    "y": 860,
+    "y": 580,
     "wires": [
       []
     ]
@@ -195,14 +195,14 @@
     "name": "Automatisch Schalten",
     "info": "",
     "x": 140,
-    "y": 120,
+    "y": 840,
     "wires": []
   },
   {
     "id": "fc295b31.460b6",
     "type": "inject",
     "z": "750f0705.13d438",
-    "name": "Werktags, 6 Uhr",
+    "name": "Werktags, 06:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -219,11 +219,11 @@
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 130,
-    "y": 180,
+    "x": 140,
+    "y": 900,
     "wires": [
       [
-        "28b16d73.0a60ca"
+        "52bf7b5b.10e544"
       ]
     ]
   },
@@ -231,7 +231,7 @@
     "id": "79058b27.6ef6b4",
     "type": "inject",
     "z": "750f0705.13d438",
-    "name": "Wochenende, 7 Uhr",
+    "name": "Wochenende, 07:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -242,14 +242,14 @@
       }
     ],
     "repeat": "",
-    "crontab": "00 07 * * 2,6,0",
+    "crontab": "00 07 * * 6,0",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 140,
-    "y": 220,
+    "x": 150,
+    "y": 940,
     "wires": [
       [
         "52bf7b5b.10e544"
@@ -260,7 +260,7 @@
     "id": "5a5276b8.6aaa3",
     "type": "inject",
     "z": "750f0705.13d438",
-    "name": "So.-Do., 21 Uhr",
+    "name": "So.-Do., 21:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -277,11 +277,11 @@
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 130,
-    "y": 280,
+    "x": 140,
+    "y": 1000,
     "wires": [
       [
-        "9645804f.6e3928"
+        "5ee9c1c6.e4224"
       ]
     ]
   },
@@ -289,7 +289,7 @@
     "id": "6e172ac2.19de3c",
     "type": "inject",
     "z": "750f0705.13d438",
-    "name": "Fr.-Sa., 23 Uhr",
+    "name": "Fr.-Sa., 23:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -306,44 +306,12 @@
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 120,
-    "y": 320,
+    "x": 130,
+    "y": 1040,
     "wires": [
       [
         "5ee9c1c6.e4224"
       ]
-    ]
-  },
-  {
-    "id": "28b16d73.0a60ca",
-    "type": "change",
-    "z": "750f0705.13d438",
-    "name": "Setze Wunschtemperatur auf 21°C",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "21",
-        "tot": "num"
-      },
-      {
-        "t": "set",
-        "p": "topic",
-        "pt": "msg",
-        "to": "study/radiator/desiredTemperature",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 420,
-    "y": 180,
-    "wires": [
-      []
     ]
   },
   {
@@ -372,40 +340,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 420,
-    "y": 220,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "9645804f.6e3928",
-    "type": "change",
-    "z": "750f0705.13d438",
-    "name": "Setze Wunschtemperatur auf 17°C",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "17",
-        "tot": "num"
-      },
-      {
-        "t": "set",
-        "p": "topic",
-        "pt": "msg",
-        "to": "study/radiator/desiredTemperature",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 420,
-    "y": 280,
+    "x": 440,
+    "y": 920,
     "wires": [
       []
     ]
@@ -436,8 +372,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 420,
-    "y": 320,
+    "x": 440,
+    "y": 1020,
     "wires": [
       []
     ]
@@ -456,7 +392,7 @@
     ],
     "uncaught": false,
     "x": 160,
-    "y": 580,
+    "y": 300,
     "wires": [
       [
         "a3d751d5.c43ee"
@@ -472,7 +408,7 @@
       "ae8dfb0d.ed6b38"
     ],
     "x": 190,
-    "y": 620,
+    "y": 340,
     "wires": [
       [
         "a3d751d5.c43ee"
@@ -489,7 +425,7 @@
       "2f16b6fc.b3acca"
     ],
     "x": 180,
-    "y": 660,
+    "y": 380,
     "wires": [
       [
         "a3d751d5.c43ee"
@@ -524,7 +460,7 @@
     "to": "",
     "reg": false,
     "x": 650,
-    "y": 1040,
+    "y": 760,
     "wires": [
       []
     ]
@@ -550,7 +486,7 @@
     "reduceInitType": "",
     "reduceFixup": "",
     "x": 450,
-    "y": 620,
+    "y": 340,
     "wires": [
       [
         "ee845e4d.aa71b"
@@ -576,7 +512,7 @@
     "repair": false,
     "outputs": 2,
     "x": 600,
-    "y": 620,
+    "y": 340,
     "wires": [
       [
         "6ca51d8c.7fb86c"
@@ -605,7 +541,7 @@
     "repair": false,
     "outputs": 2,
     "x": 780,
-    "y": 600,
+    "y": 320,
     "wires": [
       [
         "e333ee2a.0cbc9"
@@ -635,7 +571,7 @@
     "to": "",
     "reg": false,
     "x": 1010,
-    "y": 640,
+    "y": 360,
     "wires": [
       []
     ]
@@ -651,7 +587,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 720,
+    "y": 440,
     "wires": [
       [
         "b0f9b2ed.135dc"
@@ -678,7 +614,7 @@
     "to": "",
     "reg": false,
     "x": 1020,
-    "y": 580,
+    "y": 300,
     "wires": [
       []
     ]
@@ -690,7 +626,7 @@
     "name": "Teile \"Ist verbunden?\"",
     "links": [],
     "x": 440,
-    "y": 440,
+    "y": 160,
     "wires": [],
     "l": true
   },
@@ -701,7 +637,7 @@
     "name": "Teile Ist-Temperatur",
     "links": [],
     "x": 430,
-    "y": 480,
+    "y": 200,
     "wires": [],
     "l": true
   },
@@ -712,7 +648,7 @@
     "name": "Teile Soll-Temperatur",
     "links": [],
     "x": 440,
-    "y": 520,
+    "y": 240,
     "wires": [],
     "l": true
   },
@@ -734,7 +670,7 @@
       }
     ],
     "x": 170,
-    "y": 480,
+    "y": 200,
     "wires": [
       [
         "6ee04ba2.15d37c"
@@ -760,7 +696,7 @@
       }
     ],
     "x": 350,
-    "y": 720,
+    "y": 440,
     "wires": []
   }
 ]
