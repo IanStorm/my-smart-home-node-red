@@ -84,37 +84,6 @@
     "wires": []
   },
   {
-    "id": "53c99a52.763ddc",
-    "type": "subflow:809ad1e7.8ae618",
-    "z": "2757b690.6da392",
-    "d": true,
-    "name": "Warte auf \"Ist verbunden?\"",
-    "env": [
-      {
-        "name": "ain",
-        "value": "ain",
-        "type": "env"
-      },
-      {
-        "name": "function",
-        "value": "getPresence",
-        "type": "str"
-      },
-      {
-        "name": "topic",
-        "value": "radiator/isConnected",
-        "type": "str"
-      }
-    ],
-    "x": 150,
-    "y": 120,
-    "wires": [
-      [
-        "78f8225e.097454"
-      ]
-    ]
-  },
-  {
     "id": "3c72e6d0.e87b6a",
     "type": "subflow:809ad1e7.8ae618",
     "z": "2757b690.6da392",
@@ -178,7 +147,6 @@
     "id": "78f8225e.097454",
     "type": "change",
     "z": "2757b690.6da392",
-    "d": true,
     "name": "Bereite vor",
     "rules": [
       {
@@ -248,6 +216,36 @@
     "y": 240,
     "wires": [
       []
+    ]
+  },
+  {
+    "id": "c8322344.47aac8",
+    "type": "subflow:537a7282.35c514",
+    "z": "2757b690.6da392",
+    "name": "Warte auf \"Ist verbunden?\"",
+    "env": [
+      {
+        "name": "ain",
+        "value": "ain",
+        "type": "env"
+      },
+      {
+        "name": "function",
+        "value": "getSwitchPresence",
+        "type": "str"
+      },
+      {
+        "name": "topic",
+        "value": "radiator/isConnected",
+        "type": "str"
+      }
+    ],
+    "x": 150,
+    "y": 120,
+    "wires": [
+      [
+        "78f8225e.097454"
+      ]
     ]
   }
 ]

@@ -1,9 +1,9 @@
 [
   {
-    "id": "809ad1e7.8ae618",
+    "id": "537a7282.35c514",
     "type": "subflow",
-    "name": "Warte_auf_Fritz-Thermostat-Datum",
-    "info": "### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        ain\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        AIN\n    </dd>\n    <dt>\n        function\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        See links below.\n    </dd>\n    <dt>\n        topic\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Node-RED topic\n    </dd>\n</dl>\n\n### Resources\n\n - [fritzapi General functions](https://www.npmjs.com/package/fritzapi#general-functions)\n - [fritzapi Thermostat functions](https://www.npmjs.com/package/fritzapi#fritzdect-300-301-and-cometdect-thermostat-functions)\n",
+    "name": "Warte_auf_Fritz-Steckdosen-Datum",
+    "info": "### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        ain\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        AIN\n    </dd>\n    <dt>\n        function\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        See links below.\n    </dd>\n    <dt>\n        topic\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Node-RED topic\n    </dd>\n</dl>\n\n### Resources\n\n - [fritzapi General functions](https://www.npmjs.com/package/fritzapi#general-functions)\n - [fritzapi Outlet functions](https://www.npmjs.com/package/fritzapi#fritzdect-200-and-210-outlet-functions-includes-fritzpowerline-546e)",
     "category": "",
     "in": [],
     "out": [
@@ -12,7 +12,7 @@
         "y": 300,
         "wires": [
           {
-            "id": "e1470e98.4b546",
+            "id": "29b0627e.69d7b6",
             "port": 0
           }
         ]
@@ -48,15 +48,9 @@
             "opts": [
               {
                 "l": {
-                  "en-US": "get current temperature"
+                  "en-US": "get presence"
                 },
-                "v": "getTemperature"
-              },
-              {
-                "l": {
-                  "en-US": "get target temperature"
-                },
-                "v": "getTempTarget"
+                "v": "getSwitchPresence"
               }
             ]
           }
@@ -77,28 +71,13 @@
       }
     ],
     "color": "#DDAA99",
-    "icon": "font-awesome/fa-thermometer-half"
+    "icon": "font-awesome/fa-plug"
   },
   {
-    "id": "b5b67508.f5f6",
-    "type": "fritz-thermostat",
-    "z": "809ad1e7.8ae618",
-    "connection": "1f1ed453.c0771c",
-    "name": "Lese Datum",
-    "action": "",
-    "x": 750,
-    "y": 120,
-    "wires": [
-      [
-        "696b4f16.883b68"
-      ]
-    ]
-  },
-  {
-    "id": "79f3c0.a06d0c4",
+    "id": "fbba766f.03a558",
     "type": "inject",
-    "z": "809ad1e7.8ae618",
-    "name": "Alle 30s",
+    "z": "537a7282.35c514",
+    "name": "Alle 10s",
     "props": [
       {
         "p": "payload"
@@ -108,7 +87,7 @@
         "vt": "str"
       }
     ],
-    "repeat": "30",
+    "repeat": "10",
     "crontab": "",
     "once": true,
     "onceDelay": 0.1,
@@ -119,30 +98,30 @@
     "y": 120,
     "wires": [
       [
-        "1a6a4bb1.463a34"
+        "e60510aa.8a79f"
       ]
     ]
   },
   {
-    "id": "c578a6d1.1b615",
+    "id": "b96d24ed.093dc8",
     "type": "status",
-    "z": "809ad1e7.8ae618",
+    "z": "537a7282.35c514",
     "name": "Warte auf Status",
     "scope": [
-      "b5b67508.f5f6"
+      "7f14e24f.4eac84"
     ],
     "x": 120,
     "y": 180,
     "wires": [
       [
-        "e0add72b.7cd2e"
+        "f5468669.cddbf"
       ]
     ]
   },
   {
-    "id": "e0add72b.7cd2e",
+    "id": "f5468669.cddbf",
     "type": "change",
-    "z": "809ad1e7.8ae618",
+    "z": "537a7282.35c514",
     "name": "Markiere",
     "rules": [
       {
@@ -162,14 +141,14 @@
     "y": 180,
     "wires": [
       [
-        "ab3eecba.03b978"
+        "e5089b71.bc42c"
       ]
     ]
   },
   {
-    "id": "746db603.aaa4a",
+    "id": "afc8b067.f557f",
     "type": "change",
-    "z": "809ad1e7.8ae618",
+    "z": "537a7282.35c514",
     "name": "Hole Daten",
     "rules": [
       {
@@ -196,14 +175,14 @@
     "y": 200,
     "wires": [
       [
-        "b5b67508.f5f6"
+        "7f14e24f.4eac84"
       ]
     ]
   },
   {
-    "id": "1a6a4bb1.463a34",
+    "id": "e60510aa.8a79f",
     "type": "join",
-    "z": "809ad1e7.8ae618",
+    "z": "537a7282.35c514",
     "name": "merge",
     "mode": "custom",
     "build": "object",
@@ -224,14 +203,14 @@
     "y": 120,
     "wires": [
       [
-        "978f45a3.4577c"
+        "d3a893c6.2158e"
       ]
     ]
   },
   {
-    "id": "ab3eecba.03b978",
+    "id": "e5089b71.bc42c",
     "type": "switch",
-    "z": "809ad1e7.8ae618",
+    "z": "537a7282.35c514",
     "name": "Ist verbunden?",
     "property": "status.text",
     "propertyType": "msg",
@@ -252,15 +231,15 @@
     "y": 220,
     "wires": [
       [
-        "1a6a4bb1.463a34"
+        "e60510aa.8a79f"
       ],
       []
     ]
   },
   {
-    "id": "696b4f16.883b68",
+    "id": "d17919ef.76095",
     "type": "change",
-    "z": "809ad1e7.8ae618",
+    "z": "537a7282.35c514",
     "name": "Bereinige",
     "rules": [
       {
@@ -283,24 +262,24 @@
     "y": 160,
     "wires": [
       [
-        "407ab8a7.0aa77"
+        "9c726e0a.40ee68"
       ]
     ]
   },
   {
-    "id": "14af14d0.605403",
+    "id": "52ee0c33.6b64ec",
     "type": "comment",
-    "z": "809ad1e7.8ae618",
-    "name": "Lese Fritz-Thermostat-Datum",
+    "z": "537a7282.35c514",
+    "name": "Lese Fritz-Steckdosen-Datum",
     "info": "",
     "x": 140,
     "y": 40,
     "wires": []
   },
   {
-    "id": "e1470e98.4b546",
+    "id": "29b0627e.69d7b6",
     "type": "rbe",
-    "z": "809ad1e7.8ae618",
+    "z": "537a7282.35c514",
     "name": "Datum geändert?",
     "func": "rbe",
     "gap": "",
@@ -311,14 +290,14 @@
     "y": 240,
     "wires": [
       [
-        "61d7b30c.96ad84"
+        "899dc69c.9649e"
       ]
     ]
   },
   {
-    "id": "f617df54.6fb29",
+    "id": "f02e8f66.e2b28",
     "type": "debug",
-    "z": "809ad1e7.8ae618",
+    "z": "537a7282.35c514",
     "d": true,
     "name": "Logge Datum",
     "active": true,
@@ -334,9 +313,9 @@
     "wires": []
   },
   {
-    "id": "61d7b30c.96ad84",
+    "id": "899dc69c.9649e",
     "type": "debug",
-    "z": "809ad1e7.8ae618",
+    "z": "537a7282.35c514",
     "d": true,
     "name": "Logge Datumsänderung",
     "active": true,
@@ -352,9 +331,9 @@
     "wires": []
   },
   {
-    "id": "978f45a3.4577c",
+    "id": "d3a893c6.2158e",
     "type": "change",
-    "z": "809ad1e7.8ae618",
+    "z": "537a7282.35c514",
     "name": "Bereinige",
     "rules": [
       {
@@ -377,14 +356,14 @@
     "y": 160,
     "wires": [
       [
-        "746db603.aaa4a"
+        "afc8b067.f557f"
       ]
     ]
   },
   {
-    "id": "407ab8a7.0aa77",
+    "id": "9c726e0a.40ee68",
     "type": "change",
-    "z": "809ad1e7.8ae618",
+    "z": "537a7282.35c514",
     "name": "Bereite vor",
     "rules": [
       {
@@ -404,8 +383,23 @@
     "y": 200,
     "wires": [
       [
-        "f617df54.6fb29",
-        "e1470e98.4b546"
+        "f02e8f66.e2b28",
+        "29b0627e.69d7b6"
+      ]
+    ]
+  },
+  {
+    "id": "7f14e24f.4eac84",
+    "type": "fritz-outlet",
+    "z": "537a7282.35c514",
+    "connection": "1f1ed453.c0771c",
+    "name": "Lese Datum",
+    "action": "",
+    "x": 750,
+    "y": 120,
+    "wires": [
+      [
+        "d17919ef.76095"
       ]
     ]
   }
