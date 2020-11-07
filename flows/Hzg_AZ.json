@@ -654,62 +654,8 @@
     "y": 720,
     "wires": [
       [
-        "8d8415e9.e5121"
+        "b0f9b2ed.135dc"
       ]
-    ]
-  },
-  {
-    "id": "8d8415e9.e5121",
-    "type": "change",
-    "z": "750f0705.13d438",
-    "name": "Hole Daten",
-    "rules": [
-      {
-        "t": "set",
-        "p": "ain",
-        "pt": "msg",
-        "to": "109710426496",
-        "tot": "str"
-      },
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "payload",
-        "tot": "msg"
-      },
-      {
-        "t": "set",
-        "p": "topic",
-        "pt": "msg",
-        "to": "",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 370,
-    "y": 720,
-    "wires": [
-      [
-        "ea404df4.305a5"
-      ]
-    ]
-  },
-  {
-    "id": "ea404df4.305a5",
-    "type": "fritz-thermostat",
-    "z": "750f0705.13d438",
-    "connection": "1f1ed453.c0771c",
-    "name": "Regle Soll-Temperatur",
-    "action": "setTempTarget",
-    "x": 580,
-    "y": 720,
-    "wires": [
-      []
     ]
   },
   {
@@ -800,5 +746,21 @@
         "2903c3ad.ebb914"
       ]
     ]
+  },
+  {
+    "id": "b0f9b2ed.135dc",
+    "type": "subflow:2b4929ba.ee20e6",
+    "z": "750f0705.13d438",
+    "name": "Regle",
+    "env": [
+      {
+        "name": "ain",
+        "value": "109710426496",
+        "type": "str"
+      }
+    ],
+    "x": 350,
+    "y": 720,
+    "wires": []
   }
 ]

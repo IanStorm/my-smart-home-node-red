@@ -1,0 +1,174 @@
+[
+  {
+    "id": "2b4929ba.ee20e6",
+    "type": "subflow",
+    "name": "Regle_Fritz-Thermostat",
+    "info": "### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        ain\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        AIN\n    </dd>\n    <dt>\n        msg.payload\n        <span class=\"property-type\">number</span>\n    </dt>\n    <dd>\n        Target temperature\n    </dd>\n</dl>\n",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 120,
+        "wires": [
+          {
+            "id": "70415d0d.43f0bc"
+          }
+        ]
+      }
+    ],
+    "out": [],
+    "env": [
+      {
+        "name": "ain",
+        "type": "str",
+        "value": "-TODO: AIN-",
+        "ui": {
+          "icon": "font-awesome/fa-address-card-o",
+          "label": {
+            "en-US": "AIN"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      }
+    ],
+    "color": "#DDAA99",
+    "icon": "font-awesome/fa-thermometer-half"
+  },
+  {
+    "id": "f090029c.42b29",
+    "type": "trigger",
+    "z": "2b4929ba.ee20e6",
+    "name": "15m cooldown/delay latest-only",
+    "op1": "",
+    "op2": "",
+    "op1type": "pay",
+    "op2type": "payl",
+    "duration": "15",
+    "extend": false,
+    "overrideDelay": false,
+    "units": "min",
+    "reset": "",
+    "bytopic": "all",
+    "topic": "topic",
+    "outputs": 1,
+    "x": 250,
+    "y": 200,
+    "wires": [
+      [
+        "2b7232b8.890d76"
+      ]
+    ]
+  },
+  {
+    "id": "2b7232b8.890d76",
+    "type": "fritz-thermostat",
+    "z": "2b4929ba.ee20e6",
+    "connection": "1f1ed453.c0771c",
+    "name": "Regle Soll-Temperatur",
+    "action": "setTempTarget",
+    "x": 560,
+    "y": 120,
+    "wires": [
+      [
+        "9e603e7.aeeaf4"
+      ]
+    ]
+  },
+  {
+    "id": "9e583737.1d779",
+    "type": "comment",
+    "z": "2b4929ba.ee20e6",
+    "name": "Regle Fritz-Thermostat",
+    "info": "",
+    "x": 120,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "70415d0d.43f0bc",
+    "type": "change",
+    "z": "2b4929ba.ee20e6",
+    "name": "Bereite vor",
+    "rules": [
+      {
+        "t": "set",
+        "p": "ain",
+        "pt": "msg",
+        "to": "ain",
+        "tot": "env"
+      },
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 190,
+    "y": 120,
+    "wires": [
+      [
+        "57d1f8b2.76263"
+      ]
+    ]
+  },
+  {
+    "id": "57d1f8b2.76263",
+    "type": "rbe",
+    "z": "2b4929ba.ee20e6",
+    "name": "Soll-Temperatur geändert?",
+    "func": "rbe",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "property": "payload",
+    "x": 240,
+    "y": 160,
+    "wires": [
+      [
+        "f090029c.42b29"
+      ]
+    ]
+  },
+  {
+    "id": "9e603e7.aeeaf4",
+    "type": "change",
+    "z": "2b4929ba.ee20e6",
+    "name": "Bereinige",
+    "rules": [
+      {
+        "t": "delete",
+        "p": "ain",
+        "pt": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 520,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  }
+]
