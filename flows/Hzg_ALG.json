@@ -151,8 +151,11 @@
     "z": "be8a6639.d3183",
     "name": "Teile Heizung-Hauptschalter-Zustand",
     "links": [
+      "14676758.37e3c9",
+      "934f99dc.9dffb",
+      "9d2fd886.a164e8",
       "ea9b1bb3.5ea688",
-      "934f99dc.9dffb"
+      "f873c688.34efd8"
     ],
     "x": 830,
     "y": 520,

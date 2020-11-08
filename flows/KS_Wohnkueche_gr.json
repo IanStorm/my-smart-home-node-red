@@ -296,7 +296,11 @@
     "type": "link out",
     "z": "a08151f9.16ea7",
     "name": "Teile \"Ist geschlossen?\"",
-    "links": [],
+    "links": [
+      "14ef395b.717947",
+      "dff69076.060b48",
+      "a658b425.99c048"
+    ],
     "x": 690,
     "y": 400,
     "wires": [],
