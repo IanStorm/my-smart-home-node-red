@@ -318,7 +318,7 @@
     "id": "52bf7b5b.10e544",
     "type": "change",
     "z": "750f0705.13d438",
-    "name": "Setze Wunschtemperatur auf 21°C",
+    "name": "Setze Wunsch-Temperatur auf 21°C",
     "rules": [
       {
         "t": "set",
@@ -340,7 +340,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 440,
+    "x": 450,
     "y": 1040,
     "wires": [
       []
@@ -350,7 +350,7 @@
     "id": "5ee9c1c6.e4224",
     "type": "change",
     "z": "750f0705.13d438",
-    "name": "Setze Wunschtemperatur auf 17°C",
+    "name": "Setze Wunsch-Temperatur auf 17°C",
     "rules": [
       {
         "t": "set",
@@ -372,7 +372,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 440,
+    "x": 450,
     "y": 1140,
     "wires": [
       []
@@ -437,7 +437,7 @@
     "id": "d53df6ae.7d8718",
     "type": "change",
     "z": "750f0705.13d438",
-    "name": "Setze Wunschtemperatur",
+    "name": "Setze Wunsch-Temperatur",
     "rules": [
       {
         "t": "set",
@@ -459,7 +459,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 690,
+    "x": 700,
     "y": 820,
     "wires": [
       []
