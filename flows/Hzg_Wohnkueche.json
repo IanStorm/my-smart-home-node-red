@@ -468,7 +468,7 @@
     "type": "switch",
     "z": "c6075ab3.4abae8",
     "name": "Ist gr. Balkontür zu?",
-    "property": "payload[\"living-kitchenArea/balconyDoors/large/isClosed/isClosed\"]",
+    "property": "payload[\"living-kitchenArea/balconyDoors/large/isClosed\"]",
     "propertyType": "msg",
     "rules": [
       {
@@ -778,7 +778,7 @@
     "type": "switch",
     "z": "c6075ab3.4abae8",
     "name": "Ist kl. Balkontür zu?",
-    "property": "payload[\"living-kitchenArea/balconyDoors/small/isClosed/isClosed\"]",
+    "property": "payload[\"living-kitchenArea/balconyDoors/small/isClosed\"]",
     "propertyType": "msg",
     "rules": [
       {
