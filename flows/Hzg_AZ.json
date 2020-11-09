@@ -195,7 +195,7 @@
     "name": "Automatisch Schalten",
     "info": "",
     "x": 140,
-    "y": 840,
+    "y": 900,
     "wires": []
   },
   {
@@ -220,7 +220,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 900,
+    "y": 960,
     "wires": [
       [
         "52bf7b5b.10e544"
@@ -249,7 +249,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 150,
-    "y": 940,
+    "y": 1000,
     "wires": [
       [
         "52bf7b5b.10e544"
@@ -278,7 +278,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1000,
+    "y": 1060,
     "wires": [
       [
         "5ee9c1c6.e4224"
@@ -307,7 +307,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1040,
+    "y": 1100,
     "wires": [
       [
         "5ee9c1c6.e4224"
@@ -341,7 +341,7 @@
     "to": "",
     "reg": false,
     "x": 440,
-    "y": 920,
+    "y": 980,
     "wires": [
       []
     ]
@@ -373,7 +373,7 @@
     "to": "",
     "reg": false,
     "x": 440,
-    "y": 1020,
+    "y": 1080,
     "wires": [
       []
     ]
@@ -459,7 +459,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 650,
+    "x": 690,
     "y": 760,
     "wires": [
       []
@@ -697,6 +697,51 @@
     ],
     "x": 350,
     "y": 440,
+    "wires": []
+  },
+  {
+    "id": "92464dbf.0b0f08",
+    "type": "inject",
+    "z": "750f0705.13d438",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "Vollautomatisch zeit- & sensorbasiert",
+    "payloadType": "str",
+    "x": 110,
+    "y": 820,
+    "wires": [
+      [
+        "964a3870.afaf38"
+      ]
+    ]
+  },
+  {
+    "id": "964a3870.afaf38",
+    "type": "ui_text",
+    "z": "750f0705.13d438",
+    "group": "cd94108d.1e556",
+    "order": 6,
+    "width": "6",
+    "height": "1",
+    "name": "Zeige Automatisierungsinfo",
+    "label": "<i class=\"material-icons\">info</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-center",
+    "x": 420,
+    "y": 820,
     "wires": []
   }
 ]

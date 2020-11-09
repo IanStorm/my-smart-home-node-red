@@ -195,7 +195,7 @@
     "name": "Automatisch Schalten",
     "info": "",
     "x": 140,
-    "y": 880,
+    "y": 940,
     "wires": []
   },
   {
@@ -220,7 +220,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 940,
+    "y": 1000,
     "wires": [
       [
         "62fbdecd.d2f198"
@@ -249,7 +249,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 150,
-    "y": 1020,
+    "y": 1080,
     "wires": [
       [
         "62fbdecd.d2f198"
@@ -283,7 +283,7 @@
     "to": "",
     "reg": false,
     "x": 440,
-    "y": 980,
+    "y": 1040,
     "wires": [
       []
     ]
@@ -315,7 +315,7 @@
     "to": "",
     "reg": false,
     "x": 440,
-    "y": 1120,
+    "y": 1180,
     "wires": [
       []
     ]
@@ -400,7 +400,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 650,
+    "x": 690,
     "y": 800,
     "wires": [
       []
@@ -662,7 +662,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1080,
+    "y": 1140,
     "wires": [
       [
         "dac19267.87c818"
@@ -691,7 +691,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1120,
+    "y": 1180,
     "wires": [
       [
         "dac19267.87c818"
@@ -720,7 +720,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1160,
+    "y": 1220,
     "wires": [
       [
         "dac19267.87c818"
@@ -749,7 +749,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 980,
+    "y": 1040,
     "wires": [
       [
         "62fbdecd.d2f198"
@@ -801,5 +801,50 @@
         "632266af.d39608"
       ]
     ]
+  },
+  {
+    "id": "88db9fe5.144088",
+    "type": "inject",
+    "z": "c6075ab3.4abae8",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "Vollautomatisch zeit- & sensorbasiert",
+    "payloadType": "str",
+    "x": 110,
+    "y": 860,
+    "wires": [
+      [
+        "ab3f32c4.401c"
+      ]
+    ]
+  },
+  {
+    "id": "ab3f32c4.401c",
+    "type": "ui_text",
+    "z": "c6075ab3.4abae8",
+    "group": "2fe0f099.995658",
+    "order": 6,
+    "width": "6",
+    "height": "1",
+    "name": "Zeige Automatisierungsinfo",
+    "label": "<i class=\"material-icons\">info</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-center",
+    "x": 420,
+    "y": 860,
+    "wires": []
   }
 ]

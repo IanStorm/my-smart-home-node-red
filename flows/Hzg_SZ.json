@@ -195,7 +195,7 @@
     "name": "Automatisch Schalten",
     "info": "",
     "x": 140,
-    "y": 840,
+    "y": 900,
     "wires": []
   },
   {
@@ -220,7 +220,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 900,
+    "y": 960,
     "wires": [
       [
         "d98b1423.c395f"
@@ -249,7 +249,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 150,
-    "y": 980,
+    "y": 1040,
     "wires": [
       [
         "d98b1423.c395f"
@@ -283,7 +283,7 @@
     "to": "",
     "reg": false,
     "x": 450,
-    "y": 960,
+    "y": 1020,
     "wires": [
       []
     ]
@@ -315,7 +315,7 @@
     "to": "",
     "reg": false,
     "x": 440,
-    "y": 1140,
+    "y": 1200,
     "wires": [
       []
     ]
@@ -400,7 +400,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 650,
+    "x": 690,
     "y": 760,
     "wires": [
       []
@@ -662,7 +662,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1080,
+    "y": 1140,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -691,7 +691,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1120,
+    "y": 1180,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -720,7 +720,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1200,
+    "y": 1260,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -749,7 +749,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 150,
-    "y": 1160,
+    "y": 1220,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -778,7 +778,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 940,
+    "y": 1000,
     "wires": [
       [
         "d98b1423.c395f"
@@ -807,11 +807,56 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1020,
+    "y": 1080,
     "wires": [
       [
         "d98b1423.c395f"
       ]
     ]
+  },
+  {
+    "id": "463ca20f.2f5444",
+    "type": "inject",
+    "z": "ecee5153.6f2368",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "Vollautomatisch zeit- & sensorbasiert",
+    "payloadType": "str",
+    "x": 110,
+    "y": 820,
+    "wires": [
+      [
+        "1aae2861.49cfe"
+      ]
+    ]
+  },
+  {
+    "id": "1aae2861.49cfe",
+    "type": "ui_text",
+    "z": "ecee5153.6f2368",
+    "group": "7b8abfe6.0e9dd8",
+    "order": 6,
+    "width": "6",
+    "height": "1",
+    "name": "Zeige Automatisierungsinfo",
+    "label": "<i class=\"material-icons\">info</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-center",
+    "x": 420,
+    "y": 820,
+    "wires": []
   }
 ]
