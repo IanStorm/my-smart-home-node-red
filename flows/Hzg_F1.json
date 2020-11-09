@@ -336,7 +336,7 @@
     "y": 300,
     "wires": [
       [
-        "4621bd.a116e644"
+        "a194b88d.3d4858"
       ]
     ]
   },
@@ -352,7 +352,7 @@
     "y": 340,
     "wires": [
       [
-        "4621bd.a116e644"
+        "a194b88d.3d4858"
       ]
     ],
     "l": true
@@ -369,7 +369,7 @@
     "y": 380,
     "wires": [
       [
-        "4621bd.a116e644"
+        "a194b88d.3d4858"
       ]
     ],
     "l": true
@@ -407,124 +407,12 @@
     ]
   },
   {
-    "id": "4621bd.a116e644",
-    "type": "join",
-    "z": "d3be81f2.b4ce68",
-    "name": "merge",
-    "mode": "custom",
-    "build": "object",
-    "property": "payload",
-    "propertyType": "msg",
-    "key": "topic",
-    "joiner": "\\n",
-    "joinerType": "str",
-    "accumulate": true,
-    "timeout": "",
-    "count": "4",
-    "reduceRight": false,
-    "reduceExp": "",
-    "reduceInit": "",
-    "reduceInitType": "",
-    "reduceFixup": "",
-    "x": 450,
-    "y": 340,
-    "wires": [
-      [
-        "cb1e90f8.a7c648"
-      ]
-    ]
-  },
-  {
-    "id": "cb1e90f8.a7c648",
-    "type": "switch",
-    "z": "d3be81f2.b4ce68",
-    "name": "Ist Heizung an?",
-    "property": "payload[\"radiator/mainSwitch\"]",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "true"
-      },
-      {
-        "t": "else"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 600,
-    "y": 340,
-    "wires": [
-      [
-        "d7d1ab84.8a1478"
-      ],
-      [
-        "9ff172d2.1a69d8"
-      ]
-    ]
-  },
-  {
-    "id": "d7d1ab84.8a1478",
-    "type": "switch",
-    "z": "d3be81f2.b4ce68",
-    "name": "Ist gr. Balkontür zu?",
-    "property": "payload[\"living-kitchenArea/balconyDoors/large/isClosed\"]",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "true"
-      },
-      {
-        "t": "else"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 740,
-    "y": 280,
-    "wires": [
-      [
-        "1531ff80.fc8898"
-      ],
-      [
-        "9ff172d2.1a69d8"
-      ]
-    ]
-  },
-  {
-    "id": "9ff172d2.1a69d8",
-    "type": "change",
-    "z": "d3be81f2.b4ce68",
-    "name": "Setze Ziel-Temperatur auf \"aus\"",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "false",
-        "tot": "bool"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 1090,
-    "y": 280,
-    "wires": [
-      []
-    ]
-  },
-  {
     "id": "2fe60c9.04cf974",
     "type": "complete",
     "z": "d3be81f2.b4ce68",
     "name": "Warte auf Ziel-Temperatur",
     "scope": [
-      "9ff172d2.1a69d8",
-      "ea51cd4c.861418"
+      "a194b88d.3d4858"
     ],
     "uncaught": false,
     "x": 150,
@@ -533,31 +421,6 @@
       [
         "fa1e2518.47efa8"
       ]
-    ]
-  },
-  {
-    "id": "ea51cd4c.861418",
-    "type": "change",
-    "z": "d3be81f2.b4ce68",
-    "name": "Setze Ziel- auf Wunsch-Temperatur",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "payload[\"hallway1/radiator/desiredTemperature\"]",
-        "tot": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 1100,
-    "y": 200,
-    "wires": [
-      []
     ]
   },
   {
@@ -797,39 +660,10 @@
     "y": 420,
     "wires": [
       [
-        "4621bd.a116e644"
+        "a194b88d.3d4858"
       ]
     ],
     "l": true
-  },
-  {
-    "id": "1531ff80.fc8898",
-    "type": "switch",
-    "z": "d3be81f2.b4ce68",
-    "name": "Ist kl. Balkontür zu?",
-    "property": "payload[\"living-kitchenArea/balconyDoors/small/isClosed\"]",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "true"
-      },
-      {
-        "t": "else"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 850,
-    "y": 220,
-    "wires": [
-      [
-        "ea51cd4c.861418"
-      ],
-      [
-        "9ff172d2.1a69d8"
-      ]
-    ]
   },
   {
     "id": "9703819d.3e3c98",
@@ -874,6 +708,53 @@
     "layout": "row-center",
     "x": 420,
     "y": 860,
+    "wires": []
+  },
+  {
+    "id": "a194b88d.3d4858",
+    "type": "subflow:824afeed.e518a8",
+    "z": "d3be81f2.b4ce68",
+    "name": "Berechne Ziel-Temperatur",
+    "env": [
+      {
+        "name": "contactSensor1Topic",
+        "value": "living-kitchenArea/balconyDoors/large/isClosed",
+        "type": "str"
+      },
+      {
+        "name": "contactSensor2Topic",
+        "value": "living-kitchenArea/balconyDoors/small/isClosed",
+        "type": "str"
+      },
+      {
+        "name": "desiredTemperatureTopic",
+        "value": "hallway1/radiator/desiredTemperature",
+        "type": "str"
+      }
+    ],
+    "x": 510,
+    "y": 340,
+    "wires": [
+      [
+        "37e7e811.350818"
+      ]
+    ]
+  },
+  {
+    "id": "37e7e811.350818",
+    "type": "debug",
+    "z": "d3be81f2.b4ce68",
+    "name": "Logge berechnete Ziel-Temperatur",
+    "active": true,
+    "tosidebar": true,
+    "console": true,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 810,
+    "y": 340,
     "wires": []
   }
 ]
