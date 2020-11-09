@@ -566,7 +566,7 @@
     "z": "a7755eb4.60b0d8",
     "name": "Teile \"Ist verbunden?\"",
     "links": [],
-    "x": 440,
+    "x": 420,
     "y": 160,
     "wires": [],
     "l": true
@@ -577,7 +577,7 @@
     "z": "a7755eb4.60b0d8",
     "name": "Teile Ist-Temperatur",
     "links": [],
-    "x": 430,
+    "x": 410,
     "y": 200,
     "wires": [],
     "l": true
@@ -588,7 +588,7 @@
     "z": "a7755eb4.60b0d8",
     "name": "Teile Soll-Temperatur",
     "links": [],
-    "x": 440,
+    "x": 420,
     "y": 240,
     "wires": [],
     "l": true
@@ -597,7 +597,7 @@
     "id": "1006f708.927d61",
     "type": "subflow:2757b690.6da392",
     "z": "a7755eb4.60b0d8",
-    "name": "Warte auf Fritz-Thermostat-Daten",
+    "name": "Warte auf Thermostat-Daten",
     "env": [
       {
         "name": "ain",
@@ -610,7 +610,7 @@
         "type": "str"
       }
     ],
-    "x": 170,
+    "x": 160,
     "y": 200,
     "wires": [
       [
@@ -628,7 +628,7 @@
     "id": "e5eb264a.ed6de",
     "type": "subflow:2b4929ba.ee20e6",
     "z": "a7755eb4.60b0d8",
-    "name": "Regle Fritz-Thermostat",
+    "name": "Regle Thermostat",
     "env": [
       {
         "name": "ain",
@@ -636,7 +636,7 @@
         "type": "str"
       }
     ],
-    "x": 400,
+    "x": 390,
     "y": 480,
     "wires": []
   },
