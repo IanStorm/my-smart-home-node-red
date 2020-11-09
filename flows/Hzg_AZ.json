@@ -80,7 +80,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 760,
+    "y": 820,
     "wires": [
       [
         "90fe56a5.193b8"
@@ -131,7 +131,7 @@
     "label": "",
     "tooltip": "",
     "group": "cd94108d.1e556",
-    "order": 4,
+    "order": 6,
     "width": 4,
     "height": 2,
     "passthru": false,
@@ -141,7 +141,7 @@
     "max": "28",
     "step": "0.5",
     "x": 400,
-    "y": 760,
+    "y": 820,
     "wires": [
       [
         "d53df6ae.7d8718"
@@ -176,7 +176,7 @@
     "name": "Zeige Heizungsicon",
     "order": 1,
     "width": 2,
-    "height": 3,
+    "height": 4,
     "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        whatshot\n    </i>\n</div>",
     "storeOutMessages": true,
     "fwdInMessages": true,
@@ -195,7 +195,7 @@
     "name": "Automatisch Schalten",
     "info": "",
     "x": 140,
-    "y": 900,
+    "y": 960,
     "wires": []
   },
   {
@@ -220,7 +220,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 960,
+    "y": 1020,
     "wires": [
       [
         "52bf7b5b.10e544"
@@ -249,7 +249,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 150,
-    "y": 1000,
+    "y": 1060,
     "wires": [
       [
         "52bf7b5b.10e544"
@@ -278,7 +278,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1060,
+    "y": 1120,
     "wires": [
       [
         "5ee9c1c6.e4224"
@@ -307,7 +307,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1100,
+    "y": 1160,
     "wires": [
       [
         "5ee9c1c6.e4224"
@@ -341,7 +341,7 @@
     "to": "",
     "reg": false,
     "x": 440,
-    "y": 980,
+    "y": 1040,
     "wires": [
       []
     ]
@@ -373,7 +373,7 @@
     "to": "",
     "reg": false,
     "x": 440,
-    "y": 1080,
+    "y": 1140,
     "wires": [
       []
     ]
@@ -460,7 +460,7 @@
     "to": "",
     "reg": false,
     "x": 690,
-    "y": 760,
+    "y": 820,
     "wires": [
       []
     ]
@@ -721,7 +721,7 @@
     "payload": "Vollautomatisch zeit- & sensorbasiert",
     "payloadType": "str",
     "x": 110,
-    "y": 820,
+    "y": 880,
     "wires": [
       [
         "964a3870.afaf38"
@@ -733,15 +733,49 @@
     "type": "ui_text",
     "z": "750f0705.13d438",
     "group": "cd94108d.1e556",
-    "order": 6,
-    "width": "6",
-    "height": "1",
+    "order": 7,
+    "width": 6,
+    "height": 1,
     "name": "Zeige Automatisierungsinfo",
     "label": "<i class=\"material-icons\">info</i>",
     "format": "{{msg.payload}}",
     "layout": "row-center",
     "x": 420,
-    "y": 820,
+    "y": 880,
     "wires": []
+  },
+  {
+    "id": "be92cd9.c12433",
+    "type": "ui_text",
+    "z": "750f0705.13d438",
+    "group": "cd94108d.1e556",
+    "order": 4,
+    "width": 2,
+    "height": 1,
+    "name": "Zeige Ziel-Temperatur",
+    "label": "<i class=\"material-icons\">whatshot</i>",
+    "format": "{{msg.payload ? msg.payload + '°C' : 'Aus'}}",
+    "layout": "row-left",
+    "x": 400,
+    "y": 760,
+    "wires": []
+  },
+  {
+    "id": "7d307e29.87d5c",
+    "type": "complete",
+    "z": "750f0705.13d438",
+    "name": "Warte auf Ziel-Temperatur",
+    "scope": [
+      "78262459.f9221c",
+      "e333ee2a.0cbc9"
+    ],
+    "uncaught": false,
+    "x": 150,
+    "y": 760,
+    "wires": [
+      [
+        "be92cd9.c12433"
+      ]
+    ]
   }
 ]
