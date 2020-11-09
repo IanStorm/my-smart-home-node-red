@@ -628,7 +628,7 @@
     "id": "e5eb264a.ed6de",
     "type": "subflow:2b4929ba.ee20e6",
     "z": "a7755eb4.60b0d8",
-    "name": "Regle",
+    "name": "Regle Fritz-Thermostat",
     "env": [
       {
         "name": "ain",
@@ -636,7 +636,7 @@
         "type": "str"
       }
     ],
-    "x": 350,
+    "x": 400,
     "y": 480,
     "wires": []
   },
