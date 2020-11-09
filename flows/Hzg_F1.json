@@ -412,7 +412,7 @@
     "z": "d3be81f2.b4ce68",
     "name": "Warte auf Ziel-Temperatur",
     "scope": [
-      "a194b88d.3d4858"
+      "e3da38d6.4068b"
     ],
     "uncaught": false,
     "x": 150,
@@ -736,26 +736,9 @@
     "y": 340,
     "wires": [
       [
-        "37e7e811.350818"
+        "e3da38d6.4068b"
       ]
     ]
-  },
-  {
-    "id": "37e7e811.350818",
-    "type": "debug",
-    "z": "d3be81f2.b4ce68",
-    "name": "Logge berechnete Ziel-Temperatur",
-    "active": true,
-    "tosidebar": true,
-    "console": true,
-    "tostatus": false,
-    "complete": "true",
-    "targetType": "full",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 810,
-    "y": 340,
-    "wires": []
   },
   {
     "id": "88f74ee9.3c457",
@@ -789,5 +772,16 @@
     "x": 400,
     "y": 800,
     "wires": []
+  },
+  {
+    "id": "e3da38d6.4068b",
+    "type": "link out",
+    "z": "d3be81f2.b4ce68",
+    "name": "Teile Ziel-Temperatur",
+    "links": [],
+    "x": 760,
+    "y": 340,
+    "wires": [],
+    "l": true
   }
 ]
