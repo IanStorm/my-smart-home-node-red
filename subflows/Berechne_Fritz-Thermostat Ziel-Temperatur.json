@@ -18,8 +18,8 @@
     ],
     "out": [
       {
-        "x": 1360,
-        "y": 340,
+        "x": 1140,
+        "y": 260,
         "wires": [
           {
             "id": "48af65c1.1d85f4",
@@ -148,7 +148,7 @@
     "y": 360,
     "wires": [
       [
-        "6fab73bd.365534"
+        "4d6a6c30.b08a94"
       ],
       []
     ]
@@ -206,7 +206,7 @@
     "y": 240,
     "wires": [
       [
-        "f6dc763f.6fa38"
+        "591c596f.ed5388"
       ],
       []
     ]
@@ -235,7 +235,7 @@
     "y": 300,
     "wires": [
       [
-        "1c5f6c62.dc8dd4"
+        "828d49ee.2b3a18"
       ],
       []
     ]
@@ -258,8 +258,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 700,
-    "y": 340,
+    "x": 500,
+    "y": 320,
     "wires": [
       [
         "e52beb35.302808"
@@ -288,11 +288,11 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1030,
-    "y": 280,
+    "x": 830,
+    "y": 260,
     "wires": [
       [
-        "f9b3f37f.d94d88"
+        "48af65c1.1d85f4"
       ]
     ]
   },
@@ -301,8 +301,8 @@
     "type": "switch",
     "z": "824afeed.e518a8",
     "name": "Ist Fenster/Tür #1 zu?",
-    "property": "isClosed1",
-    "propertyType": "msg",
+    "property": "$lookup(payload, $env('contactSensor1Topic'))",
+    "propertyType": "jsonata",
     "rules": [
       {
         "t": "true"
@@ -314,8 +314,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 720,
-    "y": 280,
+    "x": 520,
+    "y": 260,
     "wires": [
       [
         "7c7de960.cb5ad8"
@@ -330,8 +330,8 @@
     "type": "switch",
     "z": "824afeed.e518a8",
     "name": "Ist Fenster/Tür #2 zu?",
-    "property": "isClosed2",
-    "propertyType": "msg",
+    "property": "$lookup(payload, $env('contactSensor2Topic'))",
+    "propertyType": "jsonata",
     "rules": [
       {
         "t": "true"
@@ -343,8 +343,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 720,
-    "y": 220,
+    "x": 520,
+    "y": 200,
     "wires": [
       [
         "c01133d2.bf1638"
@@ -364,8 +364,8 @@
         "t": "set",
         "p": "payload",
         "pt": "msg",
-        "to": "desiredTemperature",
-        "tot": "msg"
+        "to": "$lookup(payload, $env('desiredTemperatureTopic'))",
+        "tot": "jsonata"
       }
     ],
     "action": "",
@@ -373,43 +373,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1040,
-    "y": 220,
-    "wires": [
-      [
-        "f9b3f37f.d94d88"
-      ]
-    ]
-  },
-  {
-    "id": "f9b3f37f.d94d88",
-    "type": "change",
-    "z": "824afeed.e518a8",
-    "name": "Bereinige",
-    "rules": [
-      {
-        "t": "delete",
-        "p": "desiredTemperature",
-        "pt": "msg"
-      },
-      {
-        "t": "delete",
-        "p": "isClosed1",
-        "pt": "msg"
-      },
-      {
-        "t": "delete",
-        "p": "isClosed2",
-        "pt": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 1300,
-    "y": 220,
+    "x": 840,
+    "y": 200,
     "wires": [
       [
         "48af65c1.1d85f4"
@@ -435,26 +400,10 @@
     "wires": []
   },
   {
-    "id": "74341054.72f1e8",
-    "type": "debug",
-    "z": "824afeed.e518a8",
-    "name": "Logge Pre-Abfragen",
-    "active": true,
-    "tosidebar": true,
-    "console": true,
-    "tostatus": false,
-    "complete": "true",
-    "targetType": "full",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 720,
-    "y": 400,
-    "wires": []
-  },
-  {
     "id": "e9e00371.08e718",
     "type": "debug",
     "z": "824afeed.e518a8",
+    "d": true,
     "name": "Logge Resultat",
     "active": true,
     "tosidebar": true,
@@ -464,64 +413,9 @@
     "targetType": "full",
     "statusVal": "",
     "statusType": "auto",
-    "x": 1190,
-    "y": 340,
+    "x": 1110,
+    "y": 140,
     "wires": []
-  },
-  {
-    "id": "6fab73bd.365534",
-    "type": "function",
-    "z": "824afeed.e518a8",
-    "name": "Bereite vor",
-    "func": "msg.desiredTemperature = msg.payload[env.get('desiredTemperatureTopic')];\nreturn msg;\n",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 490,
-    "y": 360,
-    "wires": [
-      [
-        "4d6a6c30.b08a94",
-        "74341054.72f1e8"
-      ]
-    ]
-  },
-  {
-    "id": "1c5f6c62.dc8dd4",
-    "type": "function",
-    "z": "824afeed.e518a8",
-    "name": "Bereite vor",
-    "func": "msg.isClosed2 = msg.payload[env.get('contactSensor2Topic')];\nreturn msg;\n",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 490,
-    "y": 300,
-    "wires": [
-      [
-        "828d49ee.2b3a18"
-      ]
-    ]
-  },
-  {
-    "id": "f6dc763f.6fa38",
-    "type": "function",
-    "z": "824afeed.e518a8",
-    "name": "Bereite vor",
-    "func": "msg.isClosed1 = msg.payload[env.get('contactSensor2Topic')];\nreturn msg;\n",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 490,
-    "y": 240,
-    "wires": [
-      [
-        "591c596f.ed5388"
-      ]
-    ]
   },
   {
     "id": "48af65c1.1d85f4",
@@ -542,8 +436,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1310,
-    "y": 280,
+    "x": 1090,
+    "y": 200,
     "wires": [
       [
         "e9e00371.08e718"
