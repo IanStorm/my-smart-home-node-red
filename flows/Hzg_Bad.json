@@ -202,7 +202,7 @@
     "id": "45adf42b.448e8c",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
-    "name": "Werktags, 05:00 Uhr",
+    "name": "Werktags, 05:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -213,7 +213,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "00 05 * * 1,2,3,4,5",
+    "crontab": "30 05 * * 1,2,3,4,5",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
@@ -283,7 +283,7 @@
     "to": "",
     "reg": false,
     "x": 450,
-    "y": 1100,
+    "y": 1080,
     "wires": [
       []
     ]
@@ -315,7 +315,7 @@
     "to": "",
     "reg": false,
     "x": 450,
-    "y": 1260,
+    "y": 1180,
     "wires": [
       []
     ]
@@ -641,35 +641,6 @@
     "wires": []
   },
   {
-    "id": "840fc4b5.8cc3a",
-    "type": "inject",
-    "z": "a7755eb4.60b0d8",
-    "name": "Werktags, 06:30 Uhr",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "30 06 * * 1,2,3,4,5",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "str",
-    "x": 140,
-    "y": 1200,
-    "wires": [
-      [
-        "6a2c9246.71ceec"
-      ]
-    ]
-  },
-  {
     "id": "6e8a7568.09ee74",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
@@ -691,7 +662,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1280,
+    "y": 1160,
     "wires": [
       [
         "6a2c9246.71ceec"
@@ -702,7 +673,7 @@
     "id": "d40e879e.0a6b78",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
-    "name": "Fr.-Sa., 23:30 Uhr",
+    "name": "Fr.-Sa., 23:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -713,75 +684,17 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 23 * * 5,6",
+    "crontab": "00 23 * * 5,6",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1320,
+    "y": 1200,
     "wires": [
       [
         "6a2c9246.71ceec"
-      ]
-    ]
-  },
-  {
-    "id": "d92e1960.73c5b",
-    "type": "inject",
-    "z": "a7755eb4.60b0d8",
-    "name": "Wochenende, 11:00 Uhr",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "00 11 * * 6,0",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "str",
-    "x": 150,
-    "y": 1240,
-    "wires": [
-      [
-        "6a2c9246.71ceec"
-      ]
-    ]
-  },
-  {
-    "id": "d4c0db0c.82e3d8",
-    "type": "inject",
-    "z": "a7755eb4.60b0d8",
-    "name": "Täglich, 18:00 Uhr",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "00 18 * * *",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "str",
-    "x": 130,
-    "y": 1140,
-    "wires": [
-      [
-        "254d6cfa.9e9e6c"
       ]
     ]
   },
