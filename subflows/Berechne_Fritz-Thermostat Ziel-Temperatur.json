@@ -3,7 +3,7 @@
     "id": "824afeed.e518a8",
     "type": "subflow",
     "name": "Berechne_Fritz-Thermostat Ziel-Temperatur",
-    "info": "### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        contactSensor1Topic\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Topic used to identify messages from contact sensor #1.\n    </dd>\n    <dt>\n        contactSensor2Topic\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Topic used to identify messages from contact sensor #2. If only 1 sensor exists, provide topic for contact sensor #1 again here.\n    </dd>\n    <dt>\n        targetTemperatureTopic\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Topic used to identify messages about desired temperature.\n    </dd>\n    <dt>\n        msg.payload\n    </dt>\n    <dd>\n        See msg.topic\n    </dd>\n    <dt>\n        msg.topic\n    </dt>\n    <dd>\n        Expects 3-4 different messages with unique topics. Topics can be specified by static input fields. Only \"radiator/mainSwitch\" is a fixed required topic.\n    </dd>\n</dl>\n",
+    "info": "### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        contactSensor1Topic\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Topic used to identify messages from contact sensor #1.\n    </dd>\n    <dt>\n        contactSensor2Topic\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Topic used to identify messages from contact sensor #2. If only 1 sensor exists, provide topic for contact sensor #1 again here.\n    </dd>\n    <dt>\n        desiredTemperatureTopic\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Topic used to identify messages about desired temperature.\n    </dd>\n    <dt>\n        msg.payload\n    </dt>\n    <dd>\n        See msg.topic\n    </dd>\n    <dt>\n        msg.topic\n    </dt>\n    <dd>\n        Expects 3-4 different messages with unique topics. Topics can be specified by static input fields. Only \"radiator/mainSwitch\" is a fixed required topic.\n    </dd>\n    <dt>\n        targetTemperatureTopic\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Topic used to tag output messages about target temperature.\n    </dd>\n</dl>\n",
     "category": "",
     "in": [
       {
@@ -18,11 +18,11 @@
     ],
     "out": [
       {
-        "x": 1320,
-        "y": 280,
+        "x": 1360,
+        "y": 340,
         "wires": [
           {
-            "id": "f9b3f37f.d94d88",
+            "id": "48af65c1.1d85f4",
             "port": 0
           }
         ]
@@ -59,6 +59,19 @@
         "name": "desiredTemperatureTopic",
         "type": "str",
         "value": "-TODO: desiredTemperatureTopic-",
+        "ui": {
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      },
+      {
+        "name": "targetTemperatureTopic",
+        "type": "str",
+        "value": "-TODO: targetTemperatureTopic-",
         "ui": {
           "type": "input",
           "opts": {
@@ -135,7 +148,7 @@
     "y": 360,
     "wires": [
       [
-        "ebea32c.93d175"
+        "6fab73bd.365534"
       ],
       []
     ]
@@ -193,7 +206,7 @@
     "y": 240,
     "wires": [
       [
-        "a2c95b23.f4c1f8"
+        "f6dc763f.6fa38"
       ],
       []
     ]
@@ -202,14 +215,14 @@
     "id": "591c596f.ed5388",
     "type": "switch",
     "z": "824afeed.e518a8",
-    "name": "Hat Kontak-Sensor-2-Info?",
+    "name": "Hat Kontakt-Sensor-2-Info?",
     "property": "payload",
     "propertyType": "msg",
     "rules": [
       {
         "t": "hask",
         "v": "contactSensor2Topic",
-        "vt": "str"
+        "vt": "env"
       },
       {
         "t": "else"
@@ -222,7 +235,7 @@
     "y": 300,
     "wires": [
       [
-        "a23faa40.d932f8"
+        "1c5f6c62.dc8dd4"
       ],
       []
     ]
@@ -369,88 +382,6 @@
     ]
   },
   {
-    "id": "a2c95b23.f4c1f8",
-    "type": "change",
-    "z": "824afeed.e518a8",
-    "name": "Bereite vor",
-    "rules": [
-      {
-        "t": "set",
-        "p": "isClosed1",
-        "pt": "msg",
-        "to": "msg[$env('contactSensor1Topic')]",
-        "tot": "jsonata"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 490,
-    "y": 240,
-    "wires": [
-      [
-        "591c596f.ed5388"
-      ]
-    ]
-  },
-  {
-    "id": "a23faa40.d932f8",
-    "type": "change",
-    "z": "824afeed.e518a8",
-    "name": "Bereite vor",
-    "rules": [
-      {
-        "t": "set",
-        "p": "isClosed2",
-        "pt": "msg",
-        "to": "msg[$env('contactSensor2Topic')]",
-        "tot": "jsonata"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 490,
-    "y": 300,
-    "wires": [
-      [
-        "828d49ee.2b3a18"
-      ]
-    ]
-  },
-  {
-    "id": "ebea32c.93d175",
-    "type": "change",
-    "z": "824afeed.e518a8",
-    "name": "Bereite vor",
-    "rules": [
-      {
-        "t": "set",
-        "p": "desiredTemperature",
-        "pt": "msg",
-        "to": "msg[$env('desiredTemperatureTopic')]",
-        "tot": "jsonata"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 490,
-    "y": 360,
-    "wires": [
-      [
-        "4d6a6c30.b08a94",
-        "74341054.72f1e8"
-      ]
-    ]
-  },
-  {
     "id": "f9b3f37f.d94d88",
     "type": "change",
     "z": "824afeed.e518a8",
@@ -477,11 +408,11 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1280,
+    "x": 1300,
     "y": 220,
     "wires": [
       [
-        "e9e00371.08e718"
+        "48af65c1.1d85f4"
       ]
     ]
   },
@@ -489,6 +420,7 @@
     "id": "820ae2a4.f4096",
     "type": "debug",
     "z": "824afeed.e518a8",
+    "d": true,
     "name": "Logge Post-merge",
     "active": true,
     "tosidebar": true,
@@ -532,8 +464,90 @@
     "targetType": "full",
     "statusVal": "",
     "statusType": "auto",
-    "x": 1310,
-    "y": 160,
+    "x": 1190,
+    "y": 340,
     "wires": []
+  },
+  {
+    "id": "6fab73bd.365534",
+    "type": "function",
+    "z": "824afeed.e518a8",
+    "name": "Bereite vor",
+    "func": "msg.desiredTemperature = msg.payload[env.get('desiredTemperatureTopic')];\nreturn msg;\n",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 490,
+    "y": 360,
+    "wires": [
+      [
+        "4d6a6c30.b08a94",
+        "74341054.72f1e8"
+      ]
+    ]
+  },
+  {
+    "id": "1c5f6c62.dc8dd4",
+    "type": "function",
+    "z": "824afeed.e518a8",
+    "name": "Bereite vor",
+    "func": "msg.isClosed2 = msg.payload[env.get('contactSensor2Topic')];\nreturn msg;\n",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 490,
+    "y": 300,
+    "wires": [
+      [
+        "828d49ee.2b3a18"
+      ]
+    ]
+  },
+  {
+    "id": "f6dc763f.6fa38",
+    "type": "function",
+    "z": "824afeed.e518a8",
+    "name": "Bereite vor",
+    "func": "msg.isClosed1 = msg.payload[env.get('contactSensor2Topic')];\nreturn msg;\n",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 490,
+    "y": 240,
+    "wires": [
+      [
+        "591c596f.ed5388"
+      ]
+    ]
+  },
+  {
+    "id": "48af65c1.1d85f4",
+    "type": "change",
+    "z": "824afeed.e518a8",
+    "name": "Bereite vor",
+    "rules": [
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "targetTemperatureTopic",
+        "tot": "env"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1310,
+    "y": 280,
+    "wires": [
+      [
+        "e9e00371.08e718"
+      ]
+    ]
   }
 ]

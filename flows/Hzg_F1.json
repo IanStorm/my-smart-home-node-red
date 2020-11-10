@@ -643,6 +643,11 @@
         "name": "desiredTemperatureTopic",
         "value": "hallway1/radiator/desiredTemperature",
         "type": "str"
+      },
+      {
+        "name": "targetTemperatureTopic",
+        "value": "hallway1/radiator/targetTemperature",
+        "type": "str"
       }
     ],
     "x": 510,
