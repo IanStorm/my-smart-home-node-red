@@ -150,7 +150,9 @@
       [
         "4d6a6c30.b08a94"
       ],
-      []
+      [
+        "9881257a.4b1368"
+      ]
     ]
   },
   {
@@ -385,7 +387,6 @@
     "id": "820ae2a4.f4096",
     "type": "debug",
     "z": "824afeed.e518a8",
-    "d": true,
     "name": "Logge Post-merge",
     "active": true,
     "tosidebar": true,
@@ -403,7 +404,6 @@
     "id": "e9e00371.08e718",
     "type": "debug",
     "z": "824afeed.e518a8",
-    "d": true,
     "name": "Logge Resultat",
     "active": true,
     "tosidebar": true,
@@ -443,5 +443,22 @@
         "e9e00371.08e718"
       ]
     ]
+  },
+  {
+    "id": "9881257a.4b1368",
+    "type": "debug",
+    "z": "824afeed.e518a8",
+    "name": "Logge Eingabe",
+    "active": true,
+    "tosidebar": true,
+    "console": true,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 510,
+    "y": 400,
+    "wires": []
   }
 ]
