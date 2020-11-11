@@ -202,7 +202,7 @@
     "id": "abc52df4.686828",
     "type": "inject",
     "z": "c6075ab3.4abae8",
-    "name": "Werktags, 05:00 Uhr",
+    "name": "Werktags, 04:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -213,7 +213,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "00 05 * * 1,2,3,4,5",
+    "crontab": "30 04 * * 1,2,3,4,5",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
