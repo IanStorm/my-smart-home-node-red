@@ -14,7 +14,7 @@
     "name": "Bei Anruf",
     "topic": "",
     "x": 100,
-    "y": 260,
+    "y": 300,
     "wires": [
       [
         "be665aec.635b"
@@ -62,10 +62,10 @@
     "repair": false,
     "outputs": 2,
     "x": 280,
-    "y": 260,
+    "y": 300,
     "wires": [
       [
-        "d534eedf.0dcd98"
+        "687ab754.0e379"
       ],
       [
         "aeedd82a.e5cda8"
@@ -133,7 +133,7 @@
     "phonebook": "1",
     "ccode": "DE",
     "x": 420,
-    "y": 320,
+    "y": 360,
     "wires": [
       [
         "8c8cf452.ca6cb8"
@@ -147,7 +147,7 @@
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 540,
+    "y": 580,
     "wires": []
   },
   {
@@ -201,8 +201,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 510,
-    "y": 240,
+    "x": 710,
+    "y": 280,
     "wires": [
       []
     ]
@@ -220,7 +220,7 @@
     "format": "{{msg.payload}}",
     "layout": "row-spread",
     "x": 580,
-    "y": 660,
+    "y": 700,
     "wires": []
   },
   {
@@ -242,8 +242,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 500,
-    "y": 280,
+    "x": 700,
+    "y": 320,
     "wires": [
       []
     ]
@@ -258,7 +258,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 320,
+    "y": 360,
     "wires": [
       [
         "e4e21cb4.a5db6"
@@ -286,7 +286,7 @@
     "repair": false,
     "outputs": 2,
     "x": 630,
-    "y": 320,
+    "y": 360,
     "wires": [
       [
         "9b6c930f.4f839"
@@ -318,7 +318,7 @@
     "to": "",
     "reg": false,
     "x": 900,
-    "y": 320,
+    "y": 360,
     "wires": [
       []
     ]
@@ -331,7 +331,7 @@
     "name": "Bei Anruf",
     "topic": "",
     "x": 100,
-    "y": 400,
+    "y": 440,
     "wires": [
       [
         "6eb97447.06e99c"
@@ -359,7 +359,7 @@
     "repair": false,
     "outputs": 2,
     "x": 280,
-    "y": 400,
+    "y": 440,
     "wires": [
       [
         "64c12f8f.019e98"
@@ -393,7 +393,7 @@
     "to": "",
     "reg": false,
     "x": 520,
-    "y": 380,
+    "y": 420,
     "wires": [
       []
     ]
@@ -418,7 +418,7 @@
     "to": "",
     "reg": false,
     "x": 520,
-    "y": 420,
+    "y": 460,
     "wires": [
       []
     ]
@@ -433,7 +433,7 @@
     "phonebook": "1",
     "ccode": "DE",
     "x": 420,
-    "y": 460,
+    "y": 500,
     "wires": [
       [
         "4ddde829.b3e3a8"
@@ -450,7 +450,7 @@
     ],
     "uncaught": false,
     "x": 170,
-    "y": 460,
+    "y": 500,
     "wires": [
       [
         "e2bac70e.41323"
@@ -478,7 +478,7 @@
     "repair": false,
     "outputs": 2,
     "x": 650,
-    "y": 460,
+    "y": 500,
     "wires": [
       [
         "36013fe4.3390f"
@@ -510,7 +510,7 @@
     "to": "",
     "reg": false,
     "x": 920,
-    "y": 460,
+    "y": 500,
     "wires": [
       []
     ]
@@ -528,7 +528,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 120,
-    "y": 600,
+    "y": 640,
     "wires": [
       [
         "d0d24b9f.a8e2a"
@@ -549,7 +549,7 @@
     "fwdInMessages": true,
     "templateScope": "local",
     "x": 580,
-    "y": 600,
+    "y": 640,
     "wires": [
       []
     ]
@@ -563,11 +563,12 @@
       "36f9e9c.ef01816",
       "d534eedf.0dcd98",
       "aeedd82a.e5cda8",
-      "9b6c930f.4f839"
+      "9b6c930f.4f839",
+      "4ac57173.306ac"
     ],
     "uncaught": false,
     "x": 120,
-    "y": 660,
+    "y": 700,
     "wires": [
       [
         "1f08b2eb.7e200d"
@@ -587,7 +588,7 @@
     ],
     "uncaught": false,
     "x": 140,
-    "y": 720,
+    "y": 760,
     "wires": [
       [
         "b989ab9e.5125b8"
@@ -614,7 +615,7 @@
     "to": "",
     "reg": false,
     "x": 350,
-    "y": 660,
+    "y": 700,
     "wires": [
       [
         "276b0b6a.b65784"
@@ -641,7 +642,7 @@
     "to": "",
     "reg": false,
     "x": 370,
-    "y": 720,
+    "y": 760,
     "wires": [
       [
         "c9bd0d5d.4b8648"
@@ -661,7 +662,63 @@
     "format": "{{msg.payload}}",
     "layout": "row-spread",
     "x": 590,
-    "y": 720,
+    "y": 760,
     "wires": []
+  },
+  {
+    "id": "687ab754.0e379",
+    "type": "switch",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Ist unterdrückt?",
+    "property": "payload.caller",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 480,
+    "y": 260,
+    "wires": [
+      [
+        "4ac57173.306ac"
+      ],
+      [
+        "d534eedf.0dcd98"
+      ]
+    ]
+  },
+  {
+    "id": "4ac57173.306ac",
+    "type": "change",
+    "z": "c8fe4e83.6f1b68",
+    "name": "Merke \"Unterdrückt\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "call.inbound",
+        "pt": "flow",
+        "to": "Unterdrückt",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 700,
+    "y": 240,
+    "wires": [
+      []
+    ]
   }
 ]
