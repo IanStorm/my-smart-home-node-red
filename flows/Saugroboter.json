@@ -292,6 +292,7 @@
     "id": "c46e5a7c.0c9e3",
     "type": "inject",
     "z": "ef9247c6.cadc28",
+    "d": true,
     "name": "Alle 1h",
     "props": [
       {
@@ -490,6 +491,7 @@
     "id": "fa314cb0.f452f8",
     "type": "inject",
     "z": "ef9247c6.cadc28",
+    "d": true,
     "name": "Alle 1h",
     "props": [
       {
@@ -519,6 +521,7 @@
     "id": "89ff3171.2a9c28",
     "type": "inject",
     "z": "ef9247c6.cadc28",
+    "d": true,
     "name": "Alle 1h",
     "props": [
       {
@@ -548,6 +551,7 @@
     "id": "35e47e75.c57aba",
     "type": "inject",
     "z": "ef9247c6.cadc28",
+    "d": true,
     "name": "Alle 1h",
     "props": [
       {
@@ -577,6 +581,7 @@
     "id": "61172a0b.18b63c",
     "type": "inject",
     "z": "ef9247c6.cadc28",
+    "d": true,
     "name": "Alle 1h",
     "props": [
       {
@@ -606,6 +611,7 @@
     "id": "e608f96b.6b1f98",
     "type": "inject",
     "z": "ef9247c6.cadc28",
+    "d": true,
     "name": "Alle 1h",
     "props": [
       {
@@ -635,6 +641,7 @@
     "id": "912c1901.2790b8",
     "type": "inject",
     "z": "ef9247c6.cadc28",
+    "d": true,
     "name": "Alle 1h",
     "props": [
       {
@@ -664,6 +671,7 @@
     "id": "d61b47eb.aa5dd",
     "type": "inject",
     "z": "ef9247c6.cadc28",
+    "d": true,
     "name": "Alle 1h",
     "props": [
       {
@@ -693,6 +701,7 @@
     "id": "c3f855a5.1fda68",
     "type": "inject",
     "z": "ef9247c6.cadc28",
+    "d": true,
     "name": "Alle 1h",
     "props": [
       {
