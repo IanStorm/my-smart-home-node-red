@@ -80,7 +80,7 @@
       "name": "Smart Home",
       "hideToolbar": "false",
       "allowSwipe": "false",
-      "lockMenu": "false",
+      "lockMenu": "icon",
       "allowTempTheme": "true",
       "dateFormat": "YYYY-MM-DD",
       "sizes": {
