@@ -13,7 +13,7 @@
     "node-red-contrib-roomba980-fw2": "file:./contrib/node-red-contrib-roomba980-fw2",
     "node-red-contrib-sunevents": "2.0.3",
     "node-red-contrib-zigbee2mqtt": "0.6.2",
-    "node-red-dashboard": "2.24.0",
+    "node-red-dashboard": "2.24.2",
     "node-red-node-openweathermap": "0.3.2",
     "node-red-node-ui-table": "0.3.7",
     "node-red-node-wol": "0.1.0"
