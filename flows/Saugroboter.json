@@ -20,15 +20,24 @@
     "id": "a35f26f0.c061c8",
     "type": "inject",
     "z": "ef9247c6.cadc28",
-    "name": "Mo. & Do., 8 Uhr",
+    "name": "Mo.&Do., 10:00 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
     "repeat": "",
-    "crontab": "00 08 * * 1,4",
+    "crontab": "00 10 * * 1,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 130,
+    "x": 140,
     "y": 780,
     "wires": [
       [
@@ -40,7 +49,7 @@
     "id": "545ada08.831764",
     "type": "change",
     "z": "ef9247c6.cadc28",
-    "name": "Startbefehl",
+    "name": "Setze Startbefehl",
     "rules": [
       {
         "t": "set",
@@ -55,7 +64,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 330,
+    "x": 370,
     "y": 780,
     "wires": [
       [
@@ -68,8 +77,8 @@
     "type": "basic",
     "z": "ef9247c6.cadc28",
     "connection": "f438956c.669a58",
-    "name": "",
-    "x": 490,
+    "name": "Befolge Befehl",
+    "x": 580,
     "y": 780,
     "wires": [
       []
