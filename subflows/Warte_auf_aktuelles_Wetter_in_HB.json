@@ -8,21 +8,41 @@
     "in": [],
     "out": [
       {
-        "x": 640,
-        "y": 300,
+        "x": 1000,
+        "y": 380,
         "wires": [
           {
-            "id": "cc970877.dbfb88",
+            "id": "a8154467.eb4728",
             "port": 0
           }
         ]
       },
       {
-        "x": 640,
-        "y": 340,
+        "x": 1000,
+        "y": 420,
         "wires": [
           {
             "id": "1eaed633.52acfa",
+            "port": 0
+          }
+        ]
+      },
+      {
+        "x": 1000,
+        "y": 460,
+        "wires": [
+          {
+            "id": "20f69145.7d0d7e",
+            "port": 0
+          }
+        ]
+      },
+      {
+        "x": 1000,
+        "y": 500,
+        "wires": [
+          {
+            "id": "748b370.ae6b548",
             "port": 0
           }
         ]
@@ -32,7 +52,9 @@
     "color": "#DDAA99",
     "outputLabels": [
       "icon",
-      "temperature"
+      "temperature",
+      "wind direction",
+      "wind speed"
     ],
     "icon": "font-awesome/fa-cloud"
   },
@@ -96,24 +118,6 @@
     ]
   },
   {
-    "id": "482fdeed.0936",
-    "type": "rbe",
-    "z": "1dd94cb5.93a4f3",
-    "name": "Daten geändert?",
-    "func": "rbe",
-    "gap": "",
-    "start": "",
-    "inout": "out",
-    "property": "payload",
-    "x": 290,
-    "y": 280,
-    "wires": [
-      [
-        "cc970877.dbfb88"
-      ]
-    ]
-  },
-  {
     "id": "dafb304a.334168",
     "type": "change",
     "z": "1dd94cb5.93a4f3",
@@ -132,20 +136,6 @@
         "pt": "msg",
         "to": "{}",
         "tot": "json"
-      },
-      {
-        "t": "set",
-        "p": "payload['weather/current/temperature']",
-        "pt": "msg",
-        "to": "raw.current.temp",
-        "tot": "msg"
-      },
-      {
-        "t": "set",
-        "p": "payload['weather/current/icon']",
-        "pt": "msg",
-        "to": "raw.current.weather[0].icon",
-        "tot": "msg"
       }
     ],
     "action": "",
@@ -157,7 +147,7 @@
     "y": 160,
     "wires": [
       [
-        "10292771.b673c9"
+        "67ab74a.297d48c"
       ]
     ]
   },
@@ -179,7 +169,7 @@
     "to": "",
     "reg": false,
     "x": 260,
-    "y": 200,
+    "y": 240,
     "wires": [
       [
         "68e86f46.a75598"
@@ -198,10 +188,10 @@
     "stream": false,
     "addname": "topic",
     "x": 260,
-    "y": 240,
+    "y": 280,
     "wires": [
       [
-        "482fdeed.0936"
+        "ea1de345.eeb078"
       ]
     ]
   },
@@ -222,17 +212,35 @@
         "t": "cont",
         "v": "temperature",
         "vt": "str"
+      },
+      {
+        "t": "cont",
+        "v": "direction",
+        "vt": "str"
+      },
+      {
+        "t": "cont",
+        "v": "speed",
+        "vt": "str"
       }
     ],
     "checkall": "false",
     "repair": false,
-    "outputs": 2,
+    "outputs": 4,
     "x": 280,
-    "y": 320,
+    "y": 440,
     "wires": [
-      [],
       [
-        "1eaed633.52acfa"
+        "a8154467.eb4728"
+      ],
+      [
+        "39bb4d32.8df28a"
+      ],
+      [
+        "df21b259.5c3a7"
+      ],
+      [
+        "c548d6ce.3c9f98"
       ]
     ]
   },
@@ -247,9 +255,242 @@
     "action": "scale",
     "round": true,
     "property": "payload",
-    "name": "Formattiere Temp.",
+    "name": "Runde",
+    "x": 790,
+    "y": 420,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "ea1de345.eeb078",
+    "type": "change",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Setze Topic",
+    "rules": [
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "$join(['weather', 'current', topic], '/')",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 270,
+    "y": 320,
+    "wires": [
+      [
+        "c9f11da8.84004"
+      ]
+    ]
+  },
+  {
+    "id": "c9f11da8.84004",
+    "type": "change",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Bereinige",
+    "rules": [
+      {
+        "t": "delete",
+        "p": "parts",
+        "pt": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 260,
+    "y": 360,
+    "wires": [
+      [
+        "cc970877.dbfb88"
+      ]
+    ]
+  },
+  {
+    "id": "a8154467.eb4728",
+    "type": "rbe",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Symbol geändert?",
+    "func": "rbe",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "property": "payload",
     "x": 490,
-    "y": 340,
+    "y": 380,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "39bb4d32.8df28a",
+    "type": "rbe",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Temperatur geändert?",
+    "func": "rbe",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "property": "payload",
+    "x": 500,
+    "y": 420,
+    "wires": [
+      [
+        "1eaed633.52acfa"
+      ]
+    ]
+  },
+  {
+    "id": "67ab74a.297d48c",
+    "type": "change",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Hole Daten",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload.icon",
+        "pt": "msg",
+        "to": "raw.current.weather[0].icon",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "payload.temperature",
+        "pt": "msg",
+        "to": "raw.current.temp",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "payload['wind/direction']",
+        "pt": "msg",
+        "to": "raw.current.wind_deg",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "payload['wind/speed']",
+        "pt": "msg",
+        "to": "raw.current.wind_speed",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 270,
+    "y": 200,
+    "wires": [
+      [
+        "10292771.b673c9"
+      ]
+    ]
+  },
+  {
+    "id": "df21b259.5c3a7",
+    "type": "rbe",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Wind-Richtung geändert?",
+    "func": "rbe",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "property": "payload",
+    "x": 510,
+    "y": 460,
+    "wires": [
+      [
+        "fbd2c2ed.4572c"
+      ]
+    ]
+  },
+  {
+    "id": "c548d6ce.3c9f98",
+    "type": "rbe",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Wind-Geschw. geändert?",
+    "func": "rbe",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "property": "payload",
+    "x": 510,
+    "y": 500,
+    "wires": [
+      [
+        "748b370.ae6b548"
+      ]
+    ]
+  },
+  {
+    "id": "fbd2c2ed.4572c",
+    "type": "compass-point",
+    "z": "1dd94cb5.93a4f3",
+    "direction": "toCompass",
+    "subset": "secondary",
+    "language": "en",
+    "inputField": "payload",
+    "outputField": "payload",
+    "name": "Rechne um",
+    "x": 710,
+    "y": 460,
+    "wires": [
+      [
+        "20f69145.7d0d7e"
+      ]
+    ]
+  },
+  {
+    "id": "20f69145.7d0d7e",
+    "type": "change",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Bereite vor",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload.direction",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 870,
+    "y": 460,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "748b370.ae6b548",
+    "type": "unit-converter",
+    "z": "1dd94cb5.93a4f3",
+    "category": "speed",
+    "inputUnit": "m/s",
+    "outputUnit": "km/h",
+    "inputField": "payload",
+    "outputField": "payload",
+    "inputFieldType": "msg",
+    "outputFieldType": "msg",
+    "roundOutputField": true,
+    "outputFieldDecimals": "0",
+    "name": "Rechne in km/h um",
+    "x": 790,
+    "y": 500,
     "wires": [
       []
     ]

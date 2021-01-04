@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "node-red": "1.2.2",
+    "node-red-contrib-compass": "1.0.1",
     "node-red-contrib-cpu": "0.0.4",
     "node-red-contrib-credentials": "0.2.1",
     "node-red-contrib-flow-manager": "0.7.1",
@@ -13,6 +14,7 @@
     "node-red-contrib-os": "0.1.7",
     "node-red-contrib-roomba980-fw2": "file:./contrib/node-red-contrib-roomba980-fw2",
     "node-red-contrib-sunevents": "2.0.3",
+    "node-red-contrib-unit-converter": "0.0.2",
     "node-red-contrib-zigbee2mqtt": "0.6.2",
     "node-red-dashboard": "2.26.1",
     "node-red-node-openweathermap": "0.3.2",

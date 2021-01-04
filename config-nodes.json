@@ -458,16 +458,7 @@
     "collapse": false
   },
   {
-    "id": "32e20994.d1989e",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "22abfc75.b9b2e4",
-    "order": 5,
-    "width": 2,
-    "height": 1
-  },
-  {
-    "id": "f09dbfed.09b08",
+    "id": "32bb87bc.061fe8",
     "type": "ui_spacer",
     "name": "spacer",
     "group": "22abfc75.b9b2e4",
@@ -476,92 +467,11 @@
     "height": 1
   },
   {
-    "id": "f8eb2aa1.3fdd6",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "e7215ad9.54bc5",
-    "order": 7,
-    "width": 1,
-    "height": 1
-  },
-  {
-    "id": "209f1b64.a7c1d4",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "e7215ad9.54bc5",
-    "order": 9,
-    "width": 1,
-    "height": 1
-  },
-  {
-    "id": "53ad4093.8b1c4",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "e7215ad9.54bc5",
-    "order": 11,
-    "width": 4,
-    "height": 1
-  },
-  {
-    "id": "6a262e9e.a5e178",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "259c1fb2.ed8768",
-    "order": 7,
-    "width": 1,
-    "height": 1
-  },
-  {
-    "id": "dc241e8c.b8afd",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "259c1fb2.ed8768",
-    "order": 9,
-    "width": 1,
-    "height": 1
-  },
-  {
-    "id": "8050db79.283d3",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "259c1fb2.ed8768",
-    "order": 11,
-    "width": 4,
-    "height": 1
-  },
-  {
-    "id": "6096555d.52768c",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "4587520c.baf024",
-    "order": 7,
-    "width": 1,
-    "height": 1
-  },
-  {
-    "id": "236229b1.850f56",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "4587520c.baf024",
-    "order": 9,
-    "width": 1,
-    "height": 1
-  },
-  {
-    "id": "556a731d.d15864",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "4587520c.baf024",
-    "order": 11,
-    "width": 4,
-    "height": 1
-  },
-  {
-    "id": "7ef0cb36.5567b4",
+    "id": "e1e16f58.db15e",
     "type": "ui_spacer",
     "name": "spacer",
     "group": "2b39cfe.8e9f33",
-    "order": 5,
+    "order": 4,
     "width": "6",
     "height": 1
   }

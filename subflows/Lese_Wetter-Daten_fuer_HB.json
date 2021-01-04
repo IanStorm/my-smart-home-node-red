@@ -228,6 +228,11 @@
       },
       {
         "t": "delete",
+        "p": "statusCode",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
         "p": "url",
         "pt": "msg"
       }

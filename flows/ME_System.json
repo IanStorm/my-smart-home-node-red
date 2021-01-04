@@ -366,7 +366,7 @@
     "name": "Zeige Paket-Versionen",
     "order": 2,
     "width": "6",
-    "height": "14",
+    "height": "16",
     "columns": [
       {
         "field": "name",
