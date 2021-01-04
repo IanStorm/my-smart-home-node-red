@@ -41,7 +41,7 @@
     "type": "ui_text",
     "z": "311aacb9.34a24c",
     "group": "22abfc75.b9b2e4",
-    "order": 3,
+    "order": 4,
     "width": 2,
     "height": 1,
     "name": "Zeige Uhrzeit",
@@ -166,22 +166,6 @@
     ]
   },
   {
-    "id": "3405d8e3.6ab08",
-    "type": "ui_text",
-    "z": "311aacb9.34a24c",
-    "group": "22abfc75.b9b2e4",
-    "order": 7,
-    "width": "2",
-    "height": 1,
-    "name": "Zeige Wetter-Daten",
-    "label": "<i class=\"wi wi-owm-{{msg.payload.key}}\"></i>",
-    "format": "{{msg.payload.value}}°C",
-    "layout": "row-spread",
-    "x": 590,
-    "y": 460,
-    "wires": []
-  },
-  {
     "id": "81e3c007.4481b8",
     "type": "change",
     "z": "311aacb9.34a24c",
@@ -204,65 +188,6 @@
     "y": 200,
     "wires": [
       []
-    ]
-  },
-  {
-    "id": "24db8dfe.80490a",
-    "type": "change",
-    "z": "311aacb9.34a24c",
-    "name": "Hole Wetter-Daten",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "{}",
-        "tot": "json"
-      },
-      {
-        "t": "set",
-        "p": "payload.key",
-        "pt": "msg",
-        "to": "weather.icon",
-        "tot": "flow"
-      },
-      {
-        "t": "set",
-        "p": "payload.value",
-        "pt": "msg",
-        "to": "weather.current_temp",
-        "tot": "flow"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 370,
-    "y": 460,
-    "wires": [
-      [
-        "3405d8e3.6ab08"
-      ]
-    ]
-  },
-  {
-    "id": "90daccc4.d1e6f8",
-    "type": "complete",
-    "z": "311aacb9.34a24c",
-    "name": "Warte auf Wetter-Daten",
-    "scope": [
-      "81e3c007.4481b8",
-      "a6a8e65d.21ae38"
-    ],
-    "uncaught": false,
-    "x": 140,
-    "y": 460,
-    "wires": [
-      [
-        "24db8dfe.80490a"
-      ]
     ]
   },
   {
@@ -361,5 +286,129 @@
         "169a6858.ea146"
       ]
     ]
+  },
+  {
+    "id": "84ad8a55.b8b4e8",
+    "type": "complete",
+    "z": "311aacb9.34a24c",
+    "name": "Warte auf Wetter-Icon",
+    "scope": [
+      "81e3c007.4481b8"
+    ],
+    "uncaught": false,
+    "x": 140,
+    "y": 460,
+    "wires": [
+      [
+        "da039b9f.aa856"
+      ]
+    ]
+  },
+  {
+    "id": "da039b9f.aa856",
+    "type": "change",
+    "z": "311aacb9.34a24c",
+    "name": "Hole Wetter-Icon",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "weather.icon",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 370,
+    "y": 460,
+    "wires": [
+      [
+        "b88fa3b6.5bce6"
+      ]
+    ]
+  },
+  {
+    "id": "b88fa3b6.5bce6",
+    "type": "ui_template",
+    "z": "311aacb9.34a24c",
+    "group": "22abfc75.b9b2e4",
+    "name": "Zeige Wetter-Icon",
+    "order": 2,
+    "width": 2,
+    "height": 2,
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"wi wi-owm-{{msg.payload}}\" style=\"font-size: inherit;\">\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "x": 590,
+    "y": 460,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "a4e2b7a7.20b1f",
+    "type": "complete",
+    "z": "311aacb9.34a24c",
+    "name": "Warte auf akt. Temp.",
+    "scope": [
+      "a6a8e65d.21ae38"
+    ],
+    "uncaught": false,
+    "x": 130,
+    "y": 520,
+    "wires": [
+      [
+        "3ad473e7.ed4004"
+      ]
+    ]
+  },
+  {
+    "id": "3ad473e7.ed4004",
+    "type": "change",
+    "z": "311aacb9.34a24c",
+    "name": "Hole akt. Temp.",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "weather.current_temp",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 360,
+    "y": 520,
+    "wires": [
+      [
+        "3a711f9a.a3d53"
+      ]
+    ]
+  },
+  {
+    "id": "3a711f9a.a3d53",
+    "type": "ui_text",
+    "z": "311aacb9.34a24c",
+    "group": "22abfc75.b9b2e4",
+    "order": 3,
+    "width": 2,
+    "height": 1,
+    "name": "Zeige akt. Temp.",
+    "label": "",
+    "format": "{{msg.payload}}°C",
+    "layout": "row-center",
+    "x": 580,
+    "y": 520,
+    "wires": []
   }
 ]
