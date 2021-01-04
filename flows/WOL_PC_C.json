@@ -1,0 +1,230 @@
+[
+  {
+    "id": "5d9e33af.fde61c",
+    "type": "tab",
+    "label": "WOL_PC_C",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "8f60b0f1.ebe088",
+    "type": "comment",
+    "z": "5d9e33af.fde61c",
+    "name": "GUI",
+    "info": "",
+    "x": 90,
+    "y": 260,
+    "wires": []
+  },
+  {
+    "id": "23ea9c0a.23ed5c",
+    "type": "comment",
+    "z": "5d9e33af.fde61c",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "df74ab7.ef2f958",
+    "type": "comment",
+    "z": "5d9e33af.fde61c",
+    "name": "Wake On LAN -> Arbeitszimmer -> Christian's PC",
+    "info": "",
+    "x": 200,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "7937b012.ff0e78",
+    "type": "inject",
+    "z": "5d9e33af.fde61c",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 380,
+    "wires": [
+      [
+        "a49c3cd6.0c5798"
+      ]
+    ]
+  },
+  {
+    "id": "a49c3cd6.0c5798",
+    "type": "ui_button",
+    "z": "5d9e33af.fde61c",
+    "name": "Interaktion WOL",
+    "group": "259c1fb2.ed8768",
+    "order": 8,
+    "width": 2,
+    "height": 1,
+    "passthru": false,
+    "label": "PC aufwecken",
+    "tooltip": "",
+    "color": "",
+    "bgcolor": "",
+    "icon": "",
+    "payload": "",
+    "payloadType": "str",
+    "topic": "",
+    "x": 300,
+    "y": 380,
+    "wires": [
+      [
+        "f002775e.38481"
+      ]
+    ]
+  },
+  {
+    "id": "38d33e3b.2d7ae2",
+    "type": "wake on lan",
+    "z": "5d9e33af.fde61c",
+    "mac": "",
+    "host": "192.168.178.255",
+    "udpport": "9",
+    "name": "Wecke PC auf",
+    "x": 760,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "19675379.ee49cd",
+    "type": "inject",
+    "z": "5d9e33af.fde61c",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload",
+        "v": "",
+        "vt": "str"
+      },
+      {
+        "p": "topic",
+        "v": "",
+        "vt": "string"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 320,
+    "wires": [
+      [
+        "72d2f7e4.81257"
+      ]
+    ]
+  },
+  {
+    "id": "72d2f7e4.81257",
+    "type": "ui_template",
+    "z": "5d9e33af.fde61c",
+    "group": "259c1fb2.ed8768",
+    "name": "Zeige Computer-Icon",
+    "order": 10,
+    "width": 2,
+    "height": 2,
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        devices\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "x": 320,
+    "y": 320,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "94b0d4cd.69527",
+    "type": "inject",
+    "z": "5d9e33af.fde61c",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 180,
+    "wires": [
+      [
+        "2e3e6adb.916b0e"
+      ]
+    ]
+  },
+  {
+    "id": "2e3e6adb.916b0e",
+    "type": "change",
+    "z": "5d9e33af.fde61c",
+    "name": "Merke WOL-Daten",
+    "rules": [
+      {
+        "t": "set",
+        "p": "pc.macAddress",
+        "pt": "flow",
+        "to": "18:31:BF:CC:4D:87",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 310,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f002775e.38481",
+    "type": "change",
+    "z": "5d9e33af.fde61c",
+    "name": "Hole WOL-Daten",
+    "rules": [
+      {
+        "t": "set",
+        "p": "mac",
+        "pt": "msg",
+        "to": "pc.macAddress",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 550,
+    "y": 380,
+    "wires": [
+      [
+        "38d33e3b.2d7ae2"
+      ]
+    ]
+  }
+]

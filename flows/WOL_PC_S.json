@@ -1,0 +1,209 @@
+[
+  {
+    "id": "bb503f81.271618",
+    "type": "tab",
+    "label": "WOL_PC_S",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "da35e188.a0515",
+    "type": "comment",
+    "z": "bb503f81.271618",
+    "name": "GUI",
+    "info": "",
+    "x": 90,
+    "y": 260,
+    "wires": []
+  },
+  {
+    "id": "58ae51fb.f6ebf",
+    "type": "comment",
+    "z": "bb503f81.271618",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "29e53e15.1548fa",
+    "type": "comment",
+    "z": "bb503f81.271618",
+    "name": "Wake On LAN -> Arbeitszimmer -> Sandra's PC",
+    "info": "",
+    "x": 200,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "3f036607.33036a",
+    "type": "inject",
+    "z": "bb503f81.271618",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 380,
+    "wires": [
+      [
+        "f5df81d2.48847"
+      ]
+    ]
+  },
+  {
+    "id": "f5df81d2.48847",
+    "type": "ui_button",
+    "z": "bb503f81.271618",
+    "name": "Interaktion WOL",
+    "group": "e7215ad9.54bc5",
+    "order": 8,
+    "width": 2,
+    "height": 1,
+    "passthru": false,
+    "label": "PC aufwecken",
+    "tooltip": "",
+    "color": "",
+    "bgcolor": "",
+    "icon": "",
+    "payload": "",
+    "payloadType": "str",
+    "topic": "",
+    "x": 300,
+    "y": 380,
+    "wires": [
+      [
+        "ade55c12.2b671"
+      ]
+    ]
+  },
+  {
+    "id": "ba1811a4.d9ed08",
+    "type": "wake on lan",
+    "z": "bb503f81.271618",
+    "mac": "",
+    "host": "192.168.178.255",
+    "udpport": "9",
+    "name": "Wecke PC auf",
+    "x": 760,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "2dc2f3e9.4b900c",
+    "type": "inject",
+    "z": "bb503f81.271618",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 320,
+    "wires": [
+      [
+        "e2fbfd10.698378"
+      ]
+    ]
+  },
+  {
+    "id": "e2fbfd10.698378",
+    "type": "ui_template",
+    "z": "bb503f81.271618",
+    "group": "e7215ad9.54bc5",
+    "name": "Zeige Computer-Icon",
+    "order": 10,
+    "width": 2,
+    "height": 2,
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        devices\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "x": 320,
+    "y": 320,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "cc27242a.34b228",
+    "type": "inject",
+    "z": "bb503f81.271618",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 180,
+    "wires": [
+      [
+        "708af3d3.ee006c"
+      ]
+    ]
+  },
+  {
+    "id": "708af3d3.ee006c",
+    "type": "change",
+    "z": "bb503f81.271618",
+    "name": "Merke WOL-Daten",
+    "rules": [
+      {
+        "t": "set",
+        "p": "pc.macAddress",
+        "pt": "flow",
+        "to": "94:DE:80:CE:26:42",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 310,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "ade55c12.2b671",
+    "type": "change",
+    "z": "bb503f81.271618",
+    "name": "Hole WOL-Daten",
+    "rules": [
+      {
+        "t": "set",
+        "p": "mac",
+        "pt": "msg",
+        "to": "pc.macAddress",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 550,
+    "y": 380,
+    "wires": [
+      [
+        "ba1811a4.d9ed08"
+      ]
+    ]
+  }
+]
