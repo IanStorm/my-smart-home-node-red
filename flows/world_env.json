@@ -48,7 +48,7 @@
     "label": "<i class=\"material-icons\">access_time</i>",
     "format": "{{msg.payload}}",
     "layout": "row-spread",
-    "x": 570,
+    "x": 590,
     "y": 400,
     "wires": []
   },
@@ -96,29 +96,9 @@
     "label": "<i class=\"material-icons\">today</i>",
     "format": "{{msg.payload}}",
     "layout": "row-spread",
-    "x": 570,
+    "x": 590,
     "y": 340,
     "wires": []
-  },
-  {
-    "id": "7765d8b5.58db38",
-    "type": "openweathermap in",
-    "z": "311aacb9.34a24c",
-    "name": "Warte auf OpenWeatherMap",
-    "wtype": "current",
-    "lon": "",
-    "lat": "",
-    "city": "Bremen",
-    "country": "Germany",
-    "language": "en",
-    "x": 160,
-    "y": 180,
-    "wires": [
-      [
-        "81e3c007.4481b8",
-        "72908a29.0d5bd4"
-      ]
-    ]
   },
   {
     "id": "2117869e.9ae2c2",
@@ -141,103 +121,6 @@
     "wires": []
   },
   {
-    "id": "a6a8e65d.21ae38",
-    "type": "change",
-    "z": "311aacb9.34a24c",
-    "name": "Merke akt. Temp.",
-    "rules": [
-      {
-        "t": "set",
-        "p": "weather.current_temp",
-        "pt": "flow",
-        "to": "payload",
-        "tot": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 870,
-    "y": 160,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "81e3c007.4481b8",
-    "type": "change",
-    "z": "311aacb9.34a24c",
-    "name": "Merke Wetter-Icon",
-    "rules": [
-      {
-        "t": "set",
-        "p": "weather.icon",
-        "pt": "flow",
-        "to": "payload.icon",
-        "tot": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 410,
-    "y": 200,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "604ed99e.3a8a9",
-    "type": "range",
-    "z": "311aacb9.34a24c",
-    "minin": "-100",
-    "maxin": "100",
-    "minout": "-100",
-    "maxout": "100",
-    "action": "scale",
-    "round": true,
-    "property": "payload",
-    "name": "Formatiere akt. Temp.",
-    "x": 640,
-    "y": 160,
-    "wires": [
-      [
-        "a6a8e65d.21ae38"
-      ]
-    ]
-  },
-  {
-    "id": "72908a29.0d5bd4",
-    "type": "change",
-    "z": "311aacb9.34a24c",
-    "name": "Lese akt. Temp.",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "payload.tempc",
-        "tot": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 400,
-    "y": 160,
-    "wires": [
-      [
-        "604ed99e.3a8a9"
-      ]
-    ]
-  },
-  {
     "id": "7e3c009f.89b93",
     "type": "moment",
     "z": "311aacb9.34a24c",
@@ -254,7 +137,7 @@
     "output": "payload",
     "outputType": "msg",
     "outTz": "Europe/Berlin",
-    "x": 370,
+    "x": 390,
     "y": 340,
     "wires": [
       [
@@ -279,7 +162,7 @@
     "output": "payload",
     "outputType": "msg",
     "outTz": "Europe/Berlin",
-    "x": 370,
+    "x": 390,
     "y": 400,
     "wires": [
       [
@@ -291,39 +174,12 @@
     "id": "84ad8a55.b8b4e8",
     "type": "complete",
     "z": "311aacb9.34a24c",
-    "name": "Warte auf Wetter-Icon",
+    "name": "Warte auf Wetter-Symbol",
     "scope": [
-      "81e3c007.4481b8"
+      "33c1e3fb.d830fc"
     ],
     "uncaught": false,
-    "x": 140,
-    "y": 460,
-    "wires": [
-      [
-        "da039b9f.aa856"
-      ]
-    ]
-  },
-  {
-    "id": "da039b9f.aa856",
-    "type": "change",
-    "z": "311aacb9.34a24c",
-    "name": "Hole Wetter-Icon",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "weather.icon",
-        "tot": "flow"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 370,
+    "x": 150,
     "y": 460,
     "wires": [
       [
@@ -336,7 +192,7 @@
     "type": "ui_template",
     "z": "311aacb9.34a24c",
     "group": "22abfc75.b9b2e4",
-    "name": "Zeige Wetter-Icon",
+    "name": "Zeige Wetter-Symbol",
     "order": 2,
     "width": 2,
     "height": 2,
@@ -345,7 +201,7 @@
     "fwdInMessages": true,
     "resendOnRefresh": true,
     "templateScope": "local",
-    "x": 590,
+    "x": 620,
     "y": 460,
     "wires": [
       []
@@ -357,37 +213,10 @@
     "z": "311aacb9.34a24c",
     "name": "Warte auf akt. Temp.",
     "scope": [
-      "a6a8e65d.21ae38"
+      "23b5997c.7af52e"
     ],
     "uncaught": false,
     "x": 130,
-    "y": 520,
-    "wires": [
-      [
-        "3ad473e7.ed4004"
-      ]
-    ]
-  },
-  {
-    "id": "3ad473e7.ed4004",
-    "type": "change",
-    "z": "311aacb9.34a24c",
-    "name": "Hole akt. Temp.",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "weather.current_temp",
-        "tot": "flow"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 360,
     "y": 520,
     "wires": [
       [
@@ -407,8 +236,47 @@
     "label": "",
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
-    "x": 580,
+    "x": 600,
     "y": 520,
     "wires": []
+  },
+  {
+    "id": "e3b548a6.c24dc8",
+    "type": "subflow:1dd94cb5.93a4f3",
+    "z": "311aacb9.34a24c",
+    "name": "Warte auf akt. Wetter in HB",
+    "env": [],
+    "x": 150,
+    "y": 180,
+    "wires": [
+      [
+        "33c1e3fb.d830fc"
+      ],
+      [
+        "23b5997c.7af52e"
+      ]
+    ]
+  },
+  {
+    "id": "23b5997c.7af52e",
+    "type": "link out",
+    "z": "311aacb9.34a24c",
+    "name": "Teile aktuelle Temperatur",
+    "links": [],
+    "x": 410,
+    "y": 200,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "33c1e3fb.d830fc",
+    "type": "link out",
+    "z": "311aacb9.34a24c",
+    "name": "Teile aktuelles Wetter-Symbol",
+    "links": [],
+    "x": 430,
+    "y": 160,
+    "wires": [],
+    "l": true
   }
 ]

@@ -1,0 +1,257 @@
+[
+  {
+    "id": "1dd94cb5.93a4f3",
+    "type": "subflow",
+    "name": "Warte_auf_aktuelles_Wetter_in_HB",
+    "info": "",
+    "category": "",
+    "in": [],
+    "out": [
+      {
+        "x": 640,
+        "y": 300,
+        "wires": [
+          {
+            "id": "cc970877.dbfb88",
+            "port": 0
+          }
+        ]
+      },
+      {
+        "x": 640,
+        "y": 340,
+        "wires": [
+          {
+            "id": "1eaed633.52acfa",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [],
+    "color": "#DDAA99",
+    "outputLabels": [
+      "icon",
+      "temperature"
+    ],
+    "icon": "font-awesome/fa-cloud"
+  },
+  {
+    "id": "444e85c8.a85a6c",
+    "type": "comment",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Warte auf aktuelles Wetter für Bremen",
+    "info": "",
+    "x": 170,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "30875f3b.b97dc",
+    "type": "inject",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Alle 15m",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "900",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 100,
+    "y": 120,
+    "wires": [
+      [
+        "30b975a6.a07fb2"
+      ]
+    ]
+  },
+  {
+    "id": "30b975a6.a07fb2",
+    "type": "subflow:f421e682.173de",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Lese aktuelle Wetter-Daten für HB",
+    "env": [
+      {
+        "name": "type",
+        "value": "current",
+        "type": "str"
+      }
+    ],
+    "x": 340,
+    "y": 120,
+    "wires": [
+      [
+        "dafb304a.334168"
+      ]
+    ]
+  },
+  {
+    "id": "482fdeed.0936",
+    "type": "rbe",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Daten geändert?",
+    "func": "rbe",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "property": "payload",
+    "x": 290,
+    "y": 280,
+    "wires": [
+      [
+        "cc970877.dbfb88"
+      ]
+    ]
+  },
+  {
+    "id": "dafb304a.334168",
+    "type": "change",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Bereite vor",
+    "rules": [
+      {
+        "t": "set",
+        "p": "raw",
+        "pt": "msg",
+        "to": "payload",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "{}",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "payload['weather/current/temperature']",
+        "pt": "msg",
+        "to": "raw.current.temp",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "payload['weather/current/icon']",
+        "pt": "msg",
+        "to": "raw.current.weather[0].icon",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 270,
+    "y": 160,
+    "wires": [
+      [
+        "10292771.b673c9"
+      ]
+    ]
+  },
+  {
+    "id": "10292771.b673c9",
+    "type": "change",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Bereinige",
+    "rules": [
+      {
+        "t": "delete",
+        "p": "raw",
+        "pt": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 260,
+    "y": 200,
+    "wires": [
+      [
+        "68e86f46.a75598"
+      ]
+    ]
+  },
+  {
+    "id": "68e86f46.a75598",
+    "type": "split",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Teile auf",
+    "splt": "\\n",
+    "spltType": "str",
+    "arraySplt": 1,
+    "arraySpltType": "len",
+    "stream": false,
+    "addname": "topic",
+    "x": 260,
+    "y": 240,
+    "wires": [
+      [
+        "482fdeed.0936"
+      ]
+    ]
+  },
+  {
+    "id": "cc970877.dbfb88",
+    "type": "switch",
+    "z": "1dd94cb5.93a4f3",
+    "name": "Welcher Wert?",
+    "property": "topic",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "cont",
+        "v": "icon",
+        "vt": "str"
+      },
+      {
+        "t": "cont",
+        "v": "temperature",
+        "vt": "str"
+      }
+    ],
+    "checkall": "false",
+    "repair": false,
+    "outputs": 2,
+    "x": 280,
+    "y": 320,
+    "wires": [
+      [],
+      [
+        "1eaed633.52acfa"
+      ]
+    ]
+  },
+  {
+    "id": "1eaed633.52acfa",
+    "type": "range",
+    "z": "1dd94cb5.93a4f3",
+    "minin": "-100",
+    "maxin": "100",
+    "minout": "-100",
+    "maxout": "100",
+    "action": "scale",
+    "round": true,
+    "property": "payload",
+    "name": "Formattiere Temp.",
+    "x": 490,
+    "y": 340,
+    "wires": [
+      []
+    ]
+  }
+]

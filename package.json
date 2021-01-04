@@ -4,6 +4,7 @@
   "dependencies": {
     "node-red": "1.2.2",
     "node-red-contrib-cpu": "0.0.4",
+    "node-red-contrib-credentials": "0.2.1",
     "node-red-contrib-flow-manager": "0.7.1",
     "node-red-contrib-fritz": "1.4.4",
     "node-red-contrib-fritzapi": "0.2.13",
