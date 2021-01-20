@@ -1,0 +1,64 @@
+[
+  {
+    "id": "ae79e463.ac6c38",
+    "type": "tab",
+    "label": "_TS_BLK",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "7f90858f.8beeec",
+    "type": "comment",
+    "z": "ae79e463.ac6c38",
+    "name": "Temperatur-Sensor -> Balkon",
+    "info": "",
+    "x": 140,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "9d77f582.68c9a8",
+    "type": "comment",
+    "z": "ae79e463.ac6c38",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "e7bd441b.13ff4",
+    "type": "zigbee2mqtt-in",
+    "z": "ae79e463.ac6c38",
+    "name": "Warte auf Sensor-Daten",
+    "server": "dd3cc3c3.66f0c8",
+    "friendly_name": "temperature/balcony",
+    "device_id": "0x00158d0005405541",
+    "state": "0",
+    "outputAtStartup": true,
+    "x": 140,
+    "y": 180,
+    "wires": [
+      [
+        "89968f8e.526ce8"
+      ]
+    ]
+  },
+  {
+    "id": "89968f8e.526ce8",
+    "type": "debug",
+    "z": "ae79e463.ac6c38",
+    "name": "Logge TS_BLK",
+    "active": true,
+    "tosidebar": true,
+    "console": true,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 370,
+    "y": 140,
+    "wires": []
+  }
+]
