@@ -393,7 +393,6 @@
     "id": "272822ac.2cfbae",
     "type": "inject",
     "z": "fe976b5a.539a18",
-    "d": true,
     "name": "Alle 1m",
     "props": [
       {
@@ -423,7 +422,6 @@
     "id": "22c7900b.0b7d9",
     "type": "change",
     "z": "fe976b5a.539a18",
-    "d": true,
     "name": "Schalte aus",
     "rules": [
       {
@@ -439,8 +437,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 810,
-    "y": 440,
+    "x": 770,
+    "y": 460,
     "wires": [
       []
     ]
@@ -453,7 +451,6 @@
     "scope": [
       "c919cbb9.c0ebb8",
       "22c7900b.0b7d9",
-      "788cb59.b3f274c",
       "2e0081fa.7533ce"
     ],
     "uncaught": false,
@@ -537,7 +534,6 @@
     "id": "f6043311.722a38",
     "type": "change",
     "z": "fe976b5a.539a18",
-    "d": true,
     "name": "Hole Daten",
     "rules": [
       {
@@ -560,7 +556,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 370,
+    "x": 390,
     "y": 440,
     "wires": [
       [
@@ -641,7 +637,6 @@
     "id": "1ce3ada3.bff0ba",
     "type": "subflow:93de0e1e.72cac8",
     "z": "fe976b5a.539a18",
-    "d": true,
     "name": "Warte auf < 5W",
     "env": [
       {
@@ -650,7 +645,7 @@
         "type": "num"
       }
     ],
-    "x": 620,
+    "x": 580,
     "y": 440,
     "wires": [
       [
@@ -680,10 +675,11 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 920,
+    "y": 940,
     "wires": [
       [
-        "a9570228.08b57"
+        "a9570228.08b57",
+        "98674cbb.aef8b"
       ]
     ]
   },
@@ -700,7 +696,7 @@
     "format": "{{msg.payload}}",
     "layout": "row-center",
     "x": 640,
-    "y": 920,
+    "y": 940,
     "wires": []
   },
   {
@@ -713,7 +709,7 @@
         "t": "set",
         "p": "payload",
         "pt": "msg",
-        "to": "Schaltet vollautomatisch gemäß Zeitplan.",
+        "to": "Schaltet sich automatisch ab.",
         "tot": "str"
       }
     ],
@@ -734,6 +730,7 @@
     "id": "6c8f90fa.0cc15",
     "type": "inject",
     "z": "fe976b5a.539a18",
+    "d": true,
     "name": "Täglich, 23 Uhr",
     "props": [
       {
@@ -755,39 +752,15 @@
     "y": 480,
     "wires": [
       [
-        "788cb59.b3f274c"
+        "22c7900b.0b7d9"
       ]
-    ]
-  },
-  {
-    "id": "788cb59.b3f274c",
-    "type": "change",
-    "z": "fe976b5a.539a18",
-    "name": "Schalte aus",
-    "rules": [
-      {
-        "t": "set",
-        "p": "plug.isSwitchedOn",
-        "pt": "flow",
-        "to": "false",
-        "tot": "bool"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 810,
-    "y": 480,
-    "wires": [
-      []
     ]
   },
   {
     "id": "2e0081fa.7533ce",
     "type": "change",
     "z": "fe976b5a.539a18",
+    "d": true,
     "name": "Schalte ein",
     "rules": [
       {
@@ -803,7 +776,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 810,
+    "x": 770,
     "y": 380,
     "wires": [
       []
@@ -813,6 +786,7 @@
     "id": "7439c90c.ff99b",
     "type": "subflow:165c0739.3fd931",
     "z": "fe976b5a.539a18",
+    "d": true,
     "name": "Warte auf Sonnenuntergang",
     "env": [
       {
@@ -826,6 +800,34 @@
     "wires": [
       [
         "2e0081fa.7533ce"
+      ]
+    ]
+  },
+  {
+    "id": "98674cbb.aef8b",
+    "type": "change",
+    "z": "fe976b5a.539a18",
+    "d": true,
+    "name": "Setze Nachricht",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "Schaltet vollautomatisch gemäß Zeitplan.",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 380,
+    "y": 960,
+    "wires": [
+      [
+        "b341fea3.148268"
       ]
     ]
   }
