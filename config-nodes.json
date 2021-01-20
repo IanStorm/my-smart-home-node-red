@@ -474,5 +474,15 @@
     "order": 4,
     "width": "6",
     "height": 1
+  },
+  {
+    "id": "8c9b25f5.1db3b8",
+    "type": "ui_group",
+    "name": "Arbeitszimmer, Sensor 1",
+    "tab": "abb1b2ae.11d618",
+    "order": 5,
+    "disp": true,
+    "width": "6",
+    "collapse": false
   }
 ]

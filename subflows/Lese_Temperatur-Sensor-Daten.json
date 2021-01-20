@@ -1,0 +1,330 @@
+[
+  {
+    "id": "bd326ce6.854e58",
+    "type": "subflow",
+    "name": "Lese_Temperatur-Sensor-Daten",
+    "info": "### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        msg\n    </dt>\n    <dd>\n        Matches the input from node-red-contrib-zigbee2mqtt zigbee2mqtt-in node.\n    </dd>\n    <dt>\n        topic-prefix\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Prefix for Node-RED topic. Will be appended to, e.g., `sensor/battery`.\n    </dd>\n</dl>\n",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 120,
+        "wires": [
+          {
+            "id": "e72e294a.b3d9b8"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 780,
+        "y": 160,
+        "wires": [
+          {
+            "id": "6e4170cd.af2a08",
+            "port": 0
+          }
+        ]
+      },
+      {
+        "x": 780,
+        "y": 200,
+        "wires": [
+          {
+            "id": "16a84f4d.4549b1",
+            "port": 0
+          }
+        ]
+      },
+      {
+        "x": 780,
+        "y": 240,
+        "wires": [
+          {
+            "id": "c98c9fa2.70b218",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [
+      {
+        "name": "topicPrefix",
+        "type": "str",
+        "value": "-TODO: topciPrefix-",
+        "ui": {
+          "label": {
+            "en-US": "topic prefix"
+          },
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      }
+    ],
+    "color": "#DDAA99",
+    "outputLabels": [
+      "battery",
+      "LQI",
+      "temperature"
+    ],
+    "icon": "font-awesome/fa-snowflake-o"
+  },
+  {
+    "id": "b48c7843.b2e4e",
+    "type": "comment",
+    "z": "bd326ce6.854e58",
+    "name": "Lese Temperatur-Sensor-Daten",
+    "info": "",
+    "x": 150,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "e72e294a.b3d9b8",
+    "type": "split",
+    "z": "bd326ce6.854e58",
+    "name": "Zerlege",
+    "splt": "\\n",
+    "spltType": "str",
+    "arraySplt": 1,
+    "arraySpltType": "len",
+    "stream": false,
+    "addname": "topic",
+    "x": 180,
+    "y": 120,
+    "wires": [
+      [
+        "6a2759c8.f0328"
+      ]
+    ]
+  },
+  {
+    "id": "a7b4b90.31c55c8",
+    "type": "switch",
+    "z": "bd326ce6.854e58",
+    "name": "Unterscheide",
+    "property": "topic",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "cont",
+        "v": "battery",
+        "vt": "str"
+      },
+      {
+        "t": "cont",
+        "v": "lqi",
+        "vt": "str"
+      },
+      {
+        "t": "cont",
+        "v": "temperature",
+        "vt": "str"
+      }
+    ],
+    "checkall": "false",
+    "repair": false,
+    "outputs": 3,
+    "x": 410,
+    "y": 200,
+    "wires": [
+      [
+        "6e4170cd.af2a08"
+      ],
+      [
+        "16a84f4d.4549b1"
+      ],
+      [
+        "c98c9fa2.70b218"
+      ]
+    ]
+  },
+  {
+    "id": "6a2759c8.f0328",
+    "type": "change",
+    "z": "bd326ce6.854e58",
+    "name": "Bereinige",
+    "rules": [
+      {
+        "t": "delete",
+        "p": "device",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "format",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "group",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "homekit",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "parts",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "payload_raw",
+        "pt": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 180,
+    "y": 160,
+    "wires": [
+      [
+        "eaf0a3a6.0dab58"
+      ]
+    ]
+  },
+  {
+    "id": "e7f8264c.8e8478",
+    "type": "change",
+    "z": "bd326ce6.854e58",
+    "name": "Ergänze topic",
+    "rules": [
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "$join([$env('topicPrefix'), topic], '/')",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 420,
+    "y": 120,
+    "wires": [
+      [
+        "a7b4b90.31c55c8"
+      ]
+    ]
+  },
+  {
+    "id": "eaf0a3a6.0dab58",
+    "type": "switch",
+    "z": "bd326ce6.854e58",
+    "name": "Ist nicht LQI?",
+    "property": "topic",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "neq",
+        "v": "linkquality",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 190,
+    "y": 200,
+    "wires": [
+      [
+        "e7f8264c.8e8478"
+      ],
+      [
+        "85087133.ee7c8"
+      ]
+    ]
+  },
+  {
+    "id": "85087133.ee7c8",
+    "type": "change",
+    "z": "bd326ce6.854e58",
+    "name": "Ersetze topic",
+    "rules": [
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "lqi",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 190,
+    "y": 260,
+    "wires": [
+      [
+        "e7f8264c.8e8478"
+      ]
+    ]
+  },
+  {
+    "id": "6e4170cd.af2a08",
+    "type": "rbe",
+    "z": "bd326ce6.854e58",
+    "name": "Datum geändert?",
+    "func": "rbe",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "property": "payload",
+    "x": 630,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "16a84f4d.4549b1",
+    "type": "rbe",
+    "z": "bd326ce6.854e58",
+    "name": "Datum geändert?",
+    "func": "rbe",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "property": "payload",
+    "x": 630,
+    "y": 200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c98c9fa2.70b218",
+    "type": "rbe",
+    "z": "bd326ce6.854e58",
+    "name": "Datum geändert?",
+    "func": "rbe",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "property": "payload",
+    "x": 630,
+    "y": 240,
+    "wires": [
+      []
+    ]
+  }
+]

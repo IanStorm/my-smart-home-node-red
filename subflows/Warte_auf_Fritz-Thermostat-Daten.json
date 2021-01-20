@@ -3,7 +3,7 @@
     "id": "2757b690.6da392",
     "type": "subflow",
     "name": "Warte_auf_Fritz-Thermostat-Daten",
-    "info": "### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        ain\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        AIN\n    </dd>\n    <dt>\n        topic-prefix\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Prefix for Node-RED topic. Will be appended to, e.g., `radiator/currentTemperature`.\n    </dd>\n</dl>\n",
+    "info": "### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        ain\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        AIN\n    </dd>\n    <dt>\n        topic prefix\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Prefix for Node-RED topic. Will be appended to, e.g., `radiator/currentTemperature`.\n    </dd>\n</dl>\n",
     "category": "",
     "in": [],
     "out": [
@@ -61,6 +61,9 @@
         "type": "str",
         "value": "-TODO: topicPrefix-",
         "ui": {
+          "label": {
+            "en-US": "topic prefix"
+          },
           "type": "input",
           "opts": {
             "types": [
@@ -71,6 +74,11 @@
       }
     ],
     "color": "#DDAA99",
+    "outputLabels": [
+      "isConnected",
+      "currentTemperature",
+      "targetTemperature"
+    ],
     "icon": "font-awesome/fa-thermometer-half"
   },
   {
