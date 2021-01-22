@@ -13,7 +13,7 @@
     "name": "Automatisch Schalten",
     "info": "",
     "x": 140,
-    "y": 720,
+    "y": 820,
     "wires": []
   },
   {
@@ -38,7 +38,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 780,
+    "y": 880,
     "wires": [
       [
         "545ada08.831764"
@@ -65,7 +65,7 @@
     "to": "",
     "reg": false,
     "x": 370,
-    "y": 780,
+    "y": 880,
     "wires": [
       [
         "3ffc6d98.40fbb2"
@@ -79,7 +79,7 @@
     "connection": "f438956c.669a58",
     "name": "Befolge Befehl",
     "x": 580,
-    "y": 780,
+    "y": 880,
     "wires": [
       []
     ]
@@ -194,7 +194,7 @@
     "to": "",
     "reg": false,
     "x": 390,
-    "y": 440,
+    "y": 540,
     "wires": [
       [
         "e5a0cbf2.4dbfd8"
@@ -215,7 +215,7 @@
     "statusVal": "",
     "statusType": "auto",
     "x": 720,
-    "y": 860,
+    "y": 960,
     "wires": []
   },
   {
@@ -240,7 +240,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 100,
-    "y": 860,
+    "y": 960,
     "wires": [
       [
         "2ed19cf6.28c85c"
@@ -255,7 +255,7 @@
     "method": "getMission",
     "name": "Lese Missionsinfos",
     "x": 290,
-    "y": 860,
+    "y": 960,
     "wires": [
       [
         "b633b3d2.b0b4c8"
@@ -288,7 +288,7 @@
     "repair": false,
     "outputs": 3,
     "x": 520,
-    "y": 860,
+    "y": 960,
     "wires": [
       [],
       [],
@@ -320,7 +320,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 100,
-    "y": 900,
+    "y": 1000,
     "wires": [
       [
         "6cd2e695.a0f5e"
@@ -335,7 +335,7 @@
     "method": "getTime",
     "name": "Lese Zeit-Infos",
     "x": 280,
-    "y": 900,
+    "y": 1000,
     "wires": [
       [
         "52291646.5ce7f"
@@ -350,7 +350,7 @@
     "method": "getBbrun",
     "name": "Lese \"Bbrun\"-Infos",
     "x": 290,
-    "y": 940,
+    "y": 1040,
     "wires": [
       [
         "3bc768ad.cdb42"
@@ -365,7 +365,7 @@
     "method": "getLangs",
     "name": "Lese Sprachen-Infos",
     "x": 300,
-    "y": 980,
+    "y": 1080,
     "wires": [
       [
         "3fd8c3c2.1de9e4"
@@ -380,7 +380,7 @@
     "method": "getSys",
     "name": "Lese System-Infos",
     "x": 290,
-    "y": 1020,
+    "y": 1120,
     "wires": [
       [
         "c26b5f44.8746d8"
@@ -395,7 +395,7 @@
     "method": "getWirelessLastStatus",
     "name": "Lese Letzte-WLAN-Infos",
     "x": 310,
-    "y": 1060,
+    "y": 1160,
     "wires": [
       [
         "a4f21df3.ff6e4"
@@ -410,7 +410,7 @@
     "method": "getWeek",
     "name": "Lese Wochen-Infos",
     "x": 290,
-    "y": 1100,
+    "y": 1200,
     "wires": [
       [
         "7e9ffb03.6ee634"
@@ -425,7 +425,7 @@
     "method": "getPreferences",
     "name": "Lese Einstellungsinfos",
     "x": 300,
-    "y": 1140,
+    "y": 1240,
     "wires": [
       [
         "13d76e24.1654a2"
@@ -440,7 +440,7 @@
     "method": "getMission",
     "name": "Lese Missionsinfos",
     "x": 290,
-    "y": 1180,
+    "y": 1280,
     "wires": [
       [
         "fb7030c6.43f3c"
@@ -455,7 +455,7 @@
     "method": "getWirelessStatus",
     "name": "Lese WLAN-Infos",
     "x": 290,
-    "y": 1220,
+    "y": 1320,
     "wires": [
       [
         "d3e25257.22d318"
@@ -476,7 +476,7 @@
     "statusVal": "",
     "statusType": "auto",
     "x": 590,
-    "y": 1060,
+    "y": 1160,
     "wires": []
   },
   {
@@ -493,7 +493,7 @@
     "statusVal": "",
     "statusType": "auto",
     "x": 570,
-    "y": 1020,
+    "y": 1120,
     "wires": []
   },
   {
@@ -519,7 +519,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 100,
-    "y": 940,
+    "y": 1040,
     "wires": [
       [
         "169fa16e.700b27"
@@ -549,7 +549,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 100,
-    "y": 980,
+    "y": 1080,
     "wires": [
       [
         "d78b0fee.feafc"
@@ -579,7 +579,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 100,
-    "y": 1020,
+    "y": 1120,
     "wires": [
       [
         "5015b2af.42833c"
@@ -609,7 +609,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 100,
-    "y": 1060,
+    "y": 1160,
     "wires": [
       [
         "b414a8ae.1b19d"
@@ -639,7 +639,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 100,
-    "y": 1100,
+    "y": 1200,
     "wires": [
       [
         "ea5cdf27.429138"
@@ -669,7 +669,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 100,
-    "y": 1140,
+    "y": 1240,
     "wires": [
       [
         "9f57f0b7.0e0d68"
@@ -699,7 +699,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 100,
-    "y": 1180,
+    "y": 1280,
     "wires": [
       [
         "c05a6891.13f7b"
@@ -729,7 +729,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 100,
-    "y": 1220,
+    "y": 1320,
     "wires": [
       [
         "f6e0a95c.5e288"
@@ -750,7 +750,7 @@
     "statusVal": "",
     "statusType": "auto",
     "x": 580,
-    "y": 980,
+    "y": 1080,
     "wires": []
   },
   {
@@ -767,7 +767,7 @@
     "statusVal": "",
     "statusType": "auto",
     "x": 570,
-    "y": 940,
+    "y": 1040,
     "wires": []
   },
   {
@@ -784,7 +784,7 @@
     "statusVal": "",
     "statusType": "auto",
     "x": 560,
-    "y": 900,
+    "y": 1000,
     "wires": []
   },
   {
@@ -801,7 +801,7 @@
     "statusVal": "",
     "statusType": "auto",
     "x": 570,
-    "y": 1100,
+    "y": 1200,
     "wires": []
   },
   {
@@ -818,7 +818,7 @@
     "statusVal": "",
     "statusType": "auto",
     "x": 580,
-    "y": 1140,
+    "y": 1240,
     "wires": []
   },
   {
@@ -835,7 +835,7 @@
     "statusVal": "",
     "statusType": "auto",
     "x": 570,
-    "y": 1180,
+    "y": 1280,
     "wires": []
   },
   {
@@ -852,7 +852,7 @@
     "statusVal": "",
     "statusType": "auto",
     "x": 570,
-    "y": 1220,
+    "y": 1320,
     "wires": []
   },
   {
@@ -935,7 +935,7 @@
     "to": "",
     "reg": false,
     "x": 400,
-    "y": 640,
+    "y": 740,
     "wires": [
       [
         "1a790fd6.9727f"
@@ -947,7 +947,7 @@
     "type": "ui_text",
     "z": "ef9247c6.cadc28",
     "group": "e76cc3b6.096b9",
-    "order": 3,
+    "order": 4,
     "width": 2,
     "height": 1,
     "name": "Zeige Batterie-%",
@@ -955,7 +955,7 @@
     "format": "{{msg.payload}}%",
     "layout": "row-center",
     "x": 1050,
-    "y": 640,
+    "y": 740,
     "wires": []
   },
   {
@@ -1038,7 +1038,7 @@
     "to": "",
     "reg": false,
     "x": 430,
-    "y": 560,
+    "y": 660,
     "wires": [
       [
         "e96d8d2c.ff80b8"
@@ -1050,7 +1050,7 @@
     "type": "ui_text",
     "z": "ef9247c6.cadc28",
     "group": "e76cc3b6.096b9",
-    "order": 2,
+    "order": 3,
     "width": 2,
     "height": 1,
     "name": "Zeige Behälter-Füllstand",
@@ -1058,7 +1058,7 @@
     "format": "{{msg.payload}}",
     "layout": "row-center",
     "x": 1070,
-    "y": 560,
+    "y": 660,
     "wires": []
   },
   {
@@ -1087,7 +1087,7 @@
     "repair": false,
     "outputs": 3,
     "x": 630,
-    "y": 440,
+    "y": 540,
     "wires": [
       [
         "19a7cc04.7b3fbc"
@@ -1110,7 +1110,7 @@
     ],
     "uncaught": false,
     "x": 130,
-    "y": 440,
+    "y": 540,
     "wires": [
       [
         "a332c723.19fcf"
@@ -1127,7 +1127,7 @@
     ],
     "uncaught": false,
     "x": 160,
-    "y": 560,
+    "y": 660,
     "wires": [
       [
         "2acf08ca.71e5a"
@@ -1144,7 +1144,7 @@
     ],
     "uncaught": false,
     "x": 130,
-    "y": 640,
+    "y": 740,
     "wires": [
       [
         "b9d52c6e.119a6"
@@ -1171,7 +1171,7 @@
     "to": "",
     "reg": false,
     "x": 800,
-    "y": 400,
+    "y": 500,
     "wires": [
       [
         "8d5dcde3.e22098"
@@ -1198,7 +1198,7 @@
     "to": "",
     "reg": false,
     "x": 820,
-    "y": 440,
+    "y": 540,
     "wires": [
       [
         "8d5dcde3.e22098"
@@ -1225,7 +1225,7 @@
     "to": "",
     "reg": false,
     "x": 820,
-    "y": 480,
+    "y": 580,
     "wires": [
       [
         "8d5dcde3.e22098"
@@ -1237,7 +1237,7 @@
     "type": "ui_text",
     "z": "ef9247c6.cadc28",
     "group": "e76cc3b6.096b9",
-    "order": 1,
+    "order": 2,
     "width": 2,
     "height": 1,
     "name": "Zeige Zustand",
@@ -1245,7 +1245,7 @@
     "format": "<i class=\"material-icons\">{{msg.payload}}</i>",
     "layout": "row-center",
     "x": 1040,
-    "y": 440,
+    "y": 540,
     "wires": []
   },
   {
@@ -1267,7 +1267,7 @@
     "repair": false,
     "outputs": 2,
     "x": 630,
-    "y": 560,
+    "y": 660,
     "wires": [
       [
         "e9e383ed.04dba"
@@ -1297,7 +1297,7 @@
     "to": "",
     "reg": false,
     "x": 790,
-    "y": 540,
+    "y": 640,
     "wires": [
       [
         "d99cc27e.8c823"
@@ -1324,11 +1324,51 @@
     "to": "",
     "reg": false,
     "x": 810,
-    "y": 580,
+    "y": 680,
     "wires": [
       [
         "d99cc27e.8c823"
       ]
+    ]
+  },
+  {
+    "id": "e7031231.27e5f8",
+    "type": "inject",
+    "z": "ef9247c6.cadc28",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 440,
+    "wires": [
+      [
+        "229b42e5.dfec5e"
+      ]
+    ]
+  },
+  {
+    "id": "229b42e5.dfec5e",
+    "type": "ui_template",
+    "z": "ef9247c6.cadc28",
+    "group": "e76cc3b6.096b9",
+    "name": "Zeige Icon",
+    "order": 1,
+    "width": 2,
+    "height": "3",
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        gesture\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "x": 1030,
+    "y": 440,
+    "wires": [
+      []
     ]
   }
 ]
