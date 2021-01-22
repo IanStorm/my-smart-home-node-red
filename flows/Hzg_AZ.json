@@ -83,7 +83,7 @@
     "y": 820,
     "wires": [
       [
-        "90fe56a5.193b8"
+        "e58b0cfd.d909d8"
       ]
     ]
   },
@@ -94,7 +94,7 @@
     "group": "cd94108d.1e556",
     "name": "Zeige \"Ist verbunden?\"",
     "order": 3,
-    "width": 2,
+    "width": "1",
     "height": 1,
     "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
     "storeOutMessages": false,
@@ -118,35 +118,10 @@
     "name": "Zeige Ist-Temperatur",
     "label": "<i class=\"material-icons\">ac_unit</i>",
     "format": "{{msg.payload}}°C",
-    "layout": "row-left",
+    "layout": "row-center",
     "x": 400,
     "y": 700,
     "wires": []
-  },
-  {
-    "id": "90fe56a5.193b8",
-    "type": "ui_slider",
-    "z": "750f0705.13d438",
-    "name": "Zeige Soll-Temperatur",
-    "label": "",
-    "tooltip": "",
-    "group": "cd94108d.1e556",
-    "order": 6,
-    "width": 4,
-    "height": 2,
-    "passthru": false,
-    "outs": "end",
-    "topic": "",
-    "min": "8",
-    "max": "28",
-    "step": "0.5",
-    "x": 400,
-    "y": 820,
-    "wires": [
-      [
-        "d53df6ae.7d8718"
-      ]
-    ]
   },
   {
     "id": "b30a89bc.7e666",
@@ -175,8 +150,8 @@
     "group": "cd94108d.1e556",
     "name": "Zeige Heizungsicon",
     "order": 1,
-    "width": 2,
-    "height": 4,
+    "width": "1",
+    "height": "3",
     "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        whatshot\n    </i>\n</div>",
     "storeOutMessages": true,
     "fwdInMessages": true,
@@ -457,7 +432,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 700,
+    "x": 880,
     "y": 820,
     "wires": [
       []
@@ -716,44 +691,28 @@
     "once": true,
     "onceDelay": 0.1,
     "topic": "",
-    "payload": "Vollautomatisch zeit- & sensorbasiert",
+    "payload": "",
     "payloadType": "str",
     "x": 110,
     "y": 880,
     "wires": [
       [
-        "964a3870.afaf38"
+        "cab333c0.19be5"
       ]
     ]
-  },
-  {
-    "id": "964a3870.afaf38",
-    "type": "ui_text",
-    "z": "750f0705.13d438",
-    "group": "cd94108d.1e556",
-    "order": 7,
-    "width": 6,
-    "height": 1,
-    "name": "Zeige Automatisierungsinfo",
-    "label": "<i class=\"material-icons\">info</i>",
-    "format": "{{msg.payload}}",
-    "layout": "row-center",
-    "x": 420,
-    "y": 880,
-    "wires": []
   },
   {
     "id": "be92cd9.c12433",
     "type": "ui_text",
     "z": "750f0705.13d438",
     "group": "cd94108d.1e556",
-    "order": 4,
+    "order": 5,
     "width": 2,
     "height": 1,
     "name": "Zeige Ziel-Temperatur",
     "label": "<i class=\"material-icons\">whatshot</i>",
     "format": "{{msg.payload ? msg.payload + '°C' : 'Aus'}}",
-    "layout": "row-left",
+    "layout": "row-center",
     "x": 400,
     "y": 760,
     "wires": []
@@ -773,6 +732,90 @@
     "wires": [
       [
         "be92cd9.c12433"
+      ]
+    ]
+  },
+  {
+    "id": "cab333c0.19be5",
+    "type": "ui_button",
+    "z": "750f0705.13d438",
+    "name": "Interaktion Automatisierungsinfo",
+    "group": "cd94108d.1e556",
+    "order": 6,
+    "width": "1",
+    "height": "1",
+    "passthru": false,
+    "label": "",
+    "tooltip": "",
+    "color": "",
+    "bgcolor": "transparent",
+    "icon": "info",
+    "payload": "Schaltet vollautomatisch zeit- & sensorbasiert.",
+    "payloadType": "str",
+    "topic": "",
+    "x": 430,
+    "y": 880,
+    "wires": [
+      [
+        "d30423ec.517ac"
+      ]
+    ]
+  },
+  {
+    "id": "d30423ec.517ac",
+    "type": "ui_toast",
+    "z": "750f0705.13d438",
+    "position": "bottom right",
+    "displayTime": "5",
+    "highlight": "",
+    "sendall": false,
+    "outputs": 0,
+    "ok": "OK",
+    "cancel": "",
+    "raw": false,
+    "topic": "Arbeitszimmer: Heizkörper",
+    "name": "Zeige Benachrichtigung",
+    "x": 710,
+    "y": 880,
+    "wires": []
+  },
+  {
+    "id": "e58b0cfd.d909d8",
+    "type": "ui_numeric",
+    "z": "750f0705.13d438",
+    "name": "Interaktion Soll-Temperatur",
+    "label": "",
+    "tooltip": "",
+    "group": "cd94108d.1e556",
+    "order": 4,
+    "width": "2",
+    "height": "2",
+    "wrap": false,
+    "passthru": false,
+    "topic": "",
+    "format": "{{value}}°C",
+    "min": "8",
+    "max": "28",
+    "step": "0.5",
+    "x": 420,
+    "y": 820,
+    "wires": [
+      [
+        "e0209734.6e00c"
+      ]
+    ]
+  },
+  {
+    "id": "e0209734.6e00c",
+    "type": "debounce",
+    "z": "750f0705.13d438",
+    "time": "5000",
+    "name": "5s debounce",
+    "x": 650,
+    "y": 820,
+    "wires": [
+      [
+        "d53df6ae.7d8718"
       ]
     ]
   }

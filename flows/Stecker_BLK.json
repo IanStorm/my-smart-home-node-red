@@ -118,7 +118,7 @@
     "group": "2f3f5aef.3d20ee",
     "name": "Zeige Status",
     "order": 3,
-    "width": 2,
+    "width": "1",
     "height": 1,
     "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
     "storeOutMessages": false,
@@ -142,7 +142,7 @@
     "name": "Zeige Temperatur",
     "label": "<i class=\"material-icons\">ac_unit</i>",
     "format": "{{msg.payload}}°C",
-    "layout": "row-left",
+    "layout": "row-center",
     "x": 610,
     "y": 740,
     "wires": []
@@ -152,13 +152,13 @@
     "type": "ui_text",
     "z": "fe976b5a.539a18",
     "group": "2f3f5aef.3d20ee",
-    "order": 4,
+    "order": 5,
     "width": 2,
     "height": 1,
     "name": "Zeige Leistungsaufnahme",
     "label": "<i class=\"material-icons\">flash_on</i>",
     "format": "{{msg.payload}}W",
-    "layout": "row-left",
+    "layout": "row-center",
     "x": 630,
     "y": 800,
     "wires": []
@@ -223,9 +223,9 @@
     "label": "<i class=\"material-icons\">power_settings_new</i>",
     "tooltip": "",
     "group": "2f3f5aef.3d20ee",
-    "order": 5,
+    "order": 4,
     "width": 2,
-    "height": 1,
+    "height": "2",
     "passthru": true,
     "decouple": "false",
     "topic": "",
@@ -571,8 +571,8 @@
     "group": "2f3f5aef.3d20ee",
     "name": "Zeige Steckdosen-Icon",
     "order": 1,
-    "width": 2,
-    "height": 2,
+    "width": "1",
+    "height": "3",
     "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        power\n    </i>\n</div>",
     "storeOutMessages": true,
     "fwdInMessages": true,
@@ -678,51 +678,8 @@
     "y": 940,
     "wires": [
       [
-        "a9570228.08b57",
-        "98674cbb.aef8b"
-      ]
-    ]
-  },
-  {
-    "id": "b341fea3.148268",
-    "type": "ui_text",
-    "z": "fe976b5a.539a18",
-    "group": "2f3f5aef.3d20ee",
-    "order": 6,
-    "width": "6",
-    "height": "1",
-    "name": "Zeige Automatisierungsinfo",
-    "label": "<i class=\"material-icons\">info</i>",
-    "format": "{{msg.payload}}",
-    "layout": "row-center",
-    "x": 640,
-    "y": 940,
-    "wires": []
-  },
-  {
-    "id": "a9570228.08b57",
-    "type": "change",
-    "z": "fe976b5a.539a18",
-    "name": "Setze Nachricht",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "Schaltet sich automatisch ab.",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 380,
-    "y": 920,
-    "wires": [
-      [
-        "b341fea3.148268"
+        "bd307592.b9272",
+        "c8dbbf0a.621dd8"
       ]
     ]
   },
@@ -804,30 +761,73 @@
     ]
   },
   {
-    "id": "98674cbb.aef8b",
-    "type": "change",
+    "id": "bd307592.b9272",
+    "type": "ui_button",
+    "z": "fe976b5a.539a18",
+    "name": "Interaktion Automatisierungsinfo",
+    "group": "2f3f5aef.3d20ee",
+    "order": 6,
+    "width": "1",
+    "height": "1",
+    "passthru": false,
+    "label": "",
+    "tooltip": "",
+    "color": "",
+    "bgcolor": "transparent",
+    "icon": "info",
+    "payload": "Schaltet sich automatisch ab.",
+    "payloadType": "str",
+    "topic": "",
+    "x": 650,
+    "y": 920,
+    "wires": [
+      [
+        "ed88101b.8648d8"
+      ]
+    ]
+  },
+  {
+    "id": "ed88101b.8648d8",
+    "type": "ui_toast",
+    "z": "fe976b5a.539a18",
+    "position": "bottom right",
+    "displayTime": "5",
+    "highlight": "",
+    "sendall": false,
+    "outputs": 0,
+    "ok": "OK",
+    "cancel": "",
+    "raw": false,
+    "topic": "Balkon: Steckdose",
+    "name": "Zeige Benachrichtigung",
+    "x": 930,
+    "y": 940,
+    "wires": []
+  },
+  {
+    "id": "c8dbbf0a.621dd8",
+    "type": "ui_button",
     "z": "fe976b5a.539a18",
     "d": true,
-    "name": "Setze Nachricht",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "Schaltet vollautomatisch gemäß Zeitplan.",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 380,
+    "name": "Interaktion Automatisierungsinfo",
+    "group": "2f3f5aef.3d20ee",
+    "order": 7,
+    "width": "1",
+    "height": "1",
+    "passthru": false,
+    "label": "",
+    "tooltip": "",
+    "color": "",
+    "bgcolor": "transparent",
+    "icon": "info",
+    "payload": "Schaltet vollautomatisch gemäß Zeitplan.",
+    "payloadType": "str",
+    "topic": "",
+    "x": 650,
     "y": 960,
     "wires": [
       [
-        "b341fea3.148268"
+        "ed88101b.8648d8"
       ]
     ]
   }

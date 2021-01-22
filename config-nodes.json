@@ -368,51 +368,6 @@
     "collapse": false
   },
   {
-    "id": "ab9d5f00.d142d",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "2fe0f099.995658",
-    "order": 5,
-    "width": 2,
-    "height": 1
-  },
-  {
-    "id": "77b0416e.36e2a8",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "9298819a.21ca98",
-    "order": 5,
-    "width": 2,
-    "height": 1
-  },
-  {
-    "id": "4b99fd01.dd597c",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "cd94108d.1e556",
-    "order": 5,
-    "width": 2,
-    "height": 1
-  },
-  {
-    "id": "9ae808d5.caf18",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "7b8abfe6.0e9dd8",
-    "order": 5,
-    "width": 2,
-    "height": 1
-  },
-  {
-    "id": "cfc83348.697c1",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "964aeb18.79a868",
-    "order": 5,
-    "width": 2,
-    "height": 1
-  },
-  {
     "id": "2b39cfe.8e9f33",
     "type": "ui_group",
     "name": "Telefon",
@@ -444,21 +399,12 @@
   {
     "id": "747b954.0a7986c",
     "type": "ui_group",
-    "name": "Gewächshaus, Sensor 1",
+    "name": "Gewächshaus-Sensor",
     "tab": "dc2a0ecd.db0f18",
     "order": 6,
     "disp": true,
     "width": "6",
     "collapse": false
-  },
-  {
-    "id": "39a3ba61.95973e",
-    "type": "ui_group",
-    "name": "Group 1",
-    "tab": "",
-    "order": 1,
-    "disp": true,
-    "width": 6
   },
   {
     "id": "6c600c27.493f64",

@@ -118,7 +118,7 @@
     "group": "259c1fb2.ed8768",
     "name": "Zeige Status",
     "order": 3,
-    "width": 2,
+    "width": "1",
     "height": 1,
     "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
     "storeOutMessages": false,
@@ -142,7 +142,7 @@
     "name": "Zeige Temperatur",
     "label": "<i class=\"material-icons\">ac_unit</i>",
     "format": "{{msg.payload}}°C",
-    "layout": "row-left",
+    "layout": "row-center",
     "x": 610,
     "y": 740,
     "wires": []
@@ -152,13 +152,13 @@
     "type": "ui_text",
     "z": "19f0cc46.99b404",
     "group": "259c1fb2.ed8768",
-    "order": 4,
+    "order": 5,
     "width": 2,
     "height": 1,
     "name": "Zeige Leistungsaufnahme (AZ)",
     "label": "<i class=\"material-icons\">flash_on</i>",
     "format": "{{msg.payload}}W",
-    "layout": "row-left",
+    "layout": "row-center",
     "x": 650,
     "y": 800,
     "wires": []
@@ -224,9 +224,9 @@
     "label": "<i class=\"material-icons\">power_settings_new</i>",
     "tooltip": "",
     "group": "259c1fb2.ed8768",
-    "order": 5,
+    "order": 4,
     "width": 2,
-    "height": 1,
+    "height": "2",
     "passthru": true,
     "decouple": "false",
     "topic": "",
@@ -376,7 +376,8 @@
     "y": 820,
     "wires": [
       [
-        "16c2bcdb.39669b"
+        "16c2bcdb.39669b",
+        "1cbbc28e.830a6d"
       ]
     ]
   },
@@ -583,8 +584,8 @@
     "group": "259c1fb2.ed8768",
     "name": "Zeige Steckdosen-Icon (AZ)",
     "order": 1,
-    "width": 2,
-    "height": 2,
+    "width": "1",
+    "height": "3",
     "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        power\n    </i>\n</div>",
     "storeOutMessages": true,
     "fwdInMessages": true,
@@ -671,50 +672,7 @@
     "y": 1000,
     "wires": [
       [
-        "14e9f737.de81a9"
-      ]
-    ]
-  },
-  {
-    "id": "e089d720.9ef14",
-    "type": "ui_text",
-    "z": "19f0cc46.99b404",
-    "group": "259c1fb2.ed8768",
-    "order": 6,
-    "width": 6,
-    "height": 1,
-    "name": "Zeige Automatisierungsinfo",
-    "label": "<i class=\"material-icons\">info</i>",
-    "format": "{{msg.payload}}",
-    "layout": "row-center",
-    "x": 640,
-    "y": 1000,
-    "wires": []
-  },
-  {
-    "id": "14e9f737.de81a9",
-    "type": "change",
-    "z": "19f0cc46.99b404",
-    "name": "Setze Nachricht",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "Schaltet sich automatisch ab.",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 380,
-    "y": 1000,
-    "wires": [
-      [
-        "e089d720.9ef14"
+        "511631ac.ffc01"
       ]
     ]
   },
@@ -803,7 +761,7 @@
     "name": "Zeige Leistungsaufnahme (FAV)",
     "label": "<i class=\"material-icons\">flash_on</i>",
     "format": "{{msg.payload}}W",
-    "layout": "row-left",
+    "layout": "row-center",
     "x": 650,
     "y": 840,
     "wires": []
@@ -838,5 +796,49 @@
         "86b919da.9ddfc8"
       ]
     ]
+  },
+  {
+    "id": "511631ac.ffc01",
+    "type": "ui_button",
+    "z": "19f0cc46.99b404",
+    "name": "Interaktion Automatisierungsinfo",
+    "group": "259c1fb2.ed8768",
+    "order": 6,
+    "width": "1",
+    "height": "1",
+    "passthru": false,
+    "label": "",
+    "tooltip": "",
+    "color": "",
+    "bgcolor": "transparent",
+    "icon": "info",
+    "payload": "Schaltet sich automatisch ab.",
+    "payloadType": "str",
+    "topic": "",
+    "x": 650,
+    "y": 1000,
+    "wires": [
+      [
+        "ba971c78.0303c"
+      ]
+    ]
+  },
+  {
+    "id": "ba971c78.0303c",
+    "type": "ui_toast",
+    "z": "19f0cc46.99b404",
+    "position": "bottom right",
+    "displayTime": "5",
+    "highlight": "",
+    "sendall": false,
+    "outputs": 0,
+    "ok": "OK",
+    "cancel": "",
+    "raw": false,
+    "topic": "Arbeitszimmer: Steckdose Christian's PC",
+    "name": "Zeige Benachrichtigung",
+    "x": 930,
+    "y": 1000,
+    "wires": []
   }
 ]

@@ -216,7 +216,6 @@
     "wires": [
       [
         "78c9a97a.8fb878",
-        "e317ddfd.a9c1b",
         "c86c2895.8a23c8"
       ]
     ]
@@ -227,7 +226,7 @@
     "z": "ae79e463.ac6c38",
     "group": "747b954.0a7986c",
     "order": 3,
-    "width": "2",
+    "width": "1",
     "height": 1,
     "name": "Zeige LQI",
     "label": "<i class=\"material-icons\">sync</i>",
@@ -242,7 +241,7 @@
     "type": "ui_text",
     "z": "ae79e463.ac6c38",
     "group": "747b954.0a7986c",
-    "order": 4,
+    "order": 2,
     "width": "2",
     "height": 1,
     "name": "Zeige Batterie-%",
@@ -261,7 +260,7 @@
     "group": "747b954.0a7986c",
     "order": 5,
     "width": "5",
-    "height": "6",
+    "height": "5",
     "label": "",
     "chartType": "line",
     "legend": "false",
@@ -291,33 +290,17 @@
     "outputs": 1,
     "useDifferentColor": false,
     "x": 590,
-    "y": 580,
+    "y": 540,
     "wires": [
       []
     ]
-  },
-  {
-    "id": "e317ddfd.a9c1b",
-    "type": "ui_text",
-    "z": "ae79e463.ac6c38",
-    "group": "747b954.0a7986c",
-    "order": 6,
-    "width": "1",
-    "height": "7",
-    "name": "Zeige Temperatur-Icon",
-    "label": "<i class=\"material-icons\">ac_unit</i>",
-    "format": "",
-    "layout": "col-center",
-    "x": 560,
-    "y": 540,
-    "wires": []
   },
   {
     "id": "a6fcd086.5e20f8",
     "type": "ui_text",
     "z": "ae79e463.ac6c38",
     "group": "747b954.0a7986c",
-    "order": 2,
+    "order": 4,
     "width": "2",
     "height": "1",
     "name": "Zeige Temperatur",
@@ -325,7 +308,7 @@
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
     "x": 550,
-    "y": 620,
+    "y": 580,
     "wires": []
   },
   {
@@ -343,7 +326,7 @@
     "outputFieldDecimals": "1",
     "name": "Vereinfache",
     "x": 350,
-    "y": 620,
+    "y": 580,
     "wires": [
       [
         "a6fcd086.5e20f8"
@@ -377,7 +360,7 @@
     "group": "747b954.0a7986c",
     "name": "Zeige Icon",
     "order": 1,
-    "width": 2,
+    "width": "1",
     "height": "2",
     "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        local_florist\n    </i>\n</div>",
     "storeOutMessages": true,

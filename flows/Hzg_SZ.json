@@ -83,7 +83,7 @@
     "y": 820,
     "wires": [
       [
-        "87b798c3.500528"
+        "47602b66.7ff3d4"
       ]
     ]
   },
@@ -94,7 +94,7 @@
     "group": "7b8abfe6.0e9dd8",
     "name": "Zeige \"Ist verbunden?\"",
     "order": 3,
-    "width": 2,
+    "width": "1",
     "height": 1,
     "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">sync</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">sync_disabled</i>\n</div>",
     "storeOutMessages": false,
@@ -118,35 +118,10 @@
     "name": "Zeige Ist-Temperatur",
     "label": "<i class=\"material-icons\">ac_unit</i>",
     "format": "{{msg.payload}}°C",
-    "layout": "row-left",
+    "layout": "row-center",
     "x": 400,
     "y": 700,
     "wires": []
-  },
-  {
-    "id": "87b798c3.500528",
-    "type": "ui_slider",
-    "z": "ecee5153.6f2368",
-    "name": "Zeige Soll-Temperatur",
-    "label": "",
-    "tooltip": "",
-    "group": "7b8abfe6.0e9dd8",
-    "order": 6,
-    "width": 4,
-    "height": 2,
-    "passthru": false,
-    "outs": "end",
-    "topic": "",
-    "min": "8",
-    "max": "28",
-    "step": "0.5",
-    "x": 400,
-    "y": 820,
-    "wires": [
-      [
-        "d20a9dc5.e2e3d8"
-      ]
-    ]
   },
   {
     "id": "2ccbe24a.29d6b6",
@@ -175,8 +150,8 @@
     "group": "7b8abfe6.0e9dd8",
     "name": "Zeige Heizungsicon",
     "order": 1,
-    "width": 2,
-    "height": 4,
+    "width": "1",
+    "height": "3",
     "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        whatshot\n    </i>\n</div>",
     "storeOutMessages": true,
     "fwdInMessages": true,
@@ -399,7 +374,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 700,
+    "x": 880,
     "y": 820,
     "wires": [
       []
@@ -774,44 +749,28 @@
     "once": true,
     "onceDelay": 0.1,
     "topic": "",
-    "payload": "Vollautomatisch zeit- & sensorbasiert",
+    "payload": "",
     "payloadType": "str",
     "x": 110,
     "y": 880,
     "wires": [
       [
-        "1aae2861.49cfe"
+        "8083cc30.038e98"
       ]
     ]
-  },
-  {
-    "id": "1aae2861.49cfe",
-    "type": "ui_text",
-    "z": "ecee5153.6f2368",
-    "group": "7b8abfe6.0e9dd8",
-    "order": 7,
-    "width": 6,
-    "height": 1,
-    "name": "Zeige Automatisierungsinfo",
-    "label": "<i class=\"material-icons\">info</i>",
-    "format": "{{msg.payload}}",
-    "layout": "row-center",
-    "x": 420,
-    "y": 880,
-    "wires": []
   },
   {
     "id": "7534fdaf.a58c3c",
     "type": "ui_text",
     "z": "ecee5153.6f2368",
     "group": "7b8abfe6.0e9dd8",
-    "order": 4,
+    "order": 5,
     "width": 2,
     "height": 1,
     "name": "Zeige Ziel-Temperatur",
     "label": "<i class=\"material-icons\">whatshot</i>",
     "format": "{{msg.payload ? msg.payload + '°C' : 'Aus'}}",
-    "layout": "row-left",
+    "layout": "row-center",
     "x": 400,
     "y": 760,
     "wires": []
@@ -833,5 +792,89 @@
         "7534fdaf.a58c3c"
       ]
     ]
+  },
+  {
+    "id": "8083cc30.038e98",
+    "type": "ui_button",
+    "z": "ecee5153.6f2368",
+    "name": "Interaktion Automatisierungsinfo",
+    "group": "7b8abfe6.0e9dd8",
+    "order": 6,
+    "width": "1",
+    "height": "1",
+    "passthru": false,
+    "label": "",
+    "tooltip": "",
+    "color": "",
+    "bgcolor": "transparent",
+    "icon": "info",
+    "payload": "Schaltet vollautomatisch zeit- & sensorbasiert.",
+    "payloadType": "str",
+    "topic": "",
+    "x": 430,
+    "y": 880,
+    "wires": [
+      [
+        "e2ef774e.d02f2"
+      ]
+    ]
+  },
+  {
+    "id": "47602b66.7ff3d4",
+    "type": "ui_numeric",
+    "z": "ecee5153.6f2368",
+    "name": "Interaktion Soll-Temperatur",
+    "label": "",
+    "tooltip": "",
+    "group": "7b8abfe6.0e9dd8",
+    "order": 4,
+    "width": "2",
+    "height": "2",
+    "wrap": false,
+    "passthru": false,
+    "topic": "",
+    "format": "{{value}}°C",
+    "min": "8",
+    "max": "28",
+    "step": "0.5",
+    "x": 420,
+    "y": 820,
+    "wires": [
+      [
+        "9e099faa.e8719"
+      ]
+    ]
+  },
+  {
+    "id": "9e099faa.e8719",
+    "type": "debounce",
+    "z": "ecee5153.6f2368",
+    "time": "5000",
+    "name": "5s debounce",
+    "x": 650,
+    "y": 820,
+    "wires": [
+      [
+        "d20a9dc5.e2e3d8"
+      ]
+    ]
+  },
+  {
+    "id": "e2ef774e.d02f2",
+    "type": "ui_toast",
+    "z": "ecee5153.6f2368",
+    "position": "bottom right",
+    "displayTime": "5",
+    "highlight": "",
+    "sendall": false,
+    "outputs": 0,
+    "ok": "OK",
+    "cancel": "",
+    "raw": false,
+    "topic": "Schlafzimmer: Heizkörper",
+    "name": "Zeige Benachrichtigung",
+    "x": 710,
+    "y": 880,
+    "wires": []
   }
 ]
