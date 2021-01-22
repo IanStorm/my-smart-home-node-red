@@ -121,7 +121,7 @@
     ],
     "uncaught": false,
     "x": 130,
-    "y": 540,
+    "y": 600,
     "wires": [
       [
         "b014b6.bee3db48"
@@ -138,7 +138,7 @@
     ],
     "uncaught": false,
     "x": 110,
-    "y": 600,
+    "y": 660,
     "wires": [
       [
         "de501284.592ad8"
@@ -155,7 +155,7 @@
     ],
     "uncaught": false,
     "x": 160,
-    "y": 660,
+    "y": 720,
     "wires": [
       [
         "c355882b.624418"
@@ -182,7 +182,7 @@
     "to": "",
     "reg": false,
     "x": 400,
-    "y": 540,
+    "y": 600,
     "wires": [
       [
         "483af76d.ffe5"
@@ -209,7 +209,7 @@
     "to": "",
     "reg": false,
     "x": 430,
-    "y": 660,
+    "y": 720,
     "wires": [
       [
         "99dd36bb.26847"
@@ -236,7 +236,7 @@
     "to": "",
     "reg": false,
     "x": 380,
-    "y": 600,
+    "y": 660,
     "wires": [
       [
         "a8c96446.2e9bb"
@@ -248,7 +248,7 @@
     "type": "ui_text",
     "z": "a08151f9.16ea7",
     "group": "6aa4fe54.7c82f8",
-    "order": 3,
+    "order": 4,
     "width": 2,
     "height": 1,
     "name": "Zeige Batterie-%",
@@ -256,7 +256,7 @@
     "format": "{{msg.payload}}%",
     "layout": "row-center",
     "x": 670,
-    "y": 540,
+    "y": 600,
     "wires": []
   },
   {
@@ -264,7 +264,7 @@
     "type": "ui_text",
     "z": "a08151f9.16ea7",
     "group": "6aa4fe54.7c82f8",
-    "order": 2,
+    "order": 3,
     "width": 2,
     "height": 1,
     "name": "Zeige LQI",
@@ -272,7 +272,7 @@
     "format": "{{msg.payload}}",
     "layout": "row-center",
     "x": 640,
-    "y": 600,
+    "y": 660,
     "wires": []
   },
   {
@@ -280,7 +280,7 @@
     "type": "ui_text",
     "z": "a08151f9.16ea7",
     "group": "6aa4fe54.7c82f8",
-    "order": 1,
+    "order": 2,
     "width": 2,
     "height": 1,
     "name": "Zeige \"Ist geschlossen?\"",
@@ -288,7 +288,7 @@
     "format": "{{msg.payload ? 'Geschlossen' : 'Geöffnet'}}",
     "layout": "row-center",
     "x": 690,
-    "y": 660,
+    "y": 720,
     "wires": []
   },
   {
@@ -420,6 +420,46 @@
       [
         "bce06698.58666"
       ]
+    ]
+  },
+  {
+    "id": "19336e91.7b9e21",
+    "type": "inject",
+    "z": "a08151f9.16ea7",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 540,
+    "wires": [
+      [
+        "2f767a94.74380e"
+      ]
+    ]
+  },
+  {
+    "id": "2f767a94.74380e",
+    "type": "ui_template",
+    "z": "a08151f9.16ea7",
+    "group": "6aa4fe54.7c82f8",
+    "name": "Zeige Icon",
+    "order": 1,
+    "width": 2,
+    "height": "3",
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        logout\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "x": 650,
+    "y": 540,
+    "wires": [
+      []
     ]
   }
 ]

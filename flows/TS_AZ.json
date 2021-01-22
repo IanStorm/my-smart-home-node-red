@@ -178,7 +178,7 @@
     ],
     "uncaught": false,
     "x": 130,
-    "y": 360,
+    "y": 420,
     "wires": [
       [
         "e23cc07d.c20cf8"
@@ -195,7 +195,7 @@
     ],
     "uncaught": false,
     "x": 110,
-    "y": 420,
+    "y": 480,
     "wires": [
       [
         "3e271307.86e5c4"
@@ -212,7 +212,7 @@
     ],
     "uncaught": false,
     "x": 140,
-    "y": 480,
+    "y": 540,
     "wires": [
       [
         "aa811e5e.9955e",
@@ -226,7 +226,7 @@
     "type": "ui_text",
     "z": "2af9de26.90ad8a",
     "group": "8c9b25f5.1db3b8",
-    "order": 2,
+    "order": 3,
     "width": "2",
     "height": 1,
     "name": "Zeige LQI",
@@ -234,7 +234,7 @@
     "format": "{{msg.payload}}",
     "layout": "row-center",
     "x": 520,
-    "y": 420,
+    "y": 480,
     "wires": []
   },
   {
@@ -242,7 +242,7 @@
     "type": "ui_text",
     "z": "2af9de26.90ad8a",
     "group": "8c9b25f5.1db3b8",
-    "order": 3,
+    "order": 4,
     "width": "2",
     "height": 1,
     "name": "Zeige Batterie-%",
@@ -250,7 +250,7 @@
     "format": "{{msg.payload}}%",
     "layout": "row-center",
     "x": 550,
-    "y": 360,
+    "y": 420,
     "wires": []
   },
   {
@@ -259,7 +259,7 @@
     "z": "2af9de26.90ad8a",
     "name": "Zeige Temperatur-Aufzeichnung",
     "group": "8c9b25f5.1db3b8",
-    "order": 4,
+    "order": 5,
     "width": "5",
     "height": "6",
     "label": "",
@@ -270,7 +270,7 @@
     "nodata": "Warte auf Temperatur-Daten",
     "dot": false,
     "ymin": "16",
-    "ymax": "30",
+    "ymax": "28",
     "removeOlder": "24",
     "removeOlderPoints": "",
     "removeOlderUnit": "3600",
@@ -291,7 +291,7 @@
     "outputs": 1,
     "useDifferentColor": false,
     "x": 590,
-    "y": 520,
+    "y": 580,
     "wires": [
       []
     ]
@@ -301,15 +301,15 @@
     "type": "ui_text",
     "z": "2af9de26.90ad8a",
     "group": "8c9b25f5.1db3b8",
-    "order": 5,
+    "order": 6,
     "width": "1",
-    "height": "5",
+    "height": "7",
     "name": "Zeige Temperatur-Icon",
     "label": "<i class=\"material-icons\">ac_unit</i>",
     "format": "",
     "layout": "col-center",
     "x": 560,
-    "y": 480,
+    "y": 540,
     "wires": []
   },
   {
@@ -317,7 +317,7 @@
     "type": "ui_text",
     "z": "2af9de26.90ad8a",
     "group": "8c9b25f5.1db3b8",
-    "order": 1,
+    "order": 2,
     "width": "2",
     "height": "1",
     "name": "Zeige Temperatur",
@@ -325,7 +325,7 @@
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
     "x": 550,
-    "y": 560,
+    "y": 620,
     "wires": []
   },
   {
@@ -343,11 +343,51 @@
     "outputFieldDecimals": "1",
     "name": "Vereinfache",
     "x": 350,
-    "y": 560,
+    "y": 620,
     "wires": [
       [
         "d97caea0.6ca1f"
       ]
+    ]
+  },
+  {
+    "id": "7cb6f5f.edd2f0c",
+    "type": "inject",
+    "z": "2af9de26.90ad8a",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 360,
+    "wires": [
+      [
+        "153bb9b6.db8c06"
+      ]
+    ]
+  },
+  {
+    "id": "153bb9b6.db8c06",
+    "type": "ui_template",
+    "z": "2af9de26.90ad8a",
+    "group": "8c9b25f5.1db3b8",
+    "name": "Zeige Icon",
+    "order": 1,
+    "width": 2,
+    "height": "2",
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        router\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "x": 530,
+    "y": 360,
+    "wires": [
+      []
     ]
   }
 ]
