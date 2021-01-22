@@ -87,8 +87,8 @@
       "sizes": {
         "sx": 64,
         "sy": 32,
-        "gx": 12,
-        "gy": 12,
+        "gx": 8,
+        "gy": 8,
         "cx": 4,
         "cy": 4,
         "px": 0,
@@ -106,8 +106,8 @@
   {
     "id": "412fbf62.1e1d9",
     "type": "ui_group",
-    "name": "Schlafzimmer: Nachttische",
-    "tab": "43f2ca82.e2925c",
+    "name": "Nachttische",
+    "tab": "f0d49b09.776a2",
     "order": 1,
     "disp": true,
     "width": "6",
@@ -118,7 +118,7 @@
     "type": "ui_tab",
     "name": "System",
     "icon": "fa-microchip",
-    "order": 7,
+    "order": 15,
     "disabled": false,
     "hidden": false
   },
@@ -165,9 +165,9 @@
   {
     "id": "259c1fb2.ed8768",
     "type": "ui_group",
-    "name": "Arbeitszimmer: Christian's PC",
-    "tab": "14feb2a9.8277c5",
-    "order": 4,
+    "name": "Christian's PC",
+    "tab": "6c600c27.493f64",
+    "order": 2,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -196,16 +196,16 @@
     "type": "ui_tab",
     "name": "Monitoring",
     "icon": "fa-heartbeat",
-    "order": 6,
+    "order": 14,
     "disabled": false,
     "hidden": false
   },
   {
     "id": "e7215ad9.54bc5",
     "type": "ui_group",
-    "name": "Arbeitszimmer: Sandra's PC",
-    "tab": "14feb2a9.8277c5",
-    "order": 3,
+    "name": "Sandra's PC",
+    "tab": "6c600c27.493f64",
+    "order": 1,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -213,9 +213,9 @@
   {
     "id": "4587520c.baf024",
     "type": "ui_group",
-    "name": "Wohnküche: Fernsehtisch",
-    "tab": "14feb2a9.8277c5",
-    "order": 5,
+    "name": "Fernsehtisch",
+    "tab": "3cbc9af3.9bf5ce",
+    "order": 1,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -230,8 +230,8 @@
     "id": "e76cc3b6.096b9",
     "type": "ui_group",
     "name": "Saugroboter",
-    "tab": "841fce51.f02b3",
-    "order": 6,
+    "tab": "f0d49b09.776a2",
+    "order": 4,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -247,9 +247,9 @@
   {
     "id": "2fe0f099.995658",
     "type": "ui_group",
-    "name": "Wohnküche: Heizkörper",
-    "tab": "d1bd741a.9ca2e",
-    "order": 7,
+    "name": "Heizkörper",
+    "tab": "3cbc9af3.9bf5ce",
+    "order": 4,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -257,8 +257,8 @@
   {
     "id": "9298819a.21ca98",
     "type": "ui_group",
-    "name": "Badezimmer: Heizkörper",
-    "tab": "d1bd741a.9ca2e",
+    "name": "Heizkörper",
+    "tab": "523209a3.f325d",
     "order": 8,
     "disp": true,
     "width": "6",
@@ -267,9 +267,9 @@
   {
     "id": "cd94108d.1e556",
     "type": "ui_group",
-    "name": "Arbeitszimmer: Heizkörper",
-    "tab": "d1bd741a.9ca2e",
-    "order": 9,
+    "name": "Heizkörper",
+    "tab": "6c600c27.493f64",
+    "order": 4,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -277,9 +277,9 @@
   {
     "id": "7b8abfe6.0e9dd8",
     "type": "ui_group",
-    "name": "Schlafzimmer: Heizkörper",
-    "tab": "d1bd741a.9ca2e",
-    "order": 10,
+    "name": "Heizkörper",
+    "tab": "f0d49b09.776a2",
+    "order": 3,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -287,49 +287,22 @@
   {
     "id": "964aeb18.79a868",
     "type": "ui_group",
-    "name": "Flur 1: Heizkörper",
-    "tab": "d1bd741a.9ca2e",
+    "name": "Heizkörper",
+    "tab": "9be1f758.946cf8",
     "order": 11,
     "disp": true,
     "width": "6",
     "collapse": false
   },
   {
-    "id": "d1bd741a.9ca2e",
-    "type": "ui_tab",
-    "name": "Heizung",
-    "icon": "fa-thermometer-half",
-    "order": 3,
-    "disabled": false,
-    "hidden": false
-  },
-  {
-    "id": "43f2ca82.e2925c",
-    "type": "ui_tab",
-    "name": "Steckdosen",
-    "icon": "fa-plug",
-    "order": 2,
-    "disabled": false,
-    "hidden": false
-  },
-  {
     "id": "2f3f5aef.3d20ee",
     "type": "ui_group",
-    "name": "Balkon",
-    "tab": "43f2ca82.e2925c",
+    "name": "Steckdose",
+    "tab": "dc2a0ecd.db0f18",
     "order": 2,
     "disp": true,
     "width": "6",
     "collapse": false
-  },
-  {
-    "id": "841fce51.f02b3",
-    "type": "ui_tab",
-    "name": "Hygiene",
-    "icon": "fa-shower",
-    "order": 4,
-    "disabled": false,
-    "hidden": false
   },
   {
     "id": "dd3cc3c3.66f0c8",
@@ -354,20 +327,11 @@
     "collapse": false
   },
   {
-    "id": "abb1b2ae.11d618",
-    "type": "ui_tab",
-    "name": "Sensoren",
-    "icon": "router",
-    "order": 5,
-    "disabled": false,
-    "hidden": false
-  },
-  {
     "id": "aa64946a.b8cef",
     "type": "ui_group",
-    "name": "Wohnküche, kl. Balkontür",
-    "tab": "abb1b2ae.11d618",
-    "order": 1,
+    "name": "Balkontür, klein",
+    "tab": "3cbc9af3.9bf5ce",
+    "order": 3,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -375,8 +339,8 @@
   {
     "id": "6aa4fe54.7c82f8",
     "type": "ui_group",
-    "name": "Wohnküche, gr. Balkontür",
-    "tab": "abb1b2ae.11d618",
+    "name": "Balkontür, groß",
+    "tab": "3cbc9af3.9bf5ce",
     "order": 2,
     "disp": true,
     "width": "6",
@@ -385,8 +349,8 @@
   {
     "id": "d2e8a811.44b478",
     "type": "ui_group",
-    "name": "Arbeitszimmer, Balkontür",
-    "tab": "abb1b2ae.11d618",
+    "name": "Balkontür",
+    "tab": "6c600c27.493f64",
     "order": 3,
     "disp": true,
     "width": "6",
@@ -395,9 +359,9 @@
   {
     "id": "b823bcaf.ffdfe8",
     "type": "ui_group",
-    "name": "Schlafzimmer, re. Fenster",
-    "tab": "abb1b2ae.11d618",
-    "order": 4,
+    "name": "Fenster, rechts",
+    "tab": "f0d49b09.776a2",
+    "order": 2,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -451,7 +415,7 @@
     "id": "2b39cfe.8e9f33",
     "type": "ui_group",
     "name": "Telefon",
-    "tab": "14feb2a9.8277c5",
+    "tab": "5fa0aaf9.168a54",
     "order": 2,
     "disp": true,
     "width": "6",
@@ -478,8 +442,8 @@
   {
     "id": "8c9b25f5.1db3b8",
     "type": "ui_group",
-    "name": "Arbeitszimmer, Sensor 1",
-    "tab": "abb1b2ae.11d618",
+    "name": "Sensor 1",
+    "tab": "6c600c27.493f64",
     "order": 5,
     "disp": true,
     "width": "6",
@@ -488,11 +452,83 @@
   {
     "id": "747b954.0a7986c",
     "type": "ui_group",
-    "name": "Balkon, Sensor 1",
-    "tab": "abb1b2ae.11d618",
+    "name": "Gewächshaus, Sensor 1",
+    "tab": "dc2a0ecd.db0f18",
     "order": 6,
     "disp": true,
     "width": "6",
     "collapse": false
+  },
+  {
+    "id": "39a3ba61.95973e",
+    "type": "ui_group",
+    "name": "Group 1",
+    "tab": "",
+    "order": 1,
+    "disp": true,
+    "width": 6
+  },
+  {
+    "id": "6c600c27.493f64",
+    "type": "ui_tab",
+    "name": "Arbeitszimmer",
+    "icon": "fa-briefcase",
+    "order": 7,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "523209a3.f325d",
+    "type": "ui_tab",
+    "name": "Badezimmer",
+    "icon": "fa-shower",
+    "order": 8,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "dc2a0ecd.db0f18",
+    "type": "ui_tab",
+    "name": "Balkon",
+    "icon": "fa-pagelines",
+    "order": 9,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "9be1f758.946cf8",
+    "type": "ui_tab",
+    "name": "Flur 1",
+    "icon": "fa-road",
+    "order": 10,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "5fa0aaf9.168a54",
+    "type": "ui_tab",
+    "name": "Flur 2",
+    "icon": "fa-phone",
+    "order": 11,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "f0d49b09.776a2",
+    "type": "ui_tab",
+    "name": "Schlafzimmer",
+    "icon": "fa-bed",
+    "order": 12,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "3cbc9af3.9bf5ce",
+    "type": "ui_tab",
+    "name": "Wohnküche",
+    "icon": "fa-television",
+    "order": 13,
+    "disabled": false,
+    "hidden": false
   }
 ]
