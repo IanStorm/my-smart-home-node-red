@@ -1,0 +1,353 @@
+[
+  {
+    "id": "ae79e463.ac6c38",
+    "type": "tab",
+    "label": "TS_BLK",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "51179da5.f999cc",
+    "type": "comment",
+    "z": "ae79e463.ac6c38",
+    "name": "Temperatur-Sensor -> Balkon",
+    "info": "",
+    "x": 140,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "3cb27edf.413272",
+    "type": "comment",
+    "z": "ae79e463.ac6c38",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "9b063b34.3a57b8",
+    "type": "zigbee2mqtt-in",
+    "z": "ae79e463.ac6c38",
+    "name": "Warte auf Sensor-Daten",
+    "server": "dd3cc3c3.66f0c8",
+    "friendly_name": "temperature/balcony",
+    "device_id": "0x00158d0005405541",
+    "state": "0",
+    "outputAtStartup": true,
+    "x": 140,
+    "y": 180,
+    "wires": [
+      [
+        "59326304.37e484"
+      ]
+    ]
+  },
+  {
+    "id": "ee97cfc1.0424a",
+    "type": "inject",
+    "z": "ae79e463.ac6c38",
+    "d": true,
+    "name": "Teste",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "payload_raw",
+        "v": "{\"battery\":100,\"humidity\":83.1,\"linkquality\":94,\"pressure\":988,\"temperature\":6.33,\"voltage\":3045}",
+        "vt": "json"
+      },
+      {
+        "p": "device",
+        "v": "{\"dateCode\":\"20191205\",\"description\":\"Aqara temperature, humidity and pressure sensor\",\"friendly_name\":\"temperature/balcony\",\"hardwareVersion\":30,\"ieeeAddr\":\"0x00158d0005405541\",\"lastSeen\":1610989240433,\"manufacturerID\":4151,\"manufacturerName\":\"LUMI\",\"model\":\"WSDCGQ11LM\",\"modelID\":\"lumi.weather\",\"networkAddress\":28738,\"powerSource\":\"Battery\",\"softwareBuildID\":\"3000-0001\",\"type\":\"EndDevice\",\"vendor\":\"Xiaomi\",\"lastPayload\":{\"battery\":100,\"humidity\":83.1,\"linkquality\":94,\"pressure\":988,\"temperature\":6.33,\"voltage\":3045},\"homekit\":{\"TemperatureSensor\":{\"CurrentTemperature\":6.33},\"HumiditySensor\":{\"CurrentRelativeHumidity\":83.1},\"Battery\":{\"BatteryLevel\":100,\"StatusLowBattery\":0}}}",
+        "vt": "json"
+      },
+      {
+        "p": "group",
+        "v": "null",
+        "vt": "json"
+      },
+      {
+        "p": "homekit",
+        "v": "{\"TemperatureSensor\":{\"CurrentTemperature\":6.33},\"HumiditySensor\":{\"CurrentRelativeHumidity\":83.1},\"Battery\":{\"BatteryLevel\":100,\"StatusLowBattery\":0}}",
+        "vt": "json"
+      },
+      {
+        "p": "format",
+        "v": "{}",
+        "vt": "json"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{\"battery\":100,\"humidity\":83.1,\"linkquality\":94,\"pressure\":988,\"temperature\":6.33,\"voltage\":3045}",
+    "payloadType": "json",
+    "x": 190,
+    "y": 220,
+    "wires": [
+      [
+        "59326304.37e484"
+      ]
+    ]
+  },
+  {
+    "id": "59326304.37e484",
+    "type": "subflow:bd326ce6.854e58",
+    "z": "ae79e463.ac6c38",
+    "name": "Lese Sensor-Daten",
+    "env": [
+      {
+        "name": "topicPrefix",
+        "value": "balcony/sensor1",
+        "type": "str"
+      }
+    ],
+    "x": 370,
+    "y": 180,
+    "wires": [
+      [
+        "494e26cd.73f198"
+      ],
+      [
+        "713a6f62.d94bb"
+      ],
+      [
+        "c31b33a8.1e32e8"
+      ]
+    ]
+  },
+  {
+    "id": "494e26cd.73f198",
+    "type": "link out",
+    "z": "ae79e463.ac6c38",
+    "name": "Teile Batterie-%",
+    "links": [],
+    "x": 580,
+    "y": 140,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "713a6f62.d94bb",
+    "type": "link out",
+    "z": "ae79e463.ac6c38",
+    "name": "Teile LQI",
+    "links": [],
+    "x": 560,
+    "y": 180,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "c31b33a8.1e32e8",
+    "type": "link out",
+    "z": "ae79e463.ac6c38",
+    "name": "Teile Temperatur",
+    "links": [],
+    "x": 580,
+    "y": 220,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "a1f4aecf.e78518",
+    "type": "comment",
+    "z": "ae79e463.ac6c38",
+    "name": "GUI",
+    "info": "",
+    "x": 90,
+    "y": 300,
+    "wires": []
+  },
+  {
+    "id": "94756d6f.cb881",
+    "type": "complete",
+    "z": "ae79e463.ac6c38",
+    "name": "Warte auf Batterie-%",
+    "scope": [
+      "494e26cd.73f198"
+    ],
+    "uncaught": false,
+    "x": 130,
+    "y": 360,
+    "wires": [
+      [
+        "d9080b74.71b66"
+      ]
+    ]
+  },
+  {
+    "id": "5aa3180d.0b1a88",
+    "type": "complete",
+    "z": "ae79e463.ac6c38",
+    "name": "Warte auf LQI",
+    "scope": [
+      "713a6f62.d94bb"
+    ],
+    "uncaught": false,
+    "x": 110,
+    "y": 420,
+    "wires": [
+      [
+        "ac429282.d46408"
+      ]
+    ]
+  },
+  {
+    "id": "fd0ae949.bf0198",
+    "type": "complete",
+    "z": "ae79e463.ac6c38",
+    "name": "Warte auf Temperatur",
+    "scope": [
+      "c31b33a8.1e32e8"
+    ],
+    "uncaught": false,
+    "x": 140,
+    "y": 480,
+    "wires": [
+      [
+        "78c9a97a.8fb878",
+        "e317ddfd.a9c1b",
+        "c86c2895.8a23c8"
+      ]
+    ]
+  },
+  {
+    "id": "ac429282.d46408",
+    "type": "ui_text",
+    "z": "ae79e463.ac6c38",
+    "group": "747b954.0a7986c",
+    "order": 2,
+    "width": "2",
+    "height": 1,
+    "name": "Zeige LQI",
+    "label": "<i class=\"material-icons\">sync</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-center",
+    "x": 520,
+    "y": 420,
+    "wires": []
+  },
+  {
+    "id": "d9080b74.71b66",
+    "type": "ui_text",
+    "z": "ae79e463.ac6c38",
+    "group": "747b954.0a7986c",
+    "order": 3,
+    "width": "2",
+    "height": 1,
+    "name": "Zeige Batterie-%",
+    "label": "<i class=\"material-icons\">battery_unknown</i>",
+    "format": "{{msg.payload}}%",
+    "layout": "row-center",
+    "x": 550,
+    "y": 360,
+    "wires": []
+  },
+  {
+    "id": "78c9a97a.8fb878",
+    "type": "ui_chart",
+    "z": "ae79e463.ac6c38",
+    "name": "Zeige Temperatur-Aufzeichnung",
+    "group": "747b954.0a7986c",
+    "order": 4,
+    "width": "5",
+    "height": "6",
+    "label": "",
+    "chartType": "line",
+    "legend": "false",
+    "xformat": "HH:mm",
+    "interpolate": "linear",
+    "nodata": "Warte auf Temperatur-Daten",
+    "dot": false,
+    "ymin": "-2",
+    "ymax": "32",
+    "removeOlder": "24",
+    "removeOlderPoints": "",
+    "removeOlderUnit": "3600",
+    "cutout": 0,
+    "useOneColor": false,
+    "useUTC": false,
+    "colors": [
+      "#2ca02c",
+      "#aec7e8",
+      "#ff7f0e",
+      "#1f77b4",
+      "#98df8a",
+      "#d62728",
+      "#ff9896",
+      "#9467bd",
+      "#c5b0d5"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "x": 590,
+    "y": 520,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "e317ddfd.a9c1b",
+    "type": "ui_text",
+    "z": "ae79e463.ac6c38",
+    "group": "747b954.0a7986c",
+    "order": 5,
+    "width": "1",
+    "height": "5",
+    "name": "Zeige Temperatur-Icon",
+    "label": "<i class=\"material-icons\">ac_unit</i>",
+    "format": "",
+    "layout": "col-center",
+    "x": 560,
+    "y": 480,
+    "wires": []
+  },
+  {
+    "id": "a6fcd086.5e20f8",
+    "type": "ui_text",
+    "z": "ae79e463.ac6c38",
+    "group": "747b954.0a7986c",
+    "order": 1,
+    "width": "2",
+    "height": "1",
+    "name": "Zeige Temperatur",
+    "label": "<i class=\"material-icons\">ac_unit</i>",
+    "format": "{{msg.payload}}°C",
+    "layout": "row-center",
+    "x": 550,
+    "y": 560,
+    "wires": []
+  },
+  {
+    "id": "c86c2895.8a23c8",
+    "type": "unit-converter",
+    "z": "ae79e463.ac6c38",
+    "category": "temperature",
+    "inputUnit": "C",
+    "outputUnit": "C",
+    "inputField": "payload",
+    "outputField": "payload",
+    "inputFieldType": "msg",
+    "outputFieldType": "msg",
+    "roundOutputField": true,
+    "outputFieldDecimals": "1",
+    "name": "Vereinfache",
+    "x": 350,
+    "y": 560,
+    "wires": [
+      [
+        "a6fcd086.5e20f8"
+      ]
+    ]
+  }
+]
