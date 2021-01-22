@@ -13,7 +13,7 @@
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 560,
+    "y": 320,
     "wires": []
   },
   {
@@ -126,7 +126,7 @@
     "resendOnRefresh": true,
     "templateScope": "local",
     "x": 590,
-    "y": 680,
+    "y": 440,
     "wires": [
       []
     ]
@@ -144,7 +144,7 @@
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
     "x": 610,
-    "y": 740,
+    "y": 500,
     "wires": []
   },
   {
@@ -160,7 +160,7 @@
     "format": "{{msg.payload}}W",
     "layout": "row-center",
     "x": 630,
-    "y": 800,
+    "y": 560,
     "wires": []
   },
   {
@@ -183,7 +183,7 @@
     "to": "",
     "reg": false,
     "x": 390,
-    "y": 860,
+    "y": 620,
     "wires": [
       [
         "2a63b7fa.355d6"
@@ -239,7 +239,7 @@
     "officon": "",
     "offcolor": "",
     "x": 630,
-    "y": 860,
+    "y": 620,
     "wires": [
       [
         "59f4097.b82daf8"
@@ -293,7 +293,7 @@
     "to": "",
     "reg": false,
     "x": 890,
-    "y": 860,
+    "y": 620,
     "wires": [
       []
     ]
@@ -318,7 +318,7 @@
     "to": "",
     "reg": false,
     "x": 370,
-    "y": 680,
+    "y": 440,
     "wires": [
       [
         "98a1bccc.ac5458"
@@ -345,7 +345,7 @@
     "to": "",
     "reg": false,
     "x": 380,
-    "y": 740,
+    "y": 500,
     "wires": [
       [
         "c55c6425.94487"
@@ -372,7 +372,7 @@
     "to": "",
     "reg": false,
     "x": 380,
-    "y": 800,
+    "y": 560,
     "wires": [
       [
         "994ddb02.8574a8"
@@ -386,7 +386,7 @@
     "name": "Automatisch Schalten",
     "info": "",
     "x": 140,
-    "y": 320,
+    "y": 760,
     "wires": []
   },
   {
@@ -420,7 +420,7 @@
     ],
     "uncaught": false,
     "x": 120,
-    "y": 680,
+    "y": 440,
     "wires": [
       [
         "cdd6bb7c.7bc698"
@@ -437,7 +437,7 @@
     ],
     "uncaught": false,
     "x": 140,
-    "y": 740,
+    "y": 500,
     "wires": [
       [
         "fcee4422.71b9a"
@@ -454,7 +454,7 @@
     ],
     "uncaught": false,
     "x": 130,
-    "y": 800,
+    "y": 560,
     "wires": [
       [
         "73b1df3c.4e55f"
@@ -471,7 +471,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 860,
+    "y": 620,
     "wires": [
       [
         "ecd4fe7b.025c4"
@@ -493,7 +493,7 @@
     "resendOnRefresh": false,
     "templateScope": "local",
     "x": 620,
-    "y": 620,
+    "y": 380,
     "wires": [
       []
     ]
@@ -511,7 +511,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 620,
+    "y": 380,
     "wires": [
       [
         "18fdba9b.55e285"
@@ -540,7 +540,7 @@
     "payload": "",
     "payloadType": "date",
     "x": 130,
-    "y": 380,
+    "y": 820,
     "wires": [
       [
         "4b00c74e.2c639"
@@ -572,7 +572,7 @@
     "payload": "",
     "payloadType": "date",
     "x": 140,
-    "y": 440,
+    "y": 880,
     "wires": [
       [
         "feacd98d.6662b"
@@ -592,7 +592,7 @@
     "payload": "",
     "payloadType": "date",
     "x": 140,
-    "y": 480,
+    "y": 920,
     "wires": [
       [
         "646b8f1c.1d1e88"
@@ -619,7 +619,7 @@
     "to": "",
     "reg": false,
     "x": 350,
-    "y": 380,
+    "y": 820,
     "wires": [
       []
     ]
@@ -644,7 +644,7 @@
     "to": "",
     "reg": false,
     "x": 350,
-    "y": 440,
+    "y": 880,
     "wires": [
       []
     ]
@@ -669,7 +669,7 @@
     "to": "",
     "reg": false,
     "x": 350,
-    "y": 480,
+    "y": 920,
     "wires": [
       []
     ]
@@ -725,7 +725,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 920,
+    "y": 680,
     "wires": [
       [
         "ec8912e1.7f7f08"
@@ -751,7 +751,7 @@
     "payloadType": "str",
     "topic": "",
     "x": 650,
-    "y": 920,
+    "y": 680,
     "wires": [
       [
         "8bcb8f85.e99be8"
@@ -773,7 +773,7 @@
     "topic": "Schlafzimmer: Steckdose Nachttische",
     "name": "Zeige Benachrichtigung",
     "x": 930,
-    "y": 920,
+    "y": 680,
     "wires": []
   }
 ]

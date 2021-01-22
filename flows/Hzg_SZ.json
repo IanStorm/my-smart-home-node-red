@@ -33,7 +33,7 @@
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 520,
+    "y": 560,
     "wires": []
   },
   {
@@ -46,7 +46,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 640,
+    "y": 680,
     "wires": [
       [
         "577b5271.e38e54"
@@ -63,7 +63,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 700,
+    "y": 740,
     "wires": [
       [
         "a81dabaa.a85338"
@@ -80,7 +80,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 820,
+    "y": 860,
     "wires": [
       [
         "47602b66.7ff3d4"
@@ -102,7 +102,7 @@
     "resendOnRefresh": true,
     "templateScope": "local",
     "x": 400,
-    "y": 640,
+    "y": 680,
     "wires": [
       []
     ]
@@ -120,7 +120,7 @@
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
     "x": 400,
-    "y": 700,
+    "y": 740,
     "wires": []
   },
   {
@@ -136,7 +136,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 580,
+    "y": 620,
     "wires": [
       [
         "5df501f.d1a2c8"
@@ -158,7 +158,7 @@
     "resendOnRefresh": false,
     "templateScope": "local",
     "x": 390,
-    "y": 580,
+    "y": 620,
     "wires": [
       []
     ]
@@ -170,7 +170,7 @@
     "name": "Automatisch Schalten",
     "info": "",
     "x": 140,
-    "y": 960,
+    "y": 1000,
     "wires": []
   },
   {
@@ -195,7 +195,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1020,
+    "y": 1060,
     "wires": [
       [
         "d98b1423.c395f"
@@ -224,7 +224,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 150,
-    "y": 1060,
+    "y": 1100,
     "wires": [
       [
         "d98b1423.c395f"
@@ -258,7 +258,7 @@
     "to": "",
     "reg": false,
     "x": 450,
-    "y": 1060,
+    "y": 1100,
     "wires": [
       []
     ]
@@ -290,7 +290,7 @@
     "to": "",
     "reg": false,
     "x": 450,
-    "y": 1200,
+    "y": 1240,
     "wires": [
       []
     ]
@@ -310,7 +310,7 @@
     "y": 300,
     "wires": [
       [
-        "13a8fecb.c24ec1"
+        "c3ab2ad3.9f4f5"
       ]
     ]
   },
@@ -326,7 +326,7 @@
     "y": 340,
     "wires": [
       [
-        "13a8fecb.c24ec1"
+        "c3ab2ad3.9f4f5"
       ]
     ],
     "l": true
@@ -343,7 +343,7 @@
     "y": 380,
     "wires": [
       [
-        "13a8fecb.c24ec1"
+        "c3ab2ad3.9f4f5"
       ]
     ],
     "l": true
@@ -375,118 +375,7 @@
     "to": "",
     "reg": false,
     "x": 880,
-    "y": 820,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "13a8fecb.c24ec1",
-    "type": "join",
-    "z": "ecee5153.6f2368",
-    "name": "merge",
-    "mode": "custom",
-    "build": "object",
-    "property": "payload",
-    "propertyType": "msg",
-    "key": "topic",
-    "joiner": "\\n",
-    "joinerType": "str",
-    "accumulate": true,
-    "timeout": "",
-    "count": "3",
-    "reduceRight": false,
-    "reduceExp": "",
-    "reduceInit": "",
-    "reduceInitType": "",
-    "reduceFixup": "",
-    "x": 450,
-    "y": 340,
-    "wires": [
-      [
-        "a725e689.cfa3c"
-      ]
-    ]
-  },
-  {
-    "id": "a725e689.cfa3c",
-    "type": "switch",
-    "z": "ecee5153.6f2368",
-    "name": "Ist Heizung an?",
-    "property": "payload[\"radiator/mainSwitch\"]",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "true"
-      },
-      {
-        "t": "else"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 600,
-    "y": 340,
-    "wires": [
-      [
-        "6ea64bc3.f27eac"
-      ],
-      [
-        "1a6f3b2.38ce6c5"
-      ]
-    ]
-  },
-  {
-    "id": "6ea64bc3.f27eac",
-    "type": "switch",
-    "z": "ecee5153.6f2368",
-    "name": "Ist Fenster zu?",
-    "property": "payload[\"bedroom/windows/right/isClosed\"]",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "true"
-      },
-      {
-        "t": "else"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 780,
-    "y": 320,
-    "wires": [
-      [
-        "cecdbd18.8b9f4"
-      ],
-      [
-        "1a6f3b2.38ce6c5"
-      ]
-    ]
-  },
-  {
-    "id": "1a6f3b2.38ce6c5",
-    "type": "change",
-    "z": "ecee5153.6f2368",
-    "name": "Setze Ziel-Temperatur auf \"aus\"",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "false",
-        "tot": "bool"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 1030,
-    "y": 360,
+    "y": 860,
     "wires": [
       []
     ]
@@ -498,40 +387,16 @@
     "name": "Warte auf Ziel-Temperatur",
     "scope": [
       "1a6f3b2.38ce6c5",
-      "cecdbd18.8b9f4"
+      "cecdbd18.8b9f4",
+      "3d5ab2d1.88722e"
     ],
     "uncaught": false,
     "x": 150,
-    "y": 440,
+    "y": 480,
     "wires": [
       [
         "cb54205f.b1e5f8"
       ]
-    ]
-  },
-  {
-    "id": "cecdbd18.8b9f4",
-    "type": "change",
-    "z": "ecee5153.6f2368",
-    "name": "Setze Ziel- auf Wunsch-Temperatur",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "payload[\"bedroom/radiator/desiredTemperature\"]",
-        "tot": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 1040,
-    "y": 300,
-    "wires": [
-      []
     ]
   },
   {
@@ -611,7 +476,7 @@
       }
     ],
     "x": 390,
-    "y": 440,
+    "y": 480,
     "wires": []
   },
   {
@@ -636,7 +501,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1160,
+    "y": 1200,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -665,7 +530,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1240,
+    "y": 1280,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -694,7 +559,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 150,
-    "y": 1200,
+    "y": 1240,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -723,7 +588,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1100,
+    "y": 1140,
     "wires": [
       [
         "d98b1423.c395f"
@@ -752,7 +617,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 880,
+    "y": 920,
     "wires": [
       [
         "8083cc30.038e98"
@@ -772,7 +637,7 @@
     "format": "{{msg.payload ? msg.payload + '°C' : 'Aus'}}",
     "layout": "row-center",
     "x": 400,
-    "y": 760,
+    "y": 800,
     "wires": []
   },
   {
@@ -786,7 +651,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 760,
+    "y": 800,
     "wires": [
       [
         "7534fdaf.a58c3c"
@@ -812,7 +677,7 @@
     "payloadType": "str",
     "topic": "",
     "x": 430,
-    "y": 880,
+    "y": 920,
     "wires": [
       [
         "e2ef774e.d02f2"
@@ -838,7 +703,7 @@
     "max": "28",
     "step": "0.5",
     "x": 420,
-    "y": 820,
+    "y": 860,
     "wires": [
       [
         "9e099faa.e8719"
@@ -852,7 +717,7 @@
     "time": "5000",
     "name": "5s debounce",
     "x": 650,
-    "y": 820,
+    "y": 860,
     "wires": [
       [
         "d20a9dc5.e2e3d8"
@@ -874,7 +739,70 @@
     "topic": "Schlafzimmer: Heizkörper",
     "name": "Zeige Benachrichtigung",
     "x": 710,
-    "y": 880,
+    "y": 920,
     "wires": []
+  },
+  {
+    "id": "a3aeb4fa.bbb6c",
+    "type": "link in",
+    "z": "ecee5153.6f2368",
+    "name": "Warte auf \"Ist Fenster geschlossen?\"",
+    "links": [
+      "c3ac0285.66ce2"
+    ],
+    "x": 180,
+    "y": 420,
+    "wires": [
+      [
+        "c3ab2ad3.9f4f5"
+      ]
+    ],
+    "l": true
+  },
+  {
+    "id": "c3ab2ad3.9f4f5",
+    "type": "subflow:824afeed.e518a8",
+    "z": "ecee5153.6f2368",
+    "name": "Berechne Ziel-Temperatur",
+    "env": [
+      {
+        "name": "contactSensor1Topic",
+        "value": "bedroom/windows/right/isClosed",
+        "type": "str"
+      },
+      {
+        "name": "contactSensor2Topic",
+        "value": "bedroom/windows/right/isClosed",
+        "type": "str"
+      },
+      {
+        "name": "desiredTemperatureTopic",
+        "value": "bedroom/radiator/desiredTemperature",
+        "type": "str"
+      },
+      {
+        "name": "targetTemperatureTopic",
+        "value": "bedroom/radiator/targetTemperature",
+        "type": "str"
+      }
+    ],
+    "x": 510,
+    "y": 340,
+    "wires": [
+      [
+        "3d5ab2d1.88722e"
+      ]
+    ]
+  },
+  {
+    "id": "3d5ab2d1.88722e",
+    "type": "link out",
+    "z": "ecee5153.6f2368",
+    "name": "Teile Ziel-Temperatur",
+    "links": [],
+    "x": 760,
+    "y": 340,
+    "wires": [],
+    "l": true
   }
 ]

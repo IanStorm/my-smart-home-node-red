@@ -13,7 +13,7 @@
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 560,
+    "y": 320,
     "wires": []
   },
   {
@@ -126,7 +126,7 @@
     "resendOnRefresh": true,
     "templateScope": "local",
     "x": 590,
-    "y": 680,
+    "y": 440,
     "wires": [
       []
     ]
@@ -144,7 +144,7 @@
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
     "x": 610,
-    "y": 740,
+    "y": 500,
     "wires": []
   },
   {
@@ -160,7 +160,7 @@
     "format": "{{msg.payload}}W",
     "layout": "row-center",
     "x": 630,
-    "y": 800,
+    "y": 560,
     "wires": []
   },
   {
@@ -183,7 +183,7 @@
     "to": "",
     "reg": false,
     "x": 390,
-    "y": 860,
+    "y": 620,
     "wires": [
       [
         "1ba359aa.39929e"
@@ -239,7 +239,7 @@
     "officon": "",
     "offcolor": "",
     "x": 630,
-    "y": 860,
+    "y": 620,
     "wires": [
       [
         "c919cbb9.c0ebb8"
@@ -293,7 +293,7 @@
     "to": "",
     "reg": false,
     "x": 850,
-    "y": 860,
+    "y": 620,
     "wires": [
       []
     ]
@@ -318,7 +318,7 @@
     "to": "",
     "reg": false,
     "x": 370,
-    "y": 680,
+    "y": 440,
     "wires": [
       [
         "703b441a.e8fcfc"
@@ -345,7 +345,7 @@
     "to": "",
     "reg": false,
     "x": 380,
-    "y": 740,
+    "y": 500,
     "wires": [
       [
         "7470a5b5.aac98c"
@@ -372,7 +372,7 @@
     "to": "",
     "reg": false,
     "x": 380,
-    "y": 800,
+    "y": 560,
     "wires": [
       [
         "15bc570d.988619"
@@ -386,7 +386,7 @@
     "name": "Automatisch Schalten",
     "info": "",
     "x": 140,
-    "y": 320,
+    "y": 800,
     "wires": []
   },
   {
@@ -411,7 +411,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 100,
-    "y": 440,
+    "y": 920,
     "wires": [
       [
         "f6043311.722a38"
@@ -438,7 +438,7 @@
     "to": "",
     "reg": false,
     "x": 770,
-    "y": 460,
+    "y": 940,
     "wires": [
       []
     ]
@@ -472,7 +472,7 @@
     ],
     "uncaught": false,
     "x": 120,
-    "y": 680,
+    "y": 440,
     "wires": [
       [
         "419b0400.459474"
@@ -489,7 +489,7 @@
     ],
     "uncaught": false,
     "x": 140,
-    "y": 740,
+    "y": 500,
     "wires": [
       [
         "9d3b72e8.6d02d"
@@ -506,7 +506,7 @@
     ],
     "uncaught": false,
     "x": 130,
-    "y": 800,
+    "y": 560,
     "wires": [
       [
         "5c793d22.3597bc"
@@ -523,7 +523,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 860,
+    "y": 620,
     "wires": [
       [
         "ed7db42a.a87838"
@@ -557,7 +557,7 @@
     "to": "",
     "reg": false,
     "x": 390,
-    "y": 440,
+    "y": 920,
     "wires": [
       [
         "1ce3ada3.bff0ba"
@@ -579,7 +579,7 @@
     "resendOnRefresh": false,
     "templateScope": "local",
     "x": 620,
-    "y": 620,
+    "y": 380,
     "wires": [
       []
     ]
@@ -597,7 +597,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 620,
+    "y": 380,
     "wires": [
       [
         "67bb45dc.88a06c"
@@ -646,7 +646,7 @@
       }
     ],
     "x": 580,
-    "y": 440,
+    "y": 920,
     "wires": [
       [
         "22c7900b.0b7d9"
@@ -675,7 +675,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 940,
+    "y": 700,
     "wires": [
       [
         "bd307592.b9272",
@@ -706,7 +706,7 @@
     "payload": "",
     "payloadType": "date",
     "x": 130,
-    "y": 480,
+    "y": 960,
     "wires": [
       [
         "22c7900b.0b7d9"
@@ -734,7 +734,7 @@
     "to": "",
     "reg": false,
     "x": 770,
-    "y": 380,
+    "y": 860,
     "wires": [
       []
     ]
@@ -753,7 +753,7 @@
       }
     ],
     "x": 160,
-    "y": 380,
+    "y": 860,
     "wires": [
       [
         "2e0081fa.7533ce"
@@ -779,7 +779,7 @@
     "payloadType": "str",
     "topic": "",
     "x": 650,
-    "y": 920,
+    "y": 680,
     "wires": [
       [
         "ed88101b.8648d8"
@@ -801,7 +801,7 @@
     "topic": "Balkon: Steckdose",
     "name": "Zeige Benachrichtigung",
     "x": 930,
-    "y": 940,
+    "y": 700,
     "wires": []
   },
   {
@@ -824,7 +824,7 @@
     "payloadType": "str",
     "topic": "",
     "x": 650,
-    "y": 960,
+    "y": 720,
     "wires": [
       [
         "ed88101b.8648d8"

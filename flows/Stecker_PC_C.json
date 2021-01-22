@@ -13,7 +13,7 @@
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 520,
+    "y": 320,
     "wires": []
   },
   {
@@ -126,7 +126,7 @@
     "resendOnRefresh": true,
     "templateScope": "local",
     "x": 590,
-    "y": 660,
+    "y": 440,
     "wires": [
       []
     ]
@@ -144,7 +144,7 @@
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
     "x": 610,
-    "y": 720,
+    "y": 500,
     "wires": []
   },
   {
@@ -160,7 +160,7 @@
     "format": "{{msg.payload}}W",
     "layout": "row-center",
     "x": 630,
-    "y": 780,
+    "y": 560,
     "wires": []
   },
   {
@@ -183,7 +183,7 @@
     "to": "",
     "reg": false,
     "x": 390,
-    "y": 860,
+    "y": 640,
     "wires": [
       [
         "9a37b8c5.6babf",
@@ -240,7 +240,7 @@
     "officon": "",
     "offcolor": "",
     "x": 650,
-    "y": 840,
+    "y": 620,
     "wires": [
       [
         "86b919da.9ddfc8"
@@ -294,7 +294,7 @@
     "to": "",
     "reg": false,
     "x": 890,
-    "y": 860,
+    "y": 640,
     "wires": [
       []
     ]
@@ -319,7 +319,7 @@
     "to": "",
     "reg": false,
     "x": 370,
-    "y": 660,
+    "y": 440,
     "wires": [
       [
         "142410e2.b04d97"
@@ -346,7 +346,7 @@
     "to": "",
     "reg": false,
     "x": 380,
-    "y": 720,
+    "y": 500,
     "wires": [
       [
         "db9ea513.d54238"
@@ -373,7 +373,7 @@
     "to": "",
     "reg": false,
     "x": 380,
-    "y": 780,
+    "y": 560,
     "wires": [
       [
         "16c2bcdb.39669b"
@@ -387,7 +387,7 @@
     "name": "Automatisch Schalten",
     "info": "",
     "x": 140,
-    "y": 320,
+    "y": 800,
     "wires": []
   },
   {
@@ -403,7 +403,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 100,
-    "y": 380,
+    "y": 860,
     "wires": [
       [
         "d559c6d6.34ad88"
@@ -430,7 +430,7 @@
     "to": "",
     "reg": false,
     "x": 750,
-    "y": 380,
+    "y": 860,
     "wires": [
       []
     ]
@@ -464,7 +464,7 @@
     ],
     "uncaught": false,
     "x": 120,
-    "y": 660,
+    "y": 440,
     "wires": [
       [
         "1fc44ac5.4f8d8d"
@@ -481,7 +481,7 @@
     ],
     "uncaught": false,
     "x": 140,
-    "y": 720,
+    "y": 500,
     "wires": [
       [
         "664559e1.4531b"
@@ -498,7 +498,7 @@
     ],
     "uncaught": false,
     "x": 130,
-    "y": 780,
+    "y": 560,
     "wires": [
       [
         "f2d15bcb.8b2128"
@@ -515,7 +515,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 860,
+    "y": 640,
     "wires": [
       [
         "bf3627be.25952"
@@ -535,7 +535,7 @@
       }
     ],
     "x": 550,
-    "y": 380,
+    "y": 860,
     "wires": [
       [
         "15cae3eb.e5b18c"
@@ -569,7 +569,7 @@
     "to": "",
     "reg": false,
     "x": 350,
-    "y": 380,
+    "y": 860,
     "wires": [
       [
         "73379ca9.346ebc"
@@ -591,7 +591,7 @@
     "resendOnRefresh": false,
     "templateScope": "local",
     "x": 620,
-    "y": 600,
+    "y": 380,
     "wires": [
       []
     ]
@@ -609,7 +609,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 600,
+    "y": 380,
     "wires": [
       [
         "b4e75af1.99d88"
@@ -667,7 +667,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 940,
+    "y": 720,
     "wires": [
       [
         "511631ac.ffc01"
@@ -696,7 +696,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 440,
+    "y": 920,
     "wires": [
       [
         "1e97dbe4.2cc44c"
@@ -723,7 +723,7 @@
     "to": "",
     "reg": false,
     "x": 750,
-    "y": 440,
+    "y": 920,
     "wires": [
       []
     ]
@@ -752,7 +752,7 @@
     "officon": "",
     "offcolor": "",
     "x": 650,
-    "y": 880,
+    "y": 660,
     "wires": [
       [
         "86b919da.9ddfc8"
@@ -778,7 +778,7 @@
     "payloadType": "str",
     "topic": "",
     "x": 650,
-    "y": 940,
+    "y": 720,
     "wires": [
       [
         "ba971c78.0303c"
@@ -800,7 +800,7 @@
     "topic": "Arbeitszimmer: Steckdose Christian's PC",
     "name": "Zeige Benachrichtigung",
     "x": 930,
-    "y": 940,
+    "y": 720,
     "wires": []
   }
 ]
