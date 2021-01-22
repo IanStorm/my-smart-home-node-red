@@ -86,7 +86,7 @@
     ],
     "repeat": "",
     "crontab": "",
-    "once": false,
+    "once": true,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "{\"battery\":100,\"humidity\":83.1,\"linkquality\":94,\"pressure\":988,\"temperature\":6.33,\"voltage\":3045}",
