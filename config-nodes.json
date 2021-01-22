@@ -475,7 +475,7 @@
     "name": "Telefon",
     "tab": "14feb2a9.8277c5",
     "order": 2,
-    "disp": true,
+    "disp": false,
     "width": "6",
     "collapse": false
   },
@@ -485,7 +485,7 @@
     "name": "Arbeitszimmer: Sandra's PC",
     "tab": "14feb2a9.8277c5",
     "order": 3,
-    "disp": true,
+    "disp": false,
     "width": "6",
     "collapse": false
   },
@@ -495,7 +495,7 @@
     "name": "Arbeitszimmer: Christian's PC",
     "tab": "14feb2a9.8277c5",
     "order": 4,
-    "disp": true,
+    "disp": false,
     "width": "6",
     "collapse": false
   },
@@ -505,7 +505,7 @@
     "name": "Wohnküche: Fernsehtisch",
     "tab": "14feb2a9.8277c5",
     "order": 5,
-    "disp": true,
+    "disp": false,
     "width": "6",
     "collapse": false
   }

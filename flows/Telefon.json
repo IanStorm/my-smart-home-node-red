@@ -220,7 +220,7 @@
     "format": "{{msg.payload}}",
     "layout": "row-spread",
     "x": 590,
-    "y": 700,
+    "y": 740,
     "wires": []
   },
   {
@@ -528,10 +528,11 @@
     "payload": "",
     "payloadType": "str",
     "x": 120,
-    "y": 640,
+    "y": 660,
     "wires": [
       [
-        "d0d24b9f.a8e2a"
+        "d0d24b9f.a8e2a",
+        "e54df307.fa9e5"
       ]
     ]
   },
@@ -540,7 +541,7 @@
     "type": "ui_template",
     "z": "c8fe4e83.6f1b68",
     "group": "2b39cfe.8e9f33",
-    "name": "Zeige Anruf-Icon",
+    "name": "Zeige Anruf-Icon (F2)",
     "order": 1,
     "width": "1",
     "height": "3",
@@ -549,7 +550,7 @@
     "fwdInMessages": true,
     "resendOnRefresh": false,
     "templateScope": "local",
-    "x": 580,
+    "x": 600,
     "y": 640,
     "wires": [
       []
@@ -569,7 +570,7 @@
     ],
     "uncaught": false,
     "x": 120,
-    "y": 720,
+    "y": 760,
     "wires": [
       [
         "1f08b2eb.7e200d"
@@ -589,7 +590,7 @@
     ],
     "uncaught": false,
     "x": 140,
-    "y": 820,
+    "y": 860,
     "wires": [
       [
         "b989ab9e.5125b8"
@@ -616,7 +617,7 @@
     "to": "",
     "reg": false,
     "x": 350,
-    "y": 720,
+    "y": 760,
     "wires": [
       [
         "276b0b6a.b65784",
@@ -644,7 +645,7 @@
     "to": "",
     "reg": false,
     "x": 370,
-    "y": 820,
+    "y": 860,
     "wires": [
       [
         "c9bd0d5d.4b8648",
@@ -665,7 +666,7 @@
     "format": "{{msg.payload}}",
     "layout": "row-spread",
     "x": 610,
-    "y": 800,
+    "y": 840,
     "wires": []
   },
   {
@@ -730,14 +731,14 @@
     "z": "c8fe4e83.6f1b68",
     "group": "9c4a9473.339278",
     "order": 2,
-    "width": "3",
-    "height": "2",
+    "width": "5",
+    "height": "1",
     "name": "Zeige Anrufer (FAV)",
     "label": "<i class=\"material-icons\">call_received</i>",
     "format": "{{msg.payload}}",
     "layout": "row-spread",
     "x": 590,
-    "y": 740,
+    "y": 780,
     "wires": []
   },
   {
@@ -746,14 +747,34 @@
     "z": "c8fe4e83.6f1b68",
     "group": "9c4a9473.339278",
     "order": 3,
-    "width": "3",
-    "height": "2",
+    "width": "5",
+    "height": "1",
     "name": "Zeige Angerufenen (FAV)",
     "label": "<i class=\"material-icons\">call_made</i>",
     "format": "{{msg.payload}}",
     "layout": "row-spread",
     "x": 610,
-    "y": 840,
+    "y": 880,
     "wires": []
+  },
+  {
+    "id": "e54df307.fa9e5",
+    "type": "ui_template",
+    "z": "c8fe4e83.6f1b68",
+    "group": "9c4a9473.339278",
+    "name": "Zeige Anruf-Icon (FAV)",
+    "order": 1,
+    "width": "1",
+    "height": "2",
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        call\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "x": 600,
+    "y": 680,
+    "wires": [
+      []
+    ]
   }
 ]

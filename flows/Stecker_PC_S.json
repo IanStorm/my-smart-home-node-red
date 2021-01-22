@@ -126,7 +126,7 @@
     "resendOnRefresh": true,
     "templateScope": "local",
     "x": 590,
-    "y": 620,
+    "y": 600,
     "wires": [
       []
     ]
@@ -144,7 +144,7 @@
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
     "x": 610,
-    "y": 680,
+    "y": 660,
     "wires": []
   },
   {
@@ -155,12 +155,12 @@
     "order": 5,
     "width": 2,
     "height": 1,
-    "name": "Zeige Leistungsaufnahme (AZ)",
+    "name": "Zeige Leistungsaufnahme",
     "label": "<i class=\"material-icons\">flash_on</i>",
     "format": "{{msg.payload}}W",
     "layout": "row-center",
-    "x": 650,
-    "y": 740,
+    "x": 630,
+    "y": 720,
     "wires": []
   },
   {
@@ -183,7 +183,7 @@
     "to": "",
     "reg": false,
     "x": 390,
-    "y": 860,
+    "y": 800,
     "wires": [
       [
         "58b5744a.61a8dc",
@@ -240,7 +240,7 @@
     "officon": "",
     "offcolor": "",
     "x": 650,
-    "y": 840,
+    "y": 780,
     "wires": [
       [
         "acbb473d.59ac68"
@@ -294,7 +294,7 @@
     "to": "",
     "reg": false,
     "x": 890,
-    "y": 860,
+    "y": 800,
     "wires": [
       []
     ]
@@ -319,7 +319,7 @@
     "to": "",
     "reg": false,
     "x": 370,
-    "y": 620,
+    "y": 600,
     "wires": [
       [
         "543b2e6d.18eff8"
@@ -346,7 +346,7 @@
     "to": "",
     "reg": false,
     "x": 380,
-    "y": 680,
+    "y": 660,
     "wires": [
       [
         "47462c0a.d425f4"
@@ -373,11 +373,10 @@
     "to": "",
     "reg": false,
     "x": 380,
-    "y": 760,
+    "y": 720,
     "wires": [
       [
-        "adaa1c7c.3245b",
-        "dc8aa273.7921b8"
+        "adaa1c7c.3245b"
       ]
     ]
   },
@@ -476,7 +475,7 @@
     ],
     "uncaught": false,
     "x": 120,
-    "y": 620,
+    "y": 600,
     "wires": [
       [
         "68a59fc6.14fa7"
@@ -493,7 +492,7 @@
     ],
     "uncaught": false,
     "x": 140,
-    "y": 680,
+    "y": 660,
     "wires": [
       [
         "5956fd9d.110b54"
@@ -510,7 +509,7 @@
     ],
     "uncaught": false,
     "x": 130,
-    "y": 760,
+    "y": 720,
     "wires": [
       [
         "2d1e514.cbb1b2e"
@@ -527,7 +526,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 860,
+    "y": 800,
     "wires": [
       [
         "60e7c36f.f74ffc"
@@ -622,7 +621,7 @@
     "type": "ui_template",
     "z": "a2aa0d7f.13abb",
     "group": "e7215ad9.54bc5",
-    "name": "Zeige Steckdosen-Icon (AZ)",
+    "name": "Zeige Steckdosen-Icon",
     "order": 1,
     "width": "1",
     "height": "3",
@@ -631,8 +630,8 @@
     "fwdInMessages": true,
     "resendOnRefresh": false,
     "templateScope": "local",
-    "x": 640,
-    "y": 520,
+    "x": 620,
+    "y": 540,
     "wires": [
       []
     ]
@@ -653,8 +652,7 @@
     "y": 540,
     "wires": [
       [
-        "40f4c764.2a7b6",
-        "7cf55f62.ec2b78"
+        "40f4c764.2a7b6"
       ]
     ]
   },
@@ -680,7 +678,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 940,
+    "y": 880,
     "wires": [
       [
         "a29d531c.a34558"
@@ -688,52 +686,16 @@
     ]
   },
   {
-    "id": "7cf55f62.ec2b78",
-    "type": "ui_template",
-    "z": "a2aa0d7f.13abb",
-    "group": "27a4f39e.ea8a34",
-    "name": "Zeige Steckdosen-Icon (FAV)",
-    "order": 1,
-    "width": 2,
-    "height": 2,
-    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        power\n    </i>\n</div>",
-    "storeOutMessages": true,
-    "fwdInMessages": true,
-    "resendOnRefresh": false,
-    "templateScope": "local",
-    "x": 640,
-    "y": 560,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "dc8aa273.7921b8",
-    "type": "ui_text",
-    "z": "a2aa0d7f.13abb",
-    "group": "27a4f39e.ea8a34",
-    "order": 4,
-    "width": 2,
-    "height": "2",
-    "name": "Zeige Leistungsaufnahme (FAV)",
-    "label": "<i class=\"material-icons\">flash_on</i>",
-    "format": "{{msg.payload}}W",
-    "layout": "row-center",
-    "x": 650,
-    "y": 780,
-    "wires": []
-  },
-  {
     "id": "e9a74a62.c343e8",
     "type": "ui_switch",
     "z": "a2aa0d7f.13abb",
     "name": "Interaktion Schaltzustand (FAV)",
-    "label": "<i class=\"material-icons\">power_settings_new</i>",
+    "label": "<i class=\"material-icons\">power</i> Arbeitszimmer: Sandra's PC",
     "tooltip": "",
     "group": "27a4f39e.ea8a34",
     "order": 5,
-    "width": 2,
-    "height": "2",
+    "width": "0",
+    "height": "0",
     "passthru": true,
     "decouple": "false",
     "topic": "",
@@ -747,7 +709,7 @@
     "officon": "",
     "offcolor": "",
     "x": 650,
-    "y": 880,
+    "y": 820,
     "wires": [
       [
         "acbb473d.59ac68"
@@ -773,7 +735,7 @@
     "payloadType": "str",
     "topic": "",
     "x": 650,
-    "y": 940,
+    "y": 880,
     "wires": [
       [
         "cb04d350.455df8"
@@ -795,7 +757,7 @@
     "topic": "Arbeitszimmer: Steckdose Sandra's PC",
     "name": "Zeige Benachrichtigung",
     "x": 930,
-    "y": 940,
+    "y": 880,
     "wires": []
   }
 ]
