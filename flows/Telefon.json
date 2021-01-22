@@ -215,11 +215,11 @@
     "order": 2,
     "width": 4,
     "height": 1,
-    "name": "Zeige Anrufer",
+    "name": "Zeige Anrufer (F2)",
     "label": "<i class=\"material-icons\">call_received</i>",
     "format": "{{msg.payload}}",
     "layout": "row-spread",
-    "x": 580,
+    "x": 590,
     "y": 700,
     "wires": []
   },
@@ -543,7 +543,7 @@
     "name": "Zeige Anruf-Icon",
     "order": 1,
     "width": 2,
-    "height": 2,
+    "height": "3",
     "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        call\n    </i>\n</div>",
     "storeOutMessages": true,
     "fwdInMessages": true,
@@ -569,7 +569,7 @@
     ],
     "uncaught": false,
     "x": 120,
-    "y": 700,
+    "y": 720,
     "wires": [
       [
         "1f08b2eb.7e200d"
@@ -589,7 +589,7 @@
     ],
     "uncaught": false,
     "x": 140,
-    "y": 760,
+    "y": 820,
     "wires": [
       [
         "b989ab9e.5125b8"
@@ -616,10 +616,11 @@
     "to": "",
     "reg": false,
     "x": 350,
-    "y": 700,
+    "y": 720,
     "wires": [
       [
-        "276b0b6a.b65784"
+        "276b0b6a.b65784",
+        "b220d831.d08eb"
       ]
     ]
   },
@@ -643,10 +644,11 @@
     "to": "",
     "reg": false,
     "x": 370,
-    "y": 760,
+    "y": 820,
     "wires": [
       [
-        "c9bd0d5d.4b8648"
+        "c9bd0d5d.4b8648",
+        "a80765a9.096f78"
       ]
     ]
   },
@@ -658,12 +660,12 @@
     "order": 3,
     "width": 4,
     "height": 1,
-    "name": "Zeige Angerufenen",
+    "name": "Zeige Angerufenen (F2)",
     "label": "<i class=\"material-icons\">call_made</i>",
     "format": "{{msg.payload}}",
     "layout": "row-spread",
-    "x": 590,
-    "y": 760,
+    "x": 610,
+    "y": 800,
     "wires": []
   },
   {
@@ -721,5 +723,37 @@
     "wires": [
       []
     ]
+  },
+  {
+    "id": "b220d831.d08eb",
+    "type": "ui_text",
+    "z": "c8fe4e83.6f1b68",
+    "group": "9c4a9473.339278",
+    "order": 2,
+    "width": "3",
+    "height": "2",
+    "name": "Zeige Anrufer (FAV)",
+    "label": "<i class=\"material-icons\">call_received</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-spread",
+    "x": 590,
+    "y": 740,
+    "wires": []
+  },
+  {
+    "id": "a80765a9.096f78",
+    "type": "ui_text",
+    "z": "c8fe4e83.6f1b68",
+    "group": "9c4a9473.339278",
+    "order": 3,
+    "width": "3",
+    "height": "2",
+    "name": "Zeige Angerufenen (FAV)",
+    "label": "<i class=\"material-icons\">call_made</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-spread",
+    "x": 610,
+    "y": 840,
+    "wires": []
   }
 ]

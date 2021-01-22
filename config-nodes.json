@@ -432,15 +432,6 @@
     "height": 1
   },
   {
-    "id": "e1e16f58.db15e",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "2b39cfe.8e9f33",
-    "order": 4,
-    "width": "6",
-    "height": 1
-  },
-  {
     "id": "8c9b25f5.1db3b8",
     "type": "ui_group",
     "name": "Sensor 1",
@@ -531,5 +522,45 @@
     "order": 13,
     "disabled": false,
     "hidden": false
+  },
+  {
+    "id": "9c4a9473.339278",
+    "type": "ui_group",
+    "name": "Telefon",
+    "tab": "14feb2a9.8277c5",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "27a4f39e.ea8a34",
+    "type": "ui_group",
+    "name": "Arbeitszimmer: Sandra's PC",
+    "tab": "14feb2a9.8277c5",
+    "order": 3,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "57cc9f7.9bd9ae",
+    "type": "ui_group",
+    "name": "Arbeitszimmer: Christian's PC",
+    "tab": "14feb2a9.8277c5",
+    "order": 4,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "6c18a2.23005f6",
+    "type": "ui_group",
+    "name": "Wohnküche: Fernsehtisch",
+    "tab": "14feb2a9.8277c5",
+    "order": 5,
+    "disp": true,
+    "width": "6",
+    "collapse": false
   }
 ]

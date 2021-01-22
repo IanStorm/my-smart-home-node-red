@@ -126,7 +126,7 @@
     "resendOnRefresh": true,
     "templateScope": "local",
     "x": 590,
-    "y": 640,
+    "y": 680,
     "wires": [
       []
     ]
@@ -144,7 +144,7 @@
     "format": "{{msg.payload}}°C",
     "layout": "row-left",
     "x": 610,
-    "y": 700,
+    "y": 740,
     "wires": []
   },
   {
@@ -155,12 +155,12 @@
     "order": 4,
     "width": 2,
     "height": 1,
-    "name": "Zeige Leistungsaufnahme",
+    "name": "Zeige Leistungsaufnahme (AZ)",
     "label": "<i class=\"material-icons\">flash_on</i>",
     "format": "{{msg.payload}}W",
     "layout": "row-left",
-    "x": 630,
-    "y": 760,
+    "x": 650,
+    "y": 800,
     "wires": []
   },
   {
@@ -183,10 +183,11 @@
     "to": "",
     "reg": false,
     "x": 390,
-    "y": 820,
+    "y": 920,
     "wires": [
       [
-        "9a37b8c5.6babf"
+        "9a37b8c5.6babf",
+        "40fd2f88.b89208"
       ]
     ]
   },
@@ -219,7 +220,7 @@
     "id": "9a37b8c5.6babf",
     "type": "ui_switch",
     "z": "19f0cc46.99b404",
-    "name": "Interaktion Schaltzustand",
+    "name": "Interaktion Schaltzustand (AZ)",
     "label": "<i class=\"material-icons\">power_settings_new</i>",
     "tooltip": "",
     "group": "259c1fb2.ed8768",
@@ -238,8 +239,8 @@
     "offvalueType": "bool",
     "officon": "",
     "offcolor": "",
-    "x": 630,
-    "y": 820,
+    "x": 650,
+    "y": 900,
     "wires": [
       [
         "86b919da.9ddfc8"
@@ -292,8 +293,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 850,
-    "y": 820,
+    "x": 890,
+    "y": 920,
     "wires": [
       []
     ]
@@ -318,7 +319,7 @@
     "to": "",
     "reg": false,
     "x": 370,
-    "y": 640,
+    "y": 680,
     "wires": [
       [
         "142410e2.b04d97"
@@ -345,7 +346,7 @@
     "to": "",
     "reg": false,
     "x": 380,
-    "y": 700,
+    "y": 740,
     "wires": [
       [
         "db9ea513.d54238"
@@ -372,7 +373,7 @@
     "to": "",
     "reg": false,
     "x": 380,
-    "y": 760,
+    "y": 820,
     "wires": [
       [
         "16c2bcdb.39669b"
@@ -463,7 +464,7 @@
     ],
     "uncaught": false,
     "x": 120,
-    "y": 640,
+    "y": 680,
     "wires": [
       [
         "1fc44ac5.4f8d8d"
@@ -480,7 +481,7 @@
     ],
     "uncaught": false,
     "x": 140,
-    "y": 700,
+    "y": 740,
     "wires": [
       [
         "664559e1.4531b"
@@ -497,7 +498,7 @@
     ],
     "uncaught": false,
     "x": 130,
-    "y": 760,
+    "y": 820,
     "wires": [
       [
         "f2d15bcb.8b2128"
@@ -514,7 +515,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 820,
+    "y": 920,
     "wires": [
       [
         "bf3627be.25952"
@@ -580,7 +581,7 @@
     "type": "ui_template",
     "z": "19f0cc46.99b404",
     "group": "259c1fb2.ed8768",
-    "name": "Zeige Steckdosen-Icon",
+    "name": "Zeige Steckdosen-Icon (AZ)",
     "order": 1,
     "width": 2,
     "height": 2,
@@ -589,7 +590,7 @@
     "fwdInMessages": true,
     "resendOnRefresh": false,
     "templateScope": "local",
-    "x": 620,
+    "x": 640,
     "y": 580,
     "wires": [
       []
@@ -608,10 +609,11 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 580,
+    "y": 600,
     "wires": [
       [
-        "b4e75af1.99d88"
+        "b4e75af1.99d88",
+        "54badd54.db8aa4"
       ]
     ]
   },
@@ -666,7 +668,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 880,
+    "y": 1000,
     "wires": [
       [
         "14e9f737.de81a9"
@@ -686,7 +688,7 @@
     "format": "{{msg.payload}}",
     "layout": "row-center",
     "x": 640,
-    "y": 880,
+    "y": 1000,
     "wires": []
   },
   {
@@ -709,7 +711,7 @@
     "to": "",
     "reg": false,
     "x": 380,
-    "y": 880,
+    "y": 1000,
     "wires": [
       [
         "e089d720.9ef14"
@@ -768,6 +770,73 @@
     "y": 440,
     "wires": [
       []
+    ]
+  },
+  {
+    "id": "54badd54.db8aa4",
+    "type": "ui_template",
+    "z": "19f0cc46.99b404",
+    "group": "57cc9f7.9bd9ae",
+    "name": "Zeige Steckdosen-Icon (FAV)",
+    "order": 1,
+    "width": 2,
+    "height": 2,
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        power\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "x": 640,
+    "y": 620,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "1cbbc28e.830a6d",
+    "type": "ui_text",
+    "z": "19f0cc46.99b404",
+    "group": "57cc9f7.9bd9ae",
+    "order": 4,
+    "width": 2,
+    "height": "2",
+    "name": "Zeige Leistungsaufnahme (FAV)",
+    "label": "<i class=\"material-icons\">flash_on</i>",
+    "format": "{{msg.payload}}W",
+    "layout": "row-left",
+    "x": 650,
+    "y": 840,
+    "wires": []
+  },
+  {
+    "id": "40fd2f88.b89208",
+    "type": "ui_switch",
+    "z": "19f0cc46.99b404",
+    "name": "Interaktion Schaltzustand (FAV)",
+    "label": "<i class=\"material-icons\">power_settings_new</i>",
+    "tooltip": "",
+    "group": "57cc9f7.9bd9ae",
+    "order": 5,
+    "width": 2,
+    "height": "2",
+    "passthru": true,
+    "decouple": "false",
+    "topic": "",
+    "style": "",
+    "onvalue": "true",
+    "onvalueType": "bool",
+    "onicon": "",
+    "oncolor": "",
+    "offvalue": "false",
+    "offvalueType": "bool",
+    "officon": "",
+    "offcolor": "",
+    "x": 650,
+    "y": 940,
+    "wires": [
+      [
+        "86b919da.9ddfc8"
+      ]
     ]
   }
 ]
