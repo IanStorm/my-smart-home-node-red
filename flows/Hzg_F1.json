@@ -74,12 +74,14 @@
     "id": "273a1996.496e06",
     "type": "complete",
     "z": "d3be81f2.b4ce68",
-    "name": "Warte auf Soll-Temperatur",
+    "name": "Warte auf Wunsch-Temperatur",
     "scope": [
-      "11166591.9c60b2"
+      "19b73a69.25d41e",
+      "6d8e34b1.b30484",
+      "22a03621.f5e7a2"
     ],
     "uncaught": false,
-    "x": 150,
+    "x": 160,
     "y": 860,
     "wires": [
       [
@@ -101,7 +103,7 @@
     "fwdInMessages": false,
     "resendOnRefresh": true,
     "templateScope": "local",
-    "x": 400,
+    "x": 420,
     "y": 680,
     "wires": [
       []
@@ -119,7 +121,7 @@
     "label": "<i class=\"material-icons\">ac_unit</i>",
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
-    "x": 400,
+    "x": 420,
     "y": 740,
     "wires": []
   },
@@ -166,7 +168,7 @@
     "fwdInMessages": true,
     "resendOnRefresh": false,
     "templateScope": "local",
-    "x": 390,
+    "x": 410,
     "y": 620,
     "wires": [
       []
@@ -266,7 +268,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 450,
+    "x": 470,
     "y": 1080,
     "wires": [
       []
@@ -298,8 +300,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 450,
-    "y": 1180,
+    "x": 470,
+    "y": 1200,
     "wires": [
       []
     ]
@@ -383,7 +385,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 880,
+    "x": 920,
     "y": 860,
     "wires": [
       []
@@ -508,7 +510,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1160,
+    "y": 1200,
     "wires": [
       [
         "6d8e34b1.b30484"
@@ -537,7 +539,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1200,
+    "y": 1240,
     "wires": [
       [
         "6d8e34b1.b30484"
@@ -629,9 +631,9 @@
     "id": "88f74ee9.3c457",
     "type": "complete",
     "z": "d3be81f2.b4ce68",
-    "name": "Warte auf Ziel-Temperatur",
+    "name": "Warte auf Soll-Temperatur",
     "scope": [
-      "e3da38d6.4068b"
+      "11166591.9c60b2"
     ],
     "uncaught": false,
     "x": 150,
@@ -650,11 +652,11 @@
     "order": 5,
     "width": "2",
     "height": 1,
-    "name": "Zeige Ziel-Temperatur",
+    "name": "Zeige Soll-Temperatur",
     "label": "<i class=\"material-icons\">whatshot</i>",
     "format": "{{msg.payload ? msg.payload + '°C' : 'Aus'}}",
     "layout": "row-center",
-    "x": 400,
+    "x": 420,
     "y": 800,
     "wires": []
   },
@@ -687,7 +689,7 @@
     "payload": "Schaltet vollautomatisch zeit- & sensorbasiert.",
     "payloadType": "str",
     "topic": "",
-    "x": 430,
+    "x": 450,
     "y": 920,
     "wires": [
       [
@@ -709,7 +711,7 @@
     "raw": false,
     "topic": "Flur 1: Heizkörper",
     "name": "Zeige Benachrichtigung",
-    "x": 710,
+    "x": 730,
     "y": 920,
     "wires": []
   },
@@ -717,7 +719,7 @@
     "id": "1e3770f6.41f8ff",
     "type": "ui_numeric",
     "z": "d3be81f2.b4ce68",
-    "name": "Interaktion Soll-Temperatur",
+    "name": "Interaktion Wunsch-Temperatur",
     "label": "",
     "tooltip": "",
     "group": "964aeb18.79a868",
@@ -725,13 +727,13 @@
     "width": "2",
     "height": "2",
     "wrap": false,
-    "passthru": true,
+    "passthru": false,
     "topic": "",
     "format": "{{value}}°C",
     "min": "8",
     "max": "28",
     "step": "0.5",
-    "x": 420,
+    "x": 450,
     "y": 860,
     "wires": [
       [
@@ -745,11 +747,40 @@
     "z": "d3be81f2.b4ce68",
     "time": "5000",
     "name": "5s debounce",
-    "x": 650,
+    "x": 690,
     "y": 860,
     "wires": [
       [
         "22a03621.f5e7a2"
+      ]
+    ]
+  },
+  {
+    "id": "ad266305.338bf8",
+    "type": "inject",
+    "z": "d3be81f2.b4ce68",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 1160,
+    "wires": [
+      [
+        "6d8e34b1.b30484"
       ]
     ]
   }

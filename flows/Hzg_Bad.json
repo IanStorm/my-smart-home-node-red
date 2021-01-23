@@ -74,12 +74,14 @@
     "id": "5c6a3b6c.e09d84",
     "type": "complete",
     "z": "a7755eb4.60b0d8",
-    "name": "Warte auf Soll-Temperatur",
+    "name": "Warte auf Wunsch-Temperatur",
     "scope": [
-      "53bc5fb4.0e50b8"
+      "254d6cfa.9e9e6c",
+      "6a2c9246.71ceec",
+      "366b58af.b68b"
     ],
     "uncaught": false,
-    "x": 150,
+    "x": 160,
     "y": 860,
     "wires": [
       [
@@ -101,7 +103,7 @@
     "fwdInMessages": false,
     "resendOnRefresh": true,
     "templateScope": "local",
-    "x": 400,
+    "x": 420,
     "y": 680,
     "wires": [
       []
@@ -119,7 +121,7 @@
     "label": "<i class=\"material-icons\">ac_unit</i>",
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
-    "x": 400,
+    "x": 420,
     "y": 740,
     "wires": []
   },
@@ -157,7 +159,7 @@
     "fwdInMessages": true,
     "resendOnRefresh": false,
     "templateScope": "local",
-    "x": 390,
+    "x": 410,
     "y": 620,
     "wires": [
       []
@@ -257,7 +259,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 450,
+    "x": 470,
     "y": 1080,
     "wires": [
       []
@@ -289,8 +291,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 450,
-    "y": 1180,
+    "x": 470,
+    "y": 1200,
     "wires": [
       []
     ]
@@ -374,7 +376,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 880,
+    "x": 920,
     "y": 860,
     "wires": [
       []
@@ -499,7 +501,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1160,
+    "y": 1200,
     "wires": [
       [
         "6a2c9246.71ceec"
@@ -528,7 +530,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1200,
+    "y": 1240,
     "wires": [
       [
         "6a2c9246.71ceec"
@@ -589,11 +591,11 @@
     "order": 5,
     "width": "2",
     "height": 1,
-    "name": "Zeige Ziel-Temperatur",
+    "name": "Zeige Soll-Temperatur",
     "label": "<i class=\"material-icons\">whatshot</i>",
     "format": "{{msg.payload ? msg.payload + '°C' : 'Aus'}}",
     "layout": "row-center",
-    "x": 400,
+    "x": 420,
     "y": 800,
     "wires": []
   },
@@ -601,9 +603,9 @@
     "id": "b40a8562.a5c918",
     "type": "complete",
     "z": "a7755eb4.60b0d8",
-    "name": "Warte auf Ziel-Temperatur",
+    "name": "Warte auf Soll-Temperatur",
     "scope": [
-      "a44674de.313ff8"
+      "53bc5fb4.0e50b8"
     ],
     "uncaught": false,
     "x": 150,
@@ -632,7 +634,7 @@
     "payload": "Schaltet vollautomatisch zeit- & sensorbasiert.",
     "payloadType": "str",
     "topic": "",
-    "x": 430,
+    "x": 450,
     "y": 920,
     "wires": [
       [
@@ -644,7 +646,7 @@
     "id": "af122838.b9394",
     "type": "ui_numeric",
     "z": "a7755eb4.60b0d8",
-    "name": "Interaktion Soll-Temperatur",
+    "name": "Interaktion Wunsch-Temperatur",
     "label": "",
     "tooltip": "",
     "group": "9298819a.21ca98",
@@ -652,13 +654,13 @@
     "width": "2",
     "height": "2",
     "wrap": false,
-    "passthru": true,
+    "passthru": false,
     "topic": "",
     "format": "{{value}}°C",
     "min": "8",
     "max": "28",
     "step": "0.5",
-    "x": 420,
+    "x": 450,
     "y": 860,
     "wires": [
       [
@@ -672,7 +674,7 @@
     "z": "a7755eb4.60b0d8",
     "time": "5000",
     "name": "5s debounce",
-    "x": 650,
+    "x": 690,
     "y": 860,
     "wires": [
       [
@@ -694,7 +696,7 @@
     "raw": false,
     "topic": "Badezimmer: Heizkörper",
     "name": "Zeige Benachrichtigung",
-    "x": 710,
+    "x": 730,
     "y": 920,
     "wires": []
   },
@@ -743,5 +745,34 @@
     "y": 340,
     "wires": [],
     "l": true
+  },
+  {
+    "id": "3796f3d6.7d9e44",
+    "type": "inject",
+    "z": "a7755eb4.60b0d8",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 1160,
+    "wires": [
+      [
+        "6a2c9246.71ceec"
+      ]
+    ]
   }
 ]

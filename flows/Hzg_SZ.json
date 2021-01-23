@@ -74,12 +74,14 @@
     "id": "53501838.7035b",
     "type": "complete",
     "z": "ecee5153.6f2368",
-    "name": "Warte auf Soll-Temperatur",
+    "name": "Warte auf Wunsch-Temperatur",
     "scope": [
-      "d7b9c738.c9fa7"
+      "d98b1423.c395f",
+      "f9b8ffbc.8ebb",
+      "d20a9dc5.e2e3d8"
     ],
     "uncaught": false,
-    "x": 150,
+    "x": 160,
     "y": 860,
     "wires": [
       [
@@ -101,7 +103,7 @@
     "fwdInMessages": false,
     "resendOnRefresh": true,
     "templateScope": "local",
-    "x": 400,
+    "x": 420,
     "y": 680,
     "wires": [
       []
@@ -119,7 +121,7 @@
     "label": "<i class=\"material-icons\">ac_unit</i>",
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
-    "x": 400,
+    "x": 420,
     "y": 740,
     "wires": []
   },
@@ -157,7 +159,7 @@
     "fwdInMessages": true,
     "resendOnRefresh": false,
     "templateScope": "local",
-    "x": 390,
+    "x": 410,
     "y": 620,
     "wires": [
       []
@@ -257,7 +259,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 450,
+    "x": 470,
     "y": 1100,
     "wires": [
       []
@@ -289,8 +291,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 450,
-    "y": 1240,
+    "x": 470,
+    "y": 1260,
     "wires": [
       []
     ]
@@ -374,7 +376,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 880,
+    "x": 920,
     "y": 860,
     "wires": [
       []
@@ -501,7 +503,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1200,
+    "y": 1240,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -530,7 +532,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1280,
+    "y": 1320,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -559,7 +561,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 150,
-    "y": 1240,
+    "y": 1280,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -632,11 +634,11 @@
     "order": 5,
     "width": 2,
     "height": 1,
-    "name": "Zeige Ziel-Temperatur",
+    "name": "Zeige Soll-Temperatur",
     "label": "<i class=\"material-icons\">whatshot</i>",
     "format": "{{msg.payload ? msg.payload + '°C' : 'Aus'}}",
     "layout": "row-center",
-    "x": 400,
+    "x": 420,
     "y": 800,
     "wires": []
   },
@@ -644,9 +646,9 @@
     "id": "3696d6d2.43653a",
     "type": "complete",
     "z": "ecee5153.6f2368",
-    "name": "Warte auf Ziel-Temperatur",
+    "name": "Warte auf Soll-Temperatur",
     "scope": [
-      "3d5ab2d1.88722e"
+      "d7b9c738.c9fa7"
     ],
     "uncaught": false,
     "x": 150,
@@ -675,7 +677,7 @@
     "payload": "Schaltet vollautomatisch zeit- & sensorbasiert.",
     "payloadType": "str",
     "topic": "",
-    "x": 430,
+    "x": 450,
     "y": 920,
     "wires": [
       [
@@ -687,7 +689,7 @@
     "id": "47602b66.7ff3d4",
     "type": "ui_numeric",
     "z": "ecee5153.6f2368",
-    "name": "Interaktion Soll-Temperatur",
+    "name": "Interaktion Wunsch-Temperatur",
     "label": "",
     "tooltip": "",
     "group": "7b8abfe6.0e9dd8",
@@ -695,13 +697,13 @@
     "width": "2",
     "height": "2",
     "wrap": false,
-    "passthru": true,
+    "passthru": false,
     "topic": "",
     "format": "{{value}}°C",
     "min": "8",
     "max": "28",
     "step": "0.5",
-    "x": 420,
+    "x": 450,
     "y": 860,
     "wires": [
       [
@@ -715,7 +717,7 @@
     "z": "ecee5153.6f2368",
     "time": "5000",
     "name": "5s debounce",
-    "x": 650,
+    "x": 690,
     "y": 860,
     "wires": [
       [
@@ -737,7 +739,7 @@
     "raw": false,
     "topic": "Schlafzimmer: Heizkörper",
     "name": "Zeige Benachrichtigung",
-    "x": 710,
+    "x": 730,
     "y": 920,
     "wires": []
   },
@@ -803,5 +805,34 @@
     "y": 340,
     "wires": [],
     "l": true
+  },
+  {
+    "id": "70a32859.054dd",
+    "type": "inject",
+    "z": "ecee5153.6f2368",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 1200,
+    "wires": [
+      [
+        "f9b8ffbc.8ebb"
+      ]
+    ]
   }
 ]
