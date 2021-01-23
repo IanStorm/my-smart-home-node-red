@@ -653,7 +653,7 @@
     "width": "2",
     "height": "2",
     "wrap": false,
-    "passthru": false,
+    "passthru": true,
     "topic": "",
     "format": "{{value}}°C",
     "min": "8",
