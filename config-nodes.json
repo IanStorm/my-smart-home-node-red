@@ -378,15 +378,6 @@
     "collapse": false
   },
   {
-    "id": "32bb87bc.061fe8",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "22abfc75.b9b2e4",
-    "order": 7,
-    "width": 4,
-    "height": 1
-  },
-  {
     "id": "8c9b25f5.1db3b8",
     "type": "ui_group",
     "name": "Sensor 1",
