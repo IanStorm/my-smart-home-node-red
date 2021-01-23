@@ -202,52 +202,6 @@
     ]
   },
   {
-    "id": "7b9f7ee.926ba8",
-    "type": "debug",
-    "z": "ef9247c6.cadc28",
-    "name": "Robi",
-    "active": true,
-    "tosidebar": true,
-    "console": true,
-    "tostatus": false,
-    "complete": "true",
-    "targetType": "full",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 720,
-    "y": 960,
-    "wires": []
-  },
-  {
-    "id": "e7fcded8.ee6c68",
-    "type": "inject",
-    "z": "ef9247c6.cadc28",
-    "name": "Alle 10m",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "600",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "str",
-    "x": 100,
-    "y": 960,
-    "wires": [
-      [
-        "2ed19cf6.28c85c"
-      ]
-    ]
-  },
-  {
     "id": "2ed19cf6.28c85c",
     "type": "get",
     "z": "ef9247c6.cadc28",
@@ -258,42 +212,7 @@
     "y": 960,
     "wires": [
       [
-        "b633b3d2.b0b4c8"
-      ]
-    ]
-  },
-  {
-    "id": "b633b3d2.b0b4c8",
-    "type": "switch",
-    "z": "ef9247c6.cadc28",
-    "name": "Ist Zustand bekannt?",
-    "property": "payload.cleanMissionStatus.phase",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "charge",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "run",
-        "vt": "str"
-      },
-      {
-        "t": "else"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 3,
-    "x": 520,
-    "y": 960,
-    "wires": [
-      [],
-      [],
-      [
-        "7b9f7ee.926ba8"
+        "346b5bda.90c05c"
       ]
     ]
   },
@@ -1370,5 +1289,51 @@
     "wires": [
       []
     ]
+  },
+  {
+    "id": "a09ba7d5.2aa4e",
+    "type": "inject",
+    "z": "ef9247c6.cadc28",
+    "name": "Alle 1h",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "3600",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 100,
+    "y": 960,
+    "wires": [
+      [
+        "2ed19cf6.28c85c"
+      ]
+    ]
+  },
+  {
+    "id": "346b5bda.90c05c",
+    "type": "debug",
+    "z": "ef9247c6.cadc28",
+    "name": "Debugge Missionsinfos",
+    "active": true,
+    "tosidebar": true,
+    "console": true,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 570,
+    "y": 960,
+    "wires": []
   }
 ]
