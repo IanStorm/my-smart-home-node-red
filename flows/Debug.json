@@ -1,0 +1,63 @@
+[
+  {
+    "id": "683a34a0.e7761c",
+    "type": "tab",
+    "label": "Debug",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "5985b332.97f0d4",
+    "type": "comment",
+    "z": "683a34a0.e7761c",
+    "name": "Debug",
+    "info": "",
+    "x": 70,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "18fade0c.461492",
+    "type": "inject",
+    "z": "683a34a0.e7761c",
+    "d": true,
+    "name": "Starte Replay",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 120,
+    "y": 120,
+    "wires": [
+      [
+        "24e48711.9609f"
+      ]
+    ]
+  },
+  {
+    "id": "24e48711.9609f",
+    "type": "link out",
+    "z": "683a34a0.e7761c",
+    "name": "Teile Replay-Start",
+    "links": [
+      "a1d2669.bb8bf18",
+      "90b9a2bb.928038"
+    ],
+    "x": 330,
+    "y": 120,
+    "wires": [],
+    "l": true
+  }
+]

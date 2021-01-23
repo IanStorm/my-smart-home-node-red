@@ -45,61 +45,6 @@
     ]
   },
   {
-    "id": "ee97cfc1.0424a",
-    "type": "inject",
-    "z": "ae79e463.ac6c38",
-    "d": true,
-    "name": "Teste",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "payload_raw",
-        "v": "{\"battery\":100,\"humidity\":83.1,\"linkquality\":94,\"pressure\":988,\"temperature\":6.33,\"voltage\":3045}",
-        "vt": "json"
-      },
-      {
-        "p": "device",
-        "v": "{\"dateCode\":\"20191205\",\"description\":\"Aqara temperature, humidity and pressure sensor\",\"friendly_name\":\"temperature/balcony\",\"hardwareVersion\":30,\"ieeeAddr\":\"0x00158d0005405541\",\"lastSeen\":1610989240433,\"manufacturerID\":4151,\"manufacturerName\":\"LUMI\",\"model\":\"WSDCGQ11LM\",\"modelID\":\"lumi.weather\",\"networkAddress\":28738,\"powerSource\":\"Battery\",\"softwareBuildID\":\"3000-0001\",\"type\":\"EndDevice\",\"vendor\":\"Xiaomi\",\"lastPayload\":{\"battery\":100,\"humidity\":83.1,\"linkquality\":94,\"pressure\":988,\"temperature\":6.33,\"voltage\":3045},\"homekit\":{\"TemperatureSensor\":{\"CurrentTemperature\":6.33},\"HumiditySensor\":{\"CurrentRelativeHumidity\":83.1},\"Battery\":{\"BatteryLevel\":100,\"StatusLowBattery\":0}}}",
-        "vt": "json"
-      },
-      {
-        "p": "group",
-        "v": "null",
-        "vt": "json"
-      },
-      {
-        "p": "homekit",
-        "v": "{\"TemperatureSensor\":{\"CurrentTemperature\":6.33},\"HumiditySensor\":{\"CurrentRelativeHumidity\":83.1},\"Battery\":{\"BatteryLevel\":100,\"StatusLowBattery\":0}}",
-        "vt": "json"
-      },
-      {
-        "p": "format",
-        "v": "{}",
-        "vt": "json"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "",
-    "once": true,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "{\"battery\":100,\"humidity\":83.1,\"linkquality\":94,\"pressure\":988,\"temperature\":6.33,\"voltage\":3045}",
-    "payloadType": "json",
-    "x": 190,
-    "y": 220,
-    "wires": [
-      [
-        "59326304.37e484"
-      ]
-    ]
-  },
-  {
     "id": "59326304.37e484",
     "type": "subflow:bd326ce6.854e58",
     "z": "ae79e463.ac6c38",
@@ -111,8 +56,8 @@
         "type": "str"
       }
     ],
-    "x": 370,
-    "y": 180,
+    "x": 430,
+    "y": 220,
     "wires": [
       [
         "494e26cd.73f198"
@@ -131,8 +76,8 @@
     "z": "ae79e463.ac6c38",
     "name": "Teile Batterie-%",
     "links": [],
-    "x": 580,
-    "y": 140,
+    "x": 640,
+    "y": 180,
     "wires": [],
     "l": true
   },
@@ -142,8 +87,8 @@
     "z": "ae79e463.ac6c38",
     "name": "Teile LQI",
     "links": [],
-    "x": 560,
-    "y": 180,
+    "x": 620,
+    "y": 220,
     "wires": [],
     "l": true
   },
@@ -153,8 +98,8 @@
     "z": "ae79e463.ac6c38",
     "name": "Teile Temperatur",
     "links": [],
-    "x": 580,
-    "y": 220,
+    "x": 640,
+    "y": 260,
     "wires": [],
     "l": true
   },
@@ -165,7 +110,7 @@
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 300,
+    "y": 340,
     "wires": []
   },
   {
@@ -178,7 +123,7 @@
     ],
     "uncaught": false,
     "x": 130,
-    "y": 420,
+    "y": 460,
     "wires": [
       [
         "d9080b74.71b66"
@@ -195,7 +140,7 @@
     ],
     "uncaught": false,
     "x": 110,
-    "y": 480,
+    "y": 520,
     "wires": [
       [
         "ac429282.d46408"
@@ -212,7 +157,7 @@
     ],
     "uncaught": false,
     "x": 140,
-    "y": 540,
+    "y": 580,
     "wires": [
       [
         "78c9a97a.8fb878",
@@ -233,7 +178,7 @@
     "format": "{{msg.payload}}",
     "layout": "row-center",
     "x": 520,
-    "y": 480,
+    "y": 520,
     "wires": []
   },
   {
@@ -249,7 +194,7 @@
     "format": "{{msg.payload}}%",
     "layout": "row-center",
     "x": 550,
-    "y": 420,
+    "y": 460,
     "wires": []
   },
   {
@@ -290,7 +235,7 @@
     "outputs": 1,
     "useDifferentColor": false,
     "x": 590,
-    "y": 540,
+    "y": 580,
     "wires": [
       []
     ]
@@ -308,7 +253,7 @@
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
     "x": 550,
-    "y": 580,
+    "y": 620,
     "wires": []
   },
   {
@@ -326,7 +271,7 @@
     "outputFieldDecimals": "1",
     "name": "Vereinfache",
     "x": 350,
-    "y": 580,
+    "y": 620,
     "wires": [
       [
         "a6fcd086.5e20f8"
@@ -346,7 +291,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 360,
+    "y": 400,
     "wires": [
       [
         "241b6c88.a0236c"
@@ -368,9 +313,94 @@
     "resendOnRefresh": false,
     "templateScope": "local",
     "x": 530,
-    "y": 360,
+    "y": 400,
     "wires": [
       []
+    ]
+  },
+  {
+    "id": "90b9a2bb.928038",
+    "type": "link in",
+    "z": "ae79e463.ac6c38",
+    "name": "Warte auf Replay-Start",
+    "links": [
+      "24e48711.9609f"
+    ],
+    "x": 55,
+    "y": 260,
+    "wires": [
+      [
+        "fa1a83b4.56874"
+      ]
+    ]
+  },
+  {
+    "id": "fa1a83b4.56874",
+    "type": "change",
+    "z": "ae79e463.ac6c38",
+    "name": "Setze Replay-Daten",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "{\"battery\":100,\"humidity\":83.1,\"linkquality\":94,\"pressure\":988,\"temperature\":6.33,\"voltage\":3045}",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "payload_raw",
+        "pt": "msg",
+        "to": "{\"battery\":100,\"humidity\":83.1,\"linkquality\":94,\"pressure\":988,\"temperature\":6.33,\"voltage\":3045}",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "device",
+        "pt": "msg",
+        "to": "{\"dateCode\":\"20191205\",\"description\":\"Aqara temperature, humidity and pressure sensor\",\"friendly_name\":\"temperature/balcony\",\"hardwareVersion\":30,\"ieeeAddr\":\"0x00158d0005405541\",\"lastSeen\":1610989240433,\"manufacturerID\":4151,\"manufacturerName\":\"LUMI\",\"model\":\"WSDCGQ11LM\",\"modelID\":\"lumi.weather\",\"networkAddress\":28738,\"powerSource\":\"Battery\",\"softwareBuildID\":\"3000-0001\",\"type\":\"EndDevice\",\"vendor\":\"Xiaomi\",\"lastPayload\":{\"battery\":100,\"humidity\":83.1,\"linkquality\":94,\"pressure\":988,\"temperature\":6.33,\"voltage\":3045},\"homekit\":{\"TemperatureSensor\":{\"CurrentTemperature\":6.33},\"HumiditySensor\":{\"CurrentRelativeHumidity\":83.1},\"Battery\":{\"BatteryLevel\":100,\"StatusLowBattery\":0}}}",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "group",
+        "pt": "msg",
+        "to": "null",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "homekit",
+        "pt": "msg",
+        "to": "{\"TemperatureSensor\":{\"CurrentTemperature\":6.33},\"HumiditySensor\":{\"CurrentRelativeHumidity\":83.1},\"Battery\":{\"BatteryLevel\":100,\"StatusLowBattery\":0}}",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "format",
+        "pt": "msg",
+        "to": "{}",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 200,
+    "y": 260,
+    "wires": [
+      [
+        "59326304.37e484"
+      ]
     ]
   }
 ]
