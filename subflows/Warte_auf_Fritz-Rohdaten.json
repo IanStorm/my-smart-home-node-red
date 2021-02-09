@@ -1,0 +1,218 @@
+[
+  {
+    "id": "12050788.44a868",
+    "type": "subflow",
+    "name": "Warte_auf_Fritz-Rohdaten",
+    "info": "### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        ain\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        AIN\n    </dd>\n</dl>\n",
+    "category": "",
+    "in": [],
+    "out": [
+      {
+        "x": 520,
+        "y": 280,
+        "wires": [
+          {
+            "id": "d932510f.83b0d8",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [
+      {
+        "name": "ain",
+        "type": "str",
+        "value": "-TODO: AIN-",
+        "ui": {
+          "icon": "font-awesome/fa-id-card-o",
+          "type": "input",
+          "opts": {
+            "types": [
+              "str"
+            ]
+          }
+        }
+      }
+    ],
+    "color": "#DDAA99",
+    "icon": "node-red-contrib-fritzapi/fritz.png"
+  },
+  {
+    "id": "7ebaa369.505fd4",
+    "type": "comment",
+    "z": "12050788.44a868",
+    "name": "Warte auf Fritz-Rohdaten",
+    "info": "",
+    "x": 130,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "e1811ab8.7951",
+    "type": "inject",
+    "z": "12050788.44a868",
+    "name": "1m nach Start, dann alle 5s",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "5",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "60",
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 160,
+    "y": 120,
+    "wires": [
+      [
+        "3ca166d3.524032"
+      ]
+    ]
+  },
+  {
+    "id": "ce3c0dc.853c2f",
+    "type": "fritz-thermostat",
+    "z": "12050788.44a868",
+    "connection": "1f1ed453.c0771c",
+    "name": "Lese Daten",
+    "action": "getDevice",
+    "x": 390,
+    "y": 200,
+    "wires": [
+      [
+        "f9f3c7a2.9afc5"
+      ]
+    ]
+  },
+  {
+    "id": "d932510f.83b0d8",
+    "type": "change",
+    "z": "12050788.44a868",
+    "name": "Bereinige",
+    "rules": [
+      {
+        "t": "delete",
+        "p": "ain",
+        "pt": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 380,
+    "y": 280,
+    "wires": [
+      [
+        "3973f25d.c66e06"
+      ]
+    ]
+  },
+  {
+    "id": "f9f3c7a2.9afc5",
+    "type": "change",
+    "z": "12050788.44a868",
+    "name": "Ersetze topic",
+    "rules": [
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "ain",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 390,
+    "y": 240,
+    "wires": [
+      [
+        "d932510f.83b0d8"
+      ]
+    ]
+  },
+  {
+    "id": "3973f25d.c66e06",
+    "type": "debug",
+    "z": "12050788.44a868",
+    "d": true,
+    "name": "Debugge \"Warte auf Fritz-Rohdaten (out)\"",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 480,
+    "y": 320,
+    "wires": []
+  },
+  {
+    "id": "3ca166d3.524032",
+    "type": "change",
+    "z": "12050788.44a868",
+    "name": "Setze AIN",
+    "rules": [
+      {
+        "t": "set",
+        "p": "ain",
+        "pt": "msg",
+        "to": "ain",
+        "tot": "env"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 380,
+    "y": 120,
+    "wires": [
+      [
+        "36a62119.d0dcbe"
+      ]
+    ]
+  },
+  {
+    "id": "36a62119.d0dcbe",
+    "type": "change",
+    "z": "12050788.44a868",
+    "name": "Setze Zeitstempel",
+    "rules": [
+      {
+        "t": "set",
+        "p": "timestamp",
+        "pt": "msg",
+        "to": "",
+        "tot": "date"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 410,
+    "y": 160,
+    "wires": [
+      [
+        "ce3c0dc.853c2f"
+      ]
+    ]
+  }
+]

@@ -33,7 +33,7 @@
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 560,
+    "y": 580,
     "wires": []
   },
   {
@@ -46,7 +46,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 680,
+    "y": 700,
     "wires": [
       [
         "577b5271.e38e54"
@@ -63,7 +63,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 740,
+    "y": 760,
     "wires": [
       [
         "a81dabaa.a85338"
@@ -82,7 +82,7 @@
     ],
     "uncaught": false,
     "x": 160,
-    "y": 860,
+    "y": 880,
     "wires": [
       [
         "47602b66.7ff3d4"
@@ -104,7 +104,7 @@
     "resendOnRefresh": true,
     "templateScope": "local",
     "x": 420,
-    "y": 680,
+    "y": 700,
     "wires": [
       []
     ]
@@ -122,7 +122,7 @@
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
     "x": 420,
-    "y": 740,
+    "y": 760,
     "wires": []
   },
   {
@@ -138,7 +138,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 620,
+    "y": 640,
     "wires": [
       [
         "5df501f.d1a2c8"
@@ -160,7 +160,7 @@
     "resendOnRefresh": false,
     "templateScope": "local",
     "x": 410,
-    "y": 620,
+    "y": 640,
     "wires": [
       []
     ]
@@ -172,7 +172,7 @@
     "name": "Automatisch Schalten",
     "info": "",
     "x": 140,
-    "y": 1000,
+    "y": 1020,
     "wires": []
   },
   {
@@ -197,7 +197,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1060,
+    "y": 1080,
     "wires": [
       [
         "d98b1423.c395f"
@@ -226,7 +226,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 150,
-    "y": 1100,
+    "y": 1120,
     "wires": [
       [
         "d98b1423.c395f"
@@ -260,7 +260,7 @@
     "to": "",
     "reg": false,
     "x": 470,
-    "y": 1100,
+    "y": 1120,
     "wires": [
       []
     ]
@@ -292,7 +292,7 @@
     "to": "",
     "reg": false,
     "x": 470,
-    "y": 1260,
+    "y": 1280,
     "wires": [
       []
     ]
@@ -309,7 +309,7 @@
     ],
     "uncaught": false,
     "x": 160,
-    "y": 300,
+    "y": 320,
     "wires": [
       [
         "c3ab2ad3.9f4f5"
@@ -325,7 +325,7 @@
       "ae8dfb0d.ed6b38"
     ],
     "x": 190,
-    "y": 340,
+    "y": 360,
     "wires": [
       [
         "c3ab2ad3.9f4f5"
@@ -342,7 +342,7 @@
       "c3ac0285.66ce2"
     ],
     "x": 180,
-    "y": 380,
+    "y": 400,
     "wires": [
       [
         "c3ab2ad3.9f4f5"
@@ -377,7 +377,7 @@
     "to": "",
     "reg": false,
     "x": 920,
-    "y": 860,
+    "y": 880,
     "wires": [
       []
     ]
@@ -394,7 +394,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 480,
+    "y": 500,
     "wires": [
       [
         "cb54205f.b1e5f8"
@@ -407,8 +407,8 @@
     "z": "ecee5153.6f2368",
     "name": "Teile \"Ist verbunden?\"",
     "links": [],
-    "x": 420,
-    "y": 160,
+    "x": 780,
+    "y": 220,
     "wires": [],
     "l": true
   },
@@ -418,8 +418,8 @@
     "z": "ecee5153.6f2368",
     "name": "Teile Ist-Temperatur",
     "links": [],
-    "x": 410,
-    "y": 200,
+    "x": 770,
+    "y": 180,
     "wires": [],
     "l": true
   },
@@ -429,41 +429,10 @@
     "z": "ecee5153.6f2368",
     "name": "Teile Soll-Temperatur",
     "links": [],
-    "x": 420,
-    "y": 240,
+    "x": 780,
+    "y": 260,
     "wires": [],
     "l": true
-  },
-  {
-    "id": "c74049d4.0856e",
-    "type": "subflow:2757b690.6da392",
-    "z": "ecee5153.6f2368",
-    "name": "Warte auf Thermostat-Daten",
-    "env": [
-      {
-        "name": "ain",
-        "value": "117950400584",
-        "type": "str"
-      },
-      {
-        "name": "topicPrefix",
-        "value": "bedroom",
-        "type": "str"
-      }
-    ],
-    "x": 160,
-    "y": 200,
-    "wires": [
-      [
-        "cc22b036.984bd"
-      ],
-      [
-        "88cf38f7.8e6a"
-      ],
-      [
-        "d7b9c738.c9fa7"
-      ]
-    ]
   },
   {
     "id": "cb54205f.b1e5f8",
@@ -477,8 +446,8 @@
         "type": "str"
       }
     ],
-    "x": 390,
-    "y": 480,
+    "x": 490,
+    "y": 500,
     "wires": []
   },
   {
@@ -503,7 +472,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1240,
+    "y": 1260,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -532,7 +501,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1320,
+    "y": 1340,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -561,7 +530,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 150,
-    "y": 1280,
+    "y": 1300,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -590,7 +559,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1140,
+    "y": 1160,
     "wires": [
       [
         "d98b1423.c395f"
@@ -619,7 +588,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 920,
+    "y": 940,
     "wires": [
       [
         "8083cc30.038e98"
@@ -639,7 +608,7 @@
     "format": "{{msg.payload ? msg.payload + '°C' : 'Aus'}}",
     "layout": "row-center",
     "x": 420,
-    "y": 800,
+    "y": 820,
     "wires": []
   },
   {
@@ -652,7 +621,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 800,
+    "y": 820,
     "wires": [
       [
         "7534fdaf.a58c3c"
@@ -678,7 +647,7 @@
     "payloadType": "str",
     "topic": "",
     "x": 450,
-    "y": 920,
+    "y": 940,
     "wires": [
       [
         "e2ef774e.d02f2"
@@ -704,7 +673,7 @@
     "max": "28",
     "step": "0.5",
     "x": 450,
-    "y": 860,
+    "y": 880,
     "wires": [
       [
         "9e099faa.e8719"
@@ -718,7 +687,7 @@
     "time": "5000",
     "name": "5s debounce",
     "x": 690,
-    "y": 860,
+    "y": 880,
     "wires": [
       [
         "d20a9dc5.e2e3d8"
@@ -740,7 +709,7 @@
     "topic": "Schlafzimmer: Heizkörper",
     "name": "Zeige Benachrichtigung",
     "x": 730,
-    "y": 920,
+    "y": 940,
     "wires": []
   },
   {
@@ -752,7 +721,7 @@
       "c3ac0285.66ce2"
     ],
     "x": 180,
-    "y": 420,
+    "y": 440,
     "wires": [
       [
         "c3ab2ad3.9f4f5"
@@ -788,7 +757,7 @@
       }
     ],
     "x": 510,
-    "y": 340,
+    "y": 360,
     "wires": [
       [
         "3d5ab2d1.88722e"
@@ -801,8 +770,8 @@
     "z": "ecee5153.6f2368",
     "name": "Teile Ziel-Temperatur",
     "links": [],
-    "x": 760,
-    "y": 340,
+    "x": 780,
+    "y": 360,
     "wires": [],
     "l": true
   },
@@ -828,10 +797,113 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 1200,
+    "y": 1220,
     "wires": [
       [
         "f9b8ffbc.8ebb"
+      ]
+    ]
+  },
+  {
+    "id": "d02f06b7.5ab658",
+    "type": "change",
+    "z": "ecee5153.6f2368",
+    "name": "Setze Replay-Daten",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "{\"identifier\":\"117950400584\",\"id\":\"22\",\"functionbitmask\":\"320\",\"fwversion\":\"03.54\",\"manufacturer\":\"AVM\",\"productname\":\"Comet DECT\",\"present\":\"1\",\"txbusy\":\"0\",\"name\":\"Schlafzimmer: Heizkörper\",\"battery\":\"100\",\"batterylow\":\"0\",\"temperature\":{\"celsius\":\"220\",\"offset\":\"-20\"},\"hkr\":{\"tist\":\"44\",\"tsoll\":\"42\",\"absenk\":\"253\",\"komfort\":\"253\",\"lock\":\"0\",\"devicelock\":\"1\",\"errorcode\":\"0\",\"windowopenactiv\":\"0\",\"windowopenactiveendtime\":\"0\",\"boostactive\":\"0\",\"boostactiveendtime\":\"0\",\"batterylow\":\"0\",\"battery\":\"100\",\"nextchange\":{\"endperiod\":\"0\",\"tchange\":\"253\"},\"summeractive\":\"0\",\"holidayactive\":\"0\"}}",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "timestamp",
+        "pt": "msg",
+        "to": "1612879791123",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "117950400584",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 200,
+    "y": 240,
+    "wires": [
+      [
+        "f8284c4e.673cd8"
+      ]
+    ]
+  },
+  {
+    "id": "11eb77a5.df85b",
+    "type": "link in",
+    "z": "ecee5153.6f2368",
+    "name": "",
+    "links": [
+      "24e48711.9609f"
+    ],
+    "x": 55,
+    "y": 240,
+    "wires": [
+      [
+        "d02f06b7.5ab658"
+      ]
+    ]
+  },
+  {
+    "id": "e2bad207.2d9fe",
+    "type": "subflow:12050788.44a868",
+    "z": "ecee5153.6f2368",
+    "name": "Warte auf Fritz-Rohdaten",
+    "env": [
+      {
+        "name": "ain",
+        "value": "117950400584",
+        "type": "str"
+      }
+    ],
+    "x": 150,
+    "y": 200,
+    "wires": [
+      [
+        "f8284c4e.673cd8"
+      ]
+    ]
+  },
+  {
+    "id": "f8284c4e.673cd8",
+    "type": "subflow:390d8418.7506d4",
+    "z": "ecee5153.6f2368",
+    "name": "Verstehe Thermostat-Daten",
+    "env": [
+      {
+        "name": "room",
+        "value": "bedroom",
+        "type": "str"
+      }
+    ],
+    "x": 520,
+    "y": 220,
+    "wires": [
+      [
+        "88cf38f7.8e6a"
+      ],
+      [
+        "cc22b036.984bd"
+      ],
+      [
+        "d7b9c738.c9fa7"
       ]
     ]
   }
