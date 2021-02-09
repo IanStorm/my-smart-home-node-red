@@ -2,7 +2,7 @@
   {
     "id": "390d8418.7506d4",
     "type": "subflow",
-    "name": "Verstehe_Fritz-Thermostat-Daten",
+    "name": "Verstehe_Fritz_Thermostat-Daten",
     "info": "### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        room\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Location of the smart radiator control. Used as a `msg.topic` prefix.\n    </dd>\n</dl>\n",
     "category": "",
     "in": [
@@ -75,7 +75,7 @@
     "id": "866a8b28.5f7418",
     "type": "comment",
     "z": "390d8418.7506d4",
-    "name": "Verstehe Fritz-Thermostat-Daten",
+    "name": "Verstehe Fritz Thermostat-Daten",
     "info": "",
     "x": 150,
     "y": 40,

@@ -2,7 +2,7 @@
   {
     "id": "bd326ce6.854e58",
     "type": "subflow",
-    "name": "Lese_Temperatur-Sensor-Daten",
+    "name": "Verstehe_Aqara_Temperatur-Sensor-Daten",
     "info": "### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        msg\n    </dt>\n    <dd>\n        Matches the input from node-red-contrib-zigbee2mqtt zigbee2mqtt-in node.\n    </dd>\n    <dt>\n        topic-prefix\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Prefix for Node-RED topic. Will be appended to, e.g., `sensor/battery`.\n    </dd>\n</dl>\n",
     "category": "",
     "in": [
@@ -78,9 +78,9 @@
     "id": "b48c7843.b2e4e",
     "type": "comment",
     "z": "bd326ce6.854e58",
-    "name": "Lese Temperatur-Sensor-Daten",
+    "name": "Verstehe Aqara Temperatur-Sensor-Daten",
     "info": "",
-    "x": 150,
+    "x": 180,
     "y": 40,
     "wires": []
   },

@@ -48,7 +48,7 @@
     "id": "59326304.37e484",
     "type": "subflow:bd326ce6.854e58",
     "z": "ae79e463.ac6c38",
-    "name": "Lese Sensor-Daten",
+    "name": "Verstehe Sensor-Daten",
     "env": [
       {
         "name": "topicPrefix",
@@ -56,7 +56,7 @@
         "type": "str"
       }
     ],
-    "x": 430,
+    "x": 450,
     "y": 220,
     "wires": [
       [
@@ -76,7 +76,7 @@
     "z": "ae79e463.ac6c38",
     "name": "Teile Batterie-%",
     "links": [],
-    "x": 640,
+    "x": 680,
     "y": 180,
     "wires": [],
     "l": true
@@ -87,7 +87,7 @@
     "z": "ae79e463.ac6c38",
     "name": "Teile LQI",
     "links": [],
-    "x": 620,
+    "x": 660,
     "y": 220,
     "wires": [],
     "l": true
@@ -98,7 +98,7 @@
     "z": "ae79e463.ac6c38",
     "name": "Teile Temperatur",
     "links": [],
-    "x": 640,
+    "x": 680,
     "y": 260,
     "wires": [],
     "l": true
