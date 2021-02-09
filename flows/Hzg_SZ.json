@@ -33,7 +33,7 @@
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 580,
+    "y": 540,
     "wires": []
   },
   {
@@ -46,7 +46,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 700,
+    "y": 720,
     "wires": [
       [
         "577b5271.e38e54"
@@ -63,7 +63,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 760,
+    "y": 780,
     "wires": [
       [
         "a81dabaa.a85338"
@@ -82,7 +82,7 @@
     ],
     "uncaught": false,
     "x": 160,
-    "y": 880,
+    "y": 900,
     "wires": [
       [
         "47602b66.7ff3d4"
@@ -104,7 +104,7 @@
     "resendOnRefresh": true,
     "templateScope": "local",
     "x": 420,
-    "y": 700,
+    "y": 720,
     "wires": [
       []
     ]
@@ -114,7 +114,7 @@
     "type": "ui_text",
     "z": "ecee5153.6f2368",
     "group": "7b8abfe6.0e9dd8",
-    "order": 2,
+    "order": 4,
     "width": 2,
     "height": 1,
     "name": "Zeige Ist-Temperatur",
@@ -122,7 +122,7 @@
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
     "x": 420,
-    "y": 760,
+    "y": 780,
     "wires": []
   },
   {
@@ -138,7 +138,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 640,
+    "y": 600,
     "wires": [
       [
         "5df501f.d1a2c8"
@@ -160,7 +160,7 @@
     "resendOnRefresh": false,
     "templateScope": "local",
     "x": 410,
-    "y": 640,
+    "y": 600,
     "wires": [
       []
     ]
@@ -172,7 +172,7 @@
     "name": "Automatisch Schalten",
     "info": "",
     "x": 140,
-    "y": 1020,
+    "y": 1040,
     "wires": []
   },
   {
@@ -197,7 +197,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1080,
+    "y": 1100,
     "wires": [
       [
         "d98b1423.c395f"
@@ -226,7 +226,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 150,
-    "y": 1120,
+    "y": 1140,
     "wires": [
       [
         "d98b1423.c395f"
@@ -260,7 +260,7 @@
     "to": "",
     "reg": false,
     "x": 470,
-    "y": 1120,
+    "y": 1140,
     "wires": [
       []
     ]
@@ -292,7 +292,7 @@
     "to": "",
     "reg": false,
     "x": 470,
-    "y": 1280,
+    "y": 1300,
     "wires": [
       []
     ]
@@ -309,7 +309,7 @@
     ],
     "uncaught": false,
     "x": 160,
-    "y": 320,
+    "y": 280,
     "wires": [
       [
         "c3ab2ad3.9f4f5"
@@ -325,7 +325,7 @@
       "ae8dfb0d.ed6b38"
     ],
     "x": 190,
-    "y": 360,
+    "y": 320,
     "wires": [
       [
         "c3ab2ad3.9f4f5"
@@ -342,7 +342,7 @@
       "c3ac0285.66ce2"
     ],
     "x": 180,
-    "y": 400,
+    "y": 360,
     "wires": [
       [
         "c3ab2ad3.9f4f5"
@@ -377,7 +377,7 @@
     "to": "",
     "reg": false,
     "x": 920,
-    "y": 880,
+    "y": 900,
     "wires": [
       []
     ]
@@ -394,7 +394,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 500,
+    "y": 460,
     "wires": [
       [
         "cb54205f.b1e5f8"
@@ -447,7 +447,7 @@
       }
     ],
     "x": 490,
-    "y": 500,
+    "y": 460,
     "wires": []
   },
   {
@@ -472,7 +472,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1260,
+    "y": 1280,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -501,7 +501,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1340,
+    "y": 1360,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -530,7 +530,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 150,
-    "y": 1300,
+    "y": 1320,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -559,7 +559,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1160,
+    "y": 1180,
     "wires": [
       [
         "d98b1423.c395f"
@@ -588,7 +588,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 940,
+    "y": 960,
     "wires": [
       [
         "8083cc30.038e98"
@@ -608,7 +608,7 @@
     "format": "{{msg.payload ? msg.payload + '°C' : 'Aus'}}",
     "layout": "row-center",
     "x": 420,
-    "y": 820,
+    "y": 840,
     "wires": []
   },
   {
@@ -621,7 +621,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 820,
+    "y": 840,
     "wires": [
       [
         "7534fdaf.a58c3c"
@@ -647,7 +647,7 @@
     "payloadType": "str",
     "topic": "",
     "x": 450,
-    "y": 940,
+    "y": 960,
     "wires": [
       [
         "e2ef774e.d02f2"
@@ -662,9 +662,9 @@
     "label": "",
     "tooltip": "",
     "group": "7b8abfe6.0e9dd8",
-    "order": 4,
+    "order": 7,
     "width": "2",
-    "height": "2",
+    "height": "1",
     "wrap": false,
     "passthru": false,
     "topic": "",
@@ -673,7 +673,7 @@
     "max": "28",
     "step": "0.5",
     "x": 450,
-    "y": 880,
+    "y": 900,
     "wires": [
       [
         "9e099faa.e8719"
@@ -687,7 +687,7 @@
     "time": "5000",
     "name": "5s debounce",
     "x": 690,
-    "y": 880,
+    "y": 900,
     "wires": [
       [
         "d20a9dc5.e2e3d8"
@@ -709,7 +709,7 @@
     "topic": "Schlafzimmer: Heizkörper",
     "name": "Zeige Benachrichtigung",
     "x": 730,
-    "y": 940,
+    "y": 960,
     "wires": []
   },
   {
@@ -721,7 +721,7 @@
       "c3ac0285.66ce2"
     ],
     "x": 180,
-    "y": 440,
+    "y": 400,
     "wires": [
       [
         "c3ab2ad3.9f4f5"
@@ -757,7 +757,7 @@
       }
     ],
     "x": 510,
-    "y": 360,
+    "y": 320,
     "wires": [
       [
         "3d5ab2d1.88722e"
@@ -771,7 +771,7 @@
     "name": "Teile Ziel-Temperatur",
     "links": [],
     "x": 780,
-    "y": 360,
+    "y": 320,
     "wires": [],
     "l": true
   },
@@ -797,7 +797,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 1220,
+    "y": 1240,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -838,7 +838,7 @@
     "to": "",
     "reg": false,
     "x": 200,
-    "y": 240,
+    "y": 220,
     "wires": [
       [
         "f8284c4e.673cd8"
@@ -854,7 +854,7 @@
       "24e48711.9609f"
     ],
     "x": 55,
-    "y": 240,
+    "y": 220,
     "wires": [
       [
         "d02f06b7.5ab658"
@@ -874,7 +874,7 @@
       }
     ],
     "x": 150,
-    "y": 200,
+    "y": 180,
     "wires": [
       [
         "f8284c4e.673cd8"
@@ -894,8 +894,11 @@
       }
     ],
     "x": 520,
-    "y": 220,
+    "y": 200,
     "wires": [
+      [
+        "fd7cd1f.558fab"
+      ],
       [
         "88cf38f7.8e6a"
       ],
@@ -906,5 +909,49 @@
         "d7b9c738.c9fa7"
       ]
     ]
+  },
+  {
+    "id": "fd7cd1f.558fab",
+    "type": "link out",
+    "z": "ecee5153.6f2368",
+    "name": "Teile Batterie-%",
+    "links": [],
+    "x": 760,
+    "y": 140,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "659cd83.04168a8",
+    "type": "complete",
+    "z": "ecee5153.6f2368",
+    "name": "Warte auf Batterie-%",
+    "scope": [
+      "fd7cd1f.558fab"
+    ],
+    "uncaught": false,
+    "x": 130,
+    "y": 660,
+    "wires": [
+      [
+        "4bbb0620.fcb63"
+      ]
+    ]
+  },
+  {
+    "id": "4bbb0620.fcb63",
+    "type": "ui_text",
+    "z": "ecee5153.6f2368",
+    "group": "7b8abfe6.0e9dd8",
+    "order": 2,
+    "width": "2",
+    "height": 1,
+    "name": "Zeige Batterie-%",
+    "label": "<i class=\"material-icons\">battery_unknown</i>",
+    "format": "{{msg.payload}}%",
+    "layout": "row-center",
+    "x": 410,
+    "y": 660,
+    "wires": []
   }
 ]
