@@ -386,6 +386,15 @@
     "type": "inject",
     "z": "dd43bdd9.895da8",
     "name": "Alle 13s",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
     "repeat": "13",
     "crontab": "",
     "once": false,
