@@ -151,7 +151,7 @@
     "order": 9,
     "width": 0,
     "height": 0,
-    "format": "<style id='not-empty'>\n</style>",
+    "format": "<style id='tag-must-exist'>\n</style>",
     "storeOutMessages": true,
     "fwdInMessages": true,
     "resendOnRefresh": true,
@@ -298,6 +298,33 @@
     "reg": false,
     "x": 410,
     "y": 220,
+    "wires": [
+      [
+        "8b681832.e5556"
+      ]
+    ]
+  },
+  {
+    "id": "8b681832.e5556",
+    "type": "change",
+    "z": "683a34a0.e7761c",
+    "name": "Fixe Button-Positionierung",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "$append(payload, [\t    \"  button > ui-icon {\",\t    \"    display: flex;\",\t    \"  }\",\t    \"\"\t])",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 420,
+    "y": 260,
     "wires": [
       [
         "f7b8703c.aed048"
