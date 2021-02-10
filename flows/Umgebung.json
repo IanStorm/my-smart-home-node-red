@@ -1,0 +1,280 @@
+[
+  {
+    "id": "683a34a0.e7761c",
+    "type": "tab",
+    "label": "Umgebung",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "5985b332.97f0d4",
+    "type": "comment",
+    "z": "683a34a0.e7761c",
+    "name": "Umgebung",
+    "info": "",
+    "x": 80,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "18fade0c.461492",
+    "type": "inject",
+    "z": "683a34a0.e7761c",
+    "d": true,
+    "name": "Starte Replay",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 120,
+    "y": 400,
+    "wires": [
+      [
+        "24e48711.9609f"
+      ]
+    ]
+  },
+  {
+    "id": "24e48711.9609f",
+    "type": "link out",
+    "z": "683a34a0.e7761c",
+    "name": "Teile Replay-Start",
+    "links": [
+      "a1d2669.bb8bf18",
+      "90b9a2bb.928038",
+      "87a69f71.538838",
+      "7ab772dd.5ec514",
+      "2527b321.d37fc4",
+      "5fbba12b.626c3",
+      "11eb77a5.df85b",
+      "22d0af67.b98ce8"
+    ],
+    "x": 330,
+    "y": 400,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "895d1185.78eff8",
+    "type": "comment",
+    "z": "683a34a0.e7761c",
+    "name": "Globale GUI-Anpassungen",
+    "info": "",
+    "x": 150,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "341f9407.1d5114",
+    "type": "comment",
+    "z": "683a34a0.e7761c",
+    "name": "Debug",
+    "info": "",
+    "x": 90,
+    "y": 340,
+    "wires": []
+  },
+  {
+    "id": "12aa27a9.3126e8",
+    "type": "inject",
+    "z": "683a34a0.e7761c",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 180,
+    "wires": [
+      [
+        "4d42e6f2.2fcdc"
+      ]
+    ]
+  },
+  {
+    "id": "68fb9f69.174148",
+    "type": "change",
+    "z": "683a34a0.e7761c",
+    "name": "Deaktiviere Text-Markieren-Feature",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "$append(payload, [\t    \"  body {\",\t    \"    user-select: none;\",\t    \"  }\",\t    \"\"\t])",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 440,
+    "y": 180,
+    "wires": [
+      [
+        "f7b8703c.aed048"
+      ]
+    ]
+  },
+  {
+    "id": "9c48f033.ea3b3",
+    "type": "ui_template",
+    "z": "683a34a0.e7761c",
+    "group": "22abfc75.b9b2e4",
+    "name": "Füge CSS ein",
+    "order": 9,
+    "width": 0,
+    "height": 0,
+    "format": "<style id='not-empty'>\n</style>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": true,
+    "templateScope": "global",
+    "x": 740,
+    "y": 260,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f7b8703c.aed048",
+    "type": "change",
+    "z": "683a34a0.e7761c",
+    "name": "Füge End-Tag ein",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "$append(payload, [\t    \"</style>\"\t])",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 750,
+    "y": 180,
+    "wires": [
+      [
+        "743b32c3.90c4ac"
+      ]
+    ]
+  },
+  {
+    "id": "4d42e6f2.2fcdc",
+    "type": "change",
+    "z": "683a34a0.e7761c",
+    "name": "Init. JSON-Array",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "[]",
+        "tot": "json"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 120,
+    "y": 220,
+    "wires": [
+      [
+        "151b838e.445b54"
+      ]
+    ]
+  },
+  {
+    "id": "743b32c3.90c4ac",
+    "type": "change",
+    "z": "683a34a0.e7761c",
+    "name": "Setze Template",
+    "rules": [
+      {
+        "t": "set",
+        "p": "template",
+        "pt": "msg",
+        "to": "$join(payload, \"\\n\")",
+        "tot": "jsonata"
+      },
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 740,
+    "y": 220,
+    "wires": [
+      [
+        "9c48f033.ea3b3"
+      ]
+    ]
+  },
+  {
+    "id": "151b838e.445b54",
+    "type": "change",
+    "z": "683a34a0.e7761c",
+    "name": "Füge Start-Tag ein",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "$append(payload, [\t    \"<style id='my-smart-home-custom-css'>\"\t])",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 130,
+    "y": 260,
+    "wires": [
+      [
+        "68fb9f69.174148"
+      ]
+    ]
+  }
+]
