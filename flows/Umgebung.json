@@ -138,7 +138,7 @@
     "y": 180,
     "wires": [
       [
-        "f7b8703c.aed048"
+        "11cdfe8a.f97049"
       ]
     ]
   },
@@ -274,6 +274,33 @@
     "wires": [
       [
         "68fb9f69.174148"
+      ]
+    ]
+  },
+  {
+    "id": "11cdfe8a.f97049",
+    "type": "change",
+    "z": "683a34a0.e7761c",
+    "name": "Entferne Button-Schatten",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "$append(payload, [\t    \"  .md-button.md-raised:not([disabled]) {\",\t    \"    box-shadow: none;\",\t    \"  }\",\t    \"\",\t    \"  .md-button:not([disabled]).md-fab:active,\",\t    \"  .md-button:not([disabled]).md-raised:active {\",\t    \"    box-shadow: none;\",\t    \"  }\",\t    \"\"\t])",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 410,
+    "y": 220,
+    "wires": [
+      [
+        "f7b8703c.aed048"
       ]
     ]
   }
