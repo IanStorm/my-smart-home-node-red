@@ -422,7 +422,7 @@
     "type": "function",
     "z": "390d8418.7506d4",
     "name": "Rechne um",
-    "func": "if (msg.payload === 253) msg.payload = false;\nelse if (msg.payload === 254) msg.payload = true;\nelse msg.payload = parseInt(msg.payload)/2;\nreturn msg;",
+    "func": "msg.payload = parseInt(msg.payload);\nif (msg.payload === 253) msg.payload = false;\nelse if (msg.payload === 254) msg.payload = true;\nelse msg.payload = msg.payload/2;\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
