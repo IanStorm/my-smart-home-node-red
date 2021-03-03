@@ -18,7 +18,7 @@
     ],
     "out": [
       {
-        "x": 780,
+        "x": 800,
         "y": 160,
         "wires": [
           {
@@ -28,7 +28,7 @@
         ]
       },
       {
-        "x": 780,
+        "x": 800,
         "y": 200,
         "wires": [
           {
@@ -38,11 +38,31 @@
         ]
       },
       {
-        "x": 780,
+        "x": 800,
         "y": 240,
         "wires": [
           {
             "id": "c98c9fa2.70b218",
+            "port": 0
+          }
+        ]
+      },
+      {
+        "x": 800,
+        "y": 280,
+        "wires": [
+          {
+            "id": "fe789f6.923eee",
+            "port": 0
+          }
+        ]
+      },
+      {
+        "x": 800,
+        "y": 320,
+        "wires": [
+          {
+            "id": "cd572843.4e4028",
             "port": 0
           }
         ]
@@ -69,7 +89,9 @@
     "color": "#DDAA99",
     "outputLabels": [
       "battery",
+      "humidity",
       "LQI",
+      "pressure",
       "temperature"
     ],
     "icon": "font-awesome/fa-snowflake-o"
@@ -118,7 +140,17 @@
       },
       {
         "t": "cont",
+        "v": "humidity",
+        "vt": "str"
+      },
+      {
+        "t": "cont",
         "v": "lqi",
+        "vt": "str"
+      },
+      {
+        "t": "cont",
+        "v": "pressure",
         "vt": "str"
       },
       {
@@ -129,9 +161,9 @@
     ],
     "checkall": "false",
     "repair": false,
-    "outputs": 3,
-    "x": 410,
-    "y": 200,
+    "outputs": 5,
+    "x": 430,
+    "y": 240,
     "wires": [
       [
         "6e4170cd.af2a08"
@@ -141,6 +173,12 @@
       ],
       [
         "c98c9fa2.70b218"
+      ],
+      [
+        "fe789f6.923eee"
+      ],
+      [
+        "cd572843.4e4028"
       ]
     ]
   },
@@ -289,7 +327,7 @@
     "start": "",
     "inout": "out",
     "property": "payload",
-    "x": 630,
+    "x": 650,
     "y": 160,
     "wires": [
       []
@@ -305,7 +343,7 @@
     "start": "",
     "inout": "out",
     "property": "payload",
-    "x": 630,
+    "x": 650,
     "y": 200,
     "wires": [
       []
@@ -321,8 +359,40 @@
     "start": "",
     "inout": "out",
     "property": "payload",
-    "x": 630,
+    "x": 650,
     "y": 240,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "fe789f6.923eee",
+    "type": "rbe",
+    "z": "bd326ce6.854e58",
+    "name": "Datum geändert?",
+    "func": "rbe",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "property": "payload",
+    "x": 650,
+    "y": 280,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "cd572843.4e4028",
+    "type": "rbe",
+    "z": "bd326ce6.854e58",
+    "name": "Datum geändert?",
+    "func": "rbe",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "property": "payload",
+    "x": 650,
+    "y": 320,
     "wires": [
       []
     ]

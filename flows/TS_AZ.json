@@ -57,14 +57,18 @@
       }
     ],
     "x": 450,
-    "y": 220,
+    "y": 260,
     "wires": [
       [
         "ea037396.16c268"
       ],
       [
+        "5c3c620e.7e4e14"
+      ],
+      [
         "cce236b9.a74c2"
       ],
+      [],
       [
         "ff688648.149a68"
       ]
@@ -88,7 +92,7 @@
     "name": "Teile LQI",
     "links": [],
     "x": 660,
-    "y": 220,
+    "y": 260,
     "wires": [],
     "l": true
   },
@@ -99,7 +103,7 @@
     "name": "Teile Temperatur",
     "links": [],
     "x": 680,
-    "y": 260,
+    "y": 340,
     "wires": [],
     "l": true
   },
@@ -110,7 +114,7 @@
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 340,
+    "y": 420,
     "wires": []
   },
   {
@@ -123,7 +127,7 @@
     ],
     "uncaught": false,
     "x": 130,
-    "y": 460,
+    "y": 540,
     "wires": [
       [
         "e23cc07d.c20cf8"
@@ -140,7 +144,7 @@
     ],
     "uncaught": false,
     "x": 110,
-    "y": 520,
+    "y": 600,
     "wires": [
       [
         "3e271307.86e5c4"
@@ -157,11 +161,11 @@
     ],
     "uncaught": false,
     "x": 140,
-    "y": 580,
+    "y": 760,
     "wires": [
       [
-        "aa811e5e.9955e",
-        "69089cd5.06d43c"
+        "69089cd5.06d43c",
+        "aa811e5e.9955e"
       ]
     ]
   },
@@ -178,7 +182,7 @@
     "format": "{{msg.payload}}",
     "layout": "row-center",
     "x": 520,
-    "y": 520,
+    "y": 600,
     "wires": []
   },
   {
@@ -194,7 +198,7 @@
     "format": "{{msg.payload}}%",
     "layout": "row-center",
     "x": 550,
-    "y": 460,
+    "y": 540,
     "wires": []
   },
   {
@@ -222,20 +226,20 @@
     "useOneColor": false,
     "useUTC": false,
     "colors": [
-      "#2ca02c",
-      "#aec7e8",
-      "#ff7f0e",
-      "#1f77b4",
-      "#98df8a",
       "#d62728",
-      "#ff9896",
-      "#9467bd",
-      "#c5b0d5"
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff"
     ],
     "outputs": 1,
     "useDifferentColor": false,
     "x": 590,
-    "y": 580,
+    "y": 760,
     "wires": [
       []
     ]
@@ -247,13 +251,13 @@
     "group": "8c9b25f5.1db3b8",
     "order": 4,
     "width": "2",
-    "height": "1",
+    "height": "2",
     "name": "Zeige Temperatur",
     "label": "<i class=\"material-icons\">ac_unit</i>",
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
     "x": 550,
-    "y": 620,
+    "y": 800,
     "wires": []
   },
   {
@@ -271,7 +275,7 @@
     "outputFieldDecimals": "1",
     "name": "Vereinfache",
     "x": 350,
-    "y": 620,
+    "y": 800,
     "wires": [
       [
         "d97caea0.6ca1f"
@@ -291,7 +295,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 400,
+    "y": 480,
     "wires": [
       [
         "153bb9b6.db8c06"
@@ -313,7 +317,7 @@
     "resendOnRefresh": false,
     "templateScope": "local",
     "x": 530,
-    "y": 400,
+    "y": 480,
     "wires": [
       []
     ]
@@ -327,7 +331,7 @@
       "24e48711.9609f"
     ],
     "x": 55,
-    "y": 260,
+    "y": 340,
     "wires": [
       [
         "4033371b.2dd02"
@@ -396,11 +400,119 @@
     "to": "",
     "reg": false,
     "x": 200,
-    "y": 260,
+    "y": 340,
     "wires": [
       [
         "a74026f8.f31"
       ]
+    ]
+  },
+  {
+    "id": "5c3c620e.7e4e14",
+    "type": "link out",
+    "z": "2af9de26.90ad8a",
+    "name": "Teile Luftfeuchte",
+    "links": [],
+    "x": 680,
+    "y": 220,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "ca00ae1e.0c91b",
+    "type": "complete",
+    "z": "2af9de26.90ad8a",
+    "name": "Warte auf Luftfeuchte",
+    "scope": [
+      "5c3c620e.7e4e14"
+    ],
+    "uncaught": false,
+    "x": 140,
+    "y": 660,
+    "wires": [
+      [
+        "e23cdf88.947a88",
+        "22488d1.7ec89f2"
+      ]
+    ]
+  },
+  {
+    "id": "6d47fe9c.3e7168",
+    "type": "ui_text",
+    "z": "2af9de26.90ad8a",
+    "group": "8c9b25f5.1db3b8",
+    "order": 4,
+    "width": "2",
+    "height": "1",
+    "name": "Zeige Luftfeuchte",
+    "label": "<i class=\"material-icons\">invert_colors</i>",
+    "format": "{{msg.payload}}%",
+    "layout": "row-center",
+    "x": 550,
+    "y": 700,
+    "wires": []
+  },
+  {
+    "id": "e23cdf88.947a88",
+    "type": "range",
+    "z": "2af9de26.90ad8a",
+    "minin": "0",
+    "maxin": "100",
+    "minout": "0",
+    "maxout": "100",
+    "action": "scale",
+    "round": true,
+    "property": "payload",
+    "name": "Vereinfache",
+    "x": 350,
+    "y": 700,
+    "wires": [
+      [
+        "6d47fe9c.3e7168"
+      ]
+    ]
+  },
+  {
+    "id": "22488d1.7ec89f2",
+    "type": "ui_chart",
+    "z": "2af9de26.90ad8a",
+    "name": "Zeige Luftfeuchte-Aufzeichnung",
+    "group": "8c9b25f5.1db3b8",
+    "order": 5,
+    "width": "5",
+    "height": "5",
+    "label": "",
+    "chartType": "line",
+    "legend": "false",
+    "xformat": "HH:mm",
+    "interpolate": "linear",
+    "nodata": "Warte auf Luftfeuchte-Daten",
+    "dot": false,
+    "ymin": "0",
+    "ymax": "100",
+    "removeOlder": "24",
+    "removeOlderPoints": "",
+    "removeOlderUnit": "3600",
+    "cutout": 0,
+    "useOneColor": false,
+    "useUTC": false,
+    "colors": [
+      "#aec7e8",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "x": 590,
+    "y": 660,
+    "wires": [
+      []
     ]
   }
 ]
