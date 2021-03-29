@@ -1,24 +1,18 @@
+#
+# 🛑 Think twice before editing this file! 🛑
+# ⚠️ This file is maintained via https://github.com/IanStorm/dev-settings-sync. ⚠️
+#
 name: Docker
 
 on:
   push:
-    # Publish `main` as Docker `latest` image.
     branches:
       - main
-
-    # Publish `v1.2.3` tags as releases.
-    tags:
-      - v*
-
-  # Run tests for any PRs.
-  pull_request:
 
 env:
   DOCKERHUB_USERNAME: ianstorm
 
 jobs:
-  # Push image to GitHub Packages.
-  # See also https://docs.docker.com/docker-hub/builds/
   push:
     runs-on: Ubuntu-20.04
     if: github.event_name == 'push'
@@ -55,7 +49,7 @@ jobs:
           echo VERSION=$VERSION
 
           docker buildx build \
-            --platform linux/amd64,linux/arm/v7 \
+            --platform linux/amd64,linux/arm/v7,linux/arm/v6 \
             --output "type=image,push=true" \
             --tag $IMAGE_ID:$VERSION \
             --file Dockerfile \
