@@ -1,0 +1,259 @@
+[
+  {
+    "id": "d1e4babf.1d40d8",
+    "type": "tab",
+    "label": "CCTV_BLK",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "aa5b7242.3f451",
+    "type": "comment",
+    "z": "d1e4babf.1d40d8",
+    "name": "Kamera -> Balkon -> Nistkasten",
+    "info": "",
+    "x": 150,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "d49db607.d294b",
+    "type": "comment",
+    "z": "d1e4babf.1d40d8",
+    "name": "GUI",
+    "info": "",
+    "x": 90,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "50b88898.b87d58",
+    "type": "inject",
+    "z": "d1e4babf.1d40d8",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 300,
+    "wires": [
+      [
+        "e947937d.2869f8"
+      ]
+    ]
+  },
+  {
+    "id": "2de2bc85.ee155c",
+    "type": "comment",
+    "z": "d1e4babf.1d40d8",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "e947937d.2869f8",
+    "type": "change",
+    "z": "d1e4babf.1d40d8",
+    "name": "Setze Frame-URL",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "http://my-home-cctv-nestbox/picture/1/frame/",
+        "tot": "str"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "balcony/cctv/iframe",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 310,
+    "y": 300,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "52092977.3372",
+    "type": "inject",
+    "z": "d1e4babf.1d40d8",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 240,
+    "wires": [
+      [
+        "ecf618bd.9166f"
+      ]
+    ]
+  },
+  {
+    "id": "ecf618bd.9166f",
+    "type": "change",
+    "z": "d1e4babf.1d40d8",
+    "name": "Setze Stream-URL",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "http://my-home-cctv-nestbox:8081/",
+        "tot": "str"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "balcony/cctv/stream",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 310,
+    "y": 240,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "bd4af462.e713c",
+    "type": "inject",
+    "z": "d1e4babf.1d40d8",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 180,
+    "wires": [
+      [
+        "a55645ae.903b7"
+      ]
+    ]
+  },
+  {
+    "id": "a55645ae.903b7",
+    "type": "change",
+    "z": "d1e4babf.1d40d8",
+    "name": "Setze Thumbnail-URL",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "http://my-home-cctv-nestbox/picture/1/current/",
+        "tot": "str"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "balcony/cctv/thumbnail",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 320,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "dd1afbb8.5b0848",
+    "type": "complete",
+    "z": "d1e4babf.1d40d8",
+    "name": "Warte auf Stream-URL",
+    "scope": [
+      "ecf618bd.9166f"
+    ],
+    "uncaught": false,
+    "x": 140,
+    "y": 440,
+    "wires": [
+      [
+        "998029d3.01bb28"
+      ]
+    ]
+  },
+  {
+    "id": "998029d3.01bb28",
+    "type": "ui_template",
+    "z": "d1e4babf.1d40d8",
+    "group": "88f20229.1115c8",
+    "name": "Zeige Stream",
+    "order": 3,
+    "width": "6",
+    "height": "7",
+    "format": "<img\n    src={{msg.payload}}\n    alt=\"CCTV\"\n/>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "x": 360,
+    "y": 440,
+    "wires": [
+      []
+    ]
+  }
+]

@@ -130,6 +130,15 @@
     "type": "inject",
     "z": "750f0705.13d438",
     "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
     "repeat": "",
     "crontab": "",
     "once": true,
