@@ -2,7 +2,7 @@
   {
     "id": "c6075ab3.4abae8",
     "type": "tab",
-    "label": "Hzg_Wohnkueche",
+    "label": "Hzg_WK",
     "disabled": false,
     "info": ""
   },
@@ -791,7 +791,7 @@
     "id": "22d0af67.b98ce8",
     "type": "link in",
     "z": "c6075ab3.4abae8",
-    "name": "",
+    "name": "Warte auf Replay-Start",
     "links": [
       "24e48711.9609f"
     ],

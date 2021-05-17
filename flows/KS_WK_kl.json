@@ -1,25 +1,25 @@
 [
   {
-    "id": "a08151f9.16ea7",
+    "id": "969b20e8.461548",
     "type": "tab",
-    "label": "KS_Wohnkueche_gr",
+    "label": "KS_WK_kl",
     "disabled": false,
     "info": ""
   },
   {
-    "id": "634c5ca5.6aa344",
+    "id": "36b2b46a.008b34",
     "type": "comment",
-    "z": "a08151f9.16ea7",
-    "name": "Kontakt-Sensor -> Wohnküche -> große Balkontür",
+    "z": "969b20e8.461548",
+    "name": "Kontakt-Sensor -> Wohnküche -> kleine Balkontür",
     "info": "",
     "x": 210,
     "y": 40,
     "wires": []
   },
   {
-    "id": "c0585d90.e92b7",
+    "id": "2a3598b1.aa0b5",
     "type": "comment",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Daten",
     "info": "",
     "x": 90,
@@ -27,9 +27,9 @@
     "wires": []
   },
   {
-    "id": "881b67db.cf9a",
+    "id": "671d5cd0.bcf754",
     "type": "change",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Merke Batterie-%",
     "rules": [
       {
@@ -52,9 +52,9 @@
     ]
   },
   {
-    "id": "e9dca57.06c0e58",
+    "id": "95497a0e.166f6",
     "type": "change",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Merke LQI",
     "rules": [
       {
@@ -77,9 +77,9 @@
     ]
   },
   {
-    "id": "dd2d9d3a.6e3078",
+    "id": "a3764159.0812b8",
     "type": "change",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Merke \"Ist geschlossen?\"",
     "rules": [
       {
@@ -102,9 +102,9 @@
     ]
   },
   {
-    "id": "e98c07fc.e5714",
+    "id": "13cbe8b1.8b538f",
     "type": "comment",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "GUI",
     "info": "",
     "x": 90,
@@ -112,60 +112,60 @@
     "wires": []
   },
   {
-    "id": "acf7f1fc.299038",
+    "id": "d6b3904.200207",
     "type": "complete",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Warte auf Batterie-%",
     "scope": [
-      "881b67db.cf9a"
+      "671d5cd0.bcf754"
     ],
     "uncaught": false,
     "x": 130,
     "y": 600,
     "wires": [
       [
-        "b014b6.bee3db48"
+        "9be93356.da5a9"
       ]
     ]
   },
   {
-    "id": "c59a1d42.434278",
+    "id": "51531092.d2d608",
     "type": "complete",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Warte auf LQI",
     "scope": [
-      "e9dca57.06c0e58"
+      "95497a0e.166f6"
     ],
     "uncaught": false,
     "x": 110,
     "y": 660,
     "wires": [
       [
-        "de501284.592ad8"
+        "a91c2141.d95a1"
       ]
     ]
   },
   {
-    "id": "17d18a44.44fee6",
+    "id": "c514ba92.863d2",
     "type": "complete",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Warte auf \"Ist geschlossen?\"",
     "scope": [
-      "dd2d9d3a.6e3078"
+      "a3764159.0812b8"
     ],
     "uncaught": false,
     "x": 160,
     "y": 720,
     "wires": [
       [
-        "c355882b.624418"
+        "911d60f1.ca5938"
       ]
     ]
   },
   {
-    "id": "b014b6.bee3db48",
+    "id": "9be93356.da5a9",
     "type": "change",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Hole Batterie-%",
     "rules": [
       {
@@ -185,14 +185,14 @@
     "y": 600,
     "wires": [
       [
-        "483af76d.ffe5"
+        "908d8877.118a28"
       ]
     ]
   },
   {
-    "id": "c355882b.624418",
+    "id": "911d60f1.ca5938",
     "type": "change",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Hole \"Ist geschlossen?\"",
     "rules": [
       {
@@ -212,14 +212,14 @@
     "y": 720,
     "wires": [
       [
-        "99dd36bb.26847"
+        "2d6e5d50.28f152"
       ]
     ]
   },
   {
-    "id": "de501284.592ad8",
+    "id": "a91c2141.d95a1",
     "type": "change",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Hole LQI",
     "rules": [
       {
@@ -239,15 +239,15 @@
     "y": 660,
     "wires": [
       [
-        "a8c96446.2e9bb"
+        "49f5b677.85178"
       ]
     ]
   },
   {
-    "id": "483af76d.ffe5",
+    "id": "908d8877.118a28",
     "type": "ui_text",
-    "z": "a08151f9.16ea7",
-    "group": "6aa4fe54.7c82f8",
+    "z": "969b20e8.461548",
+    "group": "aa64946a.b8cef",
     "order": 2,
     "width": 2,
     "height": 1,
@@ -260,10 +260,10 @@
     "wires": []
   },
   {
-    "id": "a8c96446.2e9bb",
+    "id": "49f5b677.85178",
     "type": "ui_text",
-    "z": "a08151f9.16ea7",
-    "group": "6aa4fe54.7c82f8",
+    "z": "969b20e8.461548",
+    "group": "aa64946a.b8cef",
     "order": 3,
     "width": "1",
     "height": 1,
@@ -276,10 +276,10 @@
     "wires": []
   },
   {
-    "id": "99dd36bb.26847",
+    "id": "2d6e5d50.28f152",
     "type": "ui_text",
-    "z": "a08151f9.16ea7",
-    "group": "6aa4fe54.7c82f8",
+    "z": "969b20e8.461548",
+    "group": "aa64946a.b8cef",
     "order": 4,
     "width": 2,
     "height": "2",
@@ -292,14 +292,14 @@
     "wires": []
   },
   {
-    "id": "bce06698.58666",
+    "id": "903b9330.0275",
     "type": "link out",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Teile \"Ist geschlossen?\"",
     "links": [
-      "14ef395b.717947",
-      "dff69076.060b48",
-      "a658b425.99c048"
+      "791586c1.6b365",
+      "3889bf19.a16908",
+      "76dbdf8c.89a1f"
     ],
     "x": 690,
     "y": 400,
@@ -307,29 +307,29 @@
     "l": true
   },
   {
-    "id": "c1b4fee2.706768",
+    "id": "bb77f93f.a8b99",
     "type": "zigbee2mqtt-in",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Warte auf Sensor-Daten",
     "server": "dd3cc3c3.66f0c8",
-    "friendly_name": "contact/living-kitchenArea/balconyDoors/large",
-    "device_id": "0x00158d00045cbbc2",
+    "friendly_name": "contact/living-kitchenArea/balconyDoors/small",
+    "device_id": "0x00158d00045ce46a",
     "state": "0",
     "outputAtStartup": true,
     "x": 140,
     "y": 180,
     "wires": [
       [
-        "881b67db.cf9a",
-        "e9dca57.06c0e58",
-        "dd2d9d3a.6e3078"
+        "671d5cd0.bcf754",
+        "95497a0e.166f6",
+        "a3764159.0812b8"
       ]
     ]
   },
   {
-    "id": "39953685.9a17d2",
+    "id": "23e8a3cc.75b75c",
     "type": "change",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Bereinige Nachricht",
     "rules": [
       {
@@ -367,31 +367,31 @@
     "y": 360,
     "wires": [
       [
-        "b17db9c9.80b6c8"
+        "6e0e3dbd.43d764"
       ]
     ]
   },
   {
-    "id": "a893f38d.c34228",
+    "id": "866796ac.6feda8",
     "type": "complete",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Warte auf \"Ist geschlossen?\"",
     "scope": [
-      "dd2d9d3a.6e3078"
+      "a3764159.0812b8"
     ],
     "uncaught": false,
     "x": 160,
     "y": 360,
     "wires": [
       [
-        "39953685.9a17d2"
+        "23e8a3cc.75b75c"
       ]
     ]
   },
   {
-    "id": "b17db9c9.80b6c8",
+    "id": "6e0e3dbd.43d764",
     "type": "change",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Hole \"Ist geschlossen?\"",
     "rules": [
       {
@@ -405,7 +405,7 @@
         "t": "set",
         "p": "topic",
         "pt": "msg",
-        "to": "living-kitchenArea/balconyDoors/large/isClosed",
+        "to": "living-kitchenArea/balconyDoors/small/isClosed",
         "tot": "str"
       }
     ],
@@ -418,14 +418,14 @@
     "y": 400,
     "wires": [
       [
-        "bce06698.58666"
+        "903b9330.0275"
       ]
     ]
   },
   {
-    "id": "19336e91.7b9e21",
+    "id": "89581792.3adf9",
     "type": "inject",
-    "z": "a08151f9.16ea7",
+    "z": "969b20e8.461548",
     "name": "Beim Start",
     "repeat": "",
     "crontab": "",
@@ -438,20 +438,20 @@
     "y": 540,
     "wires": [
       [
-        "2f767a94.74380e"
+        "f9cc9f17.970e48"
       ]
     ]
   },
   {
-    "id": "2f767a94.74380e",
+    "id": "f9cc9f17.970e48",
     "type": "ui_template",
-    "z": "a08151f9.16ea7",
-    "group": "6aa4fe54.7c82f8",
+    "z": "969b20e8.461548",
+    "group": "aa64946a.b8cef",
     "name": "Zeige Icon",
     "order": 1,
     "width": "1",
     "height": "3",
-    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        logout\n    </i>\n</div>",
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        login\n    </i>\n</div>",
     "storeOutMessages": true,
     "fwdInMessages": true,
     "resendOnRefresh": false,
