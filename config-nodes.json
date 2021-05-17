@@ -260,7 +260,7 @@
     "type": "ui_group",
     "name": "Heizkörper",
     "tab": "523209a3.f325d",
-    "order": 8,
+    "order": 1,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -516,6 +516,16 @@
     "name": "Sensor 1",
     "tab": "f0d49b09.776a2",
     "order": 5,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "70c47254.748714",
+    "type": "ui_group",
+    "name": "Sensor 1",
+    "tab": "523209a3.f325d",
+    "order": 2,
     "disp": true,
     "width": "6",
     "collapse": false
