@@ -509,5 +509,15 @@
     "disp": true,
     "width": "6",
     "collapse": true
+  },
+  {
+    "id": "1c93feef.8ddb51",
+    "type": "ui_group",
+    "name": "Sensor 1",
+    "tab": "f0d49b09.776a2",
+    "order": 5,
+    "disp": true,
+    "width": "6",
+    "collapse": false
   }
 ]
