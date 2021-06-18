@@ -2,7 +2,7 @@
   {
     "id": "ef9247c6.cadc28",
     "type": "tab",
-    "label": "Saugroboter",
+    "label": "Hyg_Saugroboter",
     "disabled": false,
     "info": ""
   },
@@ -88,9 +88,9 @@
     "id": "b0ecc46f.5d45a8",
     "type": "comment",
     "z": "ef9247c6.cadc28",
-    "name": "Saugroboter",
+    "name": "Hygiene -> Saugroboter",
     "info": "",
-    "x": 90,
+    "x": 120,
     "y": 40,
     "wires": []
   },

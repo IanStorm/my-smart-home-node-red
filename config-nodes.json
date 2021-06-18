@@ -515,7 +515,7 @@
     "type": "ui_group",
     "name": "Sensor 1",
     "tab": "f0d49b09.776a2",
-    "order": 5,
+    "order": 6,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -535,6 +535,22 @@
     "type": "ui_group",
     "name": "Sensor 1",
     "tab": "3cbc9af3.9bf5ce",
+    "order": 5,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "5d966154.6df5d",
+    "type": "dorita980Config",
+    "ip": "192.168.178.127",
+    "name": "Braava jet m6134"
+  },
+  {
+    "id": "2ef7019f.74e1de",
+    "type": "ui_group",
+    "name": "Wischroboter",
+    "tab": "f0d49b09.776a2",
     "order": 5,
     "disp": true,
     "width": "6",

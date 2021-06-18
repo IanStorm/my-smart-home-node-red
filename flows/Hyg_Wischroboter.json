@@ -1,0 +1,672 @@
+[
+  {
+    "id": "9f620701.100408",
+    "type": "tab",
+    "label": "Hyg_Wischroboter",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "34002399.06f7bc",
+    "type": "comment",
+    "z": "9f620701.100408",
+    "name": "Automatisch Schalten",
+    "info": "",
+    "x": 140,
+    "y": 820,
+    "wires": []
+  },
+  {
+    "id": "dd1e63b.f53a82",
+    "type": "change",
+    "z": "9f620701.100408",
+    "name": "Setze Startbefehl",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "start",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 370,
+    "y": 880,
+    "wires": [
+      [
+        "f4c9be09.754748"
+      ]
+    ]
+  },
+  {
+    "id": "f4c9be09.754748",
+    "type": "basic",
+    "z": "9f620701.100408",
+    "connection": "5d966154.6df5d",
+    "name": "Befolge Befehl",
+    "x": 580,
+    "y": 880,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c337f977.64b9f8",
+    "type": "comment",
+    "z": "9f620701.100408",
+    "name": "Hygiene -> Wischroboter",
+    "info": "",
+    "x": 130,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "c7ea6d18.b4a9a",
+    "type": "comment",
+    "z": "9f620701.100408",
+    "name": "GUI",
+    "info": "",
+    "x": 90,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "cac53115.85f86",
+    "type": "get",
+    "z": "9f620701.100408",
+    "connection": "5d966154.6df5d",
+    "method": "getMission",
+    "name": "Lese Missionsinfos",
+    "x": 290,
+    "y": 180,
+    "wires": [
+      [
+        "28e5fa8e.5d456e"
+      ]
+    ]
+  },
+  {
+    "id": "8f4a2902.151128",
+    "type": "comment",
+    "z": "9f620701.100408",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "38917f42.93e2e8",
+    "type": "inject",
+    "z": "9f620701.100408",
+    "name": "Alle 15s",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "15",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 100,
+    "y": 180,
+    "wires": [
+      [
+        "cac53115.85f86"
+      ]
+    ]
+  },
+  {
+    "id": "28e5fa8e.5d456e",
+    "type": "change",
+    "z": "9f620701.100408",
+    "name": "Merke Zustand",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload.cleanMissionStatus.phase",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "mop/state",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 500,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "dc1e0da3.275ef",
+    "type": "inject",
+    "z": "9f620701.100408",
+    "name": "Alle 15s",
+    "repeat": "15",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 100,
+    "y": 300,
+    "wires": [
+      [
+        "369f9d1.38f1462"
+      ]
+    ]
+  },
+  {
+    "id": "369f9d1.38f1462",
+    "type": "get",
+    "z": "9f620701.100408",
+    "connection": "5d966154.6df5d",
+    "method": "getMission",
+    "name": "Lese Missionsinfos",
+    "x": 290,
+    "y": 300,
+    "wires": [
+      [
+        "586b95aa.ebfc24"
+      ]
+    ]
+  },
+  {
+    "id": "586b95aa.ebfc24",
+    "type": "change",
+    "z": "9f620701.100408",
+    "name": "Merke Batterie-%",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload.batPct",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "mop/batteryPercentage",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 510,
+    "y": 300,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f7d14aa6.22d29",
+    "type": "ui_text",
+    "z": "9f620701.100408",
+    "group": "2ef7019f.74e1de",
+    "order": 2,
+    "width": 2,
+    "height": 1,
+    "name": "Zeige Batterie-%",
+    "label": "<i class=\"material-icons\">battery_unknown</i>",
+    "format": "{{msg.payload}}%",
+    "layout": "row-center",
+    "x": 790,
+    "y": 740,
+    "wires": []
+  },
+  {
+    "id": "cab05b16.b7fd58",
+    "type": "inject",
+    "z": "9f620701.100408",
+    "name": "Alle 15s",
+    "repeat": "15",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 100,
+    "y": 240,
+    "wires": [
+      [
+        "2a21b63.762874a"
+      ]
+    ]
+  },
+  {
+    "id": "2a21b63.762874a",
+    "type": "get",
+    "z": "9f620701.100408",
+    "connection": "5d966154.6df5d",
+    "method": "getMission",
+    "name": "Lese Missionsinfos",
+    "x": 290,
+    "y": 240,
+    "wires": [
+      [
+        "b2a7883c.e9e61"
+      ]
+    ]
+  },
+  {
+    "id": "b2a7883c.e9e61",
+    "type": "change",
+    "z": "9f620701.100408",
+    "name": "Merke Behälter-Füllstand",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload.bin.full",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "mop/isBinFull",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 530,
+    "y": 240,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "91cf2c58.d1118",
+    "type": "ui_text",
+    "z": "9f620701.100408",
+    "group": "2ef7019f.74e1de",
+    "order": 3,
+    "width": "1",
+    "height": 1,
+    "name": "Zeige Behälter-Füllstand",
+    "label": "<i class=\"material-icons\">delete</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-center",
+    "x": 810,
+    "y": 660,
+    "wires": []
+  },
+  {
+    "id": "7185161.5931d68",
+    "type": "switch",
+    "z": "9f620701.100408",
+    "name": "switch",
+    "property": "payload",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "charge",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "run",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 3,
+    "x": 370,
+    "y": 540,
+    "wires": [
+      [
+        "84710597.9b39a8"
+      ],
+      [
+        "d96e61f6.766148"
+      ],
+      [
+        "21863d68.551c4a"
+      ]
+    ]
+  },
+  {
+    "id": "3fcb5b98.d39f14",
+    "type": "complete",
+    "z": "9f620701.100408",
+    "name": "Warte auf Zustand",
+    "scope": [
+      "28e5fa8e.5d456e"
+    ],
+    "uncaught": false,
+    "x": 130,
+    "y": 540,
+    "wires": [
+      [
+        "7185161.5931d68"
+      ]
+    ]
+  },
+  {
+    "id": "ad39510.722633",
+    "type": "complete",
+    "z": "9f620701.100408",
+    "name": "Warte auf Behälter-Füllstand",
+    "scope": [
+      "b2a7883c.e9e61"
+    ],
+    "uncaught": false,
+    "x": 160,
+    "y": 660,
+    "wires": [
+      [
+        "e4fffcfc.12108"
+      ]
+    ]
+  },
+  {
+    "id": "a106941.827bde8",
+    "type": "complete",
+    "z": "9f620701.100408",
+    "name": "Warte auf Batterie-%",
+    "scope": [
+      "586b95aa.ebfc24"
+    ],
+    "uncaught": false,
+    "x": 130,
+    "y": 740,
+    "wires": [
+      [
+        "f7d14aa6.22d29"
+      ]
+    ]
+  },
+  {
+    "id": "84710597.9b39a8",
+    "type": "change",
+    "z": "9f620701.100408",
+    "name": "Setze Lade-Icon",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "battery_charging_full",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 540,
+    "y": 500,
+    "wires": [
+      [
+        "52c4ff62.777e"
+      ]
+    ]
+  },
+  {
+    "id": "d96e61f6.766148",
+    "type": "change",
+    "z": "9f620701.100408",
+    "name": "Setze Säubern-Icon",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "local_laundry_service",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 560,
+    "y": 540,
+    "wires": [
+      [
+        "52c4ff62.777e"
+      ]
+    ]
+  },
+  {
+    "id": "21863d68.551c4a",
+    "type": "change",
+    "z": "9f620701.100408",
+    "name": "Setze Unbekannt-Icon",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "help",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 560,
+    "y": 580,
+    "wires": [
+      [
+        "52c4ff62.777e"
+      ]
+    ]
+  },
+  {
+    "id": "52c4ff62.777e",
+    "type": "ui_text",
+    "z": "9f620701.100408",
+    "group": "2ef7019f.74e1de",
+    "order": 4,
+    "width": 2,
+    "height": "2",
+    "name": "Zeige Zustand",
+    "label": "",
+    "format": "<i class=\"material-icons\">{{msg.payload}}</i>",
+    "layout": "row-center",
+    "x": 780,
+    "y": 540,
+    "wires": []
+  },
+  {
+    "id": "e4fffcfc.12108",
+    "type": "switch",
+    "z": "9f620701.100408",
+    "name": "switch",
+    "property": "payload",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "true"
+      },
+      {
+        "t": "false"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 370,
+    "y": 660,
+    "wires": [
+      [
+        "e0cb3639.7f0e8"
+      ],
+      [
+        "7ef7bc87.ddfe4c"
+      ]
+    ]
+  },
+  {
+    "id": "e0cb3639.7f0e8",
+    "type": "change",
+    "z": "9f620701.100408",
+    "name": "Setze \"Voll\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "Voll",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 530,
+    "y": 640,
+    "wires": [
+      [
+        "91cf2c58.d1118"
+      ]
+    ]
+  },
+  {
+    "id": "7ef7bc87.ddfe4c",
+    "type": "change",
+    "z": "9f620701.100408",
+    "name": "Setze \"Nicht voll\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "Nicht voll",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 550,
+    "y": 680,
+    "wires": [
+      [
+        "91cf2c58.d1118"
+      ]
+    ]
+  },
+  {
+    "id": "836be8f5.0f56b",
+    "type": "inject",
+    "z": "9f620701.100408",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 440,
+    "wires": [
+      [
+        "b7b70c5d.f39bd8"
+      ]
+    ]
+  },
+  {
+    "id": "b7b70c5d.f39bd8",
+    "type": "ui_template",
+    "z": "9f620701.100408",
+    "group": "2ef7019f.74e1de",
+    "name": "Zeige Icon",
+    "order": 1,
+    "width": "1",
+    "height": "3",
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        gesture\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "x": 770,
+    "y": 440,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "62dbe0d.be4daa",
+    "type": "cronplus",
+    "z": "9f620701.100408",
+    "name": "1.Fr./Monat, 10:00 Uhr",
+    "outputField": "payload",
+    "timeZone": "",
+    "persistDynamic": false,
+    "commandResponseMsgOutput": "output1",
+    "outputs": 1,
+    "options": [
+      {
+        "name": "schedule1",
+        "topic": "schedule1",
+        "payloadType": "str",
+        "payload": "",
+        "expressionType": "cron",
+        "expression": "0 0 10 ? * FRI#1 *",
+        "location": "",
+        "offset": "0",
+        "solarType": "all",
+        "solarEvents": "sunrise,sunset"
+      }
+    ],
+    "x": 140,
+    "y": 880,
+    "wires": [
+      [
+        "dd1e63b.f53a82"
+      ]
+    ]
+  }
+]
