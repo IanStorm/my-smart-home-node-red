@@ -6,7 +6,7 @@
     "node-red-contrib-compass": "1.0.1",
     "node-red-contrib-cpu": "0.0.4",
     "node-red-contrib-credentials": "0.2.1",
-    "node-red-contrib-cron-plus": "1.4.3",
+    "node-red-contrib-cron-plus": "1.5.4",
     "node-red-contrib-debounce": "0.0.2",
     "node-red-contrib-flow-manager": "0.7.2",
     "node-red-contrib-fritz": "1.4.5",
@@ -17,10 +17,10 @@
     "node-red-contrib-roomba980-fw2": "file:./contrib/node-red-contrib-roomba980-fw2",
     "node-red-contrib-sunevents": "2.0.3",
     "node-red-contrib-unit-converter": "0.0.2",
-    "node-red-contrib-zigbee2mqtt": "0.6.8",
-    "node-red-dashboard": "2.29.3",
-    "node-red-node-openweathermap": "0.4.0",
-    "node-red-node-ui-table": "0.3.10",
+    "node-red-contrib-zigbee2mqtt": "0.6.9",
+    "node-red-dashboard": "2.30.0",
+    "node-red-node-openweathermap": "0.5.0",
+    "node-red-node-ui-table": "0.3.11",
     "node-red-node-wol": "0.1.0"
   },
   "devDependencies": {
