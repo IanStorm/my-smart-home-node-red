@@ -583,9 +583,18 @@
     "id": "e117b888.d74c2",
     "type": "inject",
     "z": "9a03c26f.2caa38",
-    "name": "Wochenende, 10 Uhr",
+    "name": "Wochenende, 12 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
     "repeat": "",
-    "crontab": "00 12 * * 2,6,0",
+    "crontab": "00 12 * * 6,0",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
