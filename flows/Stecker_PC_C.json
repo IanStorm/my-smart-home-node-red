@@ -678,7 +678,7 @@
     "id": "c607fcdd.d81e48",
     "type": "inject",
     "z": "19f0cc46.99b404",
-    "name": "Werktags, 06:15 Uhr",
+    "name": "Mo.-Do., 06:15 Uhr",
     "props": [
       {
         "p": "payload"
@@ -689,7 +689,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "15 06 * * 1,2,3,4,5",
+    "crontab": "15 06 * * 1,2,3,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",

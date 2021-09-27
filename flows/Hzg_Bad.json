@@ -179,7 +179,7 @@
     "id": "45adf42b.448e8c",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
-    "name": "Werktags, 05:30 Uhr",
+    "name": "Mo.-Do., 05:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -190,7 +190,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 05 * * 1,2,3,4,5",
+    "crontab": "30 05 * * 1,2,3,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
@@ -208,7 +208,7 @@
     "id": "561409bc.10035",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
-    "name": "Wochenende, 07:00 Uhr",
+    "name": "Fr.-So., 07:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -219,13 +219,13 @@
       }
     ],
     "repeat": "",
-    "crontab": "00 07 * * 6,0",
+    "crontab": "00 07 * * 5,6,0",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 150,
+    "x": 130,
     "y": 1140,
     "wires": [
       [
@@ -453,7 +453,7 @@
     "id": "6e8a7568.09ee74",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
-    "name": "So.-Do., 21:30 Uhr",
+    "name": "So.-Mi., 21:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -464,13 +464,13 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 21 * * 1,2,3,4,0",
+    "crontab": "30 21 * * 1,2,3,0",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 140,
+    "x": 130,
     "y": 1340,
     "wires": [
       [
@@ -482,7 +482,7 @@
     "id": "d40e879e.0a6b78",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
-    "name": "Fr.-Sa., 23:00 Uhr",
+    "name": "Do.-Sa., 22:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -493,13 +493,13 @@
       }
     ],
     "repeat": "",
-    "crontab": "00 23 * * 5,6",
+    "crontab": "30 22 * * 4,5,6",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 130,
+    "x": 140,
     "y": 1380,
     "wires": [
       [
@@ -931,7 +931,7 @@
     "id": "42eaf0d9.8e4ac8",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
-    "name": "Werktags, 07:00 Uhr",
+    "name": "Mo.-Do., 07:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -942,7 +942,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "00 07 * * 1,2,3,4,5",
+    "crontab": "00 07 * * 1,2,3,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
@@ -960,7 +960,7 @@
     "id": "475d4df3.773c74",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
-    "name": "Wochenende, 09:30 Uhr",
+    "name": "Fr.-So., 09:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -971,13 +971,13 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 09 * * 6,0",
+    "crontab": "30 09 * * 5,6,0",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 150,
+    "x": 130,
     "y": 1240,
     "wires": [
       [
