@@ -27,25 +27,6 @@
     "wires": []
   },
   {
-    "id": "b0e48110.60dd9",
-    "type": "openweathermap in",
-    "z": "be8a6639.d3183",
-    "name": "Warte auf OpenWeatherMap",
-    "wtype": "forecast",
-    "lon": "",
-    "lat": "",
-    "city": "Bremen",
-    "country": "Germany",
-    "language": "en",
-    "x": 160,
-    "y": 180,
-    "wires": [
-      [
-        "1e66ce6a.0cb022"
-      ]
-    ]
-  },
-  {
     "id": "1e66ce6a.0cb022",
     "type": "split",
     "z": "be8a6639.d3183",
@@ -57,7 +38,7 @@
     "stream": false,
     "addname": "",
     "x": 490,
-    "y": 180,
+    "y": 220,
     "wires": [
       [
         "c0c1ae63.1ba438"
@@ -83,7 +64,7 @@
     "repair": false,
     "outputs": 1,
     "x": 480,
-    "y": 220,
+    "y": 260,
     "wires": [
       [
         "c2f16c5f.b1c8d8"
@@ -110,7 +91,7 @@
     "to": "",
     "reg": false,
     "x": 470,
-    "y": 260,
+    "y": 300,
     "wires": [
       [
         "b999b950.d0ed8"
@@ -121,7 +102,7 @@
     "id": "f63e07b9.f5aa68",
     "type": "join",
     "z": "be8a6639.d3183",
-    "name": "Kombiniere 3-Tages-Vorhersage",
+    "name": "Kombiniere 5-Tages-Vorhersage",
     "mode": "custom",
     "build": "array",
     "property": "payload",
@@ -131,17 +112,17 @@
     "joinerType": "str",
     "accumulate": false,
     "timeout": "",
-    "count": "3",
+    "count": "5",
     "reduceRight": false,
     "reduceExp": "",
     "reduceInit": "",
     "reduceInitType": "num",
     "reduceFixup": "",
     "x": 470,
-    "y": 340,
+    "y": 380,
     "wires": [
       [
-        "2282350e.97f30a"
+        "cb7501ff.a731f8"
       ]
     ]
   },
@@ -158,7 +139,7 @@
       "f873c688.34efd8"
     ],
     "x": 830,
-    "y": 560,
+    "y": 640,
     "wires": [],
     "l": true
   },
@@ -182,7 +163,7 @@
     "to": "",
     "reg": false,
     "x": 440,
-    "y": 380,
+    "y": 460,
     "wires": [
       [
         "54a4d01e.d04f3"
@@ -209,7 +190,7 @@
     "to": "",
     "reg": false,
     "x": 400,
-    "y": 420,
+    "y": 500,
     "wires": [
       [
         "6ea9951a.442e4c"
@@ -236,7 +217,7 @@
     "to": "",
     "reg": false,
     "x": 470,
-    "y": 460,
+    "y": 540,
     "wires": [
       []
     ]
@@ -248,7 +229,7 @@
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 640,
+    "y": 720,
     "wires": []
   },
   {
@@ -261,7 +242,7 @@
     ],
     "uncaught": false,
     "x": 130,
-    "y": 700,
+    "y": 780,
     "wires": [
       [
         "4299bed5.28f2d8"
@@ -288,7 +269,7 @@
     "to": "",
     "reg": false,
     "x": 380,
-    "y": 700,
+    "y": 780,
     "wires": [
       [
         "7ee7f66d.c32d08"
@@ -308,7 +289,7 @@
     "format": "{{msg.payload ? 'An' : 'Aus'}}",
     "layout": "row-center",
     "x": 660,
-    "y": 700,
+    "y": 780,
     "wires": []
   },
   {
@@ -321,7 +302,7 @@
     ],
     "uncaught": false,
     "x": 170,
-    "y": 520,
+    "y": 600,
     "wires": [
       [
         "ed88f4b6.8f5f2"
@@ -355,7 +336,7 @@
     "to": "",
     "reg": false,
     "x": 460,
-    "y": 560,
+    "y": 640,
     "wires": [
       [
         "ae8dfb0d.ed6b38"
@@ -397,7 +378,7 @@
     "to": "",
     "reg": false,
     "x": 430,
-    "y": 520,
+    "y": 600,
     "wires": [
       [
         "29256d13.123e82"
@@ -424,6 +405,18 @@
         "t": "delete",
         "p": "parts",
         "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "title",
+        "pt": "msg"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "",
+        "tot": "str"
       }
     ],
     "action": "",
@@ -432,10 +425,103 @@
     "to": "",
     "reg": false,
     "x": 400,
-    "y": 300,
+    "y": 340,
     "wires": [
       [
         "f63e07b9.f5aa68"
+      ]
+    ]
+  },
+  {
+    "id": "2c19ff21.c31ae8",
+    "type": "openweathermap",
+    "z": "be8a6639.d3183",
+    "name": "Hole 5-Tage-Vorhersage",
+    "wtype": "forecast",
+    "lon": "",
+    "lat": "",
+    "city": "Bremen",
+    "country": "Germany",
+    "language": "en",
+    "x": 450,
+    "y": 180,
+    "wires": [
+      [
+        "1e66ce6a.0cb022"
+      ]
+    ]
+  },
+  {
+    "id": "7e2fd4.8b5ef02c",
+    "type": "debug",
+    "z": "be8a6639.d3183",
+    "name": "Debugge 3-Tages-Vorhersage",
+    "active": true,
+    "tosidebar": true,
+    "console": true,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 810,
+    "y": 420,
+    "wires": []
+  },
+  {
+    "id": "5e4d331a.518574",
+    "type": "inject",
+    "z": "be8a6639.d3183",
+    "name": "Alle 8h",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "28800",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 100,
+    "y": 180,
+    "wires": [
+      [
+        "2c19ff21.c31ae8"
+      ]
+    ]
+  },
+  {
+    "id": "cb7501ff.a731f8",
+    "type": "change",
+    "z": "be8a6639.d3183",
+    "name": "Beschränke auf 3-Tages-Vorhersage",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "$filter(msg.payload, function($v, $i) {\t  $i < 3\t})",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 490,
+    "y": 420,
+    "wires": [
+      [
+        "2282350e.97f30a",
+        "7e2fd4.8b5ef02c"
       ]
     ]
   }
