@@ -35,7 +35,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 410,
+    "x": 330,
     "y": 880,
     "wires": [
       [
@@ -49,7 +49,7 @@
     "z": "9f620701.100408",
     "connection": "5d966154.6df5d",
     "name": "Befolge Befehl",
-    "x": 620,
+    "x": 540,
     "y": 880,
     "wires": [
       []
@@ -644,30 +644,27 @@
     ]
   },
   {
-    "id": "62dbe0d.be4daa",
-    "type": "cronplus",
+    "id": "67664516.b1d6dc",
+    "type": "inject",
     "z": "9f620701.100408",
-    "name": "1.&3.Do./Monat, 10:00 Uhr",
-    "outputField": "payload",
-    "timeZone": "",
-    "persistDynamic": false,
-    "commandResponseMsgOutput": "output1",
-    "outputs": 1,
-    "options": [
+    "name": "Do., 09:30 Uhr",
+    "props": [
       {
-        "name": "schedule1",
-        "topic": "schedule1",
-        "payloadType": "str",
-        "payload": "",
-        "expressionType": "cron",
-        "expression": "0 0 10 ? * THU#1,THU#3 *",
-        "location": "",
-        "offset": "0",
-        "solarType": "all",
-        "solarEvents": "sunrise,sunset"
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
       }
     ],
-    "x": 160,
+    "repeat": "",
+    "crontab": "30 09 * * 4",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 120,
     "y": 880,
     "wires": [
       [
