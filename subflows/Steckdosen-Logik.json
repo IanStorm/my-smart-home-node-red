@@ -52,7 +52,7 @@
         "y": 420,
         "wires": [
           {
-            "id": "3ff68f8f.bc3f18",
+            "id": "19d0247b42b7ea66",
             "port": 0
           }
         ]
@@ -132,9 +132,11 @@
     "name": "Lese Schaltzustand",
     "action": "getSwitchState",
     "x": 990,
-    "y": 420,
+    "y": 400,
     "wires": [
-      []
+      [
+        "19d0247b42b7ea66"
+      ]
     ]
   },
   {
@@ -1039,5 +1041,30 @@
     "x": 340,
     "y": 500,
     "wires": []
+  },
+  {
+    "id": "19d0247b42b7ea66",
+    "type": "change",
+    "z": "dd43bdd9.895da8",
+    "name": "Konvertiere",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "$boolean(payload)",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 970,
+    "y": 440,
+    "wires": [
+      []
+    ]
   }
 ]
