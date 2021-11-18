@@ -455,6 +455,7 @@
     "id": "7e2fd4.8b5ef02c",
     "type": "debug",
     "z": "be8a6639.d3183",
+    "d": true,
     "name": "Debugge 3-Tages-Vorhersage",
     "active": true,
     "tosidebar": true,
