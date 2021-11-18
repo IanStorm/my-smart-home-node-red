@@ -2,14 +2,14 @@
   {
     "id": "165c0739.3fd931",
     "type": "subflow",
-    "name": "Warte_auf_Sonnenstand_fuer_HB",
+    "name": "Warte_auf_Sonnenstand_fuer_Ort",
     "info": "### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        sunEvent\n        <span class=\"property-type\">string</span>\n    </dt>\n    <dd>\n        Sun event\n    </dd>\n</dl>\n",
     "category": "",
     "in": [],
     "out": [
       {
-        "x": 780,
-        "y": 120,
+        "x": 680,
+        "y": 180,
         "wires": [
           {
             "id": "8ce375c3.559408",
@@ -44,6 +44,7 @@
         }
       }
     ],
+    "meta": {},
     "color": "#DDAA99",
     "icon": "font-awesome/fa-sun-o"
   },
@@ -51,9 +52,9 @@
     "id": "c4758374.328cd8",
     "type": "comment",
     "z": "165c0739.3fd931",
-    "name": "Warte auf Sonnenstand für HB",
+    "name": "Warte auf Sonnenstand für <Ort>",
     "info": "",
-    "x": 140,
+    "x": 150,
     "y": 40,
     "wires": []
   },
@@ -65,8 +66,8 @@
     "verbose": false,
     "topic": "",
     "name": "Warte auf Sonnenstände",
-    "x": 150,
-    "y": 120,
+    "x": 310,
+    "y": 160,
     "wires": [
       [
         "f82fd5c4.c39ab8",
@@ -94,8 +95,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 430,
-    "y": 120,
+    "x": 330,
+    "y": 200,
     "wires": [
       [
         "8ce375c3.559408"
@@ -134,8 +135,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 660,
-    "y": 120,
+    "x": 560,
+    "y": 180,
     "wires": [
       []
     ]
@@ -144,7 +145,6 @@
     "id": "5fcae5f9.fe5a44",
     "type": "debug",
     "z": "165c0739.3fd931",
-    "d": true,
     "name": "Logge Sonnenstand",
     "active": true,
     "tosidebar": true,
@@ -154,8 +154,8 @@
     "targetType": "full",
     "statusVal": "",
     "statusType": "auto",
-    "x": 400,
-    "y": 160,
+    "x": 560,
+    "y": 140,
     "wires": []
   },
   {
@@ -172,8 +172,78 @@
     "targetType": "full",
     "statusVal": "",
     "statusType": "auto",
-    "x": 740,
-    "y": 160,
+    "x": 640,
+    "y": 220,
     "wires": []
+  },
+  {
+    "id": "ce781e06.399148",
+    "type": "inject",
+    "z": "165c0739.3fd931",
+    "name": "Alle 24h",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "86400",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "0.2",
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 100,
+    "y": 120,
+    "wires": [
+      [
+        "c7cfa275.f6205"
+      ]
+    ]
+  },
+  {
+    "id": "c7cfa275.f6205",
+    "type": "change",
+    "z": "165c0739.3fd931",
+    "name": "Lese <Ort>",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "{}",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "payload.lat",
+        "pt": "msg",
+        "to": "location.latitude",
+        "tot": "global"
+      },
+      {
+        "t": "set",
+        "p": "payload.lng",
+        "pt": "msg",
+        "to": "location.longitude",
+        "tot": "global"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 270,
+    "y": 120,
+    "wires": [
+      [
+        "6d8c246d.3c3f1c"
+      ]
+    ]
   }
 ]

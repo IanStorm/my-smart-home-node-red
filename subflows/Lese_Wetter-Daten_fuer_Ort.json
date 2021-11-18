@@ -2,7 +2,7 @@
   {
     "id": "f421e682.173de",
     "type": "subflow",
-    "name": "Lese_Wetter-Daten_fuer_HB",
+    "name": "Lese_Wetter-Daten_fuer_Ort",
     "info": "### Inputs\n\n<dl class=\"message-properties\">\n    <dt>\n        msg.payload\n    </dt>\n    <dd>\n        Only if type is historical! Timestamp from the previous 5 days.\n    </dd>\n    <dt>\n        type\n    </dt>\n    <dd>\n        Select which type of weather data should be pulled: Current weather or historical weather.\n    </dd>\n</dl>\n",
     "category": "",
     "in": [
@@ -19,7 +19,7 @@
     "out": [
       {
         "x": 600,
-        "y": 300,
+        "y": 340,
         "wires": [
           {
             "id": "457961ea.e9049",
@@ -54,6 +54,7 @@
         }
       }
     ],
+    "meta": {},
     "color": "#DDAA99",
     "icon": "font-awesome/fa-cloud"
   },
@@ -61,7 +62,7 @@
     "id": "4848d9a2.700f38",
     "type": "comment",
     "z": "f421e682.173de",
-    "name": "Lese Wetter-Daten für Bremen",
+    "name": "Lese Wetter-Daten für <Ort>",
     "info": "",
     "x": 140,
     "y": 40,
@@ -76,18 +77,10 @@
       {
         "value": "payload.appid",
         "type": "msg"
-      },
-      {
-        "value": "payload.lat",
-        "type": "msg"
-      },
-      {
-        "value": "payload.lon",
-        "type": "msg"
       }
     ],
     "x": 680,
-    "y": 120,
+    "y": 160,
     "wires": [
       [
         "dfe34b50.d60298"
@@ -108,7 +101,7 @@
     "proxy": "",
     "authType": "",
     "x": 700,
-    "y": 200,
+    "y": 240,
     "wires": [
       [
         "457961ea.e9049"
@@ -243,7 +236,7 @@
     "to": "",
     "reg": false,
     "x": 640,
-    "y": 240,
+    "y": 280,
     "wires": [
       []
     ]
@@ -304,7 +297,7 @@
     "y": 140,
     "wires": [
       [
-        "2e37d6a8.957c22"
+        "95ae9d63.a4b24"
       ]
     ]
   },
@@ -358,7 +351,7 @@
     "y": 260,
     "wires": [
       [
-        "2e37d6a8.957c22"
+        "95ae9d63.a4b24"
       ]
     ]
   },
@@ -380,10 +373,63 @@
     "to": "",
     "reg": false,
     "x": 640,
-    "y": 160,
+    "y": 200,
     "wires": [
       [
-        "1b100f38.887989"
+        "1b100f38.887989",
+        "c671cf53.bf5a48"
+      ]
+    ]
+  },
+  {
+    "id": "c671cf53.bf5a48",
+    "type": "debug",
+    "z": "f421e682.173de",
+    "d": true,
+    "name": "pre-OpenWeatherMap-API-Aufruf",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1000,
+    "y": 200,
+    "wires": []
+  },
+  {
+    "id": "95ae9d63.a4b24",
+    "type": "change",
+    "z": "f421e682.173de",
+    "name": "Fügen Daten ein",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload.lat",
+        "pt": "msg",
+        "to": "location.latitude",
+        "tot": "global"
+      },
+      {
+        "t": "set",
+        "p": "payload.lon",
+        "pt": "msg",
+        "to": "location.longitude",
+        "tot": "global"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 660,
+    "y": 120,
+    "wires": [
+      [
+        "2e37d6a8.957c22"
       ]
     ]
   }

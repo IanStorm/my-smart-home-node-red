@@ -13,7 +13,7 @@
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 400,
+    "y": 480,
     "wires": []
   },
   {
@@ -29,7 +29,7 @@
     "payload": "",
     "payloadType": "date",
     "x": 100,
-    "y": 520,
+    "y": 600,
     "wires": [
       [
         "4bcf86db.2c0d48"
@@ -49,7 +49,7 @@
     "format": "{{msg.payload}}",
     "layout": "row-spread",
     "x": 590,
-    "y": 520,
+    "y": 600,
     "wires": []
   },
   {
@@ -77,7 +77,7 @@
     "payload": "",
     "payloadType": "date",
     "x": 100,
-    "y": 460,
+    "y": 540,
     "wires": [
       [
         "7e3c009f.89b93"
@@ -97,7 +97,7 @@
     "format": "{{msg.payload}}",
     "layout": "row-spread",
     "x": 590,
-    "y": 460,
+    "y": 540,
     "wires": []
   },
   {
@@ -138,7 +138,7 @@
     "outputType": "msg",
     "outTz": "Europe/Berlin",
     "x": 390,
-    "y": 460,
+    "y": 540,
     "wires": [
       [
         "8434d57a.d32188"
@@ -163,7 +163,7 @@
     "outputType": "msg",
     "outTz": "Europe/Berlin",
     "x": 390,
-    "y": 520,
+    "y": 600,
     "wires": [
       [
         "169a6858.ea146"
@@ -180,7 +180,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 580,
+    "y": 660,
     "wires": [
       [
         "b88fa3b6.5bce6"
@@ -202,7 +202,7 @@
     "resendOnRefresh": true,
     "templateScope": "local",
     "x": 620,
-    "y": 580,
+    "y": 660,
     "wires": [
       []
     ]
@@ -217,7 +217,7 @@
     ],
     "uncaught": false,
     "x": 140,
-    "y": 640,
+    "y": 720,
     "wires": [
       [
         "3a711f9a.a3d53"
@@ -237,17 +237,17 @@
     "format": "{{msg.payload}}°C",
     "layout": "row-center",
     "x": 610,
-    "y": 640,
+    "y": 720,
     "wires": []
   },
   {
     "id": "e3b548a6.c24dc8",
     "type": "subflow:1dd94cb5.93a4f3",
     "z": "311aacb9.34a24c",
-    "name": "Warte auf aktuelles Wetter in HB",
+    "name": "Warte auf aktuelles Wetter für <Ort>",
     "env": [],
-    "x": 170,
-    "y": 220,
+    "x": 180,
+    "y": 300,
     "wires": [
       [
         "33c1e3fb.d830fc"
@@ -269,8 +269,8 @@
     "z": "311aacb9.34a24c",
     "name": "Teile Temperatur",
     "links": [],
-    "x": 600,
-    "y": 200,
+    "x": 620,
+    "y": 280,
     "wires": [],
     "l": true
   },
@@ -280,8 +280,8 @@
     "z": "311aacb9.34a24c",
     "name": "Teile Wetter-Symbol",
     "links": [],
-    "x": 620,
-    "y": 160,
+    "x": 640,
+    "y": 240,
     "wires": [],
     "l": true
   },
@@ -305,8 +305,8 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 390,
-    "y": 280,
+    "x": 410,
+    "y": 360,
     "wires": [
       [
         "a67ee620.f05998"
@@ -319,8 +319,8 @@
     "z": "311aacb9.34a24c",
     "name": "Teile Wind-Daten",
     "links": [],
-    "x": 610,
-    "y": 320,
+    "x": 630,
+    "y": 400,
     "wires": [],
     "l": true
   },
@@ -334,7 +334,7 @@
     ],
     "uncaught": false,
     "x": 140,
-    "y": 700,
+    "y": 780,
     "wires": [
       [
         "7209029f.9d377c"
@@ -354,7 +354,7 @@
     "format": "{{msg.payload.speed}} km/h",
     "layout": "row-center",
     "x": 610,
-    "y": 700,
+    "y": 780,
     "wires": []
   },
   {
@@ -376,8 +376,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 410,
-    "y": 240,
+    "x": 430,
+    "y": 320,
     "wires": [
       [
         "205a4c8.9696fb4"
@@ -403,12 +403,62 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 410,
-    "y": 320,
+    "x": 430,
+    "y": 400,
     "wires": [
       [
         "cc1c77b4.9ccc1"
       ]
+    ]
+  },
+  {
+    "id": "f4b01e0d.0fc9f",
+    "type": "inject",
+    "z": "311aacb9.34a24c",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 180,
+    "wires": [
+      [
+        "4d753ba0.8f6f94"
+      ]
+    ]
+  },
+  {
+    "id": "4d753ba0.8f6f94",
+    "type": "credentials",
+    "z": "311aacb9.34a24c",
+    "name": "Setze globalen <Ort>",
+    "props": [
+      {
+        "value": "location.latitude",
+        "type": "global"
+      },
+      {
+        "value": "location.longitude",
+        "type": "global"
+      }
+    ],
+    "x": 320,
+    "y": 180,
+    "wires": [
+      []
     ]
   }
 ]

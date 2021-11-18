@@ -2,7 +2,7 @@
   {
     "id": "1dd94cb5.93a4f3",
     "type": "subflow",
-    "name": "Warte_auf_aktuelles_Wetter_in_HB",
+    "name": "Warte_auf_aktuelles_Wetter_fuer_Ort",
     "info": "",
     "category": "",
     "in": [],
@@ -49,6 +49,7 @@
       }
     ],
     "env": [],
+    "meta": {},
     "color": "#DDAA99",
     "outputLabels": [
       "icon",
@@ -62,9 +63,9 @@
     "id": "444e85c8.a85a6c",
     "type": "comment",
     "z": "1dd94cb5.93a4f3",
-    "name": "Warte auf aktuelles Wetter für Bremen",
+    "name": "Warte auf aktuelles Wetter für <Ort>",
     "info": "",
-    "x": 170,
+    "x": 160,
     "y": 40,
     "wires": []
   },
@@ -85,7 +86,7 @@
     "repeat": "900",
     "crontab": "",
     "once": true,
-    "onceDelay": 0.1,
+    "onceDelay": "0.2",
     "topic": "",
     "payload": "",
     "payloadType": "str",
@@ -101,7 +102,7 @@
     "id": "30b975a6.a07fb2",
     "type": "subflow:f421e682.173de",
     "z": "1dd94cb5.93a4f3",
-    "name": "Lese aktuelle Wetter-Daten für HB",
+    "name": "Lese aktuelle Wetter-Daten für <Ort>",
     "env": [
       {
         "name": "type",
@@ -109,7 +110,7 @@
         "type": "str"
       }
     ],
-    "x": 340,
+    "x": 350,
     "y": 120,
     "wires": [
       [
