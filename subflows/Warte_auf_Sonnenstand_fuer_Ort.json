@@ -9,7 +9,7 @@
     "out": [
       {
         "x": 680,
-        "y": 180,
+        "y": 220,
         "wires": [
           {
             "id": "8ce375c3.559408",
@@ -67,7 +67,7 @@
     "topic": "",
     "name": "Warte auf Sonnenstände",
     "x": 310,
-    "y": 160,
+    "y": 200,
     "wires": [
       [
         "f82fd5c4.c39ab8",
@@ -96,7 +96,7 @@
     "repair": false,
     "outputs": 2,
     "x": 330,
-    "y": 200,
+    "y": 240,
     "wires": [
       [
         "8ce375c3.559408"
@@ -136,7 +136,7 @@
     "to": "",
     "reg": false,
     "x": 560,
-    "y": 180,
+    "y": 220,
     "wires": [
       []
     ]
@@ -155,7 +155,7 @@
     "statusVal": "",
     "statusType": "auto",
     "x": 560,
-    "y": 140,
+    "y": 180,
     "wires": []
   },
   {
@@ -173,7 +173,7 @@
     "statusVal": "",
     "statusType": "auto",
     "x": 640,
-    "y": 220,
+    "y": 260,
     "wires": []
   },
   {
@@ -193,14 +193,14 @@
     "repeat": "86400",
     "crontab": "",
     "once": true,
-    "onceDelay": "0.5",
+    "onceDelay": "0.1",
     "topic": "",
     "payloadType": "str",
     "x": 100,
     "y": 120,
     "wires": [
       [
-        "c7cfa275.f6205"
+        "223ea0a4209d3951"
       ]
     ]
   },
@@ -238,10 +238,35 @@
     "to": "",
     "reg": false,
     "x": 270,
-    "y": 120,
+    "y": 160,
     "wires": [
       [
         "6d8c246d.3c3f1c"
+      ]
+    ]
+  },
+  {
+    "id": "223ea0a4209d3951",
+    "type": "delay",
+    "z": "165c0739.3fd931",
+    "name": "1s Delay /w Globalen",
+    "pauseType": "delay",
+    "timeout": "1",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "allowrate": false,
+    "outputs": 1,
+    "x": 300,
+    "y": 120,
+    "wires": [
+      [
+        "c7cfa275.f6205"
       ]
     ]
   }
