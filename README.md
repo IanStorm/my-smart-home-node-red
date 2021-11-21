@@ -24,6 +24,21 @@ $	docker run --rm -i -t --network host -p 1880:1880 --env-file ./credentials/doc
 ```
 
 
+### Screenshots 🖼️
+
+<img src="./ref/favorites.png" alt="Screenshot Favorites page" width="24%" />
+<img src="./ref/menu.png" alt="Screenshot Menu" width="24%" />
+<img src="./ref/study.png" alt="Screenshot Study page" width="24%" />
+<img src="./ref/bathroom.png" alt="Screenshot Bathroom page" width="24%" />
+<img src="./ref/balcony.png" alt="Screenshot Balcony page" width="24%" />
+<img src="./ref/hallway-1.png" alt="Screenshot Hallway 1 page" width="24%" />
+<img src="./ref/hallway-2.png" alt="Screenshot Hallway 2 page" width="24%" />
+<img src="./ref/bedroom.png" alt="Screenshot Bedroom page" width="24%" />
+<img src="./ref/living-kitchen_area.png" alt="Screenshot Living-kitchen Area page" width="24%" />
+<img src="./ref/monitoring.png" alt="Screenshot Monitoring page" width="24%" />
+<img src="./ref/system.png" alt="Screenshot System page" width="24%" />
+
+
 ## How to develop, i.e. how to change the flows? 👨‍💻 👩‍💻
 
 Make sure you have installed *Visual Studio Code*.
