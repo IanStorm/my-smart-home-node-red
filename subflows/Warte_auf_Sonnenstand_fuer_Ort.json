@@ -162,7 +162,6 @@
     "id": "c6db0233.e836",
     "type": "debug",
     "z": "165c0739.3fd931",
-    "d": true,
     "name": "Logge Sonnenstand verworfen",
     "active": true,
     "tosidebar": true,
