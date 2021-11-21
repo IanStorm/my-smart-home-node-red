@@ -34,10 +34,82 @@
             "opts": [
               {
                 "l": {
+                  "en-US": "night end"
+                },
+                "v": "nightEnd"
+              },
+              {
+                "l": {
+                  "en-US": "nautical dawn"
+                },
+                "v": "nauticalDawn"
+              },
+              {
+                "l": {
+                  "en-US": "dawn"
+                },
+                "v": "dawn"
+              },
+              {
+                "l": {
+                  "en-US": "sunrise"
+                },
+                "v": "sunrise"
+              },
+              {
+                "l": {
+                  "en-US": "sunrise end"
+                },
+                "v": "sunriseEnd"
+              },
+              {
+                "l": {
+                  "en-US": "golden hour end"
+                },
+                "v": "goldenHourEnd"
+              },
+              {
+                "l": {
+                  "en-US": "solar noon"
+                },
+                "v": "solarNoon"
+              },
+              {
+                "l": {
+                  "en-US": "golden hour"
+                },
+                "v": "goldenHour"
+              },
+              {
+                "l": {
                   "en-US": "sunset start",
                   "de": "sunset start"
                 },
                 "v": "sunsetStart"
+              },
+              {
+                "l": {
+                  "en-US": "sunset"
+                },
+                "v": "sunset"
+              },
+              {
+                "l": {
+                  "en-US": "dusk"
+                },
+                "v": "dusk"
+              },
+              {
+                "l": {
+                  "en-US": "nautical dusk"
+                },
+                "v": "nauticalDusk"
+              },
+              {
+                "l": {
+                  "en-US": "night"
+                },
+                "v": "night"
               }
             ]
           }
