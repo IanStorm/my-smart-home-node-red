@@ -152,7 +152,7 @@
     "type": "switch",
     "z": "165c0739.3fd931",
     "name": "Ist gewünschter Sonnenstand?",
-    "property": "payload",
+    "property": "payload.sunevent",
     "propertyType": "msg",
     "rules": [
       {
