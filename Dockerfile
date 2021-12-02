@@ -1,4 +1,4 @@
-FROM nodered/node-red:2.1.3-minimal
+FROM nodered/node-red:2.1.4-minimal
 
 ENV TZ="Europe/Berlin"
 
