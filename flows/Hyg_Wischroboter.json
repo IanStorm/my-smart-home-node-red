@@ -35,8 +35,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 330,
-    "y": 880,
+    "x": 350,
+    "y": 900,
     "wires": [
       [
         "f4c9be09.754748"
@@ -49,8 +49,8 @@
     "z": "9f620701.100408",
     "connection": "5d966154.6df5d",
     "name": "Befolge Befehl",
-    "x": 540,
-    "y": 880,
+    "x": 560,
+    "y": 900,
     "wires": [
       []
     ]
@@ -647,7 +647,8 @@
     "id": "67664516.b1d6dc",
     "type": "inject",
     "z": "9f620701.100408",
-    "name": "Do., 09:30 Uhr",
+    "d": true,
+    "name": "💼 Do., 09:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -662,10 +663,37 @@
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
-    "payload": "",
     "payloadType": "str",
-    "x": 120,
+    "x": 130,
     "y": 880,
+    "wires": [
+      [
+        "dd1e63b.f53a82"
+      ]
+    ]
+  },
+  {
+    "id": "26f7ea9d52c71c02",
+    "type": "inject",
+    "z": "9f620701.100408",
+    "name": "🌴 Do., 11:30 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "30 11 * * 4",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payloadType": "str",
+    "x": 130,
+    "y": 920,
     "wires": [
       [
         "dd1e63b.f53a82"
