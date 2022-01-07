@@ -393,7 +393,6 @@
     "id": "272822ac.2cfbae",
     "type": "inject",
     "z": "fe976b5a.539a18",
-    "d": true,
     "name": "Alle 1m",
     "props": [
       {
@@ -409,7 +408,6 @@
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
-    "payload": "",
     "payloadType": "str",
     "x": 100,
     "y": 920,
@@ -535,7 +533,6 @@
     "id": "f6043311.722a38",
     "type": "change",
     "z": "fe976b5a.539a18",
-    "d": true,
     "name": "Hole Daten",
     "rules": [
       {
@@ -639,7 +636,6 @@
     "id": "1ce3ada3.bff0ba",
     "type": "subflow:93de0e1e.72cac8",
     "z": "fe976b5a.539a18",
-    "d": true,
     "name": "Warte auf < 5W",
     "env": [
       {
@@ -690,6 +686,7 @@
     "id": "6c8f90fa.0cc15",
     "type": "inject",
     "z": "fe976b5a.539a18",
+    "d": true,
     "name": "Täglich, 23 Uhr",
     "props": [
       {
@@ -705,7 +702,6 @@
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
-    "payload": "",
     "payloadType": "date",
     "x": 130,
     "y": 960,
@@ -744,6 +740,7 @@
     "id": "7439c90c.ff99b",
     "type": "subflow:165c0739.3fd931",
     "z": "fe976b5a.539a18",
+    "d": true,
     "name": "Warte auf Sonnenuntergang",
     "env": [
       {
@@ -764,7 +761,6 @@
     "id": "bd307592.b9272",
     "type": "ui_button",
     "z": "fe976b5a.539a18",
-    "d": true,
     "name": "Interaktion Automatisierungsinfo",
     "group": "2f3f5aef.3d20ee",
     "order": 5,
@@ -775,6 +771,7 @@
     "tooltip": "",
     "color": "",
     "bgcolor": "transparent",
+    "className": "",
     "icon": "info",
     "payload": "Schaltet sich automatisch ab.",
     "payloadType": "str",
@@ -810,6 +807,7 @@
     "id": "c8dbbf0a.621dd8",
     "type": "ui_button",
     "z": "fe976b5a.539a18",
+    "d": true,
     "name": "Interaktion Automatisierungsinfo",
     "group": "2f3f5aef.3d20ee",
     "order": 6,
@@ -820,6 +818,7 @@
     "tooltip": "",
     "color": "",
     "bgcolor": "transparent",
+    "className": "",
     "icon": "info",
     "payload": "Schaltet vollautomatisch gemäß Zeitplan.",
     "payloadType": "str",

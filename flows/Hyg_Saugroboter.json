@@ -20,7 +20,6 @@
     "id": "a35f26f0.c061c8",
     "type": "inject",
     "z": "ef9247c6.cadc28",
-    "d": true,
     "name": "💼 Mo.&Do., 07:30 Uhr",
     "props": [
       {
@@ -721,6 +720,7 @@
     "id": "a0d8b23864a66eff",
     "type": "inject",
     "z": "ef9247c6.cadc28",
+    "d": true,
     "name": "🌴 Mo.&Do., 09:30 Uhr",
     "props": [
       {
