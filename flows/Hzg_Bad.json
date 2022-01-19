@@ -899,13 +899,13 @@
     "id": "e5ec08aa.e1b548",
     "type": "change",
     "z": "a7755eb4.60b0d8",
-    "name": "Setze Wunsch-Temperatur auf 21°C",
+    "name": "Setze Wunsch-Temperatur auf 19°C",
     "rules": [
       {
         "t": "set",
         "p": "payload",
         "pt": "msg",
-        "to": "21",
+        "to": "19",
         "tot": "num"
       },
       {

@@ -188,7 +188,7 @@
     "id": "31354252.1e004e",
     "type": "inject",
     "z": "d3be81f2.b4ce68",
-    "name": "Werktags, 05:30 Uhr",
+    "name": "💼 Mo.-Do., 05:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -199,13 +199,13 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 05 * * 1,2,3,4,5",
+    "crontab": "30 05 * * 1,2,3,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 140,
+    "x": 150,
     "y": 1100,
     "wires": [
       [
@@ -217,7 +217,7 @@
     "id": "767c5dd6.ab73ac",
     "type": "inject",
     "z": "d3be81f2.b4ce68",
-    "name": "Wochenende, 07:30 Uhr",
+    "name": "Fr.-So., 07:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -228,13 +228,13 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 07 * * 6,0",
+    "crontab": "00 07 * * 5,6,0",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 150,
+    "x": 130,
     "y": 1140,
     "wires": [
       [
@@ -246,13 +246,13 @@
     "id": "19b73a69.25d41e",
     "type": "change",
     "z": "d3be81f2.b4ce68",
-    "name": "Setze Wunsch-Temperatur auf 21°C",
+    "name": "Setze Wunsch-Temperatur auf 19°C",
     "rules": [
       {
         "t": "set",
         "p": "payload",
         "pt": "msg",
-        "to": "21",
+        "to": "19",
         "tot": "num"
       },
       {
@@ -461,7 +461,7 @@
     "id": "fcec6789.830d38",
     "type": "inject",
     "z": "d3be81f2.b4ce68",
-    "name": "So.-Do., 21:30 Uhr",
+    "name": "💼 Mo.-Do., 07:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -472,13 +472,13 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 21 * * 1,2,3,4,0",
+    "crontab": "00 07 * * 1,2,3,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 140,
+    "x": 150,
     "y": 1240,
     "wires": [
       [
@@ -490,7 +490,7 @@
     "id": "78b12fc8.1ee178",
     "type": "inject",
     "z": "d3be81f2.b4ce68",
-    "name": "Fr.-Sa., 23:00 Uhr",
+    "name": "Fr.-So., 09:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -501,7 +501,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "00 23 * * 5,6",
+    "crontab": "30 09 * * 5,6,0",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",

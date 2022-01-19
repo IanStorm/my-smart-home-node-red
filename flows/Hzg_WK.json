@@ -179,7 +179,7 @@
     "id": "abc52df4.686828",
     "type": "inject",
     "z": "c6075ab3.4abae8",
-    "name": "Werktags, 04:30 Uhr",
+    "name": "💼 Mo.-Do., 04:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -190,13 +190,13 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 04 * * 1,2,3,4,5",
+    "crontab": "30 04 * * 1,2,3,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 140,
+    "x": 150,
     "y": 1100,
     "wires": [
       [
@@ -208,7 +208,7 @@
     "id": "f64ec319.a1a098",
     "type": "inject",
     "z": "c6075ab3.4abae8",
-    "name": "Wochenende, 07:30 Uhr",
+    "name": "Fr.-So., 07:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -219,14 +219,14 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 07 * * 6,0",
+    "crontab": "30 07 * * 5,6,0",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 150,
-    "y": 1140,
+    "x": 130,
+    "y": 1220,
     "wires": [
       [
         "62fbdecd.d2f198"
@@ -260,7 +260,7 @@
     "to": "",
     "reg": false,
     "x": 470,
-    "y": 1120,
+    "y": 1160,
     "wires": [
       []
     ]
@@ -292,7 +292,7 @@
     "to": "",
     "reg": false,
     "x": 470,
-    "y": 1240,
+    "y": 1360,
     "wires": [
       []
     ]
@@ -454,7 +454,7 @@
     "id": "5e33a23.7c1385c",
     "type": "inject",
     "z": "c6075ab3.4abae8",
-    "name": "So.-Do., 21:30 Uhr",
+    "name": "So.-Do., 21:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -465,14 +465,14 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 21 * * 1,2,3,4,0",
+    "crontab": "00 21 * * 1,2,3,4,0",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1240,
+    "y": 1400,
     "wires": [
       [
         "dac19267.87c818"
@@ -483,7 +483,7 @@
     "id": "d8eedea9.ff165",
     "type": "inject",
     "z": "c6075ab3.4abae8",
-    "name": "Fr.-Sa., 23:30 Uhr",
+    "name": "Fr.-Sa., 22:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -494,14 +494,14 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 23 * * 5,6",
+    "crontab": "30 22 * * 5,6",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1280,
+    "y": 1440,
     "wires": [
       [
         "dac19267.87c818"
@@ -739,7 +739,7 @@
     "payload": "Vollautomatisch zeit- & sensorbasiert",
     "payloadType": "str",
     "x": 110,
-    "y": 1200,
+    "y": 1280,
     "wires": [
       [
         "dac19267.87c818"
@@ -895,5 +895,121 @@
     "x": 410,
     "y": 660,
     "wires": []
+  },
+  {
+    "id": "49202be8cf53e9cd",
+    "type": "inject",
+    "z": "c6075ab3.4abae8",
+    "name": "💼 Mo.-Do., 11:00 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 11 * * 1,2,3,4",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 150,
+    "y": 1140,
+    "wires": [
+      [
+        "62fbdecd.d2f198"
+      ]
+    ]
+  },
+  {
+    "id": "1570f9530b0b16a8",
+    "type": "inject",
+    "z": "c6075ab3.4abae8",
+    "name": "💼 Mo.-Do., 16:00 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 16 * * 1,2,3,4",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 150,
+    "y": 1180,
+    "wires": [
+      [
+        "62fbdecd.d2f198"
+      ]
+    ]
+  },
+  {
+    "id": "50c5be022a11bb46",
+    "type": "inject",
+    "z": "c6075ab3.4abae8",
+    "name": "💼 Mo.-Do., 07:00 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 07 * * 1,2,3,4",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 150,
+    "y": 1320,
+    "wires": [
+      [
+        "dac19267.87c818"
+      ]
+    ]
+  },
+  {
+    "id": "50f67f836b78ebb1",
+    "type": "inject",
+    "z": "c6075ab3.4abae8",
+    "name": "💼 Mo.-Do., 13:00 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 13 * * 1,2,3,4",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 150,
+    "y": 1360,
+    "wires": [
+      [
+        "dac19267.87c818"
+      ]
+    ]
   }
 ]
