@@ -290,7 +290,7 @@
     "type": "ui_group",
     "name": "Heizkörper",
     "tab": "9be1f758.946cf8",
-    "order": 11,
+    "order": 1,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -372,7 +372,7 @@
     "type": "ui_group",
     "name": "Telefon",
     "tab": "5fa0aaf9.168a54",
-    "order": 2,
+    "order": 1,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -555,5 +555,27 @@
     "disp": true,
     "width": "6",
     "collapse": false
+  },
+  {
+    "id": "a155e4e96c182e3f",
+    "type": "ui_group",
+    "name": "Sensor 1",
+    "tab": "9be1f758.946cf8",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false,
+    "className": ""
+  },
+  {
+    "id": "158e0ef76110fcc9",
+    "type": "ui_group",
+    "name": "Sensor 1",
+    "tab": "5fa0aaf9.168a54",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false,
+    "className": ""
   }
 ]

@@ -1,0 +1,526 @@
+[
+  {
+    "id": "fc0dd18cce07b1e9",
+    "type": "tab",
+    "label": "TS_F2",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "c838ee3bd060f187",
+    "type": "comment",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Temperatur-Sensor ➡ Flur 2",
+    "info": "",
+    "x": 140,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "68f2bb9a2abea9fa",
+    "type": "comment",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "64bba2a977173969",
+    "type": "zigbee2mqtt-in",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Warte auf Sensor-Daten",
+    "server": "dd3cc3c3.66f0c8",
+    "friendly_name": "temperature/living-kitchenArea",
+    "device_id": "0x00158d00066924f4",
+    "state": "0",
+    "outputAtStartup": true,
+    "x": 140,
+    "y": 180,
+    "wires": [
+      [
+        "2b26fca8e74f91e9"
+      ]
+    ]
+  },
+  {
+    "id": "2b26fca8e74f91e9",
+    "type": "subflow:bd326ce6.854e58",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Verstehe Sensor-Daten",
+    "env": [
+      {
+        "name": "topicPrefix",
+        "value": "hallway2/sensor1",
+        "type": "str"
+      }
+    ],
+    "x": 450,
+    "y": 260,
+    "wires": [
+      [
+        "afd8d3c38020ae8c"
+      ],
+      [
+        "4c525be09a259d44"
+      ],
+      [
+        "bba0ba9cda6d72d0"
+      ],
+      [],
+      [
+        "bdf4bc2901133e20"
+      ]
+    ]
+  },
+  {
+    "id": "afd8d3c38020ae8c",
+    "type": "link out",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Teile Batterie-%",
+    "links": [],
+    "x": 680,
+    "y": 180,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "bba0ba9cda6d72d0",
+    "type": "link out",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Teile LQI",
+    "links": [],
+    "x": 660,
+    "y": 260,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "bdf4bc2901133e20",
+    "type": "link out",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Teile Temperatur",
+    "links": [],
+    "x": 680,
+    "y": 340,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "ab2d98865d69d812",
+    "type": "comment",
+    "z": "fc0dd18cce07b1e9",
+    "name": "GUI",
+    "info": "",
+    "x": 90,
+    "y": 420,
+    "wires": []
+  },
+  {
+    "id": "d55567a2d0d57ba0",
+    "type": "complete",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Warte auf Batterie-%",
+    "scope": [
+      "afd8d3c38020ae8c"
+    ],
+    "uncaught": false,
+    "x": 130,
+    "y": 540,
+    "wires": [
+      [
+        "5aeb202ad898fd1d"
+      ]
+    ]
+  },
+  {
+    "id": "326bfbcfd0251f44",
+    "type": "complete",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Warte auf LQI",
+    "scope": [
+      "bba0ba9cda6d72d0"
+    ],
+    "uncaught": false,
+    "x": 110,
+    "y": 600,
+    "wires": [
+      [
+        "a7a7e5cb78ca2dd7"
+      ]
+    ]
+  },
+  {
+    "id": "07830f67905becfa",
+    "type": "complete",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Warte auf Temperatur",
+    "scope": [
+      "bdf4bc2901133e20"
+    ],
+    "uncaught": false,
+    "x": 140,
+    "y": 760,
+    "wires": [
+      [
+        "95c6b8e168001023",
+        "245e1448d0b700f4"
+      ]
+    ]
+  },
+  {
+    "id": "a7a7e5cb78ca2dd7",
+    "type": "ui_text",
+    "z": "fc0dd18cce07b1e9",
+    "group": "158e0ef76110fcc9",
+    "order": 3,
+    "width": "1",
+    "height": 1,
+    "name": "Zeige LQI",
+    "label": "<i class=\"material-icons\">sync</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-center",
+    "className": "",
+    "x": 520,
+    "y": 600,
+    "wires": []
+  },
+  {
+    "id": "5aeb202ad898fd1d",
+    "type": "ui_text",
+    "z": "fc0dd18cce07b1e9",
+    "group": "158e0ef76110fcc9",
+    "order": 2,
+    "width": "2",
+    "height": 1,
+    "name": "Zeige Batterie-%",
+    "label": "<i class=\"material-icons\">battery_unknown</i>",
+    "format": "{{msg.payload}}%",
+    "layout": "row-center",
+    "className": "",
+    "x": 550,
+    "y": 540,
+    "wires": []
+  },
+  {
+    "id": "245e1448d0b700f4",
+    "type": "ui_chart",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Zeige Temperatur-Aufzeichnung",
+    "group": "158e0ef76110fcc9",
+    "order": 5,
+    "width": "5",
+    "height": "5",
+    "label": "",
+    "chartType": "line",
+    "legend": "false",
+    "xformat": "HH:mm",
+    "interpolate": "linear",
+    "nodata": "Warte auf Temperatur-Daten",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": "24",
+    "removeOlderPoints": "",
+    "removeOlderUnit": "3600",
+    "cutout": 0,
+    "useOneColor": false,
+    "useUTC": false,
+    "colors": [
+      "#d62728",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "",
+    "x": 590,
+    "y": 760,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "0cc6cbde3267293f",
+    "type": "ui_text",
+    "z": "fc0dd18cce07b1e9",
+    "group": "158e0ef76110fcc9",
+    "order": 4,
+    "width": "2",
+    "height": "2",
+    "name": "Zeige Temperatur",
+    "label": "<i class=\"material-icons\">ac_unit</i>",
+    "format": "{{msg.payload}}°C",
+    "layout": "row-center",
+    "className": "",
+    "x": 550,
+    "y": 800,
+    "wires": []
+  },
+  {
+    "id": "95c6b8e168001023",
+    "type": "unit-converter",
+    "z": "fc0dd18cce07b1e9",
+    "category": "temperature",
+    "inputUnit": "C",
+    "outputUnit": "C",
+    "inputField": "payload",
+    "outputField": "payload",
+    "inputFieldType": "msg",
+    "outputFieldType": "msg",
+    "roundOutputField": true,
+    "outputFieldDecimals": "1",
+    "name": "Vereinfache",
+    "x": 350,
+    "y": 800,
+    "wires": [
+      [
+        "0cc6cbde3267293f"
+      ]
+    ]
+  },
+  {
+    "id": "42feb2e52733f28d",
+    "type": "inject",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 480,
+    "wires": [
+      [
+        "243af52ba0f0df01"
+      ]
+    ]
+  },
+  {
+    "id": "243af52ba0f0df01",
+    "type": "ui_template",
+    "z": "fc0dd18cce07b1e9",
+    "group": "158e0ef76110fcc9",
+    "name": "Zeige Icon",
+    "order": 1,
+    "width": "1",
+    "height": "2",
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        router\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "className": "",
+    "x": 530,
+    "y": 480,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "2c1ba825b2354fbc",
+    "type": "link in",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Warte auf Replay-Start",
+    "links": [
+      "24e48711.9609f"
+    ],
+    "x": 55,
+    "y": 340,
+    "wires": [
+      [
+        "181c26e27c4aa734"
+      ]
+    ]
+  },
+  {
+    "id": "181c26e27c4aa734",
+    "type": "change",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Setze Replay-Daten",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "{\"battery\":100,\"humidity\":41.37,\"linkquality\":76,\"pressure\":1004,\"temperature\":20.34,\"voltage\":3125}",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "payload_raw",
+        "pt": "msg",
+        "to": "{\"battery\":100,\"humidity\":41.37,\"linkquality\":76,\"pressure\":1004,\"temperature\":20.34,\"voltage\":3125}",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "device",
+        "pt": "msg",
+        "to": "{\"dateCode\":\"20191205\",\"description\":\"Aqara temperature, humidity and pressure sensor\",\"friendly_name\":\"temperature/hallway2\",\"hardwareVersion\":30,\"ieeeAddr\":\"0x00158d00066924f4\",\"lastSeen\":1610988418052,\"manufacturerID\":4151,\"manufacturerName\":\"LUMI\",\"model\":\"WSDCGQ11LM\",\"modelID\":\"lumi.weather\",\"networkAddress\":23202,\"powerSource\":\"Battery\",\"softwareBuildID\":\"3000-0001\",\"type\":\"EndDevice\",\"vendor\":\"Xiaomi\",\"lastPayload\":{\"battery\":100,\"humidity\":41.37,\"linkquality\":76,\"pressure\":1004,\"temperature\":20.34,\"voltage\":3125},\"homekit\":{\"TemperatureSensor\":{\"CurrentTemperature\":20.34},\"HumiditySensor\":{\"CurrentRelativeHumidity\":41.37},\"Battery\":{\"BatteryLevel\":100,\"StatusLowBattery\":0}}}",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "group",
+        "pt": "msg",
+        "to": "null",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "homekit",
+        "pt": "msg",
+        "to": "{\"TemperatureSensor\":{\"CurrentTemperature\":20.34},\"HumiditySensor\":{\"CurrentRelativeHumidity\":41.37},\"Battery\":{\"BatteryLevel\":100,\"StatusLowBattery\":0}}",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "format",
+        "pt": "msg",
+        "to": "{}",
+        "tot": "json"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 200,
+    "y": 340,
+    "wires": [
+      [
+        "2b26fca8e74f91e9"
+      ]
+    ]
+  },
+  {
+    "id": "4c525be09a259d44",
+    "type": "link out",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Teile Luftfeuchte",
+    "links": [],
+    "x": 680,
+    "y": 220,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "f9cd225880c99e7d",
+    "type": "complete",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Warte auf Luftfeuchte",
+    "scope": [
+      "4c525be09a259d44"
+    ],
+    "uncaught": false,
+    "x": 140,
+    "y": 660,
+    "wires": [
+      [
+        "cef85cbb1014d602",
+        "25c6546c62b62466"
+      ]
+    ]
+  },
+  {
+    "id": "a67e775af957b94b",
+    "type": "ui_text",
+    "z": "fc0dd18cce07b1e9",
+    "group": "158e0ef76110fcc9",
+    "order": 4,
+    "width": "2",
+    "height": "1",
+    "name": "Zeige Luftfeuchte",
+    "label": "<i class=\"material-icons\">invert_colors</i>",
+    "format": "{{msg.payload}}%",
+    "layout": "row-center",
+    "className": "",
+    "x": 550,
+    "y": 700,
+    "wires": []
+  },
+  {
+    "id": "cef85cbb1014d602",
+    "type": "range",
+    "z": "fc0dd18cce07b1e9",
+    "minin": "0",
+    "maxin": "100",
+    "minout": "0",
+    "maxout": "100",
+    "action": "scale",
+    "round": true,
+    "property": "payload",
+    "name": "Vereinfache",
+    "x": 350,
+    "y": 700,
+    "wires": [
+      [
+        "a67e775af957b94b"
+      ]
+    ]
+  },
+  {
+    "id": "25c6546c62b62466",
+    "type": "ui_chart",
+    "z": "fc0dd18cce07b1e9",
+    "name": "Zeige Luftfeuchte-Aufzeichnung",
+    "group": "158e0ef76110fcc9",
+    "order": 5,
+    "width": "5",
+    "height": "5",
+    "label": "",
+    "chartType": "line",
+    "legend": "false",
+    "xformat": "HH:mm",
+    "interpolate": "linear",
+    "nodata": "Warte auf Luftfeuchte-Daten",
+    "dot": false,
+    "ymin": "0",
+    "ymax": "100",
+    "removeOlder": "24",
+    "removeOlderPoints": "",
+    "removeOlderUnit": "3600",
+    "cutout": 0,
+    "useOneColor": false,
+    "useUTC": false,
+    "colors": [
+      "#aec7e8",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff",
+      "#ff00ff"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "",
+    "x": 590,
+    "y": 660,
+    "wires": [
+      []
+    ]
+  }
+]
