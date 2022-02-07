@@ -20,7 +20,7 @@
     "id": "a35f26f0.c061c8",
     "type": "inject",
     "z": "ef9247c6.cadc28",
-    "name": "💼 Mo.&Do., 07:30 Uhr",
+    "name": "💼 Mo.&Do., 07:15 Uhr",
     "props": [
       {
         "p": "payload"
@@ -31,10 +31,11 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 07 * * 1,4",
+    "crontab": "15 07 * * 1,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
+    "payload": "",
     "payloadType": "str",
     "x": 150,
     "y": 880,
@@ -721,7 +722,7 @@
     "type": "inject",
     "z": "ef9247c6.cadc28",
     "d": true,
-    "name": "🌴 Mo.&Do., 09:30 Uhr",
+    "name": "🌴 Mo.&Do., 09:15 Uhr",
     "props": [
       {
         "p": "payload"
@@ -732,10 +733,11 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 09 * * 1,4",
+    "crontab": "15 09 * * 1,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
+    "payload": "",
     "payloadType": "str",
     "x": 150,
     "y": 920,
