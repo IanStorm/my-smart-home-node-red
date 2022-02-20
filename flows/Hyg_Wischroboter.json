@@ -647,6 +647,7 @@
     "id": "67664516.b1d6dc",
     "type": "inject",
     "z": "9f620701.100408",
+    "d": true,
     "name": "💼 Do., 09:30 Uhr",
     "props": [
       {
@@ -662,6 +663,7 @@
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
+    "payload": "",
     "payloadType": "str",
     "x": 130,
     "y": 880,
@@ -675,7 +677,6 @@
     "id": "26f7ea9d52c71c02",
     "type": "inject",
     "z": "9f620701.100408",
-    "d": true,
     "name": "🌴 Do., 11:30 Uhr",
     "props": [
       {
@@ -691,6 +692,7 @@
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
+    "payload": "",
     "payloadType": "str",
     "x": 130,
     "y": 920,
