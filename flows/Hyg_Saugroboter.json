@@ -20,7 +20,6 @@
     "id": "a35f26f0.c061c8",
     "type": "inject",
     "z": "ef9247c6.cadc28",
-    "d": true,
     "name": "💼 Mo.&Do., 07:15 Uhr",
     "props": [
       {
@@ -89,7 +88,7 @@
     "id": "b0ecc46f.5d45a8",
     "type": "comment",
     "z": "ef9247c6.cadc28",
-    "name": "Hygiene -> Saugroboter",
+    "name": "Hygiene ➡ Saugroboter",
     "info": "",
     "x": 120,
     "y": 40,
@@ -722,6 +721,7 @@
     "id": "a0d8b23864a66eff",
     "type": "inject",
     "z": "ef9247c6.cadc28",
+    "d": true,
     "name": "🌴 Mo.&Do., 09:15 Uhr",
     "props": [
       {
