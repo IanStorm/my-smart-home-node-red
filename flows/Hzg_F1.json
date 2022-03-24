@@ -188,6 +188,7 @@
     "id": "31354252.1e004e",
     "type": "inject",
     "z": "d3be81f2.b4ce68",
+    "d": true,
     "name": "💼 Mo.-Do., 05:30 Uhr",
     "props": [
       {
@@ -217,6 +218,7 @@
     "id": "767c5dd6.ab73ac",
     "type": "inject",
     "z": "d3be81f2.b4ce68",
+    "d": true,
     "name": "Fr.-So., 07:00 Uhr",
     "props": [
       {
