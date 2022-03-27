@@ -179,8 +179,7 @@
     "id": "c8605b28.b9c0b8",
     "type": "inject",
     "z": "ecee5153.6f2368",
-    "d": true,
-    "name": "Mo.-Do., 05:00 Uhr",
+    "name": "💼 Mo.-Do., 05:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -197,7 +196,7 @@
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 140,
+    "x": 150,
     "y": 1100,
     "wires": [
       [
@@ -209,8 +208,7 @@
     "id": "108d6033.b4365",
     "type": "inject",
     "z": "ecee5153.6f2368",
-    "d": true,
-    "name": "Fr.-So., 07:00 Uhr",
+    "name": "🏡 Fr.-So., 07:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -227,7 +225,7 @@
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 130,
+    "x": 140,
     "y": 1140,
     "wires": [
       [
@@ -456,7 +454,7 @@
     "id": "48ab0947.81f79",
     "type": "inject",
     "z": "ecee5153.6f2368",
-    "name": "Mo.-Do., 06:15 Uhr",
+    "name": "💼 Mo.-Do., 06:15 Uhr",
     "props": [
       {
         "p": "payload"
@@ -473,7 +471,7 @@
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 140,
+    "x": 150,
     "y": 1280,
     "wires": [
       [
@@ -485,7 +483,7 @@
     "id": "2ee5196a.deee46",
     "type": "inject",
     "z": "ecee5153.6f2368",
-    "name": "Täglich, 23:00 Uhr",
+    "name": "🏡 Täglich, 23:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -502,7 +500,7 @@
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 130,
+    "x": 150,
     "y": 1360,
     "wires": [
       [
@@ -514,7 +512,7 @@
     "id": "9ef93ae.b1f88c8",
     "type": "inject",
     "z": "ecee5153.6f2368",
-    "name": "Fr.-So., 10:00 Uhr",
+    "name": "🏡 Fr.-So., 10:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -531,7 +529,7 @@
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 130,
+    "x": 140,
     "y": 1320,
     "wires": [
       [
@@ -543,8 +541,7 @@
     "id": "b78f0a81.c98e3",
     "type": "inject",
     "z": "ecee5153.6f2368",
-    "d": true,
-    "name": "Täglich, 21:00 Uhr",
+    "name": "🏡 Täglich, 21:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -561,7 +558,7 @@
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 130,
+    "x": 150,
     "y": 1180,
     "wires": [
       [
