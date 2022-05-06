@@ -313,6 +313,7 @@
     "mqtt_port": "1883",
     "mqtt_username": "",
     "mqtt_password": "",
+    "mqtt_qos": "0",
     "tls": "",
     "usetls": false,
     "base_topic": "zigbee2mqtt"
