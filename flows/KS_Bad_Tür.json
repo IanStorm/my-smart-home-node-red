@@ -1,0 +1,467 @@
+[
+  {
+    "id": "e289f3210fab70da",
+    "type": "tab",
+    "label": "KS_Bad_Tür",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "88daf49367bb7763",
+    "type": "comment",
+    "z": "e289f3210fab70da",
+    "name": "Kontakt-Sensor -> Badezimmer -> Tür",
+    "info": "",
+    "x": 170,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "8e152c86a1a0d75f",
+    "type": "comment",
+    "z": "e289f3210fab70da",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "b36a8396bbfeb82b",
+    "type": "change",
+    "z": "e289f3210fab70da",
+    "name": "Merke Batterie-%",
+    "rules": [
+      {
+        "t": "set",
+        "p": "contact.batteryPercentage",
+        "pt": "flow",
+        "to": "payload.battery",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 410,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "635863b86be7dd27",
+    "type": "change",
+    "z": "e289f3210fab70da",
+    "name": "Merke LQI",
+    "rules": [
+      {
+        "t": "set",
+        "p": "contact.lqi",
+        "pt": "flow",
+        "to": "payload.linkquality",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 390,
+    "y": 240,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "fa3051d6691d2403",
+    "type": "change",
+    "z": "e289f3210fab70da",
+    "name": "Merke \"Ist geschlossen?\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "contact.isClosed",
+        "pt": "flow",
+        "to": "payload.contact",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 430,
+    "y": 300,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "902302a9781302d8",
+    "type": "comment",
+    "z": "e289f3210fab70da",
+    "name": "GUI",
+    "info": "",
+    "x": 90,
+    "y": 480,
+    "wires": []
+  },
+  {
+    "id": "3d0aa084c570f1e1",
+    "type": "complete",
+    "z": "e289f3210fab70da",
+    "name": "Warte auf Batterie-%",
+    "scope": [
+      "b36a8396bbfeb82b"
+    ],
+    "uncaught": false,
+    "x": 130,
+    "y": 600,
+    "wires": [
+      [
+        "2c1ed0db66a8bde0"
+      ]
+    ]
+  },
+  {
+    "id": "37724b6eae345a0a",
+    "type": "complete",
+    "z": "e289f3210fab70da",
+    "name": "Warte auf LQI",
+    "scope": [
+      "635863b86be7dd27"
+    ],
+    "uncaught": false,
+    "x": 110,
+    "y": 660,
+    "wires": [
+      [
+        "4a62fe14f3323111"
+      ]
+    ]
+  },
+  {
+    "id": "ed4a840e546d3392",
+    "type": "complete",
+    "z": "e289f3210fab70da",
+    "name": "Warte auf \"Ist geschlossen?\"",
+    "scope": [
+      "fa3051d6691d2403"
+    ],
+    "uncaught": false,
+    "x": 160,
+    "y": 720,
+    "wires": [
+      [
+        "d0e590e1e8733b16"
+      ]
+    ]
+  },
+  {
+    "id": "2c1ed0db66a8bde0",
+    "type": "change",
+    "z": "e289f3210fab70da",
+    "name": "Hole Batterie-%",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "contact.batteryPercentage",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 400,
+    "y": 600,
+    "wires": [
+      [
+        "4027d2c667850f85"
+      ]
+    ]
+  },
+  {
+    "id": "d0e590e1e8733b16",
+    "type": "change",
+    "z": "e289f3210fab70da",
+    "name": "Hole \"Ist geschlossen?\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "contact.isClosed",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 430,
+    "y": 720,
+    "wires": [
+      [
+        "48136e72ea685906"
+      ]
+    ]
+  },
+  {
+    "id": "4a62fe14f3323111",
+    "type": "change",
+    "z": "e289f3210fab70da",
+    "name": "Hole LQI",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "contact.lqi",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 380,
+    "y": 660,
+    "wires": [
+      [
+        "336a82a96b0e55d4"
+      ]
+    ]
+  },
+  {
+    "id": "4027d2c667850f85",
+    "type": "ui_text",
+    "z": "e289f3210fab70da",
+    "group": "76ebf651717f5124",
+    "order": 2,
+    "width": 2,
+    "height": 1,
+    "name": "Zeige Batterie-%",
+    "label": "<i class=\"material-icons\">battery_unknown</i>",
+    "format": "{{msg.payload}}%",
+    "layout": "row-center",
+    "className": "",
+    "x": 670,
+    "y": 600,
+    "wires": []
+  },
+  {
+    "id": "336a82a96b0e55d4",
+    "type": "ui_text",
+    "z": "e289f3210fab70da",
+    "group": "76ebf651717f5124",
+    "order": 3,
+    "width": "1",
+    "height": 1,
+    "name": "Zeige LQI",
+    "label": "<i class=\"material-icons\">sync</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-center",
+    "className": "",
+    "x": 640,
+    "y": 660,
+    "wires": []
+  },
+  {
+    "id": "48136e72ea685906",
+    "type": "ui_text",
+    "z": "e289f3210fab70da",
+    "group": "76ebf651717f5124",
+    "order": 4,
+    "width": 2,
+    "height": "2",
+    "name": "Zeige \"Ist geschlossen?\"",
+    "label": "<i class=\"material-icons\">{{msg.payload ? 'compare_arrows' : 'swap_horiz'}}</i>",
+    "format": "{{msg.payload ? 'Geschlossen' : 'Geöffnet'}}",
+    "layout": "row-center",
+    "className": "",
+    "x": 690,
+    "y": 720,
+    "wires": []
+  },
+  {
+    "id": "46118e0394c13957",
+    "type": "link out",
+    "z": "e289f3210fab70da",
+    "name": "Teile \"Ist geschlossen?\"",
+    "mode": "link",
+    "links": [],
+    "x": 690,
+    "y": 400,
+    "wires": [],
+    "l": true
+  },
+  {
+    "id": "189a415048e1253f",
+    "type": "zigbee2mqtt-in",
+    "z": "e289f3210fab70da",
+    "name": "Warte auf Sensor-Daten",
+    "server": "dd3cc3c3.66f0c8",
+    "friendly_name": "contact/bathroom/door",
+    "device_id": "0x00158d0007ef754e",
+    "state": "0",
+    "outputAtStartup": true,
+    "x": 140,
+    "y": 180,
+    "wires": [
+      [
+        "b36a8396bbfeb82b",
+        "635863b86be7dd27",
+        "fa3051d6691d2403"
+      ]
+    ]
+  },
+  {
+    "id": "10d90d4fd33656eb",
+    "type": "change",
+    "z": "e289f3210fab70da",
+    "name": "Bereinige Nachricht",
+    "rules": [
+      {
+        "t": "delete",
+        "p": "device",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "format",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "group",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "homekit",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "payload_raw",
+        "pt": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 410,
+    "y": 360,
+    "wires": [
+      [
+        "2512727469df5598"
+      ]
+    ]
+  },
+  {
+    "id": "7925de0bd06af093",
+    "type": "complete",
+    "z": "e289f3210fab70da",
+    "name": "Warte auf \"Ist geschlossen?\"",
+    "scope": [
+      "fa3051d6691d2403"
+    ],
+    "uncaught": false,
+    "x": 160,
+    "y": 360,
+    "wires": [
+      [
+        "10d90d4fd33656eb"
+      ]
+    ]
+  },
+  {
+    "id": "2512727469df5598",
+    "type": "change",
+    "z": "e289f3210fab70da",
+    "name": "Hole \"Ist geschlossen?\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "contact.isClosed",
+        "tot": "flow"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "bathroom/door/isClosed",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 430,
+    "y": 400,
+    "wires": [
+      [
+        "46118e0394c13957"
+      ]
+    ]
+  },
+  {
+    "id": "040b680d8b230d81",
+    "type": "inject",
+    "z": "e289f3210fab70da",
+    "name": "Beim Start",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 540,
+    "wires": [
+      [
+        "f851e08291ec9e75"
+      ]
+    ]
+  },
+  {
+    "id": "f851e08291ec9e75",
+    "type": "ui_template",
+    "z": "e289f3210fab70da",
+    "group": "76ebf651717f5124",
+    "name": "Zeige Icon",
+    "order": 1,
+    "width": "1",
+    "height": "3",
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        meeting_room\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "className": "",
+    "x": 650,
+    "y": 540,
+    "wires": [
+      []
+    ]
+  }
+]
