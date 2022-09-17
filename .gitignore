@@ -11,3 +11,7 @@ credentials
 
 # + node-red-contrib-flow-manager
 flows.json
+
+
+# + npm
+.npm/
