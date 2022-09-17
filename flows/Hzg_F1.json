@@ -246,13 +246,13 @@
     "id": "19b73a69.25d41e",
     "type": "change",
     "z": "d3be81f2.b4ce68",
-    "name": "Setze Wunsch-Temperatur auf 19°C",
+    "name": "Setze Wunsch-Temperatur auf 18°C",
     "rules": [
       {
         "t": "set",
         "p": "payload",
         "pt": "msg",
-        "to": "19",
+        "to": "18",
         "tot": "num"
       },
       {
