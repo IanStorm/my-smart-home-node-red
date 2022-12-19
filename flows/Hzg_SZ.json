@@ -294,7 +294,7 @@
     "to": "",
     "reg": false,
     "x": 470,
-    "y": 1300,
+    "y": 1340,
     "wires": [
       []
     ]
@@ -456,6 +456,7 @@
     "id": "48ab0947.81f79",
     "type": "inject",
     "z": "ecee5153.6f2368",
+    "d": true,
     "name": "💼 Mo.-Do., 06:15 Uhr",
     "props": [
       {
@@ -474,7 +475,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 150,
-    "y": 1280,
+    "y": 1320,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -503,7 +504,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 150,
-    "y": 1360,
+    "y": 1400,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -514,6 +515,7 @@
     "id": "9ef93ae.b1f88c8",
     "type": "inject",
     "z": "ecee5153.6f2368",
+    "d": true,
     "name": "🏡 Fr.-So., 10:00 Uhr",
     "props": [
       {
@@ -532,7 +534,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1320,
+    "y": 1360,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -543,7 +545,6 @@
     "id": "b78f0a81.c98e3",
     "type": "inject",
     "z": "ecee5153.6f2368",
-    "d": true,
     "name": "🏡 Täglich, 21:00 Uhr",
     "props": [
       {
@@ -800,7 +801,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 1240,
+    "y": 1280,
     "wires": [
       [
         "f9b8ffbc.8ebb"
@@ -956,5 +957,63 @@
     "x": 410,
     "y": 660,
     "wires": []
+  },
+  {
+    "id": "f5976bba17c2b168",
+    "type": "inject",
+    "z": "ecee5153.6f2368",
+    "name": "🌴🏡 Täglich, 07:00 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 07 * * *",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 160,
+    "y": 1220,
+    "wires": [
+      [
+        "d98b1423.c395f"
+      ]
+    ]
+  },
+  {
+    "id": "9ba241d1c8236a46",
+    "type": "inject",
+    "z": "ecee5153.6f2368",
+    "name": "🌴🏡 Täglich, 10:00 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 07 * * *",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 160,
+    "y": 1440,
+    "wires": [
+      [
+        "f9b8ffbc.8ebb"
+      ]
+    ]
   }
 ]

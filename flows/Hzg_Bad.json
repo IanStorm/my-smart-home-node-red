@@ -180,7 +180,7 @@
     "type": "inject",
     "z": "a7755eb4.60b0d8",
     "d": true,
-    "name": "💼 Mo.-Fr., 05:30 Uhr",
+    "name": "💼 Mo.-Do., 05:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -191,7 +191,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 05 * * 1,2,3,4,5",
+    "crontab": "30 05 * * 1,2,3,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
@@ -210,7 +210,7 @@
     "type": "inject",
     "z": "a7755eb4.60b0d8",
     "d": true,
-    "name": "🏡 Sa.-So., 07:00 Uhr",
+    "name": "🏡 Fr.-So., 07:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -221,13 +221,13 @@
       }
     ],
     "repeat": "",
-    "crontab": "00 07 * * 6,0",
+    "crontab": "00 07 * * 5,6,0",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 150,
+    "x": 140,
     "y": 1140,
     "wires": [
       [
@@ -294,7 +294,7 @@
     "to": "",
     "reg": false,
     "x": 470,
-    "y": 1380,
+    "y": 1460,
     "wires": [
       []
     ]
@@ -473,7 +473,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 130,
-    "y": 1380,
+    "y": 1460,
     "wires": [
       [
         "6a2c9246.71ceec"
@@ -502,7 +502,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1420,
+    "y": 1500,
     "wires": [
       [
         "6a2c9246.71ceec"
@@ -740,7 +740,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 1340,
+    "y": 1420,
     "wires": [
       [
         "6a2c9246.71ceec"
@@ -924,7 +924,7 @@
     "to": "",
     "reg": false,
     "x": 470,
-    "y": 1220,
+    "y": 1260,
     "wires": [
       []
     ]
@@ -952,7 +952,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 160,
-    "y": 1200,
+    "y": 1240,
     "wires": [
       [
         "e5ec08aa.e1b548"
@@ -982,7 +982,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1240,
+    "y": 1280,
     "wires": [
       [
         "e5ec08aa.e1b548"
@@ -994,7 +994,7 @@
     "type": "inject",
     "z": "a7755eb4.60b0d8",
     "d": true,
-    "name": "💼🏢 Mo.-Fr., 17:00 Uhr",
+    "name": "💼🏢 Mo.-Do., 17:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -1005,14 +1005,14 @@
       }
     ],
     "repeat": "",
-    "crontab": "00 17 * * 1,2,3,4,5",
+    "crontab": "00 17 * * 1,2,3,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "str",
     "x": 160,
-    "y": 1280,
+    "y": 1320,
     "wires": [
       [
         "e5ec08aa.e1b548"
@@ -1023,6 +1023,7 @@
     "id": "7d6e8428d9356970",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
+    "d": true,
     "name": "💼🏢 Mo.-Do., 07:00 Uhr",
     "props": [
       {
@@ -1041,10 +1042,68 @@
     "payload": "",
     "payloadType": "str",
     "x": 160,
-    "y": 1460,
+    "y": 1540,
     "wires": [
       [
         "6a2c9246.71ceec"
+      ]
+    ]
+  },
+  {
+    "id": "73e9e12e60a60e03",
+    "type": "inject",
+    "z": "a7755eb4.60b0d8",
+    "name": "🌴🏡 Täglich, 07:00 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 07 * * *",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 160,
+    "y": 1180,
+    "wires": [
+      [
+        "254d6cfa.9e9e6c"
+      ]
+    ]
+  },
+  {
+    "id": "2acd22a5a9c95352",
+    "type": "inject",
+    "z": "a7755eb4.60b0d8",
+    "name": "🌴🏡 Täglich, 09:30 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "30 09 * * *",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 160,
+    "y": 1360,
+    "wires": [
+      [
+        "e5ec08aa.e1b548"
       ]
     ]
   }

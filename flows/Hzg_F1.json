@@ -76,7 +76,6 @@
     "z": "d3be81f2.b4ce68",
     "name": "Warte auf Wunsch-Temperatur",
     "scope": [
-      "19b73a69.25d41e",
       "6d8e34b1.b30484",
       "22a03621.f5e7a2"
     ],
@@ -185,98 +184,6 @@
     "wires": []
   },
   {
-    "id": "31354252.1e004e",
-    "type": "inject",
-    "z": "d3be81f2.b4ce68",
-    "d": true,
-    "name": "💼 Mo.-Do., 05:30 Uhr",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "30 05 * * 1,2,3,4",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "str",
-    "x": 150,
-    "y": 1100,
-    "wires": [
-      [
-        "19b73a69.25d41e"
-      ]
-    ]
-  },
-  {
-    "id": "767c5dd6.ab73ac",
-    "type": "inject",
-    "z": "d3be81f2.b4ce68",
-    "d": true,
-    "name": "🏡 Fr.-So., 07:00 Uhr",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "00 07 * * 5,6,0",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "str",
-    "x": 140,
-    "y": 1140,
-    "wires": [
-      [
-        "19b73a69.25d41e"
-      ]
-    ]
-  },
-  {
-    "id": "19b73a69.25d41e",
-    "type": "change",
-    "z": "d3be81f2.b4ce68",
-    "name": "Setze Wunsch-Temperatur auf 18°C",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "18",
-        "tot": "num"
-      },
-      {
-        "t": "set",
-        "p": "topic",
-        "pt": "msg",
-        "to": "hallway1/radiator/desiredTemperature",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 470,
-    "y": 1120,
-    "wires": [
-      []
-    ]
-  },
-  {
     "id": "6d8e34b1.b30484",
     "type": "change",
     "z": "d3be81f2.b4ce68",
@@ -302,8 +209,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 470,
-    "y": 1240,
+    "x": 370,
+    "y": 1100,
     "wires": [
       []
     ]
@@ -314,7 +221,6 @@
     "z": "d3be81f2.b4ce68",
     "name": "Warte auf Wunsch-Temperatur",
     "scope": [
-      "19b73a69.25d41e",
       "6d8e34b1.b30484",
       "22a03621.f5e7a2"
     ],
@@ -458,64 +364,6 @@
     "x": 490,
     "y": 460,
     "wires": []
-  },
-  {
-    "id": "fcec6789.830d38",
-    "type": "inject",
-    "z": "d3be81f2.b4ce68",
-    "name": "💼 Mo.-Do., 07:00 Uhr",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "00 07 * * 1,2,3,4",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "str",
-    "x": 150,
-    "y": 1240,
-    "wires": [
-      [
-        "6d8e34b1.b30484"
-      ]
-    ]
-  },
-  {
-    "id": "78b12fc8.1ee178",
-    "type": "inject",
-    "z": "d3be81f2.b4ce68",
-    "name": "Fr.-So., 09:30 Uhr",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "30 09 * * 5,6,0",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "str",
-    "x": 130,
-    "y": 1280,
-    "wires": [
-      [
-        "6d8e34b1.b30484"
-      ]
-    ]
   },
   {
     "id": "3889bf19.a16908",
@@ -748,7 +596,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 1200,
+    "y": 1100,
     "wires": [
       [
         "6d8e34b1.b30484"
