@@ -188,7 +188,6 @@
     "id": "fc295b31.460b6",
     "type": "inject",
     "z": "750f0705.13d438",
-    "d": true,
     "name": "💼 Mo.-Do., 06:00 Uhr",
     "props": [
       {
@@ -218,7 +217,6 @@
     "id": "79058b27.6ef6b4",
     "type": "inject",
     "z": "750f0705.13d438",
-    "d": true,
     "name": "🏡 Fr.-So., 07:00 Uhr",
     "props": [
       {
@@ -237,7 +235,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 140,
-    "y": 1140,
+    "y": 1180,
     "wires": [
       [
         "52bf7b5b.10e544"
@@ -248,7 +246,7 @@
     "id": "5a5276b8.6aaa3",
     "type": "inject",
     "z": "750f0705.13d438",
-    "name": "So.-Di., 21:00 Uhr",
+    "name": "💼 So.-Mi., 21:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -265,8 +263,8 @@
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 130,
-    "y": 1280,
+    "x": 150,
+    "y": 1320,
     "wires": [
       [
         "5ee9c1c6.e4224"
@@ -277,7 +275,7 @@
     "id": "6e172ac2.19de3c",
     "type": "inject",
     "z": "750f0705.13d438",
-    "name": "Do.-Sa., 22:00 Uhr",
+    "name": "🏡 Do.-Sa., 22:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -294,8 +292,8 @@
     "topic": "",
     "payload": "",
     "payloadType": "str",
-    "x": 140,
-    "y": 1320,
+    "x": 150,
+    "y": 1360,
     "wires": [
       [
         "5ee9c1c6.e4224"
@@ -361,7 +359,7 @@
     "to": "",
     "reg": false,
     "x": 470,
-    "y": 1280,
+    "y": 1320,
     "wires": [
       []
     ]
@@ -748,7 +746,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 1240,
+    "y": 1280,
     "wires": [
       [
         "5ee9c1c6.e4224"
@@ -909,7 +907,6 @@
     "id": "f14aaca32d445df9",
     "type": "inject",
     "z": "750f0705.13d438",
-    "d": true,
     "name": "💼🏢 Mo.-Do., 07:15 Uhr",
     "props": [
       {
@@ -928,7 +925,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 160,
-    "y": 1360,
+    "y": 1400,
     "wires": [
       [
         "5ee9c1c6.e4224"
@@ -939,6 +936,7 @@
     "id": "1b6b55e5a3f8b98c",
     "type": "inject",
     "z": "750f0705.13d438",
+    "d": true,
     "name": "🌴🏡 Täglich, 07:00 Uhr",
     "props": [
       {
@@ -957,7 +955,36 @@
     "payload": "",
     "payloadType": "str",
     "x": 160,
-    "y": 1180,
+    "y": 1220,
+    "wires": [
+      [
+        "52bf7b5b.10e544"
+      ]
+    ]
+  },
+  {
+    "id": "5db7a871d33c4902",
+    "type": "inject",
+    "z": "750f0705.13d438",
+    "name": "💼 Mo.-Do., 16:30 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "30 16 * * 1,2,3,4",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 150,
+    "y": 1140,
     "wires": [
       [
         "52bf7b5b.10e544"
