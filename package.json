@@ -14,7 +14,7 @@
     "node-red-contrib-moment": "4.0.0",
     "node-red-contrib-os": "0.2.1",
     "node-red-contrib-roomba980-fw2": "file:./contrib/node-red-contrib-roomba980-fw2",
-    "node-red-contrib-sunevents": "3.0.3",
+    "node-red-contrib-sunevents": "3.1.0",
     "node-red-contrib-unit-converter": "0.0.3",
     "node-red-contrib-zigbee2mqtt": "2.6.4",
     "node-red-dashboard": "3.3.1",
