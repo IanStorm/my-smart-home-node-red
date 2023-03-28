@@ -486,7 +486,6 @@
     "id": "2ee5196a.deee46",
     "type": "inject",
     "z": "ecee5153.6f2368",
-    "d": true,
     "name": "🏡 Täglich, 23:00 Uhr",
     "props": [
       {
@@ -546,7 +545,6 @@
     "id": "b78f0a81.c98e3",
     "type": "inject",
     "z": "ecee5153.6f2368",
-    "d": true,
     "name": "🏡 Täglich, 21:00 Uhr",
     "props": [
       {
@@ -964,7 +962,6 @@
     "id": "f5976bba17c2b168",
     "type": "inject",
     "z": "ecee5153.6f2368",
-    "d": true,
     "name": "🌴🏡 Täglich, 07:00 Uhr",
     "props": [
       {
@@ -994,7 +991,6 @@
     "id": "9ba241d1c8236a46",
     "type": "inject",
     "z": "ecee5153.6f2368",
-    "d": true,
     "name": "🌴🏡 Täglich, 10:00 Uhr",
     "props": [
       {

@@ -1024,7 +1024,6 @@
     "id": "b89ce3f3d33afc28",
     "type": "inject",
     "z": "c6075ab3.4abae8",
-    "d": true,
     "name": "🌴🏡 Täglich, 07:30 Uhr",
     "props": [
       {
@@ -1054,7 +1053,6 @@
     "id": "df0fe38036201197",
     "type": "inject",
     "z": "c6075ab3.4abae8",
-    "d": true,
     "name": "🌴🏡 Täglich, 22:30 Uhr",
     "props": [
       {

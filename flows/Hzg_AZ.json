@@ -248,7 +248,6 @@
     "id": "5a5276b8.6aaa3",
     "type": "inject",
     "z": "750f0705.13d438",
-    "d": true,
     "name": "💼 So.-Mi., 21:00 Uhr",
     "props": [
       {
@@ -278,7 +277,6 @@
     "id": "6e172ac2.19de3c",
     "type": "inject",
     "z": "750f0705.13d438",
-    "d": true,
     "name": "🏡 Do.-Sa., 22:00 Uhr",
     "props": [
       {
@@ -941,7 +939,6 @@
     "id": "1b6b55e5a3f8b98c",
     "type": "inject",
     "z": "750f0705.13d438",
-    "d": true,
     "name": "🌴🏡 Täglich, 07:00 Uhr",
     "props": [
       {
