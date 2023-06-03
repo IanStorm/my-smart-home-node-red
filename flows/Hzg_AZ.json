@@ -188,7 +188,6 @@
     "id": "fc295b31.460b6",
     "type": "inject",
     "z": "750f0705.13d438",
-    "d": true,
     "name": "💼 Mo.-Do., 06:00 Uhr",
     "props": [
       {
@@ -218,7 +217,6 @@
     "id": "79058b27.6ef6b4",
     "type": "inject",
     "z": "750f0705.13d438",
-    "d": true,
     "name": "🏡 Fr.-So., 07:00 Uhr",
     "props": [
       {
@@ -909,7 +907,6 @@
     "id": "f14aaca32d445df9",
     "type": "inject",
     "z": "750f0705.13d438",
-    "d": true,
     "name": "💼🏢 Mo.-Do., 07:15 Uhr",
     "props": [
       {
@@ -939,6 +936,7 @@
     "id": "1b6b55e5a3f8b98c",
     "type": "inject",
     "z": "750f0705.13d438",
+    "d": true,
     "name": "🌴🏡 Täglich, 07:00 Uhr",
     "props": [
       {
@@ -968,7 +966,6 @@
     "id": "5db7a871d33c4902",
     "type": "inject",
     "z": "750f0705.13d438",
-    "d": true,
     "name": "💼 Mo.-Do., 16:30 Uhr",
     "props": [
       {
