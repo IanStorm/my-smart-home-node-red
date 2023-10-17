@@ -10,7 +10,7 @@
     "id": "5c1e7e68.c489d8",
     "type": "comment",
     "z": "750f0705.13d438",
-    "name": "Heizkörper -> Arbeitszimmer",
+    "name": "Heizkörper ➡ Arbeitszimmer",
     "info": "",
     "x": 140,
     "y": 40,
@@ -188,6 +188,7 @@
     "id": "fc295b31.460b6",
     "type": "inject",
     "z": "750f0705.13d438",
+    "d": true,
     "name": "💼 Mo.-Do., 06:00 Uhr",
     "props": [
       {
@@ -304,13 +305,13 @@
     "id": "52bf7b5b.10e544",
     "type": "change",
     "z": "750f0705.13d438",
-    "name": "Setze Wunsch-Temperatur auf 19°C",
+    "name": "Setze Wunsch-Temperatur auf 20°C",
     "rules": [
       {
         "t": "set",
         "p": "payload",
         "pt": "msg",
-        "to": "19",
+        "to": "20",
         "tot": "num"
       },
       {
@@ -907,7 +908,7 @@
     "id": "f14aaca32d445df9",
     "type": "inject",
     "z": "750f0705.13d438",
-    "name": "💼🏢 Mo.-Do., 07:15 Uhr",
+    "name": "💼🏢 Mo.-Do., 07:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -918,7 +919,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "15 07 * * 1,2,3,4",
+    "crontab": "00 07 * * 1,2,3,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
@@ -966,7 +967,7 @@
     "id": "5db7a871d33c4902",
     "type": "inject",
     "z": "750f0705.13d438",
-    "name": "💼 Mo.-Do., 16:30 Uhr",
+    "name": "💼 Mo.-Do., 16:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -977,7 +978,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 16 * * 1,2,3,4",
+    "crontab": "00 16 * * 1,2,3,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",

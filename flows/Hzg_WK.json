@@ -10,7 +10,7 @@
     "id": "9bde1f8b.224a9",
     "type": "comment",
     "z": "c6075ab3.4abae8",
-    "name": "Heizkörper -> Wohnküche",
+    "name": "Heizkörper ➡ Wohnküche",
     "info": "",
     "x": 130,
     "y": 40,
@@ -208,7 +208,7 @@
     "id": "f64ec319.a1a098",
     "type": "inject",
     "z": "c6075ab3.4abae8",
-    "name": "🏡 Fr.-So., 07:30 Uhr",
+    "name": "🏡 Fr.-So., 07:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -219,7 +219,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 07 * * 5,6,0",
+    "crontab": "00 07 * * 5,6,0",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
@@ -237,13 +237,13 @@
     "id": "62fbdecd.d2f198",
     "type": "change",
     "z": "c6075ab3.4abae8",
-    "name": "Setze Wunsch-Temperatur auf 19°C",
+    "name": "Setze Wunsch-Temperatur auf 20°C",
     "rules": [
       {
         "t": "set",
         "p": "payload",
         "pt": "msg",
-        "to": "19",
+        "to": "20",
         "tot": "num"
       },
       {
@@ -930,7 +930,7 @@
     "id": "1570f9530b0b16a8",
     "type": "inject",
     "z": "c6075ab3.4abae8",
-    "name": "💼 Mo.-Do., 16:30 Uhr",
+    "name": "💼 Mo.-Do., 16:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -941,7 +941,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 16 * * 1,2,3,4",
+    "crontab": "00 16 * * 1,2,3,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",

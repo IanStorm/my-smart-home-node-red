@@ -10,7 +10,7 @@
     "id": "8996d731.308628",
     "type": "comment",
     "z": "a7755eb4.60b0d8",
-    "name": "Heizkörper -> Badezimmer",
+    "name": "Heizkörper ➡ Badezimmer",
     "info": "",
     "x": 130,
     "y": 40,
@@ -961,7 +961,7 @@
     "id": "475d4df3.773c74",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
-    "name": "🏡 Fr.-So., 09:30 Uhr",
+    "name": "🏡 Fr.-So., 10:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -972,7 +972,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 09 * * 5,6,0",
+    "crontab": "00 10 * * 5,6,0",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
@@ -990,7 +990,7 @@
     "id": "add30977107aadef",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
-    "name": "💼🏢 Mo.-Do., 16:30 Uhr",
+    "name": "💼🏢 Mo.-Do., 16:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -1001,7 +1001,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "30 16 * * 1,2,3,4",
+    "crontab": "00 16 * * 1,2,3,4",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",

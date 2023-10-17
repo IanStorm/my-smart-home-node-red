@@ -10,7 +10,7 @@
     "id": "ba4c0b77.fd47a",
     "type": "comment",
     "z": "ecee5153.6f2368",
-    "name": "Heizkörper -> Schlafzimmer",
+    "name": "Heizkörper ➡ Schlafzimmer",
     "info": "",
     "x": 140,
     "y": 40,
@@ -208,7 +208,7 @@
     "id": "108d6033.b4365",
     "type": "inject",
     "z": "ecee5153.6f2368",
-    "name": "🏡 Fr.-So., 07:00 Uhr",
+    "name": "🏡 Fr.-So., 06:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -219,7 +219,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "00 07 * * 5,6,0",
+    "crontab": "30 06 * * 5,6,0",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
