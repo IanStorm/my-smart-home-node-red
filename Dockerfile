@@ -6,7 +6,7 @@ ENV TZ="Europe/Berlin"
 COPY ./contrib/ ./contrib/
 COPY .npmrc .
 COPY package.json .
-RUN npm install --only=production
+RUN npm install --omit=dev
 
 # ⬇ Copy stuff see .dockerignore (for simplicity some stuff is copied twice)
 COPY ./ /data/
