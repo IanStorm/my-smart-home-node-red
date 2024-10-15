@@ -147,13 +147,13 @@
     "id": "2282350e.97f30a",
     "type": "change",
     "z": "be8a6639.d3183",
-    "name": "Hole Max.-Temperatur",
+    "name": "Hole ∅-Temperatur",
     "rules": [
       {
         "t": "set",
         "p": "payload",
         "pt": "msg",
-        "to": "$max(msg.payload)",
+        "to": "$average(msg.payload)",
         "tot": "jsonata"
       }
     ],
@@ -162,11 +162,12 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 440,
+    "x": 430,
     "y": 460,
     "wires": [
       [
-        "54a4d01e.d04f3"
+        "54a4d01e.d04f3",
+        "2cce1f2548105e9f"
       ]
     ]
   },
@@ -455,7 +456,6 @@
     "id": "7e2fd4.8b5ef02c",
     "type": "debug",
     "z": "be8a6639.d3183",
-    "d": true,
     "name": "Debugge 3-Tages-Vorhersage",
     "active": true,
     "tosidebar": true,
@@ -525,5 +525,22 @@
         "7e2fd4.8b5ef02c"
       ]
     ]
+  },
+  {
+    "id": "2cce1f2548105e9f",
+    "type": "debug",
+    "z": "be8a6639.d3183",
+    "name": "Debugge ∅-Temperatur",
+    "active": true,
+    "tosidebar": true,
+    "console": true,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 800,
+    "y": 460,
+    "wires": []
   }
 ]
