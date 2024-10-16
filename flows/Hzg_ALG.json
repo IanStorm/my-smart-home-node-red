@@ -175,13 +175,13 @@
     "id": "54a4d01e.d04f3",
     "type": "change",
     "z": "be8a6639.d3183",
-    "name": "<12°C?",
+    "name": "<15°C?",
     "rules": [
       {
         "t": "set",
         "p": "payload",
         "pt": "msg",
-        "to": "msg.payload < 12",
+        "to": "msg.payload < 15",
         "tot": "jsonata"
       }
     ],
