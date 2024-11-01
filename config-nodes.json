@@ -99,9 +99,9 @@
   {
     "id": "1f1ed453.c0771c",
     "type": "fritz-api",
-    "name": "fritzapi (FRITZ!Box 7580)",
+    "name": "fritzapi (FRITZ!Box 5690 Pro)",
     "host": "http://fritz.box",
-    "strictSSL": true
+    "strictSSL": false
   },
   {
     "id": "412fbf62.1e1d9",
@@ -239,7 +239,7 @@
   {
     "id": "d54c9b6e.0cffc",
     "type": "fritzbox-config",
-    "name": "fritz (FRITZ!Box 7580)",
+    "name": "fritz (FRITZ!Box 5690 Pro)",
     "host": "192.168.178.1",
     "port": "49000",
     "ssl": false,
