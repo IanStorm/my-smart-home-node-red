@@ -33,7 +33,7 @@
     "z": "2fc0c3d0ea12284d",
     "name": "Warte auf Sensor-Daten",
     "server": "dd3cc3c3.66f0c8",
-    "friendly_name": "temperature/hallway1",
+    "friendly_name": "hallway_1/temperature",
     "device_id": "0x00158d0007bc14f2",
     "state": "0",
     "outputAtStartup": true,

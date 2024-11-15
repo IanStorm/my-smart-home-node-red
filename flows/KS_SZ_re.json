@@ -311,7 +311,7 @@
     "z": "d4a646cb.d8d6f",
     "name": "Warte auf Sensor-Daten",
     "server": "dd3cc3c3.66f0c8",
-    "friendly_name": "contact/bedroom/windows/right",
+    "friendly_name": "bedroom/windows/righty/contact",
     "device_id": "0x00158d00045cc568",
     "state": "0",
     "outputAtStartup": true,

@@ -580,17 +580,6 @@
     "className": ""
   },
   {
-    "id": "c8f164cccb482c96",
-    "type": "ui_group",
-    "name": "Tür",
-    "tab": "f0d49b09.776a2",
-    "order": 6,
-    "disp": true,
-    "width": "6",
-    "collapse": false,
-    "className": ""
-  },
-  {
     "id": "76ebf651717f5124",
     "type": "ui_group",
     "name": "Tür",

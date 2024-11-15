@@ -71,11 +71,11 @@
     "id": "3fbdd68c.1daefa",
     "type": "change",
     "z": "ffb49bdd.d4ea8",
-    "name": "Merke CC2531-Firmware-Version",
+    "name": "Merke Gateway-Firmware-Version",
     "rules": [
       {
         "t": "set",
-        "p": "cc2531.version",
+        "p": "gateway.version",
         "pt": "flow",
         "to": "payload.coordinator.meta.revision",
         "tot": "msg"
@@ -131,14 +131,21 @@
     "id": "71ea7657.f782c8",
     "type": "change",
     "z": "ffb49bdd.d4ea8",
-    "name": "Hole CC2531-Firmware-Version",
+    "name": "Hole Gateway-Firmware-Version",
     "rules": [
       {
         "t": "set",
         "p": "payload",
         "pt": "msg",
-        "to": "cc2531.version",
+        "to": "gateway.version",
         "tot": "flow"
+      },
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "$substring(msg.payload, 2)",
+        "tot": "jsonata"
       }
     ],
     "action": "",
@@ -146,7 +153,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 490,
+    "x": 510,
     "y": 640,
     "wires": [
       [
@@ -158,12 +165,12 @@
     "id": "ad344d62.87da2",
     "type": "complete",
     "z": "ffb49bdd.d4ea8",
-    "name": "Warte auf CC2531-Firmware-Version",
+    "name": "Warte auf Gateway-Firmware-Version",
     "scope": [
       "3fbdd68c.1daefa"
     ],
     "uncaught": false,
-    "x": 180,
+    "x": 190,
     "y": 640,
     "wires": [
       [
@@ -207,7 +214,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 480,
+    "x": 500,
     "y": 700,
     "wires": [
       [
@@ -223,11 +230,16 @@
     "order": 2,
     "width": 0,
     "height": 0,
-    "name": "Zeige CC2531-Firmware-Version",
-    "label": "CC2531-Firmware:",
+    "name": "Zeige Gateway-Firmware-Version",
+    "label": "Gateway-Firmware:",
     "format": "v{{msg.payload}}",
     "layout": "row-spread",
-    "x": 800,
+    "className": "",
+    "style": false,
+    "font": "",
+    "fontSize": "",
+    "color": "#000000",
+    "x": 820,
     "y": 640,
     "wires": []
   },
@@ -243,7 +255,7 @@
     "label": "Zigbee2MQTT:",
     "format": "v{{msg.payload}}",
     "layout": "row-spread",
-    "x": 780,
+    "x": 800,
     "y": 700,
     "wires": []
   },
@@ -320,7 +332,7 @@
     "label": "Node.js:",
     "format": "{{msg.payload}}",
     "layout": "row-spread",
-    "x": 760,
+    "x": 780,
     "y": 520,
     "wires": []
   },
@@ -391,7 +403,7 @@
     ],
     "outputs": 0,
     "cts": false,
-    "x": 760,
+    "x": 780,
     "y": 580,
     "wires": []
   },
@@ -498,7 +510,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 460,
+    "x": 480,
     "y": 520,
     "wires": [
       [
@@ -525,7 +537,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 460,
+    "x": 480,
     "y": 580,
     "wires": [
       [

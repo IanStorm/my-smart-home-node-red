@@ -312,7 +312,7 @@
     "z": "969b20e8.461548",
     "name": "Warte auf Sensor-Daten",
     "server": "dd3cc3c3.66f0c8",
-    "friendly_name": "contact/living-kitchenArea/balconyDoors/small",
+    "friendly_name": "living-kitchen_area/doors/balcony_small/contact",
     "device_id": "0x00158d00045ce46a",
     "state": "0",
     "outputAtStartup": true,

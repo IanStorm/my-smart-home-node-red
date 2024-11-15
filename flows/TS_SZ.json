@@ -32,7 +32,7 @@
     "z": "1fc495ce.b6f6b2",
     "name": "Warte auf Sensor-Daten",
     "server": "dd3cc3c3.66f0c8",
-    "friendly_name": "temperature/bedroom",
+    "friendly_name": "bedroom/door/temperature",
     "device_id": "0x00158d00056e4e4a",
     "state": "0",
     "outputAtStartup": true,

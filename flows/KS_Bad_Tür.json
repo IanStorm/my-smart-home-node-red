@@ -313,7 +313,7 @@
     "z": "e289f3210fab70da",
     "name": "Warte auf Sensor-Daten",
     "server": "dd3cc3c3.66f0c8",
-    "friendly_name": "contact/bathroom/door",
+    "friendly_name": "bathroom/door/contact",
     "device_id": "0x00158d0007ef754e",
     "state": "0",
     "outputAtStartup": true,

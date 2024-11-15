@@ -32,7 +32,7 @@
     "z": "ae79e463.ac6c38",
     "name": "Warte auf Sensor-Daten",
     "server": "dd3cc3c3.66f0c8",
-    "friendly_name": "temperature/balcony",
+    "friendly_name": "balcony/greenhouse/temperature",
     "device_id": "0x00158d0005405541",
     "state": "0",
     "outputAtStartup": true,

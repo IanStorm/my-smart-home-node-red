@@ -32,7 +32,7 @@
     "z": "1dd02896.299c2f",
     "name": "Warte auf Sensor-Daten",
     "server": "dd3cc3c3.66f0c8",
-    "friendly_name": "temperature/living-kitchenArea",
+    "friendly_name": "living-kitchen_area/temperature",
     "device_id": "0x00158d00066924f4",
     "state": "0",
     "outputAtStartup": true,
