@@ -17,8 +17,8 @@ See how to put this repo in action at [IanStorm/my-smart-home-ras-pi](https://gi
 1. Follow ["How to get a pre-built Docker image?"](#-how-to-get-a-pre-built-docker-image-☁️)
 2. Ensure `./credentials/docker-env.list` exists. See ["a word on docker-env.list"](#-a-word-on-docker-env.list-📝).
 2. Start a Docker instance:
-```
-$	docker run --rm -i -t --network host -p 1880:1880 --env-file ./credentials/docker-env.list ianstorm/my-smart-home-node-red:latest
+```sh
+docker run --rm -i -t --network host -p 1880:1880 --env-file ./credentials/docker-env.list ianstorm/my-smart-home-node-red:latest
 ```
 
 
@@ -58,8 +58,8 @@ Make sure you have installed *Visual Studio Code*.
 ### How to get a pre-built Docker image? ☁️
 
 Get the latest Docker image from Docker Hub:
-```
-$	docker pull ianstorm/my-smart-home-node-red:latest
+```sh
+docker pull ianstorm/my-smart-home-node-red:latest
 ```
 
 
