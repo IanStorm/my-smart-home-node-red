@@ -229,6 +229,7 @@
     "passthru": true,
     "decouple": "false",
     "topic": "",
+    "topicType": "str",
     "style": "",
     "onvalue": "true",
     "onvalueType": "bool",
@@ -238,6 +239,8 @@
     "offvalueType": "bool",
     "officon": "",
     "offcolor": "",
+    "animate": true,
+    "className": "",
     "x": 630,
     "y": 620,
     "wires": [
@@ -677,8 +680,7 @@
     "y": 700,
     "wires": [
       [
-        "bd307592.b9272",
-        "c8dbbf0a.621dd8"
+        "bd307592.b9272"
       ]
     ]
   },
@@ -778,7 +780,7 @@
     "topic": "",
     "topicType": "str",
     "x": 650,
-    "y": 680,
+    "y": 700,
     "wires": [
       [
         "ed88101b.8648d8"
@@ -802,34 +804,5 @@
     "x": 930,
     "y": 700,
     "wires": []
-  },
-  {
-    "id": "c8dbbf0a.621dd8",
-    "type": "ui_button",
-    "z": "fe976b5a.539a18",
-    "d": true,
-    "name": "Interaktion Automatisierungsinfo",
-    "group": "2f3f5aef.3d20ee",
-    "order": 6,
-    "width": "1",
-    "height": "1",
-    "passthru": false,
-    "label": "",
-    "tooltip": "",
-    "color": "",
-    "bgcolor": "transparent",
-    "className": "",
-    "icon": "info",
-    "payload": "Schaltet vollautomatisch gemäß Zeitplan.",
-    "payloadType": "str",
-    "topic": "",
-    "topicType": "str",
-    "x": 650,
-    "y": 720,
-    "wires": [
-      [
-        "ed88101b.8648d8"
-      ]
-    ]
   }
 ]

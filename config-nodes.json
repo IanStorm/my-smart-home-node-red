@@ -393,7 +393,7 @@
     "type": "ui_group",
     "name": "Gewächshaus-Sensor",
     "tab": "dc2a0ecd.db0f18",
-    "order": 2,
+    "order": 3,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -506,7 +506,7 @@
     "type": "ui_group",
     "name": "Nistkasten",
     "tab": "dc2a0ecd.db0f18",
-    "order": 3,
+    "order": 4,
     "disp": true,
     "width": "6",
     "collapse": true
@@ -584,6 +584,17 @@
     "type": "ui_group",
     "name": "Tür",
     "tab": "523209a3.f325d",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false,
+    "className": ""
+  },
+  {
+    "id": "7c0aecd25827957b",
+    "type": "ui_group",
+    "name": "Geländer-Beleuchtung",
+    "tab": "dc2a0ecd.db0f18",
     "order": 2,
     "disp": true,
     "width": "6",

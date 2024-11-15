@@ -1,0 +1,1170 @@
+[
+  {
+    "id": "9ca392a8963a0f2a",
+    "type": "tab",
+    "label": "Licht_BLK_rail",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "382aa1f0b9e98725",
+    "type": "comment",
+    "z": "9ca392a8963a0f2a",
+    "name": "Licht -> Balkon -> Geländer",
+    "info": "",
+    "x": 140,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "746a10d1f2f26955",
+    "type": "comment",
+    "z": "9ca392a8963a0f2a",
+    "name": "Daten",
+    "info": "",
+    "x": 90,
+    "y": 200,
+    "wires": []
+  },
+  {
+    "id": "3be63f7d76aa7eca",
+    "type": "comment",
+    "z": "9ca392a8963a0f2a",
+    "name": "Automatisch Schalten",
+    "info": "",
+    "x": 140,
+    "y": 680,
+    "wires": []
+  },
+  {
+    "id": "fa26a8a58599c0bf",
+    "type": "comment",
+    "z": "9ca392a8963a0f2a",
+    "name": "GUI",
+    "info": "",
+    "x": 90,
+    "y": 880,
+    "wires": []
+  },
+  {
+    "id": "86a2c6a92eca927f",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "Merke LQI",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload.linkquality",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "device",
+        "tot": "flow"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "msg.topic & \"/LQI\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1050,
+    "y": 260,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "36affe9673a56905",
+    "type": "inject",
+    "z": "9ca392a8963a0f2a",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload",
+        "v": "",
+        "vt": "str"
+      },
+      {
+        "p": "topic",
+        "v": "",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 940,
+    "wires": [
+      [
+        "1e5f1e3e580bcf4e"
+      ]
+    ]
+  },
+  {
+    "id": "1e5f1e3e580bcf4e",
+    "type": "ui_template",
+    "z": "9ca392a8963a0f2a",
+    "group": "7c0aecd25827957b",
+    "name": "Zeige Icon",
+    "order": 1,
+    "width": "1",
+    "height": "3",
+    "format": "<div style=\"align-self: center; font-size: 40px;\">\n    <i class=\"material-icons\" style=\"font-size: inherit;\">\n        lightbulb\n    </i>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": false,
+    "templateScope": "local",
+    "className": "",
+    "x": 370,
+    "y": 940,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c095d8a505686e20",
+    "type": "complete",
+    "z": "9ca392a8963a0f2a",
+    "name": "Warte auf LQI",
+    "scope": [
+      "86a2c6a92eca927f"
+    ],
+    "uncaught": false,
+    "x": 110,
+    "y": 1000,
+    "wires": [
+      [
+        "6d2511f9956234a8"
+      ]
+    ]
+  },
+  {
+    "id": "6d2511f9956234a8",
+    "type": "ui_text",
+    "z": "9ca392a8963a0f2a",
+    "group": "7c0aecd25827957b",
+    "order": 2,
+    "width": "2",
+    "height": 1,
+    "name": "Zeige LQI",
+    "label": "<i class=\"material-icons\">sync</i>",
+    "format": "{{msg.payload}}",
+    "layout": "row-center",
+    "className": "",
+    "style": false,
+    "font": "",
+    "fontSize": "",
+    "color": "#000000",
+    "x": 360,
+    "y": 1000,
+    "wires": []
+  },
+  {
+    "id": "3af2f2859fa416c8",
+    "type": "switch",
+    "z": "9ca392a8963a0f2a",
+    "name": "Schaltzustand?",
+    "property": "payload.state",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "OFF",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "ON",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "false",
+    "repair": false,
+    "outputs": 3,
+    "x": 520,
+    "y": 420,
+    "wires": [
+      [
+        "ee6eaf993e1a9ef6"
+      ],
+      [
+        "805838234c91263c"
+      ],
+      [
+        "d9fba7f4e70a363f"
+      ]
+    ]
+  },
+  {
+    "id": "ee6eaf993e1a9ef6",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "\"OFF\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "false",
+        "tot": "bool"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 690,
+    "y": 380,
+    "wires": [
+      [
+        "97be71df7a86e93d"
+      ]
+    ]
+  },
+  {
+    "id": "805838234c91263c",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "\"ON\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "true",
+        "tot": "bool"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 690,
+    "y": 420,
+    "wires": [
+      [
+        "97be71df7a86e93d"
+      ]
+    ]
+  },
+  {
+    "id": "d9fba7f4e70a363f",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "undefined",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "undefined",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 700,
+    "y": 460,
+    "wires": [
+      [
+        "97be71df7a86e93d"
+      ]
+    ]
+  },
+  {
+    "id": "6a43dc43bf65466f",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "Bereinige Nachricht",
+    "rules": [
+      {
+        "t": "delete",
+        "p": "changed",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "format",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "homekit",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "item",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "payload_in",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "payload_raw",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "selector",
+        "pt": "msg"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 310,
+    "y": 340,
+    "wires": [
+      [
+        "3af2f2859fa416c8",
+        "86a2c6a92eca927f",
+        "28b9125a1874c789"
+      ]
+    ]
+  },
+  {
+    "id": "49d9cd53d8e2d28b",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "Merke Schaltzustand",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "device",
+        "tot": "flow"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "msg.topic & \"/isSwitchedOn\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1080,
+    "y": 420,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "645389580d7518da",
+    "type": "complete",
+    "z": "9ca392a8963a0f2a",
+    "name": "Warte auf Schaltzustand",
+    "scope": [
+      "49d9cd53d8e2d28b"
+    ],
+    "uncaught": false,
+    "x": 150,
+    "y": 1120,
+    "wires": [
+      [
+        "08983f8193076094"
+      ]
+    ]
+  },
+  {
+    "id": "98451e5b22a74f56",
+    "type": "inject",
+    "z": "9ca392a8963a0f2a",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload",
+        "v": "",
+        "vt": "str"
+      },
+      {
+        "p": "topic",
+        "v": "",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 120,
+    "wires": [
+      [
+        "baac88829a7f61e0"
+      ]
+    ]
+  },
+  {
+    "id": "baac88829a7f61e0",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "set device",
+    "rules": [
+      {
+        "t": "set",
+        "p": "device",
+        "pt": "flow",
+        "to": "balcony/rail/string_lights",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 280,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "a67d94ef25851dbd",
+    "type": "complete",
+    "z": "9ca392a8963a0f2a",
+    "name": "Warte auf Schaltung",
+    "scope": [
+      "5ae7b1490a2d830b",
+      "2c550ecfa6eb0800",
+      "46ec0a46d63d0b24"
+    ],
+    "uncaught": false,
+    "x": 130,
+    "y": 560,
+    "wires": [
+      [
+        "33402de0cc086b0d"
+      ]
+    ]
+  },
+  {
+    "id": "8f8532f3f630cbd9",
+    "type": "inject",
+    "z": "9ca392a8963a0f2a",
+    "name": "Beim Start",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 110,
+    "y": 1180,
+    "wires": [
+      [
+        "10de521023a88ba6"
+      ]
+    ]
+  },
+  {
+    "id": "10de521023a88ba6",
+    "type": "ui_button",
+    "z": "9ca392a8963a0f2a",
+    "name": "Interaktion Automatisierungsinfo",
+    "group": "7c0aecd25827957b",
+    "order": 5,
+    "width": "2",
+    "height": "1",
+    "passthru": false,
+    "label": "",
+    "tooltip": "",
+    "color": "",
+    "bgcolor": "transparent",
+    "className": "",
+    "icon": "info",
+    "payload": "Schaltet vollautomatisch gemäß Zeitplan.",
+    "payloadType": "str",
+    "topic": "",
+    "topicType": "str",
+    "x": 430,
+    "y": 1180,
+    "wires": [
+      [
+        "ab47a1cd97b1f32d"
+      ]
+    ]
+  },
+  {
+    "id": "ab47a1cd97b1f32d",
+    "type": "ui_toast",
+    "z": "9ca392a8963a0f2a",
+    "position": "bottom right",
+    "displayTime": "5",
+    "highlight": "",
+    "sendall": false,
+    "outputs": 0,
+    "ok": "OK",
+    "cancel": "",
+    "raw": false,
+    "className": "",
+    "topic": "Balkon: Lichterkette",
+    "name": "Zeige Benachrichtigung",
+    "x": 710,
+    "y": 1180,
+    "wires": []
+  },
+  {
+    "id": "5ae7b1490a2d830b",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "Schalte ein",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "true",
+        "tot": "bool"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "device",
+        "tot": "flow"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "msg.topic & \"/isSwitchedOn\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 390,
+    "y": 740,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "51061ff7236f7bbb",
+    "type": "subflow:165c0739.3fd931",
+    "z": "9ca392a8963a0f2a",
+    "name": "Warte auf Sonnenuntergang",
+    "env": [
+      {
+        "name": "sunEvent",
+        "value": "sunsetStart",
+        "type": "str"
+      }
+    ],
+    "x": 160,
+    "y": 740,
+    "wires": [
+      [
+        "5ae7b1490a2d830b"
+      ]
+    ]
+  },
+  {
+    "id": "94a65a9e3c7ede31",
+    "type": "inject",
+    "z": "9ca392a8963a0f2a",
+    "name": "Täglich, 23 Uhr",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 23 * * *",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 130,
+    "y": 800,
+    "wires": [
+      [
+        "2c550ecfa6eb0800"
+      ]
+    ]
+  },
+  {
+    "id": "2c550ecfa6eb0800",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "Schalte aus",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "false",
+        "tot": "bool"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "device",
+        "tot": "flow"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "msg.topic & \"/isSwitchedOn\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 390,
+    "y": 800,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "08983f8193076094",
+    "type": "ui_switch",
+    "z": "9ca392a8963a0f2a",
+    "name": "Interaktion Schaltzustand",
+    "label": "<i class=\"material-icons\">power_settings_new</i>",
+    "tooltip": "",
+    "group": "7c0aecd25827957b",
+    "order": 4,
+    "width": 2,
+    "height": "2",
+    "passthru": true,
+    "decouple": "false",
+    "topic": "",
+    "topicType": "str",
+    "style": "",
+    "onvalue": "true",
+    "onvalueType": "bool",
+    "onicon": "",
+    "oncolor": "",
+    "offvalue": "false",
+    "offvalueType": "bool",
+    "officon": "",
+    "offcolor": "",
+    "animate": true,
+    "className": "",
+    "x": 410,
+    "y": 1120,
+    "wires": [
+      [
+        "46ec0a46d63d0b24"
+      ]
+    ]
+  },
+  {
+    "id": "46ec0a46d63d0b24",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "Schalte um",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "device",
+        "tot": "flow"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "msg.topic & \"/isSwitchedOn\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 670,
+    "y": 1120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "56a5fa14e4a95303",
+    "type": "zigbee2mqtt-out",
+    "z": "9ca392a8963a0f2a",
+    "name": "Schalte Aktor",
+    "server": "dd3cc3c3.66f0c8",
+    "friendly_name": "msg.topic",
+    "device_id": "msg.topic",
+    "command": "state",
+    "commandType": "z2m_cmd",
+    "payload": "payload",
+    "payloadType": "msg",
+    "optionsValue": "",
+    "optionsType": "nothing",
+    "x": 1050,
+    "y": 580,
+    "wires": []
+  },
+  {
+    "id": "33402de0cc086b0d",
+    "type": "switch",
+    "z": "9ca392a8963a0f2a",
+    "name": "Schaltzustand?",
+    "property": "payload",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "true"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "false",
+    "repair": false,
+    "outputs": 2,
+    "x": 360,
+    "y": 560,
+    "wires": [
+      [
+        "83072439eddc870f",
+        "b01070fda236a854"
+      ],
+      [
+        "01767136d5fcc9a4"
+      ]
+    ]
+  },
+  {
+    "id": "83072439eddc870f",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "\"sparkle\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "sparkle",
+        "tot": "str"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "device",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 540,
+    "y": 520,
+    "wires": [
+      [
+        "eb4f7b61de6598e7"
+      ]
+    ]
+  },
+  {
+    "id": "01767136d5fcc9a4",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "\"off\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "off",
+        "tot": "str"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "device",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 530,
+    "y": 600,
+    "wires": [
+      [
+        "03ab932019a11e22"
+      ]
+    ]
+  },
+  {
+    "id": "97be71df7a86e93d",
+    "type": "rbe",
+    "z": "9ca392a8963a0f2a",
+    "name": "Geändert?",
+    "func": "rbe",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "septopics": false,
+    "property": "payload",
+    "topi": "topic",
+    "x": 870,
+    "y": 400,
+    "wires": [
+      [
+        "de7c71124622f4fb"
+      ]
+    ]
+  },
+  {
+    "id": "de7c71124622f4fb",
+    "type": "debounce",
+    "z": "9ca392a8963a0f2a",
+    "time": "5000",
+    "name": "5s debounce",
+    "x": 870,
+    "y": 440,
+    "wires": [
+      [
+        "49d9cd53d8e2d28b"
+      ]
+    ]
+  },
+  {
+    "id": "28b9125a1874c789",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "Merke \"Hat Updates?\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload.update_available",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "device",
+        "tot": "flow"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "msg.topic & \"/isOutdated\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1080,
+    "y": 320,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "d431671faf66e37e",
+    "type": "complete",
+    "z": "9ca392a8963a0f2a",
+    "name": "Warte auf \"Hat Updates?\"",
+    "scope": [
+      "28b9125a1874c789"
+    ],
+    "uncaught": false,
+    "x": 150,
+    "y": 1060,
+    "wires": [
+      [
+        "2d4720565ee144ea"
+      ]
+    ]
+  },
+  {
+    "id": "2d4720565ee144ea",
+    "type": "ui_template",
+    "z": "9ca392a8963a0f2a",
+    "group": "7c0aecd25827957b",
+    "name": "Zeige \"Hat Updates?\"",
+    "order": 3,
+    "width": "1",
+    "height": "2",
+    "format": "<div style=\"align-self: center;\">\n    <i ng-if=\"msg.payload\" class=\"material-icons\">update</i>\n    <i ng-if=\"!msg.payload\" class=\"material-icons\">update_disabled</i>\n</div>",
+    "storeOutMessages": false,
+    "fwdInMessages": false,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "className": "",
+    "x": 400,
+    "y": 1060,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "083b78b17c6ec400",
+    "type": "zigbee2mqtt-out",
+    "z": "9ca392a8963a0f2a",
+    "name": "Setze Aktor-Effekt",
+    "server": "dd3cc3c3.66f0c8",
+    "friendly_name": "msg.topic",
+    "device_id": "msg.topic",
+    "command": "effect",
+    "commandType": "str",
+    "payload": "payload",
+    "payloadType": "msg",
+    "optionsValue": "",
+    "optionsType": "nothing",
+    "x": 1070,
+    "y": 520,
+    "wires": []
+  },
+  {
+    "id": "db39054d0db7cd7e",
+    "type": "zigbee2mqtt-get",
+    "z": "9ca392a8963a0f2a",
+    "name": "Lese Aktor-Daten",
+    "server": "dd3cc3c3.66f0c8",
+    "friendly_name": "msg.topic",
+    "device_id": "msg.topic",
+    "state": "0",
+    "enableMultiple": false,
+    "x": 310,
+    "y": 300,
+    "wires": [
+      [
+        "6a43dc43bf65466f"
+      ]
+    ]
+  },
+  {
+    "id": "b5f579b6a62f6ea8",
+    "type": "inject",
+    "z": "9ca392a8963a0f2a",
+    "name": "Alle 10s",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "10",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 100,
+    "y": 260,
+    "wires": [
+      [
+        "9912c88464f193fd"
+      ]
+    ]
+  },
+  {
+    "id": "9912c88464f193fd",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "get device",
+    "rules": [
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "device",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 290,
+    "y": 260,
+    "wires": [
+      [
+        "db39054d0db7cd7e"
+      ]
+    ]
+  },
+  {
+    "id": "eb4f7b61de6598e7",
+    "type": "delay",
+    "z": "9ca392a8963a0f2a",
+    "name": "1s delay",
+    "pauseType": "delay",
+    "timeout": "1",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "allowrate": false,
+    "outputs": 1,
+    "x": 700,
+    "y": 520,
+    "wires": [
+      [
+        "083b78b17c6ec400"
+      ]
+    ]
+  },
+  {
+    "id": "b01070fda236a854",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "\"on\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "on",
+        "tot": "str"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "device",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 530,
+    "y": 560,
+    "wires": [
+      [
+        "03ab932019a11e22"
+      ]
+    ]
+  },
+  {
+    "id": "03ab932019a11e22",
+    "type": "rbe",
+    "z": "9ca392a8963a0f2a",
+    "name": "Geändert?",
+    "func": "rbe",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "septopics": false,
+    "property": "payload",
+    "topi": "topic",
+    "x": 710,
+    "y": 580,
+    "wires": [
+      [
+        "56a5fa14e4a95303"
+      ]
+    ]
+  }
+]
