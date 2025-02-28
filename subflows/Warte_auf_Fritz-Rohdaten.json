@@ -8,8 +8,8 @@
     "in": [],
     "out": [
       {
-        "x": 520,
-        "y": 280,
+        "x": 760,
+        "y": 260,
         "wires": [
           {
             "id": "d932510f.83b0d8",
@@ -51,7 +51,7 @@
     "id": "e1811ab8.7951",
     "type": "inject",
     "z": "12050788.44a868",
-    "name": "1m nach Start, dann alle 5s",
+    "name": "Alle 10s",
     "props": [
       {
         "p": "payload"
@@ -61,18 +61,18 @@
         "vt": "str"
       }
     ],
-    "repeat": "5",
+    "repeat": "10",
     "crontab": "",
     "once": true,
-    "onceDelay": "60",
-    "topic": "",
+    "onceDelay": "0.1",
+    "topic": "inject",
     "payload": "",
     "payloadType": "str",
-    "x": 160,
+    "x": 100,
     "y": 120,
     "wires": [
       [
-        "3ca166d3.524032"
+        "77f79beafb456023"
       ]
     ]
   },
@@ -83,8 +83,8 @@
     "connection": "1f1ed453.c0771c",
     "name": "Lese Daten",
     "action": "getDevice",
-    "x": 390,
-    "y": 200,
+    "x": 790,
+    "y": 120,
     "wires": [
       [
         "f9f3c7a2.9afc5"
@@ -108,8 +108,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 380,
-    "y": 280,
+    "x": 800,
+    "y": 200,
     "wires": [
       [
         "3973f25d.c66e06"
@@ -135,8 +135,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 390,
-    "y": 240,
+    "x": 810,
+    "y": 160,
     "wires": [
       [
         "d932510f.83b0d8"
@@ -157,8 +157,8 @@
     "targetType": "full",
     "statusVal": "",
     "statusType": "auto",
-    "x": 480,
-    "y": 320,
+    "x": 1080,
+    "y": 200,
     "wires": []
   },
   {
@@ -180,8 +180,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 380,
-    "y": 120,
+    "x": 540,
+    "y": 200,
     "wires": [
       [
         "36a62119.d0dcbe"
@@ -207,11 +207,142 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 410,
-    "y": 160,
+    "x": 570,
+    "y": 240,
     "wires": [
       [
         "ce3c0dc.853c2f"
+      ]
+    ]
+  },
+  {
+    "id": "b4d69d1a786a5e2c",
+    "type": "status",
+    "z": "12050788.44a868",
+    "name": "Warte auf Status",
+    "scope": [
+      "ce3c0dc.853c2f"
+    ],
+    "x": 120,
+    "y": 180,
+    "wires": [
+      [
+        "89e4efa031eb3059"
+      ]
+    ]
+  },
+  {
+    "id": "89e4efa031eb3059",
+    "type": "change",
+    "z": "12050788.44a868",
+    "name": "Markiere",
+    "rules": [
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "status",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 300,
+    "y": 180,
+    "wires": [
+      [
+        "cb2c689081c7a1a4"
+      ]
+    ]
+  },
+  {
+    "id": "cb2c689081c7a1a4",
+    "type": "switch",
+    "z": "12050788.44a868",
+    "name": "Ist verbunden?",
+    "property": "status.text",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "connected",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 320,
+    "y": 220,
+    "wires": [
+      [
+        "77f79beafb456023"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "c3031550f2cd912e",
+    "type": "change",
+    "z": "12050788.44a868",
+    "name": "Bereinige",
+    "rules": [
+      {
+        "t": "delete",
+        "p": "status",
+        "pt": "msg"
+      },
+      {
+        "t": "delete",
+        "p": "topic",
+        "pt": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 540,
+    "y": 160,
+    "wires": [
+      [
+        "3ca166d3.524032"
+      ]
+    ]
+  },
+  {
+    "id": "77f79beafb456023",
+    "type": "join",
+    "z": "12050788.44a868",
+    "name": "merge",
+    "mode": "custom",
+    "build": "object",
+    "property": "payload",
+    "propertyType": "msg",
+    "key": "topic",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "useparts": true,
+    "accumulate": true,
+    "timeout": "",
+    "count": "2",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "",
+    "reduceFixup": "",
+    "x": 520,
+    "y": 120,
+    "wires": [
+      [
+        "c3031550f2cd912e"
       ]
     ]
   }

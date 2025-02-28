@@ -104,16 +104,6 @@
     "strictSSL": false
   },
   {
-    "id": "412fbf62.1e1d9",
-    "type": "ui_group",
-    "name": "Nachttische",
-    "tab": "f0d49b09.776a2",
-    "order": 1,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
     "id": "f02945fb.a0f3c",
     "type": "ui_tab",
     "name": "System",
@@ -123,51 +113,11 @@
     "hidden": false
   },
   {
-    "id": "4314a159.01844",
-    "type": "ui_group",
-    "name": "CPU",
-    "tab": "cd4c16c9.b5a0a",
-    "order": 2,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "cbefc1f5.641d68",
-    "type": "ui_group",
-    "name": "RAM",
-    "tab": "cd4c16c9.b5a0a",
-    "order": 3,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "c8fe58ce.64afd",
-    "type": "ui_group",
-    "name": "Speicher",
-    "tab": "cd4c16c9.b5a0a",
-    "order": 4,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
     "id": "ce9bba2a.9d9588",
     "type": "ui_group",
     "name": "Node-RED",
     "tab": "f02945fb.a0f3c",
     "order": 1,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "259c1fb2.ed8768",
-    "type": "ui_group",
-    "name": "Christian's PC",
-    "tab": "6c600c27.493f64",
-    "order": 2,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -201,40 +151,10 @@
     "hidden": false
   },
   {
-    "id": "e7215ad9.54bc5",
-    "type": "ui_group",
-    "name": "Sandra's PC",
-    "tab": "6c600c27.493f64",
-    "order": 1,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "4587520c.baf024",
-    "type": "ui_group",
-    "name": "Fernsehtisch",
-    "tab": "3cbc9af3.9bf5ce",
-    "order": 1,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
     "id": "f438956c.669a58",
     "type": "dorita980Config",
     "ip": "192.168.178.115",
     "name": "Roomba 966"
-  },
-  {
-    "id": "e76cc3b6.096b9",
-    "type": "ui_group",
-    "name": "Saugroboter",
-    "tab": "f0d49b09.776a2",
-    "order": 4,
-    "disp": true,
-    "width": "6",
-    "collapse": false
   },
   {
     "id": "d54c9b6e.0cffc",
@@ -244,66 +164,6 @@
     "port": "49000",
     "ssl": false,
     "user": "Node-RED"
-  },
-  {
-    "id": "2fe0f099.995658",
-    "type": "ui_group",
-    "name": "Heizkörper",
-    "tab": "3cbc9af3.9bf5ce",
-    "order": 4,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "9298819a.21ca98",
-    "type": "ui_group",
-    "name": "Heizkörper",
-    "tab": "523209a3.f325d",
-    "order": 1,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "cd94108d.1e556",
-    "type": "ui_group",
-    "name": "Heizkörper",
-    "tab": "6c600c27.493f64",
-    "order": 4,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "7b8abfe6.0e9dd8",
-    "type": "ui_group",
-    "name": "Heizkörper",
-    "tab": "f0d49b09.776a2",
-    "order": 3,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "964aeb18.79a868",
-    "type": "ui_group",
-    "name": "Heizkörper",
-    "tab": "9be1f758.946cf8",
-    "order": 1,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "2f3f5aef.3d20ee",
-    "type": "ui_group",
-    "name": "Steckdose",
-    "tab": "dc2a0ecd.db0f18",
-    "order": 1,
-    "disp": true,
-    "width": "6",
-    "collapse": false
   },
   {
     "id": "dd3cc3c3.66f0c8",
@@ -324,76 +184,6 @@
     "name": "Zigbee",
     "tab": "f02945fb.a0f3c",
     "order": 2,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "aa64946a.b8cef",
-    "type": "ui_group",
-    "name": "Balkontür, klein",
-    "tab": "3cbc9af3.9bf5ce",
-    "order": 3,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "6aa4fe54.7c82f8",
-    "type": "ui_group",
-    "name": "Balkontür, groß",
-    "tab": "3cbc9af3.9bf5ce",
-    "order": 2,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "d2e8a811.44b478",
-    "type": "ui_group",
-    "name": "Balkontür",
-    "tab": "6c600c27.493f64",
-    "order": 3,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "b823bcaf.ffdfe8",
-    "type": "ui_group",
-    "name": "Fenster, rechts",
-    "tab": "f0d49b09.776a2",
-    "order": 2,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "2b39cfe.8e9f33",
-    "type": "ui_group",
-    "name": "Telefon",
-    "tab": "5fa0aaf9.168a54",
-    "order": 1,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "8c9b25f5.1db3b8",
-    "type": "ui_group",
-    "name": "Sensor 1",
-    "tab": "6c600c27.493f64",
-    "order": 5,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-  },
-  {
-    "id": "747b954.0a7986c",
-    "type": "ui_group",
-    "name": "Gewächshaus-Sensor",
-    "tab": "dc2a0ecd.db0f18",
-    "order": 3,
     "disp": true,
     "width": "6",
     "collapse": false
@@ -600,5 +390,215 @@
     "width": "6",
     "collapse": false,
     "className": ""
+  },
+  {
+    "id": "412fbf62.1e1d9",
+    "type": "ui_group",
+    "name": "Nachttische",
+    "tab": "f0d49b09.776a2",
+    "order": 1,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "4314a159.01844",
+    "type": "ui_group",
+    "name": "CPU",
+    "tab": "cd4c16c9.b5a0a",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "cbefc1f5.641d68",
+    "type": "ui_group",
+    "name": "RAM",
+    "tab": "cd4c16c9.b5a0a",
+    "order": 3,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "c8fe58ce.64afd",
+    "type": "ui_group",
+    "name": "Speicher",
+    "tab": "cd4c16c9.b5a0a",
+    "order": 4,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "259c1fb2.ed8768",
+    "type": "ui_group",
+    "name": "Christian's PC",
+    "tab": "6c600c27.493f64",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "e7215ad9.54bc5",
+    "type": "ui_group",
+    "name": "Sandra's PC",
+    "tab": "6c600c27.493f64",
+    "order": 1,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "4587520c.baf024",
+    "type": "ui_group",
+    "name": "Fernsehtisch",
+    "tab": "3cbc9af3.9bf5ce",
+    "order": 1,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "e76cc3b6.096b9",
+    "type": "ui_group",
+    "name": "Saugroboter",
+    "tab": "f0d49b09.776a2",
+    "order": 4,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "2fe0f099.995658",
+    "type": "ui_group",
+    "name": "Heizkörper",
+    "tab": "3cbc9af3.9bf5ce",
+    "order": 4,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "9298819a.21ca98",
+    "type": "ui_group",
+    "name": "Heizkörper",
+    "tab": "523209a3.f325d",
+    "order": 1,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "cd94108d.1e556",
+    "type": "ui_group",
+    "name": "Heizkörper",
+    "tab": "6c600c27.493f64",
+    "order": 4,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "7b8abfe6.0e9dd8",
+    "type": "ui_group",
+    "name": "Heizkörper",
+    "tab": "f0d49b09.776a2",
+    "order": 3,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "964aeb18.79a868",
+    "type": "ui_group",
+    "name": "Heizkörper",
+    "tab": "9be1f758.946cf8",
+    "order": 1,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "2f3f5aef.3d20ee",
+    "type": "ui_group",
+    "name": "Steckdose",
+    "tab": "dc2a0ecd.db0f18",
+    "order": 1,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "aa64946a.b8cef",
+    "type": "ui_group",
+    "name": "Balkontür, klein",
+    "tab": "3cbc9af3.9bf5ce",
+    "order": 3,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "6aa4fe54.7c82f8",
+    "type": "ui_group",
+    "name": "Balkontür, groß",
+    "tab": "3cbc9af3.9bf5ce",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "d2e8a811.44b478",
+    "type": "ui_group",
+    "name": "Balkontür",
+    "tab": "6c600c27.493f64",
+    "order": 3,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "b823bcaf.ffdfe8",
+    "type": "ui_group",
+    "name": "Fenster, rechts",
+    "tab": "f0d49b09.776a2",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "2b39cfe.8e9f33",
+    "type": "ui_group",
+    "name": "Telefon",
+    "tab": "5fa0aaf9.168a54",
+    "order": 1,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "8c9b25f5.1db3b8",
+    "type": "ui_group",
+    "name": "Sensor 1",
+    "tab": "6c600c27.493f64",
+    "order": 5,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "747b954.0a7986c",
+    "type": "ui_group",
+    "name": "Gewächshaus-Sensor",
+    "tab": "dc2a0ecd.db0f18",
+    "order": 3,
+    "disp": true,
+    "width": "6",
+    "collapse": false
   }
 ]

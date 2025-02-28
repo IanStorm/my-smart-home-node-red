@@ -191,6 +191,7 @@
     "key": "topic",
     "joiner": "\\n",
     "joinerType": "str",
+    "useparts": true,
     "accumulate": true,
     "timeout": "",
     "count": "2",
