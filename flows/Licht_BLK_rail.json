@@ -34,7 +34,7 @@
     "name": "Automatisch Schalten",
     "info": "",
     "x": 140,
-    "y": 680,
+    "y": 800,
     "wires": []
   },
   {
@@ -44,7 +44,7 @@
     "name": "GUI",
     "info": "",
     "x": 90,
-    "y": 880,
+    "y": 1000,
     "wires": []
   },
   {
@@ -111,7 +111,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 940,
+    "y": 1060,
     "wires": [
       [
         "1e5f1e3e580bcf4e"
@@ -134,7 +134,7 @@
     "templateScope": "local",
     "className": "",
     "x": 370,
-    "y": 940,
+    "y": 1060,
     "wires": [
       []
     ]
@@ -149,7 +149,7 @@
     ],
     "uncaught": false,
     "x": 110,
-    "y": 1000,
+    "y": 1120,
     "wires": [
       [
         "6d2511f9956234a8"
@@ -174,7 +174,7 @@
     "fontSize": "",
     "color": "#000000",
     "x": 360,
-    "y": 1000,
+    "y": 1120,
     "wires": []
   },
   {
@@ -410,7 +410,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 1120,
+    "y": 1240,
     "wires": [
       [
         "08983f8193076094"
@@ -486,7 +486,7 @@
     ],
     "uncaught": false,
     "x": 130,
-    "y": 560,
+    "y": 600,
     "wires": [
       [
         "33402de0cc086b0d"
@@ -515,7 +515,7 @@
     "payload": "",
     "payloadType": "str",
     "x": 110,
-    "y": 1180,
+    "y": 1300,
     "wires": [
       [
         "10de521023a88ba6"
@@ -543,7 +543,7 @@
     "topic": "",
     "topicType": "str",
     "x": 430,
-    "y": 1180,
+    "y": 1300,
     "wires": [
       [
         "ab47a1cd97b1f32d"
@@ -566,7 +566,7 @@
     "topic": "Balkon: Lichterkette",
     "name": "Zeige Benachrichtigung",
     "x": 710,
-    "y": 1180,
+    "y": 1300,
     "wires": []
   },
   {
@@ -603,7 +603,7 @@
     "to": "",
     "reg": false,
     "x": 390,
-    "y": 740,
+    "y": 860,
     "wires": [
       []
     ]
@@ -621,7 +621,7 @@
       }
     ],
     "x": 160,
-    "y": 740,
+    "y": 860,
     "wires": [
       [
         "5ae7b1490a2d830b"
@@ -650,7 +650,7 @@
     "payload": "",
     "payloadType": "date",
     "x": 130,
-    "y": 800,
+    "y": 920,
     "wires": [
       [
         "2c550ecfa6eb0800"
@@ -691,7 +691,7 @@
     "to": "",
     "reg": false,
     "x": 390,
-    "y": 800,
+    "y": 920,
     "wires": [
       []
     ]
@@ -723,7 +723,7 @@
     "animate": true,
     "className": "",
     "x": 410,
-    "y": 1120,
+    "y": 1240,
     "wires": [
       [
         "46ec0a46d63d0b24"
@@ -764,7 +764,7 @@
     "to": "",
     "reg": false,
     "x": 670,
-    "y": 1120,
+    "y": 1240,
     "wires": [
       []
     ]
@@ -783,8 +783,8 @@
     "payloadType": "msg",
     "optionsValue": "",
     "optionsType": "nothing",
-    "x": 1050,
-    "y": 580,
+    "x": 1270,
+    "y": 700,
     "wires": []
   },
   {
@@ -806,11 +806,14 @@
     "repair": false,
     "outputs": 2,
     "x": 360,
-    "y": 560,
+    "y": 600,
     "wires": [
       [
         "83072439eddc870f",
-        "b01070fda236a854"
+        "b01070fda236a854",
+        "54b67291a64959e2",
+        "7394b30cd65bc0f9",
+        "f615aa126c441217"
       ],
       [
         "01767136d5fcc9a4"
@@ -821,6 +824,7 @@
     "id": "83072439eddc870f",
     "type": "change",
     "z": "9ca392a8963a0f2a",
+    "d": true,
     "name": "\"sparkle\"",
     "rules": [
       {
@@ -843,7 +847,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 540,
+    "x": 760,
     "y": 520,
     "wires": [
       [
@@ -877,8 +881,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 530,
-    "y": 600,
+    "x": 750,
+    "y": 720,
     "wires": [
       [
         "03ab932019a11e22"
@@ -968,7 +972,7 @@
     ],
     "uncaught": false,
     "x": 150,
-    "y": 1060,
+    "y": 1180,
     "wires": [
       [
         "2d4720565ee144ea"
@@ -991,7 +995,7 @@
     "templateScope": "local",
     "className": "",
     "x": 400,
-    "y": 1060,
+    "y": 1180,
     "wires": [
       []
     ]
@@ -1010,8 +1014,8 @@
     "payloadType": "msg",
     "optionsValue": "",
     "optionsType": "nothing",
-    "x": 1070,
-    "y": 520,
+    "x": 1290,
+    "y": 540,
     "wires": []
   },
   {
@@ -1092,9 +1096,9 @@
     "id": "eb4f7b61de6598e7",
     "type": "delay",
     "z": "9ca392a8963a0f2a",
-    "name": "1s delay",
+    "name": "2s delay",
     "pauseType": "delay",
-    "timeout": "1",
+    "timeout": "2",
     "timeoutUnits": "seconds",
     "rate": "1",
     "nbRateUnits": "1",
@@ -1105,8 +1109,8 @@
     "drop": false,
     "allowrate": false,
     "outputs": 1,
-    "x": 700,
-    "y": 520,
+    "x": 940,
+    "y": 540,
     "wires": [
       [
         "083b78b17c6ec400"
@@ -1139,8 +1143,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 530,
-    "y": 560,
+    "x": 750,
+    "y": 680,
     "wires": [
       [
         "03ab932019a11e22"
@@ -1159,11 +1163,157 @@
     "septopics": false,
     "property": "payload",
     "topi": "topic",
-    "x": 710,
-    "y": 580,
+    "x": 950,
+    "y": 700,
     "wires": [
       [
         "56a5fa14e4a95303"
+      ]
+    ]
+  },
+  {
+    "id": "54b67291a64959e2",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "\"colorloop\"",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "colorloop",
+        "tot": "str"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "device",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 770,
+    "y": 560,
+    "wires": [
+      [
+        "eb4f7b61de6598e7"
+      ]
+    ]
+  },
+  {
+    "id": "cd807a103c63fb7f",
+    "type": "zigbee2mqtt-out",
+    "z": "9ca392a8963a0f2a",
+    "name": "Setze Helligkeit",
+    "server": "dd3cc3c3.66f0c8",
+    "friendly_name": "msg.topic",
+    "device_id": "msg.topic",
+    "command": "brightness",
+    "commandType": "z2m_cmd",
+    "payload": "payload",
+    "payloadType": "msg",
+    "optionsValue": "",
+    "optionsType": "nothing",
+    "x": 1280,
+    "y": 620,
+    "wires": []
+  },
+  {
+    "id": "7394b30cd65bc0f9",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "d": true,
+    "name": "max.",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "255",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "device",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 750,
+    "y": 600,
+    "wires": [
+      [
+        "64b111ad25036b58"
+      ]
+    ]
+  },
+  {
+    "id": "f615aa126c441217",
+    "type": "change",
+    "z": "9ca392a8963a0f2a",
+    "name": "1/2",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "127",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "device",
+        "tot": "flow"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 750,
+    "y": 640,
+    "wires": [
+      [
+        "64b111ad25036b58"
+      ]
+    ]
+  },
+  {
+    "id": "64b111ad25036b58",
+    "type": "delay",
+    "z": "9ca392a8963a0f2a",
+    "name": "1s delay",
+    "pauseType": "delay",
+    "timeout": "1",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "allowrate": false,
+    "outputs": 1,
+    "x": 940,
+    "y": 620,
+    "wires": [
+      [
+        "cd807a103c63fb7f"
       ]
     ]
   }
