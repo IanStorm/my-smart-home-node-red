@@ -1,6 +1,4 @@
-# ⬇️ Unlike Node.js 20 & 22, 18 does not get stuck during `npm i` on ARMv7
-# ⬇️ 🔗 https://github.com/nodejs/docker-node/issues/2077 https://github.com/nodejs/docker-node/issues/1946
-FROM nodered/node-red:4.0.9-18-minimal
+FROM nodered/node-red:4.0.9-22-minimal
 
 ENV TZ="Europe/Berlin"
 
