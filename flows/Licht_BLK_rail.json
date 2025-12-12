@@ -3,7 +3,7 @@
     "id": "9ca392a8963a0f2a",
     "type": "tab",
     "label": "Licht_BLK_rail",
-    "disabled": false,
+    "disabled": true,
     "info": "",
     "env": []
   },
