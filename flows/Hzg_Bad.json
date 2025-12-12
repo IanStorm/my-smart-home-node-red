@@ -179,6 +179,7 @@
     "id": "45adf42b.448e8c",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
+    "d": true,
     "name": "💼 Mo.-Do., 05:30 Uhr",
     "props": [
       {
@@ -208,6 +209,7 @@
     "id": "561409bc.10035",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
+    "d": true,
     "name": "🏡 Fr.-So., 07:00 Uhr",
     "props": [
       {
@@ -453,6 +455,7 @@
     "id": "6e8a7568.09ee74",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
+    "d": true,
     "name": "💼 So.-Mi., 21:30 Uhr",
     "props": [
       {
@@ -482,6 +485,7 @@
     "id": "d40e879e.0a6b78",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
+    "d": true,
     "name": "🏡 Do.-Sa., 22:00 Uhr",
     "props": [
       {
@@ -961,6 +965,7 @@
     "id": "475d4df3.773c74",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
+    "d": true,
     "name": "🏡 Fr.-So., 10:00 Uhr",
     "props": [
       {
@@ -990,6 +995,7 @@
     "id": "add30977107aadef",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
+    "d": true,
     "name": "💼🏢 Mo.-Do., 16:00 Uhr",
     "props": [
       {
@@ -1019,6 +1025,7 @@
     "id": "7d6e8428d9356970",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
+    "d": true,
     "name": "💼🏢 Mo.-Do., 07:00 Uhr",
     "props": [
       {
@@ -1048,8 +1055,7 @@
     "id": "73e9e12e60a60e03",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
-    "d": true,
-    "name": "🌴🏡 Täglich, 07:00 Uhr",
+    "name": "🌴🏡 Täglich, 05:30 Uhr",
     "props": [
       {
         "p": "payload"
@@ -1060,7 +1066,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "00 07 * * *",
+    "crontab": "30 05 * * *",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
@@ -1078,8 +1084,7 @@
     "id": "2acd22a5a9c95352",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
-    "d": true,
-    "name": "🌴🏡 Täglich, 10:00 Uhr",
+    "name": "🌴🏡 Täglich, 09:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -1090,7 +1095,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "00 10 * * *",
+    "crontab": "00 09 * * *",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
@@ -1108,8 +1113,7 @@
     "id": "070d0df63afb2d29",
     "type": "inject",
     "z": "a7755eb4.60b0d8",
-    "d": true,
-    "name": "🌴🏡 Täglich, 22:00 Uhr",
+    "name": "🌴🏡 Täglich, 21:00 Uhr",
     "props": [
       {
         "p": "payload"
@@ -1120,7 +1124,7 @@
       }
     ],
     "repeat": "",
-    "crontab": "00 22 * * *",
+    "crontab": "00 21 * * *",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
