@@ -3,7 +3,7 @@
     "id": "2fc0c3d0ea12284d",
     "type": "tab",
     "label": "TS_F1",
-    "disabled": false,
+    "disabled": true,
     "info": "",
     "env": []
   },

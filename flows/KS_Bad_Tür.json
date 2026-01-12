@@ -3,7 +3,7 @@
     "id": "e289f3210fab70da",
     "type": "tab",
     "label": "KS_Bad_Tür",
-    "disabled": false,
+    "disabled": true,
     "info": "",
     "env": []
   },
